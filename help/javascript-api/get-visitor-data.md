@@ -1,0 +1,107 @@
+---
+title: "방문자 데이터 가져오기"
+description: "방문자 데이터 가져오기"
+feature: Javascript
+source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+workflow-type: tm+mt
+source-wordcount: '184'
+ht-degree: 4%
+
+---
+
+
+# 방문자 데이터 가져오기
+
+이 방법은 실시간 방문자 식별 데이터를 가져오는 데 사용됩니다.
+
+- Web Personalization 고객이 되고 [RTP 태그 배포됨](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) User Context API를 사용하기 전에 사이트에서.
+- RTP는 계정 기반 마케팅 명명된 계정 목록을 지원하지 않습니다. ABM 목록 및 코드는 RTP 내에서 관리되는 업로드된 계정 목록(CSV 파일)에만 해당됩니다.
+
+오류가 발생하면 응답 JSON의 일부로 오류 메시지가 표시됩니다. 500 코드가 반환되면 지원 센터에 문의 하여 요청을 접수합니다.
+
+| 매개 변수 | 선택 사항/필수 | 유형 | 설명 |
+|---|---|---|---|
+| `get` | 필수 | 문자열 | 메서드 작업. |
+| `visitor` | 필수 | 문자열 | 메서드 이름입니다. |
+| `callback` | 필수 | 함수 | 반환된 각 캠페인에 대해 트리거될 콜백 함수입니다. |
+
+## 예시
+
+방문자 식별 데이터 가져오기:
+
+```javascript
+function callbackFunction() {
+    console.log('RTP is awesome!');
+}
+rtp('get', 'visitor', callbackFunction);
+```
+
+세그먼트 일치가 있는 응답:
+
+다음은 방문자가 방문자 데이터 가져오기 API 호출 전에 실시간 세그먼트와 일치하는 경우 반환되는 예제 응답입니다.
+
+```json
+{
+    "status": 200,
+    "results": {
+        "matchedSegments": [
+            {
+                "name": "first click",
+                "id": 177
+            }
+        ],
+        "abm": [
+            {
+                "code": 4,
+                "name": "abm_saleforce_customers"
+            },
+            {
+                "code": 5,
+                "name": "abm_top_customers"
+            }
+        ],
+        "org": "Marketo",
+        "location": {
+            "country": "United States",
+            "city": "San Mateo",
+            "state": "CA"
+        },
+        "industries": [
+            "Software & Internet"
+        ],
+        "isp": false
+    }
+}
+```
+
+세그먼트 일치가 없는 응답:
+
+다음은 방문자가 방문자 데이터 가져오기 API 호출 전에 실시간 세그먼트와 일치하지 않는 경우 반환되는 예제 응답입니다.
+
+```json
+{
+    "status": 200,
+    "results": {
+        "abm": [
+            {
+                "code": 4,
+                "name": "abm_saleforce_customers"
+            },
+            {
+                "code": 5,
+                "name": "abm_top_customers"
+            }
+        ],
+        "org": "Marketo",
+        "location": {
+            "country": "United States",
+            "city": "San Mateo",
+            "state": "CA"
+        },
+        "industries": [
+            "Software & Internet"
+        ],
+        "isp": false
+    }
+}
+```
