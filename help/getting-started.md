@@ -1,17 +1,17 @@
 ---
-title: "시작하기"
-description: "Marketo API 시작하기"
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+title: 시작하기
+description: Marketo Engage API 시작
+exl-id: 78c44c32-4e59-4d55-a45c-ef0d7dac814d
+source-git-commit: 82bea1ab3d0d83a8867bb7efefb828ce2d92747c
 workflow-type: tm+mt
-source-wordcount: '1239'
+source-wordcount: '1243'
 ht-degree: 0%
 
 ---
 
-
 # 시작하기
 
-Marketo은 마케터가 잠재 고객 및 고객에게 개인화된 멀티채널 프로그램 및 캠페인을 관리할 수 있도록 하는 마케팅 자동화 플랫폼입니다. 통합 포인트를 사용하여 Marketo 플랫폼을 확장할 수 있습니다. 아래에서 핵심 엔티티와 해당 관계를 찾을 수 있습니다.
+Marketo Engage은 마케터가 잠재 고객 및 고객에게 개인화된 멀티채널 프로그램 및 캠페인을 관리할 수 있도록 하는 마케팅 자동화 플랫폼입니다. 통합 포인트를 사용하여 Marketo Engage 플랫폼을 확장할 수 있습니다. 아래에서 핵심 엔티티와 해당 관계를 찾을 수 있습니다.
 
 기본 동기화가 활성화된 경우 REST API를 통해 회사, 영업 기회, 영업 기회 역할, 영업 사원과 같은 개체를 사용할 수 없습니다.
 
@@ -19,7 +19,7 @@ Marketo은 마케터가 잠재 고객 및 고객에게 개인화된 멀티채널
 
 ## 개인(잠재 고객)
 
-사람은 모든 마케팅 자동화 플랫폼의 기반입니다. Marketo 내에서는 영업 관점에서 잠재 고객, 잠재 고객, 잠재 고객, 연락처 등으로 지정되었는지 여부에 관계없이 모든 비영업 개인 레코드를 잠재 고객이라고 합니다. 리드 오브젝트는 다음 세트와 함께 제공됩니다. [표준 필드](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadFieldsUsingGET) 이메일, 이름 및 성 등. 리드 오브젝트 유형에 필드를 추가하여 시스템의 레코드와 연관된 정보 유형을 확장할 수 있습니다. 사용자 지정 속성은 표준 필드처럼 읽고 쓸 수 있습니다. 전체 필드 목록은 Marketo 내에서 찾을 수 있습니다 **[!UICONTROL Admin]** > **[!UICONTROL Field Management]** 메뉴 아래의 제품에서 사용할 수 있습니다. 리드는 Marketo에서 id 필드로 고유하게 식별됩니다. 다른 고유 키는 시스템 외부에서 적용되어야 합니다.
+사람은 모든 마케팅 자동화 플랫폼의 기반입니다. Marketo 내에서는 영업 관점에서 잠재 고객, 잠재 고객, 잠재 고객, 고객, 연락처 등으로 지정되었는지 여부에 관계없이 모든 비영업 개인 레코드를 잠재 고객이라고 합니다. 리드 오브젝트는 다음 세트와 함께 제공됩니다. [표준 필드](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadFieldsUsingGET) 이메일, 이름 및 성 등. 리드 오브젝트 유형에 필드를 추가하여 시스템의 레코드와 연관된 정보 유형을 확장할 수 있습니다. 사용자 지정 속성은 표준 필드처럼 읽고 쓸 수 있습니다. 전체 필드 목록은 Marketo 내에서 찾을 수 있습니다 **[!UICONTROL Admin]** > **[!UICONTROL Field Management]** 메뉴 아래의 제품에서 사용할 수 있습니다. 리드는 Marketo에서 id 필드로 고유하게 식별됩니다. 다른 고유 키는 시스템 외부에서 적용되어야 합니다.
 
 관련 API: [나머지](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads), [SOAP](soap-api/leads.md), [JavaScript](javascript-api/lead-tracking.md#lead-tracking-api)
 

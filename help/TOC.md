@@ -5,10 +5,10 @@ breadcrumb-title: "[!DNL Marketo] 개발자 안내서"
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 7fffdfd7a74950b00a012400560add330ac5e22b
+source-git-commit: 82bea1ab3d0d83a8867bb7efefb828ce2d92747c
 workflow-type: tm+mt
-source-wordcount: '249'
-ht-degree: 8%
+source-wordcount: '254'
+ht-degree: 7%
 
 ---
 
@@ -47,7 +47,8 @@ ht-degree: 8%
    - [React 기본](mobile/react-native.md)
    - [사용자 프로필](mobile/user-profiles.md)
 - 나머지{#rest}
-   - [REST API](rest-api/rest-api.md)
+   - [REST API 개요](rest-api/rest-api.md)
+   - [REST API 참조](https://developer.adobe.com/marketo-apis/)
    - 에셋 {#assets}
       - [자산](rest-api/assets.md)
       - [다이내믹 콘텐츠](rest-api/dynamic-content.md)
