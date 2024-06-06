@@ -2,7 +2,7 @@
 title: 홈
 description: Marketo Engage API 홈 페이지
 exl-id: a249945b-12f3-4b41-badc-ee7a72d5e7eb
-source-git-commit: aea2812730fa5f6054e69dfa9d8045329aa724c7
+source-git-commit: c8de36d73ca2dc4ead29e6e25946bf138723e4b1
 workflow-type: tm+mt
 source-wordcount: '128'
 ht-degree: 2%
@@ -16,8 +16,8 @@ Marketo Engage API를 마스터하는 데 도움이 되는 자세한 설명서
 <table>
 <tbody>
 <tr>
-<th><img src="assets/Smock_Book_18_N.svg" alt="시작하기"></th>
-<th><a href="getting-started.md"><strong>시작</strong></a>  Marketo Engage API에 익숙해지십시오.</th>
+<td><img src="assets/Smock_Book_18_N.svg" alt="시작하기"></td>
+<td><a href="getting-started.md"><strong>시작</strong></a>  Marketo Engage API에 익숙해지십시오.</td>
 </tr>
 <tr>
 <td><img src="assets/Smock_Code_18_N.svg" alt="클라이언트 라이브러리"></td>
