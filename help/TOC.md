@@ -5,9 +5,9 @@ breadcrumb-title: "[!DNL Marketo] 개발자 안내서"
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 82bea1ab3d0d83a8867bb7efefb828ce2d92747c
+source-git-commit: 15ac16ab4f8153ee069335951a84cf1691469c6d
 workflow-type: tm+mt
-source-wordcount: '254'
+source-wordcount: '255'
 ht-degree: 7%
 
 ---
@@ -92,6 +92,7 @@ ht-degree: 7%
       - [필드 목록](rest-api/fields.md)
       - [필드 유형](rest-api/field-types.md)
       - [잠재 고객 데이터베이스](rest-api/lead-database.md)
+      - [잠재 고객](rest-api/leads.md)
       - [명명된 계정](rest-api/named-accounts.md)
       - [명명된 계정 목록](rest-api/named-account-lists.md)
       - [기회](rest-api/opportunities.md)
