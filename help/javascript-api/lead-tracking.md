@@ -1,14 +1,14 @@
 ---
-title: "잠재 고객 추적"
-description: "잠재 고객 추적 API"
+title: 잠재 고객 추적
+description: 잠재 고객 추적 API
 feature: Munchkin Tracking Code, Javascript
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+exl-id: 7ece5133-9d32-4be3-a940-4ac0310c4d8b
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '766'
 ht-degree: 0%
 
 ---
-
 
 # 잠재 고객 추적 API
 
@@ -74,7 +74,7 @@ Munchkin의 동작은 Munchkin 사용을 통해 수정할 수 있습니다 [구�
 
 - 잠재 고객은 다음을 사용하여 Munchkin 추적 페이지를 방문해야 합니다. `mkt_tok` 추적된 Marketo 이메일 링크의 쿼리 문자열에서 매개 변수.
 - 잠재 고객은 Marketo Form을 작성해야 합니다.
-- 비누 [syncLead](../soap-api/leads.md) 또는 REST [리드 연결](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST) 호출을 전송해야 합니다.
+- A SOAP [syncLead](../soap-api/leads.md) 또는 REST [리드 연결](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST) 호출을 전송해야 합니다.
 
 이러한 조건 중 하나가 충족되면 쿠키 및 연결된 모든 웹 활동이 알려진 리드와 연결됩니다.
 
@@ -96,7 +96,7 @@ Munchkin 쿠키는 각 두 번째 수준 도메인에 한정됩니다. 즉, `exa
 
 ## Beta
 
-랜딩 페이지에 대한 Munchkin 베타 채널을 옵트인하려면 다음 위치로 이동하십시오. [책임자 -> 보물 상자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features) 을 클릭하고 &quot;랜딩 페이지의 Munchkin 베타&quot; 설정을 활성화합니다. 이렇게 하려면에서 새 코드 조각을 제공합니다 **[!UICONTROL Admin]** ->  **[!UICONTROL Munchkin]** 외부 사이트에서 beta 버전을 사용할 수 있는 메뉴입니다.
+랜딩 페이지에 대한 Munchkin 베타 채널을 옵트인하려면 다음 위치로 이동하십시오. [책임자 -> 보물 상자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features) 을(를) 메뉴에 추가하고 &quot;랜딩 페이지의 Munchkin Beta&quot; 설정을 활성화합니다. 이렇게 하려면에서 새 코드 조각을 제공합니다 **[!UICONTROL Admin]** ->  **[!UICONTROL Munchkin]** 외부 사이트에서 beta 버전을 사용할 수 있는 메뉴입니다.
 
 ## 옵트아웃
 
