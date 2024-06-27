@@ -5,9 +5,9 @@ breadcrumb-title: "[!DNL Marketo] 개발자 안내서"
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
+source-git-commit: 85062243d57a3fc6d15251163e926495858edf2a
 workflow-type: tm+mt
-source-wordcount: '231'
+source-wordcount: '234'
 ht-degree: 7%
 
 ---
@@ -85,6 +85,7 @@ ht-degree: 7%
       - [일괄 프로그램 구성원](rest-api/bulk-program-member-import.md)
    - [채널](rest-api/channels.md)
    - [사용자 정의 서비스](rest-api/custom-services.md)
+   - [Swagger 정의 다운로드](rest-api/swagger.md)
    - [끝점 참조](rest-api/endpoint-reference.md)
    - [오류 코드](rest-api/error-codes.md)
    - 잠재 고객 데이터베이스 {#lead-database}
