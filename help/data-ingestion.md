@@ -1,10 +1,10 @@
 ---
 title: "데이터 수집"
 description: "데이터 수집 API 개요"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
 workflow-type: tm+mt
-source-wordcount: '952'
-ht-degree: 8%
+source-wordcount: '945'
+ht-degree: 9%
 
 ---
 
@@ -132,7 +132,7 @@ HTTP POST 메서드를 사용하여 서버로 데이터를 전송합니다.
 
 | 경로 |
 |---|
-| /subscriptions/{munchkinId}/person |
+| `/subscriptions/{munchkinId}/persons` |
 
 | HeadersKey | 값 |
 |---|---|
@@ -201,7 +201,7 @@ X-Request-ID: WOUBf3fHJNU6sTmJqLL281lOmAEpMZFw
 
 | 경로 |
 |---|
-| /subscriptions/{munchkinId}/customobjects/{customObjectAPIName} |
+| `/subscriptions/{munchkinId}/customobjects/{customObjectAPIName}` |
 
 헤더
 
@@ -210,7 +210,13 @@ X-Request-ID: WOUBf3fHJNU6sTmJqLL281lOmAEpMZFw
 | Content-Type | application/json |
 | X-Mkto-User-Token | {accessToken} |
 
-요청 본문 | 키 | 데이터 유형 | 필수 | 값 | 기본값 | |—|—|—|—| | 우선 순위 | 문자열 | 아니요 | 요청의 우선 순위:보통 높음 | 표준 | | 중복 제거 기준 | 문자열 | 아니요 | 중복 제거할 속성:dedupeFieldsmarketoGUID | 데이터 중복 제거 필드 | | 사용자 지정 개체 | 개체 배열 | 예 | 개체의 특성 이름-값 쌍 목록입니다. | - |
+요청 본문
+
+| 키 | 데이터 유형 | 필수 | 값 | 기본 값 |
+|---|---|---|---|---|
+| 우선 순위 | 문자열 | 아니요 | 요청의 우선 순위:보통 높음 | 표준 |
+| 중복 제거 기준 | 문자열 | 아니요 | 중복 제거할 속성:dedupeFieldsmarketoGUID | 데이터 중복 제거 필드 |
+| 사용자 지정 개체 | 개체 배열 | 예 | 개체의 특성 이름-값 쌍 목록입니다. | - |
 
 | 권한 |
 |---|

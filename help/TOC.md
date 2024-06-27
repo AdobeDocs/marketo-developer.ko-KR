@@ -5,9 +5,9 @@ breadcrumb-title: "[!DNL Marketo] 개발자 안내서"
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 15ac16ab4f8153ee069335951a84cf1691469c6d
+source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
 workflow-type: tm+mt
-source-wordcount: '255'
+source-wordcount: '231'
 ht-degree: 7%
 
 ---
@@ -31,7 +31,7 @@ ht-degree: 7%
    - [리치 미디어 Recommendations](javascript-api/rich-media-recommendation.md)
    - [소셜](javascript-api/social.md)
    - [트리거](javascript-api/triggers.md)
-   - [웹 개인화](javascript-api/web-personalization.md)
+   - [웹 Personalization](javascript-api/web-personalization.md)
 - 모바일 {#mobile}
    - [설치 [!DNL Adobe Launch] 확장](mobile/adobe-launch-extension-installation.md)
    - [[!DNL Adobe Launch] 확장](mobile/adobe-launch-extension.md)
@@ -40,16 +40,16 @@ ht-degree: 7%
    - [딥링크](mobile/enabling-deep-links-in-your-app.md)
    - [인앱 메시징](mobile/in-app-messages.md)
    - [설치](mobile/installation.md)
-   - [이온-](mobile/ionic.md)
+   - [[!DNL Ionic]](mobile/ionic.md)
    - [모바일](mobile/mobile.md)
    - [Phonegap](mobile/phonegap.md)
    - [푸시 알림](mobile/push-notifications.md)
-   - [React 기본](mobile/react-native.md)
+   - [React Native](mobile/react-native.md)
    - [사용자 프로필](mobile/user-profiles.md)
 - 나머지{#rest}
    - [REST API 개요](rest-api/rest-api.md)
    - [REST API 참조](https://developer.adobe.com/marketo-apis/)
-   - 에셋 {#assets}
+   - Assets {#assets}
       - [자산](rest-api/assets.md)
       - [다이내믹 콘텐츠](rest-api/dynamic-content.md)
       - [이메일](rest-api/emails.md)
@@ -109,43 +109,43 @@ ht-degree: 7%
 - SOAP {#soap}
    - 활동 {#activities}
       - [활동](soap-api/activities.md)
-      - [getLeadActivity](soap-api/getleadactivity.md)
-      - [getLeadChanges](soap-api/getleadchanges.md)
+      - [[!DNL getLeadActivity]](soap-api/getleadactivity.md)
+      - [[!DNL getLeadChanges]](soap-api/getleadchanges.md)
    - [활동 유형 필터](soap-api/activity-type-filters.md)
    - [인증 서명](soap-api/authentication-signature.md)
    - 캠페인 {#campaigns}
-      - [getCampaignsForSource](soap-api/getcampaignsforsource.md)
-      - [request캠페인](soap-api/requestcampaign.md)
-      - [scheduleCampaign](soap-api/schedulecampaign.md)
+      - [[!DNL getCampaignsForSource]](soap-api/getcampaignsforsource.md)
+      - [[!DNL requestCampaign]](soap-api/requestcampaign.md)
+      - [[!DNL scheduleCampaign]](soap-api/schedulecampaign.md)
    - 사용자 지정 개체 {#custom-objects}
       - [사용자 지정 개체](soap-api/custom-objects.md)
-      - [deleteCustomObjects](soap-api/deletecustomobjects.md)
-      - [getCustomObjects](soap-api/getcustomobjects.md)
-      - [syncCustomObjects](soap-api/synccustomobjects.md)
+      - [[!DNL deleteCustomObjects]](soap-api/deletecustomobjects.md)
+      - [[!DNL getCustomObjects]](soap-api/getcustomobjects.md)
+      - [[!DNL syncCustomObjects]](soap-api/synccustomobjects.md)
    - [오류 코드](soap-api/error-codes.md)
    - 잠재 고객 {#leads}
-      - [getLead](soap-api/getlead.md)
-      - [getMultipleLead](soap-api/getmultipleleads.md)
-      - [mergeLead](soap-api/mergeleads.md)
+      - [[!DNL getLead]](soap-api/getlead.md)
+      - [[!DNL getMultipleLeads]](soap-api/getmultipleleads.md)
+      - [[!DNL mergeLeads]](soap-api/mergeleads.md)
       - [잠재 고객](soap-api/leads.md)
-      - [syncLead](soap-api/synclead.md)
-      - [syncMultipleLead](soap-api/syncmultipleleads.md)
+      - [[!DNL syncLead]](soap-api/synclead.md)
+      - [[!DNL syncMultipleLeads]](soap-api/syncmultipleleads.md)
    - Marketo 개체 {#marketo-objects}
-      - [deleteMObject](soap-api/deletemobjects.md)
-      - [describeMObjects](soap-api/describemobject.md)
-      - [getMObjects](soap-api/getmobjects.md)
-      - [listMObjects](soap-api/listmobjects.md)
+      - [[!DNL deleteMObjects]](soap-api/deletemobjects.md)
+      - [[!DNL describeMObjects]](soap-api/describemobject.md)
+      - [[!DNL getMObjects]](soap-api/getmobjects.md)
+      - [[!DNL listMObjects]](soap-api/listmobjects.md)
       - [Marketo 개체](soap-api/marketo-objects.md)
-      - [syncMObjects](soap-api/syncmobjects.md)
+      - [[!DNL syncMObjects]](soap-api/syncmobjects.md)
    - 프로그램 {#programs}
-      - [getChannels](soap-api/getchannels.md)
-      - [getTags](soap-api/gettags.md)
+      - [[!DNL getChannels]](soap-api/getchannels.md)
+      - [[!DNL getTags]](soap-api/gettags.md)
    - [SOAP API](soap-api/soap-api.md)
    - [SOAP FAQ](soap-api/soap-faq.md)
    - 정적 목록 {#static-lists}
-      - [getImportToListStatus](soap-api/getimporttoliststatus.md)
-      - [가져오기 대상 목록](soap-api/importtolist.md)
-      - [listOperation](soap-api/listoperation.md)
+      - [[!DNL getImportToListStatus]](soap-api/getimporttoliststatus.md)
+      - [[!DNL importToList]](soap-api/importtolist.md)
+      - [[!DNL listOperation]](soap-api/listoperation.md)
    - [스트림 위치](soap-api/stream-position.md)
 - 웹훅 {#webhooks}
    - [오류수](webhooks/errors.md)

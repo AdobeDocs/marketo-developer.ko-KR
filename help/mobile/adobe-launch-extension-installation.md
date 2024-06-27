@@ -1,14 +1,14 @@
 ---
-title: "[!DNLAdobe Launch] 확장 설치"
-feature: "Mobile Marketing"
-description: "[!DNL Adobe Launch] extension installation overview"
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+title: '[!DNL Adobe Launch] 확장 설치'
+feature: Mobile Marketing
+description: '[!DNL Adobe Launch] 확장 설치 개요'
+exl-id: d71b7cd7-309b-4882-9bba-7daaaa5ef32d
+source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
 workflow-type: tm+mt
-source-wordcount: '703'
+source-wordcount: '665'
 ht-degree: 0%
 
 ---
-
 
 # [!DNL Adobe Launch] 확장 설치
 
@@ -25,11 +25,11 @@ ht-degree: 0%
 
 ### Swift 브리징 헤더 설정
 
-1. 파일 > 새로 만들기 > 파일로 이동하고 &quot;헤더 파일&quot;을 선택합니다.
+1. 다음으로 이동 [!UICONTROL File] > [!UICONTROL New] > [!UICONTROL File] 및 선택 **[!UICONTROL Header File]**.
 
 1. 파일 이름을 &quot;&lt;_프로젝트 이름_>-Bridging-Header&quot;.
 
-1. 프로젝트 > Target > 빌드 설정 > Swift 컴파일러 > 코드 생성으로 이동합니다. &quot;Objective-Bridging&quot; 헤더에 다음 경로를 추가합니다.
+1. 다음으로 이동 [!UICONTROL Project] > [!UICONTROL Target] > [!UICONTROL Build Settings] > [!UICONTROL Swift Compiler] > [!UICONTROL Code Generation]. &quot;Objective-Bridging&quot; 헤더에 다음 경로를 추가합니다.
 
 `$(PODS_ROOT)/<_ProjectName_>-Bridging-Header.h`
 
@@ -63,7 +63,7 @@ func applicationDidBecomeActive(_ application: UIApplication)
 
 ## iOS 테스트 장치
 
-1. 선택 [!UICONTROL Project] > [!UICONTROL Target] > [!UICONTROL Info] > URL 유형.
+1. 선택 **[!UICONTROL Project]** > **[!UICONTROL Target]** > **[!UICONTROL Info]** > **[!UICONTROL URL Types]**.
 1. 식별자 추가: ${PRODUCT_NAME}
 1. URL 체계 설정: mkto-&lt;s_ecret key_=&quot;&quot;>
 1. 포함 `application:openURL:sourceApplication:annotation:` 끝 `AppDelegate.m file` (Objective-C)
@@ -107,7 +107,7 @@ func application(_ application: UIApplication, open url: URL, sourceApplication:
 
 >[!ENDTABS]
 
-## Android에서 Marketo SDK를 설치하는 방법
+## Android에 Marketo SDK를 설치하는 방법
 
 ### Android 확장 설정
 
@@ -151,7 +151,7 @@ ProGuard 구성(선택 사항)
 
 ## Firebase 클라우드 메시징 지원
 
-Android용 MME SDK(소프트웨어 개발 키트)가 Android 앱 개발자를 위한 보다 유연하고 새로운 엔지니어링 기능을 포함하는 보다 현대적이고 안정적이며 확장 가능한 프레임워크로 업데이트되었습니다.
+Android용 MME SDK(Software Development Kit)가 Android 앱 개발자를 위한 보다 유연하고 새로운 엔지니어링 기능을 포함하는 보다 현대적이고 안정적이며 확장 가능한 프레임워크로 업데이트되었습니다.
 
 이제 Android 앱 개발자가 Google [Firebase 클라우드 메시징](https://firebase.google.com/docs/cloud-messaging/) (FCM) 이 SDK를 사용합니다.
 
@@ -160,15 +160,15 @@ Android용 MME SDK(소프트웨어 개발 키트)가 Android 앱 개발자를 �
 1. Android 앱에서 최신 Marketo Android SDK를 통합합니다.  다음 위치에 단계가 제공됩니다. [GitHub](https://github.com/Marketo/android-sdk).
 1. Firebase 콘솔에서 Firebase 앱을 구성합니다.
    1. 프로젝트 만들기/추가 [](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/)Firebase 콘솔.
-      1. 다음에서 [Firebase 콘솔](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/), 선택 [!UICONTROL Add Project].
-      1. 기존 Google Cloud 프로젝트 목록에서 GCM 프로젝트를 선택한 다음 을 선택합니다. [!UICONTROL Add Firebase].
-      1. Firebase 시작 화면에서 &#39;Android 앱에 Firebase 추가&#39;를 선택합니다.
-      1. 패키지 이름과 SHA-1을 입력하고 [!UICONTROL Add App]. 새 항목 `google-services.json` firebase 앱용 파일이 다운로드되었습니다.
-      1. 선택 [!UICONTROL Continue] Android Studio에서 Google 서비스 플러그인을 추가하는 방법에 대한 자세한 지침을 따르십시오.
+      1. 다음에서 [Firebase 콘솔](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/), 선택 **[!UICONTROL Add Project]**.
+      1. 기존 Google Cloud 프로젝트 목록에서 GCM 프로젝트를 선택한 다음 을 선택합니다. **[!UICONTROL Add Firebase]**.
+      1. Firebase 시작 화면에서 **[!UICONTROL Add Firebase to your Android App]**.
+      1. 패키지 이름과 SHA-1을 입력하고 **[!UICONTROL Add App]**. 새 항목 `google-services.json` firebase 앱용 파일이 다운로드되었습니다.
+      1. 선택 **[!UICONTROL Continue]** 및 Android Studio에서 Google 서비스 플러그인을 추가하기 위한 자세한 지침을 따르십시오.
 
-   1. 프로젝트 개요에서 &#39;프로젝트 설정&#39;으로 이동
-      1. &#39;일반&#39; 탭을 클릭합니다. 다운로드 `google-services.json` 파일.
-      1. &#39;클라우드 메시징&#39; 탭을 클릭합니다. &#39;서버 키&#39; 및 &#39;보낸 사람 ID&#39;를 복사합니다. Marketo에 이러한 &#39;서버 키&#39; 및 &#39;보낸 사람 ID&#39;를 제공하십시오.
+   1. 다음으로 이동 **[!UICONTROL Project Settings]** 위치: [!UICONTROL Project Overview]
+      1. 클릭 **[!UICONTROL General]** 탭. 다운로드 `google-services.json` 파일.
+      1. 클릭 **[!UICONTROL Cloud Messaging]** 탭. 복사 [!UICONTROL Server Key] 및 [!UICONTROL Sender ID]. 다음 항목 제공 [!UICONTROL Server Key] 및 [!UICONTROL Sender ID] Marketo으로.
    1. Android 앱에서 FCM 변경 사항 구성
       1. Android Studio의 프로젝트 보기로 전환하여 프로젝트 루트 디렉터리를 확인합니다.
          1. 다운로드한 항목 이동 `google-services.json` 파일을 Android 앱 모듈 루트 디렉토리에 넣습니다.
@@ -192,7 +192,7 @@ Android용 MME SDK(소프트웨어 개발 키트)가 Android 앱 개발자를 �
             apply plugin: 'com.google.gms.google-services'
             ```
 
-         1. 마지막으로 &quot;[!UICONTROL Sync now]ID에 나타나는 막대에서 &quot;&quot;
+         1. 마지막으로 을 클릭합니다. **[!UICONTROL Sync now]** ID에 나타나는 막대에서
    1. 앱의 매니페스트 편집 FCM SDK는 필요한 모든 권한과 필요한 수신기 기능을 자동으로 추가합니다. 앱 매니페스트에서 다음 사용되지 않거나 메시지 중복을 일으킬 수 있으므로 유해할 수 있는 요소를 제거해야 합니다.
 
       ```xml
@@ -224,11 +224,11 @@ Firebase 클라우드 메시징 지원에 대한 FAQ입니다.
 
 **Q: Marketo Android SDK와 통합된 Android 앱을 게시한 기존 MME 고객에게 어떤 영향을 미칩니까?** 다음과 같이 Android의 기존 GCM 클라이언트 앱을 Firebase Cloud Messaging(FCM)으로 마이그레이션할 수 있습니다.
 
-1. 다음에서 [Firebase 콘솔](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/), 선택 [!UICONTROL Add Project].
+1. 다음에서 [Firebase 콘솔](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/), 선택 **[!UICONTROL Add Project]**.
 1. 기존 Google Cloud 프로젝트 목록에서 GCM 프로젝트를 선택한 다음 을 선택합니다. **[!UICONTROL Add Firebase]**.
 1. Firebase 시작 화면에서 **[!UICONTROL Add Firebase to your Android App]**.
 1. 패키지 이름과 SHA-1을 입력하고 **[!UICONTROL Add App]**. 에 대한 새 google-services.json 파일
 1. Firebase 앱이 다운로드되었습니다.
-1. 선택 **[!UICONTROL Continue]** Android Studio에서 Google 서비스 플러그인을 추가하는 방법에 대한 자세한 지침을 따르십시오.
+1. 선택 **[!UICONTROL Continue]** 및 Android Studio에서 Google 서비스 플러그인을 추가하기 위한 자세한 지침을 따르십시오.
 
 **Q: GCM 앱을 사용한 이전 Marketo SDK를 사용하여 만든 리드를 타깃팅할 수 있습니까?** 예. Marketo SDK를 사용하여 만든 모든 리드를 푸시 알림 전송 대상으로 지정할 수 있습니다.

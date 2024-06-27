@@ -1,14 +1,14 @@
 ---
-title: "Webhooks"
+title: 웹훅
 feature: Webhooks
-description: "Webhooks 개요"
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+description: Webhooks 개요
+exl-id: fd283c66-05a1-4aa4-8412-0d41b8d1e3c8
+source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
 workflow-type: tm+mt
-source-wordcount: '581'
+source-wordcount: '562'
 ht-degree: 0%
 
 ---
-
 
 # 웹훅
 
@@ -20,12 +20,12 @@ Marketo에서는 웹후크를 사용하여 서드파티 웹 서비스와 통신�
 
 각 개별 웹후크에는 다음 속성이 있습니다.
 
-- URL - 요청을 웹 서비스에 제출하는 데 사용하는 URL을 입력합니다.
-- 요청 유형 - HTTP 메서드입니다.
-- 페이로드 템플릿 - POST 본문에 있는 정보를 전송하려면 템플릿을 입력합니다. XML, JSON 또는 SOAP를 포함하여 HTTP POST을 지원하는 모든 데이터 형식을 사용합니다. 직렬화 형식은 문자열에서 큰따옴표를 허용해야 합니다. 템플릿에 토큰을 삽입하려면 토큰 삽입을 클릭합니다.  문자열 유형 토큰은 큰따옴표로 자동 묶입니다.
-- 요청 토큰 인코딩 - 토큰 값에 특수 문자(예: 앰퍼샌드, &#39;&amp;&#39;)가 포함된 경우 요청 형식(JSON 또는 양식/URL)을 나타냅니다. Webhook이 웹 서비스와 올바르게 통신할 수 있도록 본문에 대해 올바른 인코딩을 선택해야 합니다.
-- 응답 유형 - 서비스에서 받은 응답의 형식(JSON 또는 XML)을 선택합니다. 응답의 속성을 Marketo의 리드 필드에 다시 매핑하려면 올바른 응답 유형을 선택해야 합니다.
-- 사용자 지정 헤더 - Webhooks Actions -> Set Custom Header를 통해 액세스되며, 이 메뉴를 통해 사용자 지정 키-값 쌍을 HTTP 헤더로 추가할 수 있습니다.
+- [!UICONTROL URL] - 요청을 웹 서비스에 제출하는 데 사용하는 URL을 입력합니다.
+- [!UICONTROL Request Type] - HTTP 메서드.
+- [!UICONTROL Payload Template] - POST 본문에서 정보를 전송하려면 템플릿을 입력합니다. XML, JSON 또는 SOAP 등 HTTP POST을 지원하는 모든 데이터 형식을 사용합니다. 직렬화 형식은 문자열에서 큰따옴표를 허용해야 합니다. 템플릿에 토큰을 삽입하려면 **[!UICONTROL Insert Token]**.  문자열 유형 토큰은 큰따옴표로 자동 묶입니다.
+- [!UICONTROL Request Token Encoding] - 토큰 값에 특수 문자(예: 앰퍼샌드, &#39;&amp;&#39;)가 포함된 경우 요청 형식(JSON 또는 양식/URL)을 나타냅니다. Webhook이 웹 서비스와 올바르게 통신할 수 있도록 본문에 대해 올바른 인코딩을 선택해야 합니다.
+- [!UICONTROL Response Type] - 서비스에서 받은 응답의 형식(JSON 또는 XML)을 선택합니다. 응답의 속성을 Marketo의 리드 필드에 다시 매핑하려면 올바른 응답 유형을 선택해야 합니다.
+- [!UICONTROL Custom Headers] - 다음을 통해 액세스: [!UICONTROL Webhooks Actions] -> [!UICONTROL Set Custom Header], 이 메뉴를 사용하면 사용자 지정 키-값 쌍을 HTTP 헤더로 추가할 수 있습니다.
 
 를 사용하여 웹 서비스 응답의 리드에 데이터를 다시 쓸 수 있습니다. [응답 매핑](response-mappings.md)
 

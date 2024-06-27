@@ -1,14 +1,14 @@
 ---
-title: "REST API"
+title: REST API
 feature: REST API
-description: "REST API 개요"
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+description: REST API 개요
+exl-id: 4b9beaf0-fc04-41d7-b93a-a1ae3147ce67
+source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
 workflow-type: tm+mt
-source-wordcount: '643'
-ht-degree: 0%
+source-wordcount: '626'
+ht-degree: 1%
 
 ---
-
 
 # REST API
 
@@ -30,15 +30,15 @@ Marketo에 대한 첫 번째 호출의 경우 잠재 고객 레코드를 검색�
 
 ![관리자 사용자 및 역할](assets/admin-users-and-roles.png)
 
-다음을 클릭합니다. [!UICONTROL Roles] 을 탭한 다음 새 역할을 선택하고 Access API 그룹의 역할에 최소 &quot;읽기 전용 리드&quot;(또는 &quot;읽기 전용 사용자&quot;) 권한을 할당합니다. 수사적 이름을 지정하고 다음을 클릭하십시오. [!UICONTROL Create].
+다음을 클릭합니다. **[!UICONTROL Roles]** 을 탭한 다음 새 역할을 선택하고 Access API 그룹의 역할에 최소 &quot;읽기 전용 리드&quot;(또는 &quot;읽기 전용 사용자&quot;) 권한을 할당합니다. 수사적 이름을 지정하고 다음을 클릭하십시오. **[!UICONTROL Create]**.
 
 ![새 역할](assets/new-role.png)
 
-이제 사용자 탭으로 돌아가서 새 사용자 초대를 클릭합니다. API 사용자임을 나타내는 수사적 이름과 이메일 주소를 지정하고 을(를) 클릭합니다. **[!UICONTROL Next]**.
+이제 다음으로 돌아가기 [!UICONTROL Users] tab 키를 누른 다음 클릭 **[!UICONTROL Invite New User]**. API 사용자임을 나타내는 수사적 이름과 이메일 주소를 지정하고 을(를) 클릭합니다. **[!UICONTROL Next]**.
 
 ![새 사용자 정보](assets/new-user-info.png)
 
-그런 다음 API 전용 옵션을 선택하고 만든 API 역할을 사용자에게 부여하고 을(를) 클릭합니다. **[!UICONTROL Next]**.
+그런 다음 [!UICONTROL API Only] 옵션을 설정하고, 만든 API 역할을 사용자에게 부여하고, **[!UICONTROL Next]**.
 
 ![새 사용자 권한](assets/new-user-permissions.png)
 
@@ -46,23 +46,23 @@ Marketo에 대한 첫 번째 호출의 경우 잠재 고객 레코드를 검색�
 
 ![새 사용자 메시지](assets/new-user-message.png)
 
-그런 다음 관리 메뉴로 이동하여 을 클릭합니다. **[!UICONTROL LaunchPoint]**.
+다음으로 이동 [!UICONTROL Admin] 메뉴 및 클릭 **[!UICONTROL LaunchPoint]**.
 
 ![Launchpoint](assets/admin-launchpoint.png)
 
-New 메뉴를 클릭하고 를 선택합니다. [!UICONTROL New Service]. 서비스에 수사적 이름을 지정하고 서비스 드롭다운 메뉴에서 &quot;사용자 정의&quot;를 선택합니다. 설명을 지정한 다음 API 전용 사용자 드롭다운 메뉴에서 새 사용자를 선택하고 을(를) 클릭합니다 [!UICONTROL Create].
+다음을 클릭합니다. **[!UICONTROL New]** 메뉴 및 선택 **[!UICONTROL New Service]**. 서비스에 수사적 이름을 지정하고 **[!UICONTROL Custom]** 다음에서 [!UICONTROL Service] 드롭다운 메뉴. 설명을 지정한 다음 [!UICONTROL API Only User] 드롭다운 메뉴 및 클릭 **[!UICONTROL Create]**.
 
 ![새 Launchpoint 서비스](assets/admin-launchpoint-new-service.png)
 
-새 서비스에 대한 세부 정보 보기 를 클릭하여 클라이언트 ID 및 클라이언트 암호에 액세스합니다. 지금은 다음을 클릭할 수 있습니다 [!UICONTROL Get Token] 1시간 동안 유효한 액세스 토큰을 생성하기 위한 버튼입니다. 지금은 메모에 토큰을 저장합니다.
+클릭 **[!UICONTROL View Details]** 새 서비스에서 클라이언트 ID 및 클라이언트 암호에 액세스할 수 있습니다. 지금은 다음을 클릭할 수 있습니다 **[!UICONTROL Get Token]** 1시간 동안 유효한 액세스 토큰을 생성하기 위한 버튼입니다. 지금은 메모에 토큰을 저장합니다.
 
 ![토큰 가져오기](assets/get-token.png)
 
-그런 다음 관리 메뉴로 이동한 다음 로 이동합니다. **[!UICONTROL Web Services]**.
+다음으로 이동 **[!UICONTROL Admin]** 메뉴, 다음으로 **[!UICONTROL Web Services]**.
 
 ![웹 서비스](assets/admin-web-services.png)
 
-REST API 상자에서 끝점을 찾아 지금은 메모에 저장합니다.
+다음 찾기 [!UICONTROL Endpoint] REST API 상자에 를 저장하고 지금은 노트에 저장합니다.
 
 ![REST 끝점](assets/admin-web-services-rest-endpoint-1.png)
 

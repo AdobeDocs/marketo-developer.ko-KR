@@ -1,14 +1,14 @@
 ---
-title: "PhoneGap"
-feature: "Mobile Marketing"
-description: "모바일 장치에서 Marketo과 PhoneGap 사용"
-source-git-commit: 2e4eb416846de3ad62ff0626f536630278e1c0cd
+title: PhoneGap
+feature: Mobile Marketing
+description: 모바일 장치에서 Marketo과 PhoneGap 사용
+exl-id: 99f14c76-9438-4942-9309-643bca434d07
+source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
 workflow-type: tm+mt
-source-wordcount: '812'
+source-wordcount: '797'
 ht-degree: 0%
 
 ---
-
 
 # PhoneGap
 
@@ -48,7 +48,7 @@ Marketo PhoneGap 플러그인 통합
 
 **Cordova 버전 8.0.0(Cordova@Android7.0.0) 이상**
 
-Cordova Android 플랫폼이 빌드되면 Android Studio로 앱을 열고 를 업데이트합니다. `dirs` 값 `Marketo.gradle` 에서 찾은 파일 `com.marketo.plugin` 폴더를 삭제합니다.
+Cordova Android 플랫폼이 빌드되면 Android Studio로 앱을 열고 `dirs` 값 `Marketo.gradle` 에서 찾은 파일 `com.marketo.plugin` 폴더를 삭제합니다.
 
 ```
 repositories{    
@@ -67,13 +67,13 @@ repositories{
 
 1. Firebase 콘솔에서 Firebase 앱을 구성합니다.
    1. 프로젝트 만들기/추가 [](https://console.firebase.google.com/)Firebase 콘솔.
-      1. 다음에서 [Firebase 콘솔](https://console.firebase.google.com/), 선택 [!UICONTROL Add Project].
-      1. 기존 Google Cloud 프로젝트 목록에서 GCM 프로젝트를 선택한 다음 을 선택합니다. [!UICONTROL Add Firebase].
+      1. 다음에서 [Firebase 콘솔](https://console.firebase.google.com/), 선택 **[!UICONTROL Add Project]**.
+      1. 기존 Google Cloud 프로젝트 목록에서 GCM 프로젝트를 선택한 다음 을 선택합니다. **[!UICONTROL Add Firebase]**.
       1. Firebase 시작 화면에서 &#39;Android 앱에 Firebase 추가&#39;를 선택합니다.
-      1. 패키지 이름과 SHA-1을 입력하고 [!UICONTROL Add App]. 새 항목 `google-services.json` firebase 앱용 파일이 다운로드되었습니다.
-   1. 프로젝트 개요에서 &#39;프로젝트 설정&#39;으로 이동
-      1. &#39;일반&#39; 탭을 클릭합니다. &quot;google-services.json&quot; 파일을 다운로드합니다.
-      1. &#39;클라우드 메시징&#39; 탭을 클릭합니다. &#39;서버 키&#39; 및 &#39;보낸 사람 ID&#39;를 복사합니다. Marketo에 이러한 &#39;서버 키&#39; 및 &#39;보낸 사람 ID&#39;를 제공하십시오.
+      1. 패키지 이름과 SHA-1을 입력하고 **[!UICONTROL Add App]**. 새 항목 `google-services.json` firebase 앱용 파일이 다운로드되었습니다.
+   1. 다음으로 이동 **[!UICONTROL Project Settings]** 위치: [!UICONTROL Project Overview]
+      1. 클릭 **[!UICONTROL General]** 탭. &quot;google-services.json&quot; 파일을 다운로드합니다.
+      1. 클릭 **[!UICONTROL Cloud Messaging]** 탭. 복사 [!UICONTROL Server Key] 및 [!UICONTROL Sender ID]. 다음 항목 제공 [!UICONTROL Server Key] 및 [!UICONTROL Sender ID] Marketo으로.
    1. Phonegap 앱에서 FCM 변경 사항 구성
       1. 다운로드한 &#39;google-services.json&#39; 파일을 Phonegap 앱 모듈 루트 디렉토리로 이동합니다
       1. 위치에서 &#39;MyFirebaseInstanceIDService&#39; 파일 제거 `platforms/android/app/src/main/java/com/gae/scaffolder/plugin` (사용하지 않음)
@@ -148,7 +148,7 @@ sharedInstance.trackPushNotification(launchOptions)
 
 ### 5. Marketo 프레임워크 초기화
 
-앱 시작 시 Marketo 프레임워크가 시작되도록 하려면 `onDeviceReady` 함수를 생성합니다.
+앱 시작 시 Marketo 프레임워크가 시작되도록 하려면 `onDeviceReady` 기본 JavaScript 파일에서 작동합니다.
 
 다음을 전달해야 합니다. `phonegap` PhoneGap Apps에 대한 프레임워크 유형으로 사용됩니다.
 
@@ -296,7 +296,7 @@ marketo.reportaction(
 
 ## 세션 보고
 
-아래 표시된 대로 &quot;일시 중지&quot; 및 &quot;다시 시작&quot; 이벤트 유형을 바인딩하여 시작 및 중지 이벤트를 보고합니다.  모바일 애플리케이션에서 보낸 시간을 추적하는 데 사용됩니다. 참고: Android에서는 필수입니다.
+아래 표시된 대로 &quot;일시 중지&quot; 및 &quot;다시 시작&quot; 이벤트 유형을 바인딩하여 시작 및 중지 이벤트를 보고합니다.  모바일 애플리케이션에서 보낸 시간을 추적하는 데 사용됩니다. 참고: Android에서 필수입니다.
 
 ```
 //Add the following code in your www/js/index.js

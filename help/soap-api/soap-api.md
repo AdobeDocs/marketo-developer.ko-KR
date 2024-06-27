@@ -1,28 +1,28 @@
 ---
-title: "SOAP API"
+title: SOAP API
 feature: SOAP
-description: "Marketo SOAP 개요"
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+description: Marketo SOAP 개요
+exl-id: 6618cc82-15ae-4030-aa00-438e635d8369
+source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
 workflow-type: tm+mt
-source-wordcount: '242'
+source-wordcount: '230'
 ht-degree: 0%
 
 ---
-
 
 # SOAP API
 
 SOAP API는 더 이상 활성 개발 상태가 아닙니다. 호출은 여전히 작동하지만, 우리의 발전은 [나머지](https://developer.adobe.com/marketo-apis/) 앞으로 나아갑니다.
 
-Marketo SOAP API를 통해 Marketo 내에 저장된 엔티티 및 데이터를 생성, 검색 및 제거할 수 있습니다. 다음을 찾을 수 있습니다. [Marketo-SOAP-SDK](https://github.com/Marketo/SOAP-API-Java-Client) GitHub에서. 또한 [클라이언트 라이브러리](https://github.com/Marketo/Community-Supported-Client-Libraries) 시간을 절약하기 위해
+Marketo SOAP API를 사용하면 Marketo 내에 저장된 엔티티 및 데이터를 생성, 검색 및 제거할 수 있습니다. 다음을 찾을 수 있습니다. [Marketo-SOAP-SDK](https://github.com/Marketo/SOAP-API-Java-Client) GitHub에서. 또한 [클라이언트 라이브러리](https://github.com/Marketo/Community-Supported-Client-Libraries) 시간을 절약하기 위해
 
 최신 API 버전: 3_1
 
 ## SOAP WSDL
 
-SOAP WSDL 문서를 검색하려면 **[!UICONTROL Admin]** > **[!UICONTROL Integration]** > **[!UICONTROL Web Services]** 메뉴 아래의 제품에서 사용할 수 있습니다.
+SOAP SOAP WSDL 문서를 검색하려면 **[!UICONTROL Admin]** > **[!UICONTROL Integration]** > **[!UICONTROL Web Services]** 메뉴 아래의 제품에서 사용할 수 있습니다.
 
-![SOAP 끝점](assets/endpoint-soap.png)
+![SOAP 엔드포인트](assets/endpoint-soap.png)
 
 WSDL URL은
 
@@ -40,10 +40,10 @@ WSDL에 정의된 끝점을 사용하지 마십시오. 각 Marketo 인스턴스�
 
 ## Marketo의 SOAP API 설정
 
-1. 관리 섹션으로 이동하고 웹 서비스를 클릭합니다.
+1. 로 이동 **[!UICONTROL Admin]** 섹션 및 클릭 **[!UICONTROL Web Services]**.
 
 ![admin-web-services2](assets/admin-web-services2.png)
 
-1. 적절한 암호화 키를 설정하고 &quot;변경 내용 저장&quot;을 클릭한 다음 SOAP API 끝점, 사용자 ID 및 암호화 키 값을 사용하여 올바른 암호화 키를 생성합니다 [인증 서명](authentication-signature.md) 각 SOAP API 호출.
+1. 적절한 설정 [!UICONTROL Encryption Key], 클릭 **[!UICONTROL Save Changes]** 및 SOAP API 사용 [!UICONTROL Endpoint], [!UICONTROL User ID], 및 [!UICONTROL Encryption Key] 정확한 값을 생성하는 값 [인증 서명](authentication-signature.md) 각 SOAP API 호출에 대해.
 
 ![admin-web-services3](assets/admin-web-services3.png)

@@ -1,30 +1,30 @@
 ---
-title: "Ionic"
-feature: "Mobile Marketing"
-description: "모바일 장치용 Marketo에서 Ionic 사용"
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+title: '[!DNL Ionic]'
+feature: Mobile Marketing
+description: 사용 [!DNL Ionic] 모바일 장치용 Marketo 사용
+exl-id: 204e5fb4-c9d6-43a6-9d77-0b2a67ddbed3
+source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
 workflow-type: tm+mt
-source-wordcount: '613'
+source-wordcount: '606'
 ht-degree: 1%
 
 ---
 
-
 # 이온-
 
-이 항목에서는 Marketo Cordova 플러그인을 통합하는 방법을 설명합니다. 이온 커패시터는 현재 지원되지 않습니다.
+이 항목에서는 Marketo Cordova 플러그인을 통합하는 방법을 설명합니다. [!DNL Ionic] 커패시터는 현재 지원되지 않습니다.
 
 ## 필요 조건
 
 1. [Marketo Admin에서 애플리케이션 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app) (애플리케이션 암호 키 및 Munchkin Id 얻기).
 1. 푸시 알림 설정([iOS](push-notifications.md) | [Android](push-notifications.md) ).
-1. 설치 [이온-](https://ionicframework.com/getting-started/) 및 [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/).
+1. 설치 [[!DNL Ionic]](https://ionicframework.com/getting-started/) 및 [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/).
 
 ## 설치 지침
 
-### Marketo Ionic Plugin 설정
+### Marketo 설정 [!DNL Ionic] 플러그인
 
-1. Cordova CLI가 설치되어 있다고 가정할 경우 Ionic Application 디렉토리로 이동하고 다음 명령을 실행하여 Marketo 플러그인을 애플리케이션에 추가합니다.
+1. Cordova CLI가 설치되어 있다고 가정할 경우 [!DNL Ionic] application directory를 실행하고 다음 명령을 실행하여 Marketo 플러그인을 응용 프로그램에 추가합니다.
 
    `$ ionic plugin add https://github.com/Marketo/PhoneGapPlugin.git --variable APPLICATION_SECRET_KEY="YOUR_APPLICATION_SECRET"`
 
@@ -72,9 +72,9 @@ sharedInstance.trackPushNotfication(launchOptions)
 
 ### Marketo 프레임워크 초기화
 
-앱 시작 시 Marketo 프레임워크가 시작되도록 하려면 `onDeviceReady` 함수를 생성합니다.
+앱 시작 시 Marketo 프레임워크가 시작되도록 하려면 `onDeviceReady` 기본 JavaScript 파일에서 작동합니다.
 
-다음을 통과해야 합니다. `ionicCordova` Ionic Cordova Apps의 프레임워크 유형으로 사용됩니다.
+다음을 통과해야 합니다. `ionicCordova` 의 프레임워크 유형으로 [!DNL Ionic] Cordova 앱.
 
 #### 구문
 
@@ -218,7 +218,7 @@ marketo.reportaction(
 
 ## 세션 보고
 
-아래 표시된 대로 &quot;일시 중지&quot; 및 &quot;다시 시작&quot; 이벤트 유형을 바인딩하여 시작 및 중지 이벤트를 보고합니다. 모바일 애플리케이션에서 보낸 시간을 추적하는 데 사용됩니다. 참고: Android에서는 필수입니다.
+아래 표시된 대로 &quot;일시 중지&quot; 및 &quot;다시 시작&quot; 이벤트 유형을 바인딩하여 시작 및 중지 이벤트를 보고합니다. 모바일 애플리케이션에서 보낸 시간을 추적하는 데 사용됩니다. 참고: Android에서 필수입니다.
 
 ```javascript
 //Add the following code in your www/js/index.js
