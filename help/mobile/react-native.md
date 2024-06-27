@@ -1,16 +1,16 @@
 ---
-title: "React Native"
-feature: "Mobile Marketing"
-description: "Marketo에 대한 React Native 설치"
-source-git-commit: 416044a6cce4dac229640058a9cb0013070c9d9c
+title: React Native
+feature: Mobile Marketing
+description: Marketo용 React Native 설치
+exl-id: 462fd32e-91f1-4582-93f2-9efe4d4761ff
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '822'
 ht-degree: 0%
 
 ---
 
-
-# React 기본
+# React Native
 
 이 문서에서는 모바일 앱을 플랫폼과 통합하기 위해 Marketo의 기본 SDK를 설치하고 설정하는 방법에 대해 설명합니다.
 
@@ -47,7 +47,7 @@ build script {
 
 #### iOS SDK 통합
 
-React 네이티브 프로젝트에 대한 브리지를 만들기 전에 Xcode 프로젝트에서 SDK를 설정하는 것이 중요합니다.
+React Native 프로젝트에 대한 브리지를 만들기 전에 Xcode 프로젝트에서 SDK를 설정하는 것이 중요합니다.
 
 **SDK 통합 - CocoaPod 사용**
 
@@ -81,9 +81,9 @@ React 네이티브 프로젝트에 대한 브리지를 만들기 전에 Xcode �
 
 ## 기본 모듈 설치 지침
 
-경우에 따라 React 네이티브 앱은 JavaScript에서 기본적으로 사용할 수 없는 네이티브 플랫폼 API(예: Apple 또는 Google Pay에 액세스하기 위한 네이티브 API)에 액세스해야 합니다. JavaScript에서 재구현하거나 이미지 처리와 같은 작업을 위해 고성능, 다중 스레드 코드를 작성할 필요 없이 일부 기존 Objective-C, Swift, Java 또는 C++ 라이브러리를 재사용할 수 있습니다.
+경우에 따라 React Native 앱은 JavaScript에서 기본적으로 사용할 수 없는 기본 플랫폼 API(예: Apple 또는 Google Pay에 액세스하기 위한 기본 API)에 액세스해야 합니다. JavaScript에서 재구현하거나 이미지 처리와 같은 작업을 위해 고성능, 다중 스레드 코드를 작성할 필요 없이 일부 기존 Objective-C, Swift, Java 또는 C++ 라이브러리를 재사용할 수 있습니다.
 
-NativeModule 시스템은 Java/Objective-C/C++(네이티브) 클래스의 인스턴스를 JavaScript(JS)에 JS 개체로 노출하므로 JS 내에서 임의의 네이티브 코드를 실행할 수 있습니다. 이 기능이 일반적인 개발 프로세스의 일부가 될 것으로 예상하지는 않지만 반드시 있어야 합니다. React Native가 JS 앱에 필요한 기본 API를 내보내지 않는 경우 직접 내보낼 수 있습니다.
+NativeModule 시스템은 Java/Objective-C/C++(네이티브) 클래스의 인스턴스를 JavaScript(JS)에 JS 개체로 노출하므로 JS 내에서 임의의 네이티브 코드를 실행할 수 있습니다. 이 기능이 일반적인 개발 프로세스의 일부가 될 것으로 예상하지는 않지만 반드시 있어야 합니다. React Native에서 JS 앱에 필요한 기본 API를 내보내지 않는 경우 직접 내보낼 수 있어야 합니다.
 
 React Native 브리지는 JSX와 기본 앱 레이어 간의 통신에 사용됩니다. 이 경우 호스트 앱은 Marketo SDK의 메서드를 호출할 수 있는 JSX 코드를 작성할 수 있습니다.
 
@@ -226,7 +226,7 @@ public class MainApplication extends Application implements ReactApplication {
 
 다음 안내서에서는 기본 모듈을 만듭니다. _RNMarketoModule_&#x200B;를 활성화하면 JavaScript에서 Marketo의 API에 액세스할 수 있습니다.
 
-시작하려면 Xcode에서 React Native 애플리케이션 내에서 iOS 프로젝트를 엽니다. React Native 앱 내에서 iOS 프로젝트를 찾을 수 있습니다. Xcode를 사용하여 네이티브 코드를 작성하는 것이 좋습니다. Xcode는 iOS 개발을 위해 빌드되었으며 이를 사용하면 코드 구문과 같은 사소한 오류를 빠르게 해결하는 데 도움이 됩니다.
+시작하려면 Xcode에서 React Native 애플리케이션 내에서 iOS 프로젝트를 엽니다. iOS 프로젝트는 React Native 앱 내에서 여기에서 찾을 수 있습니다. Xcode를 사용하여 네이티브 코드를 작성하는 것이 좋습니다. Xcode는 iOS 개발을 위해 빌드되었으며 이를 사용하면 코드 구문과 같은 사소한 오류를 빠르게 해결하는 데 도움이 됩니다.
 
 기본 사용자 지정 기본 모듈 헤더 및 구현 파일을 만듭니다. 라는 새 파일 만들기 `MktoBridge.h` 다음을 추가합니다.
 
