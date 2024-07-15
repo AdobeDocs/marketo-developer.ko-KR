@@ -1,6 +1,6 @@
 ---
 user-guide-title: "[!DNL Marketo] 개발자 안내서"
-user-guide-description: "이 안내서에서는 다음 작업에 대한 지침을 제공합니다. [!DNL Marketo] API."
+user-guide-description: "이 안내서에서는  [!DNL Marketo] API 사용에 대한 지침을 제공합니다."
 breadcrumb-title: "[!DNL Marketo] 개발자 안내서"
 role: Admin
 feature-set: "Marketo Engage"
@@ -33,7 +33,7 @@ ht-degree: 7%
    - [트리거](javascript-api/triggers.md)
    - [웹 Personalization](javascript-api/web-personalization.md)
 - 모바일 {#mobile}
-   - [설치 [!DNL Adobe Launch] 확장](mobile/adobe-launch-extension-installation.md)
+   - [ [!DNL Adobe Launch] 확장 설치](mobile/adobe-launch-extension-installation.md)
    - [[!DNL Adobe Launch] 확장](mobile/adobe-launch-extension.md)
    - [고급 보안 모드](mobile/advanced-security-access-mode.md)
    - [사용자 지정 작업](mobile/custom-actions.md)
@@ -46,7 +46,7 @@ ht-degree: 7%
    - [푸시 알림](mobile/push-notifications.md)
    - [React Native](mobile/react-native.md)
    - [사용자 프로필](mobile/user-profiles.md)
-- 나머지{#rest}
+- REST{#rest}
    - [REST API 개요](rest-api/rest-api.md)
    - [REST API 참조](https://developer.adobe.com/marketo-apis/)
    - Assets {#assets}
@@ -72,13 +72,13 @@ ht-degree: 7%
    - [인증 서명](rest-api/authentication-signature.md)
    - [기본 URL](rest-api/base-url.md)
    - [우수 사례](rest-api/marketo-integration-best-practices.md)
-   - 일괄 추출 {#bulk-extract}
+   - {#bulk-extract} 일괄 추출
       - [일괄 활동](rest-api/bulk-activity-extract.md)
       - [대량 사용자 지정 개체](rest-api/bulk-custom-object-extract.md)
       - [일괄 추출](rest-api/bulk-extract.md)
       - [일괄 리드](rest-api/bulk-lead-extract.md)
       - [일괄 프로그램 구성원](rest-api/bulk-program-member-extract.md)
-   - 일괄 가져오기 {#bulk-import}
+   - {#bulk-import} 일괄 가져오기
       - [대량 사용자 지정 개체](rest-api/bulk-custom-object-import.md)
       - [일괄 가져오기](rest-api/bulk-import.md)
       - [일괄 리드](rest-api/bulk-lead-import.md)
@@ -88,7 +88,7 @@ ht-degree: 7%
    - [Swagger 정의 다운로드](rest-api/swagger.md)
    - [끝점 참조](rest-api/endpoint-reference.md)
    - [오류 코드](rest-api/error-codes.md)
-   - 잠재 고객 데이터베이스 {#lead-database}
+   - 리드 데이터베이스 {#lead-database}
       - [회사](rest-api/companies.md)
       - [필드 목록](rest-api/fields.md)
       - [필드 유형](rest-api/field-types.md)
@@ -108,7 +108,7 @@ ht-degree: 7%
    - [사용자 컨텍스트](rest-api/user-context.md)
    - [사용자 관리](rest-api/user-management.md)
 - SOAP {#soap}
-   - 활동 {#activities}
+   - {#activities} 활동
       - [활동](soap-api/activities.md)
       - [[!DNL getLeadActivity]](soap-api/getleadactivity.md)
       - [[!DNL getLeadChanges]](soap-api/getleadchanges.md)
@@ -124,7 +124,7 @@ ht-degree: 7%
       - [[!DNL getCustomObjects]](soap-api/getcustomobjects.md)
       - [[!DNL syncCustomObjects]](soap-api/synccustomobjects.md)
    - [오류 코드](soap-api/error-codes.md)
-   - 잠재 고객 {#leads}
+   - {#leads} 리드
       - [[!DNL getLead]](soap-api/getlead.md)
       - [[!DNL getMultipleLeads]](soap-api/getmultipleleads.md)
       - [[!DNL mergeLeads]](soap-api/mergeleads.md)
@@ -148,7 +148,7 @@ ht-degree: 7%
       - [[!DNL importToList]](soap-api/importtolist.md)
       - [[!DNL listOperation]](soap-api/listoperation.md)
    - [스트림 위치](soap-api/stream-position.md)
-- 웹훅 {#webhooks}
+- 웹 후크 {#webhooks}
    - [오류수](webhooks/errors.md)
    - [응답 매핑](webhooks/response-mappings.md)
    - [웹훅](webhooks/webhooks.md)
