@@ -1,14 +1,14 @@
 ---
-title: "syncCustomObjects"
+title: syncCustomObjects
 feature: SOAP
-description: "syncCustomObjects SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: syncCustomObjects SOAP 호출
+exl-id: dbdd7ee6-f83f-4e20-b847-25a61f0f6046
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '226'
 ht-degree: 3%
 
 ---
-
 
 # syncCustomObjects
 
@@ -20,7 +20,7 @@ ht-degree: 3%
 
 단일 API 호출에서 일부 업데이트는 성공하고 일부는 실패할 수 있습니다. 각 실패에 대해 오류 메시지가 반환됩니다.
 
-새 사용자 지정 개체 UI로 프로비저닝된 사용자 지정 개체의 경우, 로 지정된 필드만 `dedupe` ui의 필드는 의 속성으로 전달될 수 있습니다. `CustomObjKeyList`. 아닌 필드 연결 `dedupe` 필드는에서 속성으로 전달되어야 합니다. `customObjAttributeList`.
+새 사용자 지정 개체 UI로 제공된 사용자 지정 개체의 경우 UI에서 `dedupe` 필드로 지정된 필드만 `CustomObjKeyList`의 특성으로 전달될 수 있습니다. `dedupe` 필드가 아닌 링크 필드는 `customObjAttributeList`에서 특성으로 전달해야 합니다.
 
 ## 요청
 

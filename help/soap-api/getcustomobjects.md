@@ -1,30 +1,30 @@
 ---
-title: "getCustomObjects"
+title: getCustomObjects
 feature: SOAP, Custom Objects
-description: "getCustomObjects SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: getCustomObjects SOAP 호출
+exl-id: 32ff208a-f824-4420-a26f-1fd969a2bc4c
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '156'
 ht-degree: 4%
 
 ---
 
-
 # getCustomObjects
 
 0개 또는 하나의 사용자 지정 개체 키로 구성된 기준의 조합을 사용하여 하나 이상의 사용자 지정 개체를 검색합니다.
 
-일치하는 사용자 지정 개체 목록, 모든 단일 형식, 일괄 처리에서 최대 100개 및 [스트림 위치](stream-position.md) 연속 배치를 검색하기 위한 토큰.
+일치하는 사용자 지정 개체 목록, 모든 단일 형식, 일괄 처리의 최대 100개 및 연속 일괄 처리를 검색하기 위한 [스트림 위치](stream-position.md) 토큰을 반환합니다.
 
 ## 요청
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
 | objTypeName | 필수 | 사용자 지정 개체 이름 |
-| customObjKeyLists->keyList->attribute | 필수 | 속성은 검색할 사용자 지정 개체를 식별하는 데 사용되는 키/값 쌍입니다. 에서 여러 속성을 지정할 수 있습니다. `customObjKeyLists` |
+| customObjKeyLists->keyList->attribute | 필수 | 속성은 검색할 사용자 지정 개체를 식별하는 데 사용되는 키/값 쌍입니다. `customObjKeyLists`에서 여러 특성을 지정할 수 있습니다. |
 | includeAttributes | 필수 | 검색할 사용자 지정 오브젝트의 필드 목록입니다. none을 전달하면 모든 값이 반환됩니다. |
 | batchSize | 선택 사항 | 반환할 개체 수(최대 100개) |
-| streamPosition | 선택 사항 | 여러 결과 세트의 페이지를 매기는 데 사용됩니다. 전달된 값은 이전 값에서 반환된 값입니다 `getCustomObjects` 호출합니다. |
+| streamPosition | 선택 사항 | 여러 결과 세트의 페이지를 매기는 데 사용됩니다. 전달된 값은 이전 `getCustomObjects` 호출에서 반환된 값입니다. |
 
 ## 요청 XML
 

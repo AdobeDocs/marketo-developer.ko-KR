@@ -1,20 +1,20 @@
 ---
-title: "리디렉션"
-description: "리디렉션"
+title: 리디렉션
+description: 리디렉션
 feature: Javascript
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+exl-id: bbf91245-42e5-47ae-a561-e522cc65ff49
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '468'
 ht-degree: 6%
 
 ---
 
-
 # 리디렉션
 
 RTP Redirect API를 사용하면 분할된 대상을 대상 URL로 리디렉션할 수 있습니다.
 
-- Web Personalization 고객이 되고 [RTP 태그 배포됨](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) User Context API를 사용하기 전에 사이트에서.
+- User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
 - RTP는 계정 기반 마케팅 명명된 계정 목록을 지원하지 않습니다. ABM 목록 및 코드는 RTP 내에서 관리되는 업로드된 계정 목록(CSV 파일)에만 해당됩니다.
 
 ## 사용량
@@ -34,22 +34,22 @@ RTP Redirect API를 사용하면 분할된 대상을 대상 URL로 리디렉션�
 
 | 조건 | 데이터 계층 | 예 |
 |-------------------------------------------------|----------------------|------------------------------------------------------------------------------------------------------------------|
-| 일치하는 세그먼트(첫 번째 클릭 후에만 작동) | matchedSegments.name | rtp( &#39;send&#39;, &#39;redirect&#39;, &#39;matchedSegments.name&#39; , [&#39;Fortune 1,000&#39; , &#39;Enterprise&#39;] , &#39;http://www.marketo.com&#39;); |
-| 일치하는 세그먼트(첫 번째 클릭 후에만 작동) | matchedSegments.id | rtp( &#39;send&#39;, &#39;redirect&#39;, &#39;matchedSegments.id&#39; , [106 , 107 , 190] , &#39;http://www.marketo.com&#39;); |
-| ABM 목록 | abm.name | rtp( &#39;send&#39;, &#39;redirect&#39;, &#39;abm.name&#39; , [&#39;top_key_accounts&#39;, &#39;active_customers&#39;] , &#39;http://www.marketo.com&#39;); |
-| ABM 목록 | abm.code | rtp( &#39;send&#39;, &#39;redirect&#39;, &#39;abm.code&#39; , [13 , 15] , &#39;http://www.marketo.com&#39;); |
-| 조직 | org | rtp( &#39;send&#39;, &#39;redirect&#39;, &#39;org&#39;, [&#39;ebay&#39;], &#39;http://www.marketo.com&#39;); |
-| 위치 | location.country | rtp( &#39;send&#39;, &#39;redirect&#39;, &#39;location.country&#39; , [&#39;미국&#39;], &#39;http://www.marketo.com&#39;); |
-| 위치 | location.state | rtp( &#39;send&#39;, &#39;redirect&#39;, &#39;location.state&#39;, [&#39;ca&#39;], &#39;http://www.marketo.com&#39;); |
-| 위치 | location.city | rtp( &#39;send&#39;, &#39;redirect&#39;, &#39;location.city&#39;, [&#39;산마테오&#39;], &#39;http://www.marketo.com&#39;); |
-| 산업 | 업종 | rtp( &#39;send&#39;, &#39;redirect&#39; , &#39;industries&#39; , [&#39;교육&#39;], &#39;http://www.marketo.com&#39;); |
-| ISP | isp | rtp( &#39;send&#39;, &#39;redirect&#39;, isp , [&#39;False&#39;], &#39;http://www.marketo.com&#39;); |
+| 일치하는 세그먼트(첫 번째 클릭 후에만 작동) | matchedSegments.name | rtp(&#39;send&#39;, &#39;redirect&#39; , &#39;matchedSegments.name&#39; , [&#39;Fortune 1,000&#39; , &#39;Enterprise&#39;] , &#39;http://www.marketo.com&#39;); |
+| 일치하는 세그먼트(첫 번째 클릭 후에만 작동) | matchedSegments.id | rtp(&#39;send&#39;, &#39;redirect&#39; , &#39;matchedSegments.id&#39; , [106 , 107 , 190] , &#39;http://www.marketo.com&#39;); |
+| ABM 목록 | abm.name | rtp(&#39;send&#39;, &#39;redirect&#39; , &#39;abm.name&#39; , [&#39;top_key_accounts&#39;, &#39;active_customers&#39;] , &#39;http://www.marketo.com&#39;); |
+| ABM 목록 | abm.code | rtp(&#39;send&#39;, &#39;redirect&#39; , &#39;abm.code&#39; , [13 , 15] , &#39;http://www.marketo.com&#39;); |
+| 조직 | org | rtp(&#39;send&#39;, &#39;redirect&#39;, &#39;org&#39;, [&#39;ebay&#39;], &#39;http://www.marketo.com&#39;); |
+| 위치 | location.country | rtp(&#39;send&#39;, &#39;redirect&#39; , &#39;location.country&#39; , [&#39;United States&#39;], &#39;http://www.marketo.com&#39;); |
+| 위치 | location.state | rtp(&#39;send&#39;, &#39;redirect&#39;, &#39;location.state&#39;, [&#39;ca&#39;], &#39;http://www.marketo.com&#39;); |
+| 위치 | location.city | rtp(&#39;send&#39;, &#39;redirect&#39;, &#39;location.city&#39;, [&#39;San Mateo&#39;], &#39;http://www.marketo.com&#39;); |
+| 산업 | 업종 | rtp(&#39;send&#39;, &#39;redirect&#39; , &#39;industries&#39; , [&#39;Education&#39;], &#39;http://www.marketo.com&#39;); |
+| ISP | isp | rtp(&#39;send&#39;, &#39;redirect&#39; , isp , [&#39;False&#39;], &#39;http://www.marketo.com&#39;); |
 
 
 ## 참고 사항
 
 - 리디렉션 규칙/조건이 Firmographics(회사, 업계, 위치)를 기반으로 하는 경우 rtp(&#39;send&#39;, &#39;view&#39;) 및 rtp(&#39;get&#39;, &#39;campaign&#39;) 앞에 리디렉션 코드를 삽입하여 지연을 줄일 수 있습니다.
-- JavaScript를 통한 리디렉션은 브라우저측 리디렉션이며 최대 속도에 도달하기 위한 웹 사이트의 로드 및 최적화에 따라 다릅니다.
+- JavaScript을 통한 리디렉션은 브라우저측 리디렉션이며 최대 속도에 도달하기 위한 웹 사이트의 로드 및 최적화에 따라 다릅니다.
 - 가장 좋은 방법은 rtp 태그 바로 뒤에 리디렉션 코드를 설정하여 헤더에 배치하는 것입니다.
 - 자체 리디렉션을 실행하고 있지 않은지 확인합니다(rtp에 순환 리디렉션 호출을 차단하는 안전 네트워크가 있음).
 

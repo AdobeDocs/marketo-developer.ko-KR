@@ -1,20 +1,20 @@
 ---
-title: "영업 기회 역할"
+title: 영업 기회 역할
 feature: REST API
-description: "Marketo에서 영업 기회 역할 처리"
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: Marketo에서 영업 기회 역할 처리.
+exl-id: 2ba84f4d-82d0-4368-94e8-1fc6d17b69ed
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '253'
 ht-degree: 0%
 
 ---
 
-
 # 영업 기회 역할
 
-[영업 기회 역할 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/getOpportunityRolesUsingGET)
+[영업 기회 역할 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/getOpportunityRolesUsingGET)
 
-리드는 중간자를 통해 기회에 연결됩니다. `opportunityRole` 개체.
+리드는 중간 `opportunityRole` 개체를 통해 기회에 연결됩니다.
 
 영업 기회 역할 API는 기본 CRM 동기화가 활성화되지 않은 구독에만 노출됩니다.
 
@@ -106,7 +106,7 @@ GET /rest/v1/opportunities/roles/describe.json
 
 ## 쿼리
 
-두 가지 모두 `dedupeFields` 및 `searchableFields` 은 기회와 약간 다릅니다. `dedupeFields` 실제로 복합 키를 제공합니다. 여기서 세 가지 모두 `externalOpportunityId`, `leadId`, 및 `role` 필수 항목입니다. 레코드 만들기에 성공하려면 ID 필드를 통한 영업 기회와 잠재 고객 링크가 모두 대상 인스턴스에 있어야 합니다. 대상 `searchableFields`, `marketoGUID`, `leadId`, 및 `externalOpportunityId` 는 자체적으로 쿼리에 유효하며 Opportunity 와 동일한 패턴을 사용하지만 쿼리에 복합 키를 사용하는 추가 옵션이 있으므로 추가 쿼리 매개 변수와 함께 POST을 통해 JSON 개체를 제출해야 합니다 `_method=GET`.
+`dedupeFields`과(와) `searchableFields`이(가) 모두 기회와 약간 다릅니다. `dedupeFields`은(는) 실제로 복합 키를 제공하므로 `externalOpportunityId`, `leadId` 및 `role`의 세 가지 키가 모두 필요합니다. 레코드 만들기에 성공하려면 ID 필드를 통한 영업 기회와 잠재 고객 링크가 모두 대상 인스턴스에 있어야 합니다. `searchableFields`의 경우 `marketoGUID`, `leadId` 및 `externalOpportunityId`은(는) 모두 자체 쿼리에 유효하며 Opportunities와 동일한 패턴을 사용하지만 쿼리에 복합 키를 사용하는 추가 옵션이 있습니다. 이 경우 추가 쿼리 매개 변수 `_method=GET`을(를) 사용하여 POST을 통해 JSON 개체를 제출해야 합니다.
 
 ```
 POST /rest/v1/opportunities/roles.json?_method=GET

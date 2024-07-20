@@ -1,14 +1,14 @@
 ---
-title: "getTags"
+title: getTags
 feature: SOAP, Tags
-description: "getTags SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: getTags SOAP 호출
+exl-id: 4fd9de1a-9362-479a-afe1-09ef0aaf5e6e
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '94'
 ht-degree: 4%
 
 ---
-
 
 # getTags
 
@@ -23,7 +23,7 @@ ht-degree: 4%
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
-| tagList->tag | 선택 사항 | 쿼리할 태그 목록입니다. 각 태그는 문자열로 유형 및 값 배열을 가질 수 있습니다. If `<tagList>` 이(가) 생략되면 모든 채널에 대한 정보를 받게 됩니다. |
+| tagList->tag | 선택 사항 | 쿼리할 태그 목록입니다. 각 태그는 문자열로 유형 및 값 배열을 가질 수 있습니다. `<tagList>`이(가) 생략되면 모든 채널에 대한 정보를 받게 됩니다. |
 
 ## 요청 XML
 

@@ -1,14 +1,14 @@
 ---
-title: "딥 링크 활성화"
-feature: "Mobile Marketing"
-description: "딥 링크 활성화 지침"
-source-git-commit: cb000968c78e062b3c17be7d0faa6236c73e7358
+title: 딥링크 활성화
+feature: Mobile Marketing
+description: 딥링크 활성화 지침
+exl-id: c3647416-d81d-4f15-b660-bcb3e54cb9bc
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '376'
 ht-degree: 0%
 
 ---
-
 
 # 딥링크 활성화
 
@@ -22,18 +22,18 @@ ht-degree: 0%
 
 이렇게 하려면 앱에 대한 사용자 지정 URI 구조를 정의하고, 앱의 매니페스트 내에서 스키마를 등록한 다음 딥링크 이벤트를 처리하고 앱의 적절한 위치로 라우팅하는 코드를 추가해야 합니다.
 
-iOS의 경우 다음에 대한 Apple 설명서를 참조하십시오. [앱에 대한 사용자 지정 URL 체계 정의](https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app).
+iOS의 경우 [앱에 대한 사용자 지정 URL 체계 정의](https://developer.apple.com/documentation/xcode/defining-a-custom-url-scheme-for-your-app)에 대한 Apple 설명서를 참조하십시오.
 
-Android의 경우 다음에 대한 Google 설명서 를 참조하십시오. [앱 컨텐츠에 대한 딥링크 활성화](https://developer.android.com/training/app-links/deep-linking).
+Android의 경우 [앱 컨텐츠에 대한 딥링크 사용](https://developer.android.com/training/app-links/deep-linking)에 대한 Google 설명서를 참조하십시오.
 
-PhoneGap 앱의 경우 딥링크가 기본 iOS 또는 Android 앱만큼 바로 연결되지 않지만, 하이브리드 앱이 iOS 및 Android 모두에서 딥링크 사용자 지정 URL 체계 및 범용/앱 링크에 응답할 수 있도록 하는 플러그인이 있습니다. 고려 [이러한 플러그인](https://cordova.apache.org/plugins/?q=deeplink).
+PhoneGap 앱의 경우 딥링크가 기본 iOS 또는 Android 앱만큼 바로 연결되지 않지만, 하이브리드 앱이 iOS 및 Android 모두에서 딥링크 사용자 지정 URL 체계 및 범용/앱 링크에 응답할 수 있도록 하는 플러그인이 있습니다. [이러한 플러그인](https://cordova.apache.org/plugins/?q=deeplink)을 고려하십시오.
 
 앱에서 딥링크를 활성화한 경우 푸시 메시지에 대한 탭 작업에 삽입할 수 있도록 사용자 지정 URI를 Marketo 사용자와 공유합니다.
 
-Marketo은 테스트 장치를 설정할 때 사전 정의된 URI 구조를 사용합니다. 의 &quot;테스트 장치&quot; 섹션을 참조하십시오. [설치 안내서](installation.md) 추가 정보.
+Marketo은 테스트 장치를 설정할 때 사전 정의된 URI 구조를 사용합니다. 자세한 내용은 [설치 안내서](installation.md)의 &quot;테스트 장치&quot; 섹션을 참조하십시오.
 
 ## URI 구조 정의에 대한 우수 사례
 
-브랜드에 기존 모바일 사이트가 있는 경우, 가장 좋은 방법은 딥링크 URI에 대한 URL 구조를 따라가는 것입니다. 예를 들어 다음과 같습니다. `https://myappname.com/products/purple-shirt` 해당 제품의 웹 사이트 주소입니다. `myappname://products/purple-shirt` 는 앱에서 사용하기에 좋은 딥링크 URI 구조입니다.
+브랜드에 기존 모바일 사이트가 있는 경우, 가장 좋은 방법은 딥링크 URI에 대한 URL 구조를 따라가는 것입니다. 예를 들어 `https://myappname.com/products/purple-shirt`이(가) 해당 제품의 웹 사이트 주소인 경우 `myappname://products/purple-shirt`은(는) 앱에서 사용할 수 있는 딥링크 URI 구조입니다.
 
-일반적으로 귀하의 계획은 귀하의 브랜드에 고유해야 합니다. 현재 전 세계적으로 스키마를 고유하게 만드는 규정은 없지만 스키마가 고유한지 확인할 수 있는 한 가지 방법은 도메인 이름(예: `org.companyname`).
+일반적으로 귀하의 계획은 귀하의 브랜드에 고유해야 합니다. 현재 전 세계적으로 고유한 스키마를 만드는 규정이 없지만 스키마가 고유한지 확인하는 한 가지 방법은 도메인 이름(예: `org.companyname`)을 바꾸는 것입니다.

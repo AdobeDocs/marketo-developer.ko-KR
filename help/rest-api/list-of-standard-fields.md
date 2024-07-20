@@ -1,20 +1,20 @@
 ---
-title: "표준 필드"
+title: 표준 필드
 feature: REST API, Field Management
-description: "표준 Marketo 필드 표"
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: 표준 Marketo 필드 표입니다.
+exl-id: 147dbdff-4bc9-4ab3-8918-c4de3e1aa97a
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '1140'
 ht-degree: 11%
 
 ---
 
-
 # 표준 필드
 
 다음은 API를 통해 액세스할 수 있는 Marketo에서 사용할 수 있는 표준 필드 목록입니다.
 
-REST를 사용하여 잠재 고객 레코드에서 사용할 수 있는 모든 지원되는 필드 이름 목록을 검색할 수 있습니다 [리드 설명](https://developer.adobe.com/marketo-apis/api/mapi/) 엔드포인트.
+REST [리드 설명](https://developer.adobe.com/marketo-apis/api/mapi/) 끝점을 사용하여 리드 레코드에서 사용할 수 있는 지원되는 모든 필드 이름 목록을 검색할 수 있습니다.
 
 | REST API 이름 | SOAP API 이름 | 알기 쉬운 레이블 | 설명 |
 | --- | --- | --- | --- |
@@ -82,7 +82,7 @@ REST를 사용하여 잠재 고객 레코드에서 사용할 수 있는 모든 �
 | 등급 | 등급 | 잠재 고객 등급 | 잠재 고객의 마케팅/판매 등급 |
 | 인사말 | 인사말 | 인사말 | 리드가 선호하는 인사말, 즉 미스터, 미스... 등. |
 | sicCode | SICCode | SIC 코드 | 잠재 고객 회사의 표준 산업 분류 코드 |
-| 사이트 | 사이트 | 사이트 |  |
+| 사이트 | 위치 | 위치 |  |
 | 상태 | 주 | 주 | 잠재 고객 상태 |
 | 제목 | 제목 | 직위 | 잠재 고객의 직책 |
 | 구독 취소됨 | 주소 삭제 | 주소 삭제 | 잠재 고객의 이메일 구독 취소 상태. 부분적으로 시스템이 관리됩니다. true로 설정하면 운영되지 않는 이메일이 수신되지 않습니다. |

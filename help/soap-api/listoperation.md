@@ -1,18 +1,18 @@
 ---
-title: "listOperation"
+title: listOperation
 feature: SOAP
-description: "listOperation SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: listOperation SOAP 호출
+exl-id: 8332cc22-c5a9-43d6-9e92-8d62265cfab2
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '187'
 ht-degree: 4%
 
 ---
 
-
 # listOperation
 
-이 방법은 Marketo 리드 데이터베이스 내에 정의된 정적 목록에서 작업을 수행하는 데 사용됩니다. 프로그램 내에 정의된 정적 목록의 멤버를 추가하거나 제거하려면 [가져오기 대상 목록](importtolist.md). 이 끝점에 대한 각 호출에는 호출당 1000개의 리드 제한이 있습니다.
+이 방법은 Marketo 리드 데이터베이스 내에 정의된 정적 목록에서 작업을 수행하는 데 사용됩니다. 프로그램 내에 정의된 정적 목록의 구성원을 추가하거나 제거하려면 [importToList](importtolist.md)을(를) 사용하십시오. 이 끝점에 대한 각 호출에는 호출당 1000개의 리드 제한이 있습니다.
 
 작업 유형은 다음과 같습니다.
 
@@ -27,8 +27,8 @@ ht-degree: 4%
 | listOperation | 필수 | 지정한 목록에서 실행할 작업의 유형입니다. 가능한 작업: `ADDTOLIST`, `ISMEMBEROFLIST`, `REMOVEFROMLIST` |
 | listKey->keyType | 필수 | 작업하려는 목록의 유형입니다. 가능한 값: `MKTOLISTNAME`, `MKTOSALESUSERID`, `SFDCLEADOWNERID` |
 | listKey->keyValue | 필수 | 작업하려는 목록의 이름. |
-| listMemberList->leadKey->keyType | 필수 | `keyType` 잠재 고객을 참조할 ID를 지정할 수 있습니다. 가능한 값: `IDNUM` |
-| listMemberList->leadKey->keyValue | 필수 | `keyValue` 은 목록을 작동할 값입니다. |
+| listMemberList->leadKey->keyType | 필수 | `keyType`을(를) 사용하면 잠재 고객을 참조할 ID를 지정할 수 있습니다. 가능한 값: `IDNUM` |
+| listMemberList->leadKey->keyValue | 필수 | `keyValue`은(는) 목록을 작동할 값입니다. |
 | strict | 선택 사항 | 호출의 하위 집합이 실패하면 전체 작업에 대해 Strict 모드가 실패합니다. 엄격하지 않은 모드는 가능한 모든 작업을 완료하고 실패한 모든 작업에 대해 오류를 반환합니다. |
 
 ## 요청 XML

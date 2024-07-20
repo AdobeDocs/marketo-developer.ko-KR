@@ -1,14 +1,14 @@
 ---
-title: "성능"
+title: 성능
 feature: REST API
-description: "Marketo API 작업에 대한 성능 팁."
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: Marketo API 작업에 대한 성능 팁입니다.
+exl-id: 173a398a-9d36-4e8d-9dd3-7d0d375b085a
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '117'
 ht-degree: 0%
 
 ---
-
 
 # 성능
 
@@ -32,7 +32,7 @@ Marketo REST API는 응답 본문을 압축하며 다음 헤더를 포함합니�
 Content-Encoding: gzip
 ```
 
-다음은 Curl을 사용하여 [필터 유형별 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET) 리드 5개를 검색하는 끝점:
+다음은 Curl을 사용하여 [필터 유형별 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET) 끝점을 호출하여 5개의 리드를 검색하는 예입니다.
 
 ```bash
 $ curl -H 'Accept-Encoding: gzip' 'https://123-ABC-456.mktorest.com/rest/v1/leads.json?filterType=id&filterValues=4,5,7,12,13'

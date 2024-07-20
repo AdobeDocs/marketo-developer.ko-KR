@@ -1,14 +1,14 @@
 ---
-title: "mergeLeads"
+title: mergeLead
 feature: SOAP
-description: "mergeLeads SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: mergeLeads SOAP 호출
+exl-id: a667cb76-525d-4583-b26a-1181d320a68c
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '83'
 ht-degree: 7%
 
 ---
-
 
 # mergeLead
 
@@ -18,7 +18,7 @@ ht-degree: 7%
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
-| winningLeadKeyList | 필수 | 우승 리드를 식별하는 데 사용되는 키입니다. 가능한 값: `IDNUM`, `EMAIL`, `SFDCLEADID`, `LEADOWNEREMAIL`, `SFDCACCOUNTID`, `SFDCCONTACTID`, `SFDCLEADID`, `SFDCLEADOWNERID`, `SFDCOPPTYID` |
+| winningLeadKeyList | 필수 | 우승 리드를 식별하는 데 사용되는 키입니다. 가능한 값은 `IDNUM`, `EMAIL`, `SFDCLEADID`, `LEADOWNEREMAIL`, `SFDCACCOUNTID`, `SFDCCONTACTID`, `SFDCLEADID`, `SFDCLEADOWNERID`, `SFDCOPPTYID`입니다. |
 | losingLeadKeyLists | 필수 | 손실 리드를 식별하는 데 사용되는 키 목록. |
 | mergeInsales | 선택 사항 | &quot;True&quot; 또는 &quot;False&quot;와 같은 부울로 전달됩니다. |
 

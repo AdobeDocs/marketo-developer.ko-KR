@@ -1,13 +1,13 @@
 ---
-title: "데이터 스트림"
-description: "데이터 스트림 개요"
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+title: 데이터 스트림
+description: 데이터 스트림 개요
+exl-id: 5617b6a5-ebc8-4d97-a290-e3b87f83e360
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '1589'
 ht-degree: 0%
 
 ---
-
 
 # 데이터 스트림
 
@@ -19,7 +19,7 @@ Dell 고객의 마케팅 조직은 적시에 집중하는 마케팅 캠페인에
 - API 제한 시나리오를 줄여 경고 메시지를 덜 생성합니다.
 - 데이터 스트리밍 기능으로 인해 데이터를 추출하기 위해 대량 내보내기를 수행할 필요는 없습니다.
 
-데이터 스트림은 를 구입한 사용자가 사용할 수 있습니다. [Marketo Engage 성능 계층 패키지](https://nation.marketo.com/t5/product-documents/marketo-engage-performance-tiers/ta-p/328835).
+데이터 스트림은 [Marketo Engage 성능 계층 패키지](https://nation.marketo.com/t5/product-documents/marketo-engage-performance-tiers/ta-p/328835)를 구입한 사용자가 사용할 수 있습니다.
 
 ## 잠재 고객 활동 데이터 스트림 개요
 
@@ -185,14 +185,14 @@ Dell 고객의 마케팅 조직은 적시에 집중하는 마케팅 캠페인에
    1. 1단계에서 끝점의 URL
    1. 수신하려는 활동 유형(위의 전체 목록)
    1. 고객이 요청이 합법적인지 확인할 수 있는 인증 수단입니다. 다음 중 하나를 수행합니다.
-      1. OAuth용 ID 공급자 URL, 클라이언트 ID 및 클라이언트 암호 [클라이언트 자격 증명 인증](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/)
+      1. OAuth [클라이언트 자격 증명 인증](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/)에 대한 ID 공급자 URL, 클라이언트 ID 및 클라이언트 암호
       1. 잠재 고객 활동 데이터 스트림에서 보낸 요청에 쿼리 매개 변수 또는 인증 헤더(고객의 선택)에 포함할 수 있는 API 토큰
 
 그런 다음 Adobe은 데이터 스트림을 활성화하며, 이 시점에서 고객은 데이터를 받기 시작합니다.
 
 일반적인 리드 활동 데이터 스트림 호출의 UML 다이어그램:
 
-![잠재 고객 활동 데이터 스트림 다이어그램](assets/lead-activity-data-stream.png)
+![리드 활동 데이터 스트림 다이어그램](assets/lead-activity-data-stream.png)
 
 URL 끝점 생성의 예:
 
@@ -239,7 +239,7 @@ app.listen(port,()=>{
 })
 ```
 
-Marketo 잠재 고객 활동 데이터 스트림을 사용하는 애플리케이션에 대한 코드 샘플을 찾을 수 있습니다 [여기](https://github.com/ihgrant/activity-stream-consumer-example).
+Marketo 잠재 고객 활동 데이터 스트림을 사용하는 응용 프로그램의 코드 샘플을 [여기](https://github.com/ihgrant/activity-stream-consumer-example)에서 찾을 수 있습니다.
 
 ### 사용자 감사 데이터 스트림 및 알림 데이터 스트림
 
@@ -254,26 +254,26 @@ Marketo 잠재 고객 활동 데이터 스트림을 사용하는 애플리케이
    1. 이 단계에는 Adobe 조직이 필요합니다.
    1. 개발자 또는 시스템 관리자 역할을 가져야 하는 Adobe 조직 사용자 필요
 
-Adobe IO를 설정하려면 다음을 참조하십시오. [Adobe IO를 사용하여 Marketo 사용자 감사 데이터 스트림 설정](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-user-audit-data-stream-setup/) ( 공용 설명서 섹션 참조).
+Adobe IO를 설정하려면 공개 설명서 섹션에서 [Adobe IO로 Marketo 사용자 감사 데이터 스트림 설정](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-user-audit-data-stream-setup/)을 참조하십시오.
 
 ### Marketo에서 사용자 감사 데이터 스트림 설정
 
-사용자 감사 데이터 스트림은 현재 다른 3개의 데이터 스트림과 함께 성능 패키지의 일부로 사용할 수 있습니다. 패키지에 대한 자세한 내용은 [제품 설명 페이지](https://helpx.adobe.com/legal/product-descriptions/adobe-marketo-engage---product-description.html) 제품 제한 및 기능.
+사용자 감사 데이터 스트림은 현재 다른 3개의 데이터 스트림과 함께 성능 패키지의 일부로 사용할 수 있습니다. 패키지에 대한 자세한 내용은 제품 제한 및 기능에 대한 [제품 설명 페이지](https://helpx.adobe.com/legal/product-descriptions/adobe-marketo-engage---product-description.html)를 참조하세요.
 
 ### Adobe I/O 설정
 
-[Adobe I/O 이벤트 시작 을 참조하십시오](https://developer.adobe.com/runtime/docs/guides/getting-started/)
+[Adobe I/O 이벤트 시작](https://developer.adobe.com/runtime/docs/guides/getting-started/)
 
-이 사용 사례에 대한 기본 지침은 다음 위치에서 시작됩니다. [console.adobe.io](https://developer.adobe.com/console):
+이 사용 사례에 대한 기본 지침은 [console.adobe.io](https://developer.adobe.com/console)부터 시작됩니다.
 
-메시지가 표시되면 다음 중 하나를 선택합니다. **[!UICONTROL Create New Project]** 또는 **[!UICONTROL Add Event]**.
+메시지가 표시되면 **[!UICONTROL Create New Project]** 또는 **[!UICONTROL Add Event]**&#x200B;을(를) 선택합니다.
 
 ### 새 프로젝트 시작
 
-Adobe 서비스를 사용하려면 API, 이벤트 또는 런타임을 추가하고 [설명서](https://developer.adobe.com/runtime/docs/).
+Adobe 서비스를 사용하려면 API, 이벤트 또는 런타임을 추가하려면 [설명서](https://developer.adobe.com/runtime/docs/)를 참조하세요.
 
 ## 공개 설명서
 
 - [Marketo 데이터 스트림](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-data-streams/)
-- [Adobe IO 이벤트 및 웹훅 소개](https://developer.adobe.com/events/docs/guides/)
+- [Adobe IO 이벤트 및 웹후크 소개](https://developer.adobe.com/events/docs/guides/)
 - [데이터 스트림 블로그](https://blog.developer.adobe.com/introducing-the-adobe-marketo-engage-data-streams-61198b567fbb)

@@ -1,34 +1,34 @@
 ---
-title: "getLeadActivity"
+title: getLeadActivity
 feature: SOAP
-description: "getLeadActivity SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: getLeadActivity SOAP 호출
+exl-id: f38dee95-235f-4dc2-8839-61d6008132a5
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '346'
 ht-degree: 1%
 
 ---
 
-
 # getLeadActivity
 
 이 함수는 제공된 키로 식별되는 단일 잠재 고객에 대한 활동 내역을 검색합니다. 결과에 반환할 활동 유형을 지정할 수 있습니다. 모든 활동 유형을 원하는 경우 빈 값을 전달해야 합니다. 두 개 이상의 활동 유형에 대해 활동 유형 목록을 전달합니다. 여러 활동을 요청할 때 나머지 개수는 정확한 숫자가 아니지만, 나머지 개수가 0을 초과할 때 더 많은 활동이 있음을 나타내는 플래그로 처리해야 합니다.
 
-A [스트림 위치](stream-position.md) 큰 결과 세트의 페이지를 매기는 데 사용할 수 있습니다.
+[스트림 위치](stream-position.md)를 사용하여 큰 결과 집합의 페이지를 매길 수 있습니다.
 
 ## 요청
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
-| leadKey->keyType | 필수 | keyType을 사용하면 잠재 고객을 쿼리할 필드를 지정할 수 있습니다. 가능한 값은 다음과 같습니다.`IDNUM`, `COOKIE`, `EMAIL`, `SFDCLEADID`, `LEADOWNEREMAIL`, `SFDCACCOUNTID`, `SFDCCONTACTID`, `SFDCLEADID`, `SFDCLEADOWNERID`, `SFDCOPPTYID` |
-| leadKey->keyValue | 필수 | `keyValue` 는 잠재 고객을 쿼리할 값입니다. |
+| leadKey->keyType | 필수 | keyType을 사용하면 잠재 고객을 쿼리할 필드를 지정할 수 있습니다. 가능한 값은 `IDNUM`, `COOKIE`, `EMAIL`, `SFDCLEADID`, `LEADOWNEREMAIL`, `SFDCACCOUNTID`, `SFDCCONTACTID`, `SFDCLEADID`, `SFDCLEADOWNERID`, `SFDCOPPTYID`입니다. |
+| leadKey->keyValue | 필수 | `keyValue`은(는) 잠재 고객을 쿼리할 값입니다. |
 | activityFilter->includeAttributes->activityType | 선택 사항 | 지정된 활동 유형만 포함하도록 응답을 제한합니다. 모든 활동 유형에 대해서는 WSDL을 참조하십시오. |
-| activityFilter->excludeAttributes->activityType | 선택 사항 | 지정된 활동 유형을 제외하도록 응답을 제한합니다. 모든 활동 유형에 대해서는 WSDL을 참조하십시오. 참고: 둘 다 지정할 수는 없습니다 `includeAttributes` 및 `excludeAttributes` 동일한 호출 내에서. |
-| batchSize | 선택 사항 | 반환할 최대 레코드 수. 시스템이 100 또는 `batchSize`, 둘 중 더 적은 것. |
-| startPosition->offset | 선택 사항 | 많은 수의 활동 응답을 통해 페이지를 매기는 데 사용됩니다. 오프셋 값은 이전 호출 응답 필드에 의해 반환됩니다 `newStartPosition->offset`. |
-| startPosition->activityCreatedAt | 선택 사항 | 많은 수의 활동 응답을 통해 페이지를 매기는 데 사용됩니다. activityCreatedAt는 이전 호출의 응답 필드에 의해 반환됩니다 `newStartPosition->activityCreatedAt`. (W3C WSDL 날짜 형식). |
-| startPosition->latestCreatedAt | 선택 사항 | 많은 수의 활동 응답을 통해 페이지를 매기는 데 사용됩니다. latestCreatedAt는 이전 호출의 응답 필드에 의해 반환됩니다 `newStartPosition->latestCreatedAt`. (W3C WSDL 날짜 형식). |
-| startPosition->oldestCreatedAt | 선택 사항 | 많은 수의 활동 응답을 통해 페이지를 매기는 데 사용됩니다. the oldestCreatedAt 는 이전 호출의 응답 필드에 의해 반환됩니다 `newStartPosition->oldestCreatedAt`. (W3C WSDL 날짜 형식). |
+| activityFilter->excludeAttributes->activityType | 선택 사항 | 지정된 활동 유형을 제외하도록 응답을 제한합니다. 모든 활동 유형에 대해서는 WSDL을 참조하십시오. 참고: 동일한 호출 내에서 `includeAttributes`과(와) `excludeAttributes`을(를) 모두 지정할 수 없습니다. |
+| batchSize | 선택 사항 | 반환할 최대 레코드 수. 시스템은 100개 또는 `batchSize`개 중 더 작은 것으로 제한됩니다. |
+| startPosition->offset | 선택 사항 | 많은 수의 활동 응답을 통해 페이지를 매기는 데 사용됩니다. 이전 호출 응답 필드 `newStartPosition->offset`에서 오프셋 값을 반환했습니다. |
+| startPosition->activityCreatedAt | 선택 사항 | 많은 수의 활동 응답을 통해 페이지를 매기는 데 사용됩니다. 이전 호출의 응답 필드 `newStartPosition->activityCreatedAt`에서 activityCreatedAt를 반환했습니다. (W3C WSDL 날짜 형식). |
+| startPosition->latestCreatedAt | 선택 사항 | 많은 수의 활동 응답을 통해 페이지를 매기는 데 사용됩니다. 이전 호출의 응답 필드 `newStartPosition->latestCreatedAt`에서 latestCreatedAt를 반환했습니다. (W3C WSDL 날짜 형식). |
+| startPosition->oldestCreatedAt | 선택 사항 | 많은 수의 활동 응답을 통해 페이지를 매기는 데 사용됩니다. 이전 호출의 응답 필드 `newStartPosition->oldestCreatedAt`에 의해 oldestCreatedAt가 반환됩니다. (W3C WSDL 날짜 형식). |
 
 ## 요청 XML
 
@@ -668,7 +668,7 @@ A [스트림 위치](stream-position.md) 큰 결과 세트의 페이지를 매�
 </SOAP-ENV:Envelope>
 ```
 
-다음 범위 내 `activityRecord` 요소, `id` 요소가 로 교체되고 있습니다. `marketoGUID` 요소를 고유 식별자로 사용합니다.  이 변경 사항은 2017년 봄 릴리스에서 발생합니다.
+`activityRecord` 요소 내에서 `id` 요소가 `marketoGUID` 요소로 고유 식별자로 대체됩니다.  이 변경 사항은 2017년 봄 릴리스에서 발생합니다.
 
 ## 샘플 코드 - PHP
 

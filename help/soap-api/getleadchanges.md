@@ -1,48 +1,48 @@
 ---
-title: "getLeadChanges"
+title: getLeadChanges
 feature: SOAP
-description: "getLeadChanges SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: getLeadChanges SOAP 호출
+exl-id: 23445684-d8d9-407b-8f19-cb69e806795c
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '402'
 ht-degree: 1%
 
 ---
 
-
 # getLeadChanges
 
-이 API는 다음과 같습니다 `getLeadActivity` 한 번에 여러 리드에서 작동한다는 점을 제외하면, 이 작업에서는 생성된 새 리드, 리드 필드 업데이트 및 기타 활동을 확인합니다.
+이 API는 한 번에 여러 개의 리드에서 작동한다는 점을 제외하면 `getLeadActivity`과(와) 같습니다. 이 작업에서는 생성된 새 리드, 리드 필드 업데이트 및 기타 활동을 확인합니다.
 
-결과에는 변경 사항을 초래한 활동과 [스트림 위치](stream-position.md) 큰 결과 세트의 페이지를 매깁니다.
+결과에 [스트림 위치](stream-position.md)와 함께 변경 내용이 큰 결과 집합에 페이지 번호를 매기는 활동이 포함되어 있습니다.
 
 결과에 반환할 활동 필터를 식별하는 입력 매개 변수를 포함해야 합니다. 모든 활동을 원하는 경우 빈 값이 전달될 수 있습니다. 두 개 이상의 활동 필터의 경우 활동 필터 목록을 전달하십시오.
 
 일부 활동 유형은 &quot;웹 페이지 방문&quot;, &quot;양식 작성&quot; 및 &quot;링크 클릭&quot;입니다.
 
-SOAP API 버전 2_2 이후에 다음을 포함할 수 있습니다. `leadSelector`.
+SOAP API 버전 2_2 후에는 `leadSelector`을(를) 포함할 수 있습니다.
 
-대상 `LastUpdateAtSelector`, `oldestUpdatedAt` 값은 다음에 해당합니다. `oldestCreatedAt` 의 값 `startPosition`. 및 `latestUpdatedAt` 값은 다음에 해당합니다. `latestCreatedAt` 의 값 `startPosition`.
+`LastUpdateAtSelector`의 경우 `oldestUpdatedAt` 값은 `startPosition`의 `oldestCreatedAt` 값에 해당합니다. `latestUpdatedAt` 값은 `startPosition`의 `latestCreatedAt` 값에 해당합니다.
 
-참고: 다음에서 지원되는 잠재 고객 수 제한: `LeadKeySelector` 은 100입니다. 리드 수가 100개를 초과하는 경우 API에 잘못된 매개 변수 예외가 발생하고 SOAP 오류가 반환됩니다.
+참고: `LeadKeySelector`에서 지원되는 잠재 고객의 제한 수는 100개입니다. 리드 수가 100개를 초과하는 경우 API에 잘못된 매개 변수 예외가 발생하고 SOAP 오류가 반환됩니다.
 
 ## 요청
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
-| activityFilter->includeAttributes->activityType | 선택 사항(더 이상 사용되지 않음) 사용 `activityNameFilter` 대신 | 지정된 활동 유형만 포함하도록 응답을 제한합니다. 모든 활동 유형에 대해서는 WSDL을 참조하십시오. |
-| activityFilter->excludeAttributes->activityType | 선택 사항 | 지정된 활동 유형을 제외하도록 응답을 제한합니다. 모든 활동 유형에 대해서는 WSDL을 참조하십시오. 참고: 둘 다 지정할 수는 없습니다 `includeAttributes` 및 `excludeAttributes` 동일한 호출 내에서. |
+| activityFilter->includeAttributes->activityType | 선택 사항(더 이상 사용되지 않음) 대신 `activityNameFilter` 사용 | 지정된 활동 유형만 포함하도록 응답을 제한합니다. 모든 활동 유형에 대해서는 WSDL을 참조하십시오. |
+| activityFilter->excludeAttributes->activityType | 선택 사항 | 지정된 활동 유형을 제외하도록 응답을 제한합니다. 모든 활동 유형에 대해서는 WSDL을 참조하십시오. 참고: 동일한 호출 내에서 `includeAttributes`과(와) `excludeAttributes`을(를) 모두 지정할 수 없습니다. |
 | activityNameFilter | 선택 사항 | 지정된 활동 필터만 포함하도록 응답을 제한합니다. |
-| batchSize | 선택 사항 | 반환할 최대 레코드 수. 시스템이 1,000개로 제한됨 `batchSize`, 둘 중 더 적은 것. |
+| batchSize | 선택 사항 | 반환할 최대 레코드 수. 시스템이 1,000개 또는 `batchSize`(둘 중 더 작은 것)로 제한되었습니다. |
 | startPosition | 필수 | 많은 수의 활동 응답을 통해 페이지를 매기는 데 사용됩니다. |
 | startPosition->offset | 선택 사항 | 오프셋 값은 이전 호출 응답 필드 newStartPosition->offset에 의해 반환됩니다. |
-| startPosition->oldestCreatedAt | 선택 사항 | oldestCreatedAt 이후 생성된 리드만 포함하도록 결과를 필터링하는 데 사용되는 타임스탬프입니다. 참고: 다음을 사용할 수 있습니다 `LastUpdateAtSelector->oldestUpdatedAt` 지정할 타임스탬프 `oldestCreatedAt`. |
-| startPosition->activityCreatedAt | 선택 사항 | activityCreatedAt 이후 활동이 있는 리드만 포함하도록 결과를 필터링하는 데 사용되는 타임스탬프입니다. 참고: 다음을 사용할 수 있습니다 `LastUpdateAtSelector->latestUpdatedAt` 지정할 타임스탬프 `activityCreatedAt`. |
-| leadSelector | 선택 사항 | 다음 3가지 유형 중 하나일 수 있습니다. `LeadKeySelector`, `StaticListSelector`, `LastUpdateAtSelector` |
-| LeadKeySelector: leadSelector->keyType | 필수 | 쿼리할 ID 유형입니다. 값은 다음과 같습니다 `IDNUM`, `COOKIE`, `EMAIL`, `LEADOWNEREMAIL`, `SFDCACCOUNTID`, `SFDCCONTACTID`, `SFDCLEADID`, `SFDCLEADOWNERID`, `SFDCOPPTYID`. |
+| startPosition->oldestCreatedAt | 선택 사항 | oldestCreatedAt 이후 생성된 리드만 포함하도록 결과를 필터링하는 데 사용되는 타임스탬프입니다. 참고: `LastUpdateAtSelector->oldestUpdatedAt` 타임스탬프를 사용하여 `oldestCreatedAt`을(를) 지정할 수 있습니다. |
+| startPosition->activityCreatedAt | 선택 사항 | activityCreatedAt 이후 활동이 있는 리드만 포함하도록 결과를 필터링하는 데 사용되는 타임스탬프입니다. 참고: `LastUpdateAtSelector->latestUpdatedAt` 타임스탬프를 사용하여 `activityCreatedAt`을(를) 지정할 수 있습니다. |
+| leadSelector | 선택 사항 | 다음 세 가지 형식 중 하나일 수 있습니다. `LeadKeySelector`, `StaticListSelector`, `LastUpdateAtSelector` |
+| LeadKeySelector: leadSelector->keyType | 필수 | 쿼리할 ID 유형입니다. 값은 `IDNUM`, `COOKIE`, `EMAIL`, `LEADOWNEREMAIL`, `SFDCACCOUNTID`, `SFDCCONTACTID`, `SFDCLEADID`, `SFDCLEADOWNERID`, `SFDCOPPTYID`입니다. |
 | LeadKeySelector: leadSelector->keyValues->stringItem | 필수 | 키 값 목록. 즉, &quot;lead@email.com&quot; |
-| StaticListSelector: leadSelector->staticListName | 선택 사항인 경우 `leadSelector->staticListId` 있음 | 정적 목록의 이름 |
-| StaticListSelector: leadSelector->staticListId | 선택 사항인 경우 `leadSelector->staticListName` 있음 | 정적 목록의 ID |
+| StaticListSelector: leadSelector->staticListName | `leadSelector->staticListId`이(가) 있는 경우 선택 사항 | 정적 목록의 이름 |
+| StaticListSelector: leadSelector->staticListId | `leadSelector->staticListName`이(가) 있는 경우 선택 사항 | 정적 목록의 ID |
 
 ## 요청 XML
 

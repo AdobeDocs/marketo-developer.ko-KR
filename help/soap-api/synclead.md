@@ -1,27 +1,27 @@
 ---
-title: "syncLead"
+title: syncLead
 feature: SOAP
-description: "syncLead SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: syncLead SOAP 호출
+exl-id: e6cda794-a9d4-4153-a5f3-52e97a506807
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '518'
 ht-degree: 1%
 
 ---
 
-
 # syncLean
 
 이 함수는 단일 리드 레코드를 삽입하거나 업데이트합니다. 기존 리드를 업데이트할 때 리드는 다음 키 중 하나로 식별됩니다.
 
 - Marketo ID
-- 외래 시스템 ID(다음으로 구현됨) `foreignSysPersonId`)
+- 외래 시스템 ID(`foreignSysPersonId`(으)로 구현됨)
 - Marketo 쿠키(Munchkin JS 스크립트로 작성)
 - 이메일
 
 기존 일치 항목이 발견되면 호출에서 업데이트를 수행합니다. 그렇지 않으면 리드를 삽입하고 생성합니다. 익명 리드는 Marketo 쿠키 ID를 사용하여 업데이트할 수 있으며 업데이트 시 알려지게 됩니다.
 
-이메일을 제외하고 이러한 모든 식별자는 고유 키로 처리됩니다. Marketo ID가 다른 모든 키보다 우선합니다. 둘 다인 경우 `foreignSysPersonId` 그리고 Marketo ID가 리드 레코드에 있는 경우 Marketo ID가 우선하며 `foreignSysPersonId` 해당 리드에 대해 업데이트됩니다. 다음 경우에만 `foreignSysPersonId` 이 지정된 경우 고유 식별자로 사용됩니다. 둘 다인 경우 `foreignSysPersonId` 및 이메일이 표시되지만 Marketo ID가 표시되지 않으면 `foreignSysPersonId` 가 우선하며 해당 리드에 대해 이메일이 업데이트됩니다.
+이메일을 제외하고 이러한 모든 식별자는 고유 키로 처리됩니다. Marketo ID가 다른 모든 키보다 우선합니다. `foreignSysPersonId`과(와) Marketo ID가 모두 잠재 고객 레코드에 있는 경우 Marketo ID가 우선하며 해당 잠재 고객에 대해 `foreignSysPersonId`이(가) 업데이트됩니다. `foreignSysPersonId`만 지정된 경우 고유 식별자로 사용됩니다. `foreignSysPersonId`과(와) 전자 메일이 모두 있지만 Marketo ID가 없는 경우 `foreignSysPersonId`이(가) 우선하며 해당 잠재 고객에 대해 전자 메일이 업데이트됩니다.
 
 원할 경우 컨텍스트 헤더를 지정하여 대상 작업 공간의 이름을 지정할 수 있습니다.
 
@@ -42,14 +42,14 @@ Marketo 작업 영역이 활성화되지 않은 경우 대상 작업 영역은 &
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
-| leadRecord->Id | 필수 - 이메일 또는 `foreignSysPersonId` 이(가) 없음 | 잠재 고객 레코드의 Marketo ID |
-| leadRecord->Email | 필수 - ID 또는 `foreignSysPersonId` 이(가) 없음 | 잠재 고객 레코드와 연결된 이메일 주소 |
+| leadRecord->Id | 필수 - 이메일 또는 `foreignSysPersonId`이(가) 없는 경우에만 | 잠재 고객 레코드의 Marketo ID |
+| leadRecord->Email | 필수 - ID 또는 `foreignSysPersonId`이(가) 없는 경우에만 | 잠재 고객 레코드와 연결된 이메일 주소 |
 | leadRecord->`foreignSysPersonId` | 필수 - ID 또는 이메일이 없는 경우에만 | 잠재 고객 레코드와 연계된 외부 시스템 ID |
-| leadRecord->foreignSysType | 선택 사항 - 다음의 경우에만 필요합니다. `foreignSysPersonId` 있음 | 외국 시스템의 유형입니다. 가능한 값: CUSTOM, SFDC, NETSUITE |
+| leadRecord->foreignSysType | 선택 사항 - `foreignSysPersonId`이(가) 있는 경우에만 필요합니다. | 외국 시스템의 유형입니다. 가능한 값: CUSTOM, SFDC, NETSUITE |
 | leadRecord->leadAttributeList->attribute->attrName | 필수 | 값을 갱신할 잠재 고객 속성의 이름입니다. |
 | leadRecord->leadAttributeList->attribute->attrValue | 필수 | attrName에 지정된 잠재 고객 속성으로 설정할 값입니다. |
 | returnLead | 필수 | true이면 업데이트 시 업데이트된 전체 리드 레코드를 반환합니다. |
-| marketoCookie | 선택 사항 | 다음 [Munchkin javascript](../javascript-api/lead-tracking.md) 쿠키 |
+| marketoCookie | 선택 사항 | [Munchkin Javascript](../javascript-api/lead-tracking.md) 쿠키 |
 
 ## 요청 XML
 

@@ -1,14 +1,14 @@
 ---
-title: "requestCampaign"
+title: request캠페인
 feature: SOAP, Smart Campaigns
-description: "requestCampaign SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: requestCampaign SOAP 호출
+exl-id: b5367eb9-4f4c-4e1d-8b6d-36de8f134f0e
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '277'
 ht-degree: 2%
 
 ---
-
 
 # request캠페인
 
@@ -16,20 +16,20 @@ ht-degree: 2%
 
 ![웹 서비스 API](assets/webserviceapi.png)
 
-사용할 수 있는 매개 변수 세트는 두 개입니다. 첫 번째 사례는 를 사용하는 것입니다. `campaignName` + `programName` + `programTokenList`. 다음 `programTokenList` 이 경우 은(는) 비워둘 수 있습니다. 두 번째 경우는 를 사용하는 것입니다. `campaignId` 혼자요 다른 모든 조합은 잘못된 매개 변수 예외를 발생시킵니다.
+사용할 수 있는 매개 변수 세트는 두 개입니다. 첫 번째 케이스는 `campaignName` + `programName` + `programTokenList`을(를) 사용합니다. 이 경우 `programTokenList`은(는) 비워 둘 수 있습니다. 두 번째 예제에서는 `campaignId`만 사용합니다. 다른 모든 조합은 잘못된 매개 변수 예외를 발생시킵니다.
 
 참고: 호출당 100개의 leadKey 값 제한. 추가 키는 무시됩니다.
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
-| leadList->leadKey->keyType | 필수 | `keyType` 잠재 고객을 쿼리할 필드를 지정할 수 있습니다. 가능한 값은 다음과 같습니다.`IDNUM`, `EMAIL`, `SFDCLEADID`, `LEADOWNEREMAIL`, `SFDCACCOUNTID`, `SFDCCONTACTID`, `SFDCLEADID`, `SFDCLEADOWNERID`, `SFDCOPPTYID` |
-| leadList->leadKey->keyValue | 필수 | `keyValue` 는 잠재 고객을 쿼리할 값입니다. |
+| leadList->leadKey->keyType | 필수 | `keyType`을(를) 사용하면 잠재 고객을 쿼리할 필드를 지정할 수 있습니다. 가능한 값은 `IDNUM`, `EMAIL`, `SFDCLEADID`, `LEADOWNEREMAIL`, `SFDCACCOUNTID`, `SFDCCONTACTID`, `SFDCLEADID`, `SFDCLEADOWNERID`, `SFDCOPPTYID`입니다. |
+| leadList->leadKey->keyValue | 필수 | `keyValue`은(는) 잠재 고객을 쿼리할 값입니다. |
 | 소스 | 필수 | 캠페인 소스. 가능한 값: `MKTOWS` 또는 `SALES`. 열거형은 WSDL에서 정의됩니다. |
-| campaignId | 선택 사항인 경우 `campaignName`, `programName`, 및 `programTokenList` 는 매개 변수 사이트에 함께 있고, 그렇지 않으면 `campaignId` 필수 | 캠페인 ID. 참고: 다음 경우에 잘못된 매개변수 오류가 발생합니다. `campaignID` 및 `campaignName` 둘 다 전달되었습니다. |
-| campaignName | campaignId가 있는 경우 선택 사항이며, 그렇지 않은 경우 세트로 필수입니다. `campaignName`, programName 및 programTokenList | 캠페인 이름 |
-| programName | campaignId가 있는 경우 선택 사항이며, 그렇지 않은 경우 세트로 필수입니다. `campaignName`, programName 및 programTokenList | 프로그램 이름 |
-| 프로그램 토큰 목록 | campaignId가 있는 경우 선택 사항이며, 그렇지 않은 경우 세트로 필수입니다. `campaignName`, `programName`, 및 `programTokenList` | 캠페인에 사용할 토큰 배열입니다. 토큰을 지정할 때 programName 및 `campaignName` 필수 항목입니다. |
-| programTokenList->attrib->name | 선택 사항 | 값을 전달할 프로그램 토큰의 이름입니다. 예:{{my.message}} |
+| campaignId | `campaignName`, `programName` 및 `programTokenList`이(가) 매개 변수 사이트에 함께 있는 경우 선택 사항입니다. 그렇지 않으면 `campaignId`이(가) 필요합니다. | 캠페인 ID. 참고: `campaignID`과(와) `campaignName`이(가) 모두 전달되면 잘못된 매개 변수 오류가 발생합니다. |
+| campaignName | campaignId가 있는 경우 선택 사항입니다. `campaignName`, programName 및 programTokenList로 설정된 경우 선택 사항입니다. | 캠페인 이름 |
+| programName | campaignId가 있는 경우 선택 사항입니다. `campaignName`, programName 및 programTokenList로 설정된 경우 선택 사항입니다. | 프로그램 이름 |
+| 프로그램 토큰 목록 | campaignId가 있는 경우 선택 사항입니다. 그렇지 않으면 `campaignName`, `programName` 및 `programTokenList`(으)로 설정된 경우 필요합니다. | 캠페인에 사용할 토큰 배열입니다. 토큰을 지정할 때 programName 및 `campaignName`이(가) 필요합니다. |
+| programTokenList->attrib->name | 선택 사항 | 값을 전달할 프로그램 토큰의 이름입니다. 예: {{my.message}} |
 | programTokenList->attrib->value | 선택 사항 | 지정된 토큰 이름의 값입니다. |
 
 ## 요청 XML

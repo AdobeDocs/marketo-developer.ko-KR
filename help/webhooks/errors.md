@@ -1,14 +1,14 @@
 ---
-title: "오류"
+title: 오류수
 feature: Webhooks
-description: "Webhooks용 오류 코드"
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+description: Webhooks용 오류 코드
+exl-id: adce40c3-87b1-4f31-8995-eb64e8a72b55
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '232'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
-
 
 # 오류수
 
@@ -25,9 +25,9 @@ Marketo이 값을 필드에 다시 매핑하려면 웹후크 응답 코드가 2x
 
 ## Webhook 오류 잡기
 
-웹후크에서 발생한 오류는 [!UICONTROL Webhook is Called] 트리거:
+[!UICONTROL Webhook is Called] 트리거에서 Webhooks의 오류를 catch 및 처리할 수 있습니다.
 
-![Webhook이 호출됨](assets/webhook-called.png)
+![Webhook이 호출되었습니다](assets/webhook-called.png)
 
 * Response - Response 는 요청에 의해 수신된 리터럴 응답 페이로드입니다.
 * 오류 유형 - HTTP 상태 메시지의 Reason-Phrase에 해당합니다.

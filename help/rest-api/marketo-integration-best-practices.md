@@ -1,33 +1,33 @@
 ---
-title: "Marketo 통합 우수 사례"
+title: Marketo 통합 우수 사례
 feature: REST API
-description: "Marketo API 사용에 대한 우수 사례"
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: Marketo API 사용에 대한 우수 사례.
+exl-id: 1e418008-a36b-4366-a044-dfa9fe4b5f82
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '952'
 ht-degree: 0%
 
 ---
 
-
 # Marketo 통합 우수 사례
 
 ## API 제한
 
-- **일일 할당량:** 대부분의 구독에는 하루에 50,000개의 API 호출이 할당됩니다(매일 오전 12:00CST에 재설정됨). 계정 관리자를 통해 일일 할당량을 늘릴 수 있습니다.
-- **속도 제한:** 인스턴스당 API 액세스는 20초당 100개 호출로 제한되었습니다.
+- **일일 할당량:** 대부분의 구독에는 하루에 50,000개의 API 호출이 할당됩니다(매일 오전 12시(CST) 재설정됨). 계정 관리자를 통해 일일 할당량을 늘릴 수 있습니다.
+- **속도 제한:** 인스턴스당 API 액세스가 20초당 100개의 호출로 제한되었습니다.
 - **동시 실행 제한:**  최대 10개의 동시 API 호출.
-- **배치 크기:** 리드 DB - 300개의 레코드, 에셋 쿼리 - 200개의 레코드
+- **일괄 처리 크기:** 리드 DB - 300개 레코드, 자산 쿼리 - 200개 레코드
 - **REST API 페이로드 크기:** 1MB
-- **대량 가져오기 파일 크기:** 10MB
+- **일괄 가져오기 파일 크기:** 10MB
 - **SOAP 최대 일괄 처리 크기:** 레코드 300개
-- **일괄 추출 작업:** 2 실행 중, 10개 대기 중(포함)
+- **일괄 추출 작업:** 2개 실행 중, 10개 대기 중(포함)
 
 ## 빠른 팁
 
 - 애플리케이션이 할당량, 요율 및 동시성 리소스를 다른 애플리케이션과 경쟁한다고 가정하고 사용 제한을 적절히 설정합니다.
 - 사용 가능하고 적절한 경우 Marketo의 대량 및 일괄 처리 방법을 사용하십시오. 필요한 경우 단일 레코드 또는 단일 결과 호출만 사용합니다.
-- 사용 [지수 백오프](https://en.wikipedia.org/wiki/Exponential_backoff) 요율 또는 동시성 제한으로 인해 실패한 API 호출을 재시도합니다.
+- 환율 또는 동시성 제한으로 인해 실패한 API 호출을 다시 시도하려면 [지수 백오프](https://en.wikipedia.org/wiki/Exponential_backoff)를 사용하십시오.
 - 사용 사례가 이점을 얻지 못하는 경우 동시 API 호출을 수행하지 마십시오.
 
 ## 일괄 처리
@@ -41,14 +41,14 @@ ht-degree: 0%
 | 허용 가능한 지연 | 기본 메서드 | 참고 사항 |
 |---|---|---|
 | 낮음(&lt;10s) | 동기 API(일괄 처리 또는 일괄 처리 해제) | 사용 사례에서 이를 요구하는지 확인합니다. 대용량 사용 사례에 대해 즉시 및 동기 호출을 전송하면 일일 API 할당량이 빠르게 소모되고, 잠재적으로 요율 및 동시 실행 제한을 모두 초과할 수 있습니다. |
-| 보통(10s - 60m) | 동기 API(일괄 처리) | Marketo에 대한 인바운드 데이터 통합의 경우 연령 및 크기 제한이 모두 있는 큐를 사용하는 것이 좋습니다. 두 제한에 도달하면 큐를 플러시하고 누적된 레코드로 API 요청을 제출합니다. 이는 큐의 사용 기간이 허용하는 만큼 많은 레코드를 일괄 처리하는 동시에, 필요한 케이던스로 요청이 발생하도록 하며 속도와 효율성 간의 강력한 타협입니다. |
+| Medium(10s - 60m) | 동기 API(일괄 처리) | Marketo에 대한 인바운드 데이터 통합의 경우 연령 및 크기 제한이 모두 있는 큐를 사용하는 것이 좋습니다. 두 제한에 도달하면 큐를 플러시하고 누적된 레코드로 API 요청을 제출합니다. 이는 큐의 사용 기간이 허용하는 만큼 많은 레코드를 일괄 처리하는 동시에, 필요한 케이던스로 요청이 발생하도록 하며 속도와 효율성 간의 강력한 타협입니다. |
 | 높음(>60m) | 대량 가져오기/내보내기(지원되는 경우) | 인바운드 데이터 통합을 위해 가능하면 Marketo Bulk API를 통해 레코드를 큐에 추가하고 제출해야 합니다. |
 
 ## 일별 제한
 
 Marketo의 각 API 지원 인스턴스에는 하루에 최소 10,000개의 REST API 호출이 할당되지만 일반적으로 50,000개 이상, 500MB 이상의 대량 추출 용량이 할당됩니다. Marketo 구독의 일부로 일일 추가 용량을 구매할 수 있지만, 애플리케이션 디자인은 Marketo 구독의 일반적인 제한을 고려해야 합니다.
 
-용량을 인스턴스의 모든 API 서비스와 사용자 간에 공유하므로 우수 사례는 중복 호출을 제거하고 레코드를 가능한 한 적은 호출로 일괄 처리하는 것입니다. 레코드를 가져올 수 있는 가장 효율적인 방법은 Marketo의 대량 가져오기 API를 사용하는 것입니다. [잠재 고객/사용자](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/importLeadUsingPOST) 및 [사용자 지정 개체](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Snippets/operation/createSnippetUsingPOST). Marketo은 다음에 대한 벌크 추출도 제공합니다. [잠재 고객](bulk-lead-extract.md) 및 [활동](bulk-activity-extract.md).
+용량을 인스턴스의 모든 API 서비스와 사용자 간에 공유하므로 우수 사례는 중복 호출을 제거하고 레코드를 가능한 한 적은 호출로 일괄 처리하는 것입니다. 레코드를 가져오는 가장 효율적인 방법은 [잠재 고객/사용자](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/importLeadUsingPOST) 및 [사용자 지정 개체](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Snippets/operation/createSnippetUsingPOST)에 사용할 수 있는 Marketo의 대량 가져오기 API를 사용하는 것입니다. Marketo은 [리드](bulk-lead-extract.md) 및 [활동](bulk-activity-extract.md)에 대한 대량 추출도 제공합니다.
 
 ### 캐싱
 
@@ -72,4 +72,4 @@ Marketo의 각 API 지원 인스턴스에는 하루에 최소 10,000개의 REST 
 
 ## 오류수
 
-드물게 발생하는 몇 가지 경우를 제외하고 API 요청은 HTTP 상태 코드 200을 반환합니다. 비즈니스 논리 오류도 200을 반환하지만, 응답 본문에 자세한 정보가 포함되어 있습니다. 다음을 참조하십시오 [오류 코드](error-codes.md) 자세한 설명을 위해 HTTP 이유 구는 선택 사항이며 변경될 수 있으므로 평가해서는 안 됩니다.
+드물게 발생하는 몇 가지 경우를 제외하고 API 요청은 HTTP 상태 코드 200을 반환합니다. 비즈니스 논리 오류도 200을 반환하지만, 응답 본문에 자세한 정보가 포함되어 있습니다. 자세한 내용은 [오류 코드](error-codes.md)를 참조하세요. HTTP 이유 구는 선택 사항이며 변경될 수 있으므로 평가해서는 안 됩니다.

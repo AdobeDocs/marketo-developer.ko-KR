@@ -1,35 +1,35 @@
 ---
-title: "syncMultipleLeads"
+title: syncMultipleLead
 feature: SOAP
-description: "syncMultipleLeads SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: syncMultipleLeads SOAP 호출
+exl-id: 91980b82-dff9-48a7-b03e-20dce9d0d046
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '221'
 ht-degree: 3%
 
 ---
 
-
 # syncMultipleLead
 
-이 함수는에 대한 삽입 또는 업데이트(업데이트) 작업을 요청합니다. _복수_ 잠재 고객 레코드. 기존 잠재 고객을 업데이트할 때 다음 키 중 하나로 잠재 고객을 식별할 수 있습니다.
+이 함수는 _여러_ 리드 레코드에 대한 삽입 또는 업데이트(업데이트) 작업을 요청합니다. 기존 잠재 고객을 업데이트할 때 다음 키 중 하나로 잠재 고객을 식별할 수 있습니다.
 
 - Marketo ID
 - 외래 시스템 ID
 - 이메일
 
-두 개 이상의 키가 있는 경우 Marketo ID가 우선합니다 `ForeignSysPersonId`및 후자가 업데이트됩니다. 하지만 이메일도 키로 표시되는 경우 속성 목록에 지정되지 않으면 업데이트되지 않습니다.
+두 개 이상의 키가 있는 경우 Marketo ID가 `ForeignSysPersonId`보다 우선하며 후자의 ID가 업데이트됩니다. 하지만 이메일도 키로 표시되는 경우 속성 목록에 지정되지 않으면 업데이트되지 않습니다.
 
 일괄 처리 크기는 300을 넘지 않는 것이 좋습니다. 더 큰 크기는 지원되지 않으며 이로 인해 시간 초과가 발생하고 경우에 따라 조절됩니다.
 
-이 함수 호출을 사용하여 중복 제거 기능을 끌 수 있습니다. dedupEnabled가 true로 설정되고 다른 고유 식별자가 제공되지 않는 경우(`foreignSysPersonId` 또는 Marketo 잠재 고객 ID)인 경우 이메일 주소를 사용하여 잠재 고객 레코드가 중복 제거됩니다. false를 전달하면 Marketo 내에 중복 항목이 만들어집니다.
+이 함수 호출을 사용하여 중복 제거 기능을 끌 수 있습니다. dedupEnabled가 true로 설정되어 있고 다른 고유 식별자가 제공되지 않은 경우(`foreignSysPersonId` 또는 Marketo 리드 ID) 리드 레코드는 이메일 주소를 사용하여 중복 제거됩니다. false를 전달하면 Marketo 내에 중복 항목이 만들어집니다.
 
 ## 요청
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
 | leadRecordList->leadRecord | 필수 | 동기화할 LeadRecords 배열. LeadRecords는 리드 ID, 이메일 또는 ForeignSysPersonId를 지정해야 합니다. |
-| dedupEnabled | 선택 사항 | 데이터 중복 제거 기능을 해제할 수 있는 선택적 값입니다. 값 전달 `false` 은(는) Marketo에서 중복 항목을 만듭니다. |
+| dedupEnabled | 선택 사항 | 데이터 중복 제거 기능을 해제할 수 있는 선택적 값입니다. `false` 값을 전달하면 Marketo에서 중복이 만들어집니다. |
 
 ## 요청 XML
 

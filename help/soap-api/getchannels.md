@@ -1,14 +1,14 @@
 ---
-title: "getChannels"
+title: getChannels
 feature: SOAP
-description: "getChannels SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: getChannels SOAP 호출
+exl-id: bcaef85b-154b-4571-ad24-07a36707a6ef
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '92'
 ht-degree: 4%
 
 ---
-
 
 # getChannels
 
@@ -24,7 +24,7 @@ ht-degree: 4%
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
-| tag->values->stringItem | 선택 사항 | 쿼리할 채널 목록입니다. If `<tag>` 이(가) 생략되면 모든 채널에 대한 정보를 받게 됩니다. |
+| tag->values->stringItem | 선택 사항 | 쿼리할 채널 목록입니다. `<tag>`이(가) 생략되면 모든 채널에 대한 정보를 받게 됩니다. |
 
 ## 요청 XML
 

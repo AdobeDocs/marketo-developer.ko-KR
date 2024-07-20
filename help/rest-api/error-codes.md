@@ -1,14 +1,14 @@
 ---
-title: "오류 코드"
+title: 오류 코드
 feature: REST API
-description: "Marketo 오류 코드 설명"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: Marketo 오류 코드 설명.
+exl-id: a923c4d6-2bbc-4cb7-be87-452f39b464b6
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '2272'
 ht-degree: 3%
 
 ---
-
 
 # 오류 코드
 
@@ -22,7 +22,7 @@ Marketo용으로 개발할 때 예기치 않은 예외가 발생할 때 요청 �
 
 Marketo REST API는 일반 작업 시 세 가지 유형의 오류를 반환할 수 있습니다.
 
-* HTTP 수준: 이러한 오류는 `4xx` 코드.
+* HTTP 수준: 이러한 오류는 `4xx` 코드로 표시됩니다.
 * 응답 수준: 이러한 오류는 JSON 응답의 &quot;오류&quot; 배열에 포함됩니다.
 * 레코드 수준: 이러한 오류는 JSON 응답의 &quot;result&quot; 배열에 포함되며 &quot;status&quot; 필드 및 &quot;reasons&quot; 배열과 함께 개별 레코드 단위로 표시됩니다.
 
@@ -30,12 +30,12 @@ Marketo REST API는 일반 작업 시 세 가지 유형의 오류를 반환할 �
 
 ### HTTP 수준 오류
 
-일반적인 운영 환경에서는 Marketo이 2개의 HTTP 상태 코드 오류만 반환해야 합니다. `413 Request Entity Too Large`, 및 `414 Request URI Too Long`. 이러한 기능은 모두 오류를 추적하고, 요청을 수정하고, 다시 시도하는 것을 통해 복구할 수 있지만, 스마트 코딩 사례를 사용하면 이러한 기능이 야생에서 발생하지 않아야 합니다.
+일반적인 운영 환경에서는 Marketo이 HTTP 상태 코드 오류 `413 Request Entity Too Large` 및 `414 Request URI Too Long`만 반환해야 합니다. 이러한 기능은 모두 오류를 추적하고, 요청을 수정하고, 다시 시도하는 것을 통해 복구할 수 있지만, 스마트 코딩 사례를 사용하면 이러한 기능이 야생에서 발생하지 않아야 합니다.
 
 Marketo은 요청 페이로드가 1MB를 초과하는 경우 413, 리드 가져오기의 경우 10MB를 반환합니다. 대부분의 시나리오에서는 이러한 제한에 도달할 가능성이 낮지만 요청 크기에 대한 검사를 추가하고 레코드를 이동하면 제한이 새 요청으로 초과되어 종단점에서 이 오류가 반환되는 상황을 방지해야 합니다.
 
-GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지하려면 쿼리 문자열의 길이를 확인하여 이 제한을 초과하는지 확인하십시오. 요청을 POST 메서드로 변경한 경우 쿼리 문자열을 추가 매개 변수와 함께 요청 본문으로 입력합니다 `_method=GET`. URI에 대한 제한을 무시합니다. 대부분의 경우 이 제한에 도달하는 것은 드물지만 GUID와 같은 긴 개별 필터 값이 있는 큰 레코드 일괄 처리를 검색하는 경우에는 다소 일반적입니다.
-다음 [신원](https://developer.adobe.com/marketo-apis/api/identity/) 끝점은 승인되지 않은 401 오류를 반환할 수 있습니다. 이는 일반적으로 잘못된 클라이언트 ID 또는 잘못된 클라이언트 암호 때문입니다. HTTP 수준 오류 코드
+GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지하려면 쿼리 문자열의 길이를 확인하여 이 제한을 초과하는지 확인하십시오. 요청을 POST 메서드로 변경한 경우 쿼리 문자열을 추가 매개 변수 `_method=GET`과(와) 함께 요청 본문으로 입력합니다. URI에 대한 제한을 무시합니다. 대부분의 경우 이 제한에 도달하는 것은 드물지만 GUID와 같은 긴 개별 필터 값이 있는 큰 레코드 일괄 처리를 검색하는 경우에는 다소 일반적입니다.
+[ID](https://developer.adobe.com/marketo-apis/api/identity/) 끝점은 승인되지 않은 401 오류를 반환할 수 있습니다. 이는 일반적으로 잘못된 클라이언트 ID 또는 잘못된 클라이언트 암호 때문입니다. HTTP 수준 오류 코드
 
 <table>
   <thead>
@@ -62,7 +62,7 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
 
 #### 응답 수준 오류
 
-응답 수준 오류는 `success` 응답의 매개 변수는 false로 설정되며 다음과 같이 구성됩니다.
+응답의 `success` 매개 변수가 false로 설정되어 있으면 응답 수준 오류가 표시되며 다음과 같이 구성됩니다.
 
 ```json
 {
@@ -77,7 +77,7 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
 }
 ```
 
-&quot;오류&quot; 배열의 각 객체에는 두 개의 멤버가 있습니다. `code`, 601-799 사이의 따옴표 붙은 정수 및 `message` 오류에 대한 일반 텍스트 이유를 제공합니다. 6xx 코드는 요청이 완전히 실패하여 실행되지 않았음을 항상 나타냅니다. 예를 들어, 요청을 사용하여 새 액세스 토큰을 다시 인증하고 전달하여 복구할 수 있는 601, &quot;유효하지 않은 액세스 토큰&quot;이 있습니다. 7xx 오류는 데이터가 반환되지 않았거나 요청이 잘못된 날짜를 포함하거나 필수 매개 변수가 누락되는 등 잘못 매개 변수화되었기 때문에 요청이 실패했음을 나타냅니다.
+&quot;errors&quot; 배열의 각 개체에는 두 개의 멤버 `code`이(가) 있습니다. 이 두 멤버는 601에서 799까지의 따옴표 붙은 정수입니다. `message`은(는) 오류에 대한 일반 텍스트 이유를 제공합니다. 6xx 코드는 요청이 완전히 실패하여 실행되지 않았음을 항상 나타냅니다. 예를 들어, 요청을 사용하여 새 액세스 토큰을 다시 인증하고 전달하여 복구할 수 있는 601, &quot;유효하지 않은 액세스 토큰&quot;이 있습니다. 7xx 오류는 데이터가 반환되지 않았거나 요청이 잘못된 날짜를 포함하거나 필수 매개 변수가 누락되는 등 잘못 매개 변수화되었기 때문에 요청이 실패했음을 나타냅니다.
 
 #### 응답 수준 오류 코드
 
@@ -110,7 +110,7 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
     <tr>
       <td><a name="603"></a>603</td>
       <td>액세스 거부됨</td>
-      <td>인증에 성공했지만 사용자에게 이 API를 호출할 권한이 없습니다. [추가 권한](custom-services.md)을 사용자 역할에 할당해야 하거나 <a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/create-an-allowlist-for-ip-based-api-access">IP 기반 API 액세스 허용 목록</a> 활성화되었을 수 있습니다.</td>
+      <td>인증에 성공했지만 사용자에게 이 API를 호출할 권한이 없습니다. [추가 권한](custom-services.md)을 사용자 역할에 할당하거나 <a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/create-an-allowlist-for-ip-based-api-access">IP 기반 API 액세스에 대한 허용 목록</a>을 사용하도록 설정할 수 있습니다.</td>
     </tr>
     <tr>
       <td><a name="604"></a>604*</td>
@@ -155,7 +155,7 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
     <tr>
       <td><a name="612"></a>612</td>
       <td>잘못된 콘텐츠 유형</td>
-      <td>이 오류가 표시되면 JSON 형식을 지정하는 콘텐츠 유형 헤더를 요청에 추가합니다. 예를 들어 'content type: application/json'을 사용해 보십시오. <a href="https://stackoverflow.com/questions/28181325/why-invalid-content-type">이 StackOverflow 질문 보기</a> 을 참조하십시오.</td>
+      <td>이 오류가 표시되면 JSON 형식을 지정하는 콘텐츠 유형 헤더를 요청에 추가합니다. 예를 들어 'content type: application/json'을 사용해 보십시오. 자세한 내용은 <a href="https://stackoverflow.com/questions/28181325/why-invalid-content-type">이 StackOverflow 질문을 참조하세요</a>.</td>
     </tr>
     <tr>
       <td><a name="613"></a>613</td>
@@ -207,7 +207,7 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
       <td>템플릿 없이 이메일을 만들려고 하는 등 에셋을 만들거나 업데이트하는 요구 사항을 위반하기 때문에 호출을 수행할 수 없습니다. 다음 작업을 수행하려고 할 때 이 오류가 발생할 수도 있습니다.
         <ul>
           <li>소셜 콘텐츠가 포함된 랜딩 페이지의 콘텐츠를 검색합니다.</li>
-          <li>특정 에셋 유형이 포함된 프로그램 복제(참조) <a href="programs.md#clone">프로그램 복제</a> 을 참조하십시오.</li>
+          <li>특정 자산 유형이 포함된 프로그램을 복제합니다(자세한 내용은 <a href="programs.md#clone">프로그램 복제</a> 참조).</li>
           <li>초안이 없는(즉, 이미 승인된) 에셋을 승인합니다.</li>
         </ul></td>
     </tr>
@@ -352,8 +352,8 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
     <tr>
       <td><a name="1012"></a>1012</td>
       <td>잘못된 쿠키 값 '%s'</td>
-      <td>호출 시 발생할 수 있음 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST">리드 연결</a> 쿠키 매개 변수에 대한 값이 잘못되었습니다.
-        이 문제는 을 호출할 때도 발생합니다. <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET">필터 유형별 리드 가져오기</a> filterType=cookies이고 filterValues 매개 변수에 대해 유효한 값이 잘못되었습니다.</td>
+      <td>쿠키 매개 변수에 대해 잘못된 값으로 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST">리드 연결</a>을 호출할 때 발생할 수 있습니다.
+        이는 filterType=cookies 및 filterValues 매개 변수에 대한 유효한 값이 잘못된 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET">필터 유형별 잠재 고객 가져오기</a>를 호출할 때도 발생합니다.</td>
     </tr>
     <tr>
       <td><a name="1013"></a>1013</td>
@@ -469,19 +469,20 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
     </tr>
     <tr>
       <td><a name="1076"></a>1076</td>
-      <td><a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST">잠재 고객 병합</a> mergeInCRM 플래그가 있는 호출은 4입니다.</td>
+      <td>mergeInCRM 플래그가 있는 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST">잠재 고객 병합</a> 호출은 4입니다.</td>
       <td>중복 레코드를 만들고 있습니다. 기존 레코드를 대신 사용하는 것이 좋습니다.
         Salesforce에서 병합할 때 Marketo에 수신되는 오류 메시지입니다.</td>
     </tr>
     <tr>
       <td><a name="1077"></a>1077</td>
-      <td><a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST">잠재 고객 병합</a> 'SFDC 필드' 길이로 인해 호출 실패</td>
+      <td>'SFDC 필드' 길이로 인해 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST">리드 병합</a> 호출이 실패했습니다.</td>
       <td>'SFDC 필드'가 허용되는 문자 제한을 초과하여 mergeInCRM이 true로 설정된 병합 리드 호출이 실패했습니다. 수정하려면 'SFDC 필드'의 길이를 줄이거나 mergeInCRM을 false로 설정하십시오.</td>
     </tr>
     <tr>
       <td><a name="1078"></a>1078</td>
-      <td><a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST">잠재 고객 병합</a> 리드/연락처가 아닌 삭제된 엔티티로 인해 호출이 실패하거나 필드 필터 기준이 일치하지 않습니다.</td>
-      <td>병합 실패, 고유하게 동기화된 CRM에서 병합 작업을 수행할 수 없음 Salesforce에서 병합할 때 Marketo에서 수신하는 오류 메시지입니다.</td>
+      <td>잠재 고객/연락처가 아닌 삭제된 엔터티로 인해 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST">잠재 고객 병합</a> 호출에 실패했습니다. 또는 필드 필터 기준이 일치하지 않습니다.</td>
+      <td>병합 실패, 고유하게 동기화된 CRM에서 병합 작업을 수행할 수 없음
+        Salesforce에서 병합할 때 Marketo에 수신되는 오류 메시지입니다.</td>
     </tr>
   </tbody>
 </table>

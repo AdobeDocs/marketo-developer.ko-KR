@@ -1,18 +1,18 @@
 ---
-title: "syncMObjects"
+title: syncMObjects
 feature: SOAP
-description: "syncMObjects SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: syncMObjects SOAP 호출
+exl-id: 68bb69ce-aa8c-40b7-8938-247f4fe97b5d
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '421'
 ht-degree: 3%
 
 ---
 
-
 # syncMObjects
 
-배열 수락 [오브젝트](marketo-objects.md) 만들거나 업데이트하려면 호출당 최대 100개이며 작업의 결과(상태)(생성됨, 업데이트됨, 실패, 변경되지 않음, 건너뜀) 및 MObject의 Marketo ID를 반환합니다. API는 다음 세 가지 작업 모드 중 하나에서 호출할 수 있습니다.
+만들거나 업데이트할 [MObjects](marketo-objects.md) 배열을 수락하며 호출당 최대 100개까지 허용하고 작업의 결과(상태)(CREATED, UPDATED, FAILED, UNCHANGED, SKIPPED) 및 MObject의 Marketo ID를 반환합니다. API는 다음 세 가지 작업 모드 중 하나에서 호출할 수 있습니다.
 
 1. 삽입 - 새 객체만 삽입하고 기존 객체를 건너뜁니다.
 1. 업데이트 - 기존 개체만 업데이트하고 새 개체를 건너뜁니다.
@@ -25,10 +25,10 @@ ht-degree: 3%
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
-| mObjectList->mObject->type | 필수 | 다음 중 하나일 수 있습니다.`Program`, `Opportunity`, `OpportunityPersonRole` |
+| mObjectList->mObject->type | 필수 | 다음 중 하나일 수 있음: `Program`, `Opportunity`, `OpportunityPersonRole` |
 | mObjectList->mObject->id | 필수 | MObject의 ID. 호출당 최대 100개의 MObject를 지정할 수 있습니다. |
-| mObjectList->mObject->typeAttribList->typeAttrib->attrType | 필수 | 비용(프로그램 MObject를 업데이트하는 동안에만 사용됨) 다음 중 하나일 수 있습니다. `Cost`, `Tag` |
-| mObjectList->mObject->typeAttribList->typeAttrib->attrList->attrib->name | 필수 | Program MObject의 경우 다음 속성을 이름-값 쌍으로 전달할 수 있습니다. 비용의 경우:`Month (Required)`, `Amount (Required)`, `Id (Cost Id - Optional)`, `Note (Optional)`. 태그/채널의 경우: `Type (Required)`, `Value (Required)`. Opportunity MObject 의 경우 출력 의 모든 필드 [describeMObject](describemobject.md) 는 이름-값 쌍으로 전달될 수 있습니다. 아래 목록은 모든 선택 필드 및 표준 속성 세트입니다. 지원 요청을 통해 생성된 Opportunity MObject에 추가 필드가 있을 수 있습니다. |
+| mObjectList->mObject->typeAttribList->typeAttrib->attrType | 필수 | 비용(프로그램 MObject를 업데이트하는 동안에만 사용됨)은 `Cost`, `Tag` 중 하나일 수 있습니다. |
+| mObjectList->mObject->typeAttribList->typeAttrib->attrList->attrib->name | 필수 | Program MObject의 경우 다음 속성을 이름-값 쌍으로 전달할 수 있습니다. 비용: `Month (Required)`, `Amount (Required)`, `Id (Cost Id - Optional)`, `Note (Optional)`. 태그/채널의 경우: `Type (Required)`, `Value (Required)`. 영업 기회 MObject의 경우 [describeMObject](describemobject.md) 출력의 모든 필드를 이름-값 쌍으로 전달할 수 있습니다. 아래 목록은 모든 선택 필드 및 표준 속성 세트입니다. 지원 요청을 통해 생성된 Opportunity MObject에 추가 필드가 있을 수 있습니다. |
 
 1. 금액
 1. CloseDate
@@ -50,7 +50,7 @@ ht-degree: 3%
 1. 단계
 1. 유형
 
-OpportunityPersonRole MObject의 경우 의 출력에서 모든 필드를 제공할 수 있습니다. [describeMObject](./describemobject.md) 이름-값 쌍으로 사용됩니다. OpportunityPersonRole 개체에 대한 표준 속성 세트는 다음과 같습니다.
+OpportunityPersonRole MObject의 경우 [describeMObject](./describemobject.md) 출력의 모든 필드를 이름-값 쌍으로 제공할 수 있습니다. OpportunityPersonRole 개체에 대한 표준 속성 세트는 다음과 같습니다.
 
 1. OpportunityId(필수)
 1. PersonId(필수)
@@ -60,7 +60,10 @@ OpportunityPersonRole MObject의 경우 의 출력에서 모든 필드를 제공
 1. IsPrimary(선택 사항)
 1. 역할(선택 사항)
 
-| | mObjAssociationList->mObjAssociation->mObjType | 선택 사항 | 연결된 개체의 ID 또는 외부 키를 사용하여 Opportunity/OpportunityPersonRole 개체를 업데이트하는 데 사용됩니다. 연결된 개체는 다음 중 하나일 수 있습니다. 회사 (Opportunity MObject 업데이트), 잠재 고객 (OpportunityPersonRole MObject 업데이트), 기회 (OpportunityPersonRole MObject 업데이트)| | mObjAssociationList->mObjAssociation->id | 선택 사항 | 연계된 개체 ID(잠재 고객/회사/영업 기회) | | mObjAssociationList->mObjAssociation->externalKey | 선택 사항 | 연결된 오브젝트의 사용자 지정 속성 |
+|
+| mObjAssociationList->mObjAssociation->mObjType | 선택 사항 | 연결된 개체의 ID 또는 외부 키를 사용하여 Opportunity/OpportunityPersonRole 개체를 업데이트하는 데 사용됩니다. 연결된 개체는 다음 중 하나일 수 있습니다. 회사 (Opportunity MObject 업데이트), 잠재 고객 (OpportunityPersonRole MObject 업데이트), 기회 (OpportunityPersonRole MObject 업데이트)|
+| mObjAssociationList->mObjAssociation->id | 선택 사항 | 연계된 개체 ID(잠재 고객/회사/영업 기회) |
+| mObjAssociationList->mObjAssociation->externalKey | 선택 사항 | 연결된 오브젝트의 사용자 지정 속성 |
 
 ## 요청 XML
 

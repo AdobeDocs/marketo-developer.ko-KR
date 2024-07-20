@@ -12,11 +12,11 @@ ht-degree: 0%
 
 # 잠재 고객 추적 API
 
-Marketo의 Munchkin JavaScript를 사용하면 Marketo 랜딩 페이지 및 외부 웹 페이지에 대한 최종 사용자 페이지 방문 수 및 클릭 수를 추적할 수 있습니다. 이러한 기록은 Marketo에 &quot;웹 페이지 방문&quot; 및 &quot;웹 페이지에서 링크를 클릭함&quot; 활동으로 기록되며, 이 활동은 스마트 캠페인 및 스마트 목록의 트리거 및 필터에서 사용할 수 있습니다.
+Marketo의 Munchkin JavaScript을 사용하면 Marketo 랜딩 페이지 및 외부 웹 페이지에 대한 최종 사용자 페이지 방문 수 및 클릭 수를 추적할 수 있습니다. 이러한 기록은 Marketo에 &quot;웹 페이지 방문&quot; 및 &quot;웹 페이지에서 링크를 클릭함&quot; 활동으로 기록되며, 이 활동은 스마트 캠페인 및 스마트 목록의 트리거 및 필터에서 사용할 수 있습니다.
 
 ## 코드 포함
 
-Marketo 인스턴스는 Marketo 인스턴스로 활동을 추적하는 외부 페이지에 코드를 포함하도록 사전 구성된 추적 코드 조각을 자동으로 제공합니다. 포함 코드 사용은 이에 의해 제어됩니다. [라이센스 계약](../munchkin-license.pdf).
+Marketo 인스턴스는 Marketo 인스턴스로 활동을 추적하는 외부 페이지에 코드를 포함하도록 사전 구성된 추적 코드 조각을 자동으로 제공합니다. 포함 코드 사용은 이 [라이선스 계약](../munchkin-license.pdf)의 적용을 받습니다.
 
 다음 세 가지 추적 코드 유형을 사용할 수 있습니다.
 
@@ -24,11 +24,11 @@ Marketo 인스턴스는 Marketo 인스턴스로 활동을 추적하는 외부 �
 1. 비동기 - 비동기적으로 로드됨
 1. 비동기 jQuery - 비동기적으로 로드되며 jQuery를 미리 로드해야 합니다.
 
-외부 페이지에 Munchkin을 포함하는 데 비동기 추적 코드를 사용하는 것이 좋습니다. 실행 성공률을 최대한 높이려면 비동기 추적 코드를 `<head>` 을 참조하십시오.
+외부 페이지에 Munchkin을 포함하는 데 비동기 추적 코드를 사용하는 것이 좋습니다. 실행 성공률을 최대한 높이려면 각 페이지의 `<head>`에 비동기 추적 코드를 포함하십시오.
 
 일부 컨텐츠 관리 시스템은 임의의 스크립트를 포함할 때 특정 방법이나 제한을 가질 수 있습니다.
 
-참조를 위해 최종 페이지에는 다음과 유사한 코드가 포함되어야 합니다 `<head>` HTML 문서:
+참조를 위해 최종 페이지에는 HTML 문서의 `<head>`에서 이와 유사한 코드가 포함되어야 합니다.
 
 ```html
 <head>
@@ -66,15 +66,15 @@ Marketo Munchkin의 기본 동작은 페이지 로드 시 다음을 수행하는
 1. 현재 페이지 및 브라우저의 정보를 사용하여 지정된 Marketo 인스턴스로 &quot;웹 페이지 방문&quot; 이벤트를 보냅니다. 활동을 Marketo의 해당 레코드에 기록합니다.
 1. 링크에서 발생하는 모든 사용자 클릭에 대해 &quot;웹 페이지에서 클릭한 링크&quot; 이벤트를 보냅니다.
 
-Munchkin의 동작은 Munchkin 사용을 통해 수정할 수 있습니다 [구성 설정](lead-tracking.md#lead-tracking-api)를 사용하여 페이지를 방문할 때 모든 잠재 고객에 대해 쿠키가 생성되는지 여부 등 `cookieAnon` 클릭 지연 설정 또는 수정 `clickTime` 설정. apiOnly 설정을 true로 설정하여 방문 활동 전송을 비활성화할 수 있습니다. 버전 162(2022년 8월)부터 클릭 수 `tel` 및 `mailto` 링크 추적 외 `http/s` 링크.
+Munchkin [구성 설정](lead-tracking.md#lead-tracking-api)을 사용하여 Munchkin의 동작을 수정할 수 있습니다. 예를 들어 `cookieAnon` 설정으로 페이지를 방문할 때 모든 잠재 고객에 대해 쿠키가 생성되는지 또는 `clickTime` 설정으로 클릭 지연을 수정하는지 여부입니다. apiOnly 설정을 true로 설정하여 방문 활동 전송을 비활성화할 수 있습니다. 버전 162(2022년 8월)부터 클릭 수 `tel` 및 `mailto`개와 링크 `http/s`개가 추적됩니다.
 
 ## 알려진 리드 및 익명 리드
 
-도메인의 페이지에 대한 잠재 고객의 첫 번째 방문 시 Marketo에 새로운 익명 잠재 고객 레코드가 생성됩니다. 이 레코드의 기본 키는 Munchkin 쿠키(`_mkto_trk`)을 클릭하여 제품에서 사용할 수 있습니다. 해당 브라우저의 모든 후속 웹 활동은 이 익명 레코드에 대해 기록됩니다. Marketo의 알려진 레코드에 연결하려면 다음 중 하나가 발생해야 합니다.
+도메인의 페이지에 대한 잠재 고객의 첫 번째 방문 시 Marketo에 새로운 익명 잠재 고객 레코드가 생성됩니다. 이 레코드의 기본 키는 사용자 브라우저에서 만들어진 Munchkin 쿠키(`_mkto_trk`)입니다. 해당 브라우저의 모든 후속 웹 활동은 이 익명 레코드에 대해 기록됩니다. Marketo의 알려진 레코드에 연결하려면 다음 중 하나가 발생해야 합니다.
 
-- 잠재 고객은 다음을 사용하여 Munchkin 추적 페이지를 방문해야 합니다. `mkt_tok` 추적된 Marketo 이메일 링크의 쿼리 문자열에서 매개 변수.
+- 잠재 고객은 추적된 Marketo 이메일 링크의 쿼리 문자열에 `mkt_tok` 매개 변수가 있는 Munchkin 추적 페이지를 방문해야 합니다.
 - 잠재 고객은 Marketo Form을 작성해야 합니다.
-- A SOAP [syncLead](../soap-api/leads.md) 또는 REST [리드 연결](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST) 호출을 전송해야 합니다.
+- SOAP [syncLead](../soap-api/leads.md) 또는 REST [리드 연결](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST) 호출을 보내야 합니다.
 
 이러한 조건 중 하나가 충족되면 쿠키 및 연결된 모든 웹 활동이 알려진 리드와 연결됩니다.
 
@@ -82,22 +82,22 @@ Munchkin의 동작은 Munchkin 사용을 통해 수정할 수 있습니다 [구�
 
 ## 도메인
 
-Munchkin은 도메인 단위로 개별 쿠키를 만들고 추적하므로 알려진 리드 추적이 도메인 간에 발생하려면 각 도메인에 대해 리드 연결 이벤트가 발생해야 합니다. 예를 들어, 두 개의 도메인을 제어하는 경우 `marketo.com`, 및 `example.com`, 그리고 리드가 다음에 대한 양식을 작성합니다. `marketo.com`로 이동한 다음 로 이동합니다. `example.com` 나중에 해당 활동이 `marketo.com` 알려진 잠재 고객 레코드에서 추적되지만, 활동이 `example.com` 은(는) 익명입니다. 알려진 리드는 하위 도메인 간에 유지되므로 알려진 리드 `www.example.com` 은(는) 에도 알려진 리드 입니다. `info.example.com`.
+Munchkin은 도메인 단위로 개별 쿠키를 만들고 추적하므로 알려진 리드 추적이 도메인 간에 발생하려면 각 도메인에 대해 리드 연결 이벤트가 발생해야 합니다. 예를 들어 두 개의 도메인 `marketo.com`과(와) `example.com`을(를) 제어하고 `marketo.com`에서 잠재 고객이 양식을 작성한 후 나중에 `example.com`(으)로 이동하면 `marketo.com`의 해당 활동이 알려진 잠재 고객 레코드에서 추적되지만 `example.com`의 해당 활동은 익명입니다. 알려진 리드는 하위 도메인 간에 유지되므로 `www.example.com`의 알려진 리드는 `info.example.com`의 알려진 리드이기도 합니다.
 
-최상위 도메인이 다음과 같은 두 부분인 경우 `.co.uk`를 클릭한 다음 코드가 올바르게 추적되도록 Munchkin 코드 조각에 domainLevel 매개 변수를 추가합니다. 다음을 참조하십시오 [여기](lead-tracking.md#domains) 을 참조하십시오.
+최상위 도메인이 `.co.uk`과(와) 같은 두 부분인 경우 코드가 올바르게 추적되도록 Munchkin 코드 조각에 domainLevel 매개 변수를 추가하십시오. 자세한 내용은 [여기](lead-tracking.md#domains)를 참조하세요.
 
 ## 쿠키
 
-Munchkin 쿠키는 키를 사용합니다 `_mkto_trk`에는 이 패턴 다음의 값이 있습니다.
+Munchkin 쿠키는 키 `_mkto_trk`을(를) 사용하며 다음 패턴 값을 가집니다.
 
 `id:561\-HYG\-937&token:_mch\-marketo.com\-1374552656411\-90718`
 
-Munchkin 쿠키는 각 두 번째 수준 도메인에 한정됩니다. 즉, `example.com`. 쿠키의 기본 수명은 2년(730일)입니다.
+Munchkin 쿠키는 각 두 번째 수준 도메인, 즉 `example.com`에 한정됩니다. 쿠키의 기본 수명은 2년(730일)입니다.
 
 ## Beta
 
-랜딩 페이지에 대한 Munchkin 베타 채널을 옵트인하려면 다음 위치로 이동하십시오. [책임자 -> 보물 상자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features) 을(를) 메뉴에 추가하고 &quot;랜딩 페이지의 Munchkin Beta&quot; 설정을 활성화합니다. 이렇게 하려면에서 새 코드 조각을 제공합니다 **[!UICONTROL Admin]** ->  **[!UICONTROL Munchkin]** 외부 사이트에서 beta 버전을 사용할 수 있는 메뉴입니다.
+랜딩 페이지에 대해 Munchkin 베타 채널을 옵트인하려면 [관리자 -> 보물 상자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features) 메뉴로 이동하여 &quot;랜딩 페이지에 Munchkin Beta&quot; 설정을 활성화하십시오. **[!UICONTROL Admin]** ->에 새 코드 조각을 제공합니다.  외부 사이트에서 Beta 버전을 사용할 수 있는 **[!UICONTROL Munchkin]** 메뉴.
 
 ## 옵트아웃
 
-방문자는 다음을 추가하여 Munchkin 추적을 완전히 거부할 수 있습니다. `querystring` 매개 변수 &quot;marketo_opt_out=true&quot;를 브라우저에 있는 URL에 추가합니다. Munchkin JavaScript가 이 설정을 감지하면 값이 인 새 쿠키 &quot;mkto_opt_out&quot;을 설정하려고 합니다. `true`. 이 설정이 검색되면 다른 모든 Marketo 추적 쿠키가 삭제되고, 새 쿠키가 설정되지 않으며, Munchkin에서 HTTP 요청을 수행하지 않습니다.
+방문자는 브라우저의 URL에 `querystring` 매개 변수 &quot;marketo_opt_out=true&quot;를 추가하여 Munchkin 추적을 완전히 옵트아웃할 수 있습니다. Munchkin JavaScript이 이 설정을 감지하면 값이 `true`인 새 쿠키 &quot;mkto_opt_out&quot;을 설정하려고 합니다. 이 설정이 검색되면 다른 모든 Marketo 추적 쿠키가 삭제되고, 새 쿠키가 설정되지 않으며, Munchkin에서 HTTP 요청을 수행하지 않습니다.

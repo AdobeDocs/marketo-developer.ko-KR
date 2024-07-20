@@ -1,14 +1,14 @@
 ---
-title: "태그"
+title: 태그
 feature: REST API, Tags
-description: "Marketo의 프로그램에 대한 태그를 관리합니다."
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: Marketo의 프로그램에 대한 태그를 관리합니다.
+exl-id: 64731d1a-a749-4d6f-b336-16c733d002f0
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '205'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
-
 
 # 태그
 
@@ -77,7 +77,7 @@ GET /rest/asset/v1/tagType/byName.json?name=AAA1 Required Tag Type
 
 ## 업데이트
 
-다음 [프로그램 태그 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/updateProgramUsingPOST) 끝점을 사용하면 지정된 태그 유형의 값을 업데이트할 수 있습니다. 끝점은 `id` 및 `tagType` 업데이트할 프로그램 id와 태그 유형을 지정하는 경로 매개 변수입니다. A `tagValue` 쿼리 매개 변수는 태그 유형의 새 값을 지정하는 데 사용됩니다. 모든 매개 변수가 필요합니다.
+[프로그램 태그 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/updateProgramUsingPOST) 끝점을 사용하면 지정된 태그 유형의 값을 업데이트할 수 있습니다. 끝점은 업데이트할 프로그램 ID와 태그 유형을 지정하는 `id` 및 `tagType` 경로 매개 변수를 사용합니다. `tagValue` 쿼리 매개 변수를 사용하여 태그 형식의 새 값을 지정합니다. 모든 매개 변수가 필요합니다.
 
 ```
 POST /rest/asset/v1/program/{id}/tag/{tagType}.json?tagValue=David
@@ -97,11 +97,11 @@ POST /rest/asset/v1/program/{id}/tag/{tagType}.json?tagValue=David
 }
 ```
 
-태그를 일괄적으로 업데이트할 수 있는 방법은 [프로그램 메타데이터 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/updateProgramUsingPOST) 엔드포인트. 예를 찾을 수 있습니다. [여기](programs.md#update).
+[프로그램 메타데이터 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/updateProgramUsingPOST) 끝점을 사용하여 태그를 일괄적으로 업데이트할 수 있습니다. 그 예는 [여기](programs.md#update)에서 찾을 수 있습니다.
 
 ## 삭제
 
-다음 [프로그램 태그 삭제](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/deleteProgramUsingPOST) 끝점을 사용하면 필요하지 않은 태그 유형을 삭제할 수 있습니다. 끝점은 다음을 수행합니다. `id` 및 `tagType` 삭제할 프로그램 id 및 태그 유형을 지정하는 경로 매개 변수입니다.
+[프로그램 태그 삭제](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/deleteProgramUsingPOST) 끝점을 사용하면 필요하지 않은 태그 유형을 삭제할 수 있습니다. 끝점은 삭제할 프로그램 ID와 태그 유형을 지정하는 `id` 및 `tagType` 경로 매개 변수를 사용합니다.
 
 ```
 POST /rest/asset/v1/program/{id}/tag/{tagType}/delete.json

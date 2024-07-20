@@ -1,7 +1,7 @@
 ---
 title: '[!DNL Ionic]'
 feature: Mobile Marketing
-description: 사용 [!DNL Ionic] 모바일 장치용 Marketo 사용
+description: 모바일 장치용 Marketo에서  [!DNL Ionic] 사용
 exl-id: 204e5fb4-c9d6-43a6-9d77-0b2a67ddbed3
 source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
 workflow-type: tm+mt
@@ -16,15 +16,15 @@ ht-degree: 1%
 
 ## 필요 조건
 
-1. [Marketo Admin에서 애플리케이션 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app) (애플리케이션 암호 키 및 Munchkin Id 얻기).
+1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)(응용 프로그램 비밀 키 및 Munchkin Id 얻기).
 1. 푸시 알림 설정([iOS](push-notifications.md) | [Android](push-notifications.md) ).
-1. 설치 [[!DNL Ionic]](https://ionicframework.com/getting-started/) 및 [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/).
+1. [[!DNL Ionic]](https://ionicframework.com/getting-started/) 및 [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/)를 설치합니다.
 
 ## 설치 지침
 
-### Marketo 설정 [!DNL Ionic] 플러그인
+### Marketo [!DNL Ionic] 플러그 인 설정
 
-1. Cordova CLI가 설치되어 있다고 가정할 경우 [!DNL Ionic] application directory를 실행하고 다음 명령을 실행하여 Marketo 플러그인을 응용 프로그램에 추가합니다.
+1. Cordova CLI가 설치되어 있다고 가정할 경우 [!DNL Ionic] 응용 프로그램 디렉터리로 이동하여 다음 명령을 실행하여 Marketo 플러그인을 응용 프로그램에 추가합니다.
 
    `$ ionic plugin add https://github.com/Marketo/PhoneGapPlugin.git --variable APPLICATION_SECRET_KEY="YOUR_APPLICATION_SECRET"`
 
@@ -48,7 +48,7 @@ ht-degree: 1%
 
 ### 푸시 알림 추적
 
-다음 코드를 내부에 붙여넣기 `application:didFinishLaunchingWithOptions:` 함수.
+`application:didFinishLaunchingWithOptions:` 함수 내에 다음 코드를 붙여넣습니다.
 
 >[!BEGINTABS]
 
@@ -72,9 +72,9 @@ sharedInstance.trackPushNotfication(launchOptions)
 
 ### Marketo 프레임워크 초기화
 
-앱 시작 시 Marketo 프레임워크가 시작되도록 하려면 `onDeviceReady` 기본 JavaScript 파일에서 작동합니다.
+앱 시작 시 Marketo 프레임워크가 시작되도록 하려면 기본 JavaScript 파일의 `onDeviceReady` 함수 아래에 다음 코드를 추가하십시오.
 
-다음을 통과해야 합니다. `ionicCordova` 의 프레임워크 유형으로 [!DNL Ionic] Cordova 앱.
+[!DNL Ionic] Cordova 앱에 대한 프레임워크 유형으로 `ionicCordova`을(를) 전달해야 합니다.
 
 #### 구문
 
@@ -121,7 +121,7 @@ marketo.initializeMarketoPush(
 
 - Success Callback : Marketo 푸시 알림이 성공적으로 초기화된 경우 실행되는 함수입니다.
 - Failure Callback : Marketo 푸시 알림이 초기화되지 않는 경우 실행할 함수입니다.
-- GCM_PROJECT_ID :에서 GCM 프로젝트 ID를 찾았습니다. [Google 개발자 콘솔](https://accounts.google.com/ServiceLogin?service=cloudconsole&amp;passive=1209600&amp;osid=1&amp;continue=https://console.cloud.google.com/apis/dashboard&amp;followup=https://console.cloud.google.com/apis/dashboard) 앱을 만든 후에.
+- GCM_PROJECT_ID : 앱을 만든 후 [Google 개발자 콘솔](https://accounts.google.com/ServiceLogin?service=cloudconsole&amp;passive=1209600&amp;osid=1&amp;continue=https://console.cloud.google.com/apis/dashboard&amp;followup=https://console.cloud.google.com/apis/dashboard)에서 GCM 프로젝트 ID를 찾았습니다.
 
 로그아웃 시 토큰의 등록을 취소할 수도 있습니다.
 
@@ -177,7 +177,7 @@ marketo.associateLead(
 
 ## 보고서 작업
 
-를 호출하여 사용자가 수행한 작업을 보고할 수 있습니다. `reportaction` 함수.
+`reportaction` 함수를 호출하여 사용자가 수행한 작업을 보고할 수 있습니다.
 
 ### 구문
 

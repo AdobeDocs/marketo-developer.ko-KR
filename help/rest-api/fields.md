@@ -1,14 +1,14 @@
 ---
-title: "필드"
+title: 필드
 feature: REST API, Field Management
-description: "지원되는 필드 이름 목록입니다."
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: 지원되는 필드 이름 목록입니다.
+exl-id: 9033f32a-c7cb-4bbf-abcf-38ca4112139f
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '194'
 ht-degree: 2%
 
 ---
-
 
 # 필드
 
@@ -35,4 +35,4 @@ REST &#39;Describe Lead&#39; 엔드포인트를 사용하여 리드 레코드에
 
 ### REST API 필드 sfdcId가 항상 null 값을 반환하는 이유는 무엇입니까?
 
-필드 `sfdcId` 는 REST API에 대한 원래 필드 맵에 잘못 포함된 공식 필드입니다. REST API를 통해 검색된 레코드는 공식 필드의 값을 계산하지 않으므로 값은 항상 null입니다. 실제 SFDC ID를 캡처하려면 다음 필드를 사용해야 합니다 `sfdcLeadId` 및 `sfdcContactId`.
+필드 `sfdcId`은(는) REST API의 원래 필드 맵에 잘못 포함된 수식 필드입니다. REST API를 통해 검색된 레코드는 공식 필드의 값을 계산하지 않으므로 값은 항상 null입니다. 실제 SFDC ID를 캡처하려면 `sfdcLeadId` 및 `sfdcContactId` 필드를 사용해야 합니다.

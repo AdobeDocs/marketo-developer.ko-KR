@@ -1,14 +1,14 @@
 ---
-title: "인증 서명"
+title: 인증 서명
 feature: SOAP
-description: "인증 서명을 사용한 API 보안"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: 인증 서명을 사용한 API 보안
+exl-id: d6bed8ee-77fa-440c-8f35-a71cf77f45d3
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '226'
 ht-degree: 2%
 
 ---
-
 
 # 인증 서명
 
@@ -19,7 +19,7 @@ HMAC-SHA1 서명에는 다음이 필요합니다.
 * 공유 암호 키와 메시지 콘텐츠를 사용하여 계산되며 서비스 요청과 함께 전송되는 서명입니다.
 * 서비스 요청과 함께 전송되지 않는 공유 암호 키(암호화 키라고도 함)
 
-이 보안 정보는 Marketo 내의 관리 > SOAP API를 통해 확인됩니다.
+이 보안 정보는 Marketo 내의 관리자 > SOAP API를 통해 확인됩니다.
 클라이언트 프로그램은 공유된 비밀 키 및 요청 메시지 콘텐츠의 일부를 사용하여 HMAC-SHA1 서명을 계산할 것이다. SOAP 메시지와 함께 인증 정보를 전달하려면 클라이언트에 SOAP 헤더인 AuthenticationHeaderInfo가 포함되어야 합니다.
 다음 의사 코드는 알고리즘을 보여 줍니다.
 
@@ -42,7 +42,7 @@ authHeader = "<ns1:AuthenticationHeader>" +
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 |--- |--- |--- |
-| mktowsUserId | 필수 | Marketo 클라이언트 액세스 ID는 통합 아래의 Marketo 관리 SOAP API 패널 내에 있습니다. |
+| mktowsUserId | 필수 | Marketo 클라이언트 액세스 ID는 통합 아래의 Marketo admin SOAP API 패널에 있습니다. |
 | requestSignature | 필수 | 공유 암호 키, requestTimestamp 및 Marketo 사용자 ID를 기반으로 하는 HMAC-SHA1 서명 |
 | request타임스탬프 | 필수 | 요청 타임스탬프(W3C WSDL 날짜 형식 Ex. &quot;2013-06-09T14:04:54-08:00&quot;) |
 | partnerId | 선택 사항 | LaunchPoint 기술 파트너 API 키. |

@@ -1,14 +1,14 @@
 ---
-title: "일괄 가져오기"
+title: 일괄 가져오기
 feature: REST API
-description: "개인 데이터를 일괄 가져오는 중"
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: 개인 데이터를 일괄 가져오는 중.
+exl-id: f7922fd2-8408-4d04-8955-0f8f58914d24
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '554'
 ht-degree: 1%
 
 ---
-
 
 # 일괄 가져오기
 
@@ -24,7 +24,7 @@ Marketo은 일괄 가져오기라고 하는 대규모 개인 및 개인 관련 �
 
 ## 인증
 
-대량 가져오기 API는 다른 Marketo REST API와 동일한 OAuth 2.0 인증 방법을 사용합니다.  이를 위해서는 쿼리-문자열 매개 변수로 포함할 유효한 액세스 토큰이 필요합니다 `access_token={_AccessToken_}`또는 HTTP 헤더로서 `Authorization: Bearer {_AccessToken_}`.
+대량 가져오기 API는 다른 Marketo REST API와 동일한 OAuth 2.0 인증 방법을 사용합니다.  이를 위해서는 올바른 액세스 토큰이 쿼리-문자열 매개 변수 `access_token={_AccessToken_}` 또는 HTTP 헤더 `Authorization: Bearer {_AccessToken_}` 중 하나로 포함되어야 합니다.
 
 ## 제한
 
@@ -42,7 +42,7 @@ Marketo은 일괄 가져오기라고 하는 대규모 개인 및 개인 관련 �
 
 ## 작업 생성
 
-Marketo의 벌크 가져오기 API는 데이터 가져오기를 실행하는 작업 개념을 사용합니다. 다음을 사용하여 간단한 리드 가져오기 작업을 만드는 방법을 살펴보겠습니다. [리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/importLeadUsingPOST) 엔드포인트.  이 엔드포인트는 다음을 사용합니다. [content-type으로서의 multipart/form-data](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html). 이 방법은 올바른 이해에 까다로울 수 있으므로 가장 좋은 방법은 선택한 언어에 HTTP 지원 라이브러리를 사용하는 것입니다.  만약 여러분이 단지 발을 적시는 것이라면, 우리는 여러분이 [컬](https://curl.se/).
+Marketo의 벌크 가져오기 API는 데이터 가져오기를 실행하는 작업 개념을 사용합니다. [리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/importLeadUsingPOST) 끝점을 사용하여 간단한 리드 가져오기 작업을 만드는 방법을 살펴보겠습니다.  이 끝점은 [multipart/form-data를 content-type](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html)(으)로 사용합니다. 이 방법은 올바른 이해에 까다로울 수 있으므로 가장 좋은 방법은 선택한 언어에 HTTP 지원 라이브러리를 사용하는 것입니다.  발을 막 젖게 하는 경우에는 [curl](https://curl.se/)을(를) 사용하는 것이 좋습니다.
 
 ```
 POST /bulk/v1/leads.json?format=csv
@@ -96,7 +96,7 @@ Easy,Fox,easyfox@marketo.com
 
 ## 폴링 작업 상태
 
-작업 상태 확인은 다음을 사용하여 간단합니다 [가져오기 리드 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/getImportLeadStatusUsingGET) 엔드포인트.
+[가져오기 리드 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/getImportLeadStatusUsingGET) 끝점을 사용하여 작업 상태를 간단하게 확인할 수 있습니다.
 
 ```
 GET /bulk/v1/leads/batch/{batchId}.json
@@ -120,13 +120,13 @@ GET /bulk/v1/leads/batch/{batchId}.json
 }
 ```
 
-더 이너 `status` 구성원은 작업의 진행 상황을 나타내며 큐에 있음, 가져오기, 완료, 실패 값 중 하나일 수 있습니다. 이 경우 우리의 작업이 완료되었으므로 우리는 투표를 중지할 수 있습니다.
+내부 `status` 구성원은 작업의 진행 상황을 나타내며 [큐에 있음], [가져오기], [완료], [실패] 값 중 하나일 수 있습니다. 이 경우 우리의 작업이 완료되었으므로 우리는 투표를 중지할 수 있습니다.
 
 ## 실패
 
-실패는 `numOfRowsFailed` 가져오기 리드 상태 가져오기 응답의 특성. If `numOfRowsFailed` 이 0보다 큰 경우 해당 값은 발생한 실패 수를 나타냅니다.
+가져오기 리드 상태 가져오기 응답에서 `numOfRowsFailed` 특성으로 오류가 표시됩니다. `numOfRowsFailed`이(가) 0보다 크면 이 값은 발생한 실패 횟수를 나타냅니다.
 
-실패한 행의 레코드와 원인을 검색하려면 다음을 사용하여 실패 파일을 검색해야 합니다 [가져오기 리드 가져오기 실패](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/getImportLeadFailuresUsingGET) 엔드포인트.
+실패한 행의 레코드와 원인을 검색하려면 [가져오기 리드 실패 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/getImportLeadFailuresUsingGET) 끝점을 사용하여 실패 파일을 검색해야 합니다.
 
 ```
 GET /bulk/v1/leads/batch/{batchId}/failures.json

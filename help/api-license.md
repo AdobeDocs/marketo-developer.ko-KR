@@ -103,4 +103,4 @@ API 라이선스 계약
 
 [!DNL K]. 준거법; 고지 사항. 본 계약은 법률 규칙의 선택 또는 충돌에 관계 없이 캘리포니아 주 법의 적용을 받습니다. 본 계약과 관련된 모든 법적 문제에 대한 전속 관할 및 장소는 캘리포니아주 산 마테오 카운티(San Mateo County)의 상급 법원 또는 캘리포니아 북부 지구(Northern District)의 미국 지방법원으로 합니다. 본 계약에 따른 통지는 서면으로 이루어져야 하며 (i) 개인 게재, (ii) 우편 발송 후 3영업일, (ii) 이메일 발송 후 첫 영업일에 이루어진 것으로 간주됩니다. Marketo에 대한 고지는 &quot;Application Programming Interface License Agreement&quot; 및 Marketo, Inc., 901 Mariner&#39;s Island Boulevard, Suite 500, San Mateo, CA 94404으로 발송되어야 하며, 동일한 주소에서 General Counsel에 사본을 송부해야 합니다.
 
-API 라이선스 계약의 보관된 버전은 다음 위치에서 찾을 수 있습니다. [https://developers.marketo.com/api-license-archived](https://developers.marketo.com/api-license-archived)
+API 라이선스 계약의 보관된 버전은 [https://developers.marketo.com/api-license-archived](https://developers.marketo.com/api-license-archived)에 있습니다.

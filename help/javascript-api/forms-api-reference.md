@@ -1,18 +1,18 @@
 ---
-title: "Forms API 참조"
-description: "Forms API 참조"
+title: Forms API 참조
+description: Forms API 참조
 feature: Forms, Javascript
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+exl-id: 0f8d242f-0b27-4087-b080-3d41ebaa25b3
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '1327'
 ht-degree: 1%
 
 ---
 
-
 # Forms API 참조
 
-Forms 2.0 API를 사용하여 상호 작용할 두 개의 기본 개체가 있습니다. 다음 `MktoForms2` 오브젝트 및 `Form` 개체. 다음 `MktoForms2` object는 Forms2 기능에 대해 공개적으로 표시되는 최상위 네임스페이스이며 Form 개체를 만들고, 로드하고, 가져오는 함수를 포함합니다.
+Forms 2.0 API를 사용하여 상호 작용할 두 개의 기본 개체가 있습니다. `MktoForms2` 개체와 `Form` 개체. `MktoForms2` 개체는 Forms2 기능에 대해 공개적으로 표시되는 최상위 네임스페이스이며, Form 개체를 만들고, 로드하고, 가져오는 함수를 포함합니다.
 
 ## MktoForms2 메서드
 
@@ -178,11 +178,11 @@ Forms 2.0 API를 사용하여 상호 작용할 두 개의 기본 개체가 있�
     <tr valign="top">
       <td>.onSuccess(callback)</td>
       <td>양식이 성공적으로 제출되었지만 잠재 고객이 후속 페이지로 전달되기 전에 호출될 콜백을 추가합니다. 제출 후 잠재 고객이 후속 페이지로 전달되지 않도록 하는 데 사용할 수 있습니다.</td>
-      <td>callback - 양식이 성공적으로 제출되었을 때 호출되는 함수입니다. 이 콜백에는 인수 두 개가 전달됩니다. 제출된 값과 사용자가 전달될 후속 페이지의 문자열 URL이 포함된 JS 개체이거나, 구성된 후속 페이지가 없는 경우 null 또는 빈 문자열입니다. 특수 동작: 이 콜백이 'false'(===으로 측정됨)를 반환하는 경우 방문자가 후속 페이지로 전달되지 않고 페이지가 다시 로드되지 않습니다. 이렇게 하면 구현자는 후속 URL에 대한 추가 처리를 수행하거나 페이지를 종료하지 않고 JavaScript를 사용하여 페이지에서 작업을 수행할 수 있습니다.</td>
+      <td>callback - 양식이 성공적으로 제출되었을 때 호출되는 함수입니다. 이 콜백에는 인수 두 개가 전달됩니다. 제출된 값과 사용자가 전달될 후속 페이지의 문자열 URL이 포함된 JS 개체이거나, 구성된 후속 페이지가 없는 경우 null 또는 빈 문자열입니다. 특수 동작: 이 콜백이 'false'(===으로 측정됨)를 반환하는 경우 방문자가 후속 페이지로 전달되지 않고 페이지가 다시 로드되지 않습니다. 이렇게 하면 구현자는 후속 URL에 대한 추가 처리를 수행하거나 페이지를 종료하지 않고 JavaScript을 사용하여 페이지에서 작업을 수행할 수 있습니다.</td>
       <td>양식 개체 - 체인 목적으로 메서드가 호출된 동일한 양식 개체.</td>
     </tr>
     <tr valign="top">
-      <td>.submittable(canSubmit) <em>다음과 같이 사용 가능:</em> <em>.submitable(canSubmit)</em></td>
+      <td>.submittable(canSubmit) <em>다음 항목으로도 사용 가능:</em> <em>.submitable(canSubmit)</em></td>
       <td>양식을 제출할 수 있는지 여부를 가져오거나 설정합니다. 인수를 사용하지 않고 를 호출하면 값을 가져오고, 인수를 사용하여 를 호출하면 값을 설정합니다. 이렇게 하면 일반 양식 이외의 다른 기준이 충족되는 동안 양식이 제출되지 않도록 방지할 수 있습니다.</td>
       <td>canSubmit (선택 사항) (부울) - 양식을 제출할 수 있도록 설정하거나 제출할 수 없도록 설정합니다.</td>
       <td>부울 또는 양식 개체 - 인수 없이 호출되면 양식을 제출할 수 있는지 여부를 나타내는 부울을 반환합니다. 하나의 인수를 사용하여 호출되면 체인 목적으로 이 양식 개체를 반환합니다. </td>

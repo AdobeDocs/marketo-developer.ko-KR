@@ -16,23 +16,23 @@ ht-degree: 0%
 
 ## 필요 조건
 
-[Marketo Admin에서 애플리케이션 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app) (애플리케이션 암호 키 및 Munchkin Id 얻기).
+[Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)(응용 프로그램 비밀 키 및 Munchkin Id 얻기).
 
 ## SDK 통합
 
 ### Android SDK 통합
 
-**Gradle을 사용한 설정**
+**Gradle을 사용하여 설정**
 
-애플리케이션 수준에서 최신 버전으로 Marketo SDK 종속성을 추가합니다. `build.gradle` 종속성 섹션에 (적절한 Marketo SDK 버전 포함)을 추가합니다.
+최신 버전으로 Marketo SDK 종속성을 추가합니다. 응용 프로그램 수준 `build.gradle` 파일의 종속성 섹션 아래에 (적절한 Marketo SDK 버전 포함)을 추가합니다.
 
 ```
 implementation 'com.marketo:MarketoSDK:0.x.x'
 ```
 
-**Mavencentral 저장소 추가**
+**mavencentral 저장소 추가**
 
-Marketo SDK는 [maven 중앙 저장소](https://mvnrepository.com/). 해당 파일을 동기화하려면 다음을 추가하십시오. `mavencentral` 루트에 저장소 `build.gradle`
+Marketo SDK는 [maven 중앙 저장소](https://mvnrepository.com/)에서 사용할 수 있습니다. 해당 파일을 동기화하려면 `mavencentral` 리포지토리를 `build.gradle` 루트에 추가하십시오.
 
 ```
 build script {
@@ -53,7 +53,7 @@ React Native 프로젝트에 대한 브리지를 만들기 전에 Xcode 프로�
 
 앱에서 iOS SDK를 쉽게 사용할 수 있습니다. CocoaPods를 사용하여 앱의 Xcode 프로젝트에서 설정하려면 다음 단계를 수행하십시오. 당사의 플랫폼을 앱과 통합할 수 있습니다.
 
-다운로드 [코코아팟](https://cocoapods.org/) - Ruby gem으로 배포되는 이 관리자는 iOS SDK와 같은 코드에서 타사 라이브러리를 사용하는 프로세스를 간소화하는 Objective-C 및 Swift용 종속성 관리자입니다.
+[CocoaPods](https://cocoapods.org/) 다운로드 - Ruby gem으로 배포되는 이 프로그램은 iOS SDK와 같은 코드에서 타사 라이브러리를 사용하는 프로세스를 간소화하는 Objective-C 및 Swift의 종속성 관리자입니다.
 
 다운로드하고 설치하려면 Mac에서 명령줄 단말기를 시작하고 다음 명령을 실행합니다.
 
@@ -81,7 +81,7 @@ React Native 프로젝트에 대한 브리지를 만들기 전에 Xcode 프로�
 
 ## 기본 모듈 설치 지침
 
-경우에 따라 React Native 앱은 JavaScript에서 기본적으로 사용할 수 없는 기본 플랫폼 API(예: Apple 또는 Google Pay에 액세스하기 위한 기본 API)에 액세스해야 합니다. JavaScript에서 재구현하거나 이미지 처리와 같은 작업을 위해 고성능, 다중 스레드 코드를 작성할 필요 없이 일부 기존 Objective-C, Swift, Java 또는 C++ 라이브러리를 재사용할 수 있습니다.
+경우에 따라 React Native 앱은 JavaScript에서 기본적으로 사용할 수 없는 기본 플랫폼 API에 액세스해야 합니다(예: Apple 또는 Google 페이에 액세스하기 위한 기본 API). JavaScript에서 다시 구현하거나 이미지 처리와 같은 작업에 대해 고성능, 다중 스레드 코드를 작성하지 않고도 기존의 Objective-C, Swift, Java 또는 C++ 라이브러리를 재사용할 수 있습니다.
 
 NativeModule 시스템은 Java/Objective-C/C++(네이티브) 클래스의 인스턴스를 JavaScript(JS)에 JS 개체로 노출하므로 JS 내에서 임의의 네이티브 코드를 실행할 수 있습니다. 이 기능이 일반적인 개발 프로세스의 일부가 될 것으로 예상하지는 않지만 반드시 있어야 합니다. React Native에서 JS 앱에 필요한 기본 API를 내보내지 않는 경우 직접 내보낼 수 있어야 합니다.
 
@@ -224,11 +224,11 @@ public class MainApplication extends Application implements ReactApplication {
 
 ### iOS
 
-다음 안내서에서는 기본 모듈을 만듭니다. _RNMarketoModule_&#x200B;를 활성화하면 JavaScript에서 Marketo의 API에 액세스할 수 있습니다.
+다음 안내서에서는 JavaScript에서 Marketo의 API에 액세스할 수 있는 기본 모듈 _RNMarketoModule_&#x200B;을 만듭니다.
 
 시작하려면 Xcode에서 React Native 애플리케이션 내에서 iOS 프로젝트를 엽니다. iOS 프로젝트는 React Native 앱 내에서 여기에서 찾을 수 있습니다. Xcode를 사용하여 네이티브 코드를 작성하는 것이 좋습니다. Xcode는 iOS 개발을 위해 빌드되었으며 이를 사용하면 코드 구문과 같은 사소한 오류를 빠르게 해결하는 데 도움이 됩니다.
 
-기본 사용자 지정 기본 모듈 헤더 및 구현 파일을 만듭니다. 라는 새 파일 만들기 `MktoBridge.h` 다음을 추가합니다.
+기본 사용자 지정 기본 모듈 헤더 및 구현 파일을 만듭니다. `MktoBridge.h`(이)라는 새 파일을 만들고 다음 파일을 추가합니다.
 
 ```
 //
@@ -387,7 +387,7 @@ RNMarketoModule.uninitializeMarketoPush()
 RNMarketoModule.initializeMarketoPush("ProjectId", "Channel_name")
 ```
 
-에 다음 서비스 추가 `AndroidManifest.xml`
+`AndroidManifest.xml`에 다음 서비스 추가
 
 
 ```xml
@@ -401,7 +401,7 @@ RNMarketoModule.initializeMarketoPush("ProjectId", "Channel_name")
 </activity/>
 ```
 
-이름으로 클래스 만들기 `FirebaseMessagingService.java` 및 다음 코드 추가
+이름이 `FirebaseMessagingService.java`인 클래스를 만들고 다음 코드를 추가합니다.
 
 ```java
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -427,15 +427,15 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
 사용자의 장치로 푸시 알림을 전송하려면 Xcode 프로젝트에서 권한을 활성화해야 합니다.
 
-푸시 알림을 보내려면 [푸시 알림 추가](push-notifications.md).
+푸시 알림을 보내려면 [푸시 알림을 추가](push-notifications.md)하세요.
 
-이제 `AppDelegate.m` xcode의 파일, Marketo 가져오기
+이제 XCode의 `AppDelegate.m` 파일에서 Marketo을 가져옵니다.
 
 ```
 #import <MarketoFramework/MarketoFramework.h> 
 ```
 
-추가 `UNUserNotificationCenterDelegate` 대리자를 처리하기 위해 다음과 같이 AppDelegate 인터페이스에
+대리자를 처리하려면 다음과 같이 AppDelegate 인터페이스에 `UNUserNotificationCenterDelegate`을(를) 추가하십시오.
 
 ```
 @interface AppDelegate () <UNUserNotificationCenterDelegate>
@@ -443,7 +443,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 @end
 ```
 
-에서 원격 알림 등록 `didFinishLaunchingWithOptions` 메서드를 사용합니다.
+`didFinishLaunchingWithOptions` 메서드에서 원격 알림을 등록합니다.
 
 ```
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -485,7 +485,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 }
 ```
 
-다음 포함 `UNUserNotificationCenter` 위임 필수 알림 위임 메서드
+다음 `UNUserNotificationCenter`개의 대리자 필수 알림 위임 메서드를 포함합니다.
 
 ```
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
@@ -516,7 +516,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 **Android**
 
-에 &quot;MarketoActivity&quot; 추가 `AndroidManifest.xml` application 태그 내에 있는 파일입니다.
+응용 프로그램 태그 내의 `AndroidManifest.xml` 파일에 &quot;MarketoActivity&quot;를 추가합니다.
 
 ```xml
 <activity android:name="com.marketo.MarketoActivity" android:configChanges="orientation|screenSize" android:exported="true">
@@ -537,9 +537,9 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 1. URL 체계 설정: `mkto-<S_ecret Key_>`
 
-1. 포함 `application:openURL:sourceApplication:annotation:` 끝 `AppDelegate.m` 파일(Objective-C)
+1. `application:openURL:sourceApplication:annotation:`에서 `AppDelegate.m` 파일 포함(Objective-C)
 
-**iOS - AppDelegate에서 사용자 지정 Url 유형/딥링크 처리** 
+**iOS - AppDelegate에서 사용자 지정 Url 형식/딥링크 처리** 
 
 ```
 - (BOOL)application:(UIApplication *)app

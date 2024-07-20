@@ -1,20 +1,20 @@
 ---
-title: "채널"
+title: 채널
 feature: REST API
-description: "Marketo API를 사용하여 채널 데이터 구성"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: Marketo API를 사용하여 채널 데이터 구성.
+exl-id: ec6c279f-a7b4-4a7c-b980-1a68045f37ce
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '125'
 ht-degree: 1%
 
 ---
 
-
 # 채널
 
 [채널 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Channels)
 
-채널은 모든 프로그램 유형에 대한 표준 및 필수 필드입니다. 각 채널 유형은 지정된 채널로만 사용할 수 있습니다. `applicableProgramType` 각 프로그램의 프로그램 멤버에 유효한 사용 가능한 프로그램 상태 목록을 제공합니다. 프로그램을 만든 후 채널의 프로그램 상태가 변경되면 리드를 변경할 수 있는 프로그램 상태 목록이 해당 시점에 채널이 제공한 목록과 일치하지만 기존 프로그램 멤버십 레코드에 대한 프로그램 상태는 소급하여 변경되지 않습니다.
+채널은 모든 프로그램 유형에 대한 표준 및 필수 필드입니다. 각 채널 유형은 지정된 `applicableProgramType`에서만 사용할 수 있으며 각 프로그램의 프로그램 구성원에 대해 유효한 사용 가능한 프로그램 상태 목록을 제공합니다. 프로그램을 만든 후 채널의 프로그램 상태가 변경되면 리드를 변경할 수 있는 프로그램 상태 목록이 해당 시점에 채널이 제공한 목록과 일치하지만 기존 프로그램 멤버십 레코드에 대한 프로그램 상태는 소급하여 변경되지 않습니다.
 
 ## 쿼리
 

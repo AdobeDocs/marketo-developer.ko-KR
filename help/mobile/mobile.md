@@ -1,14 +1,14 @@
 ---
-title: "모바일"
-feature: "Mobile Marketing"
-description: "Marketo Mobile 사용"
-source-git-commit: 2454f126dc4275697ef6773420453ad8853eae73
+title: 모바일
+feature: Mobile Marketing
+description: Marketo Mobile 사용
+exl-id: d5fa5640-01f5-49a1-944a-9f81a1f83617
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '129'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
-
 
 # 모바일
 
@@ -24,4 +24,4 @@ Marketo Mobile Engagement는 다음 두 가지 구성 요소로 구성됩니다.
 
    마케터는 Marketo을 사용하여 대상을 정의하고, 알림을 만들고, 타겟팅된 메시징 캠페인을 시작하고, 자세한 고객 분석을 볼 수 있습니다.
 
-Marketo SDK를 모바일 애플리케이션에 통합하면 Marketo에서 모바일 푸시 알림과 인앱 메시지를 모두 고객에게 보낼 수 있습니다. Marketo 내에서 모바일 메시지를 설정하고 배포하는 방법에 대해 알아보려면 [모바일 마케팅](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app) 섹션에 자세히 설명되어 있습니다.
+Marketo SDK를 모바일 애플리케이션에 통합하면 Marketo에서 모바일 푸시 알림과 인앱 메시지를 모두 고객에게 보낼 수 있습니다. Marketo 내에서 모바일 메시지를 설정하고 배포하는 방법에 대해 알아보려면 제품 설명서의 [모바일 마케팅](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app) 섹션을 참조하십시오.

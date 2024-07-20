@@ -1,24 +1,24 @@
 ---
-title: "deleteMObjects"
+title: deleteMObject
 feature: SOAP
-description: "deleteMObjects SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: deleteMObjects SOAP 호출
+exl-id: 31511584-5366-4af1-975b-94417680c4d9
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '58'
 ht-degree: 10%
 
 ---
 
-
 # deleteMObject
 
-하나 이상을 삭제합니다. [오브젝트](marketo-objects.md) 작업의 결과(삭제, 변경되지 않음, 실패)를 반환합니다.
+하나 이상의 [MObjects](marketo-objects.md)을(를) 삭제하고 작업 결과를 반환합니다(삭제, 변경되지 않음, 실패).
 
 ## 요청
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
-| mObjectList->mObject->type | 필수 | 다음 중 하나일 수 있습니다. `Opportunity` 또는 `OpportunityPersonRole` |
+| mObjectList->mObject->type | 필수 | `Opportunity` 또는 `OpportunityPersonRole` 중 하나일 수 있습니다. |
 | mObjectList->mObject->id | 필수 | 삭제할 MObject ID |
 
 ## 요청 XML

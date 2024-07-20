@@ -16,9 +16,9 @@ Marketo PhoneGap 플러그인 통합
 
 ## 필요 조건
 
-1. [Marketo Admin에서 애플리케이션 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app) (애플리케이션 암호 키 및 Munchkin Id 얻기).
+1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)(응용 프로그램 비밀 키 및 Munchkin Id 얻기).
 1. 푸시 알림 설정([iOS](push-notifications.md) | [Android](push-notifications.md)).
-1. [PhoneGap/Cordova CLI 설치](https://cordova.apache.org/docs/en/latest/guide/cli/).
+1. [PhoneGap/Cordova CLI를 설치합니다](https://cordova.apache.org/docs/en/latest/guide/cli/).
 
 ## 설치 지침
 
@@ -48,7 +48,7 @@ Marketo PhoneGap 플러그인 통합
 
 **Cordova 버전 8.0.0(Cordova@Android7.0.0) 이상**
 
-Cordova Android 플랫폼이 빌드되면 Android Studio로 앱을 열고 `dirs` 값 `Marketo.gradle` 에서 찾은 파일 `com.marketo.plugin` 폴더를 삭제합니다.
+Cordova Android 플랫폼이 빌드되면 Android Studio로 앱을 열고 `com.marketo.plugin` 폴더에 있는 `Marketo.gradle` 파일의 `dirs` 값을 업데이트합니다.
 
 ```
 repositories{    
@@ -59,25 +59,25 @@ repositories{
 }
 ```
 
-앱을 타깃팅할 플랫폼 추가 `$cordova platform add android` `$ cordova platform add ios`
+`$cordova platform add android` `$ cordova platform add ios` 앱에 대해 타깃팅할 플랫폼 추가
 
-추가된 플랫폼 목록 확인 `$cordova platform ls`
+추가된 플랫폼 목록 `$cordova platform ls` 확인
 
 1. Firebase 클라우드 메시징 지원
 
 1. Firebase 콘솔에서 Firebase 앱을 구성합니다.
-   1. 프로젝트 만들기/추가 [](https://console.firebase.google.com/)Firebase 콘솔.
-      1. 다음에서 [Firebase 콘솔](https://console.firebase.google.com/), 선택 **[!UICONTROL Add Project]**.
-      1. 기존 Google Cloud 프로젝트 목록에서 GCM 프로젝트를 선택한 다음 을 선택합니다. **[!UICONTROL Add Firebase]**.
+   1. [](https://console.firebase.google.com/)Firebase 콘솔에서 프로젝트를 만들거나 추가합니다.
+      1. [Firebase 콘솔](https://console.firebase.google.com/)에서 **[!UICONTROL Add Project]**&#x200B;을(를) 선택합니다.
+      1. 기존 Google Cloud 프로젝트 목록에서 GCM 프로젝트를 선택하고 **[!UICONTROL Add Firebase]**&#x200B;을(를) 선택합니다.
       1. Firebase 시작 화면에서 &#39;Android 앱에 Firebase 추가&#39;를 선택합니다.
-      1. 패키지 이름과 SHA-1을 입력하고 **[!UICONTROL Add App]**. 새 항목 `google-services.json` firebase 앱용 파일이 다운로드되었습니다.
-   1. 다음으로 이동 **[!UICONTROL Project Settings]** 위치: [!UICONTROL Project Overview]
-      1. 클릭 **[!UICONTROL General]** 탭. &quot;google-services.json&quot; 파일을 다운로드합니다.
-      1. 클릭 **[!UICONTROL Cloud Messaging]** 탭. 복사 [!UICONTROL Server Key] 및 [!UICONTROL Sender ID]. 다음 항목 제공 [!UICONTROL Server Key] 및 [!UICONTROL Sender ID] Marketo으로.
+      1. 패키지 이름과 SHA-1을 입력하고 **[!UICONTROL Add App]**&#x200B;을(를) 선택하십시오. Firebase 앱에 대한 새 `google-services.json` 파일이 다운로드되었습니다.
+   1. [!UICONTROL Project Overview]의 **[!UICONTROL Project Settings]**(으)로 이동
+      1. **[!UICONTROL General]** 탭을 클릭합니다. &quot;google-services.json&quot; 파일을 다운로드합니다.
+      1. **[!UICONTROL Cloud Messaging]** 탭을 클릭합니다. [!UICONTROL Server Key] 및 [!UICONTROL Sender ID]을(를) 복사합니다. 이 [!UICONTROL Server Key] 및 [!UICONTROL Sender ID]을(를) Marketo에 제공하십시오.
    1. Phonegap 앱에서 FCM 변경 사항 구성
       1. 다운로드한 &#39;google-services.json&#39; 파일을 Phonegap 앱 모듈 루트 디렉토리로 이동합니다
-      1. 위치에서 &#39;MyFirebaseInstanceIDService&#39; 파일 제거 `platforms/android/app/src/main/java/com/gae/scaffolder/plugin` (사용하지 않음)
-      1. 위치에서 &#39;MyFirebaseMessagingService&#39; 파일 수정 `platforms/android/app/src/main/java/com/gae/scaffolder/plugin` 다음과 같이:
+      1. `platforms/android/app/src/main/java/com/gae/scaffolder/plugin` 위치에서 &#39;MyFirebaseInstanceIDService&#39; 파일을 제거합니다(사용하지 않음).
+      1. `platforms/android/app/src/main/java/com/gae/scaffolder/plugin` 위치의 &#39;MyFirebaseMessagingService&#39; 파일을 다음과 같이 수정합니다.
 
          ```
          import com.marketo.Marketo;
@@ -120,13 +120,13 @@ xCode 프로젝트에서 푸시 알림 기능을 켭니다.
 
 ### 4. 푸시 알림 추적
 
-다음 코드를 내부에 붙여넣기 `application:didFinishLaunchingWithOptions:` 함수.
+`application:didFinishLaunchingWithOptions:` 함수 내에 다음 코드를 붙여넣습니다.
 
 >[!BEGINTABS]
 
 >[!TAB 목표 C]
 
-업데이트 `applicationDidBecomeActive` 아래와 같은 방법
+아래와 같이 `applicationDidBecomeActive` 메서드 업데이트
 
 ```
 Marketo *sharedInstance = [Marketo sharedInstance];
@@ -136,7 +136,7 @@ Marketo *sharedInstance = [Marketo sharedInstance];
 
 >[!TAB Swift]
 
-업데이트 `applicationDidBecomeActive` 아래와 같은 방법
+아래와 같이 `applicationDidBecomeActive` 메서드 업데이트
 
 ```
 let sharedInstance: Marketo = Marketo.sharedInstance()
@@ -148,9 +148,9 @@ sharedInstance.trackPushNotification(launchOptions)
 
 ### 5. Marketo 프레임워크 초기화
 
-앱 시작 시 Marketo 프레임워크가 시작되도록 하려면 `onDeviceReady` 기본 JavaScript 파일에서 작동합니다.
+앱 시작 시 Marketo 프레임워크가 시작되도록 하려면 기본 JavaScript 파일의 `onDeviceReady` 함수 아래에 다음 코드를 추가하십시오.
 
-다음을 전달해야 합니다. `phonegap` PhoneGap Apps에 대한 프레임워크 유형으로 사용됩니다.
+PhoneGap 앱에 대한 프레임워크 유형으로 `phonegap`을(를) 전달해야 합니다.
 
 ### 구문
 
@@ -197,7 +197,7 @@ marketo.initializeMarketoPush(
 
 - Success Callback : Marketo 푸시 알림이 성공적으로 초기화된 경우 실행되는 함수입니다.
 - Failure Callback : Marketo 푸시 알림이 초기화되지 않는 경우 실행할 함수입니다.
-- GCM_PROJECT_ID :에서 GCM 프로젝트 ID를 찾았습니다. [Google 개발자 콘솔](https://console.developers.google.com/) 앱을 만든 후에.
+- GCM_PROJECT_ID : 앱을 만든 후 [Google 개발자 콘솔](https://console.developers.google.com/)에서 GCM 프로젝트 ID를 찾았습니다.
 
 로그아웃 시 토큰의 등록을 취소할 수도 있습니다.
 
@@ -255,7 +255,7 @@ marketo.associateLead(
 
 ## 보고서 작업
 
-를 호출하여 사용자가 수행한 작업을 보고할 수 있습니다. `reportaction` 함수.
+`reportaction` 함수를 호출하여 사용자가 수행한 작업을 보고할 수 있습니다.
 
 ### 구문
 

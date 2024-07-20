@@ -1,42 +1,42 @@
 ---
-title: "getMultipleLeads"
+title: getMultipleLead
 feature: SOAP
-description: "getMultipleLeads SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: getMultipleLeads SOAP 호출
+exl-id: db9aabec-8705-40c6-b264-740fdcef8a52
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '384'
 ht-degree: 2%
 
 ---
 
-
 # getMultipleLead
 
-좋아요 `getLead`, `getMultipleLeads` Marketo에서 리드 레코드를 검색합니다. 이 호출에서는 단일 리드에 대한 데이터 대신 leadSelector 매개 변수에 전달된 기준과 일치하는 리드 배치에 대한 데이터를 반환합니다. 기준은 마지막 업데이트 날짜, 리드 키 배열 또는 정적 목록과 같은 날짜 범위일 수 있습니다.
+`getLead`과(와) 마찬가지로 `getMultipleLeads`은(는) Marketo에서 잠재 고객 레코드를 검색합니다. 이 호출에서는 단일 리드에 대한 데이터 대신 leadSelector 매개 변수에 전달된 기준과 일치하는 리드 배치에 대한 데이터를 반환합니다. 기준은 마지막 업데이트 날짜, 리드 키 배열 또는 정적 목록과 같은 날짜 범위일 수 있습니다.
 
 참고: 리드 키 배열을 사용하는 경우 배치당 100개로 제한됩니다. 추가 키는 무시됩니다.
 
-리드 필드의 하위 집합만 필요한 경우 `includeAttributes` 매개 변수는 원하는 필드를 지정하는 데 사용해야 합니다.
+리드 필드의 하위 집합만 필요한 경우 `includeAttributes` 매개 변수를 사용하여 원하는 필드를 지정해야 합니다.
 
-각 `getMultipleLeads` 함수 호출은 최대 1000개의 리드를 반환합니다. 1000개가 넘는 리드를 검색해야 하는 경우 결과는 [스트림 위치](stream-position.md): 1000개의 리드의 다음 배치를 검색하는 후속 호출에 사용할 수 있습니다. 결과의 나머지 수는 남아 있는 잠재 고객 수를 정확히 알려줍니다. 정적 목록에서 가져올 때 종료 조건은 remainingCount == 0입니다.
+각 `getMultipleLeads` 함수 호출은 최대 1000개의 리드를 반환합니다. 1000개가 넘는 리드를 검색해야 하는 경우 결과는 [스트림 위치](stream-position.md)를 반환합니다. 이 위치는 이후 호출에서 1000개의 다음 배치를 검색하는 데 사용할 수 있습니다. 결과의 나머지 수는 남아 있는 잠재 고객 수를 정확히 알려줍니다. 정적 목록에서 가져올 때 종료 조건은 remainingCount == 0입니다.
 
-이 끝점의 일반적인 사용 사례는 특정 날짜에 업데이트된 리드를 찾는 것입니다. 다음 `LastUpdateAtSelector` 이 작업을 수행할 수 있습니다.
+이 끝점의 일반적인 사용 사례는 특정 날짜에 업데이트된 리드를 찾는 것입니다. `LastUpdateAtSelector`을(를) 사용하면 이 작업을 수행할 수 있습니다.
 
 ## 요청
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
-| leadSelector | 필수 | 다음 3가지 유형 중 하나일 수 있습니다.`LeadKeySelector`, `StaticListSelector`,`LastUpdateAtSelector` |
+| leadSelector | 필수 | 다음 세 가지 형식 중 하나일 수 있습니다.`LeadKeySelector`, `StaticListSelector`,`LastUpdateAtSelector` |
 | 키 유형 | 필수 | 쿼리할 ID 유형입니다. 값에는 IDNUM, COOKIE, EMAIL, LEADOWNEEREMAIL, SFDCACCOUNTID, SFDCCONTACTID, SFDCLEADID, SFDCLEADOWNERID, SFDCOPPTYID가 포함됩니다. |
 | 키 값->문자열 항목 | 필수 | 키 값 목록. 즉, &quot;lead@email.com&quot; |
 | 마지막 업데이트: leadSelector->oldestUpdatedAt | 필수 | &quot;이후&quot; 기준을 지정하는 타임스탬프입니다. 즉, 지정된 시간 이후 업데이트된 모든 리드 반환 (W3C WSDL 날짜-시간 형식) |
 | 마지막 업데이트: leadSelector->latestUpdatedAt | 선택 사항 | &quot;종료&quot; 기준을 지정하는 타임스탬프입니다. 즉, 지정된 시간까지 업데이트된 모든 리드를 반환합니다. (W3C WSDL 날짜-시간 형식) |
-| StaticListSelector: leadSelector->staticListName | 선택 사항인 경우 `leadSelector->staticListId` 있음 | 정적 목록의 이름 |
-| StaticListSelector: leadSelector->staticListId | 선택 사항인 경우 `leadSelector->staticListName` 있음 | 정적 목록의 ID |
-| lastUpdatedAt | **더 이상 사용되지 않음** | 사용 `LastUpdateAtSelector` 대신 |
+| StaticListSelector: leadSelector->staticListName | `leadSelector->staticListId`이(가) 있는 경우 선택 사항 | 정적 목록의 이름 |
+| StaticListSelector: leadSelector->staticListId | `leadSelector->staticListName`이(가) 있는 경우 선택 사항 | 정적 목록의 ID |
+| lastUpdatedAt | **사용되지 않음** | 대신 `LastUpdateAtSelector` 사용 |
 | includeAttributes | 선택 사항 | 가져오려는 속성 목록입니다. 반환되는 리드 필드를 제한하면 API의 응답 시간을 향상시킬 수 있습니다. |
-| batchSize | 선택 사항 | 반환할 최대 레코드 수. 시스템이 100 또는 `batchSize`, 어느 쪽이든 덜 |
-| streamPosition | 선택 사항 | 많은 수의 잠재 고객 응답을 통해 페이지를 매기는 데 사용됩니다. 다음 `streamPosition` 이전 호출 응답 필드에 의해 값이 반환됨 `newStreamPosition` |
+| batchSize | 선택 사항 | 반환할 최대 레코드 수. 시스템이 100 또는 `batchSize` 중 더 작은 값으로 제한됩니다. |
+| streamPosition | 선택 사항 | 많은 수의 잠재 고객 응답을 통해 페이지를 매기는 데 사용됩니다. 이전 호출 응답 필드 `newStreamPosition`에서 `streamPosition` 값을 반환했습니다. |
 
 ## 요청 XML
 

@@ -1,18 +1,18 @@
 ---
 title: 소셜
-description: "Social"
+description: 소셜
 feature: Social, Javascript
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+exl-id: 82d2b86f-5efe-4434-b617-d27f76515a79
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '776'
 ht-degree: 2%
 
 ---
 
-
 # 소셜
 
-[Marketo 소셜 마케팅](https://business.adobe.com/products/marketo/social-marketing.html) 마케터는 웹 사이트 및 랜딩 페이지 내에 소셜 위젯을 포함할 수 있습니다. 소셜 위젯에는 투표, 소셜 공유 버튼, 비디오, 경품 및 추천 오퍼와 같은 프로모션이 포함됩니다.
+[Marketo 소셜 마케팅](https://business.adobe.com/products/marketo/social-marketing.html)을 통해 마케터는 웹 사이트 및 랜딩 페이지 내에 소셜 위젯을 포함할 수 있습니다. 소셜 위젯에는 투표, 소셜 공유 버튼, 비디오, 경품 및 추천 오퍼와 같은 프로모션이 포함됩니다.
 
 ## 샘플 임베드된 공유 위젯
 
@@ -37,7 +37,7 @@ ht-degree: 2%
 
 ## 일반 UI에 이벤트 첨부
 
-CF JavaScript 라이브러리에서 전역적으로 또는 단일 위젯에 대한 이벤트를 구독하는 두 가지 방법이 있습니다. 이벤트는 아래에 이벤트 테이블에 설명되어 있습니다.
+CF JavaScript 라이브러리의 이벤트를 전역적으로 또는 단일 위젯에 가입하는 두 가지 방법이 있습니다. 이벤트는 아래에 이벤트 테이블에 설명되어 있습니다.
 
 ### 글로벌 이벤트 구독
 
@@ -90,18 +90,18 @@ cf_scripts.afterload(function(){
 
 | 이벤트 이름 | 설명 | 이 이벤트를 사용하는 위젯 | 지원되는 인수(이벤트 콜백 함수에 전달됨) |
 | --- | --- | --- | --- | 
-| share_sent | 처리를 위해 공유 요청이 서버로 전송될 때마다 실행됩니다 | 공유 권한이 있는 모든 위젯 | 1.&quot;share_sent&quot; (문자열)<br>2. 전송된 매개변수(객체) |
-| share_success | 공유 요청이 성공적으로 처리되면 실행됩니다. | 공유 권한이 있는 모든 위젯입니다. | 1.&quot;share_success&quot; (String)<br>2. 보낸 메시지와 단축된 URL이 포함된 응답 개체 공유(개체) |
-| 투표 성공 | 사용자가 투표에 성공하면 실행됩니다. | 투표, 투표 위젯 및 투표 위젯 | 1. &quot;vote_success&quot; (문자열)<br>2. 제목, 설명, 엔티티 식별자(오브젝트) 등 투표 항목 |
-| offer_registered | 사용자가 오퍼에 성공적으로 등록되면 발생합니다. | 모든 오퍼 위젯 | 1.&quot;offer_registered&quot; (String)<br>2. 변경된 사용자 속성(객체),<br>3. 변경된 사용자 특성(객체) |
-| profile_saved | 사용자가 프로필 캡처에서 프로필을 업데이트한 경우 실행됩니다 | 프로필 캡처가 활성화된 모든 비오퍼 위젯 | 1.&quot;profile_saved&quot; (String)<br>2. 변경된 사용자 속성(객체)<br>3. 변경된 사용자 특성(객체) |
+| share_sent | 처리를 위해 공유 요청이 서버로 전송될 때마다 실행됩니다 | 공유 권한이 있는 모든 위젯 | 1.&quot;share_sent&quot;(문자열)<br>2. 전송된 매개변수(객체) |
+| share_success | 공유 요청이 성공적으로 처리되면 실행됩니다. | 공유 권한이 있는 모든 위젯입니다. | 1.&quot;share_success&quot;(String)<br>2. 보낸 메시지와 단축된 URL이 포함된 응답 개체 공유(개체) |
+| 투표 성공 | 사용자가 투표에 성공하면 실행됩니다. | 투표, 투표 위젯 및 투표 위젯 | 1. &quot;vote_success&quot;(문자열)<br>2. 제목, 설명, 엔티티 식별자(오브젝트) 등 투표 항목 |
+| offer_registered | 사용자가 오퍼에 성공적으로 등록되면 발생합니다. | 모든 오퍼 위젯 | 1.&quot;offer_registered&quot;(String)<br>2. 사용자 속성(개체),<br>3을 변경했습니다. 변경된 사용자 특성(객체) |
+| profile_saved | 사용자가 프로필 캡처에서 프로필을 업데이트한 경우 실행됩니다 | 프로필 캡처가 활성화된 모든 비오퍼 위젯 | 1.&quot;profile_saved&quot;(String)<br>2. 사용자 속성(개체)<br>3을 변경했습니다. 변경된 사용자 특성(객체) |
 | video_loaded | 포함된 비디오가 완전히 로드되고 초기화될 때 발생합니다. | VideoShare 위젯 | 1. &quot;video_loaded&quot; (String) 2. 비디오를 포함하는 &quot;.cf_videoshare_wrap&quot; 요소(jQuery 개체) |
 
 ## UI를 사용자 정의 UI로 바꾸기
 
-UI를 사용자 지정 UI로 바꾸려면 먼저 일반 UI를 꺼야 합니다. 이 작업은 옵션을 설정하여 수행됩니다 _popupUIOnly_ 끝 _true_. 이 옵션을 설정하면 표준 UI는 페이지 로드 시 렌더링되지 않고, 대신 위젯이 데이터를 가져오고 를 호출하여 팝업 단계 중 하나가 시작될 때까지 기다립니다. _CF.widget.활성화_ 기능 및 수행할 작업에 대한 옵션 제공.
+UI를 사용자 지정 UI로 바꾸려면 먼저 일반 UI를 꺼야 합니다. 이 작업은 _popupUIOnly_ 옵션을 _true_(으)로 설정하여 수행됩니다. 이 옵션을 설정하면 페이지 로드 시 표준 UI가 렌더링되지 않고, 대신 위젯이 데이터를 가져와서 _CF.widget.activate_ 함수를 호출하고 수행해야 할 작업에 대한 옵션을 제공하여 팝업 단계 중 하나를 시작할 때까지 기다립니다.
 
-다음은 라는 레퍼러 오퍼 위젯에 대한 레퍼러 오퍼 등록 플로우를 시작하는 사용자 정의 단추를 만드는 예제입니다 _referral_SignUp_.
+다음은 _referral_SignUp_(이)라는 레퍼러 오퍼 위젯에 대한 레퍼러 오퍼 등록 플로우를 시작하는 사용자 지정 단추를 만드는 예입니다.
 
 ```html
 <button id="myNewSignUpButton">My newSign Up button</button>
@@ -139,9 +139,9 @@ cf_scripts.afterload(function($, CF){
 
 ## 대체 UI에 배치할 위젯 UI 데이터 가져오기
 
-대체 UI를 그리기 위해 위젯에 대한 데이터가 필요한 경우 특수 이벤트에서 데이터를 가져올 수 있습니다 _ui_data_. 일반으로 이 이벤트를 들을 수 있습니다 `CF.widget.listen` 함수를 사용하지만 그렇게 하면 위젯이 이미 _ui_data_ 이벤트를 실행한 후 이벤트 리스너가 추가되어 데이터를 받지 못할 수 있는 잠재적 경합 조건이 발생할 수 있습니다. 이 경주를 피하려면 다음을 사용하십시오. `CF.widget.uiData_ method instead, which will give you the most recent available _ui_data_, and listen for all future updates as well. The _ui_data` 은 위젯의 표준 UI를 사용하지 않도록 설정한 경우에도 해당 UI가 다시 그려지는 작업을 수행할 때마다 이벤트가 실행됩니다 `popupUIOnly` 옵션을 선택합니다.
+대체 UI를 그리는 데 위젯에 대한 데이터가 필요한 경우 특수 이벤트 _ui_data_&#x200B;에서 데이터를 가져올 수 있습니다. 일반적인 `CF.widget.listen` 함수를 사용하여 이 이벤트를 수신할 수 있지만, 그렇게 하면 위젯이 이미 _ui_data_ 이벤트를 실행한 후 이벤트 리스너가 추가되어 데이터를 받지 못할 수 있는 경합 상태가 발생할 수 있습니다. 이 경합을 방지하려면 `popupUIOnly` 옵션으로 해당 UI를 비활성화했더라도 위젯의 표준 UI가 다시 그려지는 작업을 수행할 때마다 `CF.widget.uiData_ method instead, which will give you the most recent available _ui_data_, and listen for all future updates as well. The _ui_data` 이벤트가 실행됩니다.
 
-를 사용하는 예 `uiData` 위젯 이름을 사용하는 경품 추첨에 대해 사용자가 보유한 항목 수를 표시하는 기능 _sweepstakes_.
+`uiData` 함수를 사용하여 위젯 이름이 _sweeps_Sweepstakes_&#x200B;인 경품 추첨에 대해 사용자가 보유한 항목 수를 표시하는 예입니다.
 
 ```html
 <span>You have <span id="entryCount">?</span> entries.</span>

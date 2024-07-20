@@ -1,22 +1,22 @@
 ---
-title: "사용자 정의 서비스"
+title: 사용자 정의 서비스
 feature: REST API
-description: "Marketo을 사용한 인증 자격 증명"
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+description: Marketo을 사용한 인증 자격 증명입니다.
+exl-id: 38b05c4c-4404-4c30-a7cb-d31b28a3a72e
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '968'
 ht-degree: 0%
 
 ---
 
-
 # 사용자 정의 서비스
 
-사용자 지정 서비스는 Marketo으로 인증하기 위한 자격 증명을 제공합니다. Marketo에서 액세스 토큰을 얻으려면 자격 증명이 필요합니다 [ID 서비스](https://developer.adobe.com/marketo-apis/api/identity/#tag/Identity/operation/identityUsingGET). 각 사용자 지정 서비스의 범위는 권한을 파생시키는 단일 API 전용 사용자로 지정됩니다.
+사용자 지정 서비스는 Marketo으로 인증하기 위한 자격 증명을 제공합니다. Marketo [ID 서비스](https://developer.adobe.com/marketo-apis/api/identity/#tag/Identity/operation/identityUsingGET)에서 액세스 토큰을 가져오려면 자격 증명이 필요합니다. 각 사용자 지정 서비스의 범위는 권한을 파생시키는 단일 API 전용 사용자로 지정됩니다.
 
 ## 역할
 
-사용자 지정 서비스를 만드는 첫 번째 단계는 관련 API 전용 사용자에게 적용할 수 있는 역할을 만드는 것입니다. 이 작업은 다음에서 수행됩니다. **[!UICONTROL Admin]** > **[!UICONTROL Users & Roles]** > **[!UICONTROL Roles]** 메뉴 아래의 제품에서 사용할 수 있습니다.
+사용자 지정 서비스를 만드는 첫 번째 단계는 관련 API 전용 사용자에게 적용할 수 있는 역할을 만드는 것입니다. 이 작업은 **[!UICONTROL Admin]** > **[!UICONTROL Users & Roles]** > **[!UICONTROL Roles]** 메뉴에서 수행됩니다.
 
 역할은 특정 기능에 대한 액세스를 허용하거나 제한하는 개별 권한을 위한 컨테이너입니다. 작업 공간 및 분할 영역이 활성화된 가입에서는 작업 공간별로 권한이 부여됩니다. 사용자가 한 작업 영역에서 권한을 가지고 있지만 다른 작업 영역에서는 권한을 가지고 있지 않은 경우 해당 작업 영역에서만 허가된 작업을 수행할 수 있습니다. 역할을 만들려면 새 역할 단추를 클릭합니다.
 
@@ -30,7 +30,7 @@ ht-degree: 0%
 
 &quot;액세스 API&quot; 그룹의 권한만 API 사용자에게 적용됩니다. 즉, 모든 관리자 권한을 부여하면 사용자에게 API 권한이 부여되지 않습니다.
 
-역할을 구성할 때 이를 사용하는 애플리케이션이 어떤 작업을 수행하도록 허용해야 하는지 신중히 고려하십시오. 이러한 작업을 수행하는 데 필요한 최소 권한 집합만 부여합니다. 불필요하게 허용된 권한 집합을 허용하면 통합이 구독에서 원치 않는 작업을 수행할 수 있습니다. 다음을 사용할 수 있습니다. [사용 권한 도구](endpoint-reference.md) 를 클릭하여 최소 권한 집합을 결정합니다. 의 전체 목록 보기 [권한](#permission_list).
+역할을 구성할 때 이를 사용하는 애플리케이션이 어떤 작업을 수행하도록 허용해야 하는지 신중히 고려하십시오. 이러한 작업을 수행하는 데 필요한 최소 권한 집합만 부여합니다. 불필요하게 허용된 권한 집합을 허용하면 통합이 구독에서 원치 않는 작업을 수행할 수 있습니다. [권한 도구](endpoint-reference.md)를 사용하여 최소 권한 집합을 결정할 수 있습니다. [권한](#permission_list)의 전체 목록을 확인하세요.
 
 ## 사용자
 
@@ -42,7 +42,7 @@ ht-degree: 0%
 
 >[!MORELIKETHIS]
 >
->API 전용 사용자를 만들려면 **[!UICONTROL Admin]** > **[!UICONTROL Users & Roles]** > **[!UICONTROL Users]** 메뉴 및 클릭 [!UICONTROL Invite New User].
+>API 전용 사용자를 만들려면 **[!UICONTROL Admin]** > **[!UICONTROL Users & Roles]** > **[!UICONTROL Users]** 메뉴로 이동한 다음 [!UICONTROL Invite New User]을(를) 클릭합니다.
 
 
 ![새 사용자 정보](assets/new-user-info.png)
@@ -57,13 +57,13 @@ ht-degree: 0%
 
 ## 사용자 정의 서비스
 
-사용자 지정 서비스는 Marketo 인스턴스로 인증을 수행하는 데 필요한 실제 자격 증명, 클라이언트 ID 및 클라이언트 암호를 제공합니다. 하나를 프로비저닝하려면 다음 위치로 이동하십시오. **[!UICONTROL Admin]** > **[!UICONTROL Integrations]** > **[!UICONTROL LaunchPoint]** 메뉴 및 선택 **[!UICONTROL New Service]**.
+사용자 지정 서비스는 Marketo 인스턴스로 인증을 수행하는 데 필요한 실제 자격 증명, 클라이언트 ID 및 클라이언트 암호를 제공합니다. 프로비전하려면 **[!UICONTROL Admin]** > **[!UICONTROL Integrations]** > **[!UICONTROL LaunchPoint]** 메뉴로 이동한 다음 **[!UICONTROL New Service]**&#x200B;을(를) 선택합니다.
 
-서비스에 수사적 이름을 지정하고 &quot;서비스&quot; 목록에서 &quot;사용자 정의&quot;를 선택합니다. 서비스에 자세한 설명을 지정하고 API 전용 사용자 목록에서 적절한 사용자를 선택한 다음 을(를) 클릭합니다. [!UICONTROL Create].
+서비스에 수사적 이름을 지정하고 &quot;서비스&quot; 목록에서 &quot;사용자 정의&quot;를 선택합니다. 서비스에 자세한 설명을 제공하고 API 전용 사용자 목록에서 적절한 사용자를 선택한 다음 [!UICONTROL Create]을(를) 클릭합니다.
 
-![새 사용자 정의 서비스](assets/admin-launchpoint-new-service.png)
+![새 사용자 지정 서비스](assets/admin-launchpoint-new-service.png)
 
-이렇게 하면 LaunchPoint 서비스 목록에 새 서비스가 추가되고 &quot;세부 정보 보기&quot; 옵션이 추가됩니다. &quot;세부 정보 보기&quot;를 클릭하면 인증에 필요한 클라이언트 ID와 클라이언트 암호, 소유 사용자 및 단기 테스트를 위한 토큰 가져오기 옵션이 제공됩니다. 이 대화 상자에서 가져온 토큰은 일반적으로 [ID 서비스](https://developer.adobe.com/marketo-apis/api/identity/#tag/Identity/operation/identityUsingGET) 및 은 생성 후 3,600초 동안 유효합니다.
+이렇게 하면 LaunchPoint 서비스 목록에 새 서비스가 추가되고 &quot;세부 정보 보기&quot; 옵션이 추가됩니다. &quot;세부 정보 보기&quot;를 클릭하면 인증에 필요한 클라이언트 ID와 클라이언트 암호, 소유 사용자 및 단기 테스트를 위한 토큰 가져오기 옵션이 제공됩니다. 이 대화 상자에서 가져온 토큰은 [ID 서비스](https://developer.adobe.com/marketo-apis/api/identity/#tag/Identity/operation/identityUsingGET)에서 일반적으로 가져온 토큰과 수명이 동일하며 만든 후 3,600초 동안 유효합니다.
 
 ![토큰 가져오기](assets/get-token.png)
 
@@ -71,7 +71,7 @@ ht-degree: 0%
 
 작업 영역 및 분할 영역이 있는 가입에서 지정된 레코드나 에셋에 액세스하는 기능은 지정된 작업 영역에서 사용자 역할이 갖는 권한에 따라 부여됩니다. 각 작업공간에는 작업공간 및 분할 영역 메뉴의 하나 이상의 분할 영역에 대한 액세스 권한이 부여되며 리드는 단일 분할 영역에 속합니다. API 전용 사용자가 작업 영역에서 리드 레코드를 읽거나 쓸 수 있는 액세스 권한이 있는 경우 해당 작업 영역이 액세스할 수 있는 파티션의 모든 레코드에 액세스할 수 있습니다.
 
-에셋은 작업 영역에 속하므로 에셋을 읽거나 쓸 수 있는 기능은 사용자가 작업 영역에서 해당 유형의 에셋 레코드를 읽거나 쓸 수 있는 권한이 있는 관련 작업 영역에 역할을 가지고 있는지 여부에 따라 결정됩니다.
+Assets은 작업 공간에 속하므로, 에셋을 읽거나 쓸 수 있는 기능은 사용자가 작업 공간에서 해당 유형의 에셋 레코드를 읽거나 쓸 수 있는 권한이 있는 관련 작업 공간에서 역할을 가지고 있는지 여부에 따라 결정됩니다.
 
 ## 권한 목록
 
@@ -79,11 +79,11 @@ ht-degree: 0%
 
 | 역할 권한 | 다음에 대한 액세스 권한 부여... |
 | --- | --- |
-| 에셋 승인 | 에셋 승인 |
+| Assets 승인 | 에셋 승인 |
 | 캠페인 실행 | 캠페인 요청 또는 예약 |
 | 읽기 전용 활동 | 리드 활동 검색 |
 | 읽기 전용 활동 메타데이터 | 리드 활동 메타데이터 검색 |
-| 읽기 전용 에셋 | 자산 세부 정보 검색 |
+| 읽기 전용 Assets | 자산 세부 정보 검색 |
 | 읽기 전용 캠페인 | 캠페인 세부 정보 가져오기 |
 | 읽기 전용 회사 | 회사 세부 정보 검색 |
 | 읽기 전용 사용자 지정 개체 | 사용자 지정 개체 세부 정보 가져오기 |
@@ -94,7 +94,7 @@ ht-degree: 0%
 | 읽기 전용 영업 담당자 | 영업 담당자 세부 정보 가져오기 |
 | 읽기-쓰기 활동 | 리드 활동 검색 및 만들기 |
 | 읽기-쓰기 활동 메타데이터 | 리드 활동 메타데이터 검색 및 만들기 |
-| 에셋 읽기/쓰기 | 에셋 검색, 생성 및 업데이트 |
+| Assets 읽기-쓰기 | 에셋 검색, 생성 및 업데이트 |
 | 캠페인 읽기-쓰기 | 캠페인 검색, 생성 및 업데이트 |
 | 읽기-쓰기 회사 | 회사 검색, 생성 및 업데이트 |
 | 사용자 지정 개체 읽기-쓰기 | 사용자 지정 개체 검색, 생성 및 업데이트 |

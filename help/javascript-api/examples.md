@@ -1,14 +1,14 @@
 ---
-title: "예"
-description: "Marketo 코드의 예"
+title: 예시
+description: Marketo 코드의 예
 feature: Javascript
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+exl-id: dc5f0cc5-ff5a-48b0-be36-52c10e56f798
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '207'
 ht-degree: 0%
 
 ---
-
 
 # 예시
 
@@ -32,7 +32,7 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form
 
 ## 방문자를 사용자 정의 URL로 이동
 
-이 예에서는 방문자를 구성된 감사 페이지 대신 성공적으로 제출한 후 JavaScript에서 결정한 URL로 안내합니다.
+이 예에서는 방문자를 구성된 감사 페이지가 아닌 제출 후 JavaScript에서 결정한 URL로 안내합니다.
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form) {
@@ -137,7 +137,7 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function (for
 
 ## LightBox에 양식 표시
 
-이 예제에서는 URL에 매개 변수가 포함된 경우 라이트박스 스타일 대화 상자의 양식을 보여 줍니다 `lightboxForm=true`.
+이 예제에서는 URL에 `lightboxForm=true` 매개 변수가 포함된 경우 Lightbox 스타일 대화 상자에 양식을 표시합니다.
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function (form) { 

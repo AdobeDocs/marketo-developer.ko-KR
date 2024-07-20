@@ -1,14 +1,14 @@
 ---
-title: "importToList"
+title: 가져오기 대상 목록
 feature: SOAP
-description: "importToList SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: importToList SOAP 호출
+exl-id: 7e4930a9-a78f-44a3-9e8c-eeca908080c8
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '317'
 ht-degree: 3%
 
 ---
-
 
 # 가져오기 대상 목록
 
@@ -24,9 +24,9 @@ ht-degree: 3%
 | mary@company.com | Mary | 로저스 |
 | wanda@megacorp.com | 완다 | 윌리엄스 |
 
-**참고:** `displayName` 값은 다음에 사용해야 합니다. `importFileHeader` 대신 `name` 값.
+**참고:** `displayName` 값은 `name` 값이 아닌 `importFileHeader`에서 사용해야 합니다.
 
-**다이내믹 이메일 콘텐츠:** 선택적으로, 이메일에서 내 토큰에 대한 대체 요소로 작용하는 리드별로 값을 전달할 수 있습니다.
+**다이내믹 전자 메일 콘텐츠:** 선택적으로, 전자 메일에서 내 토큰에 대한 대체 요소로 작용하는 리드별로 값을 전달할 수 있습니다.
 
 | 이메일 | 첫 번째 | 마지막 | {{my.specialToken}} | {{my.otherToken}} |
 | --- | --- | --- | --- | --- |
@@ -34,9 +34,9 @@ ht-degree: 3%
 | mary@company.com | Mary | 로저스 | 치킨 | 갈색 |
 | wanda@megacorp.com | 완다 | 윌리엄스 | 채소 | 헤이즐 |
 
-**중요 사항:** 잠재 고객에 대한 토큰을 추가하는 경우 해당 토큰을 사용하는 Smart Campaign을 지정해야 합니다. 다음에 지정된 스마트 캠페인이 실행될 때 일반 내 토큰 값 대신 목록의 값이 사용됩니다. 단일 Campaign 실행 후 토큰이 삭제됩니다.
+**중요:** 잠재 고객에 대한 토큰을 추가하는 경우 해당 토큰을 사용하는 Smart Campaign을 지정해야 합니다. 다음에 지정된 스마트 캠페인이 실행될 때 일반 내 토큰 값 대신 목록의 값이 사용됩니다. 단일 Campaign 실행 후 토큰이 삭제됩니다.
 
-**참고:** `importToList` 은 특히 큰 목록의 경우 완료하는 데 시간이 걸릴 수 있습니다. 다른 API 호출에서 새로 가져온 목록을 사용하려는 경우 다음을 사용해야 합니다. `importToListStatus` 작업이 완료되었는지 확인합니다.
+**참고:** `importToList`은(는) 특히 큰 목록의 경우 완료하는 데 시간이 걸릴 수 있습니다. 다른 API 호출에서 새로 가져온 목록을 사용하려면 `importToListStatus`을(를) 사용하여 작업이 완료되었는지 확인해야 합니다.
 
 ## 요청
 

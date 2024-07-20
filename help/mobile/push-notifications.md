@@ -1,14 +1,14 @@
 ---
-title: "푸시 알림"
-feature: "Mobile Marketing"
-description: "Marketo Mobile용 푸시 알림 활성화"
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+title: 푸시 알림
+feature: Mobile Marketing
+description: Marketo Mobile용 푸시 알림 활성화
+exl-id: 41d657d8-9eea-4314-ab24-fd4cb2be7f61
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '1329'
 ht-degree: 0%
 
 ---
-
 
 # 푸시 알림
 
@@ -24,29 +24,29 @@ ht-degree: 0%
 
 ### Apple 개발자 계정에서 푸시 알림 구성
 
-1. Apple Developer에 로그인 [멤버 센터](http://developer.apple.com/membercenter).
+1. Apple 개발자 [구성원 센터](http://developer.apple.com/membercenter)에 로그인합니다.
 1. 인증서, 식별자 및 프로필 을 클릭합니다.
 1. &quot;iOS, tvOS, watchOS&quot; 아래의 &quot;Certificates->All&quot; 폴더를 클릭합니다.
-1. 왼쪽 상단 화면에서 인증서 옆의 &quot;+&quot;를 선택합니다. ![](assets/certificates-plus.png)
+1. 인증서 ![](assets/certificates-plus.png) 옆의 왼쪽 상단 화면에서 &quot;+&quot;를 선택합니다.
 1. &quot;Apple 푸시 알림 서비스 SSL(샌드박스 및 프로덕션)&quot; 확인란을 활성화하고 &quot;계속&quot;을 클릭합니다.
-1. 앱 빌드를 사용 중인 애플리케이션 식별자를 선택합니다.![](assets/push-appid.png)
+1. 앱 빌드를 사용 중인 응용 프로그램 식별자를 선택합니다.![](assets/push-appid.png)
 1. 푸시 인증서를 생성하려면 CSR을 만들고 업로드하십시오. ![](assets/push-ssl.png)
 1. 로컬 컴퓨터에 인증서를 다운로드하고 두 번 클릭하여 설치합니다. ![](assets/certificate-download.png)
-1. &quot;키체인 액세스&quot;를 열고 인증서를 마우스 오른쪽 단추로 클릭한 다음 2개의 항목을 `.p12` 파일.![key_chain](assets/key-chain.png)
+1. &quot;키체인 액세스&quot;를 열고 인증서를 마우스 오른쪽 단추로 클릭한 다음 2개의 항목을 `.p12` 파일로 내보냅니다.![key_chain](assets/key-chain.png)
 1. Marketo Admin Console을 통해 이 파일을 업로드하여 알림을 구성합니다.
 1. 앱 프로비저닝 프로필을 업데이트합니다.
 
 ### xCode에서 푸시 알림 활성화
 
-xCode 프로젝트에서 푸시 알림 기능을 켭니다.![](assets/push-xcode.png)
+xCode 프로젝트에서 푸시 알림 기능을 사용하도록 설정합니다.![](assets/push-xcode.png)
 
 ### Marketo SDK를 사용하여 앱에서 푸시 알림 활성화
 
-에 다음 코드를 추가합니다 `AppDelegate.m` 고객의 디바이스에 푸시 알림을 전달하기 위한 파일입니다.
+`AppDelegate.m` 파일에 다음 코드를 추가하여 고객의 장치에 푸시 알림을 전달합니다.
 
-**참고** - 를 사용하는 경우 [!DNL Adobe Launch] 확장, 사용 `ALMarketo` 클래스 이름으로
+**참고** - [!DNL Adobe Launch] 확장을 사용하는 경우 `ALMarketo`을(를) classname으로 사용
 
-에서 다음 항목 가져오기 `AppDelegate.h`.
+`AppDelegate.h`에서 다음을 가져옵니다.
 
 >[!BEGINTABS]
 
@@ -64,7 +64,7 @@ import UserNotifications
 
 >[!ENDTABS]
 
-추가 `UNUserNotificationCenterDelegate` 끝 `AppDelegate` 아래와 같이 표시됩니다.
+아래와 같이 `UNUserNotificationCenterDelegate`을(를) `AppDelegate`에 추가합니다.
 
 >[!BEGINTABS]
 
@@ -125,9 +125,9 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 >[!ENDTABS]
 
-이 메서드를 호출하여 Apple Push Service로 등록 프로세스를 시작합니다. 등록이 성공하면 앱에서 앱 위임 개체의 `application:didRegisterForRemoteNotificationsWithDeviceToken:` 메서드를 호출하고 장치 토큰으로 전달합니다.
+이 메서드를 호출하여 Apple Push Service로 등록 프로세스를 시작합니다. 등록이 성공하면 앱에서 앱 위임 개체의 `application:didRegisterForRemoteNotificationsWithDeviceToken:` 메서드를 호출하고 장치 토큰을 전달합니다.
 
-등록에 실패하면 앱은 앱 위임의 `application:didFailToRegisterForRemoteNotificationsWithError:` 메서드를 사용하십시오.
+등록이 실패하면 앱은 앱 위임자의 `application:didFailToRegisterForRemoteNotificationsWithError:` 메서드를 대신 호출합니다.
 
 Marketo에 푸시 토큰 등록 Marketo에서 푸시 알림을 받으려면 Marketo에 장치 토큰을 등록해야 합니다.
 
@@ -259,7 +259,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 ![mobile8](assets/mobile8.png)
 
-장치가 푸시 알림을 수신하면 로 전달됩니다. `application:didReceiveRemoteNotification:` 앱 위임에 대한 콜백입니다.
+장치가 푸시 알림을 받으면 앱 대리자의 `application:didReceiveRemoteNotification:` 콜백으로 전달됩니다.
 
 다음은 앱 이벤트와 푸시 알림 이벤트를 보여 주는 Marketo의 Marketo 활동 로그입니다.
 
@@ -269,7 +269,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 1. 애플리케이션 태그 내에 다음 권한을 추가합니다.
 
-   열기 `AndroidManifest.xml` 및 다음 권한을 추가합니다. 앱에서 &quot;인터넷&quot; 및 &quot;ACCESS_NETWORK_STATE&quot; 권한을 요청해야 합니다. 앱에서 이미 이러한 권한을 요청하는 경우 이 단계를 건너뜁니다.
+   `AndroidManifest.xml`을(를) 열고 다음 권한을 추가합니다. 앱에서 &quot;인터넷&quot; 및 &quot;ACCESS_NETWORK_STATE&quot; 권한을 요청해야 합니다. 앱에서 이미 이러한 권한을 요청하는 경우 이 단계를 건너뜁니다.
 
    ```xml
    <uses‐permission android:name="android.permission.INTERNET"/>
@@ -285,9 +285,9 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
    ```
 
-1. HTTPv1로 FCM 설정(Google은 [더 이상 사용되지 않는 XMPP 프로토콜](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref) 2023년 6월 12일에 제거되며 2024년 6월에 제거됩니다.) 
+1. HTTPv1로 FCM 설정(Google은 2023년 6월 12일에 [더 이상 사용되지 않는 XMPP 프로토콜](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref)이 있으며 2024년 6월에 제거됩니다.) 
 
-- Marketo 기능 관리자에서 MME FCM HTTPv1 활성화 ![](assets/feature-manager.png)
+- Marketo 기능 관리자 ![](assets/feature-manager.png)에서 MME FCM HTTPv1 사용
    - MLM에서 앱에 대한 서비스 계정 Json 파일을 업로드합니다.
    - Firebase 콘솔에서 서비스 계정 JSON 파일을 다운로드할 수 있습니다.   ![](assets/fcm-console.png)
    - 푸시 알림을 전송하기 전에 Marketo에서 서비스 계정 JSON 파일을 업로드한 후 1시간 동안 기다립니다.  
@@ -309,7 +309,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 ## Marketo 푸시 서비스 등록
 
-1. Marketo에서 푸시 알림을 받으려면 Firebase 메시징 서비스를 `AndroidManifest.xml`. 닫기 애플리케이션 태그 앞에 를 추가합니다.
+1. Marketo에서 푸시 알림을 받으려면 Firebase 메시징 서비스를 `AndroidManifest.xml`에 추가해야 합니다. 닫기 애플리케이션 태그 앞에 를 추가합니다.
 
    ```xml
    <meta-data
@@ -323,7 +323,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    </service>
    ```
 
-1. 파일에 Marketo SDK 메서드 추가 `MyFirebaseMessagingService` 다음과 같이
+1. 다음과 같이 `MyFirebaseMessagingService` 파일에 Marketo SDK 메서드를 추가합니다.
 
    ```java
    import com.marketo.Marketo;
@@ -348,7 +348,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    }
    ```
 
-   **참고** - Adobe 확장을 사용하는 경우 다음과 같이 를 추가합니다.
+   **참고** - Adobe 확장을 사용하는 경우 아래와 같이 추가하십시오.
 
    ```java
    import com.marketo.Marketo;
@@ -371,7 +371,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    }
    ```
 
-**참고**: FCM SDK는 필요한 모든 권한과 받는 사람 기능을 자동으로 추가합니다. 이전 버전의 SDK를 사용한 경우 앱의 매니페스트에서 다음 사용되지 않는(또는 메시지 중복을 일으킬 수 있으므로 해로울 수 있는) 요소를 제거해야 합니다
+**참고**: FCM SDK는 필요한 받는 사람 기능과 모든 필수 권한을 자동으로 추가합니다. 이전 버전의 SDK를 사용한 경우 앱의 매니페스트에서 다음 사용되지 않는(또는 메시지 중복을 일으킬 수 있으므로 해로울 수 있는) 요소를 제거해야 합니다
 
 ```xml
 <receiver android:name="com.marketo.MarketoBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
@@ -399,14 +399,14 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    marketoSdk.initializeMarketoPush(SENDER_ID,"ChannelName");
    ```
 
-   사용 중인 경우 [!DNL Adobe Launch] 확장, 다음 지침 사용
+   [!DNL Adobe Launch] 확장을 사용하는 경우 다음 지침을 사용하십시오
 
    ```java
    // Enable push notification here. The push notification channel name can by any string
    ALMarketo.initializeMarketoPush(SENDER_ID,"ChannelName");
    ```
 
-   SENDER_ID가 없는 경우에서 자세히 설명한 단계를 완료하여 Google Cloud Messaging 서비스를 활성화합니다 [이 자습서](https://developers.google.com/cloud-messaging/).
+   SENDER_ID가 없는 경우 [이 자습서](https://developers.google.com/cloud-messaging/)에 설명된 단계를 완료하여 Google Cloud Messaging Service를 사용하도록 설정하십시오.
 
    사용자가 로그아웃할 때 토큰의 등록을 취소할 수도 있습니다.
 
@@ -414,7 +414,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    marketoSdk.uninitializeMarketoPush();
    ```
 
-   사용 중인 경우 [!DNL Adobe Launch] 확장 프로그램, 아래 지침 사용
+   [!DNL Adobe Launch] 확장을 사용하는 경우 아래 지침을 사용하십시오.
 
    ```java
    ALMarketo.uninitializeMarketoPush();
@@ -456,7 +456,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 오류를 추적할 때 가장 먼저 확인할 수 있는 위치는 Marketo 활동 로그입니다. 활동 로그를 사용하여 메시지가 전송되었는지 확인할 수 있습니다.
 
-활동 로그에서 메시지를 수신하기로 한 사용자에 대한 활동 레코드를 확인합니다. 메시지를 보낸 경우 활동 로그에 레코드가 표시됩니다. 그렇지 않으면 Marketo 내의 iOS 인증서 또는 Android API 키 구성으로 인해 문제가 발생할 수 있습니다.
+활동 로그에서 메시지를 수신하기로 한 사용자에 대한 활동 레코드를 확인합니다. 메시지를 보낸 경우 활동 로그에 레코드가 표시됩니다. 그렇지 않은 경우 Marketo 내의 iOS 인증서 또는 Android API 키 구성으로 인해 문제가 발생할 수 있습니다.
 
 ### 인증서 또는 키가 잘못됨
 
@@ -464,7 +464,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 ### .p12 파일에 인증서 또는 키가 없습니다(iOS).
 
-인증서를 내보낼 때 키를 내보내야 합니다 _및_ 인증서.
+인증서를 내보낼 때 키 _및_&#x200B;을(를) 인증서로 내보내야 합니다.
 
 ### 프로비전 프로필이 오래됨(iOS)
 

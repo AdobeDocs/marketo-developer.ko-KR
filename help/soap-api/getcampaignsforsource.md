@@ -1,14 +1,14 @@
 ---
-title: "getCampaignsForSource"
+title: getCampaignsForSource
 feature: SOAP
-description: "getCampaignsForSource SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: getCampaignsForSource SOAP 호출
+exl-id: bd8803ef-f462-4346-a381-73f40dc5d9ee
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '131'
 ht-degree: 5%
 
 ---
-
 
 # getCampaignsForSource
 
@@ -22,7 +22,7 @@ ht-degree: 5%
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
-| 소스 | 필수 | 소스는 다음과 같을 수 있습니다 `MKTOWS` 또는 `SALES`. 후자는 Sales Insight에서 사용할 수 있는 캠페인 목록을 제공합니다. |
+| 소스 | 필수 | 소스는 `MKTOWS` 또는 `SALES`일 수 있습니다. 후자는 Sales Insight에서 사용할 수 있는 캠페인 목록을 제공합니다. |
 | 이름 | 선택 사항 | 이름별로 필터링하려면 이 항목을 사용하십시오. 이는 문자열 배열이 아닌 단일 문자열입니다. |
 | exactName | 선택 사항 | 이름 매개 변수에 대해 정확히 일치시킬지 여부를 나타내는 부울 값 |
 

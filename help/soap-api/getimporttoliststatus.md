@@ -1,20 +1,20 @@
 ---
-title: "getImportToListStatus"
+title: getImportToListStatus
 feature: SOAP
-description: "getImportToListStatus SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: getImportToListStatus SOAP 호출
+exl-id: 17a62f65-dfa0-4f40-89b2-154f7734a2dc
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '76'
 ht-degree: 7%
 
 ---
 
-
 # getImportToListStatus
 
-이 함수는 특정 의 상태를 확인합니다. `importToList` 함수 호출.
+이 함수는 특정 `importToList` 함수 호출의 상태를 확인합니다.
 
-다음을 완료합니다. `importToList` API를 먼저 호출한 다음 폴링합니다 `getImportToListStatus` 정기적으로 투표 안 함 `getImportToListStatus` 분당 두 번 이상
+먼저 `importToList` API 호출을 완료한 다음 `getImportToListStatus`을(를) 정기적으로 폴링합니다. `getImportToListStatus`을(를) 분당 두 번 이상 폴링하지 마십시오.
 
 ## 요청
 

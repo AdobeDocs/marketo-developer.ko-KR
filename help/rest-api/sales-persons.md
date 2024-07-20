@@ -1,26 +1,26 @@
 ---
-title: "영업사원"
+title: 영업 담당자
 feature: REST API
-description: "영업 사원에 대한 데이터를 읽습니다."
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: 영업 사원에 대한 데이터를 읽습니다.
+exl-id: f8ed5aa5-63c1-4c5b-8683-bf47eed1ea18
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '303'
 ht-degree: 0%
 
 ---
 
-
 # 영업 담당자
 
-[영업 직원 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Sales-Persons)
+[영업 사용자 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Sales-Persons)
 
-영업 담당자 API는 다음과 같은 구독이 있는 구독에 대한 읽기 전용 액세스입니다. [SFDC 동기화](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync) 활성화되었습니다. 영업 사원은 가망 고객 레코드의 영업 담당자인 개인 레코드의 유형입니다. 각 잠재 고객 레코드에서 externalSalesPersonId 필드를 통해 잠재 고객 레코드와 연결됩니다. 잠재 고객이 채워진 externalSalesPersonId 필드로 영업 사원과 연결된 경우 Marketo의 해당 잠재 고객 레코드에 대해 해당 잠재 고객 소유자 조회 필드가 채워져 해당 필터 및 토큰을 사용할 수 있습니다.
+영업 담당자 API는 [SFDC 동기화](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync)가 활성화된 구독에 대한 읽기 전용 액세스입니다. 영업 사원은 가망 고객 레코드의 영업 담당자인 개인 레코드의 유형입니다. 각 잠재 고객 레코드에서 externalSalesPersonId 필드를 통해 잠재 고객 레코드와 연결됩니다. 잠재 고객이 채워진 externalSalesPersonId 필드로 영업 사원과 연결된 경우 Marketo의 해당 잠재 고객 레코드에 대해 해당 잠재 고객 소유자 조회 필드가 채워져 해당 필터 및 토큰을 사용할 수 있습니다.
 
-영업 사원은 다음을 사용하여 잠재 고객 레코드와 관련되어 있습니다. [잠재 고객 동기화](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST) 끝점 및 externalSalesPersonId 특성 전달.
+영업 직원은 [잠재 고객 동기화](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST) 끝점을 사용하고 externalSalesPersonId 특성을 전달하여 잠재 고객 레코드와 관련되어 있습니다.
 
-영업 사원은 다음을 사용하여 영업 기회 레코드에 관련됩니다. [기회 동기화](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/syncOpportunitiesUsingPOST) 끝점 및 externalSalesPersonId 특성 전달.
+영업 사원은 [영업 기회 동기화](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/syncOpportunitiesUsingPOST) 끝점을 사용하고 externalSalesPersonId 특성을 전달하여 영업 기회 레코드에 연결됩니다.
 
-영업 사원은 다음을 사용하여 회사 레코드와 관련되어 있습니다. [회사 동기화](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies/operation/syncCompaniesUsingPOST) 끝점 및 externalSalesPersonId 특성 전달.
+영업 직원은 [회사 동기화](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies/operation/syncCompaniesUsingPOST) 끝점을 사용하고 externalSalesPersonId 특성을 전달하여 회사 레코드와 관련되어 있습니다.
 
 영업 사원 레코드는 API를 통해서만 편집할 수 있습니다.
 
@@ -95,7 +95,7 @@ GET /rest/v1/salespersons/describe.json
 }
 ```
 
-기본적으로 `idField` of Sales Persons는 &quot;id&quot;이고 `dedupeFields` 는 단지 &quot;externalSalesPersonId&quot;입니다.
+기본적으로 영업 직원의 `idField`은(는) &quot;id&quot;이고 `dedupeFields`은(는) &quot;externalSalesPersonId&quot;입니다.
 
 ## 쿼리
 

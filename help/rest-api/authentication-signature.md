@@ -1,14 +1,14 @@
 ---
-title: "인증 서명"
+title: 인증 서명
 feature: REST API
-description: "메시지 전송에 보안 인증 사용"
-source-git-commit: 9bc1e0867f9a21e2dc72bfab444a09f188d1bac9
+description: 메시지 전송에 보안 인증을 사용합니다.
+exl-id: dda9d81b-0a77-4a99-916b-bf21319fd26d
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '210'
 ht-degree: 2%
 
 ---
-
 
 # 인증 서명
 
@@ -43,10 +43,10 @@ authHeader = "<ns1:AuthenticationHeader>" +
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
-| `mktowsUserId` | 필수 | Marketo 클라이언트 액세스 ID는 통합 아래의 Marketo 관리 SOAP API 패널 내에 있습니다. |
-| `requestSignature` | 필수 | 공유 비밀 키를 기반으로 한 HMAC-SHA1 서명, `requestTimestamp`및 Marketo 사용자 ID |
+| `mktowsUserId` | 필수 | Marketo 클라이언트 액세스 ID는 통합 아래의 Marketo admin SOAP API 패널에 있습니다. |
+| `requestSignature` | 필수 | 공유 암호 키, `requestTimestamp` 및 Marketo 사용자 ID를 기반으로 하는 HMAC-SHA1 서명 |
 | `requestTimestamp` | 필수 | 요청 타임스탬프(W3C WSDL 날짜 형식 Ex. &quot;2013-06-09T14:04:54-08:00&quot;) |
-| `partnerId` | 선택 사항 | LaunchPoint 기술 파트너 [API 키](../launchpoint-api.pdf). |
+| `partnerId` | 선택 사항 | LaunchPoint 기술 파트너 [API 키](../launchpoint-api.pdf). |
 
 ## 요청 XML - getLeadActivity
 

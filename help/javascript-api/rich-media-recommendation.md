@@ -1,14 +1,14 @@
 ---
-title: "리치 미디어 권장 사항"
-description: "리치 미디어 권장 사항"
+title: 리치 미디어 권장 사항
+description: 리치 미디어 권장 사항
 feature: Javascript
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+exl-id: ee92e46d-e529-40a2-a0d0-ee233916f004
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '812'
 ht-degree: 3%
 
 ---
-
 
 # 리치 미디어 권장 사항
 
@@ -21,14 +21,14 @@ ht-degree: 3%
 1. 페이지 본문에서
    1. 템플릿을 표시할 위치에 템플릿 태그(div 클래스)를 배치합니다
 
-추가 정보를 사용할 수 있습니다. [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media).
+자세한 내용은 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media)를 참조하세요.
 
 ## 템플릿 태그
 
 | 속성 | 선택 사항/필수 | 설명 |
 |---|---|---|
 | 클래스 | 필수 | 이 div HTML 요소가 RTP 권장 div라고 지정합니다. |
-| data-rtp-template-id | 필수 | 템플릿 ID입니다. 이렇게 하면 권장 사항의 맞춤이 결정됩니다. 가로 정렬에는 &quot;template1&quot;, 세로 정렬에는 &quot;template2&quot; 또는 제목과 설명만 포함하는 세로 정렬에는 &quot;template3&quot;을 사용합니다. 이 스크립트는 일치하는 템플릿을 이 템플릿에 삽입합니다. `div.Permissible` 값: template1, template2, template3. |
+| data-rtp-template-id | 필수 | 템플릿 ID입니다. 이렇게 하면 권장 사항의 맞춤이 결정됩니다. 가로 정렬에는 &quot;template1&quot;, 세로 정렬에는 &quot;template2&quot; 또는 제목과 설명만 포함하는 세로 정렬에는 &quot;template3&quot;을 사용합니다. 스크립트는 이 `div.Permissible` 값(template1, template2, template3)에 일치하는 템플릿을 삽입합니다. |
 
 ### 예시
 
@@ -50,11 +50,11 @@ ht-degree: 3%
 <div class="RTP_RCMD2" data-rtp-template-id="template3"></div>
 ```
 
-템플릿 정렬의 스크린샷 보기 [여기](#example_of_rich_media_recommendation_template_1).
+템플릿 정렬의 스크린샷을 [여기](#example_of_rich_media_recommendation_template_1)에서 확인하세요.
 
 ## 권장 사항 채우기
 
-이 방법은 모든 리치 미디어를 채웁니다 `<divs>` 권장 사항이 있는 페이지에서 을 클릭합니다.
+이 메서드는 페이지의 모든 리치 미디어 `<divs>`을(를) 권장 사항으로 채웁니다.
 
 ### 사용량
 
@@ -149,7 +149,7 @@ rtp("set", "rcmd", "richmedia",
 | rcmd.cta.background.color | &quot;rcmd.cta.background.color&quot; : &quot;녹색&quot; | 단추 배경색을 변경합니다. 이 속성은 모든 css 색상 값(색상 이름, rgb, ...)을 지원합니다. |
 | rcmd.cta.font.color | &quot;rcmd.cta.font.color&quot; : &quot;rgb(90, 84, 164)&quot; | 단추 글꼴 색상을 변경합니다. 이 속성은 모든 글꼴 색상 값(rgb, hex, ...)을 지원합니다. |
 | rcmd.cta.text | &quot;rcmd.cta.text&quot; : &quot;푸시&quot; | 단추 텍스트를 변경합니다. 텍스트는 모든 단추에 대해 동일합니다. |
-| 범주 | &quot;category&quot; : [&quot;하나의 카테고리&quot;] | 이 템플릿이 지원하는 권장 사항 범주를 변경합니다. 템플릿에는 이 구성에 의해 설정된 카테고리 중 하나가 있는 권장 사항만 표시됩니다. |
+| 범주 | &quot;category&quot; : [&quot;one category&quot;] | 이 템플릿이 지원하는 권장 사항 범주를 변경합니다. 템플릿에는 이 구성에 의해 설정된 카테고리 중 하나가 있는 권장 사항만 표시됩니다. |
 
 
 참고: 구성 지원은 템플릿별로 변경될 수 있습니다.
@@ -232,16 +232,16 @@ rtp('get','rcmd', 'richmedia');
 
 #### 리치 미디어 추천 템플릿 #1의 예
 
-**이름**: template1 **설명**: 이미지, 제목, 설명 및 콜 투 액션 버튼을 포함한 가로 콘텐츠
+**이름**: template1 **설명**: 이미지, 제목, 설명 및 콜 투 액션 단추를 포함하는 가로 콘텐츠.
 
 ![리치 미디어 템플릿](assets/rich-media-template1.png)
 
 #### 리치 미디어 추천 템플릿 #2의 예
 
-**이름**: template2 **설명**: 이미지, 제목, 설명 및 콜 투 액션 버튼을 포함한 세로 컨텐츠입니다.
+**이름**: template2 **설명**: 이미지, 제목, 설명 및 콜 투 액션 단추를 포함하는 세로 콘텐츠
 
 ![리치 미디어 템플릿](assets/rich-media-template2.png)
 
 #### 리치 미디어 추천 템플릿 #3의 예
 
-**이름**: template3 **설명**: 제목과 설명만 포함하는 세로 콘텐츠. 마우스를 가져가면 헤더가 색상을 변경하고 콘텐츠 URL에 하이퍼링크됩니다. 설명 또한 색상을 변경하지 않은 콘텐츠에 대한 링크입니다. ![리치 미디어 템플릿](assets/rich-media-template3.png)
+**이름**: template3 **설명**: 제목과 설명만 포함하는 세로 콘텐츠 마우스를 가져가면 헤더가 색상을 변경하고 콘텐츠 URL에 하이퍼링크됩니다. 설명 또한 색상을 변경하지 않은 콘텐츠에 대한 링크입니다. ![리치 미디어 템플릿](assets/rich-media-template3.png)

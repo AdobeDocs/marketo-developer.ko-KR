@@ -1,14 +1,14 @@
 ---
-title: "scheduleCampaign"
+title: scheduleCampaign
 feature: SOAP, Smart Campaigns
-description: "scheduleCampaign SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: schedule캠페인 SOAP 호출
+exl-id: a9ef2c16-34ef-4e0f-b765-e332335b0b81
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '252'
 ht-degree: 2%
 
 ---
-
 
 # scheduleCampaign
 
@@ -18,7 +18,7 @@ ht-degree: 2%
 
 requestCampaign 함수와 유사하게 기존 토큰을 재정의하는 내 토큰 배열을 이 API 호출에 전달할 수 있습니다. 캠페인 실행 후 토큰이 삭제됩니다.
 
-이 선택적 매개 변수를 와 함께 사용하는 경우 [가져오기 대상 목록](importtolist.md), 토큰은 다음 순서로 우선 순위가 지정됩니다.
+이 선택적 매개 변수를 [importToList](importtolist.md)과(와) 함께 사용하는 경우 토큰의 우선 순위는 다음과 같습니다.
 
 1. 리드 토큰당 importToList
 1. 캠페인 토큰당 scheduleCampaign

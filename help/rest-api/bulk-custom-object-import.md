@@ -1,20 +1,20 @@
 ---
-title: "대량 사용자 정의 개체 가져오기"
+title: 대량 사용자 지정 개체 가져오기
 feature: Custom Objects
-description: "사용자 지정 개체의 일괄 가져오기"
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: 사용자 지정 개체의 일괄 가져오기.
+exl-id: e795476c-14bc-4e8c-b611-1f0941a65825
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '855'
 ht-degree: 0%
 
 ---
 
-
 # 대량 사용자 지정 개체 가져오기
 
 [대량 사용자 지정 개체 가져오기 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects)
 
-가져올 사용자 지정 개체 레코드가 많을 경우 대량 API를 사용하여 비동기적으로 가져오는 것이 좋습니다. 이 작업은 구분된 레코드(쉼표, 탭 또는 세미콜론)가 포함된 플랫 파일을 가져와서 수행합니다. 파일의 크기가 10MB 미만인 경우 파일에는 원하는 수만큼 레코드가 포함될 수 있습니다(그렇지 않으면 HTTP 413 상태 코드가 반환됨). 파일의 내용은 사용자 지정 개체 정의에 따라 다릅니다. 첫 번째 행에는 항상 각 행의 값을 로 매핑할 필드를 나열하는 헤더가 포함됩니다. 헤더의 모든 필드 이름은 API 이름과 일치해야 합니다(아래 설명). 나머지 행에는 가져올 데이터가 포함되며, 행당 하나의 레코드입니다. 레코드 작업은 &quot;삽입 또는 업데이트&quot;만 가능합니다.
+에 대한 사용자 지정 개체 레코드가 많을 때  가져오기, 가장 좋은 방법은 벌크 API를 사용하여 비동기적으로 가져오는 것입니다. 이 작업은 구분된 레코드(쉼표, 탭 또는 세미콜론)가 포함된 플랫 파일을 가져와서 수행합니다. 파일의 크기가 10MB 미만이면 파일에 원하는 수의 레코드를 포함할 수 있습니다(그렇지 않으면 HTTP)  413 상태 코드가 반환됨). 파일의 내용은 사용자 지정 개체 정의에 따라 다릅니다. 첫 번째 행에는 항상 각 행의 값을 로 매핑할 필드를 나열하는 헤더가 포함됩니다. 헤더의 모든 필드 이름은 API 이름과 일치해야 합니다(아래 설명). 나머지 행에는 가져올 데이터가 포함되며, 행당 하나의 레코드입니다. 레코드 작업은 &quot;삽입 또는 업데이트&quot;만 가능합니다.
 
 ## 처리 제한
 
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 ## 사용자 지정 개체 예
 
-벌크 API를 사용하기 전에 먼저 Marketo 관리 UI를 사용하여 다음을 수행해야 합니다. [사용자 지정 개체 만들기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-objects/create-marketo-custom-objects). 예를 들어 &quot;Color&quot;, &quot;Make&quot;, &quot;Model&quot; 및 &quot;VIN&quot; 필드가 있는 &quot;Car&quot; 사용자 지정 개체를 만들었다고 가정합니다. 다음은 사용자 지정 개체를 보여주는 관리자 UI 화면입니다. 중복 제거를 위해 VIN 필드를 사용했음을 알 수 있습니다. API 이름은 일괄 API 관련 끝점을 호출할 때 사용해야 하므로 강조 표시됩니다.
+벌크 API를 사용하기 전에 먼저 Marketo 관리 UI를 사용하여 [사용자 지정 개체를 만들기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-objects/create-marketo-custom-objects)해야 합니다. 예를 들어 &quot;Color&quot;, &quot;Make&quot;, &quot;Model&quot; 및 &quot;VIN&quot; 필드가 있는 &quot;Car&quot; 사용자 지정 개체를 만들었다고 가정합니다. 다음은 사용자 지정 개체를 보여주는 관리자 UI 화면입니다. 중복 제거를 위해 VIN 필드를 사용했음을 알 수 있습니다. API 이름은 일괄 API 관련 끝점을 호출할 때 사용해야 하므로 강조 표시됩니다.
 
 ![사용자 지정 개체 삽입](assets/bulk-insert-co-car-1.png)
 
@@ -32,7 +32,7 @@ ht-degree: 0%
 
 ### API 이름
 
-사용자 지정 개체 API 이름을에 전달하여 API 이름을 프로그래밍 방식으로 검색할 수 있습니다. [사용자 지정 개체 설명](#describe) 엔드포인트.
+사용자 지정 개체 API 이름을 [사용자 지정 개체 설명](#describe) 끝점에 전달하여 프로그래밍 방식으로 API 이름을 검색할 수 있습니다.
 
 ```
 /rest/v1/customobjects/{apiName}/describe.json
@@ -130,7 +130,7 @@ blue,bmw,325i,WBS3U9C52HP970604
 
 ## 작업 생성
 
-일괄 가져오기 요청을 수행하려면 의 경로에 사용자 지정 개체의 API 이름을 포함해야 합니다. [사용자 지정 개체 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Identity/operation/identityUsingPOST) 엔드포인트. 가져오기 파일의 이름을 참조하는 &quot;file&quot; 매개 변수와 가져오기 파일이 구분된 방법을 지정하는 &quot;format&quot; 매개 변수(&quot;csv&quot;, &quot;tsv&quot; 또는 &quot;ssv&quot;)도 포함해야 합니다.
+대량 가져오기 요청을 수행하려면 [사용자 지정 개체 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Identity/operation/identityUsingPOST) 끝점에 대한 경로에 사용자 지정 개체의 API 이름을 포함해야 합니다. 가져오기 파일의 이름을 참조하는 &quot;file&quot; 매개 변수와 가져오기 파일이 구분된 방법을 지정하는 &quot;format&quot; 매개 변수(&quot;csv&quot;, &quot;tsv&quot; 또는 &quot;ssv&quot;)도 포함해야 합니다.
 
 ```
 POST /bulk/v1/customobjects/{apiName}/import.json?format=csv
@@ -171,7 +171,7 @@ blue,bmw,325i,WBS3U9C52HP970604
 
 이 예에서는 &quot;csv&quot; 형식을 지정하고 가져오기 파일의 이름을 &quot;custom_object_import.csv&quot;로 지정했습니다.
 
-호출에 대한 응답으로 사용자 지정 개체 동기화 엔드포인트에서 가져오는 것과 같은 성공 또는 실패 목록은 여기에 없습니다. 대신 `batchId`. 이것은 호출이 비동기적으로 수행되며 `status` of &quot;Queued&quot;, &quot;Importing&quot; 또는 &quot;Failed&quot;. 가져오기 작업의 상태를 가져오거나 완료 시 실패 및/또는 경고를 검색할 수 있도록 batchId를 유지해야 합니다. batchId는 7일 동안 유효합니다.
+호출에 대한 응답으로 사용자 지정 개체 동기화 엔드포인트에서 가져오는 것과 같은 성공 또는 실패 목록은 여기에 없습니다. 대신 `batchId`을(를) 받습니다. 이 호출은 비동기적으로 수행되며 &quot;대기 중&quot;, &quot;가져오기&quot; 또는 &quot;실패&quot;의 `status`을(를) 반환할 수 있기 때문입니다. 가져오기 작업의 상태를 가져오거나 완료 시 실패 및/또는 경고를 검색할 수 있도록 batchId를 유지해야 합니다. batchId는 7일 동안 유효합니다.
 
 대량 가져오기 요청을 복제하는 간단한 방법은 명령줄에서 curl을 사용하는 것입니다.
 
@@ -190,7 +190,7 @@ blue,bmw,325i,WBS3U9C52HP970604
 
 ## 폴링 작업 상태
 
-가져오기 작업이 생성되면 해당 상태를 쿼리해야 합니다. 가져오기 작업을 5-30초마다 폴링하는 것이 가장 좋습니다. 이렇게 하려면 사용자 지정 개체의 API 이름과 `batchId` (으)로 이동하는 경로 [가져오기 사용자 지정 개체 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectStatusUsingGET) 엔드포인트.
+가져오기 작업이 생성되면 해당 상태를 쿼리해야 합니다. 가져오기 작업을 5-30초마다 폴링하는 것이 가장 좋습니다. 이렇게 하려면 [사용자 지정 개체 가져오기 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectStatusUsingGET) 끝점에 대한 경로에 사용자 지정 개체의 API 이름과 `batchId`을(를) 전달합니다.
 
 ```
 GET /bulk/v1/customobjects/{apiName}/import/{batchId}/status.json
@@ -216,11 +216,11 @@ GET /bulk/v1/customobjects/{apiName}/import/{batchId}/status.json
 }
 ```
 
-이 응답은 완료된 가져오기를 표시하지만 `status` 완료, 대기 중, 가져오기, 실패 중 하나일 수 있습니다. 작업이 완료된 경우 처리된 행 수, 실패 및 경고 목록이 표시됩니다. 또한 메시지 속성은 추가 작업 정보를 찾는 데 좋은 위치입니다.
+이 응답은 완료된 가져오기를 표시하지만 `status`은(는) 완료, 대기 중, 가져오기, 실패 중 하나일 수 있습니다. 작업이 완료된 경우 처리된 행 수, 실패 및 경고 목록이 표시됩니다. 또한 메시지 속성은 추가 작업 정보를 찾는 데 좋은 위치입니다.
 
 ## 실패
 
-실패는 `numOfRowsFailed` 의 속성 [가져오기 사용자 지정 개체 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectStatusUsingGET) 응답. numOfRowsFailed가 0보다 크면 해당 값은 발생한 실패 횟수를 나타냅니다. 호출 [사용자 지정 개체 가져오기 가져오기 실패](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectFailuresUsingGET) 실패 세부 정보가 있는 파일을 가져오기 위한 끝점입니다. 다시 한번, 사용자 지정 개체 API 이름 및 `batchId` 을 클릭합니다. 오류 파일이 없으면 HTTP 404 상태 코드가 반환됩니다.
+[사용자 지정 개체 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectStatusUsingGET) 응답에서 `numOfRowsFailed` 특성으로 오류가 표시됩니다. numOfRowsFailed가 0보다 크면 해당 값은 발생한 실패 횟수를 나타냅니다. [사용자 지정 개체 가져오기 실패](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectFailuresUsingGET) 끝점을 호출하여 실패 세부 정보가 포함된 파일을 가져옵니다. 다시 경로에 사용자 지정 개체 API 이름과 `batchId`을(를) 전달해야 합니다. 오류 파일이 없으면 HTTP 404 상태 코드가 반환됩니다.
 
 예제를 계속 진행하여 헤더를 수정하고 &quot;vin&quot;을 &quot;vin&quot;으로 변경합니다(쉼표와 &quot;vin&quot; 사이에 공백을 추가).
 
@@ -228,7 +228,7 @@ GET /bulk/v1/customobjects/{apiName}/import/{batchId}/status.json
 color,make,model, vin
 ```
 
-을(를) 다시 가져와 상태를 확인하는 경우 `numRowsFailed`: 3. 이는 세 가지 실패를 나타냅니다.
+다시 가져오고 상태를 확인하면 `numRowsFailed`: 3에 대한 이 응답이 표시됩니다. 이는 세 가지 실패를 나타냅니다.
 
 ```
 GET /bulk/v1/customobjects/car_c/import/{batchId}/status.json
@@ -267,11 +267,11 @@ yellow,bmw,320i,WBA4R7C30HK896061,missing.dedupe.fields
 blue,bmw,325i,WBS3U9C52HP970604,missing.dedupe.fields
 ```
 
-그리고 우리는 우리가 데이터 중복 제거 분야를 놓치고 있다는 것을 알 수 있습니다 `vin`.
+중복 제거 필드 `vin`이(가) 누락되었습니다.
 
 ## 경고
 
-경고는 `numOfRowsWithWarning` 가져오기 사용자 지정 개체 상태 응답의 특성입니다. numOfRowsWithWarning이 0보다 크면 해당 값은 발생한 경고 수를 나타냅니다. 호출 [가져오기 사용자 지정 개체 경고](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectWarningsUsingGET) 경고 세부 정보가 있는 파일을 가져오기 위한 끝점입니다. 다시 한번, 사용자 지정 개체 API 이름 및 `batchId` 을 클릭합니다. 경고 파일이 없으면 HTTP 404 상태 코드가 반환됩니다.
+사용자 지정 개체 상태 가져오기 응답에서 `numOfRowsWithWarning` 특성에 경고가 표시됩니다. numOfRowsWithWarning이 0보다 크면 해당 값은 발생한 경고 수를 나타냅니다. [사용자 지정 개체 가져오기 경고](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectWarningsUsingGET) 끝점을 호출하여 경고 세부 정보가 있는 파일을 가져옵니다. 다시 경로에 사용자 지정 개체 API 이름과 `batchId`을(를) 전달해야 합니다. 경고 파일이 없으면 HTTP 404 상태 코드가 반환됩니다.
 
 ```
 GET /bulk/v1/customobjects/car_c/import/{batchId}/warnings.json

@@ -1,14 +1,14 @@
 ---
-title: "describeMObject"
+title: describeMObject
 feature: SOAP
-description: "describeMObjects SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: describeMObjects SOAP 호출
+exl-id: a5ee60c4-b0ec-49a2-9a9d-22806ddde8f7
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '71'
 ht-degree: 7%
 
 ---
-
 
 # describeMObject
 
@@ -18,7 +18,7 @@ ht-degree: 7%
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
-| objectName | 필수 | 메타데이터를 가져오려는 개체의 이름입니다. `objectName` 다음 중 하나일 수 있습니다. `ActivityRecord`, `LeadRecord`, `Opportunity`, `OpportunityPersonRole` |
+| objectName | 필수 | 메타데이터를 가져오려는 개체의 이름입니다. `objectName`은(는) `ActivityRecord`, `LeadRecord`, `Opportunity`, `OpportunityPersonRole` 중 하나일 수 있습니다. |
 
 ## 요청 XML
 

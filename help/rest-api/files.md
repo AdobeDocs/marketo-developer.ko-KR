@@ -1,24 +1,24 @@
 ---
-title: "파일"
+title: 파일
 feature: REST API
-description: "Marketo 파일 저장 및 조작"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: Marketo 파일 저장 및 조작.
+exl-id: 17361cdc-2309-442c-803c-34ce187aee1a
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '267'
 ht-degree: 1%
 
 ---
 
-
 # 파일
 
-[파일 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files)
+[파일 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files)
 
 Marketo 구독을 통해 이미지, 스크립트, 문서 및 스타일 시트와 같은 임의의 파일을 저장할 수 있습니다. 이러한 모든 작업은 REST API를 통해 원격으로 작업할 수 있습니다. Marketo 구독에서 사용할 수 있는 스토리지는 대역폭 사용량이 많은 애플리케이션에 최적화되어 있지 않으므로 적절한 오디오 및 비디오 스트리밍 애플리케이션에 대체 요소를 사용해야 합니다.
 
 ## 쿼리
 
-파일 쿼리는 간단하며 에셋의 표준 쿼리 유형을 따릅니다. [id 기준](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files/operation/getFileByIdUsingGET), [이름순](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files/operation/getFileByNameUsingGET), 및 [브라우징](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files/operation/getFilesUsingGET).
+파일 쿼리는 간단하며 [ID](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files/operation/getFileByIdUsingGET), [이름](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files/operation/getFileByNameUsingGET) 및 [검색](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files/operation/getFilesUsingGET)의 자산에 대한 표준 쿼리 형식을 따릅니다.
 
 ### ID별
 
@@ -53,7 +53,7 @@ GET /rest/asset/v1/file/{id}.json
 
 ### 이름별
 
-필수 옵션을 사용하여 파일 이름 지정 `name` 매개 변수.
+필수 `name` 매개 변수를 사용하여 파일 이름을 지정하십시오.
 
 ```
 GET /rest/asset/v1/file/byName.json?name=foo.png
@@ -155,7 +155,7 @@ GET /rest/asset/v1/files.json?folder={"id":436, "type": "Folder"}&maxReturn=3
 
 ## 만들기 및 업데이트
 
-[파일 만들기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files/operation/createFileUsingPOST) 은 요청의 multipart/form-data 유형으로 수행됩니다. 최소한으로, 이름, 폴더 및 파일은 요청에 필요하며, 선택적 설명과 insertOnly 플래그는 만들기 호출이 같은 이름의 기존 파일을 업데이트하는 것을 방지합니다. file 매개 변수의 경우 name 매개 변수 외에 Content-Disposition 헤더에 &quot;filename&quot;이 필요합니다. 또한 파일에 대한 Content-Type 헤더를 전달해야 합니다. 이 헤더는 Marketo이 파일을 제공하는 데 사용할 MIME 유형입니다.
+[다중 파트/양식 데이터 형식의 요청으로 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files/operation/createFileUsingPOST)파일을 만듭니다. 최소한으로, 이름, 폴더 및 파일은 요청에 필요하며, 선택적 설명과 insertOnly 플래그는 만들기 호출이 같은 이름의 기존 파일을 업데이트하는 것을 방지합니다. file 매개 변수의 경우 name 매개 변수 외에 Content-Disposition 헤더에 &quot;filename&quot;이 필요합니다. 또한 파일에 대한 Content-Type 헤더를 전달해야 합니다. 이 헤더는 Marketo이 파일을 제공하는 데 사용할 MIME 유형입니다.
 
 ```
 POST /rest/asset/v1/files.json
@@ -208,7 +208,7 @@ This is a test file
 }
 ```
 
-[파일 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/File-Contents/operation/updateContentUsingPOST) id를 기반으로 수행할 수 있습니다. 유일한 매개변수는 생성과 동일한 요구 사항이 있는 파일 매개변수입니다.
+[파일 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/File-Contents/operation/updateContentUsingPOST)는 해당 ID를 기반으로 할 수 있습니다. 유일한 매개변수는 생성과 동일한 요구 사항이 있는 파일 매개변수입니다.
 
 ```
 POST /rest/asset/v1/file/{id}/content.json

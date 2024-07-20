@@ -1,14 +1,14 @@
 ---
-title: "다이내믹 콘텐츠"
+title: 다이내믹 콘텐츠
 feature: REST API, Dynamic Content
-description: "Marketo API를 사용하여 다이내믹 콘텐츠를 구성합니다."
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: Marketo API를 사용하여 다이내믹 콘텐츠를 구성합니다.
+exl-id: 8ab97624-5fb5-4a41-911f-ec8616dd43c9
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '426'
 ht-degree: 1%
 
 ---
-
 
 # 다이내믹 콘텐츠
 
@@ -24,7 +24,7 @@ Marketo은 여러 에셋 유형에 대한 리드 세분화를 통해 다이내�
 
 ## 예
 
-이메일 사례를 통해 지역(미국) 세분화가 있으며 캘리포니아, 네바다, 유타, 콜로라도, 애리조나 및 뉴멕시코 리드를 포함하는 남서부 세그먼트에 속하는 리드에 대해서만 이벤트 프로모션을 표시하려고 합니다. 이를 위해 ID가 &quot;Q1-promotion-banner&quot;인 이메일의 섹션을 DynamicContent 섹션으로 편집 가능하게 만듭니다. 이렇게 하려면 다음을 사용해야 합니다. [이메일 콘텐츠 섹션 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateEmailComponentContentUsingPOST) 이메일의 엔드포인트. 다음 `value` 매개 변수는 세그먼테이션의 ID를 지정하는 데 사용됩니다.
+이메일 사례를 통해 지역(미국) 세분화가 있으며 캘리포니아, 네바다, 유타, 콜로라도, 애리조나 및 뉴멕시코 리드를 포함하는 남서부 세그먼트에 속하는 리드에 대해서만 이벤트 프로모션을 표시하려고 합니다. 이를 위해 ID가 &quot;Q1-promotion-banner&quot;인 이메일의 섹션을 DynamicContent 섹션으로 편집 가능하게 만듭니다. 이렇게 하려면 전자 메일에 대해 [전자 메일 콘텐츠 업데이트 섹션](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateEmailComponentContentUsingPOST) 끝점을 사용해야 합니다. `value` 매개 변수는 세분화 ID를 지정하는 데 사용됩니다.
 
 참고: 이메일과 랜딩 페이지 모두 이 패턴을 따릅니다. 스니펫에는 다른 패턴이 있으며, 자세한 내용은 스니펫 API 설명서를 참조하십시오.
 
@@ -52,7 +52,7 @@ type=DynamicContent&value=1001
 }
 ```
 
-개별 세그먼트에 대한 컨텐츠를 추가하려면 를 호출해야 합니다. [이메일 다이내믹 콘텐츠 섹션 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateEmailDynamicContentUsingPOST) 특정 섹션의 끝점입니다.
+개별 세그먼트에 대한 콘텐츠를 추가하려면 특정 섹션에 대해 [전자 메일 동적 콘텐츠 업데이트 섹션](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateEmailDynamicContentUsingPOST) 끝점을 호출해야 합니다.
 
 다음 예제에서는 섹션이 기본값이 아닌 남서부 세그먼트에 있는 리드에 대한 특수 배너 이미지를 표시하도록 설정합니다. 더 많은 세그먼트에 대해 더 많은 변형을 만들려면 각 세그먼트 및 섹션에 대해 이 엔드포인트를 다시 호출합니다.
 

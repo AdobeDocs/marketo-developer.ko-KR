@@ -1,14 +1,14 @@
 ---
-title: "랜딩 페이지 템플릿"
+title: 랜딩 페이지 템플릿
 feature: REST API, Landing Pages
-description: "랜딩 페이지 템플릿을 작성하고 편집합니다."
-source-git-commit: 8c1ffb6db05da49e7377b8345eeb30472ad9b78b
+description: 랜딩 페이지 템플릿을 작성하고 편집합니다.
+exl-id: f9d1255e-ec13-4b75-96d5-b4cc9457a51b
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '533'
 ht-degree: 0%
 
 ---
-
 
 # 랜딩 페이지 템플릿
 
@@ -18,11 +18,11 @@ ht-degree: 0%
 
 ## 템플릿 유형
 
-Marketo에는 자유 양식과 안내식의 두 가지 유형의 랜딩 페이지 템플릿이 있습니다. 자유 양식 랜딩 페이지 템플릿은 템플릿에서 파생된 페이지에 느슨한 구조의 편집 환경을 제공합니다. 안내식 템플릿은 템플릿 수준에서 요소 유형 및 위치를 제한할 수 있는 상당히 구조화된 경험을 제공합니다. 차이점에 대한 자세한 내용은 [이 문서](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages).
+Marketo에는 자유 양식과 안내식의 두 가지 유형의 랜딩 페이지 템플릿이 있습니다. 자유 양식 랜딩 페이지 템플릿은 템플릿에서 파생된 페이지에 느슨한 구조의 편집 환경을 제공합니다. 안내식 템플릿은 템플릿 수준에서 요소 유형 및 위치를 제한할 수 있는 상당히 구조화된 경험을 제공합니다. 차이점에 대한 자세한 내용은 [이 문서](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages)를 참조하세요.
 
 ## 쿼리
 
-랜딩 페이지 템플릿은 의 에셋에 대한 표준 쿼리 유형을 지원합니다. [id 기준](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/getLandingPageTemplateByIdUsingGET), [이름순](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/getLandingPageTemplateByNameUsingGET), 및 [브라우징](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/getLandingPageTemplatesUsingGET). 이러한 엔드포인트는 템플릿에 대한 메타데이터를 반환합니다. 템플릿의 HTML 컨텐츠를 검색하려면 해당 ID를 통해 템플릿별로 수행해야 합니다.
+랜딩 페이지 템플릿은 [ID별](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/getLandingPageTemplateByIdUsingGET), [이름별](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/getLandingPageTemplateByNameUsingGET) 및 [탐색](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/getLandingPageTemplatesUsingGET)의 자산에 대한 표준 쿼리 유형을 지원합니다. 이러한 엔드포인트는 템플릿에 대한 메타데이터를 반환합니다. 템플릿의 HTML 컨텐츠를 검색하려면 해당 ID를 통해 템플릿별로 수행해야 합니다.
 
 ## 만들기 및 업데이트
 
@@ -66,11 +66,11 @@ name=New LPT - PHP&folder={"id":12,"type":"Folder"}
 }
 ```
 
-템플릿의 콘텐츠는 다음을 통해 별도로 채워야 합니다. [랜딩 페이지 템플릿 콘텐츠 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/updateLandingPageTemplateContentUsingPOST) 엔드포인트.
+템플릿의 콘텐츠는 [랜딩 페이지 템플릿 콘텐츠 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/updateLandingPageTemplateContentUsingPOST) 끝점을 통해 별도로 채워야 합니다.
 
 ### 메타데이터 업데이트
 
-랜딩 페이지 템플릿용 메타데이터는 다음을 통해 업데이트할 수 있습니다. [랜딩 페이지 템플릿 메타데이터 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/updateLpTemplateUsingPOST) 엔드포인트. 이름, 설명 및 enableMunchkin 설정은 이러한 방식으로 업데이트할 수 있습니다.
+랜딩 페이지 템플릿의 메타데이터는 [랜딩 페이지 템플릿 메타데이터 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Templates/operation/updateLpTemplateUsingPOST) 끝점을 통해 업데이트할 수 있습니다. 이름, 설명 및 enableMunchkin 설정은 이러한 방식으로 업데이트할 수 있습니다.
 
 ### 컨텐츠 업데이트
 
@@ -114,13 +114,13 @@ Content-Type: text/plain
 
 Marketo에서는 랜딩 페이지 템플릿을 복제하는 간단한 방법을 제공합니다. application/x-www-url-formencoded POST 요청입니다.
 
-다음 `id` path 매개 변수는 복제할 소스 랜딩 페이지 템플릿의 id를 지정합니다.
+`id` 경로 매개 변수는 복제할 소스 랜딩 페이지 템플릿의 ID를 지정합니다.
 
-다음 `name` 매개 변수는 새 랜딩 페이지 템플릿의 이름을 지정하는 데 사용됩니다.
+`name` 매개 변수는 새 랜딩 페이지 템플릿의 이름을 지정하는 데 사용됩니다.
 
-다음 `folder` 매개 변수는 새 랜딩 페이지 템플릿이 배치될 상위 폴더를 지정하는 데 사용됩니다. 다음을 포함하는 포함된 JSON 개체의 형식입니다  `id` 및 `type`.
+`folder` 매개 변수는 새 랜딩 페이지 템플릿이 위치할 상위 폴더를 지정하는 데 사용됩니다. 다음을 포함하는 포함된 JSON 개체의 형식입니다  `id` 및 `type`.
 
-선택 사항 `description` 매개 변수는 새 랜딩 페이지 템플릿을 설명하는 데 사용됩니다.
+선택적 `description` 매개 변수는 새 랜딩 페이지 템플릿을 설명하는 데 사용됩니다.
 
 ```
 POST /rest/asset/v1/landingPageTemplate/{id}/clone.json
@@ -167,9 +167,9 @@ name=Standard Template Clone&folder={"type": "Folder", "id": 732}
 
 템플릿을 승인하려면 유형에 대한 규칙(자유 형식의 안내)을 준수해야 합니다. 해당 유형의 템플릿을 만들고 승인하기 위한 요구 사항에 대한 자세한 내용은 해당 만들기 문서를 참조하십시오.
 
-- [자유 양식 랜딩 페이지 템플릿](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-free-form-landing-page-template)
-- [안내식 랜딩 페이지 템플릿](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template)
-- [안내식 템플릿 예](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/guided-landing-page-template-list)
+- [자유 형식 랜딩 페이지 템플릿](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-free-form-landing-page-template)
+- [안내 랜딩 페이지 템플릿](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template)
+- [안내식 템플릿 예제](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/guided-landing-page-template-list)
 
 ## 삭제
 

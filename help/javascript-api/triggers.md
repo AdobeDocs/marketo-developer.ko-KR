@@ -1,20 +1,20 @@
 ---
-title: "트리거"
-description: "트리거"
+title: 트리거
+description: 트리거
 feature: Javascript
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+exl-id: 588836fa-1e4d-41f3-aec5-5cd17eb16071
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '80'
 ht-degree: 8%
 
 ---
 
-
 # 트리거
 
 전역 rtp 개체의 특정 상태에서 함수를 트리거하는 기능을 추가합니다.
 
-Web Personalization 고객이고 [RTP 태그 배포됨](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript) User Context API를 사용하기 전에 사이트에 게시합니다.
+User Context API를 사용하기 전에 웹 Personalization 고객이고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
 
 ## 사용량
 

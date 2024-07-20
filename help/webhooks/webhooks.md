@@ -14,20 +14,20 @@ ht-degree: 0%
 
 Marketo에서는 웹후크를 사용하여 서드파티 웹 서비스와 통신할 수 있습니다. Webhooks는 GET 또는 POST HTTP 동사를 사용하여 특정 URL에서 데이터를 푸시하거나 검색할 수 있도록 지원합니다. Webhooks의 애플리케이션 내 생성 및 Smart Campaign에 추가하는 방법에 대한 자세한 지침은 다음 문서를 참조하십시오.
 
-- [Webhook 만들기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/create-a-webhook)
-- [Webhook 호출](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/call-webhook)
+- [웹후크 만들기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/create-a-webhook)
+- [Webhook를 호출합니다](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/call-webhook)
 - [스마트 캠페인에서 웹후크 사용](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/use-a-webhook-in-a-smart-campaign)
 
 각 개별 웹후크에는 다음 속성이 있습니다.
 
 - [!UICONTROL URL] - 요청을 웹 서비스에 제출하는 데 사용하는 URL을 입력합니다.
 - [!UICONTROL Request Type] - HTTP 메서드.
-- [!UICONTROL Payload Template] - POST 본문에서 정보를 전송하려면 템플릿을 입력합니다. XML, JSON 또는 SOAP 등 HTTP POST을 지원하는 모든 데이터 형식을 사용합니다. 직렬화 형식은 문자열에서 큰따옴표를 허용해야 합니다. 템플릿에 토큰을 삽입하려면 **[!UICONTROL Insert Token]**.  문자열 유형 토큰은 큰따옴표로 자동 묶입니다.
-- [!UICONTROL Request Token Encoding] - 토큰 값에 특수 문자(예: 앰퍼샌드, &#39;&amp;&#39;)가 포함된 경우 요청 형식(JSON 또는 양식/URL)을 나타냅니다. Webhook이 웹 서비스와 올바르게 통신할 수 있도록 본문에 대해 올바른 인코딩을 선택해야 합니다.
-- [!UICONTROL Response Type] - 서비스에서 받은 응답의 형식(JSON 또는 XML)을 선택합니다. 응답의 속성을 Marketo의 리드 필드에 다시 매핑하려면 올바른 응답 유형을 선택해야 합니다.
-- [!UICONTROL Custom Headers] - 다음을 통해 액세스: [!UICONTROL Webhooks Actions] -> [!UICONTROL Set Custom Header], 이 메뉴를 사용하면 사용자 지정 키-값 쌍을 HTTP 헤더로 추가할 수 있습니다.
+- [!UICONTROL Payload Template] - POST 본문에서 정보를 전송하려면 템플릿을 입력하십시오. XML, JSON 또는 SOAP 등 HTTP POST을 지원하는 모든 데이터 형식을 사용합니다. 직렬화 형식은 문자열에서 큰따옴표를 허용해야 합니다. 템플릿에 토큰을 삽입하려면 **[!UICONTROL Insert Token]**&#x200B;을(를) 클릭합니다.  문자열 유형 토큰은 큰따옴표로 자동 묶입니다.
+- [!UICONTROL Request Token Encoding] - 토큰 값에 특수 문자(예: 앰퍼샌드, &#39;&amp;&#39;)가 포함된 경우 요청 형식(JSON 또는 양식/URL)을 지정하십시오. Webhook이 웹 서비스와 올바르게 통신할 수 있도록 본문에 대해 올바른 인코딩을 선택해야 합니다.
+- [!UICONTROL Response Type] - 서비스에서 받은 응답 형식(JSON 또는 XML)을 선택합니다. 응답의 속성을 Marketo의 리드 필드에 다시 매핑하려면 올바른 응답 유형을 선택해야 합니다.
+- [!UICONTROL Custom Headers] - [!UICONTROL Webhooks Actions] -> [!UICONTROL Set Custom Header]을(를) 통해 액세스할 수 있습니다. 이 메뉴를 사용하면 사용자 지정 키-값 쌍을 HTTP 헤더로 추가할 수 있습니다.
 
-를 사용하여 웹 서비스 응답의 리드에 데이터를 다시 쓸 수 있습니다. [응답 매핑](response-mappings.md)
+[응답 매핑](response-mappings.md)을(를) 사용하여 웹 서비스 응답의 잠재 고객에 데이터를 다시 쓸 수 있습니다.
 
 ## 토큰
 
@@ -37,13 +37,13 @@ Webhook의 모든 발신 필드(URL, 템플릿 및 사용자 지정 헤더)는 �
 - [시스템 토큰 용어집](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/using-tokens/system-tokens-glossary)
 - [즐거운 순간을 위한 토큰](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-sales-insight/msi-for-salesforce/features/tabs-in-the-msi-panel/interesting-moments/trigger-tokens-for-interesting-moments)
 
-일반적인 사례는 프로그램 또는 캠페인이 서드파티 리소스에 명시적으로 매핑된 경우입니다. 프로그램 수준에서 ID를 로 설정할 수 있습니다. `My Token`를 클릭한 다음 토큰으로 Webhook 요청에 전달됩니다.
+일반적인 사례는 프로그램 또는 캠페인이 서드파티 리소스에 명시적으로 매핑된 경우입니다. 프로그램 수준에서 ID를 `My Token`(으)로 설정한 다음 Webhook 요청에 토큰으로 전달할 수 있습니다.
 
 ## 사용자 지정 헤더
 
-Webhooks를 사용하면 보내는 요청과 함께 사용자 지정 헤더 필드를 보낼 수 있습니다. 다음을 통해 추가할 수 있습니다. **[!UICONTROL Webhooks Actions]** > **[!UICONTROL Set Custom Header]**. 각 헤더는 간단한 키-값 쌍으로 기록됩니다. 이 영역에서는 토큰을 사용할 수 있습니다.
+Webhooks를 사용하면 보내는 요청과 함께 사용자 지정 헤더 필드를 보낼 수 있습니다. **[!UICONTROL Webhooks Actions]** > **[!UICONTROL Set Custom Header]**&#x200B;을(를) 통해 추가할 수 있습니다. 각 헤더는 간단한 키-값 쌍으로 기록됩니다. 이 영역에서는 토큰을 사용할 수 있습니다.
 
-![사용자 지정 헤더](assets/custom-headers.png)
+![사용자 지정 머리글](assets/custom-headers.png)
 
 ## 팁
 

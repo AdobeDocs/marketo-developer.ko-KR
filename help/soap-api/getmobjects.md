@@ -1,39 +1,39 @@
 ---
-title: "getMObjects"
+title: getMObjects
 feature: SOAP
-description: "getMObjects SOAP 호출"
-source-git-commit: d335bdd9f939c3e557a557b43fb3f33934e13fef
+description: getMObjects SOAP 호출
+exl-id: 5cf18161-f590-4dc3-bba1-ee3ed9fd7e9f
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '226'
 ht-degree: 3%
 
 ---
 
-
 # getMObjects
 
-하나 이상의 검색 [오브젝트](marketo-objects.md) 다음으로 구성된 기준의 조합 사용:
+다음으로 구성된 기준을 조합하여 하나 이상의 [MObjects](marketo-objects.md)을(를) 검색합니다.
 
 - Marketo ID 또는 외부 ID인 0 또는 1개의 고유 ID
 - 이름/값/비교 트리오로서 0개 이상의 속성 필터
 - 0개 이상의 연결된 오브젝트 필터를 오브젝트 이름/ID 쌍으로 사용
 
-일치하는 MObject, 모든 단일 유형, 일괄 처리 시 최대 100개 및 [스트림 위치](stream-position.md) 연속 배치를 검색하기 위한 토큰.
+일치하는 MObject 목록, 모든 단일 유형, 일괄 처리 시 최대 100개, 연속 일괄 처리를 검색하기 위한 [스트림 위치](stream-position.md) 토큰을 반환합니다.
 
 ## 요청
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
-| 유형 | 필수 | 쿼리할 객체 유형입니다. 다음 중 하나일 수 있습니다. `Opportunity`, `OpportunityPersonRole`, 또는 `Program` |
+| 유형 | 필수 | 쿼리할 객체 유형입니다. 다음 중 하나일 수 있습니다. `Opportunity`, `OpportunityPersonRole` 또는 `Program` |
 | ID | 선택 사항 | MObject ID |
 | includeDetails | 선택 사항 | true인 경우 지정된 MObject에 대한 모든 속성이 반환됩니다. 이 매개 변수는 프로그램 개체와 함께 사용할 때만 적용됩니다. |
-| mObjCriteriaList->mObjCriteria->attrName | 선택 사항 | 다음 입력 매개변수 중 하나 이상이 사용될 수 있습니다.`Name`, `Role`, `Type`, `Stage`, `CRM Id`, `Created At`, `Updated At` 또는 `Tag Type` 하나만 지정할 수 있습니다. `Tag Value`, `Workspace Name`, `Workspace Id`, `Include Archive` |
+| mObjCriteriaList->mObjCriteria->attrName | 선택 사항 | 다음 입력 매개 변수 중 하나 이상을 사용할 수 있습니다. `Name`, `Role`, `Type`, `Stage`, `CRM Id`, `Created At`, `Updated At` 또는 `Tag Type`(하나만 지정할 수 있음), `Tag Value`, `Workspace Name`, `Workspace Id`, `Include Archive` |
 | mObjCriteriaList->mObjCriteria->attrValue | 선택 사항 | 필터링에 사용할 값 |
-| mObjCriteriaList->mObjCriteria->비교 | 선택 사항 | 다음 중 하나 `EQ`, `NE`, `LT` ,`LE`, `GT`, `GE` |
+| mObjCriteriaList->mObjCriteria->비교 | 선택 사항 | `EQ`, `NE`, `LT` ,`LE`, `GT`, `GE` 중 하나 |
 | mObjAssociationList->mObjAssociation->mObjType | 선택 사항 |  |
 | mObjAssociationList->mObjAssociation->id | 선택 사항 | 연계된 개체 ID(잠재 고객/회사/영업 기회) |
 | mObjAssociationList->mObjAssociation->externalKey | 선택 사항 | 연결된 오브젝트의 사용자 지정 속성 |
-| streamPosition | 선택 사항 | 여러 결과 세트의 페이지를 매기는 데 사용됩니다. 전달된 값은 이전 값에서 반환된 값입니다 `getMObjects` 호출합니다. |
+| streamPosition | 선택 사항 | 여러 결과 세트의 페이지를 매기는 데 사용됩니다. 전달된 값은 이전 `getMObjects` 호출에서 반환된 값입니다. |
 
 ## 요청 XML
 

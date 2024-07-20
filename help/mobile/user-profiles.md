@@ -1,14 +1,14 @@
 ---
-title: "사용자 프로필"
+title: 사용자 프로필
 feature: Mobile Marketing, Users and Roles
-description: "Marketo Mobile에서 사용자 프로필 사용"
-source-git-commit: 2185972a272b64908d6aac8818641af07c807ac2
+description: Marketo Mobile에서 사용자 프로필 사용
+exl-id: 1b2cfb7f-d678-4022-8cd9-a56004a1ac46
+source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
 workflow-type: tm+mt
 source-wordcount: '83'
 ht-degree: 0%
 
 ---
-
 
 # 사용자 프로필
 
@@ -65,7 +65,7 @@ profile.setLinkedInId("linkedinid")
 profile.setTwitterId("twitterid")
 ```
 
-더 추가 [표준 필드](../rest-api/list-of-standard-fields.md).
+[표준 필드](../rest-api/list-of-standard-fields.md)를 더 추가합니다.
 
 >[!BEGINTABS]
 
@@ -135,7 +135,7 @@ marketo.associateLead(profile)
    }
    ```
 
-1. 더 추가 [표준 필드](../rest-api/list-of-standard-fields.md).
+1. [표준 필드](../rest-api/list-of-standard-fields.md)를 더 추가합니다.
 
    ```java
    // Add other custom fields
