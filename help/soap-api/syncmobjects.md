@@ -60,7 +60,8 @@ OpportunityPersonRole MObject의 경우 [describeMObject](./describemobject.md) 
 1. IsPrimary(선택 사항)
 1. 역할(선택 사항)
 
-|
+| 필드 이름 | 필수/선택 사항 | 설명 |
+| --- | --- | --- |
 | mObjAssociationList->mObjAssociation->mObjType | 선택 사항 | 연결된 개체의 ID 또는 외부 키를 사용하여 Opportunity/OpportunityPersonRole 개체를 업데이트하는 데 사용됩니다. 연결된 개체는 다음 중 하나일 수 있습니다. 회사 (Opportunity MObject 업데이트), 잠재 고객 (OpportunityPersonRole MObject 업데이트), 기회 (OpportunityPersonRole MObject 업데이트)|
 | mObjAssociationList->mObjAssociation->id | 선택 사항 | 연계된 개체 ID(잠재 고객/회사/영업 기회) |
 | mObjAssociationList->mObjAssociation->externalKey | 선택 사항 | 연결된 오브젝트의 사용자 지정 속성 |
