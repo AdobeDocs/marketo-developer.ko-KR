@@ -2,7 +2,7 @@
 title: 데이터 수집
 feature: REST API, Dynamic Content
 description: Marketo API를 사용하여 데이터를 사용합니다.
-source-git-commit: 5d18a24f25e5bda39e10bce3b2a77370dd28c937
+source-git-commit: 1595aa6df0b0404c7cda2c246c9249018fe87e77
 workflow-type: tm+mt
 source-wordcount: '968'
 ht-degree: 10%
@@ -50,7 +50,7 @@ ht-degree: 10%
 ### 응답
 
 | 키 | 값 | 필수 여부 |
-| - | - |
+| - | - | - |
 | X-Request-Id | 고유 요청 ID. | 예 |
 
 ## 요청
