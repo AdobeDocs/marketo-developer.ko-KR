@@ -3,10 +3,10 @@ title: syncMObjects
 feature: SOAP
 description: syncMObjects SOAP 호출
 exl-id: 68bb69ce-aa8c-40b7-8938-247f4fe97b5d
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 04e6b38a7ee602c38a851f9b99101186e72a8518
 workflow-type: tm+mt
-source-wordcount: '421'
-ht-degree: 3%
+source-wordcount: '426'
+ht-degree: 4%
 
 ---
 
@@ -25,10 +25,10 @@ ht-degree: 3%
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
-| mObjectList->mObject->type | 필수 | 다음 중 하나일 수 있음: `Program`, `Opportunity`, `OpportunityPersonRole` |
-| mObjectList->mObject->id | 필수 | MObject의 ID. 호출당 최대 100개의 MObject를 지정할 수 있습니다. |
-| mObjectList->mObject->typeAttribList->typeAttrib->attrType | 필수 | 비용(프로그램 MObject를 업데이트하는 동안에만 사용됨)은 `Cost`, `Tag` 중 하나일 수 있습니다. |
-| mObjectList->mObject->typeAttribList->typeAttrib->attrList->attrib->name | 필수 | Program MObject의 경우 다음 속성을 이름-값 쌍으로 전달할 수 있습니다. 비용: `Month (Required)`, `Amount (Required)`, `Id (Cost Id - Optional)`, `Note (Optional)`. 태그/채널의 경우: `Type (Required)`, `Value (Required)`. 영업 기회 MObject의 경우 [describeMObject](describemobject.md) 출력의 모든 필드를 이름-값 쌍으로 전달할 수 있습니다. 아래 목록은 모든 선택 필드 및 표준 속성 세트입니다. 지원 요청을 통해 생성된 Opportunity MObject에 추가 필드가 있을 수 있습니다. |
+| mObjectList->mObject->type | 필수 여부 | 다음 중 하나일 수 있음: `Program`, `Opportunity`, `OpportunityPersonRole` |
+| mObjectList->mObject->id | 필수 여부 | MObject의 ID. 호출당 최대 100개의 MObject를 지정할 수 있습니다. |
+| mObjectList->mObject->typeAttribList->typeAttrib->attrType | 필수 여부 | 비용(프로그램 MObject를 업데이트하는 동안에만 사용됨)은 `Cost`, `Tag` 중 하나일 수 있습니다. |
+| mObjectList->mObject->typeAttribList->typeAttrib->attrList->attrib->name | 필수 여부 | Program MObject의 경우 다음 속성을 이름-값 쌍으로 전달할 수 있습니다. 비용: `Month (Required)`, `Amount (Required)`, `Id (Cost Id - Optional)`, `Note (Optional)`. 태그/채널의 경우: `Type (Required)`, `Value (Required)`. 영업 기회 MObject의 경우 [describeMObject](describemobject.md) 출력의 모든 필드를 이름-값 쌍으로 전달할 수 있습니다. 아래 목록은 모든 선택 필드 및 표준 속성 세트입니다. 지원 요청을 통해 생성된 Opportunity MObject에 추가 필드가 있을 수 있습니다. |
 
 1. 금액
 1. CloseDate
@@ -62,9 +62,9 @@ OpportunityPersonRole MObject의 경우 [describeMObject](./describemobject.md) 
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
-| mObjAssociationList->mObjAssociation->mObjType | 선택 사항 | 연결된 개체의 ID 또는 외부 키를 사용하여 Opportunity/OpportunityPersonRole 개체를 업데이트하는 데 사용됩니다. 연결된 개체는 다음 중 하나일 수 있습니다. 회사 (Opportunity MObject 업데이트), 잠재 고객 (OpportunityPersonRole MObject 업데이트), 기회 (OpportunityPersonRole MObject 업데이트)|
-| mObjAssociationList->mObjAssociation->id | 선택 사항 | 연계된 개체 ID(잠재 고객/회사/영업 기회) |
-| mObjAssociationList->mObjAssociation->externalKey | 선택 사항 | 연결된 오브젝트의 사용자 지정 속성 |
+| mObjAssociationList->mObjAssociation->mObjType | 선택 사항입니다 | 연결된 개체의 ID 또는 외부 키를 사용하여 Opportunity/OpportunityPersonRole 개체를 업데이트하는 데 사용됩니다. 연관된 객체는 회사(Opportunity MObject 업데이트), 잠재 고객(OpportunityPersonRole MObject 업데이트), 기회(OpportunityPersonRole MObject 업데이트) 중 하나일 수 있습니다. |
+| mObjAssociationList->mObjAssociation->id | 선택 사항입니다 | 연계된 개체 ID(잠재 고객/회사/영업 기회) |
+| mObjAssociationList->mObjAssociation->externalKey | 선택 사항입니다 | 연결된 오브젝트의 사용자 지정 속성 |
 
 ## 요청 XML
 
