@@ -5,10 +5,10 @@ breadcrumb-title: "[!DNL Marketo] 개발자 안내서"
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 85062243d57a3fc6d15251163e926495858edf2a
+source-git-commit: 5d18a24f25e5bda39e10bce3b2a77370dd28c937
 workflow-type: tm+mt
-source-wordcount: '234'
-ht-degree: 7%
+source-wordcount: '237'
+ht-degree: 14%
 
 ---
 
@@ -29,7 +29,7 @@ ht-degree: 7%
    - [예측 콘텐츠](javascript-api/predictive-content.md)
    - [리디렉션](javascript-api/redirect.md)
    - [리치 미디어 Recommendations](javascript-api/rich-media-recommendation.md)
-   - [소셜](javascript-api/social.md)
+   - [Social](javascript-api/social.md)
    - [트리거](javascript-api/triggers.md)
    - [웹 Personalization](javascript-api/web-personalization.md)
 - 모바일 {#mobile}
@@ -49,7 +49,7 @@ ht-degree: 7%
 - REST{#rest}
    - [REST API 개요](rest-api/rest-api.md)
    - [REST API 참조](https://developer.adobe.com/marketo-apis/)
-   - Assets {#assets}
+   - 자산 {#assets}
       - [자산](rest-api/assets.md)
       - [다이내믹 콘텐츠](rest-api/dynamic-content.md)
       - [이메일](rest-api/emails.md)
@@ -64,7 +64,7 @@ ht-degree: 7%
       - [프로그램](rest-api/programs.md)
       - [스마트 캠페인](rest-api/smart-campaigns.md)
       - [스마트 목록](rest-api/smart-lists.md)
-      - [코드 조각](rest-api/snippets.md)
+      - [스니펫](rest-api/snippets.md)
       - [정적 목록](rest-api/static-lists.md)
       - [토큰](rest-api/tokens.md)
       - [트랜잭션 이메일](rest-api/transactional-email.md)
@@ -85,6 +85,7 @@ ht-degree: 7%
       - [일괄 프로그램 구성원](rest-api/bulk-program-member-import.md)
    - [채널](rest-api/channels.md)
    - [사용자 정의 서비스](rest-api/custom-services.md)
+   - [데이터 수집 API](rest-api/data-ingestion.md)
    - [Swagger 정의 다운로드](rest-api/swagger.md)
    - [끝점 참조](rest-api/endpoint-reference.md)
    - [오류 코드](rest-api/error-codes.md)
@@ -108,7 +109,7 @@ ht-degree: 7%
    - [사용자 컨텍스트](rest-api/user-context.md)
    - [사용자 관리](rest-api/user-management.md)
 - SOAP {#soap}
-   - {#activities} 활동
+   - 활동 {#activities}
       - [활동](soap-api/activities.md)
       - [[!DNL getLeadActivity]](soap-api/getleadactivity.md)
       - [[!DNL getLeadChanges]](soap-api/getleadchanges.md)
