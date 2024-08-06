@@ -3,9 +3,9 @@ title: 인증
 feature: REST API
 description: API 사용을 위한 Marketo 사용자 인증.
 exl-id: f89a8389-b50c-4e86-a9e4-6f6acfa98e7e
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: e0fc654efe4501f734ab5158ce0bfd3ed08896ce
 workflow-type: tm+mt
-source-wordcount: '531'
+source-wordcount: '579'
 ht-degree: 0%
 
 ---
@@ -61,6 +61,10 @@ REST API 메서드를 호출할 때 호출이 성공하려면 모든 호출에 �
 1. 쿼리 매개 변수
 
    `access_token=cdf01657-110d-4155-99a7-f986b2ff13a0:int`
+
+   >[!IMPORTANT]
+   >
+   >**access_token** 쿼리 매개 변수를 사용한 인증 지원이 후속 릴리스에서 제거됩니다. 프로젝트에서 쿼리 매개 변수를 사용하여 액세스 토큰을 전달하는 경우 가능한 한 빨리 **인증** 헤더를 사용하도록 업데이트해야 합니다. 새 개발에서는 **Authorization** 헤더만 사용해야 합니다.
 
 ## 팁 및 모범 사례
 
