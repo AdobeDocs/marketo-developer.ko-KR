@@ -3,9 +3,9 @@ title: 성능
 feature: REST API
 description: Marketo API 작업에 대한 성능 팁입니다.
 exl-id: 173a398a-9d36-4e8d-9dd3-7d0d375b085a
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 4e64b8a801e443471f52090b7f008b11e628012d
 workflow-type: tm+mt
-source-wordcount: '117'
+source-wordcount: '122'
 ht-degree: 0%
 
 ---
@@ -16,9 +16,11 @@ ht-degree: 0%
 
 ## HTTP 압축
 
-Marketo REST API는 HTTP 1.1 사양에 정의된 표준을 사용하여 응답 본문의 HTTP 압축을 지원합니다.  압축을 사용하면 대역폭 사용량과 데이터 검색에 소요되는 시간이 감소하므로 압축을 사용하는 것이 좋습니다.
+Marketo REST API는 HTTP 1.1 사양에 정의된 표준을 사용하여 응답 본문의 HTTP 압축을 지원합니다. 압축을 사용하면 대역폭 사용량과 데이터 검색에 소요되는 시간이 감소하므로 압축을 사용하는 것이 좋습니다.
 
-**참고:**  1024바이트 미만의 페이로드는 압축되지 않습니다.
+>[!NOTE]
+>
+>1024바이트 미만의 페이로드는 압축되지 않으며 벌크 API는 압축을 지원하지 않습니다.
 
 압축을 사용하려면 요청에 다음 HTTP 헤더를 포함하십시오.
 
