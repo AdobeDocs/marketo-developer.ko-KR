@@ -3,10 +3,10 @@ title: 잠재 고객
 feature: REST API
 description: 잠재 고객 API 호출에 대한 세부 정보
 exl-id: 0a2f7c38-02ae-4d97-acfe-9dd108a1f733
-source-git-commit: 2c125161cf06be8ebb44ae8212f15fbbe5c1f6b7
+source-git-commit: 8c1c620614408dd2df0b0848e6efc027adb71834
 workflow-type: tm+mt
-source-wordcount: '3308'
-ht-degree: 1%
+source-wordcount: '3343'
+ht-degree: 2%
 
 ---
 
@@ -152,11 +152,19 @@ ID로 리드 가져오기 및 필터 유형별로 리드 가져오기 는 모두
 
 ## ADOBE ECID
 
-Adobe Experience Cloud 대상 공유 기능이 활성화되면 Adobe Experience Cloud ID(ECID)를 Marketo 리드와 연결하는 쿠키 동기화 프로세스가 발생합니다.  위에 언급된 리드 검색 방법은 연관된 ECID 값을 검색하는 데 사용할 수 있습니다.  필드 매개 변수에 &quot;ecids&quot;를 지정하여 이 작업을 수행합니다. 예: &quot;&amp;fields=email,firstName,lastName,ecids&quot;.
+Adobe Experience Cloud 대상 공유 기능이 활성화되면 Adobe Experience Cloud ID(ECID)를 Marketo 리드와 연결하는 쿠키 동기화 프로세스가 발생합니다.  위에 언급된 리드 검색 방법은 연관된 ECID 값을 검색하는 데 사용할 수 있습니다.  필드 매개 변수에 `ecids`을(를) 지정하여 이 작업을 수행합니다. 예: `&fields=email,firstName,lastName,ecids`.
 
 ## 만들기 및 업데이트
 
 리드 데이터를 검색하는 것 외에도 API를 통해 리드 레코드를 생성, 업데이트 및 삭제할 수 있습니다. 리드 생성 및 업데이트는 요청에 정의된 작업 유형과 동일한 끝점을 공유하며 최대 300개의 레코드를 동시에 생성 또는 업데이트할 수 있습니다.
+
+>[!NOTE]
+>
+> [동기화 리드](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST) 끝점을 사용하여 회사 필드를 업데이트할 수 없습니다. 대신 [회사 동기화](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies/operation/syncCompaniesUsingPOST) 끝점을 사용하십시오.
+
+>[!NOTE]
+>
+> 개인 레코드에서 전자 메일 값을 만들거나 업데이트할 때 전자 메일 주소 필드에는 ASCII 문자만 지원됩니다.
 
 ### 요청
 
@@ -710,7 +718,7 @@ POST /rest/v1/leads/push.json
 POST /rest/v1/leads/submitForm.json
 ```
 
-### 머리글
+### Header
 
 ```
 Content-Type: application/json
