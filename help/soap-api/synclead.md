@@ -3,14 +3,14 @@ title: syncLead
 feature: SOAP
 description: syncLead SOAP 호출
 exl-id: e6cda794-a9d4-4153-a5f3-52e97a506807
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: ebe8faf41dff0e0ba5f4323f5909cc3c9813fd10
 workflow-type: tm+mt
 source-wordcount: '518'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
-# syncLean
+# syncLead
 
 이 함수는 단일 리드 레코드를 삽입하거나 업데이트합니다. 기존 리드를 업데이트할 때 리드는 다음 키 중 하나로 식별됩니다.
 
@@ -46,10 +46,10 @@ Marketo 작업 영역이 활성화되지 않은 경우 대상 작업 영역은 &
 | leadRecord->Email | 필수 - ID 또는 `foreignSysPersonId`이(가) 없는 경우에만 | 잠재 고객 레코드와 연결된 이메일 주소 |
 | leadRecord->`foreignSysPersonId` | 필수 - ID 또는 이메일이 없는 경우에만 | 잠재 고객 레코드와 연계된 외부 시스템 ID |
 | leadRecord->foreignSysType | 선택 사항 - `foreignSysPersonId`이(가) 있는 경우에만 필요합니다. | 외국 시스템의 유형입니다. 가능한 값: CUSTOM, SFDC, NETSUITE |
-| leadRecord->leadAttributeList->attribute->attrName | 필수 | 값을 갱신할 잠재 고객 속성의 이름입니다. |
-| leadRecord->leadAttributeList->attribute->attrValue | 필수 | attrName에 지정된 잠재 고객 속성으로 설정할 값입니다. |
-| returnLead | 필수 | true이면 업데이트 시 업데이트된 전체 리드 레코드를 반환합니다. |
-| marketoCookie | 선택 사항 | [Munchkin Javascript](../javascript-api/lead-tracking.md) 쿠키 |
+| leadRecord->leadAttributeList->attribute->attrName | 필수 여부 | 값을 갱신할 잠재 고객 속성의 이름입니다. |
+| leadRecord->leadAttributeList->attribute->attrValue | 필수 여부 | attrName에 지정된 잠재 고객 속성으로 설정할 값입니다. |
+| returnLead | 필수 여부 | true이면 업데이트 시 업데이트된 전체 리드 레코드를 반환합니다. |
+| marketoCookie | 선택 사항입니다 | [Munchkin Javascript](../javascript-api/lead-tracking.md) 쿠키 |
 
 ## 요청 XML
 
