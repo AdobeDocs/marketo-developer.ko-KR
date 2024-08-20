@@ -3,9 +3,9 @@ title: 사용자 관리
 feature: REST API
 description: 사용자 레코드에 대한 CRUD 작업을 수행합니다.
 exl-id: 2a58f496-0fe6-4f7e-98ef-e9e5a017c2de
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 13a567be067a8a1272e981fad4e03b0a8519f132
 workflow-type: tm+mt
-source-wordcount: '1155'
+source-wordcount: '1185'
 ht-degree: 0%
 
 ---
@@ -130,31 +130,35 @@ GET /userservice/management/v1/users/allusers.json
 ```json
 [
   {
-    "userid": "jamie@lannister.com",
-    "firstName": "Jamie",
-    "lastName": "Lannister",
-    "emailAddress": "jamie@houselannister.com",
-    "id": 6785,
+    "userid": "02226aae-9f54-45d1-bc26-8305c8f55ec7@adobe.com",
+    "firstName": "Aparna",
+    "lastName": "Ghosh",
+    "emailAddress": "aparna.ghosh@ericsson.com",
+    "id": 5222,
     "apiOnly": false
-  },
-  {
-    "userid": "jeoffery@housebaratheon.com",
-    "firstName": "Jeoffery",
-    "lastName": "Baratheon",
-    "emailAddress": "jeoffery@housebaratheon.com",
-    "id": 7718,
+    },
+    {
+    "userid": "038e1cac-3f3e-4c05-b0b3-6265fd2abcd3@adobe.com",
+    "firstName": "Timm",
+    "lastName": "Rehse",
+    "emailAddress": "timm.rehse@ericsson.com",
+    "id": 7075,
     "apiOnly": false
-  },
-  {
-    "userid": "rickon@housestark.com",
-    "firstName": "Rickon",
-    "lastName": "Stark",
-    "emailAddress": "rickon@housestark.com",
-    "id": 8612,
+    },
+    {
+    "userid": "0a855522-06c9-4a9e-93de-91a0d2cc2987@adobe.com",
+    "firstName": "Dhinagaran",
+    "lastName": "Swaminathan",
+    "emailAddress": "dhinagaran.swaminathan@ericsson.com",
+    "id": 6439,
     "apiOnly": false
-  }
+    }
 ]
 ```
+
+>[!NOTE]
+>
+>위의 코드 샘플에서 표시되는 `userid`은(는) Adobe IMS로 마이그레이션된 고객을 위한 것입니다. 아직 마이그레이션하지 않은 고객은 `userid` 필드에 일반 전자 메일 주소를 볼 수 있습니다.
 
 ### 역할 찾아보기
 
@@ -298,7 +302,7 @@ GET /userservice/management/v1/users/workspaces.json
 
 [사용자 초대](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/inviteUserUsingPOST) 끝점을 사용하여 &quot;Marketo 시작&quot; 전자 메일 초대를 새 사용자에게 보냅니다. 이메일 본문에는 사용자가 Marketo에 처음 액세스할 수 있는 &quot;Marketo에 로그인&quot; 링크가 포함되어 있습니다. 초대를 수락하기 위해 이메일 수신자는 &quot;Marketo에 로그인&quot; 링크를 클릭하고 암호를 만들며 Marketo에 액세스할 수 있습니다. 수락 프로세스가 완료될 때까지 초대가 &quot;보류 중&quot;이며 사용자 레코드를 편집할 수 없습니다. 보류 중인 초대는 보낸 후 7일 후에 만료됩니다. 사용자 관리에 대한 자세한 내용은 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users)를 참조하세요.
 
-매개 변수는 요청 본문에 application/json 형식으로 전달됩니다.
+매개 변수가 요청 본문에 `application/json` 형식으로 전달됩니다.
 
 다음 매개 변수가 필요합니다.  `emailAddress`, `firstName`, `lastName, userRoleWorkspaces`. `userRoleWorkspaces` 매개 변수는 `accessRoleId` 및 `workspaceId` 특성을 포함하는 개체 배열입니다.
 
