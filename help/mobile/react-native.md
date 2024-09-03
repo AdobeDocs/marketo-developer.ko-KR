@@ -3,9 +3,9 @@ title: React Native
 feature: Mobile Marketing
 description: Marketo용 React Native 설치
 exl-id: 462fd32e-91f1-4582-93f2-9efe4d4761ff
-source-git-commit: e609f9d5d58f656298412acef5e2106a19765396
+source-git-commit: e7cb23c4d578d949553b2b7a6e127d6be54cdf23
 workflow-type: tm+mt
-source-wordcount: '836'
+source-wordcount: '811'
 ht-degree: 0%
 
 ---
@@ -139,7 +139,7 @@ public class RNMarketoModule extends ReactContextBaseJavaModule {
    }
    @ReactMethod
       public void initializeSDK(String frameworkType, String munchkinId, String appSecreteKey){
-          marketoSdk.initializeSDK(frameworkType,munchkinId,appSecreteKey);
+          marketoSdk.initializeSDK(munchkinId,appSecreteKey,frameworkType);
     }
    
 
@@ -464,89 +464,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
 푸시 알림을 보내려면 [푸시 알림을 추가](push-notifications.md)하세요.
 
-`AppDelegate.m` 파일의 XCode 가져오기 `Marketo`에서
-
-```
-#import <MarketoFramework/MarketoFramework.h> 
-```
-
-대리자를 처리하려면 다음과 같이 AppDelegate 인터페이스에 `UNUserNotificationCenterDelegate`을(를) 추가하십시오.
-
-```
-@interface AppDelegate () <UNUserNotificationCenterDelegate>
-
-@end
-```
-
-`didFinishLaunchingWithOptions` 메서드에서 원격 알림을 등록합니다.
-
-```
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-#ifdef FB_SONARKIT_ENABLED
-  InitializeFlipper(application);
-#endif
-
-  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
-  RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-                                                   moduleName:@"HelloRN"
-                                            initialProperties:nil];  
-  
-// asking user permission to send push notifications 
-  [self registerForRemoteNotifications];
-  
-  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  UIViewController *rootViewController = [UIViewController new];
-  rootViewController.view = rootView;
-  self.window.rootViewController = rootViewController;
-  [self.window makeKeyAndVisible];
-
-  return YES;
-}
-
-- (void)registerForRemoteNotifications {
-   UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-        center.delegate = self;
-        [center requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge) completionHandler:^(BOOL granted, NSError * _Nullable error){
-            if(!error){
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [[UIApplication sharedApplication] registerForRemoteNotifications];
-                });
-            }
-            else{
-                NSLog(@"failed");
-            }
-        }];
-}
-```
-
-다음 `UNUserNotificationCenter`개의 대리자 필수 알림 위임 메서드를 포함합니다.
-
-```
--(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
-    completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge);
-}
-
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center
-didReceiveNotificationResponse:(UNNotificationResponse *)response
-         withCompletionHandler:(void(^)(void))completionHandler {
-    [[Marketo sharedInstance] userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
-}
-
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    // Register the push token with Marketo
-    [[Marketo sharedInstance] registerPushDeviceToken:deviceToken];
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application {
-    [[Marketo sharedInstance] unregisterPushDeviceToken];
-}
-
--(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
-    NSLog(@"didFailToRegisterForRemoteNotificationsWithError");
-}
-```
-
+iOS 푸시 알림 설정,
 pushNotifications.tsx 파일을 만들고 다음을 추가합니다.
 
 ```
