@@ -3,9 +3,9 @@ title: 구성
 description: Munchkin 사용 시 구성 Javascript API를 사용하여 구성 값을 설정합니다.
 feature: Javascript
 exl-id: 4700ce7b-f624-4f27-871e-9a050f203973
-source-git-commit: e609f9d5d58f656298412acef5e2106a19765396
+source-git-commit: 257478ecb76b5908c2f623192f37be25bff1a02a
 workflow-type: tm+mt
-source-wordcount: '618'
+source-wordcount: '554'
 ht-degree: 3%
 
 ---
@@ -29,7 +29,7 @@ Munchkin.init("AAA-BBB-CCC", {
 | 이름 | 데이터 유형 | 설명 |
 |---|---|---|
 | altIds | 배열 | Munchkin ID 문자열 배열을 허용합니다. 활성화되면 Munchkin ID를 기반으로 타겟팅된 구독에 모든 웹 활동이 복제됩니다. |
-| 익명화 | 부울 | 새 방문자에 대해 Marketo에 기록된 IP 주소를 익명으로 사용합니다. `{Munchkin-Id}.mktoresp.com` 도메인에 `192.28.144.124` `134.213.193.62` `192.28.147.68` `103.237.104.82` 주소 중 하나가 있는지 확인하여 구독이 Munchkin V2로 프로비저닝되었는지 확인할 수 있습니다. 또는 nslookup {munchkin-id}.mktoresp.com에서 아래 스크립트를 실행할 수 있습니다. | grep -E -c -e &quot;(192.28.144.124,134.213.193.62,192.28.147.68,103.237.104.82)&quot; 명령이 &#39;0&#39;을 출력하면 구독이 Munchkin V2로 프로비저닝되지 않습니다. 1 이상을 출력하면 구독이 프로비저닝됩니다. |
+| 익명화 | 부울 | 신규 방문자를 위해 Marketo에 기록된 IP 주소를 익명화합니다. |
 | apiOnly | 부울 | true로 설정하면 `Munchkin.Init()` 함수가 `visitsWebPage`을(를) 호출하지 않습니다. 모든 `visitsWebPage` 이벤트를 완벽하게 제어해야 하는 단일 페이지 웹 응용 프로그램에 유용합니다. |
 | asyncOnly | 부울 | true로 설정하면 가 XMLHttpRequest의 를 비동기적으로 전송합니다. 기본값은 false입니다. |
 | clickTime | 정수 | 클릭 추적 요청을 허용하기 위해 클릭 후 차단할 시간(밀리초)을 설정합니다. 이를 줄이면 클릭 추적의 정확도가 줄어듭니다. 기본값은 350ms입니다. |
