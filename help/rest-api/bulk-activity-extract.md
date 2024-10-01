@@ -3,10 +3,10 @@ title: 일괄 활동 추출
 feature: REST API
 description: Marketo에서 활동 데이터를 일괄 처리합니다.
 exl-id: 6bdfa78e-bc5b-4eea-bcb0-e26e36cf6e19
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 8c22255673fee1aa0f5b47393a241fcf6680778b
 workflow-type: tm+mt
-source-wordcount: '1381'
-ht-degree: 1%
+source-wordcount: '1343'
+ht-degree: 2%
 
 ---
 
@@ -22,148 +22,94 @@ REST API의 벌크 활동 추출 세트는 Marketo에서 대량의 활동 데이
 
 ## 필터
 
-<table>
-  <tbody>
-    <tr>
-      <td>필터 유형</td>
-      <td>데이터 유형</td>
-      <td>필수</td>
-      <td>참고 사항</td>
-    </tr>
-    <tr>
-      <td>createdAt</td>
-      <td>날짜 범위</td>
-      <td>예</td>
-      <td>startAt 및 endAt 멤버가 있는 JSON 개체를 수락합니다. startAt 는 로우 워터마크를 나타내는 날짜/시간을 수락하고 endAt 는 하이 워터마크를 나타내는 날짜/시간을 수락합니다. 범위는 31일 이하여야 합니다.이 필터 유형의 작업은 날짜 범위 내에서 만든 액세스 가능한 모든 레코드를 반환합니다.날짜/시간은 밀리초 없이 ISO-8601 형식이어야 합니다.</td>
-    </tr>
-    <tr>
-      <td>activityTypeIds</td>
-      <td>배열[정수]</td>
-      <td>아니요</td>
-      <td>하나의 멤버인 activityTypeIds가 있는 JSON 개체를 허용합니다. 값은 원하는 활동 유형에 해당하는 정수 배열이어야 합니다. "리드 삭제" 활동은 지원되지 않습니다(대신 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getDeletedLeadsUsingGET">삭제된 리드 가져오기</a>끝점 사용).<a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getActivitiesPagingTokenUsingGET">활동 유형 가져오기</a>끝점을 사용하여 활동 유형 ID를 검색하십시오.</td>
-    </tr>
-    <tr>
-      <td>primaryAttributeValueIds</td>
-      <td>배열[정수]</td>
-      <td>아니요</td>
-      <td>하나의 멤버인 primaryAttributeValueIds가 있는 JSON 개체를 허용합니다. 값은 필터링할 기본 속성을 지정하는 ID 배열입니다. 최대 50개의 ID를 지정할 수 있습니다. ID는 리드 필드 또는 에셋에 대한 고유 식별자이며 적절한 REST API 끝점을 호출하여 검색할 수 있습니다. 예를 들어 "양식 채우기" 활동에 대한 특정 양식을 필터링하려면 양식 이름을 <a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByNameUsingGET">이름별로 양식 가져오기</a> 끝점으로 전달하여 양식 ID를 검색합니다. 다음은 기본 특성 필터링이 지원되는 활동 유형 목록입니다.
-        <table>
-          <tbody>
-            <tr>
-              <td>활동 유형</td>
-              <td>기본 속성 값 Id</td>
-              <td>검색 끝점</td>
-              <td>자산 그룹</td>
-            </tr>
-            <tr>
-              <td>데이터 값 변경</td>
-              <td>리드 필드 ID</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2">리드 설명</a></td>
-              <td>속성 이름</td>
-            </tr>
-            <tr>
-              <td>점수 변경</td>
-              <td>리드 필드 ID</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2">리드 설명</a></td>
-              <td>속성 이름</td>
-            </tr>
-            <tr>
-              <td>진행 상태 변경</td>
-              <td>프로그램 ID</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getProgramByNameUsingGET">이름으로 프로그램 가져오기</a></td>
-              <td>마케팅 프로그램</td>
-            </tr>
-            <tr>
-              <td>목록에 추가</td>
-              <td>정적 목록 ID</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByNameUsingGET">이름별 정적 목록 가져오기</a></td>
-              <td>정적 목록</td>
-            </tr>
-            <tr>
-              <td>목록에서 제거</td>
-              <td>정적 목록 ID</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByNameUsingGET">이름별 정적 목록 가져오기</a></td>
-              <td>정적 목록</td>
-            </tr>
-            <tr>
-              <td>양식 작성</td>
-              <td>양식 ID</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByNameUsingGET">이름별 양식 가져오기</a></td>
-              <td>웹 양식</td>
-            </tr>
-          </tbody>
-        </table>
-        primaryAttributeValueIds를 사용하는 경우 activityTypeIds 필터가 있어야 하며 해당 자산 그룹과 일치하는 활동 ID만 포함해야 합니다.예:예를 들어 웹 양식 자산을 필터링하는 경우 activityTypeIds에 "양식 채우기" 활동 유형 ID만 허용됩니다.예제 요청 본문:{"filter":{"createdAt":{"startAt": "2021-07-01T23:59:59-00:00","endAt": "2021-07-02T23:59:59-00:00"},"activityTypeIds ":[2],"primaryAttributeValueIds" : [16,102,95,8]}}primaryAttributeValueIds와 primaryAttributeValues를 함께 사용할 수 없습니다.</td>
-    </tr>
-    <tr>
-      <td>primaryAttributeValue</td>
-      <td>Array[String]</td>
-      <td>아니요</td>
-      <td>하나의 멤버인 primaryAttributeValues가 있는 JSON 개체를 허용합니다. 값은 필터링할 기본 속성을 지정하는 이름 배열입니다. 최대 50개의 이름을 지정할 수 있습니다. 이름은 리드 필드 또는 에셋에 대한 고유 식별자이며 적절한 REST API 끝점을 호출하여 검색할 수 있습니다. 예를 들어 "양식 채우기" 활동에 대한 특정 양식을 필터링하려면 양식 ID를 <a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5">ID별로 양식 가져오기</a> 엔드포인트에 전달하여 양식 이름을 검색합니다. 다음은 기본 특성 필터링이 지원되는 활동 유형 목록입니다.
-        <table>
-          <tbody>
-            <tr>
-              <td>활동 유형</td>
-              <td>기본 속성 값</td>
-              <td>검색 끝점</td>
-              <td>자산 그룹</td>
-            </tr>
-            <tr>
-              <td>데이터 값 변경</td>
-              <td>리드 필드 displayName</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2">리드 설명</a></td>
-              <td>속성 이름</td>
-            </tr>
-            <tr>
-              <td>점수 변경</td>
-              <td>리드 필드 displayName</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2">리드 설명</a></td>
-              <td>속성 이름</td>
-            </tr>
-            <tr>
-              <td>진행 상태 변경</td>
-              <td>프로그램 이름</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getProgramByIdUsingGET">ID로 프로그램 가져오기</a></td>
-              <td>마케팅 프로그램</td>
-            </tr>
-            <tr>
-              <td>목록에 추가</td>
-              <td>정적 목록 이름</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByIdUsingGET">ID별 정적 목록 가져오기</a></td>
-              <td>정적 목록</td>
-            </tr>
-            <tr>
-              <td>목록에서 제거</td>
-              <td>정적 목록 이름</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByIdUsingGET">ID별 정적 목록 가져오기</a></td>
-              <td>정적 목록</td>
-            </tr>
-            <tr>
-              <td>양식 작성</td>
-              <td>양식 이름</td>
-              <td><a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5">ID로 양식 가져오기</a></td>
-              <td>웹 양식</td>
-            </tr>
-          </tbody>
-        </table>
-        "&lt;<em>program</em>&gt;을 사용해야 합니다.&lt;<em>자산</em>&gt;" 표기법을 사용하여 마케팅 프로그램, 정적 목록, 웹 폼 등의 자산 그룹에 대한 이름을 고유하게 지정합니다.예:예를 들어 이름이 "GL_OP_ALL_2021"인 프로그램 아래에 있는 이름이 "MPS Outbound"인 양식은 "GL_OP_ALL_2021.MPS Outbound"로 지정됩니다.예제 요청 본문:{"filter":{"createdAt":{"startAt": "2021-07-01T23:59:59-00:00","endAt": "2021-70 02T23:59:59-00:00"},"activityTypeIds":[2],"primaryAttributeValues":["GL_OP_ALL_2021.MPS Outbound"]}}primaryAttributeValues를 사용하는 경우 activityTypeIds 필터가 있어야 하며 해당 자산 그룹과 일치하는 활동 ID만 포함해야 합니다. 예를 들어 웹 양식 자산을 필터링하는 경우 activityTypeIds.primaryAttributeValues 및 primaryAttributeValueIds에는 "양식 채우기" 활동 유형 ID만 사용할 수 있습니다.</td>
-    </tr>
-  </tbody>
-</table>
+| 필터 유형 | 데이터 유형 | 필수 여부 | 참고 |
+| --- | --- | --- | --- |
+| createdAt | 날짜 범위 | 예 | `startAt` 및 `endAt` 멤버를 사용하여 JSON 개체를 허용합니다. `startAt`은(는) 로우 워터마크를 나타내는 날짜/시간을 수락하고 `endAt`은(는) 하이 워터마크를 나타내는 날짜/시간을 수락합니다. 범위는 31일 이하여야 합니다. 이 필터 유형의 작업은 날짜 범위 내에서 만든 액세스 가능한 모든 레코드를 반환합니다. 날짜/시간은 밀리초 없이 ISO-8601 형식이어야 합니다. |
+| activityTypeIds | Array\[Integer\] | 아니요 | 하나의 멤버 `activityTypeIds`이(가) 있는 JSON 개체를 허용합니다. 값은 원하는 활동 유형에 해당하는 정수 배열이어야 합니다. &quot;리드 삭제&quot; 활동은 지원되지 않습니다(대신 [삭제된 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getDeletedLeadsUsingGET) 엔드포인트를 사용). [활동 유형 가져오기 엔드포인트](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getAllActivityTypesUsingGET)를 사용하여 활동 유형 ID를 검색합니다. |
+| [primaryAttributeValueIds](#primaryattributevalueids-options) | Array\[Integer\] | 아니요 | 하나의 멤버 `primaryAttributeValueIds`이(가) 있는 JSON 개체를 허용합니다. 값은 필터링할 기본 속성을 지정하는 ID 배열입니다. 최대 50개의 ID를 지정할 수 있습니다. ID는 잠재 고객 필드 또는 에셋에 대한 고유 식별자이며 적절한 REST API 끝점을 호출하여 검색할 수 있습니다. 예를 들어 &quot;양식 채우기&quot; 활동에 대한 특정 양식을 필터링하려면 양식 이름을 [이름별 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByNameUsingGET) 엔드포인트에 전달하여 양식 ID를 검색합니다. 다음은 기본 속성 필터링이 지원되는 활동 유형 목록입니다. |
+| [primaryAttributeValue](#primaryattributevalues-options) | Array\[String\] | 아니요 | 하나의 멤버 `primaryAttributeValues`이(가) 있는 JSON 개체를 허용합니다. 값은 필터링할 기본 속성을 지정하는 이름 배열입니다. 최대 50개의 이름을 지정할 수 있습니다. 이름은 리드 필드 또는 에셋의 고유 식별자이며 적절한 REST API 끝점을 호출하여 검색할 수 있습니다. 예를 들어 &quot;양식 채우기&quot; 활동에 대한 특정 양식을 필터링하려면 양식 ID를 [ID별로 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) 엔드포인트에 전달하여 양식 이름을 검색합니다. 다음은 기본 속성 필터링이 지원되는 활동 유형 목록입니다. |
+
+### primaryAttributeValueIds 옵션 {#primaryattributevalueids-options}
+
+| 활동 유형 | 기본 속성 값 Id | 검색 끝점 | 자산 그룹 |
+| --- | --- | --- | --- |
+| 데이터 값 변경 | 리드 필드 ID | [리드 설명](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2) | 속성 이름 |
+| 점수 변경 | 리드 필드 ID | [리드 설명](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2) | 속성 이름 |
+| 진행 상태 변경 | 프로그램 ID | [이름별 프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getProgramByNameUsingGET) | 마케팅 프로그램 |
+| 목록에 추가 | 정적 목록 ID | [이름별 정적 목록 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByNameUsingGET) | 정적 목록 |
+| 목록에서 제거 | 정적 목록 ID | [이름별 정적 목록 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByNameUsingGET) | 정적 목록 |
+| 양식 작성 | 양식 ID | [이름별 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByNameUsingGET) | 웹 양식 |
+
+`primaryAttributeValueIds`을(를) 사용하는 경우 `activityTypeIds` 필터가 있어야 하며 해당 자산 그룹과 일치하는 활동 ID만 포함해야 합니다. 예를 들어 웹 양식 자산을 필터링하는 경우 `activityTypeIds`에서 &quot;양식 작성&quot; 활동 유형 ID만 허용됩니다.
+
+예제 요청 본문:
+
+```json
+{
+  "filter": {
+    "createdAt": {
+      "startAt": "2021-07-01T23:59:59-00:00",
+      "endAt": "2021-07-02T23:59:59-00:00"
+    },
+    "activityTypeIds": [
+      2
+    ],
+    "primaryAttributeValueIds": [
+      16,102,95,8
+    ]
+  }
+}
+```
+
+`primaryAttributeValueIds`과(와) `primaryAttributeValues`은(는) 함께 사용할 수 없습니다.
+
+### primaryAttributeValues 옵션 {#primaryattributevalues-options}
+
+| 활동 유형 | 기본 속성 값 | 검색 끝점 | 자산 그룹 |
+| --- | --- | --- | --- |
+| 데이터 값 변경 | 리드 필드 displayName | [리드 설명](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2) | 속성 이름 |
+| 점수 변경 | 리드 필드 displayName | [리드 설명](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2) | 속성 이름 |
+| 진행 상태 변경 | 프로그램 이름 | [Id로 프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getProgramByIdUsingGET) | 마케팅 프로그램 |
+| 목록에 추가 | 정적 목록 이름 | [Id별 정적 목록 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByIdUsingGET) | 정적 목록 |
+| 목록에서 제거 | 정적 목록 이름 | [Id별 정적 목록 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByIdUsingGET) | 정적 목록 |
+| 양식 작성 | 양식 이름 | [Id로 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) | 웹 양식 |
+
+&quot;&lt;<em>program</em>>을 사용해야 합니다.마케팅 프로그램, 정적 목록, 웹 폼과 같은 자산 그룹의 이름을 지정하는 &lt;<em>자산</em>>&quot; 표기법 예를 들어 이름이 &quot;GL_OP_ALL_2021&quot;인 프로그램 아래에 있는 이름이 &quot;MPS Outbound&quot;인 양식은 &quot;GL_OP_ALL_2021.MPS Outbound&quot;로 지정됩니다.
+
+예제 요청 본문:
+
+```json
+{
+  "filter": {
+    "createdAt": {
+      "startAt": "2021-07-01T23:59:59-00:00",
+      "endAt": "2021-07-02T23:59:59-00:00"
+    },
+    "activityTypeIds": [
+      2
+    ],
+    "primaryAttributeValues": [
+      "GL_OP_ALL_2021.MPS Outbound"
+    ]
+  }
+}
+```
+
+`primaryAttributeValues`을(를) 사용하는 경우 `activityTypeIds` 필터가 있어야 하며 해당 자산 그룹과 일치하는 활동 ID만 포함해야 합니다. 예를 들어 웹 양식 자산을 필터링하는 경우 `activityTypeIds`에서 &quot;양식 작성&quot; 활동 유형 ID만 허용됩니다. `primaryAttributeValues`과(와) `primaryAttributeValueIds`은(는) 함께 사용할 수 없습니다.
 
 ## 옵션
 
-| 매개 변수 | 데이터 유형 | 필수 | 참고 사항 |
+| 매개변수 | 데이터 유형 | 필수 여부 | 참고 |
 |---|---|---|---|
-| 필터 | 배열[개체] | 예 | 필터 배열을 허용합니다. 정확히 1개의 createdAt 필터가 배열에 포함되어야 합니다. 선택적 activityTypeIds 필터가 포함될 수 있습니다. 필터가 액세스 가능한 활동 집합에 적용되고 결과 활동 집합이 내보내기 작업에 의해 반환됩니다. |
-| 형식 | 문자열 | 아니요 | CSV, TSV, SSV 중 하나를 허용합니다. 내보낸 파일은 쉼표로 구분된 값, 탭으로 구분된 값 또는 공백으로 구분된 값 파일로 렌더링됩니다(설정된 경우).설정하지 않으면 기본값(CSV)으로 설정됩니다. |
+| filter | 배열[개체] | 예 | 필터 배열을 허용합니다. 배열에 정확히 하나의 `createdAt` 필터가 포함되어야 합니다. 선택적 `activityTypeIds` 필터가 포함될 수 있습니다. 액세스 가능한 활동 세트에 필터가 적용되고 내보내기 작업에 의해 결과 활동 세트가 반환됩니다. |
+| 형식 | 문자열 | 아니요 | CSV, TSV, SSV 중 하나 허용 내보낸 파일은 설정된 경우 각각 쉼표로 구분된 값, 탭으로 구분된 값 또는 공백으로 구분된 값 파일로 렌더링됩니다. 설정하지 않으면 기본값이 CSV로 설정됩니다. |
 | 열 머리글 이름 | 오브젝트 | 아니요 | 필드 및 열 헤더 이름의 키-값 쌍을 포함하는 JSON 개체입니다. 키는 내보내기 작업에 포함된 필드 이름이어야 합니다. 값은 해당 필드에 대해 내보낸 열 헤더의 이름입니다. |
-| 필드 | 배열[문자열] | 아니요 | 필드 값을 포함하는 선택적 문자열 배열입니다. 나열된 필드가 내보낸 파일에 포함됩니다.기본적으로 다음 필드가 반환됩니다. `marketoGUIDleadId` `activityDate` `activityTypeId` `campaignId` `primaryAttributeValueId` `primaryAttributeValueattributes`,이 매개 변수를 사용하여 위 목록에서 하위 집합을 지정하여 반환되는 필드 수를 줄일 수 있습니다.예:&quot;fields&quot;: [&quot;leadId&quot;, &quot;activityDate&quot;, &quot;activityTypeId&quot;]활동 작업(&quot;succeeded&quot;, &quot;skipped&quot; 또는 &quot;failed&quot;)을 포함하도록 추가 필드 &quot;actionResult&quot;를 지정할 수 있습니다. |
+| 필드 | 배열[문자열] | 아니요 | 필드 값을 포함하는 선택적 문자열 배열입니다. 나열된 필드는 내보낸 파일에 포함됩니다. 기본적으로 `marketoGUIDleadId` `activityDate` `activityTypeId` `campaignId` `primaryAttributeValueId` `primaryAttributeValueattributes` 필드가 반환됩니다. 이 매개 변수는 위의 목록에서 하위 집합을 지정하여 반환되는 필드 수를 줄이는 데 사용할 수 있습니다. 예: &quot;fields&quot;: [&quot;leadId&quot;, &quot;activityDate&quot;, &quot;activityTypeId&quot;]활동 작업(&quot;succeeded&quot;, &quot;skipped&quot; 또는 &quot;failed&quot;)을 포함하도록 추가 필드 &quot;actionResult&quot;를 지정할 수 있습니다. |
 
 
 ## 작업 생성
 
-레코드를 내보내려면 먼저 작업과 검색할 레코드 집합을 정의해야 합니다.  [내보내기 활동 만들기 작업](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/createExportActivitiesUsingPOST) 끝점을 사용하여 작업을 만듭니다.  활동을 내보낼 때 적용할 수 있는 두 개의 기본 필터가 있습니다. 항상 필요한 `createdAt`과(와) 선택 사항인 `activityTypeIds`입니다.  createdAt 필터는 활동이 만들어진 날짜 범위를 정의하는 데 사용됩니다. `startAt` 및 `endAt` 매개 변수는 모두 날짜/시간 필드이며 가장 빨리 허용되는 만들기 날짜와 가장 늦게 허용되는 만들기 날짜를 나타냅니다.  `activityTypeIds` 필터를 사용하여 특정 유형의 활동만 선택적으로 필터링할 수도 있습니다.  이 기능은 사용 사례와 관련이 없는 결과를 제거하는 데 유용합니다.
+레코드를 내보내려면 먼저 작업과 검색할 레코드 집합을 정의해야 합니다.  [내보내기 활동 만들기 작업](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/createExportActivitiesUsingPOST) 끝점을 사용하여 작업을 만듭니다.  활동을 내보낼 때 적용할 수 있는 기본 필터가 두 개 있습니다. 항상 필요한 `createdAt`과(와) 선택 사항인 `activityTypeIds`입니다.  `createdAt` 필터는 `startAt` 및 `endAt` 매개 변수(모두 datetime 필드)를 사용하여 활동이 만들어진 날짜 범위를 정의하는 데 사용됩니다. 이 매개 변수는 모두 가장 빠른 생성 날짜와 가장 최근 허용된 생성 날짜를 나타냅니다.  `activityTypeIds` 필터를 사용하여 특정 유형의 활동만 선택적으로 필터링할 수도 있습니다.  이 기능은 사용 사례와 관련이 없는 결과를 제거하는 데 유용합니다.
 
 ```
 POST /bulk/v1/activities/export/create.json
@@ -202,7 +148,7 @@ POST /bulk/v1/activities/export/create.json
 }
 ```
 
-이제 작업 상태가 &quot;생성됨&quot;이지만 아직 처리 큐에 있지 않습니다.  처리를 시작할 수 있도록 큐에 넣으려면 만들기 상태 응답에서 exportId를 사용하여 [큐 내보내기 활동 작업](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/enqueueExportActivitiesUsingPOST) 끝점을 호출해야 합니다.
+이제 작업 상태가 &quot;생성됨&quot;이지만 아직 처리 큐에 있지 않습니다.  처리를 시작할 수 있도록 큐에 넣으려면 만들기 상태 응답에서 exportId를 사용하여 [큐 내보내기 활동 작업](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/enqueueExportActivitiesUsingPOST) 끝점을 호출합니다.
 
 ```
 POST /bulk/v1/activities/export/{exportId}/enqueue.json
@@ -224,7 +170,7 @@ POST /bulk/v1/activities/export/{exportId}/enqueue.json
 }
 ```
 
-이제 상태가 작업이 큐에 있음을 보고합니다.  작업자가 이 작업에 사용 가능해지면 상태가 &quot;처리 중&quot;으로 전환되고 작업이 Marketo의 레코드를 집계하기 시작합니다.
+이제 상태는 작업이 큐에 있음을 보고합니다.  작업자가 이 작업에 사용 가능해지면 상태가 &quot;처리 중&quot;으로 전환되고 작업이 Marketo의 레코드를 집계하기 시작합니다.
 
 ## 폴링 작업 상태
 
