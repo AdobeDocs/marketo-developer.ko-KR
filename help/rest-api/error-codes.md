@@ -3,9 +3,9 @@ title: 오류 코드
 feature: REST API
 description: Marketo 오류 코드 설명.
 exl-id: a923c4d6-2bbc-4cb7-be87-452f39b464b6
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: d0750eab0a37df0b7f80c6252f46c95068975000
 workflow-type: tm+mt
-source-wordcount: '2272'
+source-wordcount: '2273'
 ht-degree: 3%
 
 ---
@@ -224,7 +224,7 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
     <tr>
       <td><a name="712"></a>712</td>
       <td>개인 계정에 병합 작업이 잘못되었습니다.</td>
-      <td>Salesforce Person 계정인 가망 고객을 병합하려는 시도로 인해 가망 고객 병합 호출이 실패했습니다.  Salesforce 개인 계정은 Salesforce에서 병합해야 합니다.</td>
+      <td>Salesforce 개인 계정인 리드를 병합하려는 시도로 인해 리드 병합 호출이 실패했습니다.  Salesforce 개인 계정은 Salesforce에서 병합되어야 합니다.</td>
     </tr>
     <tr>
       <td><a name="713"></a>713</td>
@@ -352,8 +352,8 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
     <tr>
       <td><a name="1012"></a>1012</td>
       <td>잘못된 쿠키 값 '%s'</td>
-      <td>쿠키 매개 변수에 대해 잘못된 값으로 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST">리드 연결</a>을 호출할 때 발생할 수 있습니다.
-        이는 filterType=cookies 및 filterValues 매개 변수에 대한 유효한 값이 잘못된 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET">필터 유형별 잠재 고객 가져오기</a>를 호출할 때도 발생합니다.</td>
+      <td>'cookie' 매개 변수에 대해 잘못된 값으로 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST">리드 연결</a>을 호출할 때 발생할 수 있습니다.
+        이는 'filterType=cookies' 및 'filterValues' 매개 변수에 대한 잘못된 값이 있는 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET">필터 유형별 리드 가져오기</a>를 호출할 때도 발생합니다.</td>
     </tr>
     <tr>
       <td><a name="1013"></a>1013</td>
@@ -471,18 +471,18 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
       <td><a name="1076"></a>1076</td>
       <td>mergeInCRM 플래그가 있는 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST">잠재 고객 병합</a> 호출은 4입니다.</td>
       <td>중복 레코드를 만들고 있습니다. 기존 레코드를 대신 사용하는 것이 좋습니다.
-        Salesforce에서 병합할 때 Marketo에 수신되는 오류 메시지입니다.</td>
+        Salesforce에서 병합할 때 Marketo에서 수신하는 오류 메시지입니다.</td>
     </tr>
     <tr>
       <td><a name="1077"></a>1077</td>
       <td>'SFDC 필드' 길이로 인해 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST">리드 병합</a> 호출이 실패했습니다.</td>
-      <td>'SFDC 필드'가 허용되는 문자 제한을 초과하여 mergeInCRM이 true로 설정된 병합 리드 호출이 실패했습니다. 수정하려면 'SFDC 필드'의 길이를 줄이거나 mergeInCRM을 false로 설정하십시오.</td>
+      <td>'SFDC 필드'가 허용된 문자 제한을 초과하여 mergeInCRM이 true로 설정된 병합 리드 호출이 실패했습니다. 수정하려면 'SFDC 필드'의 길이를 줄이거나 mergeInCRM을 false로 설정하십시오.</td>
     </tr>
     <tr>
       <td><a name="1078"></a>1078</td>
       <td>잠재 고객/연락처가 아닌 삭제된 엔터티로 인해 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST">잠재 고객 병합</a> 호출에 실패했습니다. 또는 필드 필터 기준이 일치하지 않습니다.</td>
       <td>병합 실패, 고유하게 동기화된 CRM에서 병합 작업을 수행할 수 없음
-        Salesforce에서 병합할 때 Marketo에 수신되는 오류 메시지입니다.</td>
+        Salesforce에서 병합할 때 Marketo에서 수신하는 오류 메시지입니다.</td>
     </tr>
   </tbody>
 </table>
