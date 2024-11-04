@@ -2,13 +2,13 @@
 title: 활동
 feature: REST API
 description: Marketo Engage 활동 관리를 위한 API입니다.
-source-git-commit: 13a567be067a8a1272e981fad4e03b0a8519f132
+exl-id: 1e69af23-2b0c-467a-897c-1dcf81343e73
+source-git-commit: 6baf62bc8881470eca597899e3228c377fb597d0
 workflow-type: tm+mt
 source-wordcount: '2029'
 ht-degree: 0%
 
 ---
-
 
 # 활동
 
@@ -133,7 +133,7 @@ GET /rest/v1/activities.json?activityTypeIds=1&nextPageToken=WQV2VQVPPCKHC6AQYVK
 
 각 결과 배열 항목 내에서 `id` 정수 특성은 고유 식별자로 `marketoGUID` 문자열 특성으로 대체됩니다. 
 
-## 데이터 값 변경
+### 데이터 값 변경
 
 데이터 값 변경 활동의 경우 활동 API의 전문 버전이 제공됩니다. [잠재 고객 변경 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getLeadChangesUsingGET) 끝점은 데이터 값 변경 레코드의 활동만 잠재 고객 필드에 반환합니다. 인터페이스는 두 가지 차이점이 있는 리드 활동 가져오기 API와 동일합니다.
 
@@ -188,7 +188,7 @@ GET /rest/v1/activities/leadchanges.json?nextPageToken=GIYDAOBNGEYS2MBWKQYDAORQG
 
 각 결과 배열 항목 내에서 `id` 정수 특성은 고유 식별자로 `marketoGUID` 문자열 특성으로 대체됩니다.
 
-## 삭제된 리드
+### 삭제된 리드
 
 또한 Marketo에서 삭제된 활동을 검색하기 위한 특수 엔드포인트 [삭제된 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getDeletedLeadsUsingGET)가 있습니다.
 
@@ -229,7 +229,7 @@ GET /rest/v1/activities/deletedleads.json?nextPageToken=GIYDAOBNGEYS2MBWKQYDAORQ
 
 각 결과 배열 항목 내에서 `id` 정수 특성은 고유 식별자로 `marketoGUID` 문자열 특성으로 대체됩니다.
 
-## 페이지 스루 결과
+### 페이지 스루 결과
 
 기본적으로 이 섹션에 언급된 종단점은 한 번에 300개의 활동 항목을 반환합니다.  `moreResult` 특성이 true이면 더 많은 결과를 사용할 수 있습니다. `moreResult` 특성이 false를 반환할 때까지 끝점을 호출합니다. 즉, 사용 가능한 결과가 더 이상 없습니다. 이 끝점에서 반환된 `nextPageToken`은(는) 항상 이 호출의 다음 반복에 재사용되어야 합니다.
 
@@ -322,7 +322,7 @@ GET /rest/v1/activities/external/type/{apiName}/describe.json
 }
 ```
 
-### 유형 만들기
+## 유형 만들기
 
 각 사용자 지정 활동 유형에는 표시 이름, API 이름, 트리거 이름, 필터 이름 및 기본 속성이 필요합니다.
 
@@ -386,7 +386,7 @@ POST /rest/v1/activities/external/type.json
 }
 ```
 
-### 업데이트 유형
+## 업데이트 유형
 
 apiName이 경로 매개 변수로서 유일한 필수 매개 변수라는 점을 제외하면 형식을 업데이트하는 것은 매우 유사합니다.
 
@@ -448,7 +448,7 @@ POST /rest/v1/activities/external/type/{apiName}.json
 
 활동 유형의 기본 특성을 변경할 때 먼저 `isPrimary`을(를) false로 설정하여 기존의 모든 기본 특성을 강등해야 합니다.
 
-## 속성 만들기
+### 속성 만들기
 
 특성을 만들려면 필요한 `apiName` 경로 매개 변수가 필요합니다. `name` 및 `dataType` 매개 변수도 필요합니다.` The description and` `isPrimary` 매개 변수는 선택 사항입니다.
 
@@ -515,7 +515,7 @@ POST /rest/v1/activities/external/type/{apiName}/attributes/create.json
 }
 ```
 
-## 속성 업데이트
+### 속성 업데이트
 
 특성에 대한 업데이트를 수행할 때 특성의 `apiName`이(가) 기본 키입니다. 업데이트가 성공하려면 `apiName` 매개 변수가 있어야 합니다. 즉, 업데이트를 사용하여 `apiName` 매개 변수를 변경할 수 없습니다.
 
@@ -582,7 +582,7 @@ POST /rest/v1/activities/external/type/{apiName}/attributes/update.json
 }
 ```
 
-## 속성 삭제
+### 속성 삭제
 
 특성을 삭제하면 사용자 지정 활동 API 이름인 필수 `apiName` 경로 매개 변수가 사용됩니다.  속성 객체의 배열인 속성 매개 변수도 필요합니다.  각 개체에는 사용자 지정 활동 유형 API 이름인 `apiName` 매개 변수가 있어야 합니다.
 
@@ -710,4 +710,4 @@ POST /rest/v1/activities/external.json
 아래에 명시하지 않는 한 활동 엔드포인트에 30초의 시간 제한이 있습니다.
 
 * 페이징 토큰 가져오기: 300s 
-* 사용자 지정 활동 추가: 90초 
+* 사용자 지정 활동 추가: 90초
