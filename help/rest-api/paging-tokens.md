@@ -3,9 +3,9 @@ title: 페이징 토큰
 feature: REST API
 description: 페이징 토큰 데이터 보기.
 exl-id: 63fbbf03-8daf-4add-85b0-a8546c825e5b
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: a00583f367c2da36d9d1d6e0b05bfd4216573fbb
 workflow-type: tm+mt
-source-wordcount: '345'
+source-wordcount: '352'
 ht-degree: 0%
 
 ---
@@ -15,6 +15,8 @@ ht-degree: 0%
 결과를 페이징하거나 주어진 데이터와 관련하여 업데이트된 데이터를 검색하기 위해 Marketo에서는 페이징 토큰을 제공합니다.
 
 경우에 따라 긴 페이징 토큰 문자열이 반환될 수 있습니다. 이로 인해 HTTP 414 오류 코드가 발생할 수 있습니다. 이러한 [오류](error-codes.md)를 처리하는 방법에 대한 자세한 정보를 찾을 수 있습니다.
+
+[페이징 토큰 API](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getActivitiesPagingTokenUsingGET) 설명서를 참조하십시오.
 
 ## 토큰 유형
 
