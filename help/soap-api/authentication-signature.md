@@ -3,27 +3,28 @@ title: 인증 서명
 feature: SOAP
 description: 인증 서명을 사용한 API 보안
 exl-id: d6bed8ee-77fa-440c-8f35-a71cf77f45d3
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 28b040f6473677abaaa0c73f1bb6e887e9e35a81
 workflow-type: tm+mt
-source-wordcount: '226'
-ht-degree: 2%
+source-wordcount: '209'
+ht-degree: 3%
 
 ---
 
 # 인증 서명
 
 Marketo API 보안은 HTTPS를 통해 전송된 메시지와 함께 HMAC-SHA1 서명을 기반으로 간단하면서도 매우 안전한 모델을 사용합니다. 이 모델의 주요 장점은 상태 비저장 인증을 제공한다는 것입니다.
+
 HMAC-SHA1 서명에는 다음이 필요합니다.
 
-* 서비스 요청과 함께 전송되는 사용자 ID(액세스 키라고도 함)
-* 공유 암호 키와 메시지 콘텐츠를 사용하여 계산되며 서비스 요청과 함께 전송되는 서명입니다.
-* 서비스 요청과 함께 전송되지 않는 공유 암호 키(암호화 키라고도 함)
+- 서비스 요청과 함께 전송되는 사용자 ID(액세스 키라고도 함)
+- 공유 암호 키와 메시지 콘텐츠를 사용하여 계산되며 서비스 요청과 함께 전송되는 서명입니다.
+- 서비스 요청과 함께 전송되지 않는 공유 암호 키(암호화 키라고도 함)
 
-이 보안 정보는 Marketo 내의 관리자 > SOAP API를 통해 확인됩니다.
-클라이언트 프로그램은 공유된 비밀 키 및 요청 메시지 콘텐츠의 일부를 사용하여 HMAC-SHA1 서명을 계산할 것이다. SOAP 메시지와 함께 인증 정보를 전달하려면 클라이언트에 SOAP 헤더인 AuthenticationHeaderInfo가 포함되어야 합니다.
+클라이언트 프로그램은 공유된 비밀 키 및 요청 메시지 콘텐츠의 일부를 사용하여 HMAC-SHA1 서명을 계산한다. SOAP 메시지와 함께 인증 정보를 전달하려면 클라이언트에 SOAP 헤더인 AuthenticationHeaderInfo가 포함되어야 합니다.
+
 다음 의사 코드는 알고리즘을 보여 줍니다.
 
-```
+```javascript
 // Request timestamp: a timestamp string in W3C WSDL date format
 stringToEncrypt = requestTimestamp + clientAccessID;
 
@@ -41,13 +42,13 @@ authHeader = "<ns1:AuthenticationHeader>" +
 ## 요청 헤더
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
-|--- |--- |--- |
-| mktowsUserId | 필수 | Marketo 클라이언트 액세스 ID는 통합 아래의 Marketo admin SOAP API 패널에 있습니다. |
-| requestSignature | 필수 | 공유 암호 키, requestTimestamp 및 Marketo 사용자 ID를 기반으로 하는 HMAC-SHA1 서명 |
-| request타임스탬프 | 필수 | 요청 타임스탬프(W3C WSDL 날짜 형식 Ex. &quot;2013-06-09T14:04:54-08:00&quot;) |
-| partnerId | 선택 사항 | LaunchPoint 기술 파트너 API 키. |
+| --- | --- | --- |
+| `mktowsUserId` | 필수 여부 | Marketo 클라이언트 액세스 ID는 통합 아래의 Marketo admin SOAP API 패널에 있습니다. |
+| `requestSignature` | 필수 여부 | 공유 암호 키, `requestTimestamp` 및 Marketo 사용자 ID를 기반으로 하는 HMAC-SHA1 서명 |
+| `requestTimestamp` | 필수 여부 | 요청 타임스탬프(W3C WSDL 날짜 형식 Ex. &quot;2013-06-09T14:04:54-08:00&quot;) |
+| `partnerId` | 선택 사항입니다 | LaunchPoint 기술 파트너 [API 키](../launchpoint-api.pdf). |
 
-## XML getLeadActivity 요청
+## 요청 XML - getLeadActivity
 
 ```xml
 <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mkt="http://www.marketo.com/mktows/">
@@ -74,7 +75,7 @@ authHeader = "<ns1:AuthenticationHeader>" +
 </soapenv:Envelope>
 ```
 
-## 응답 XML 성공
+## 응답 XML - 성공
 
 ```xml
 <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns1="http://www.marketo.com/mktows/">
@@ -134,25 +135,25 @@ authHeader = "<ns1:AuthenticationHeader>" +
 ## 응답 XML - 실패(잘못된 자격 증명)
 
 ```xml
-   <?xml version="1.0" encoding="UTF-8"?>
-   <SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
-     <SOAP-ENV:Body>
-       <SOAP-ENV:Fault>
-         <faultcode>SOAP-ENV:Client</faultcode>
-         <faultstring>20014 - Authentication failed</faultstring>
-         <detail>
-           <ns1:serviceException xmlns:ns1="http://www.marketo.com/mktows/">
-             <name>mktServiceException</name>
-             <message>Authentication failed (20014)</message>
-             <code>20014</code>
-           </ns1:serviceException>
-         </detail>
-       </SOAP-ENV:Fault>
-     </SOAP-ENV:Body>
-   </SOAP-ENV:Envelope>
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+  <SOAP-ENV:Body>
+    <SOAP-ENV:Fault>
+      <faultcode>SOAP-ENV:Client</faultcode>
+      <faultstring>20014 - Authentication failed</faultstring>
+      <detail>
+        <ns1:serviceException xmlns:ns1="http://www.marketo.com/mktows/">
+          <name>mktServiceException</name>
+          <message>Authentication failed (20014)</message>
+          <code>20014</code>
+        </ns1:serviceException>
+      </detail>
+    </SOAP-ENV:Fault>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
 ```
 
-## 샘플 코드 PHP
+## 샘플 코드 - PHP
 
 ```php
 <?php
@@ -165,15 +166,15 @@ authHeader = "<ns1:AuthenticationHeader>" +
   // Create Signature
   $dtzObj = new DateTimeZone("America/Los_Angeles");
   $dtObj  = new DateTime('now', $dtzObj);
-  $timeStamp = $dtObj-&gt;format(DATE_W3C);
+  $timeStamp = $dtObj->format(DATE_W3C);
   $encryptString = $timeStamp . $marketoUserId;
   $signature = hash_hmac('sha1', $encryptString, $marketoSecretKey);
  
   // Create SOAP Header
   $attrs = new stdClass();
-  $attrs-&gt;mktowsUserId = $marketoUserId;
-  $attrs-&gt;requestSignature = $signature;
-  $attrs-&gt;requestTimestamp = $timeStamp;
+  $attrs->mktowsUserId = $marketoUserId;
+  $attrs->requestSignature = $signature;
+  $attrs->requestTimestamp = $timeStamp;
   $authHdr = new SoapHeader($marketoNameSpace, 'AuthenticationHeader', $attrs);
  
   print_r($authHdr)
@@ -181,7 +182,7 @@ authHeader = "<ns1:AuthenticationHeader>" +
 ?>
 ```
 
-## 샘플 코드 Java
+## 샘플 코드 - Java
 
 ```java
 import com.marketo.mktows.*;
@@ -241,7 +242,7 @@ public class AuthenticationHeader {
 }
 ```
 
-## 샘플 코드 루비
+## 샘플 코드 - 루비
 
 ```ruby
 require 'savon' # Use version 2.0 Savon gem
