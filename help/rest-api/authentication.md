@@ -3,9 +3,9 @@ title: 인증
 feature: REST API
 description: API 사용을 위한 Marketo 사용자 인증.
 exl-id: f89a8389-b50c-4e86-a9e4-6f6acfa98e7e
-source-git-commit: d57167d60f1cc6a32c600b72829afcba81e6ec92
+source-git-commit: 6f8dc76703aba204b6d0d4f1a3b5275aea819f08
 workflow-type: tm+mt
-source-wordcount: '560'
+source-wordcount: '558'
 ht-degree: 0%
 
 ---
@@ -64,7 +64,7 @@ REST API 메서드를 호출할 때 호출이 성공하려면 모든 호출에 �
 
 통합이 원활하게 작동하고 정상 작동 중에 예기치 않은 인증 오류가 발생하지 않도록 하려면 액세스 토큰 만료 관리가 중요합니다. 통합을 위한 인증을 디자인할 때 ID 응답에 포함된 토큰과 만료 기간을 저장해야 합니다.
 
-REST 호출을 수행하기 전에 토큰의 남은 수명을 기준으로 토큰의 유효성을 확인해야 합니다. 토큰이 만료된 경우 [Identity](https://developer.adobe.com/marketo-apis/api/identity/#tag/Identity/operation/identityUsingGET)endpoint를 호출하여 갱신합니다. 이렇게 하면 만료된 토큰으로 인해 REST 호출이 실패하지 않도록 하는 데 도움이 됩니다. 이를 통해 최종 사용자 대면 애플리케이션에 중요한 예측 가능한 방식으로 REST 호출 지연을 관리할 수 있습니다.
+REST 호출을 수행하기 전에 토큰의 남은 수명을 기준으로 토큰의 유효성을 확인해야 합니다. 토큰이 만료되면 [Identity](https://developer.adobe.com/marketo-apis/api/identity/#tag/Identity/operation/identityUsingGET) 끝점을 호출하여 갱신합니다. 이렇게 하면 만료된 토큰으로 인해 REST 호출이 실패하지 않도록 하는 데 도움이 됩니다. 이를 통해 최종 사용자 대면 애플리케이션에 중요한 예측 가능한 방식으로 REST 호출 지연을 관리할 수 있습니다.
 
 만료된 토큰을 사용하여 REST 호출을 인증하면 REST 호출이 실패하고 602 오류 코드를 반환합니다. REST 호출을 인증하는 데 잘못된 토큰이 사용되는 경우 601 오류 코드가 반환됩니다. 이러한 코드 중 하나를 받으면 클라이언트는 ID 끝점을 호출하여 토큰을 갱신해야 합니다.
 
