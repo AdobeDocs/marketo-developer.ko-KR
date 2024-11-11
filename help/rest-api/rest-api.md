@@ -3,9 +3,9 @@ title: REST API
 feature: REST API
 description: REST API 개요
 exl-id: 4b9beaf0-fc04-41d7-b93a-a1ae3147ce67
-source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
+source-git-commit: ade3216f04c822de14dc0bbcbc08bfa3a4b17cb3
 workflow-type: tm+mt
-source-wordcount: '626'
+source-wordcount: '706'
 ht-degree: 1%
 
 ---
@@ -14,10 +14,10 @@ ht-degree: 1%
 
 Marketo은 시스템 기능 중 대부분을 원격으로 실행할 수 있도록 하는 REST API를 노출합니다. 프로그램 제작에서 리드 일괄 가져오기에 이르기까지 Marketo 인스턴스를 세밀하게 제어할 수 있는 많은 옵션이 있습니다.
 
-이러한 API는 일반적으로 [리드 데이터베이스](https://developer.adobe.com/marketo-apis/api/mapi/) 및 [에셋](https://developer.adobe.com/marketo-apis/api/asset/)의 두 가지 광범위한 범주에 속합니다. 잠재 고객 데이터베이스 API를 통해 Marketo 개인 레코드 및 관련 객체 유형(예: Opportunity 및 Company)을 검색하고 상호 작용할 수 있습니다. 에셋 API를 사용하면 마케팅 자료 및 워크플로우 관련 레코드와 상호 작용할 수 있습니다.
+이러한 API는 일반적으로 [리드 데이터베이스](https://developer.adobe.com/marketo-apis/api/mapi/) 및 [에셋](https://developer.adobe.com/marketo-apis/api/asset/)의 두 가지 광범위한 범주에 속합니다. 잠재 고객 데이터베이스 API를 사용하면 Marketo 개인 레코드 및 관련 객체 유형(예: 영업 기회 및 회사)을 검색하고 상호 작용할 수 있습니다. 에셋 API를 사용하면 마케팅 자료 및 워크플로우 관련 레코드와 상호 작용할 수 있습니다.
 
 - **일일 할당량:** 구독에는 하루에 50,000개의 API 호출이 할당됩니다(매일 오전 12시(CST) 재설정됨). 계정 관리자를 통해 일일 할당량을 늘릴 수 있습니다.
-- **속도 제한:** 인스턴스당 API 액세스가 20초당 100개의 호출로 제한되었습니다.
+- 인스턴스당 **속도 제한:** API 액세스가 20초당 100개의 호출로 제한됩니다.
 - **동시 실행 제한:**  최대 10개의 동시 API 호출.
 
 표준 호출의 크기는 URI 길이 8KB, 본문 크기가 1MB로 제한되지만 본문은 벌크 API의 경우 10MB일 수 있습니다. 호출에 오류가 있는 경우 API는 일반적으로 상태 코드 200을 반환하지만 JSON 응답에는 값이 `false`인 &quot;성공&quot; 멤버와 &quot;오류&quot; 멤버의 오류 배열이 포함됩니다. 오류 [여기](error-codes.md)에 대한 자세한 정보.
@@ -26,7 +26,7 @@ Marketo은 시스템 기능 중 대부분을 원격으로 실행할 수 있도�
 
 다음 단계에는 Marketo 인스턴스에서 관리자 권한이 필요합니다.
 
-Marketo에 대한 첫 번째 호출의 경우 잠재 고객 레코드를 검색합니다. Marketo 작업을 시작하려면 인스턴스에 대해 인증된 호출을 수행하기 위한 API 자격 증명을 획득해야 합니다. 인스턴스에 로그인하고 **[!UICONTROL Admin]** -> **[!UICONTROL Users and Roles]**(으)로 이동합니다.
+Marketo에 대한 첫 번째 호출의 경우 리드 레코드를 검색합니다. Marketo 작업을 시작하려면 인스턴스에 대해 인증된 호출을 수행하기 위한 API 자격 증명을 획득해야 합니다. 인스턴스에 로그인하고 **[!UICONTROL Admin]** -> **[!UICONTROL Users and Roles]**(으)로 이동합니다.
 
 ![관리자 사용자 및 역할](assets/admin-users-and-roles.png)
 
@@ -66,10 +66,20 @@ REST API 상자에서 [!UICONTROL Endpoint]을(를) 찾아 메모에 저장합�
 
 ![REST 끝점](assets/admin-web-services-rest-endpoint-1.png)
 
+REST API 메서드를 호출할 때 호출이 성공하려면 모든 호출에 액세스 토큰을 포함해야 합니다. 액세스 토큰은 HTTP 헤더로 전송해야 합니다.
+
+```
+Authorization: Bearer cdf01657-110d-4155-99a7-f986b2ff13a0:int
+```
+
+>[!IMPORTANT]
+>
+>**access_token** 쿼리 매개 변수를 사용하는 인증 지원이 2025년 6월 30일에 제거됩니다. 프로젝트에서 쿼리 매개 변수를 사용하여 액세스 토큰을 전달하는 경우 가능한 한 빨리 **인증** 헤더를 사용하도록 업데이트해야 합니다. 새 개발에서는 **Authorization** 헤더만 사용해야 합니다.
+
 새 브라우저 탭을 열고 다음 정보를 입력하여 [필터 유형별 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET)를 호출합니다.
 
 ```
-<Your Endpoint URL>/rest/v1/leads.json?access_token=<Your Access Token>&filterType=email&filterValues=<Your Email Address>
+<Your Endpoint URL>/rest/v1/leads.json?&filterType=email&filterValues=<Your Email Address>
 ```
 
 데이터베이스에 전자 메일 주소가 있는 잠재 고객 레코드가 없는 경우, 해당 레코드가 있는 것으로 대체하십시오. URL 막대에서 enter 키를 누르면 다음과 유사한 JSON 응답을 다시 받아야 합니다.
