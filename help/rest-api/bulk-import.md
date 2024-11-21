@@ -3,9 +3,9 @@ title: 일괄 가져오기
 feature: REST API
 description: 개인 데이터를 일괄 가져오는 중.
 exl-id: f7922fd2-8408-4d04-8955-0f8f58914d24
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: e7d893a81d3ed95e34eefac1ee8f1ddd6852f5cc
 workflow-type: tm+mt
-source-wordcount: '554'
+source-wordcount: '592'
 ht-degree: 1%
 
 ---
@@ -24,7 +24,11 @@ Marketo은 일괄 가져오기라고 하는 대규모 개인 및 개인 관련 �
 
 ## 인증
 
-대량 가져오기 API는 다른 Marketo REST API와 동일한 OAuth 2.0 인증 방법을 사용합니다.  이를 위해서는 올바른 액세스 토큰이 쿼리-문자열 매개 변수 `access_token={_AccessToken_}` 또는 HTTP 헤더 `Authorization: Bearer {_AccessToken_}` 중 하나로 포함되어야 합니다.
+대량 가져오기 API는 다른 Marketo REST API와 동일한 OAuth 2.0 인증 방법을 사용합니다.  HTTP 헤더 `Authorization: Bearer {_AccessToken_}`(으)로 보낸 올바른 액세스 토큰이 필요합니다.
+
+>[!IMPORTANT]
+>
+>**access_token** 쿼리 매개 변수를 사용하는 인증 지원이 2025년 6월 30일에 제거됩니다. 프로젝트에서 쿼리 매개 변수를 사용하여 액세스 토큰을 전달하는 경우 가능한 한 빨리 **인증** 헤더를 사용하도록 업데이트해야 합니다. 새 개발에서는 **Authorization** 헤더만 사용해야 합니다.
 
 ## 제한
 
@@ -88,7 +92,7 @@ Easy,Fox,easyfox@marketo.com
 
 각 작업 생성 끝점은 대량 추출 작업의 파일 형식, 필드 이름 및 필터를 구성하기 위한 몇 가지 일반적인 매개 변수를 공유합니다.  추출 작업의 각 하위 유형에는 추가 매개 변수가 있을 수 있습니다.
 
-| 매개 변수 | 데이터 유형 | 참고 사항 |
+| 매개변수 | 데이터 유형 | 참고 |
 |---|---|---|
 | 형식 | 문자열 | 쉼표로 구분된 값, 탭으로 구분된 값 및 세미콜론으로 구분된 값에 대한 옵션을 사용하여 가져온 데이터의 파일 형식을 결정합니다. CSV, SSV, TSV 중 하나를 허용합니다. 형식은 기본적으로 CSV로 설정됩니다. |
 | 파일 | 문자열 | 데이터는 파일의 여러 부분 양식 데이터를 통해 지정됩니다. |

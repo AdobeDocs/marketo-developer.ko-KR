@@ -3,9 +3,9 @@ title: 일괄 추출
 feature: REST API
 description: Marketo 데이터 추출을 위한 일괄 처리 작업.
 exl-id: 6a15c8a9-fd85-4c7d-9f65-8b2e2cba22ff
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: e7d893a81d3ed95e34eefac1ee8f1ddd6852f5cc
 workflow-type: tm+mt
-source-wordcount: '1643'
+source-wordcount: '1683'
 ht-degree: 0%
 
 ---
@@ -25,7 +25,11 @@ Marketo은 대량 추출이라고 하는 대규모 개인 및 개인 관련 데�
 
 ## 인증
 
-벌크 추출 API는 다른 Marketo REST API와 동일한 OAuth 2.0 인증 방법을 사용합니다. 이를 위해서는 올바른 액세스 토큰이 쿼리-문자열 매개 변수 `access_token={_AccessToken_}` 또는 HTTP 헤더 `Authorization: Bearer {_AccessToken_}` 중 하나로 포함되어야 합니다.
+벌크 추출 API는 다른 Marketo REST API와 동일한 OAuth 2.0 인증 방법을 사용합니다. HTTP 헤더 `Authorization: Bearer {_AccessToken_}`(으)로 전송하려면 올바른 액세스 토큰이 필요합니다.
+
+>[!IMPORTANT]
+>
+>**access_token** 쿼리 매개 변수를 사용하는 인증 지원이 2025년 6월 30일에 제거됩니다. 프로젝트에서 쿼리 매개 변수를 사용하여 액세스 토큰을 전달하는 경우 가능한 한 빨리 **인증** 헤더를 사용하도록 업데이트해야 합니다. 새 개발에서는 **Authorization** 헤더만 사용해야 합니다.
 
 ## 제한
 
@@ -113,11 +117,11 @@ POST /bulk/v1/leads/export/create.json
 
 각 작업 생성 끝점은 대량 추출 작업의 파일 형식, 필드 이름 및 필터를 구성하기 위한 몇 가지 일반적인 매개 변수를 공유합니다. 추출 작업의 각 하위 유형에는 추가 매개 변수가 있을 수 있습니다.
 
-| 매개 변수 | 데이터 유형 | 참고 사항 |
+| 매개변수 | 데이터 유형 | 참고 |
 |---|---|---|
 | 형식 | 문자열 | 쉼표로 구분된 값, 탭으로 구분된 값 및 세미콜론으로 구분된 값에 대한 옵션을 사용하여 추출된 데이터의 파일 형식을 결정합니다. CSV, SSV, TSV 중 하나를 허용합니다. 형식은 기본적으로 CSV로 설정됩니다. |
 | 열 머리글 이름 | 오브젝트 | 반환된 파일에서 열 헤더의 이름을 설정할 수 있습니다. 각 멤버 키는 이름을 바꿀 열 헤더의 이름이고 값은 열 헤더의 새 이름입니다. 예를 들어 &quot;columnHeaderNames&quot;: { &quot;firstName&quot;: &quot;First Name&quot;, &quot;lastName&quot;: &quot;Last Name&quot; }, |
-| 필터 | 오브젝트 | 추출 작업에 적용된 필터. 작업 유형에 따라 유형과 옵션이 달라집니다. |
+| filter | 오브젝트 | 추출 작업에 적용된 필터. 작업 유형에 따라 유형과 옵션이 달라집니다. |
 
 
 ## 작업 검색 중

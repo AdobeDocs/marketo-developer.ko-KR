@@ -3,7 +3,7 @@ title: 트랜잭션 이메일
 feature: REST API
 description: 요청 캠페인에 대한 트랜잭션 이메일을 처리합니다.
 exl-id: 057bc342-53f3-4624-a3c0-ae619e0c81a5
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: e7d893a81d3ed95e34eefac1ee8f1ddd6852f5cc
 workflow-type: tm+mt
 source-wordcount: '971'
 ht-degree: 0%
@@ -18,7 +18,7 @@ Marketo API의 일반적인 사용 사례는 [캠페인 요청](https://develope
 - Marketo 인스턴스에 만들고 승인된 트랜잭션 이메일이 있어야 합니다.
 - &quot;캠페인이 요청됨, 1&quot;인 활성 트리거 캠페인이 있어야 합니다. Source: 이메일을 보내도록 설정된 웹 서비스 API&quot;
 
-먼저 [전자 메일을 만들고 승인](https://experienceleague.adobe.com/docs/marketo/using/home.html)하세요. 이메일이 실제로 트랜잭션된 경우, 이를 작동 상태로 설정해야 하지만, 이 경우 적법하게 작동 상태가 됩니다. 이는 이메일 작업 > 이메일 설정 아래의 편집 화면에서 구성됩니다.
+먼저 [전자 메일을 만들고 승인](https://experienceleague.adobe.com/docs/marketo/using/home.html?lang=ko-KR)하세요. 이메일이 실제로 트랜잭션된 경우, 이를 작동 상태로 설정해야 하지만, 이 경우 적법하게 작동 상태가 됩니다. 이는 이메일 작업 > 이메일 설정 아래의 편집 화면에서 구성됩니다.
 
 ![Request-Campaign-Email-Settings](assets/request-campaign-email-settings.png)
 
@@ -135,9 +135,8 @@ public class RequestCampaign {
         JsonObject result = null;
         try {
             JsonObject requestBody = buildRequest(); //builds the Json Request Body
-            String s = endpoint + "?access_token=" + auth.getToken(); //takes the endpoint URL and appends the access_token parameter to authenticate
-            System.out.println("Executing RequestCampaign call\n" + "Endpoint: " + s + "\nRequest Body:\n"  + requestBody);
-            URL url = new URL(s); 
+            System.out.println("Executing RequestCampaign call\n" + "Endpoint: " + endpoint + "\nRequest Body:\n"  + requestBody);
+            URL url = new URL(endpoint);
             HttpsURLConnection urlConn = (HttpsURLConnection) url.openConnection(); //Return a URL connection and cast to HttpsURLConnection
             urlConn.setRequestMethod("POST");
             urlConn.setRequestProperty("Content-type", "application/json");
@@ -183,7 +182,7 @@ public class RequestCampaign {
 
 ### 이메일 작성
 
-콘텐츠를 사용자 지정하려면 먼저 Marketo에서 [프로그램](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/create-a-program.html) 및 [이메일](https://experienceleague.adobe.com/docs/marketo/using/home.html)을 구성해야 합니다. 사용자 지정 콘텐츠를 생성하려면 프로그램 내에 토큰을 만든 다음 전송할 이메일에 배치해야 합니다. 간결성을 위해 이 예제에서는 하나의 토큰만 사용하고 있지만, 보낸 사람 이메일, 보낸 사람 이름, 회신 주소 또는 이메일의 모든 콘텐츠에서 토큰의 숫자를 바꿀 수 있습니다. 그러면 교체를 위해 하나의 리치 텍스트 토큰을 만들고 이를 &quot;bodyReplacement&quot;라고 하겠습니다. 리치 텍스트를 사용하면 토큰의 모든 컨텐츠를 입력하려는 임의의 HTML으로 바꿀 수 있습니다.
+콘텐츠를 사용자 지정하려면 먼저 Marketo에서 [프로그램](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/create-a-program.html) 및 [이메일](https://experienceleague.adobe.com/docs/marketo/using/home.html?lang=ko-KR)을 구성해야 합니다. 사용자 지정 콘텐츠를 생성하려면 프로그램 내에 토큰을 만든 다음 전송할 이메일에 배치해야 합니다. 간결성을 위해 이 예제에서는 하나의 토큰만 사용하고 있지만, 보낸 사람 이메일, 보낸 사람 이름, 회신 주소 또는 이메일의 모든 콘텐츠에서 토큰의 숫자를 바꿀 수 있습니다. 그러면 교체를 위해 하나의 리치 텍스트 토큰을 만들고 이를 &quot;bodyReplacement&quot;라고 하겠습니다. 리치 텍스트를 사용하면 토큰의 모든 컨텐츠를 입력하려는 임의의 HTML으로 바꿀 수 있습니다.
 
 ![새 토큰](assets/New-Token.png)
 
@@ -256,7 +255,7 @@ Token is empty or expired. Trying new authentication
 Trying to authenticate with ...
 Got Authentication Response: {"access_token":"19d51b9a-ff60-4222-bbd5-be8b206f1d40:st","token_type":"bearer","expires_in":3565,"scope":"apiuser@mktosupport.com"}
 Executing RequestCampaign call
-Endpoint: .../rest/v1/campaigns/1578/trigger.json?access_token=19d51b9a-ff60-4222-bbd5-be8b206f1d40:st
+Endpoint: .../rest/v1/campaigns/1578/trigger.json
 Request Body:
 {"input":{"leads":[{"id":1}],"tokens":[{"name":"{{my.bodyReplacement}}","value":"<div class=\"replacedContent\"><p>This content has been replaced</p></div>"}]}}
 Result:
