@@ -5,9 +5,9 @@ breadcrumb-title: "[!DNL Marketo] 개발자 안내서"
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 28b040f6473677abaaa0c73f1bb6e887e9e35a81
+source-git-commit: 8160ddaea848d0aefe4eef89a67f55b210c91f70
 workflow-type: tm+mt
-source-wordcount: '241'
+source-wordcount: '243'
 ht-degree: 14%
 
 ---
@@ -18,14 +18,15 @@ ht-degree: 14%
 - [홈](home.md)
 - [시작하기](getting-started.md)
 - Javascript API {#javascriptapi}
-   - [구성](javascript-api/configuration.md)
    - [사용자 지정 데이터 이벤트](javascript-api/custom-data-events.md)
    - [예시](javascript-api/examples.md)
    - [Forms API 참조](javascript-api/forms-api-reference.md)
    - [방문자 데이터 가져오기](javascript-api/get-visitor-data.md)
    - [Javascript API](javascript-api/javascript-api.md)
-   - [잠재 고객 추적](javascript-api/lead-tracking.md)
-   - [Munchkin API 참조](javascript-api/api-reference.md)
+   - [잠재 고객 추적]{#leadtracking}
+      - [잠재 고객 추적](javascript-api/lead-tracking.md)
+      - [구성](javascript-api/configuration.md)
+      - [Munchkin API 참조](javascript-api/api-reference.md)
    - [패턴 일치](javascript-api/pattern-match.md)
    - [예측 콘텐츠](javascript-api/predictive-content.md)
    - [리디렉션](javascript-api/redirect.md)

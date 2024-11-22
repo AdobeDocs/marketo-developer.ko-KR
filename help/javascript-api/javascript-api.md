@@ -1,9 +1,9 @@
 ---
 title: JAVASCRIPT API
 description: Javascript API
-feature: Munchkin Tracking Code, Javascript
+feature: Munchkin Tracking Code, Forms, Web Personalization, Predictive Content, Social, Javascript
 exl-id: 6129a467-be44-44bd-9e02-62009070c318
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: e63db409981d10cfea6206cf91340428e5d0b17f
 workflow-type: tm+mt
 source-wordcount: '337'
 ht-degree: 0%
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 ## 잠재 고객 추적(Munchkin)
 
-Marketo의 [Munchkin JavaScript 추적 코드](lead-tracking.md)은(는) Marketo의 기능에 대한 키입니다. 웹 사이트 방문에서 리드를 생성할 수 있습니다. 심지어 아직 개인 정보를 제공하지 않은 방문자를 추적하여 사용자의 IP 주소 및 기타 정보를 포함하는 익명 리드를 생성합니다. Marketo의 관리 영역에 있는 Munchkin 페이지에서 Munchkin을 설정합니다.
+Marketo의 [Munchkin JavaScript 추적 코드](lead-tracking.md)는 Marketo의 기능에 대한 키입니다. 웹 사이트 방문에서 리드를 생성할 수 있습니다. 심지어 아직 개인 정보를 제공하지 않은 방문자를 추적하여 사용자의 IP 주소 및 기타 정보를 포함하는 익명 리드를 생성합니다. Munchkin의 관리 영역에 있는 Munchkin 페이지에서 Marketo을 설정합니다.
 
 ## Forms 2.0
 

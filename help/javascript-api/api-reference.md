@@ -1,30 +1,32 @@
 ---
 title: Munchkin API 참조
-description: Munchkin Javascript API를 사용하여 Munchkin 데이터를 사용자 정의합니다.
-feature: Javascript
-source-git-commit: c6c0a492ede415471e10efb6213eb3f590e63ebe
+description: Munchkin Javascript API를 사용하여 Munchkin 데이터를 사용자 지정합니다.
+feature: Munchkin Tracking Code, Javascript
+exl-id: e9727691-5501-4223-bc98-2b4bacc33513
+source-git-commit: 1ad2d793832d882bb32ebf7ef1ecd4148a6ef8d5
 workflow-type: tm+mt
 source-wordcount: '414'
 ht-degree: 7%
 
 ---
 
-
 # Munchkin API 참조
 
-Munchkin은 Javascript를 통해 수동으로 호출할 수 있는 몇 가지 함수를 제공합니다. 이를 통해 비디오 재생 또는 링크가 아닌 클릭 수와 같은 브라우저 이벤트를 사용자 지정할 수 있습니다.
+Munchkin은 Javascript를 통해 수동으로 호출할 수 있는 여러 기능을 제공합니다. 이를 통해 비디오 재생 또는 링크가 아닌 클릭 수와 같은 브라우저 이벤트를 사용자 지정할 수 있습니다.
 
 ## 함수
 
-Munchkin API는 `init`, `createTrackingCookie`, `munchkinFunction` 함수로 구성되어 있습니다.
+Munchkin API는 다음 함수로 구성됩니다. `init`, `createTrackingCookie`, `munchkinFunction`.
+
+<a name="munchkin_init"></a>
 
 ### Munchkin.init()
 
-`Munchkin.init()`을(를) 다른 함수 앞에 호출해야 합니다. 현재 페이지에서 Munchkin을 설정하여 특정 인스턴스로 활동을 보내고 현재 페이지에 대한 &quot;방문 웹 페이지&quot; 활동을 생성합니다.
+`Munchkin.init()`을(를) 다른 함수 앞에 호출해야 합니다. 활동을 특정 인스턴스로 보내도록 현재 페이지에서 Munchkin을 설정하고 현재 페이지에 대한 &quot;방문 웹 페이지&quot; 활동을 생성합니다.
 
 | 매개 변수 이름 | 선택 사항/필수 | 유형 | 설명 |
 | --- | --- | --- | --- |
-| Munchkin ID | 필수 여부 | 문자열 | Admin > Integration > Munchkin 메뉴에서 찾은 Munchkin 계정 ID. 활동을 보낼 대상 인스턴스를 설정합니다. |
+| Munchkin ID | 필수 여부 | 문자열 | Munchkin 계정 ID는 관리 > 통합 > Munchkin 메뉴에서 찾을 수 있습니다. 활동을 보낼 대상 인스턴스를 설정합니다. |
 | [구성 설정](configuration.md) | 선택 사항입니다 | 오브젝트 | Munchkin에 대한 대체 동작 설정을 활성화합니다. |
 
 ```javascript
