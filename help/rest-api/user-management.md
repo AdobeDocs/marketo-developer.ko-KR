@@ -3,9 +3,9 @@ title: 사용자 관리
 feature: REST API
 description: 사용자 레코드에 대한 CRUD 작업을 수행합니다.
 exl-id: 2a58f496-0fe6-4f7e-98ef-e9e5a017c2de
-source-git-commit: 13a567be067a8a1272e981fad4e03b0a8519f132
+source-git-commit: 159c3fe29c26ea0fff718bf582a7e4c9a1740831
 workflow-type: tm+mt
-source-wordcount: '1185'
+source-wordcount: '1180'
 ht-degree: 0%
 
 ---
@@ -23,12 +23,12 @@ Marketo에서는 Marketo의 사용자 레코드에 대해 CRUD 작업을 수행�
    1. [관리자 액세스](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions) 그룹의 &quot;사용자 액세스&quot; 권한
    1. [API 액세스](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions) 그룹에서 &quot;사용자 관리 Api 액세스&quot;
 - 응답 본문에는 호출의 성공 또는 실패를 나타내는 &quot;success&quot; 부울 속성이 포함되어 있지 않습니다. 대신 HTTP 응답 상태 코드를 평가해야 합니다. 호출이 성공하면 200 상태 코드가 반환됩니다. 호출이 실패하면 200개가 아닌 수준 상태 코드가 반환되고 응답 본문에 오류 코드와 설명 오류 메시지가 있는 표준 &quot;오류&quot; 배열이 포함됩니다.
-- 날짜/시간 문자열의 형식은 &quot;yyyyMMdd&#39;T&#39;HH:mm:ss.SSS&#39;t&#39;+|-hhmm&quot;입니다. 이는 createdAt, updatedAt, expiresAt 속성에 적용됩니다.
+- 날짜/시간 문자열의 형식은 `yyyyMMdd'T'HH:mm:ss.SSS't'+|-hhmm`입니다. 이는 `createdAt`, `updatedAt`, `expiresAt` 특성에 적용됩니다.
 - 사용자 관리 API 엔드포인트에는 다른 엔드포인트와 같이 &quot;/rest&quot; 접두사가 붙지 않습니다.
 
 ## 쿼리
 
-사용자 관리를 위한 쿼리 지원에는 모든 사용자, 역할 및 작업 공간을 검색할 수 있는 기능이 포함됩니다. 또한 사용자 ID별로 단일 사용자 레코드를 검색하거나 사용자 ID별로 역할/워드 스페이스 레코드를 검색할 수 있습니다.
+사용자 관리를 위한 쿼리 지원에는 모든 사용자, 역할 및 작업 공간을 검색할 수 있는 기능이 포함됩니다. 또한 사용자 ID로 단일 사용자 레코드를 검색하거나 사용자 ID로 역할/작업 영역 레코드를 검색할 수 있습니다.
 
 ### ID별 사용자
 
