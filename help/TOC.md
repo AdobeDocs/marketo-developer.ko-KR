@@ -5,7 +5,7 @@ breadcrumb-title: "[!DNL Marketo] 개발자 안내서"
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 8160ddaea848d0aefe4eef89a67f55b210c91f70
+source-git-commit: afe7e713fe15d63822625cd0299dc7125761cd33
 workflow-type: tm+mt
 source-wordcount: '243'
 ht-degree: 14%
@@ -23,7 +23,7 @@ ht-degree: 14%
    - [Forms API 참조](javascript-api/forms-api-reference.md)
    - [방문자 데이터 가져오기](javascript-api/get-visitor-data.md)
    - [Javascript API](javascript-api/javascript-api.md)
-   - [잠재 고객 추적]{#leadtracking}
+   - 잠재 고객 추적 {#leadtracking}
       - [잠재 고객 추적](javascript-api/lead-tracking.md)
       - [구성](javascript-api/configuration.md)
       - [Munchkin API 참조](javascript-api/api-reference.md)
@@ -60,8 +60,8 @@ ht-degree: 14%
       - [폴더](rest-api/folders.md)
       - [Forms](rest-api/forms.md)
       - [랜딩 페이지](rest-api/landing-pages.md)
-      - [랜딩 페이지 템플릿](rest-api/landing-page-templates.md)
       - [랜딩 페이지 리디렉션 규칙](rest-api/landing-page-redirect-rules.md)
+      - [랜딩 페이지 템플릿](rest-api/landing-page-templates.md)
       - [표준 필드 목록](rest-api/list-of-standard-fields.md)
       - [프로그램](rest-api/programs.md)
       - [스마트 캠페인](rest-api/smart-campaigns.md)
