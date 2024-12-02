@@ -14,7 +14,7 @@ ht-degree: 1%
 
 이 항목에서는 Marketo Cordova 플러그인을 통합하는 방법을 설명합니다. [!DNL Ionic] 커패시터는 현재 지원되지 않습니다.
 
-## 필요 조건
+## 전제 조건
 
 1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)(응용 프로그램 비밀 키 및 Munchkin Id 얻기).
 1. 푸시 알림 설정([iOS](push-notifications.md) | [Android](push-notifications.md) ).
@@ -99,7 +99,7 @@ marketo.onStart(
 
 - Success Callback : Marketo 프레임워크가 성공적으로 초기화된 경우 실행할 함수입니다.
 - Failure Callback : Marketo 프레임워크를 초기화하지 못할 경우 실행할 함수입니다.
-- MUNCHKIN ID : 등록 시 Marketo에서 받은 Munchkin ID입니다.
+- MUNCHKIN ID : 등록 시 Munchkin ID가 Marketo에서 수신되었습니다.
 - 비밀 키 : 등록 시 Marketo에서 받은 비밀 키.
 
 ### Marketo 푸시 알림 초기화

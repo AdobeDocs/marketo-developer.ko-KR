@@ -1,14 +1,14 @@
 ---
-user-guide-title: "[!DNL Marketo] 개발자 안내서"
-user-guide-description: "이 안내서에서는  [!DNL Marketo] API 사용에 대한 지침을 제공합니다."
-breadcrumb-title: "[!DNL Marketo] 개발자 안내서"
+user-guide-title: '[!DNL Marketo] 개발자 안내서'
+user-guide-description: 이 안내서에서는  [!DNL Marketo] API 사용에 대한 지침을 제공합니다.
+breadcrumb-title: '[!DNL Marketo] 개발자 안내서'
 role: Admin
 feature-set: "Marketo Engage"
 index: true
 source-git-commit: afe7e713fe15d63822625cd0299dc7125761cd33
 workflow-type: tm+mt
 source-wordcount: '243'
-ht-degree: 14%
+ht-degree: 16%
 
 ---
 

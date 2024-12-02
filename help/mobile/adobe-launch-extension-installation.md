@@ -14,9 +14,9 @@ ht-degree: 0%
 
 [!DNL Adobe Launch] Marketo 확장에 대한 설치 지침. 아래 단계는 푸시 알림 및/또는 인앱 메시지를 보내는 데 필요합니다.
 
-## 필요 조건
+## 전제 조건
 
-1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)(응용 프로그램 비밀 키 및 Munchkin Id 얻기)
+1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)(응용 프로그램 비밀 키 및 Munchkin ID 얻기)
 1. [포털에서 속성 구성 [!DNL Adobe Launch] 포털](https://experience.adobe.com/#/@amc/data-collection/home)
 1. [!DNL Adobe Launch] 포털에서 속성에 대한 응용 프로그램 비밀 키 및 Munchkin ID를 구성합니다.
 1. [푸시 알림 설정](push-notifications.md)(선택 사항)
