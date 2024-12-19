@@ -2,15 +2,15 @@
 title: REST API로 마이그레이션
 feature: SOAP
 description: SOAP에서 REST API로 마이그레이션
-source-git-commit: 8ad3e3f0958ea705375651b1c8a75967d807ca80
+source-git-commit: 4c410afbe8ccfff644376670b8990fac671459eb
 workflow-type: tm+mt
-source-wordcount: '643'
-ht-degree: 1%
+source-wordcount: '646'
+ht-degree: 0%
 
 ---
 
 
-# 개요
+# REST API로 마이그레이션
 
 Marketo Engage SOAP API는 2025년 10월 31일 이후 중단됩니다. SOAP API를 사용하는 기존의 모든 통합은 서비스가 중단되지 않도록 하려면 이 날짜까지 [Marketo Engage REST API](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/rest-api)(으)로 중단되거나 마이그레이션되어야 합니다.
 
