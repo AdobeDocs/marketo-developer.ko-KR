@@ -3,9 +3,9 @@ title: 잠재 고객 추적
 description: 잠재 고객 추적 API
 feature: Munchkin Tracking Code, Javascript
 exl-id: 7ece5133-9d32-4be3-a940-4ac0310c4d8b
-source-git-commit: 1ad2d793832d882bb32ebf7ef1ecd4148a6ef8d5
+source-git-commit: 8ad3e3f0958ea705375651b1c8a75967d807ca80
 workflow-type: tm+mt
-source-wordcount: '767'
+source-wordcount: '764'
 ht-degree: 0%
 
 ---
@@ -74,7 +74,7 @@ Munchkin의 동작은 `cookieAnon` 설정으로 페이지를 방문할 때 모�
 
 - 잠재 고객은 추적된 Marketo 이메일 링크의 쿼리 문자열에 `mkt_tok` 매개 변수가 있는 Munchkin 추적 페이지를 방문해야 합니다.
 - 잠재 고객은 Marketo Form을 작성해야 합니다.
-- SOAP [syncLead](../soap-api/leads.md) 또는 REST [리드 연결](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST) 호출을 보내야 합니다.
+- REST [리드 연결](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST) 호출을 보내야 합니다.
 
 이러한 조건 중 하나가 충족되면 쿠키 및 연결된 모든 웹 활동이 알려진 리드와 연결됩니다.
 

@@ -5,10 +5,10 @@ breadcrumb-title: '[!DNL Marketo] 개발자 안내서'
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: afe7e713fe15d63822625cd0299dc7125761cd33
+source-git-commit: 8ad3e3f0958ea705375651b1c8a75967d807ca80
 workflow-type: tm+mt
-source-wordcount: '243'
-ht-degree: 16%
+source-wordcount: '247'
+ht-degree: 15%
 
 ---
 
@@ -142,6 +142,7 @@ ht-degree: 16%
       - [[!DNL listMObjects]](soap-api/listmobjects.md)
       - [Marketo 개체](soap-api/marketo-objects.md)
       - [[!DNL syncMObjects]](soap-api/syncmobjects.md)
+   - [REST API로 마이그레이션](soap-api/migration.md)
    - 프로그램 {#programs}
       - [[!DNL getChannels]](soap-api/getchannels.md)
       - [[!DNL getTags]](soap-api/gettags.md)

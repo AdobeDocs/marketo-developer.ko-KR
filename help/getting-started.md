@@ -2,9 +2,9 @@
 title: 시작하기
 description: Marketo Engage API 시작
 exl-id: 78c44c32-4e59-4d55-a45c-ef0d7dac814d
-source-git-commit: 7a3df193e47e7ee363c156bf24f0941879c6bd13
+source-git-commit: 490411e411bed7b5b76fd9e5f41ccc9d156b2ba9
 workflow-type: tm+mt
-source-wordcount: '1265'
+source-wordcount: '1337'
 ht-degree: 0%
 
 ---
@@ -13,7 +13,11 @@ ht-degree: 0%
 
 Marketo Engage은 마케터가 잠재 고객 및 고객에게 개인화된 멀티채널 프로그램 및 캠페인을 관리할 수 있도록 하는 마케팅 자동화 플랫폼입니다. 통합 포인트를 사용하여 Marketo Engage 플랫폼을 확장할 수 있습니다. 아래에서 핵심 엔티티와 해당 관계를 찾을 수 있습니다.
 
-기본 동기화가 활성화된 경우 REST API를 통해 회사, 영업 기회, 영업 기회 역할, 영업 사원과 같은 개체를 사용할 수 없습니다.
+>[!NOTE]
+>SOAP API는 더 이상 사용되지 않으며 2025년 10월 31일 이후부터 더 이상 사용할 수 없습니다. 모든 새 개발은 Marketo [REST API](./rest-api/rest-api.md)를 사용하여 수행해야 하며, 서비스가 중단되지 않도록 기존 서비스를 해당 날짜까지 마이그레이션해야 합니다. SOAP API를 사용하는 서비스가 있는 경우 마이그레이션 방법에 대한 자세한 내용은 SOAP API [마이그레이션 안내서](./soap-api/migration.md)를 참조하십시오.
+>
+
+Marketo Engage 인스턴스에서 기본 SFDC 또는 MS Dynamics CRM 연결을 활성화하면 회사, 영업 기회, 영업 기회 역할, 영업 담당자 등의 개체가 읽기 전용입니다
 
 ![데이터 모델](assets/data_model.png)
 
