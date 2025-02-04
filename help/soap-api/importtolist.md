@@ -3,9 +3,9 @@ title: 가져오기 대상 목록
 feature: SOAP
 description: importToList SOAP 호출
 exl-id: 7e4930a9-a78f-44a3-9e8c-eeca908080c8
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 8a019985fc9ce7e1aa690ca26bfa263cd3c48cfc
 workflow-type: tm+mt
-source-wordcount: '317'
+source-wordcount: '393'
 ht-degree: 3%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 3%
 | mary@company.com | Mary | 로저스 |
 | wanda@megacorp.com | 완다 | 윌리엄스 |
 
-**참고:** `displayName` 값은 `name` 값이 아닌 `importFileHeader`에서 사용해야 합니다.
+`name` 값이 아닌 `importFileHeader`에서 `displayName` 값을 사용해야 합니다.
 
 **다이내믹 전자 메일 콘텐츠:** 선택적으로, 전자 메일에서 내 토큰에 대한 대체 요소로 작용하는 리드별로 값을 전달할 수 있습니다.
 
@@ -36,19 +36,21 @@ ht-degree: 3%
 
 **중요:** 잠재 고객에 대한 토큰을 추가하는 경우 해당 토큰을 사용하는 Smart Campaign을 지정해야 합니다. 다음에 지정된 스마트 캠페인이 실행될 때 일반 내 토큰 값 대신 목록의 값이 사용됩니다. 단일 Campaign 실행 후 토큰이 삭제됩니다.
 
-**참고:** `importToList`은(는) 특히 큰 목록의 경우 완료하는 데 시간이 걸릴 수 있습니다. 다른 API 호출에서 새로 가져온 목록을 사용하려면 `importToListStatus`을(를) 사용하여 작업이 완료되었는지 확인해야 합니다.
+`importToList`은(는) 특히 큰 목록의 경우 완료하는 데 시간이 걸릴 수 있습니다. 다른 API 호출에서 새로 가져온 목록을 사용하려면 `importToListStatus`을(를) 사용하여 작업이 완료되었는지 확인해야 합니다.
+
+**참고:** CSV 파일의 숫자 필드에 대해 NULL 값을 가져오면 해당 필드에 대해 &quot;데이터 값 변경&quot; 활동이 생성될 수 있습니다. 필드가 이미 비어 있는 경우에도 마찬가지입니다. &quot;데이터 값 변경됨&quot; 필터 또는 &quot;데이터 값 변경&quot; 트리거를 사용하는 모든 스마트 캠페인은 데이터가 실제로 변경되지 않더라도 해당 캠페인에 대한 잠재 고객의 자격을 초래할 수 있습니다. 이러한 필터/트리거에 대한 제한을 사용하여 가져오기를 수행할 때 리드가 잘못된 캠페인에 적합하지 않도록 하십시오.
 
 ## 요청
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
-| programName | 필수 | 정적 목록이 포함된 프로그램 이름 |
-| campaignName | 선택 사항 | 내 토큰 재정의를 사용하는 경우 이는 해당 토큰이 사용될 캠페인의 이름입니다. 캠페인은 지정된 프로그램 내에 있어야 합니다. |
-| listName | 필수 | 리드가 추가되는 Marketo의 정적 목록 이름 |
-| importFileHeader | 필수 | 리드 속성 및 내 토큰 이름을 포함하여 가져올 리드에 대한 열 헤더입니다. |
-| importFileRows->stringItem | 필수 | 쉼표로 구분된 값, 리드당 하나의 행 포함 |
-| importListMode | 필수 | 유효한 옵션: `UPSERTLEADS` 및 `LISTONLY` |
-| clearList | 선택 사항 | true인 경우 가져오기 전에 정적 목록이 지워지고 false인 경우 잠재 고객이 추가됩니다. |
+| programName | 필수 여부 | 정적 목록이 포함된 프로그램 이름 |
+| campaignName | 선택 사항입니다 | 내 토큰 재정의를 사용하는 경우 이는 해당 토큰이 사용될 캠페인의 이름입니다. 캠페인은 지정된 프로그램 내에 있어야 합니다. |
+| listName | 필수 여부 | 리드가 추가되는 Marketo의 정적 목록 이름 |
+| importFileHeader | 필수 여부 | 리드 속성 및 내 토큰 이름을 포함하여 가져올 리드에 대한 열 헤더입니다. |
+| importFileRows->stringItem | 필수 여부 | 쉼표로 구분된 값, 리드당 하나의 행 포함 |
+| importListMode | 필수 여부 | 유효한 옵션: `UPSERTLEADS` 및 `LISTONLY` |
+| clearList | 선택 사항입니다 | true인 경우 가져오기 전에 정적 목록이 지워지고 false인 경우 잠재 고객이 추가됩니다. |
 
 ## 요청 XML
 
