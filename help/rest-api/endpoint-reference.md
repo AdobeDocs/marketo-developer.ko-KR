@@ -3,9 +3,9 @@ title: 끝점 참조
 feature: REST API
 description: Marketo API 끝점 참조
 exl-id: 27d16b6f-865a-4e40-ab9c-cbabe2927472
-source-git-commit: 8a019985fc9ce7e1aa690ca26bfa263cd3c48cfc
+source-git-commit: f28aa6daf53063381077b357061fe7813c64b5de
 workflow-type: tm+mt
-source-wordcount: '4676'
+source-wordcount: '4677'
 ht-degree: 3%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 3%
 - [리드 데이터베이스](https://developer.adobe.com/marketo-apis/api/mapi/)
 - [사용자 관리](https://developer.adobe.com/marketo-apis/api/user/)
 
-## 엔드포인트 목록
+## 엔드포인트 목록(#endpoint_list)
 
 다음은 REST API 엔드포인트의 포괄적인 목록입니다.
 
@@ -41,7 +41,7 @@ ht-degree: 3%
 | 페이징 토큰 가져오기 | 활동 | GET | /rest/v1/activities/pagingtoken.json | 읽기 전용 활동 |
 | 사용자 지정 활동 유형 업데이트 | 활동 | POST | /rest/v1/activities/external/type/{apiName}.json | 읽기-쓰기 활동 메타데이터 |
 | 사용자 지정 활동 유형 속성 업데이트 | 활동 | POST | /rest/v1/activities/external/type/{apiName}/attributes/update.json | 읽기-쓰기 활동 메타데이터 |
-| ID | 인증 | GET 또는 POST | /identity/oauth/token | None |
+| ID | 인증 | GET 또는 게시물 | /identity/oauth/token | None |
 | 활동 내보내기 작업 취소 | 일괄 내보내기 활동 | POST | /bulk/v1/activities/export/{exportid}/cancel.json | 읽기 전용 활동 |
 | 내보내기 활동 작업 만들기 | 일괄 내보내기 활동 | POST | /bulk/v1/activities/export/create.json | 읽기 전용 활동 |
 | 활동 내보내기 작업 큐에 넣기 | 일괄 내보내기 활동 | POST | /bulk/v1/activities/export/{exportid}/enqueue.json | 읽기 전용 활동 |
