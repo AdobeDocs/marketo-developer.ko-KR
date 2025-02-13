@@ -3,9 +3,9 @@ title: 끝점 참조
 feature: REST API
 description: Marketo API 끝점 참조
 exl-id: 27d16b6f-865a-4e40-ab9c-cbabe2927472
-source-git-commit: f28aa6daf53063381077b357061fe7813c64b5de
+source-git-commit: 3632d2b713d97a2c895c65f144c07e62e1d369cb
 workflow-type: tm+mt
-source-wordcount: '4677'
+source-wordcount: '4676'
 ht-degree: 3%
 
 ---
@@ -19,7 +19,7 @@ ht-degree: 3%
 - [리드 데이터베이스](https://developer.adobe.com/marketo-apis/api/mapi/)
 - [사용자 관리](https://developer.adobe.com/marketo-apis/api/user/)
 
-## 엔드포인트 목록(#endpoint_list)
+## 엔드포인트 목록 {#endpoint_list}
 
 다음은 REST API 엔드포인트의 포괄적인 목록입니다.
 
