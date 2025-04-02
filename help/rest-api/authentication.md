@@ -3,9 +3,9 @@ title: 인증
 feature: REST API
 description: API 사용을 위한 Marketo 사용자 인증.
 exl-id: f89a8389-b50c-4e86-a9e4-6f6acfa98e7e
-source-git-commit: 9830572277db2709c6853bea56fc70c455fd5e54
+source-git-commit: 9582f7ac5998b670dd04cc6529db23f558c0e18e
 workflow-type: tm+mt
-source-wordcount: '564'
+source-wordcount: '610'
 ht-degree: 0%
 
 ---
@@ -51,15 +51,27 @@ GET <Identity URL>/oauth/token?grant_type=client_credentials&client_id=<Client I
 ## 액세스 토큰 사용
 
 REST API 메서드를 호출할 때 호출이 성공하려면 모든 호출에 액세스 토큰을 포함해야 합니다.
+액세스 토큰은 HTTP 헤더로 전송해야 합니다.
 
 >[!IMPORTANT]
 >
 >**access_token** 쿼리 매개 변수를 사용하는 인증 지원이 2025년 6월 30일에 제거됩니다. 프로젝트에서 쿼리 매개 변수를 사용하여 액세스 토큰을 전달하는 경우 가능한 한 빨리 **인증** 헤더를 사용하도록 업데이트해야 합니다. 새 개발에서는 **Authorization** 헤더만 사용해야 합니다.
 
-액세스 토큰은 HTTP 헤더로 전송해야 합니다. 예를 들어 CURL 요청에서 다음을 수행합니다.
+### 인증 헤더로 전환
+
+
+`access_token` 쿼리 매개 변수를 사용에서 인증 헤더로 전환하려면 작은 코드 변경이 필요합니다.
+
+CURL을 예로 들면 이 코드는 `access_token` 값을 양식 매개 변수로 보냅니다(-F 플래그).
 
 ```bash
-$ curl -H 'Authorization: Bearer cdf01657-110d-4155-99a7-f984b2ff13a0:int`' 'https://123-ABC-456.mktourl.com/rest/v1/apicall.json?filterType=id&filterValues=4,5,7,12,13'
+curl ...  -F access_token=<Access Token> <REST API Endpoint Base URL>/bulk/v1/apiCall.json
+```
+
+이 코드는 `Authorization: Bearer` http 헤더와 동일한 값(-H 플래그)을 보냅니다.
+
+```bash
+curl ... -H 'Authorization: Bearer <Access Token>' <REST API Endpoint Base URL>/bulk/v1/apiCall.json
 ```
 
 ## 팁 및 모범 사례
