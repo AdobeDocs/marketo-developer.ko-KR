@@ -3,10 +3,10 @@ title: 일괄 활동 추출
 feature: REST API
 description: Marketo에서 활동 데이터를 일괄 처리합니다.
 exl-id: 6bdfa78e-bc5b-4eea-bcb0-e26e36cf6e19
-source-git-commit: 8c22255673fee1aa0f5b47393a241fcf6680778b
+source-git-commit: 9830572277db2709c6853bea56fc70c455fd5e54
 workflow-type: tm+mt
-source-wordcount: '1343'
-ht-degree: 2%
+source-wordcount: '1342'
+ht-degree: 3%
 
 ---
 
@@ -205,7 +205,7 @@ GET /bulk/v1/activities/export/{exportId}/status.json
 
 상태 필드는 다음 값 중 하나로 응답할 수 있습니다.
 
-- 제작
+- 생성됨
 - 대기열에 추가됨
 - 처리 중
 - 취소됨
@@ -222,7 +222,7 @@ GET /bulk/v1/activities/export/{exportId}/file.json
 
 응답에는 작업이 구성된 방식으로 포맷된 파일이 포함됩니다. 끝점이 파일의 내용에 응답합니다.
 
-요청한 리드 필드가 비어 있으면(데이터 없음) `then null`이(가) 내보내기 파일의 해당 필드에 배치됩니다.  아래 예에서 반환된 활동의 campaignId 필드는 비어 있습니다.
+요청한 리드 필드가 비어 있으면(데이터 없음) `then null`이(가) 내보내기 파일의 해당 필드에 배치됩니다.  아래 예제에서는 반환된 활동의 `campaignId` 필드가 비어 있습니다.
 
 ```json
 marketoGUID,leadId,activityDate,activityTypeId,campaignId,primaryAttributeValueId,primaryAttributeValue,attributes
