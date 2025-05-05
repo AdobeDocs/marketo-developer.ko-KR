@@ -73,13 +73,13 @@ ht-degree: 15%
    - [인증](rest-api/authentication.md)
    - [기본 URL](rest-api/base-url.md)
    - [우수 사례](rest-api/marketo-integration-best-practices.md)
-   - {#bulk-extract} 일괄 추출
+   - 일괄 추출{#bulk-extract}
       - [일괄 활동](rest-api/bulk-activity-extract.md)
       - [대량 사용자 지정 개체](rest-api/bulk-custom-object-extract.md)
       - [일괄 추출](rest-api/bulk-extract.md)
       - [일괄 리드](rest-api/bulk-lead-extract.md)
       - [일괄 프로그램 구성원](rest-api/bulk-program-member-extract.md)
-   - {#bulk-import} 일괄 가져오기
+   - 일괄 가져오기{#bulk-import}
       - [대량 사용자 지정 개체](rest-api/bulk-custom-object-import.md)
       - [일괄 가져오기](rest-api/bulk-import.md)
       - [일괄 리드](rest-api/bulk-lead-import.md)
@@ -128,7 +128,7 @@ ht-degree: 15%
       - [[!DNL getCustomObjects]](soap-api/getcustomobjects.md)
       - [[!DNL syncCustomObjects]](soap-api/synccustomobjects.md)
    - [오류 코드](soap-api/error-codes.md)
-   - {#leads} 리드
+   - 리드{#leads}
       - [[!DNL getLead]](soap-api/getlead.md)
       - [[!DNL getMultipleLeads]](soap-api/getmultipleleads.md)
       - [[!DNL mergeLeads]](soap-api/mergeleads.md)

@@ -208,7 +208,7 @@ Android용 MME SDK(Software Development Kit)가 Android 앱 개발자를 위한 
 
 1. Android 앱에서 최신 Marketo Android SDK를 통합합니다.  단계는 [GitHub](https://github.com/Marketo/android-sdk)에서 확인할 수 있습니다.
 1. Firebase 콘솔에서 Firebase 앱을 구성합니다.
-   1. [](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/)Firebase 콘솔에서 프로젝트를 만들거나 추가합니다.
+   1. [&#128279;](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/)Firebase 콘솔에서 프로젝트를 만들거나 추가합니다.
       1. [Firebase 콘솔](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/)에서 `Add Project`을(를) 선택합니다.
       1. 기존 Google Cloud 프로젝트 목록에서 GCM 프로젝트를 선택하고 `Add Firebase`을(를) 선택합니다.
       1. Firebase 시작 화면에서 `Add Firebase to your Android App`을(를) 선택합니다.
