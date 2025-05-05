@@ -14,7 +14,7 @@ ht-degree: 0%
 
 [프로그램 구성원 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Program-Members)
 
-Marketo은 프로그램 멤버 레코드를 읽고, 만들고, 업데이트하고, 삭제하기 위한 API를 노출합니다. 프로그램 구성원 레코드는 잠재 고객 ID 필드를 통해 잠재 고객 레코드와 관련되어 있습니다. 레코드는 표준 필드 세트와 선택적으로 최대 20개의 추가 사용자 정의 필드로 구성됩니다. 필드에는 각 멤버에 대한 프로그램별 데이터가 포함되어 있으며 양식, 필터, 트리거 및 흐름 작업에 사용할 수 있습니다. 이 데이터는 Marketo Engage UI의 프로그램 [구성원 탭](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/manage-and-view-members)에서 볼 수 있습니다.
+Marketo은 프로그램 멤버 레코드를 읽고, 만들고, 업데이트하고, 삭제하기 위한 API를 노출합니다. 프로그램 구성원 레코드는 잠재 고객 ID 필드를 통해 잠재 고객 레코드와 관련되어 있습니다. 레코드는 표준 필드 세트와 선택적으로 최대 20개의 추가 사용자 정의 필드로 구성됩니다. 필드에는 각 멤버에 대한 프로그램별 데이터가 포함되어 있으며 양식, 필터, 트리거 및 흐름 작업에 사용할 수 있습니다. 이 데이터는 Marketo Engage UI의 프로그램 [구성원 탭](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/manage-and-view-members)에서 볼 수 있습니다.
 
 ## 설명
 
@@ -597,9 +597,9 @@ GET /rest/v1/programs/members/schema/fields.json?batchSize=5
 
 ### 필드 만들기
 
-[프로그램 구성원 필드 만들기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Program-Members/operation/createProgramMemberFieldUsingPOST) 끝점은 프로그램 구성원 개체에 사용자 지정 필드를 하나 이상 만듭니다. 이 끝점은 Marketo Engage UI에서 [사용할 수 있는 기능](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/program-member-custom-fields)과 비슷한 기능을 제공합니다. 이 끝점을 사용하여 최대 20개의 사용자 지정 필드를 만들 수 있습니다.
+[프로그램 구성원 필드 만들기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Program-Members/operation/createProgramMemberFieldUsingPOST) 끝점은 프로그램 구성원 개체에 사용자 지정 필드를 하나 이상 만듭니다. 이 끝점은 Marketo Engage UI에서 [사용할 수 있는 기능](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/program-member-custom-fields)과 비슷한 기능을 제공합니다. 이 끝점을 사용하여 최대 20개의 사용자 지정 필드를 만들 수 있습니다.
 
-API를 사용하여 Marketo Engage의 프로덕션 인스턴스에서 만드는 각 필드를 신중하게 고려합니다. 필드를 만든 후에는 삭제할 수 없습니다([숨길 수만 있음](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/field-management/delete-a-custom-field-in-marketo)). 사용하지 않는 필드의 확산은 인스턴스에 혼란을 가중시킬 나쁜 관행입니다.
+API를 사용하여 Marketo Engage의 프로덕션 인스턴스에서 만드는 각 필드를 신중하게 고려합니다. 필드를 만든 후에는 삭제할 수 없습니다([숨길 수만 있음](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/field-management/delete-a-custom-field-in-marketo)). 사용하지 않는 필드의 확산은 인스턴스에 혼란을 가중시킬 나쁜 관행입니다.
 
 필수 `input` 매개 변수는 프로그램 멤버 필드 개체의 배열입니다. 각 객체에는 하나 이상의 속성이 포함됩니다. 필수 특성은 각각 필드의 UI 표시 이름, 필드의 API 이름 및 필드 형식에 해당하는 `displayName`, `name` 및 `dataType`입니다. 선택적으로 `description`, `isHidden`, `isHtmlEncodingInEmail` 및 `isSensitive`을(를) 지정할 수 있습니다.
 

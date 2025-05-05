@@ -15,7 +15,7 @@ ht-degree: 0%
 Marketo의 인앱 메시지 기능을 사용하려면 다음 단계를 수행해야 합니다.
 
 1. [모바일 설치](installation.md)에 설명된 대로 Marketo Mobile SDK를 설치합니다.
-1. [모바일 앱 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)에 설명된 대로 모바일 앱을 Marketo에 추가하십시오.
+1. [모바일 앱 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)에 설명된 대로 모바일 앱을 Marketo에 추가하십시오.
 1. 모바일 앱에 코드를 추가하여 [사용자 지정 작업](custom-actions.md)을(를) 캡처할 수도 있습니다.
 
 Marketo Mobile SDK를 설치하고 Marketo에서 앱 추가를 완료하면 사용자가 앱을 열 때 표시되는 인앱 메시지를 전송할 수 있습니다.
@@ -34,4 +34,4 @@ Marketo은 Marketo Mobile SDK가 Marketo Platform으로 초기화된 후에만 �
 
 탭 활동을 추적하고 탭 수에 따라 기본 표시 빈도를 사용하려면 기본 또는 보조 단추 중 하나에 &quot;닫기&quot; 이외의 작업을 할당해야 합니다.
 
-자세한 내용은 제품 설명서의 [인앱 메시지](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/in-app-messages/creating-in-app-messages/create-an-in-app-message) 섹션을 참조하십시오.
+자세한 내용은 제품 설명서의 [인앱 메시지](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/in-app-messages/creating-in-app-messages/create-an-in-app-message) 섹션을 참조하십시오.

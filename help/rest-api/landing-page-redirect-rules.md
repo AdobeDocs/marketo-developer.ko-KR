@@ -16,7 +16,7 @@ ht-degree: 2%
 
 Marketo은 랜딩 페이지 리디렉션 URL에서 CRUD 작업을 수행하기 위한 REST API 세트를 제공합니다. 이러한 API는 쿼리, 만들기, 업데이트 및 삭제 옵션을 제공하는 에셋 API에 대한 표준 인터페이스 패턴을 따릅니다.
 
-랜딩 페이지 리디렉션 규칙은 랜딩 페이지 URL을 다른 페이지 URL로 리디렉션하는 기능을 제공합니다. Marketo 랜딩 페이지, Marketo이 아닌 랜딩 페이지 또는 이들의 조합을 리디렉션할 수 있습니다. 리디렉션 랜딩 페이지 규칙에 대한 추가 정보는 [여기](https://experienceleague.adobe.com/docs/marketo/using/home.html)에서 확인할 수 있습니다.
+랜딩 페이지 리디렉션 규칙은 랜딩 페이지 URL을 다른 페이지 URL로 리디렉션하는 기능을 제공합니다. Marketo 랜딩 페이지, Marketo이 아닌 랜딩 페이지 또는 이들의 조합을 리디렉션할 수 있습니다. 리디렉션 랜딩 페이지 규칙에 대한 추가 정보는 [여기](https://experienceleague.adobe.com/docs/marketo/using/home.html?lang=ko)에서 확인할 수 있습니다.
 
 ## 쿼리
 
@@ -156,7 +156,7 @@ GET /rest/asset/v1/redirectRules.json&maxReturn=3
 | Marketo | 랜딩 페이지 ID | {&quot;type&quot;:&quot;landingPageId&quot;,&quot;value&quot;:&quot;1774&quot;} |
 | 비 Marketo | url | {&quot;type&quot;:&quot;url&quot;,&quot;value&quot;:&quot;www.contactLogs.com&quot;} |
 
-랜딩 페이지 리디렉션 규칙을 만드는 방법에 대한 자세한 내용은 [여기](https://experienceleague.adobe.com/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-actions/redirect-a-marketo-landing-page-to-another-page.html)에서 확인할 수 있습니다.
+랜딩 페이지 리디렉션 규칙을 만드는 방법에 대한 자세한 내용은 [여기](https://experienceleague.adobe.com/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-actions/redirect-a-marketo-landing-page-to-another-page.html?lang=ko)에서 확인할 수 있습니다.
 
 ```
 POST /rest/asset/v1/redirectRules.json

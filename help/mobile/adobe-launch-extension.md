@@ -16,7 +16,7 @@ ht-degree: 0%
 
 ## 필요 조건
 
-- [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)(응용 프로그램 비밀 키 및 Munchkin Id 얻기)
+- [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)(응용 프로그램 비밀 키 및 Munchkin Id 얻기)
 - 설치를 위해 [!DNL Adobe Launch] 포털에 제공된 지침을 따르십시오.
 - [푸시 알림 설정](push-notifications.md)(선택 사항)
 

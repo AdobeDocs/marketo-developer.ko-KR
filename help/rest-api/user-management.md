@@ -19,9 +19,9 @@ Marketo에서는 Marketo의 사용자 레코드에 대해 CRUD 작업을 수행�
 다른 Marketo REST API와 달리 사용자 관리 API를 사용할 경우:
 
 - 인증할 액세스 토큰을 전송하려면 HTTP 헤더 메서드를 사용해야 합니다. 액세스 토큰을 쿼리 문자열 매개 변수로 전달할 수 없습니다. 인증에 대한 자세한 내용은 [여기](authentication.md)를 참조하세요.
-- REST API용 [사용자 지정 서비스](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/create-a-custom-service-for-use-with-rest-api)에 대한 사용자 역할을 만들 때 두 개의 다른 그룹에서 역할 권한을 선택해야 합니다.
-   1. [관리자 액세스](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions) 그룹의 &quot;사용자 액세스&quot; 권한
-   1. [API 액세스](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions) 그룹에서 &quot;사용자 관리 Api 액세스&quot;
+- REST API용 [사용자 지정 서비스](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/additional-integrations/create-a-custom-service-for-use-with-rest-api)에 대한 사용자 역할을 만들 때 두 개의 다른 그룹에서 역할 권한을 선택해야 합니다.
+   1. [관리자 액세스](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions) 그룹의 &quot;사용자 액세스&quot; 권한
+   1. [API 액세스](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions) 그룹에서 &quot;사용자 관리 Api 액세스&quot;
 - 응답 본문에는 호출의 성공 또는 실패를 나타내는 &quot;success&quot; 부울 속성이 포함되어 있지 않습니다. 대신 HTTP 응답 상태 코드를 평가해야 합니다. 호출이 성공하면 200 상태 코드가 반환됩니다. 호출이 실패하면 200개가 아닌 수준 상태 코드가 반환되고 응답 본문에 오류 코드와 설명 오류 메시지가 있는 표준 &quot;오류&quot; 배열이 포함됩니다.
 - 날짜/시간 문자열의 형식은 `yyyyMMdd'T'HH:mm:ss.SSS't'+|-hhmm`입니다. 이는 `createdAt`, `updatedAt`, `expiresAt` 특성에 적용됩니다.
 - 사용자 관리 API 엔드포인트에는 다른 엔드포인트와 같이 &quot;/rest&quot; 접두사가 붙지 않습니다.
@@ -298,9 +298,9 @@ GET /userservice/management/v1/users/workspaces.json
 
 ## 사용자 초대
 
-[Adobe IMS 통합 구독](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-with-adobe-identity/adobe-identity-management-overview)에서 이 끝점은 [API 전용 사용자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/create-an-api-only-user)의 초대를 지원합니다. [표준 사용자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users)를 초대하려면 대신 [Adobe 사용자 관리 API](https://developer.adobe.com/umapi/)를 사용하십시오.
+[Adobe IMS 통합 구독](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-with-adobe-identity/adobe-identity-management-overview)에서 이 끝점은 [API 전용 사용자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/users-and-roles/create-an-api-only-user)의 초대를 지원합니다. [표준 사용자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users)를 초대하려면 대신 [Adobe 사용자 관리 API](https://developer.adobe.com/umapi/)를 사용하십시오.
 
-[사용자 초대](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/inviteUserUsingPOST) 끝점을 사용하여 &quot;Marketo 시작&quot; 전자 메일 초대를 새 사용자에게 보냅니다. 이메일 본문에는 사용자가 Marketo에 처음 액세스할 수 있는 &quot;Marketo에 로그인&quot; 링크가 포함되어 있습니다. 초대를 수락하기 위해 이메일 수신자는 &quot;Marketo에 로그인&quot; 링크를 클릭하고 암호를 만들며 Marketo에 액세스할 수 있습니다. 수락 프로세스가 완료될 때까지 초대가 &quot;보류 중&quot;이며 사용자 레코드를 편집할 수 없습니다. 보류 중인 초대는 보낸 후 7일 후에 만료됩니다. 사용자 관리에 대한 자세한 내용은 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users)를 참조하세요.
+[사용자 초대](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/inviteUserUsingPOST) 끝점을 사용하여 &quot;Marketo 시작&quot; 전자 메일 초대를 새 사용자에게 보냅니다. 이메일 본문에는 사용자가 Marketo에 처음 액세스할 수 있는 &quot;Marketo에 로그인&quot; 링크가 포함되어 있습니다. 초대를 수락하기 위해 이메일 수신자는 &quot;Marketo에 로그인&quot; 링크를 클릭하고 암호를 만들며 Marketo에 액세스할 수 있습니다. 수락 프로세스가 완료될 때까지 초대가 &quot;보류 중&quot;이며 사용자 레코드를 편집할 수 없습니다. 보류 중인 초대는 보낸 후 7일 후에 만료됩니다. 사용자 관리에 대한 자세한 내용은 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users)를 참조하세요.
 
 매개 변수가 요청 본문에 `application/json` 형식으로 전달됩니다.
 
@@ -308,7 +308,7 @@ GET /userservice/management/v1/users/workspaces.json
 
 `userid` 매개 변수는 사용자 로그인 용도로 사용되는 고유한 사용자 식별자 문자열 값이며 전자 메일 주소 형식이어야 합니다. 요청에 제공되지 않은 경우 `userid`의 값은 기본적으로 `emailAddress` 매개 변수에 제공된 값으로 설정됩니다.
 
-부울 `apiOnly` 매개 변수는 사용자가 [API 전용 사용자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/create-an-api-only-user)인지 여부를 지정합니다. `expiresAt` 매개 변수는 사용자 로그인이 만료되는 시기를 지정하며 W3C ISO-8601 형식(밀리초 없음)을 사용하여 형식이 지정됩니다. 요청에 제공되지 않으면 사용자가 만료되지 않습니다. `reason` 매개 변수는 사용자 초대의 이유를 설명하는 문자열입니다.
+부울 `apiOnly` 매개 변수는 사용자가 [API 전용 사용자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/users-and-roles/create-an-api-only-user)인지 여부를 지정합니다. `expiresAt` 매개 변수는 사용자 로그인이 만료되는 시기를 지정하며 W3C ISO-8601 형식(밀리초 없음)을 사용하여 형식이 지정됩니다. 요청에 제공되지 않으면 사용자가 만료되지 않습니다. `reason` 매개 변수는 사용자 초대의 이유를 설명하는 문자열입니다.
 
 성공하면 끝점이 &quot;true&quot; 값을 반환하고, 그렇지 않으면 오류 메시지가 반환됩니다.
 
@@ -340,7 +340,7 @@ Content-Type: application/json
 true
 ```
 
-다음은 새 사용자에게 전송된 &quot;Marketo 시작&quot; 이메일 초대의 예입니다. 이메일 제목란은 &quot;Marketo 로그인 정보&quot;이고, 발신자는 [REST API 사용자 정의 서비스](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/create-a-custom-service-for-use-with-rest-api)와(과) 연결된 API 전용 사용자의 이메일 주소이며, 수신자는 firstName, lastName 및 emailAddress 매개 변수를 통해 지정된 대로 지정됩니다.
+다음은 새 사용자에게 전송된 &quot;Marketo 시작&quot; 이메일 초대의 예입니다. 이메일 제목란은 &quot;Marketo 로그인 정보&quot;이고, 발신자는 [REST API 사용자 정의 서비스](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/additional-integrations/create-a-custom-service-for-use-with-rest-api)와(과) 연결된 API 전용 사용자의 이메일 주소이며, 수신자는 firstName, lastName 및 emailAddress 매개 변수를 통해 지정된 대로 지정됩니다.
 
 ![사용자 전자 메일 초대](assets/invite-user-email.png)
 
@@ -352,7 +352,7 @@ true
 
 ### 사용자 속성 업데이트
 
-[Adobe IMS 통합 구독](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-with-adobe-identity/adobe-identity-management-overview)에서 이 끝점은 [API 전용 사용자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/create-an-api-only-user)의 특성 업데이트만 지원합니다. [표준 사용자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users)의 특성을 업데이트하려면 대신 [Adobe 사용자 관리 API](https://developer.adobe.com/umapi/)를 사용하십시오.
+[Adobe IMS 통합 구독](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-with-adobe-identity/adobe-identity-management-overview)에서 이 끝점은 [API 전용 사용자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/users-and-roles/create-an-api-only-user)의 특성 업데이트만 지원합니다. [표준 사용자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users)의 특성을 업데이트하려면 대신 [Adobe 사용자 관리 API](https://developer.adobe.com/umapi/)를 사용하십시오.
 
 [사용자 특성 업데이트](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/updateUserAttributeUsingPOST) 끝점은 단일 `userid` 경로 매개 변수를 사용하고 단일 사용자 레코드를 반환합니다. 요청 본문에 업데이트할 사용자 특성 `emailAddress`, `firstName`, `lastName`, `expiresAt`이(가) 하나 이상 있습니다.
 
@@ -407,7 +407,7 @@ Content-Type: application/json
 
 #### 사용자 삭제
 
-[Adobe IMS 통합 구독](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-with-adobe-identity/adobe-identity-management-overview)에서 이 끝점은 [API 전용 사용자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/create-an-api-only-user)의 삭제만 지원합니다. [표준 사용자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users)를 삭제하려면 대신 [Adobe 사용자 관리 API](https://developer.adobe.com/umapi/)를 사용하십시오.
+[Adobe IMS 통합 구독](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-with-adobe-identity/adobe-identity-management-overview)에서 이 끝점은 [API 전용 사용자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/users-and-roles/create-an-api-only-user)의 삭제만 지원합니다. [표준 사용자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users)를 삭제하려면 대신 [Adobe 사용자 관리 API](https://developer.adobe.com/umapi/)를 사용하십시오.
 
 [사용자 삭제](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/deleteUserUsingPOST) 끝점은 단일 `userid` 경로 매개 변수를 사용하고 해당 사용자를 인스턴스에서 삭제합니다. 이는 파괴적인 삭제이며 되돌릴 수 없습니다. 성공하면 200 상태 코드가 반환되고 그렇지 않으면 오류 메시지가 반환됩니다.
 
