@@ -5,10 +5,10 @@ breadcrumb-title: '[!DNL Marketo] 개발자 안내서'
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 8ad3e3f0958ea705375651b1c8a75967d807ca80
+source-git-commit: e2e45c0dfa55966aeaa11c0ecf5bfcff01bbaf81
 workflow-type: tm+mt
-source-wordcount: '247'
-ht-degree: 15%
+source-wordcount: '249'
+ht-degree: 16%
 
 ---
 
@@ -30,8 +30,8 @@ ht-degree: 15%
    - [패턴 일치](javascript-api/pattern-match.md)
    - [예측 콘텐츠](javascript-api/predictive-content.md)
    - [리디렉션](javascript-api/redirect.md)
-   - [리치 미디어 Recommendations](javascript-api/rich-media-recommendation.md)
-   - [Social](javascript-api/social.md)
+   - [리치 미디어 권장 사항](javascript-api/rich-media-recommendation.md)
+   - [소셜](javascript-api/social.md)
    - [트리거](javascript-api/triggers.md)
    - [웹 Personalization](javascript-api/web-personalization.md)
 - 모바일 {#mobile}
@@ -48,7 +48,7 @@ ht-degree: 15%
    - [푸시 알림](mobile/push-notifications.md)
    - [React Native](mobile/react-native.md)
    - [사용자 프로필](mobile/user-profiles.md)
-- REST{#rest}
+- 나머지{#rest}
    - [REST API 개요](rest-api/rest-api.md)
    - [REST API 참조](https://developer.adobe.com/marketo-apis/)
    - 자산 {#assets}
@@ -73,13 +73,13 @@ ht-degree: 15%
    - [인증](rest-api/authentication.md)
    - [기본 URL](rest-api/base-url.md)
    - [우수 사례](rest-api/marketo-integration-best-practices.md)
-   - 일괄 추출{#bulk-extract}
+   - 일괄 추출 {#bulk-extract}
       - [일괄 활동](rest-api/bulk-activity-extract.md)
       - [대량 사용자 지정 개체](rest-api/bulk-custom-object-extract.md)
       - [일괄 추출](rest-api/bulk-extract.md)
       - [일괄 리드](rest-api/bulk-lead-extract.md)
       - [일괄 프로그램 구성원](rest-api/bulk-program-member-extract.md)
-   - 일괄 가져오기{#bulk-import}
+   - 일괄 가져오기 {#bulk-import}
       - [대량 사용자 지정 개체](rest-api/bulk-custom-object-import.md)
       - [일괄 가져오기](rest-api/bulk-import.md)
       - [일괄 리드](rest-api/bulk-lead-import.md)
@@ -90,7 +90,7 @@ ht-degree: 15%
    - [Swagger 정의 다운로드](rest-api/swagger.md)
    - [끝점 참조](rest-api/endpoint-reference.md)
    - [오류 코드](rest-api/error-codes.md)
-   - 리드 데이터베이스 {#lead-database}
+   - 잠재 고객 데이터베이스 {#lead-database}
       - [활동](rest-api/activities.md)
       - [회사](rest-api/companies.md)
       - [사용자 지정 개체](rest-api/custom-objects.md)
@@ -128,7 +128,7 @@ ht-degree: 15%
       - [[!DNL getCustomObjects]](soap-api/getcustomobjects.md)
       - [[!DNL syncCustomObjects]](soap-api/synccustomobjects.md)
    - [오류 코드](soap-api/error-codes.md)
-   - 리드{#leads}
+   - 잠재 고객 {#leads}
       - [[!DNL getLead]](soap-api/getlead.md)
       - [[!DNL getMultipleLeads]](soap-api/getmultipleleads.md)
       - [[!DNL mergeLeads]](soap-api/mergeleads.md)
@@ -153,7 +153,7 @@ ht-degree: 15%
       - [[!DNL importToList]](soap-api/importtolist.md)
       - [[!DNL listOperation]](soap-api/listoperation.md)
    - [스트림 위치](soap-api/stream-position.md)
-- 웹 후크 {#webhooks}
+- 웹훅 {#webhooks}
    - [오류수](webhooks/errors.md)
    - [응답 매핑](webhooks/response-mappings.md)
    - [웹훅](webhooks/webhooks.md)
@@ -163,3 +163,4 @@ ht-degree: 15%
 - [라이선스](api-license.md)
 - [파트너 샌드박스](partner-sandbox.md)
 - [셀프서비스 플로우 단계](self-service-flow-steps.md)
+- [블로그 아카이브](blog.md)
