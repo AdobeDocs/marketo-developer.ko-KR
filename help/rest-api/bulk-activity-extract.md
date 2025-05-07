@@ -3,9 +3,9 @@ title: 일괄 활동 추출
 feature: REST API
 description: Marketo에서 활동 데이터를 일괄 처리합니다.
 exl-id: 6bdfa78e-bc5b-4eea-bcb0-e26e36cf6e19
-source-git-commit: 9830572277db2709c6853bea56fc70c455fd5e54
+source-git-commit: a5b855691e7fb9e628e2d68fd14a8a6c689d6750
 workflow-type: tm+mt
-source-wordcount: '1342'
+source-wordcount: '1332'
 ht-degree: 3%
 
 ---
@@ -22,7 +22,7 @@ REST API의 벌크 활동 추출 세트는 Marketo에서 대량의 활동 데이
 
 ## 필터
 
-| 필터 유형 | 데이터 유형 | 필수 여부 | 참고 |
+| 필터 유형 | 데이터 유형 | 필수 | 참고 |
 | --- | --- | --- | --- |
 | createdAt | 날짜 범위 | 예 | `startAt` 및 `endAt` 멤버를 사용하여 JSON 개체를 허용합니다. `startAt`은(는) 로우 워터마크를 나타내는 날짜/시간을 수락하고 `endAt`은(는) 하이 워터마크를 나타내는 날짜/시간을 수락합니다. 범위는 31일 이하여야 합니다. 이 필터 유형의 작업은 날짜 범위 내에서 만든 액세스 가능한 모든 레코드를 반환합니다. 날짜/시간은 밀리초 없이 ISO-8601 형식이어야 합니다. |
 | activityTypeIds | Array\[Integer\] | 아니요 | 하나의 멤버 `activityTypeIds`이(가) 있는 JSON 개체를 허용합니다. 값은 원하는 활동 유형에 해당하는 정수 배열이어야 합니다. &quot;리드 삭제&quot; 활동은 지원되지 않습니다(대신 [삭제된 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getDeletedLeadsUsingGET) 엔드포인트를 사용). [활동 유형 가져오기 엔드포인트](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getAllActivityTypesUsingGET)를 사용하여 활동 유형 ID를 검색합니다. |
@@ -99,12 +99,12 @@ REST API의 벌크 활동 추출 세트는 Marketo에서 대량의 활동 데이
 
 ## 옵션
 
-| 매개변수 | 데이터 유형 | 필수 여부 | 참고 |
+| 매개변수 | 데이터 유형 | 필수 | 참고 |
 |---|---|---|---|
 | filter | 배열[개체] | 예 | 필터 배열을 허용합니다. 배열에 정확히 하나의 `createdAt` 필터가 포함되어야 합니다. 선택적 `activityTypeIds` 필터가 포함될 수 있습니다. 액세스 가능한 활동 세트에 필터가 적용되고 내보내기 작업에 의해 결과 활동 세트가 반환됩니다. |
 | 형식 | 문자열 | 아니요 | CSV, TSV, SSV 중 하나 허용 내보낸 파일은 설정된 경우 각각 쉼표로 구분된 값, 탭으로 구분된 값 또는 공백으로 구분된 값 파일로 렌더링됩니다. 설정하지 않으면 기본값이 CSV로 설정됩니다. |
 | 열 머리글 이름 | 오브젝트 | 아니요 | 필드 및 열 헤더 이름의 키-값 쌍을 포함하는 JSON 개체입니다. 키는 내보내기 작업에 포함된 필드 이름이어야 합니다. 값은 해당 필드에 대해 내보낸 열 헤더의 이름입니다. |
-| 필드 | 배열[문자열] | 아니요 | 필드 값을 포함하는 선택적 문자열 배열입니다. 나열된 필드는 내보낸 파일에 포함됩니다. 기본적으로 `marketoGUIDleadId` `activityDate` `activityTypeId` `campaignId` `primaryAttributeValueId` `primaryAttributeValueattributes` 필드가 반환됩니다. 이 매개 변수는 위의 목록에서 하위 집합을 지정하여 반환되는 필드 수를 줄이는 데 사용할 수 있습니다. 예: &quot;fields&quot;: [&quot;leadId&quot;, &quot;activityDate&quot;, &quot;activityTypeId&quot;]활동 작업(&quot;succeeded&quot;, &quot;skipped&quot; 또는 &quot;failed&quot;)을 포함하도록 추가 필드 &quot;actionResult&quot;를 지정할 수 있습니다. |
+| 필드 | 배열[문자열] | 아니요 | 필드 값을 포함하는 선택적 문자열 배열입니다. 나열된 필드는 내보낸 파일에 포함됩니다. 기본적으로 다음 필드가 반환됩니다. <ul><li>`marketoGUIDleadId`</li><li> `activityDate` </li><li>`activityTypeId` </li><li>`campaignId`</li><li> `primaryAttributeValueId` </li><li>`primaryAttributeValue`</li><li> `attributes`</li></ul>. 이 매개 변수는 위의 목록에서 하위 집합을 지정하여 반환되는 필드 수를 줄이는 데 사용할 수 있습니다. `"fields": ["leadId", "activityDate", "activityTypeId"]`. 활동 작업 `("succeeded", "skipped", or "failed")`을(를) 포함하도록 추가 필드 `actionResult`을(를) 지정할 수 있습니다. |
 
 
 ## 작업 생성
