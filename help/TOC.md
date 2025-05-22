@@ -5,9 +5,9 @@ breadcrumb-title: '[!DNL Marketo] 개발자 안내서'
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: e2e45c0dfa55966aeaa11c0ecf5bfcff01bbaf81
+source-git-commit: 43bcafd335a2fdc709e917ef74504500422c2889
 workflow-type: tm+mt
-source-wordcount: '249'
+source-wordcount: '250'
 ht-degree: 16%
 
 ---
@@ -158,7 +158,7 @@ ht-degree: 16%
    - [응답 매핑](webhooks/response-mappings.md)
    - [웹훅](webhooks/webhooks.md)
 - [클라이언트 라이브러리](https://github.com/Marketo/Community-Supported-Client-Libraries)
-- [데이터 스트림](data-streams.md)
+- [데이터 스트림](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-data-streams/)
 - [이메일 스크립팅](email-scripting.md)
 - [라이선스](api-license.md)
 - [파트너 샌드박스](partner-sandbox.md)

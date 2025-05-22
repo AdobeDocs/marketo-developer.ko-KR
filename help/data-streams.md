@@ -2,14 +2,18 @@
 title: 데이터 스트림
 description: 데이터 스트림 개요
 exl-id: 5617b6a5-ebc8-4d97-a290-e3b87f83e360
-source-git-commit: 9830572277db2709c6853bea56fc70c455fd5e54
+source-git-commit: 43bcafd335a2fdc709e917ef74504500422c2889
 workflow-type: tm+mt
-source-wordcount: '1583'
+source-wordcount: '1596'
 ht-degree: 1%
 
 ---
 
 # 데이터 스트림
+
+>[!NOTE]
+> 이제 데이터 스트림에 대한 현재 정보를 [데이터 스트림 사용](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-data-streams/)에서 찾을 수 있습니다.
+>
 
 Dell 고객의 마케팅 조직은 적시에 집중하는 마케팅 캠페인에 의존하여 비즈니스를 주도하고 경쟁력을 확보합니다. 신속한 의사 결정을 지원하고 전략적으로 신속하게 변경하려면 집중되고 타깃팅된 캠페인을 제공하는 주요 의사 결정을 지원하고 유도할 데이터를 확보하는 것이 중요합니다. 또한 Marketo Engage 내부와 외부 모두에서 고객 세그먼트 수준에서 마케팅 활동을 수행하는 고객이 있습니다. 이러한 다양한 작업을 지원하기 위해 Marketo은 데이터 스트림을 통해 거의 실시간으로 대량의 데이터를 획득하는 기능을 개발했습니다.
 
@@ -258,7 +262,7 @@ Adobe IO를 설정하려면 공개 설명서 섹션에서 [Adobe IO를 사용하
 
 ### Marketo에서 사용자 감사 데이터 스트림 설정
 
-사용자 감사 데이터 스트림은 현재 다른 3개의 데이터 스트림과 함께 성능 패키지의 일부로 사용할 수 있습니다. 패키지에 대한 자세한 내용은 제품 제한 및 기능에 대한 [제품 설명 페이지](https://helpx.adobe.com/kr/legal/product-descriptions/adobe-marketo-engage---product-description.html)를 참조하세요.
+사용자 감사 데이터 스트림은 현재 다른 3개의 데이터 스트림과 함께 성능 패키지의 일부로 사용할 수 있습니다. 패키지에 대한 자세한 내용은 제품 제한 및 기능에 대한 [제품 설명 페이지](https://helpx.adobe.com/legal/product-descriptions/adobe-marketo-engage---product-description.html)를 참조하세요.
 
 ### Adobe I/O 설정
 
