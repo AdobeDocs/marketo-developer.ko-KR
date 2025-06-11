@@ -2,9 +2,10 @@
 title: 데이터 수집
 feature: REST API, Dynamic Content
 description: Marketo API를 사용하여 데이터를 사용합니다.
-source-git-commit: 1595aa6df0b0404c7cda2c246c9249018fe87e77
+exl-id: 1d501916-53ac-42d8-a804-abb4ab01c7e8
+source-git-commit: 8a785b0719e08544ed1a87772faf90bd9dda3077
 workflow-type: tm+mt
-source-wordcount: '968'
+source-wordcount: '965'
 ht-degree: 10%
 
 ---
@@ -13,7 +14,7 @@ ht-degree: 10%
 
 데이터 수집 API는 대량의 개인 및 개인 관련 데이터 수집을 효율적이고 최소한의 지연으로 처리하도록 설계된 대량의 짧은 지연 시간 고가용성 서비스입니다.
 
-비동기적으로 실행되는 요청을 제출하면 데이터가 수집됩니다. [Marketo Observability 데이터 스트림](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-observability-data-stream-setup/)에서 이벤트를 구독하여 요청 상태를 검색할 수 있습니다&#x200B;.
+비동기적으로 실행되는 요청을 제출하면 데이터가 수집됩니다. [Marketo Observability 데이터 스트림](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-observability-data-stream-setup)에서 이벤트를 구독하여 요청 상태를 검색할 수 있습니다&#x200B;.
 
 인터페이스는 사용자, 사용자 정의 객체, 이렇게 두 가지 객체 유형에 대해 제공됩니다. 레코드 작업은 &quot;삽입 또는 업데이트&quot;만 가능합니다.
 
@@ -42,26 +43,26 @@ ht-degree: 10%
 
 ### 요청
 
-| 키 | 값 | 필수 여부 | 설명 |
+| 키 | 값 | 필수 | 설명 |
 | - | - | - | - |
 | X-Correlation-Id | 임의 문자열(최대 길이 255자). | 아니요 | 시스템을 통해 요청을 추적하는 데 사용할 수 있습니다.  Marketo Observability 데이터 스트림 참조 |
 | X-Request-Source | 임의 문자열(최대 길이 50자). | 아니요 | 시스템을 통해 요청 소스를 추적하는 데 사용할 수 있습니다.  Marketo Observability 데이터 스트림 참조 |
 
 ### 응답
 
-| 키 | 값 | 필수 여부 |
+| 키 | 값 | 필수 |
 | - | - | - |
 | X-Request-Id | 고유 요청 ID. | 예 |
 
 ## 요청
 
-HTTP POST 메서드를 사용하여 서버로 데이터를 전송합니다.
+HTTP POST 메서드를 사용하여 데이터를 서버로 전송합니다.
 
 데이터 표현은 요청 본문에 application/json으로 포함됩니다.
 
 도메인 이름: `mkto-ingestion-api.adobe.io`
 
-경로는 MunchkinId가 Marketo 인스턴스에만 해당되는 `/subscriptions/MunchkinId`(으)로 시작됩니다. Marketo Engage UI의 **관리자** > **내 계정** > **지원 정보**&#x200B;에서 Munchkin ID를 찾을 수 있습니다.  경로의 나머지 부분은 관심 리소스를 지정하는 데 사용됩니다.
+경로는 MunchkinId가 Marketo 인스턴스에만 해당되는 `/subscriptions/MunchkinId`(으)로 시작됩니다. Munchkin ID는 Marketo Engage UI의 **관리자** > **내 계정** > **지원 정보**&#x200B;에서 찾을 수 있습니다.  경로의 나머지 부분은 관심 리소스를 지정하는 데 사용됩니다.
 
 개인용 예제 URL:
 
@@ -140,7 +141,7 @@ Date: Wed, 18 Oct 2023 18:56:49 GMT
 
 #### 요청 본문
 
-| 키 | 데이터 유형 | 필수 여부 | 값 | 기본 값 |
+| 키 | 데이터 유형 | 필수 | 값 | 기본 값 |
 | - | - | - | - | - |
 | 우선 순위 | 문자열 | 아니요 | 요청의 우선 순위: 보통 또는 높음 | 표준 |
 | partitionName | 문자열 | 아니요 | 개인 파티션 이름 | 기본 |
@@ -207,7 +208,7 @@ Date: Wed, 18 Oct 2023 18:56:49 GMT
 
 #### 요청 본문
 
-| 키 | 데이터 유형 | 필수 여부 | 값 | 기본 값 |
+| 키 | 데이터 유형 | 필수 | 값 | 기본 값 |
 | - |- | - | - | - |
 | 우선 순위 | 문자열 | 아니요 | 요청의 우선 순위: 보통, 높음 | 표준 |
 | 중복 제거 기준 | 문자열 | 아니요 | 중복 제거할 속성: dedupeFields, marketoGUID | 데이터 중복 제거 필드 |

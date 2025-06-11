@@ -3,9 +3,9 @@ title: 일괄 프로그램 구성원 가져오기
 feature: REST API
 description: 멤버 데이터의 일괄 가져오기.
 exl-id: b0e1039a-fe9b-4fb7-9aa6-9980a06da673
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 8a785b0719e08544ed1a87772faf90bd9dda3077
 workflow-type: tm+mt
-source-wordcount: '838'
+source-wordcount: '837'
 ht-degree: 0%
 
 ---
@@ -141,7 +141,7 @@ GET /bulk/v1/program/members/import/{batchId}/status.json
 
 [가져오기 프로그램 구성원 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET) 응답에서 `numOfRowsFailed` 특성으로 오류가 표시됩니다. numOfRowsFailed가 0보다 크면 해당 값은 발생한 실패 횟수를 나타냅니다.
 
-[가져오기 프로그램 구성원 실패 가져오기](http://TODO) 끝점을 사용하여 `batchId` 경로 매개 변수를 전달하여 실패한 행의 레코드와 원인을 검색합니다.
+가져오기 프로그램 멤버 오류 가져오기 끝점을 사용하여 `batchId` 경로 매개 변수를 전달하여 실패한 행의 레코드와 원인을 검색합니다.
 
 ```
 GET /bulk/v1/program/members/import/{batchId}/failures.json
