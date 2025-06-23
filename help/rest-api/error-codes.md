@@ -3,9 +3,9 @@ title: 오류 코드
 feature: REST API
 description: Marketo 오류 코드 설명.
 exl-id: a923c4d6-2bbc-4cb7-be87-452f39b464b6
-source-git-commit: d0750eab0a37df0b7f80c6252f46c95068975000
+source-git-commit: d44ec0442bc33e3e5cb7e2dd6ce3947036c7cd25
 workflow-type: tm+mt
-source-wordcount: '2273'
+source-wordcount: '2283'
 ht-degree: 3%
 
 ---
@@ -34,7 +34,7 @@ Marketo REST API는 일반 작업 시 세 가지 유형의 오류를 반환할 �
 
 Marketo은 요청 페이로드가 1MB를 초과하는 경우 413, 리드 가져오기의 경우 10MB를 반환합니다. 대부분의 시나리오에서는 이러한 제한에 도달할 가능성이 낮지만 요청 크기에 대한 검사를 추가하고 레코드를 이동하면 제한이 새 요청으로 초과되어 종단점에서 이 오류가 반환되는 상황을 방지해야 합니다.
 
-GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지하려면 쿼리 문자열의 길이를 확인하여 이 제한을 초과하는지 확인하십시오. 요청을 POST 메서드로 변경한 경우 쿼리 문자열을 추가 매개 변수 `_method=GET`과(와) 함께 요청 본문으로 입력합니다. URI에 대한 제한을 무시합니다. 대부분의 경우 이 제한에 도달하는 것은 드물지만 GUID와 같은 긴 개별 필터 값이 있는 큰 레코드 일괄 처리를 검색하는 경우에는 다소 일반적입니다.
+GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지하려면 쿼리 문자열의 길이를 확인하여 이 제한을 초과하는지 확인하십시오. 요청이 POST 메서드로 변경되면 쿼리 문자열을 추가 매개 변수 `_method=GET`과(와) 함께 요청 본문으로 입력합니다. URI에 대한 제한을 무시합니다. 대부분의 경우 이 제한에 도달하는 것은 드물지만 GUID와 같은 긴 개별 필터 값이 있는 큰 레코드 일괄 처리를 검색하는 경우에는 다소 일반적입니다.
 [ID](https://developer.adobe.com/marketo-apis/api/identity/) 끝점은 승인되지 않은 401 오류를 반환할 수 있습니다. 이는 일반적으로 잘못된 클라이언트 ID 또는 잘못된 클라이언트 암호 때문입니다. HTTP 수준 오류 코드
 
 <table>
@@ -54,7 +54,7 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
     <tr>
       <td><a name="414"></a>414</td>
       <td>Request-URI가 너무 김</td>
-      <td>요청의 URI가 8k를 초과했습니다. 요청을 URL에 매개 변수 &grave;_method=GET'가 있는 POST으로 다시 시도하고 요청 본문에 나머지 쿼리 문자열을 사용해야 합니다.</td>
+      <td>요청의 URI가 8k를 초과했습니다. URL에 매개 변수 '_method=GET'가 있고 요청 본문에 나머지 쿼리 문자열이 있는 POST로 요청을 다시 시도해야 합니다.</td>
     </tr>
   </tbody>
 </table>
@@ -110,7 +110,7 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
     <tr>
       <td><a name="603"></a>603</td>
       <td>액세스 거부됨</td>
-      <td>인증에 성공했지만 사용자에게 이 API를 호출할 권한이 없습니다. [추가 권한](custom-services.md)을 사용자 역할에 할당하거나 <a href="https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/additional-integrations/create-an-allowlist-for-ip-based-api-access">IP 기반 API 액세스에 대한 허용 목록</a>을 사용하도록 설정할 수 있습니다.</td>
+      <td>인증에 성공했지만 사용자에게 이 API를 호출할 권한이 없습니다. [추가 권한](custom-services.md)을 사용자 역할에 할당하거나 <a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/create-an-allowlist-for-ip-based-api-access">IP 기반 API 액세스에 대한 허용 목록</a>을 사용하도록 설정할 수 있습니다.</td>
     </tr>
     <tr>
       <td><a name="604"></a>604*</td>
@@ -120,11 +120,11 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
     <tr>
       <td><a name="605"></a>605*</td>
       <td>HTTP 메서드가 지원되지 않음</td>
-      <td>GET은 동기화 리드 끝점에 대해 지원되지 않습니다. POST을 사용해야 합니다.</td>
+      <td>GET은 동기화 리드 끝점에 대해 지원되지 않습니다. POST를 사용해야 합니다.</td>
     </tr>
     <tr>
       <td><a name="606"></a>606</td>
-      <td>최대 속도 제한 &grave;%s';이(가) '%s'초 단위로 초과되었습니다.</td>
+      <td>최대 속도 제한 `%s';이(가) '%s'초 단위로 초과되었습니다.</td>
       <td>지난 20초 동안의 호출 수가 100보다 컸습니다.</td>
     </tr>
     <tr>
@@ -287,8 +287,10 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
 
 #### 레코드 수준 오류 코드
 
-<table>
-  <tbody>
+>[!NOTE]
+>
+><table>
+<tbody>
     <tr>
       <td>응답 코드</td>
       <td>설명</td>
@@ -430,10 +432,12 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
       <td><ul>
           <li>큐에 작업이 너무 많음</li>
           <li>일일 내보내기 할당량 초과</li>
+          <li>작업이 이미 큐에 추가됨</li>
         </ul></td>
       <td><ul>
           <li>구독에는 지정된 시간에 큐에 최대 10개의 대량 추출 작업이 허용됩니다.</li>
           <li>기본적으로 추출 작업은 하루에 500MB로 제한됩니다(매일 오전 12:00CST에 재설정).</li>
+          <li>내보내기 ID는 이미 큐에 있습니다.</li>
         </ul></td>
     </tr>
     <tr>
@@ -486,3 +490,4 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
     </tr>
   </tbody>
 </table>
+
