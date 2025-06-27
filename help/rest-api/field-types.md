@@ -12,7 +12,7 @@ ht-degree: 8%
 
 # 필드 유형
 
-다음은 Marketo의 필드 유형에 대한 설명입니다. 필드 형식에 대한 추가 정보는 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/field-management/custom-field-type-glossary)에서 찾을 수 있습니다. 필드 형식 제한에 대한 추가 정보는 [여기](https://nation.marketo.com/t5/knowledgebase/marketo-field-limits-by-field-type/ta-p/251613)에서 찾을 수 있습니다.
+다음은 Marketo의 필드 유형에 대한 설명입니다. 필드 형식에 대한 추가 정보는 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/field-management/custom-field-type-glossary)에서 찾을 수 있습니다. 필드 형식 제한에 대한 추가 정보는 [여기](https://nation.marketo.com/t5/knowledgebase/marketo-field-limits-by-field-type/ta-p/251613)에서 찾을 수 있습니다.
 
 | 필드 유형 | 설명 | 예 |
 | --- | --- | --- |
@@ -20,7 +20,7 @@ ht-degree: 8%
 | 이메일 | 이메일 주소를 허용하는 문자열 필드 | example@example.com |
 | 부동 | 숫자 필드에는 실수가 포함되며 소수점 이하 자리를 사용할 수 있습니다. | 10.4 |
 | 정수 | 정수 | 10 |
-| 공식 | 잠재 고객 레코드에 있는 다른 필드의 데이터를 조작하여 값이 생성된 필드. 내보내지지 않으며 스마트 캠페인에서 사용할 수 없습니다. | 이 [문서](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/field-management/create-and-use-a-concatenated-string-formula-field) 보기 |
+| 공식 | 잠재 고객 레코드에 있는 다른 필드의 데이터를 조작하여 값이 생성된 필드. 내보내지지 않으며 스마트 캠페인에서 사용할 수 없습니다. | 이 [문서](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/field-management/create-and-use-a-concatenated-string-formula-field) 보기 |
 | 비율 | 정수로 표시되는 백분율 | 30 |
 | URL | URL의 프로토콜을 포함하여 URL로 입력을 제한하는 텍스트 필드입니다. | http://example.com/ |
 | 전화 | 전화번호 | 111-111-1111 |
