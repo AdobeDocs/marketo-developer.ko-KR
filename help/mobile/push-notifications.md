@@ -3,7 +3,7 @@ title: 푸시 알림
 feature: Mobile Marketing
 description: Marketo Mobile용 푸시 알림 활성화
 exl-id: 41d657d8-9eea-4314-ab24-fd4cb2be7f61
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
 source-wordcount: '1329'
 ht-degree: 0%
@@ -20,7 +20,7 @@ ht-degree: 0%
 
 1. Apple 개발자 계정에서 푸시 알림을 구성합니다.
 1. xCode에서 푸시 알림을 활성화합니다.
-1. Marketo SDK를 사용하여 앱에서 푸시 알림을 활성화합니다.
+1. Marketo SDK을 사용하여 앱에서 푸시 알림을 활성화합니다.
 
 ### Apple 개발자 계정에서 푸시 알림 구성
 
@@ -40,7 +40,7 @@ ht-degree: 0%
 
 xCode 프로젝트에서 푸시 알림 기능을 사용하도록 설정합니다.![](assets/push-xcode.png)
 
-### Marketo SDK를 사용하여 앱에서 푸시 알림 활성화
+### Marketo SDK을 사용하여 앱에서 푸시 알림 활성화
 
 `AppDelegate.m` 파일에 다음 코드를 추가하여 고객의 장치에 푸시 알림을 전달합니다.
 
@@ -108,7 +108,7 @@ UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotification
 
 ```
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-            
+
     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound,    .badge]) { granted, error in
             if let error = error {
                 print("\(error.localizedDescription)")
@@ -118,7 +118,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
                 }
             }
         }
-        
+
         return true
 }
 ```
@@ -216,7 +216,7 @@ AppDelegate에 다음 메서드 추가
 >[!TAB Swift]
 
 ```
-func userNotificationCenter(_ center: UNUserNotificationCenter, 
+func userNotificationCenter(_ center: UNUserNotificationCenter,
             willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (
     UNNotificationPresentationOptions) -> Void) {
     completionHandler([.alert, .sound,.badge])
@@ -371,7 +371,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    }
    ```
 
-**참고**: FCM SDK는 필요한 받는 사람 기능과 모든 필수 권한을 자동으로 추가합니다. 이전 버전의 SDK를 사용한 경우 앱의 매니페스트에서 다음 사용되지 않는(또는 메시지 중복을 일으킬 수 있으므로 해로울 수 있는) 요소를 제거해야 합니다
+**참고**: FCM SDK은 필요한 받는 사람 기능과 모든 필요한 권한을 자동으로 추가합니다. 이전 버전의 SDK을 사용한 경우 앱의 매니페스트에서 다음 사용되지 않는(또는 메시지 중복을 일으킬 수 있으므로 해로울 수 있는) 요소를 제거해야 합니다
 
 ```xml
 <receiver android:name="com.marketo.MarketoBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
@@ -430,13 +430,13 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    config.setNotificationLargeIcon(bitmap);
    
    // Required icon Resource ID
-   config.setNotificationSmallIcon(R.drawable.notification_small_icon); 
+   config.setNotificationSmallIcon(R.drawable.notification_small_icon);
    
-   // Set the configuration 
+   // Set the configuration
    //Use the static methods on ALMarketo class when using Adobe Extension
-   Marketo.getInstance(context).setNotificationConfig(config); 
+   Marketo.getInstance(context).setNotificationConfig(config);
    
-   // Get the configuration set 
+   // Get the configuration set
    Marketo.getInstance(context).getNotificationConfig();
    ```
 

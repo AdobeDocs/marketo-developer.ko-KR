@@ -3,10 +3,10 @@ title: getMObjects
 feature: SOAP
 description: getMObjects SOAP 호출
 exl-id: 5cf18161-f590-4dc3-bba1-ee3ed9fd7e9f
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
 source-wordcount: '226'
-ht-degree: 3%
+ht-degree: 7%
 
 ---
 
@@ -25,15 +25,15 @@ ht-degree: 3%
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
 | 유형 | 필수 | 쿼리할 객체 유형입니다. 다음 중 하나일 수 있습니다. `Opportunity`, `OpportunityPersonRole` 또는 `Program` |
-| ID | 선택 사항 | MObject ID |
-| includeDetails | 선택 사항 | true인 경우 지정된 MObject에 대한 모든 속성이 반환됩니다. 이 매개 변수는 프로그램 개체와 함께 사용할 때만 적용됩니다. |
-| mObjCriteriaList->mObjCriteria->attrName | 선택 사항 | 다음 입력 매개 변수 중 하나 이상을 사용할 수 있습니다. `Name`, `Role`, `Type`, `Stage`, `CRM Id`, `Created At`, `Updated At` 또는 `Tag Type`(하나만 지정할 수 있음), `Tag Value`, `Workspace Name`, `Workspace Id`, `Include Archive` |
-| mObjCriteriaList->mObjCriteria->attrValue | 선택 사항 | 필터링에 사용할 값 |
-| mObjCriteriaList->mObjCriteria->비교 | 선택 사항 | `EQ`, `NE`, `LT` ,`LE`, `GT`, `GE` 중 하나 |
-| mObjAssociationList->mObjAssociation->mObjType | 선택 사항 |  |
-| mObjAssociationList->mObjAssociation->id | 선택 사항 | 연계된 개체 ID(잠재 고객/회사/영업 기회) |
-| mObjAssociationList->mObjAssociation->externalKey | 선택 사항 | 연결된 오브젝트의 사용자 지정 속성 |
-| streamPosition | 선택 사항 | 여러 결과 세트의 페이지를 매기는 데 사용됩니다. 전달된 값은 이전 `getMObjects` 호출에서 반환된 값입니다. |
+| ID | 선택 사항입니다 | MObject ID |
+| includeDetails | 선택 사항입니다 | true인 경우 지정된 MObject에 대한 모든 속성이 반환됩니다. 이 매개 변수는 프로그램 개체와 함께 사용할 때만 적용됩니다. |
+| mObjCriteriaList->mObjCriteria->attrName | 선택 사항입니다 | 다음 입력 매개 변수 중 하나 이상을 사용할 수 있습니다. `Name`, `Role`, `Type`, `Stage`, `CRM Id`, `Created At`, `Updated At` 또는 `Tag Type`(하나만 지정할 수 있음), `Tag Value`, `Workspace Name`, `Workspace Id`, `Include Archive` |
+| mObjCriteriaList->mObjCriteria->attrValue | 선택 사항입니다 | 필터링에 사용할 값 |
+| mObjCriteriaList->mObjCriteria->비교 | 선택 사항입니다 | `EQ`, `NE`, `LT` ,`LE`, `GT`, `GE` 중 하나 |
+| mObjAssociationList->mObjAssociation->mObjType | 선택 사항입니다 |  |
+| mObjAssociationList->mObjAssociation->id | 선택 사항입니다 | 연계된 개체 ID(잠재 고객/회사/영업 기회) |
+| mObjAssociationList->mObjAssociation->externalKey | 선택 사항입니다 | 연결된 오브젝트의 사용자 지정 속성 |
+| streamPosition | 선택 사항입니다 | 여러 결과 세트의 페이지를 매기는 데 사용됩니다. 전달된 값은 이전 `getMObjects` 호출에서 반환된 값입니다. |
 
 ## 요청 XML
 
@@ -441,14 +441,14 @@ $marketoSoapEndPoint    = "";  // CHANGE ME
 $marketoUserId      = "";  // CHANGE ME
 $marketoSecretKey   = "";  // CHANGE ME
 $marketoNameSpace   = "http://www.marketo.com/mktows/";
- 
+
 // Create Signature
 $dtzObj = new DateTimeZone("America/Los_Angeles");
 $dtObj  = new DateTime('now', $dtzObj);
 $timeStamp = $dtObj->format(DATE_W3C);
 $encryptString = $timeStamp . $marketoUserId;
 $signature = hash_hmac('sha1', $encryptString, $marketoSecretKey);
- 
+
 // Create SOAP Header
 $attrs = new stdClass();
 $attrs->mktowsUserId = $marketoUserId;
@@ -462,19 +462,19 @@ if ($debug) {
 // Create Request
 $params->type = 'Program';
 // $params->id = "1003";
- 
+
 $mObjCriteria1 = new stdClass();
 $mObjCriteria1->attrName="Id";
 $mObjCriteria1->comparison="LE";
 $mObjCriteria1->attrValue="1010";
- 
+
 $mObjCriteria2 = new stdClass();
 $mObjCriteria2->attrName="Name";
 $mObjCriteria2->comparison="NE";
 $mObjCriteria2->attrValue="elizprogramtest";
- 
+
 $params->mObjCriteriaList=array($mObjCriteria1, $mObjCriteria2);
- 
+
 $soapClient = new SoapClient($marketoSoapEndPoint ."?WSDL", $options);
 try {
   $leads = $soapClient->__soapCall('getMObjects', array($params), $options, $authHdr);
@@ -504,67 +504,67 @@ import javax.crypto.spec.SecretKeySpec;
 import org.apache.commons.codec.binary.Hex;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
- 
- 
+
+
 public class getMObjects {
- 
+
     public static void main(String[] args) {
         System.out.println("Executing Get MObjects");
         try {
             URL marketoSoapEndPoint = new URL("CHANGE ME" + "?WSDL");
             String marketoUserId = "CHANGE ME";
             String marketoSecretKey = "CHANGE ME";
-             
+
             QName serviceName = new QName("http://www.marketo.com/mktows/", "MktMktowsApiService");
             MktMktowsApiService service = new MktMktowsApiService(marketoSoapEndPoint, serviceName);
             MktowsPort port = service.getMktowsApiSoapPort();
-             
+
             // Create Signature
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
             String text = df.format(new Date());
-            String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);           
+            String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);
             String encryptString = requestTimestamp + marketoUserId ;
-             
+
             SecretKeySpec secretKey = new SecretKeySpec(marketoSecretKey.getBytes(), "HmacSHA1");
             Mac mac = Mac.getInstance("HmacSHA1");
             mac.init(secretKey);
             byte[] rawHmac = mac.doFinal(encryptString.getBytes());
             char[] hexChars = Hex.encodeHex(rawHmac);
-            String signature = new String(hexChars); 
-             
+            String signature = new String(hexChars);
+
             // Set Authentication Header
             AuthenticationHeader header = new AuthenticationHeader();
             header.setMktowsUserId(marketoUserId);
             header.setRequestTimestamp(requestTimestamp);
             header.setRequestSignature(signature);
-             
+
             // Create Request
             ParamsGetMObjects request = new ParamsGetMObjects();
             request.setType("Program");
-             
+
             MObjCriteria criteria = new MObjCriteria();
             criteria.setAttrName("Id");
             criteria.setComparison(ComparisonEnum.LE);
             criteria.setAttrValue("1010");
-             
+
             MObjCriteria criteria2 = new MObjCriteria();
             criteria2.setAttrName("Name");
             criteria2.setComparison(ComparisonEnum.NE);
             criteria2.setAttrValue("elizprogramtest");
-             
+
             ArrayOfMObjCriteria mObjCriteria= new ArrayOfMObjCriteria();
             mObjCriteria.getMObjCriterias().add(criteria);
             mObjCriteria.getMObjCriterias().add(criteria2);
-             
+
             request.setMObjCriteriaList(mObjCriteria);
- 
+
             SuccessGetMObjects result = port.getMObjects(request, header);
- 
+
             JAXBContext context = JAXBContext.newInstance(SuccessGetMObjects.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             m.marshal(result, System.out);
-             
+
         }
         catch(Exception e) {
             e.printStackTrace();
@@ -593,9 +593,9 @@ hashedsignature = OpenSSL::HMAC.hexdigest(digest, marketoSecretKey, encryptStrin
 requestSignature = hashedsignature.to_s
 
 #Create SOAP Header
-headers = { 
-    'ns1:AuthenticationHeader' => { "mktowsUserId" => mktowsUserId, "requestSignature" => requestSignature,                     
-    "requestTimestamp"  => requestTimestamp 
+headers = {
+    'ns1:AuthenticationHeader' => { "mktowsUserId" => mktowsUserId, "requestSignature" => requestSignature,
+    "requestTimestamp"  => requestTimestamp
     }
 }
 

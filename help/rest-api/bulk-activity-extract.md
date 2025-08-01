@@ -3,7 +3,7 @@ title: 일괄 활동 추출
 feature: REST API
 description: Marketo에서 활동 데이터를 일괄 처리합니다.
 exl-id: 6bdfa78e-bc5b-4eea-bcb0-e26e36cf6e19
-source-git-commit: a5b855691e7fb9e628e2d68fd14a8a6c689d6750
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
 source-wordcount: '1332'
 ht-degree: 3%
@@ -104,7 +104,7 @@ REST API의 벌크 활동 추출 세트는 Marketo에서 대량의 활동 데이
 | filter | 배열[개체] | 예 | 필터 배열을 허용합니다. 배열에 정확히 하나의 `createdAt` 필터가 포함되어야 합니다. 선택적 `activityTypeIds` 필터가 포함될 수 있습니다. 액세스 가능한 활동 세트에 필터가 적용되고 내보내기 작업에 의해 결과 활동 세트가 반환됩니다. |
 | 형식 | 문자열 | 아니요 | CSV, TSV, SSV 중 하나 허용 내보낸 파일은 설정된 경우 각각 쉼표로 구분된 값, 탭으로 구분된 값 또는 공백으로 구분된 값 파일로 렌더링됩니다. 설정하지 않으면 기본값이 CSV로 설정됩니다. |
 | 열 머리글 이름 | 오브젝트 | 아니요 | 필드 및 열 헤더 이름의 키-값 쌍을 포함하는 JSON 개체입니다. 키는 내보내기 작업에 포함된 필드 이름이어야 합니다. 값은 해당 필드에 대해 내보낸 열 헤더의 이름입니다. |
-| 필드 | 배열[문자열] | 아니요 | 필드 값을 포함하는 선택적 문자열 배열입니다. 나열된 필드는 내보낸 파일에 포함됩니다. 기본적으로 다음 필드가 반환됩니다. <ul><li>`marketoGUIDleadId`</li><li> `activityDate` </li><li>`activityTypeId` </li><li>`campaignId`</li><li> `primaryAttributeValueId` </li><li>`primaryAttributeValue`</li><li> `attributes`</li></ul>. 이 매개 변수는 위의 목록에서 하위 집합을 지정하여 반환되는 필드 수를 줄이는 데 사용할 수 있습니다. `"fields": ["leadId", "activityDate", "activityTypeId"]`. 활동 작업 `("succeeded", "skipped", or "failed")`을(를) 포함하도록 추가 필드 `actionResult`을(를) 지정할 수 있습니다. |
+| 필드 | 배열[문자열] | 아니요 | 필드 값을 포함하는 선택적 문자열 배열입니다. 나열된 필드는 내보낸 파일에 포함됩니다. 기본적으로 다음 필드가 반환됩니다. <ul><li>`marketoGUIDleadId`</li><li> `activityDate` </li><li>`activityTypeId` </li><li>`campaignId`</li><li> `primaryAttributeValueId` </li><li>`primaryAttributeValue`</li><li> `attributes`</li></ul>. 이 매개 변수는 위의 목록에서 하위 집합을 지정하여 반환되는 필드 수를 줄이는 데 사용할 수 있습니다. `"fields": ["leadId", "activityDate", "activityTypeId"]`. 활동 작업 `actionResult`을(를) 포함하도록 추가 필드 `("succeeded", "skipped", or "failed")`을(를) 지정할 수 있습니다. |
 
 
 ## 작업 생성
@@ -116,14 +116,14 @@ POST /bulk/v1/activities/export/create.json
 ```
 
 ```json
-{ 
+{
    "format": "CSV",
-   "filter": { 
-      "createdAt": { 
+   "filter": {
+      "createdAt": {
          "startAt": "2017-07-01T23:59:59-00:00",
          "endAt": "2017-07-31T23:59:59-00:00"
       },
-      "activityTypeIds": [ 
+      "activityTypeIds": [
          1,
          12,
          13
@@ -232,7 +232,7 @@ marketoGUID,leadId,activityDate,activityTypeId,campaignId,primaryAttributeValueI
 783961924,5316669,2022-02-13T14:27:21Z,104,11614,2333,Nurture Automation,"{""Program Member ID"":3240306,""Acquired By"":false,""Old Status"":""Not in Program"",""New Status ID"":27,""Success"":false,""New Status"":""Member"",""Old Status ID"":26}"
 ```
 
-추출된 데이터의 부분 검색과 재시작 친화적 검색을 지원하기 위해 파일 끝점은 선택적으로 `bytes` 형식의 HTTP 헤더 `Range`을(를) 지원합니다.  헤더가 설정되지 않은 경우 전체 콘텐츠가 반환됩니다.  Marketo [일괄 추출](bulk-extract.md)에서 범위 헤더 사용에 대한 자세한 내용을 읽을 수 있습니다.
+추출된 데이터의 부분 검색과 재시작 친화적 검색을 지원하기 위해 파일 끝점은 선택적으로 `Range` 형식의 HTTP 헤더 `bytes`을(를) 지원합니다.  헤더가 설정되지 않은 경우 전체 콘텐츠가 반환됩니다.  Marketo [일괄 추출](bulk-extract.md)에서 범위 헤더 사용에 대한 자세한 내용을 읽을 수 있습니다.
 
 ## 작업 취소
 

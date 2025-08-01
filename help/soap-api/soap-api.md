@@ -3,9 +3,9 @@ title: SOAP API
 feature: SOAP
 description: Marketo SOAP 개요
 exl-id: 6618cc82-15ae-4030-aa00-438e635d8369
-source-git-commit: 8ad3e3f0958ea705375651b1c8a75967d807ca80
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
-source-wordcount: '229'
+source-wordcount: '228'
 ht-degree: 0%
 
 ---
@@ -28,7 +28,7 @@ WSDL에 정의된 끝점을 사용하지 마십시오. 각 Marketo 인스턴스�
 
 ## 제한
 
-- **일일 할당량:** 대부분의 구독에는 하루에 10,000개의 API 호출이 할당됩니다(매일 오전 12시(CST) 재설정됨). 계정 관리자를 통해 일일 할당량을 늘릴 수 있습니다.
+- **일일 할당량:** 대부분의 구독에는 하루에 10,000개의 API 호출이 할당됩니다(12:00AM CST에서 매일 재설정됨). 계정 관리자를 통해 일일 할당량을 늘릴 수 있습니다.
 - **속도 제한:** 인스턴스당 API 액세스가 20초당 100개의 호출로 제한되었습니다.
 - **동시 실행 제한:**  최대 10개의 동시 API 호출.
 

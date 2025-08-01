@@ -3,7 +3,7 @@ title: 명명된 계정 목록
 feature: REST API
 description: 명명된 계정 목록을 구성합니다.
 exl-id: 98f42780-8329-42fb-9cd8-58e5dbea3809
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
 source-wordcount: '696'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 [명명된 계정 목록 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Account-Lists)
 
-Marketo의 [명명된 계정 목록](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/target-account-management/target/account-lists)은(는) 명명된 계정의 컬렉션을 나타냅니다. 분류, 데이터 보강 및 스마트 캠페인 필터링을 포함하여 다양한 경우에 사용할 수 있습니다. 명명된 계정 목록 API를 사용하면 이러한 목록 에셋과 해당 멤버십을 원격으로 관리할 수 있습니다.
+Marketo의 [명명된 계정 목록](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/target-account-management/target/account-lists)은(는) 명명된 계정의 컬렉션을 나타냅니다. 분류, 데이터 보강 및 스마트 캠페인 필터링을 포함하여 다양한 경우에 사용할 수 있습니다. 명명된 계정 목록 API를 사용하면 이러한 목록 에셋과 해당 멤버십을 원격으로 관리할 수 있습니다.
 `Content`
 
 ## 권한
@@ -26,13 +26,13 @@ Marketo의 [명명된 계정 목록](https://experienceleague.adobe.com/ko/docs/
 명명된 계정 목록에는 제한된 수의 표준 필드가 있으며 사용자 지정 필드로 확장할 수 없습니다.
 `Named Account List Field`
 
-| 이름 | 데이터 유형 | 업데이트 가능 | 참고 사항 |
+| 이름 | 데이터 유형 | 업데이트 가능 | 참고 |
 |---|---|---|---|
-| marketoGUID | 문자열 | 거짓 | 명명된 계정 목록의 고유 문자열 식별자입니다. 이 필드는 시스템에서 관리되며 레코드를 만들 때 필드로 허용되지 않습니다. 만들기 또는 업데이트를 수행할 때 &quot;dedupeBy&quot;:&quot;idField&quot;에서 사용하는 필드. |
-| 이름 | 문자열 | 참 | 목록 이름. 만들기 또는 업데이트를 수행할 때 &quot;dedupeBy&quot;:&quot;dedupeFields&quot;에서 사용하는 필드. |
-| createdAt | 날짜/시간 | 거짓 | 목록 작성의 날짜/시간입니다. 이 필드는 시스템 관리이며, 레코드를 만들거나 업데이트할 때 필드로 사용할 수 없습니다. |
-| updatedAt | 날짜/시간 | 거짓 | 목록에 대한 최신 업데이트의 날짜/시간입니다. 이 필드는 시스템 관리이며, 레코드를 만들거나 업데이트할 때 필드로 사용할 수 없습니다. |
-| 유형 | 문자열 | 거짓 | 목록 유형. 값은 &quot;default&quot; 또는 &quot;external&quot;일 수 있습니다. 외부 목록은 CRM 계정 보기에서 만든 목록입니다. |
+| marketoGUID | 문자열 | False | 명명된 계정 목록의 고유 문자열 식별자입니다. 이 필드는 시스템에서 관리되며 레코드를 만들 때 필드로 허용되지 않습니다. 만들기 또는 업데이트를 수행할 때 &quot;dedupeBy&quot;:&quot;idField&quot;에서 사용하는 필드. |
+| 이름 | 문자열 | True | 목록 이름. 만들기 또는 업데이트를 수행할 때 &quot;dedupeBy&quot;:&quot;dedupeFields&quot;에서 사용하는 필드. |
+| createdAt | 날짜/시간 | False | 목록 작성의 날짜/시간입니다. 이 필드는 시스템 관리이며, 레코드를 만들거나 업데이트할 때 필드로 사용할 수 없습니다. |
+| updatedAt | 날짜/시간 | False | 목록에 대한 최신 업데이트의 날짜/시간입니다. 이 필드는 시스템 관리이며, 레코드를 만들거나 업데이트할 때 필드로 사용할 수 없습니다. |
+| 유형 | 문자열 | False | 목록 유형. 값은 &quot;default&quot; 또는 &quot;external&quot;일 수 있습니다. 외부 목록은 CRM 계정 보기에서 만든 목록입니다. |
 
 
 ## 쿼리
@@ -44,11 +44,11 @@ GET /rest/v1/namedAccountLists.json?filterType=idField&filterValues=dff23271-f99
 ```
 
 ```json
-{ 
+{
    "requestId": "e42b#14272d07d78",
    "success": true,
-   "result": [ 
-      { 
+   "result": [
+      {
          "seq": 0,
          "marketoGUID": "dff23271-f996-47d7-984f-f2676861b5fb",
          "name": "Saas List",
@@ -57,7 +57,7 @@ GET /rest/v1/namedAccountLists.json?filterType=idField&filterValues=dff23271-f99
          "type": "default",
          "updateable": true
       },
-      { 
+      {
          "seq": 1,
          "marketoGUID": "dff23271-f996-47d7-984f-f2676861b5fc",
          "name": "My Account List",
@@ -76,21 +76,21 @@ GET /rest/v1/namedAccountLists.json?filterType=idField&filterValues=dff23271-f99
 
 끝점은 &quot;createOnly&quot;와 &quot;updateOnly&quot;의 두 가지 표준 작업 유형을 허용합니다.  `action defaults`에서 &quot;createOnly&quot;로 변경되었습니다.
 
-작업이 `updateOnly`인 경우 선택적 `dedupeBy parameter`을(를) 지정할 수 있습니다.  허용되는 값은 &quot;dedupeFields&quot;(&quot;name&quot;에 해당함) 또는 &quot;idField&quot;(&quot;marketoGUID&quot;에 해당함)입니다.  `createOnly` 모드에서는 &quot;name&quot;만 `dedupeBy` 필드로 허용됩니다. 한 번에 최대 300개의 레코드를 제출할 수 있습니다.
+작업이 `dedupeBy parameter`인 경우 선택적 `updateOnly`을(를) 지정할 수 있습니다.  허용되는 값은 &quot;dedupeFields&quot;(&quot;name&quot;에 해당함) 또는 &quot;idField&quot;(&quot;marketoGUID&quot;에 해당함)입니다.  `createOnly` 모드에서는 &quot;name&quot;만 `dedupeBy` 필드로 허용됩니다. 한 번에 최대 300개의 레코드를 제출할 수 있습니다.
 
 ```
 POST /rest/v1/namedAccountLists.json
 ```
 
 ```json
-{ 
+{
    "action": "createOnly",
    "dedupeBy": "dedupeFields",
-   "input": [ 
-      { 
+   "input": [
+      {
          "name": "SAAS List"
       },
-      { 
+      {
          "name": "Manufacturing (Domestic)"
       }
    ]
@@ -98,16 +98,16 @@ POST /rest/v1/namedAccountLists.json
 ```
 
 ```json
-{ 
+{
    "requestId": "e42b#14272d07d78",
    "success": true,
-   "result": [ 
-      { 
+   "result": [
+      {
          "seq": 0,
          "status": "created",
          "marketoGUID": "dff23271-f996-47d7-984f-f2676861b5fb"
       },
-      { 
+      {
          "seq": 1,
          "status": "created",
          "marketoGUID": "dff23271-f996-47d7-984f-f2676861b5fc"
@@ -125,16 +125,16 @@ POST /rest/v1/namedAccountLists/delete.json
 ```
 
 ```json
-{ 
+{
    "deleteBy": "dedupeFields",
-   "input": [ 
-      { 
+   "input": [
+      {
          "name": "Saas List"
       },
-      { 
+      {
          "name": "B2C List"
       },
-      { 
+      {
          "name": "Launchpoint Partner List"
       }
    ]
@@ -142,25 +142,25 @@ POST /rest/v1/namedAccountLists/delete.json
 ```
 
 ```json
-{ 
+{
    "requestId": "e42b#14272d07d78",
    "success": true,
-   "result": [ 
-      { 
+   "result": [
+      {
          "seq": 0,
          "marketoGUID": "dff23271-f996-47d7-984f-f2676861b5fb",
          "status": "deleted"
       },
-      { 
+      {
          "seq": 1,
          "id": "dff23271-f996-47d7-984f-f2676861b5fc",
          "status": "deleted"
       },
-      { 
+      {
          "seq": 2,
          "status": "skipped",
-         "reasons": [ 
-            { 
+         "reasons": [
+            {
                "code": "1013",
                "message": "Record not found"
             }
@@ -189,18 +189,18 @@ GET /rest/v1/namedAccountList/{id}/namedAccounts.json
 ```
 
 ```json
-{ 
+{
    "requestId": "e42b#14272d07d78",
    "success": true,
-   "result": [ 
-      { 
+   "result": [
+      {
          "seq": 0,
          "marketoGUID": "dff23271-f996-47d7-984f-f2676861b5fb",
          "name": "Saas List",
          "createdAt": "2017-02-01T00:00:00Z",
          "updatedAt": "2017-03-05T17:21:15Z"
       },
-      { 
+      {
          "seq": 1,
          "marketoGUID": "dff23271-f996-47d7-984f-f2676861b5fc",
          "name": "My Account List",
@@ -223,7 +223,7 @@ POST /rest/v1/namedAccountList/{id}/namedAccounts.json
 {
     "input": [
         {
-             "marketoGUID": "dff23271-f996-47d7-984f-f2676861b5fb" 
+             "marketoGUID": "dff23271-f996-47d7-984f-f2676861b5fb"
         },
         {
              "marketoGUID": "dff23271-f996-47d7-984f-f2676861b5fb"
@@ -263,7 +263,7 @@ POST /rest/v1/namedAccountList/{id}/namedAccounts/remove.json
 {
     "input": [
         {
-             "marketoGUID": "dff23271-f996-47d7-984f-f2676861b5fb" 
+             "marketoGUID": "dff23271-f996-47d7-984f-f2676861b5fb"
         },
         {
              "marketoGUID": "dff23271-f996-47d7-984f-f2676861b5fb"

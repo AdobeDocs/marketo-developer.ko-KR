@@ -3,10 +3,10 @@ title: '[!DNL Ionic]'
 feature: Mobile Marketing
 description: 모바일 장치용 Marketo에서  [!DNL Ionic] 사용
 exl-id: 204e5fb4-c9d6-43a6-9d77-0b2a67ddbed3
-source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
 source-wordcount: '606'
-ht-degree: 1%
+ht-degree: 2%
 
 ---
 
@@ -14,9 +14,9 @@ ht-degree: 1%
 
 이 항목에서는 Marketo Cordova 플러그인을 통합하는 방법을 설명합니다. [!DNL Ionic] 커패시터는 현재 지원되지 않습니다.
 
-## 전제 조건
+## 사전 요구 사항
 
-1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)(응용 프로그램 비밀 키 및 Munchkin Id 얻기).
+1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin Id 얻기).
 1. 푸시 알림 설정([iOS](push-notifications.md) | [Android](push-notifications.md) ).
 1. [[!DNL Ionic]](https://ionicframework.com/getting-started/) 및 [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/)를 설치합니다.
 
@@ -74,7 +74,7 @@ sharedInstance.trackPushNotfication(launchOptions)
 
 앱 시작 시 Marketo 프레임워크가 시작되도록 하려면 기본 JavaScript 파일의 `onDeviceReady` 함수 아래에 다음 코드를 추가하십시오.
 
-[!DNL Ionic] Cordova 앱에 대한 프레임워크 유형으로 `ionicCordova`을(를) 전달해야 합니다.
+`ionicCordova` Cordova 앱에 대한 프레임워크 유형으로 [!DNL Ionic]을(를) 전달해야 합니다.
 
 #### 구문
 
@@ -88,14 +88,14 @@ marketo.initialize(
   'FRAMEWORK_TYPE'
 );
 
-// For session tracking, add following. 
+// For session tracking, add following.
 marketo.onStart(
   function(){ console.log("onStart."); },
   function(error){ console.log("Failed to report onStart." + error); }
 );
 ```
 
-#### 매개 변수
+#### 매개변수
 
 - Success Callback : Marketo 프레임워크가 성공적으로 초기화된 경우 실행할 함수입니다.
 - Failure Callback : Marketo 프레임워크를 초기화하지 못할 경우 실행할 함수입니다.
@@ -117,11 +117,11 @@ marketo.initializeMarketoPush(
 );
 ```
 
-#### 매개 변수
+#### 매개변수
 
 - Success Callback : Marketo 푸시 알림이 성공적으로 초기화된 경우 실행되는 함수입니다.
 - Failure Callback : Marketo 푸시 알림이 초기화되지 않는 경우 실행할 함수입니다.
-- GCM_PROJECT_ID : 앱을 만든 후 [Google 개발자 콘솔](https://accounts.google.com/ServiceLogin?service=cloudconsole&amp;passive=1209600&amp;osid=1&amp;continue=https://console.cloud.google.com/apis/dashboard&amp;followup=https://console.cloud.google.com/apis/dashboard)에서 GCM 프로젝트 ID를 찾았습니다.
+- GCM_PROJECT_ID : 앱을 만든 후 [Google 개발자 콘솔](https://accounts.google.com/ServiceLogin?service=cloudconsole&passive=1209600&osid=1&continue=https://console.cloud.google.com/apis/dashboard&followup=https://console.cloud.google.com/apis/dashboard)에서 GCM 프로젝트 ID를 찾았습니다.
 
 로그아웃 시 토큰의 등록을 취소할 수도 있습니다.
 
@@ -146,7 +146,7 @@ marketo.associateLead(
 );
 ```
 
-### 매개 변수
+### 매개변수
 
 - Success Callback : Marketo 프레임워크가 리드를 성공적으로 연결하면 실행되는 함수입니다.
 - Failure Callback : Marketo 프레임워크가 리드를 연결하지 못할 경우 실행할 함수입니다.
@@ -190,7 +190,7 @@ marketo.reportaction(
 );
 ```
 
-### 매개 변수
+### 매개변수
 
 - 성공 콜백 : Marketo 프레임워크가 작업을 성공적으로 보고하면 실행할 함수입니다.
 - 실패 콜백 : Marketo 프레임워크가 작업을 보고하지 못하는 경우 실행할 함수입니다.
@@ -251,4 +251,4 @@ onStart: function() {
 
 사용된 방법에 따라 새로 생성된 리드가 다른 트리거 및 필터에 의해 인식됩니다. MME SDK 또는 REST API를 사용하여 생성된 리드는 &quot;생성된 리드&quot; 트리거 및 필터에 표시됩니다. 양식 제출로 생성된 리드는 &quot;양식 작성&quot; 트리거 및 필터에 표시됩니다.
 
-가장 좋은 방법은 리드를 만들 때 웹 앱에서 사용하는 방법과 일관되게 유지하는 것입니다. 양식 제출을 리드를 만드는 메커니즘으로 사용하는 웹 앱이 이미 있는 경우 하이브리드 앱에서 리드를 만들 때 동일한 메커니즘을 사용합니다. REST API를 리드 생성 메커니즘으로 사용하는 웹 앱이 이미 있는 경우 하이브리드 앱에서 리드를 생성할 때도 이와 동일한 메커니즘을 사용합니다. 양식 제출이나 REST API를 웹 앱에서 리드를 만드는 메커니즘으로 사용하지 않는 경우 MME SDK를 사용하여 Marketo에서 리드를 만드는 것이 좋습니다.
+가장 좋은 방법은 리드를 만들 때 웹 앱에서 사용하는 방법과 일관되게 유지하는 것입니다. 양식 제출을 리드를 만드는 메커니즘으로 사용하는 웹 앱이 이미 있는 경우 하이브리드 앱에서 리드를 만들 때 동일한 메커니즘을 사용합니다. REST API를 리드 생성 메커니즘으로 사용하는 웹 앱이 이미 있는 경우 하이브리드 앱에서 리드를 생성할 때도 이와 동일한 메커니즘을 사용합니다. 양식 제출이나 REST API를 웹 앱에서 리드를 만드는 메커니즘으로 사용하지 않는 경우 MME SDK을 사용하여 Marketo에서 리드를 만드는 것을 고려할 수 있습니다.

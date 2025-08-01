@@ -3,10 +3,10 @@ title: request캠페인
 feature: SOAP, Smart Campaigns
 description: requestCampaign SOAP 호출
 exl-id: b5367eb9-4f4c-4e1d-8b6d-36de8f134f0e
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
 source-wordcount: '277'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -29,8 +29,8 @@ ht-degree: 2%
 | campaignName | campaignId가 있는 경우 선택 사항입니다. `campaignName`, programName 및 programTokenList로 설정된 경우 선택 사항입니다. | 캠페인 이름 |
 | programName | campaignId가 있는 경우 선택 사항입니다. `campaignName`, programName 및 programTokenList로 설정된 경우 선택 사항입니다. | 프로그램 이름 |
 | 프로그램 토큰 목록 | campaignId가 있는 경우 선택 사항입니다. 그렇지 않으면 `campaignName`, `programName` 및 `programTokenList`(으)로 설정된 경우 필요합니다. | 캠페인에 사용할 토큰 배열입니다. 토큰을 지정할 때 programName 및 `campaignName`이(가) 필요합니다. |
-| programTokenList->attrib->name | 선택 사항 | 값을 전달할 프로그램 토큰의 이름입니다. 예: {{my.message}} |
-| programTokenList->attrib->value | 선택 사항 | 지정된 토큰 이름의 값입니다. |
+| programTokenList->attrib->name | 선택 사항입니다 | 값을 전달할 프로그램 토큰의 이름입니다. 예: {{my.message}} |
+| programTokenList->attrib->value | 선택 사항입니다 | 지정된 토큰 이름의 값입니다. |
 
 ## 요청 XML
 
@@ -82,21 +82,21 @@ ht-degree: 2%
 
 ```php
  <?php
- 
+
   $debug = true;
- 
+
   $marketoSoapEndPoint     = "";  // CHANGE ME
   $marketoUserId           = "";  // CHANGE ME
   $marketoSecretKey        = "";  // CHANGE ME
   $marketoNameSpace        = "http://www.marketo.com/mktows/";
- 
+
   // Create Signature
   $dtzObj = new DateTimeZone("America/Los_Angeles");
   $dtObj  = new DateTime('now', $dtzObj);
   $timeStamp = $dtObj->format(DATE_W3C);
   $encryptString = $timeStamp . $marketoUserId;
   $signature = hash_hmac('sha1', $encryptString, $marketoSecretKey);
- 
+
   // Create SOAP Header
   $attrs = new stdClass();
   $attrs->mktowsUserId = $marketoUserId;
@@ -107,24 +107,24 @@ ht-degree: 2%
   if ($debug) {
     $options["trace"] = true;
   }
- 
+
   // Create Request
   $leadKey = array("keyType" => "EMAIL", "keyValue" => "lead@company.com");
   $leadKey2 = array("keyType" => "EMAIL&qquot;, "keyValue" => "anotherlead@company.com");
- 
+
   $leadList = new stdClass();
   $leadList->leadKey = array($leadKey, $leadKey2);
- 
+
   $source = "MKTOWS";
   $campaignId = "4496";
- 
+
   $paramsRequestCampaign = new stdClass();
   $paramsRequestCampaign->campaignId = $campaignId;
   $paramsRequestCampaign->source = $source;
   $paramsRequestCampaign->leadList = $leadList;
- 
+
   $params = array("paramsRequestCampaign" => $paramsRequestCampaign);
- 
+
   $soapClient = new SoapClient($marketoSoapEndPoint ."?WSDL", $options);
   try {
     $response = $soapClient->__soapCall('requestCampaign', $params, $options, $authHdr);
@@ -144,7 +144,7 @@ ht-degree: 2%
 
 ```java
 import com.marketo.mktows.*;
- 
+
 import java.net.URL;
 import javax.xml.namespace.QName;
 import java.text.DateFormat;
@@ -156,71 +156,71 @@ import org.apache.commons.codec.binary.Hex;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.Marshaller;
- 
- 
+
+
 public class RequestCampaign {
- 
+
     public static void main(String[] args) {
         System.out.println("Executing Request Campaign");
         try {
             URL marketoSoapEndPoint = new URL("CHANGE ME" + "?WSDL");
             String marketoUserId = "CHANGE ME";
             String marketoSecretKey = "CHANGE ME";
-             
+
             QName serviceName = new QName("http://www.marketo.com/mktows/", "MktMktowsApiService");
             MktMktowsApiService service = new MktMktowsApiService(marketoSoapEndPoint, serviceName);
             MktowsPort port = service.getMktowsApiSoapPort();
-             
+
             // Create Signature
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
             String text = df.format(new Date());
-            String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);           
+            String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);
             String encryptString = requestTimestamp + marketoUserId ;
-             
+
             SecretKeySpec secretKey = new SecretKeySpec(marketoSecretKey.getBytes(), "HmacSHA1");
             Mac mac = Mac.getInstance("HmacSHA1");
             mac.init(secretKey);
             byte[] rawHmac = mac.doFinal(encryptString.getBytes());
             char[] hexChars = Hex.encodeHex(rawHmac);
-            String signature = new String(hexChars); 
-             
+            String signature = new String(hexChars);
+
             // Set Authentication Header
             AuthenticationHeader header = new AuthenticationHeader();
             header.setMktowsUserId(marketoUserId);
             header.setRequestTimestamp(requestTimestamp);
             header.setRequestSignature(signature);
-             
+
             // Create Request
             ParamsRequestCampaign request = new ParamsRequestCampaign();
-             
+
             request.setSource(ReqCampSourceType.MKTOWS);
-             
+
             ObjectFactory objectFactory = new ObjectFactory();
             JAXBElement<Integer> campaignId = objectFactory.createParamsRequestCampaignCampaignId(4496);
             request.setCampaignId(campaignId);
-             
+
             ArrayOfLeadKey leadKeyList = new ArrayOfLeadKey();
             LeadKey key = new LeadKey();
             key.setKeyType(LeadKeyRef.EMAIL);
             key.setKeyValue("lead@company.com");
-             
+
             LeadKey key2 = new LeadKey();
             key2.setKeyType(LeadKeyRef.EMAIL);
             key2.setKeyValue("anotherlead@company.com");
-             
+
             leadKeyList.getLeadKeies().add(key);
             leadKeyList.getLeadKeies().add(key2);
-             
+
             JAXBElement<ArrayOfLeadKey> arrayOfLeadKey = objectFactory.createParamsRequestCampaignLeadList(leadKeyList);
             request.setLeadList(arrayOfLeadKey);
- 
+
             SuccessRequestCampaign result = port.requestCampaign(request, header);
- 
+
             JAXBContext context = JAXBContext.newInstance(SuccessRequestCampaign.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             m.marshal(result, System.out);
-             
+
         }
         catch(Exception e) {
             e.printStackTrace();
@@ -249,9 +249,9 @@ hashedsignature = OpenSSL::HMAC.hexdigest(digest, marketoSecretKey, encryptStrin
 requestSignature = hashedsignature.to_s
 
 #Create SOAP Header
-headers = { 
-    'ns1:AuthenticationHeader' => { "mktowsUserId" => mktowsUserId, "requestSignature" => requestSignature,                     
-    "requestTimestamp"  => requestTimestamp 
+headers = {
+    'ns1:AuthenticationHeader' => { "mktowsUserId" => mktowsUserId, "requestSignature" => requestSignature,
+    "requestTimestamp"  => requestTimestamp
     }
 }
 

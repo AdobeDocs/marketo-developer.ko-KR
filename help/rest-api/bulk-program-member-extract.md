@@ -3,7 +3,7 @@ title: 일괄 프로그램 멤버 추출
 feature: REST API
 description: 멤버 데이터 추출의 일괄 처리.
 exl-id: 6e0a6bab-2807-429d-9c91-245076a34680
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
 source-wordcount: '1142'
 ht-degree: 2%
@@ -220,7 +220,7 @@ GET /rest/v1/programs/members/describe.json
     <tr>
       <td>필터 유형</td>
       <td>데이터 유형</td>
-      <td>참고 사항</td>
+      <td>참고</td>
     </tr>
     <tr>
       <td>programId</td>
@@ -235,7 +235,7 @@ GET /rest/v1/programs/members/describe.json
     <tr>
       <td>isExhausted</td>
       <td>부울</td>
-      <td><a href="https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/drip-nurturing/using-engagement-programs/people-who-have-exhausted-content">콘텐츠를 모두 사용한 사용자</a>의 프로그램 멤버십 레코드를 필터링하는 데 사용되는 부울을 허용합니다.</td>
+      <td><a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/drip-nurturing/using-engagement-programs/people-who-have-exhausted-content">콘텐츠를 모두 사용한 사용자</a>의 프로그램 멤버십 레코드를 필터링하는 데 사용되는 부울을 허용합니다.</td>
     </tr>
     <tr>
       <td>양육케이던스</td>
@@ -283,7 +283,7 @@ GET /rest/v1/programs/members/describe.json
               <td>등록 오류</td>
             </tr>
             <tr>
-              <td>보냄</td>
+              <td>전송됨</td>
               <td>구독 등록됨</td>
               <td>주소 삭제</td>
             </tr>
@@ -318,7 +318,7 @@ GET /rest/v1/programs/members/describe.json
 - 이 필드의 열 헤더 이름 바꾸기
 - 내보낸 파일의 형식 지정
 
-| 매개 변수 | 데이터 유형 | 필수 | 참고 사항 |
+| 매개변수 | 데이터 유형 | 필수 | 참고 |
 |---|---|---|---|
 | 필드 | 배열[문자열] | 예 | 필드 매개 변수는 JSON 문자열 배열을 수락합니다. 나열된 필드는 내보낸 파일에 포함됩니다. `LeadCustom` `LeadProgram` MemberCustom `ProgramMember` 필드 형식을 내보낼 수 있습니다. 리드2 설명 및/또는 프로그램 멤버 엔드포인트 설명을 사용하여 검색할 수 있는 REST API 이름을 사용하여 필드를 지정합니다. |
 | 열 머리글 이름 | 오브젝트 | 아니요 | 필드 및 열 헤더 이름의 키-값 쌍을 포함하는 JSON 개체입니다. 키는 내보내기 작업에 포함된 필드 이름이어야 합니다. 값은 해당 필드에 대해 내보낸 열 헤더의 이름입니다. |
@@ -334,9 +334,9 @@ POST /bulk/v1/program/members/export/create.json
 ```
 
 ```json
-{ 
+{
    "format": "CSV",
-   "fields": [ 
+   "fields": [
         "firstName",
         "lastName",
         "email",
@@ -350,7 +350,7 @@ POST /bulk/v1/program/members/export/create.json
         "pMCustomField01",
         "pMCustomField02"
    ],
-   "filter": { 
+   "filter": {
       "programId":1044
    }
 }
@@ -371,7 +371,7 @@ POST /bulk/v1/program/members/export/create.json
 }
 ```
 
-작업이 생성되었음을 나타내는 상태 응답이 반환됩니다. 작업이 정의되고 생성되었지만 아직 시작되지 않았습니다. 이렇게 하려면 만들기 상태 응답의 `exportId`을(를) 사용하여 [Enqueue 내보내기 프로그램 구성원 작업](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/enqueueExportProgramMembersUsingPOST) 끝점을 호출해야 합니다.
+작업이 생성되었음을 나타내는 상태 응답이 반환됩니다. 작업이 정의되고 생성되었지만 아직 시작되지 않았습니다. 이렇게 하려면 만들기 상태 응답의 [을(를) 사용하여 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/enqueueExportProgramMembersUsingPOST)Enqueue 내보내기 프로그램 구성원 작업`exportId` 끝점을 호출해야 합니다.
 
 ```
 POST /bulk/v1/program/members/export/{exportId}/enqueue.json
@@ -447,7 +447,7 @@ GET /bulk/v1/program/members/export/{exportId}/status.json
 
 ## 데이터 검색 중
 
-완료된 프로그램 구성원 내보내기의 파일을 검색하려면 `exportId`(으)로 [프로그램 구성원 파일 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/getExportProgramMembersFileUsingGET) 끝점을 호출하면 됩니다.
+완료된 프로그램 구성원 내보내기의 파일을 검색하려면 [(으)로 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/getExportProgramMembersFileUsingGET)프로그램 구성원 파일 가져오기`exportId` 끝점을 호출하면 됩니다.
 
 응답에는 작업이 구성된 방식으로 포맷된 파일이 포함됩니다. 끝점이 파일의 내용에 응답합니다. 요청한 프로그램 구성원 필드가 비어 있으면(데이터 없음) `null`이(가) 내보내기 파일의 해당 필드에 배치됩니다.
 

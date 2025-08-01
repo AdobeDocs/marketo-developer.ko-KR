@@ -3,20 +3,20 @@ title: React Native
 feature: Mobile Marketing
 description: Marketo용 React Native 설치
 exl-id: 462fd32e-91f1-4582-93f2-9efe4d4761ff
-source-git-commit: e7cb23c4d578d949553b2b7a6e127d6be54cdf23
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
-source-wordcount: '811'
+source-wordcount: '810'
 ht-degree: 0%
 
 ---
 
 # React Native
 
-이 문서에서는 모바일 앱을 플랫폼과 통합하기 위해 Marketo의 기본 SDK를 설치하고 설정하는 방법에 대해 설명합니다.
+이 문서에서는 모바일 앱을 플랫폼과 통합하기 위해 Marketo의 기본 SDK을 설치하고 설정하는 방법에 대한 정보를 제공합니다.
 
-## 전제 조건
+## 사전 요구 사항
 
-[Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)(응용 프로그램 비밀 키 및 Munchkin Id 얻기).
+[Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin Id 얻기).
 
 ## SDK 통합
 
@@ -24,7 +24,7 @@ ht-degree: 0%
 
 **Gradle을 사용하여 설정**
 
-최신 버전으로 Marketo SDK 종속성을 추가합니다. 응용 프로그램 수준 `build.gradle` 파일의 종속성 섹션 아래에 (적절한 Marketo SDK 버전 포함)을 추가합니다.
+최신 버전으로 Marketo SDK 종속성을 추가합니다. 응용 프로그램 수준 `build.gradle` 파일의 종속성 섹션 아래에서 (적절한 Marketo SDK 버전 포함)을 추가합니다.
 
 ```
 implementation 'com.marketo:MarketoSDK:0.x.x'
@@ -32,7 +32,7 @@ implementation 'com.marketo:MarketoSDK:0.x.x'
 
 **mavencentral 저장소 추가**
 
-Marketo SDK는 [maven 중앙 저장소](https://mvnrepository.com/)에서 사용할 수 있습니다. 해당 파일을 동기화하려면 `mavencentral` 리포지토리를 `build.gradle` 루트에 추가하십시오.
+Marketo SDK은 [maven 중앙 저장소](https://mvnrepository.com/)에서 사용할 수 있습니다. 해당 파일을 동기화하려면 `mavencentral` 리포지토리를 `build.gradle` 루트에 추가하십시오.
 
 ```
 build script {
@@ -47,13 +47,13 @@ build script {
 
 #### iOS SDK 통합
 
-React Native 프로젝트에 대한 브리지를 만들기 전에 Xcode 프로젝트에서 SDK를 설정하는 것이 중요합니다.
+React Native 프로젝트에 대한 브리지를 만들기 전에 Xcode 프로젝트에서 SDK을 설정하는 것이 중요합니다.
 
 **SDK 통합 - CocoaPod 사용**
 
-앱에서 iOS SDK를 쉽게 사용할 수 있습니다. CocoaPods를 사용하여 앱의 Xcode 프로젝트에서 설정하려면 다음 단계를 수행하십시오. 당사의 플랫폼을 앱과 통합할 수 있습니다.
+앱에서 iOS SDK을 사용하면 간단합니다. CocoaPods를 사용하여 앱의 Xcode 프로젝트에서 설정하려면 다음 단계를 수행하십시오. 당사의 플랫폼을 앱과 통합할 수 있습니다.
 
-[CocoaPods](https://cocoapods.org/) 다운로드 - Ruby gem으로 배포되는 이 프로그램은 iOS SDK와 같은 코드에서 타사 라이브러리를 사용하는 프로세스를 간소화하는 Objective-C 및 Swift의 종속성 관리자입니다.
+[CocoaPods](https://cocoapods.org/) 다운로드 - Ruby gem으로 배포되는 이 프로그램은 iOS SDK과 같은 코드에서 타사 라이브러리를 사용하는 프로세스를 간소화하는 Objective-C 및 Swift의 종속성 관리자입니다.
 
 다운로드하고 설치하려면 Mac에서 명령줄 단말기를 시작하고 다음 명령을 실행합니다.
 
@@ -71,7 +71,7 @@ React Native 프로젝트에 대한 브리지를 만들기 전에 Xcode 프로�
 
 1. Podfile을 저장하고 닫습니다.
 
-1. Marketo iOS SDK를 다운로드하여 설치합니다.
+1. Marketo iOS SDK을 다운로드하여 설치합니다.
 
 `$ pod install`
 
@@ -89,7 +89,7 @@ React Native 브리지는 JSX와 기본 앱 레이어 간의 통신에 사용됩
 
 ### Android
 
-이 파일에는 사용자가 제공하는 매개 변수를 사용하여 내부적으로 Marketo SDK의 메서드를 호출할 수 있는 래퍼 메서드가 포함되어 있습니다.
+이 파일에는 사용자가 제공하는 매개 변수를 사용하여 내부적으로 Marketo SDK 메서드를 호출할 수 있는 래퍼 메서드가 포함되어 있습니다.
 
 ```
 public class RNMarketoModule extends ReactContextBaseJavaModule {
@@ -141,7 +141,7 @@ public class RNMarketoModule extends ReactContextBaseJavaModule {
       public void initializeSDK(String frameworkType, String munchkinId, String appSecreteKey){
           marketoSdk.initializeSDK(munchkinId,appSecreteKey,frameworkType);
     }
-   
+
 
    @ReactMethod
    public void initializeMarketoPush(String projectId){
@@ -189,7 +189,7 @@ public class MarketoPluginPackage implements ReactPackage {
 
            modules.add(new RNMarketoModule(reactContext));
 
-           return modules;    
+           return modules;
    }
 
    @NonNull
@@ -204,14 +204,14 @@ public class MarketoPluginPackage implements ReactPackage {
 
 ```
 public class MainApplication extends Application implements ReactApplication {
- 
+
   private final ReactNativeHost mReactNativeHost =
       new ReactNativeHost(this) {
         @Override
         public boolean getUseDeveloperSupport() {
           return BuildConfig.DEBUG;
         }
- 
+
         @Override
         protected List getPackages() {
           @SuppressWarnings("UnnecessaryLocalVariable")
@@ -243,7 +243,7 @@ public class MainApplication extends Application implements ReactApplication {
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MktoBridge : NSObject 
+@interface MktoBridge : NSObject
 
 @end
 
@@ -280,18 +280,18 @@ NS_ASSUME_NONNULL_END
 #import <React/RCTBridge.h>
 #import "ConstantStringsHeader.h"
 
-@implementation MktoBridge 
+@implementation MktoBridge
 
 RCT_EXPORT_MODULE(RNMarketoModule);
- 
+
 +(BOOL)requiresMainQueueSetup{
   return NO;
 }
- 
+
 RCT_EXPORT_METHOD(initializeSDK:(NSString *) munchkinId SecretKey: (NSString *) secretKey andFrameworkType: (NSString *) frameworkType){
   [[Marketo sharedInstance] initializeWithMunchkinID:munchkinId appSecret:secretKey mobileFrameworkType:frameworkType launchOptions:nil];
 }
- 
+
 RCT_EXPORT_METHOD(reportAction:(NSString *)actionName withMetaData:(NSDictionary *)metaData){
   MarketoActionMetaData *meta = [[MarketoActionMetaData alloc] init];
   [meta setType:[metaData objectForKey:KEY_ACTION_TYPE]];
@@ -300,7 +300,7 @@ RCT_EXPORT_METHOD(reportAction:(NSString *)actionName withMetaData:(NSDictionary
   [meta setMetric:[metaData valueForKey:KEY_ACTION_METRIC]];
   [[Marketo sharedInstance] reportAction:actionName withMetaData:meta];
 }
- 
+
 RCT_EXPORT_METHOD(associateLead:(NSDictionary *)leadDetails){
   MarketoLead *lead = [[MarketoLead alloc] init];
   if ([leadDetails objectForKey:KEY_EMAIL] != nil) {
@@ -309,32 +309,32 @@ RCT_EXPORT_METHOD(associateLead:(NSDictionary *)leadDetails){
   if ([leadDetails objectForKey:KEY_FIRST_NAME] != nil) {
     [lead setFirstName:[leadDetails objectForKey:KEY_FIRST_NAME]];
   }
-  
+
   if ([leadDetails objectForKey:KEY_LAST_NAME] != nil) {
     [lead setLastName:[leadDetails objectForKey:KEY_LAST_NAME]];
   }
-  
+
   if ([leadDetails objectForKey:KEY_CITY] != nil) {
     [lead setCity:[leadDetails objectForKey:KEY_CITY]];
   }
     [[Marketo sharedInstance] associateLead:lead];
 }
- 
+
 RCT_EXPORT_METHOD(uninitializeMarketoPush){
   [[Marketo sharedInstance] unregisterPushDeviceToken];
 }
- 
+
 RCT_EXPORT_METHOD(reportAll){
   [[Marketo sharedInstance] reportAll];
 }
- 
+
 RCT_EXPORT_METHOD(setSecureSignature:(NSDictionary *)secureSignature){
   MKTSecuritySignature *secSignature = [[MKTSecuritySignature alloc]
                                         initWithAccessKey:[secureSignature objectForKey:KEY_ACCESSKEY]
                                         signature:[secureSignature objectForKey:KEY_SIGNATURE]
                                         timestamp: [secureSignature objectForKey:KEY_EMAIL]
                                         email:[secureSignature objectForKey:KEY_EMAIL]];
-  
+
     [[Marketo sharedInstance] setSecureSignature:secSignature];
 }
 
@@ -374,7 +374,7 @@ const NewModuleButton = () => {
   };
 
   return (
-    
+
   );
   };
 
@@ -391,7 +391,7 @@ import { NativeModules } from 'react-native';
 const { RNMarketoModule } = NativeModules;
 ```
 
-위의 파일을 올바르게 배치하면 모든 js 클래스에서 js 모듈을 가져와 해당 메서드를 직접 호출할 수 있습니다. For example:
+위의 파일을 올바르게 배치하면 모든 js 클래스에서 js 모듈을 가져와 해당 메서드를 직접 호출할 수 있습니다. 예:
 
 React 네이티브 앱에 대한 프레임워크 유형으로 &quot;reactNative&quot;를 전달해야 합니다. 
 
@@ -430,8 +430,8 @@ RNMarketoModule.initializeMarketoPush("ProjectId", "Channel_name")
     <intent-filter>
         <action  android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
     </intent-filter/>
-    <intent-filter> 
-        <action android:name="com.google.firebase.MESSAGING_EVENT"/> 
+    <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT"/>
     </intent-filter/>
 </activity/>
 ```
@@ -530,7 +530,7 @@ APNS 위임 메서드로 `AppDelegate.mm` 업데이트:
   return [self bundleURL];
 }
 
--(void)userNotificationCenter:(UNUserNotificationCenter *)center 
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center
       willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
     completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge);
 }
@@ -538,7 +538,7 @@ APNS 위임 메서드로 `AppDelegate.mm` 업데이트:
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response
          withCompletionHandler:(void(^)(void))completionHandler {
-    [[Marketo sharedInstance] userNotificationCenter:center 
+    [[Marketo sharedInstance] userNotificationCenter:center
                       didReceiveNotificationResponse:response
                                withCompletionHandler:completionHandler];
 }
@@ -601,10 +601,10 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 - (BOOL)application:(UIApplication *)app
             openURL:(NSURL *)url
             options:(NSDictionary *)options{
-   
+
     return [[Marketo sharedInstance] application:app
                                          openURL:url
-                                         options:options];    
+                                         options:options];
 }
 ```
 

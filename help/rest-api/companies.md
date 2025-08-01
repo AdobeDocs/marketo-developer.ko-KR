@@ -3,10 +3,10 @@ title: 회사
 feature: REST API
 description: Marketo API를 사용하여 회사 데이터를 구성합니다.
 exl-id: 80e514a2-1c86-46a7-82bc-e4db702189b0
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
 source-wordcount: '564'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 [회사 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies)
 
-회사는 잠재 고객 레코드가 속한 조직을 나타냅니다. 리드는 [리드 동기화](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST) 또는 [리드 일괄 가져오기](bulk-lead-import.md) 끝점을 사용하여 해당 `externalCompanyId` 필드를 채워 회사에 추가됩니다. 리드가 회사에 추가되면 해당 회사에서 리드를 삭제할 수 없습니다(다른 회사에 리드를 추가하지 않은 경우). 회사 레코드에 연결된 잠재 고객은 잠재 고객의 자체 레코드에 있는 것처럼 회사 레코드에서 값을 직접 상속합니다.
+회사는 잠재 고객 레코드가 속한 조직을 나타냅니다. 리드는 `externalCompanyId`리드 동기화[ 또는 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST)리드 일괄 가져오기[ 끝점을 사용하여 해당 ](bulk-lead-import.md) 필드를 채워 회사에 추가됩니다. 리드가 회사에 추가되면 해당 회사에서 리드를 삭제할 수 없습니다(다른 회사에 리드를 추가하지 않은 경우). 회사 레코드에 연결된 잠재 고객은 잠재 고객의 자체 레코드에 있는 것처럼 회사 레코드에서 값을 직접 상속합니다.
 
-회사 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=ko) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=ko)가 활성화된 구독에 대한 읽기 전용 액세스입니다.
+회사 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=en) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=en)가 활성화된 구독에 대한 읽기 전용 액세스입니다.
 
 ## 설명
 
@@ -27,63 +27,63 @@ GET /rest/v1/companies/describe.json
 ```
 
 ```json
-{  
+{
    "success":true,
    "requestId":"5847#14d44113ad7",
-   "result":[  
-      {  
+   "result":[
+      {
          "name":"Company",
          "description":"Company object",
          "createdAt":"2015-05-11T17:11:32Z",
          "updatedAt":"2015-05-11T17:11:32Z",
          "idField":"id",
-         "dedupeFields":[  
+         "dedupeFields":[
             "externalCompanyId"
          ],
-         "searchableFields":[  
-            [  
+         "searchableFields":[
+            [
                "externalCompanyId"
             ],
-            [  
+            [
                "id"
             ],
-            [  
+            [
                "company"
             ]
          ],
-         "fields":[  
-            {  
+         "fields":[
+            {
                "name":"createdAt",
                "displayName":"Created At",
                "dataType":"datetime",
                "updateable":false
             },
-            {  
+            {
                "name":"externalCompanyId",
                "displayName":"External Company Id",
                "dataType":"string",
                "length":100,
                "updateable":false
             },
-            {  
+            {
                "name":"id",
                "displayName":"Id",
                "dataType":"integer",
                "updateable":false
             },
-            {  
+            {
                "name":"updatedAt",
                "displayName":"Updated At",
                "dataType":"datetime",
                "updateable":false
             },
-            {  
+            {
                "name":"annualRevenue",
                "displayName":"Annual Revenue",
                "dataType":"currency",
                "updateable":true
             }
-            {  
+            {
                "name":"company",
                "displayName":"Company Name",
                "dataType":"string",
@@ -98,7 +98,7 @@ GET /rest/v1/companies/describe.json
 
 ## 쿼리
 
-`filterType` 매개 변수가 회사 설명 호출의 searchableFields 배열 또는 dedupeFields에 나열된 필드를 수락한다는 추가적인 제한을 사용하여 [회사에 문의](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies/operation/getCompaniesUsingGET)하는 패턴은 리드 API의 패턴을 따릅니다.
+[ 매개 변수가 회사 설명 호출의 searchableFields 배열 또는 dedupeFields에 나열된 필드를 수락한다는 추가적인 제한을 사용하여 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies/operation/getCompaniesUsingGET)회사에 문의`filterType`하는 패턴은 리드 API의 패턴을 따릅니다.
 
 `filterType` 및 `filterValues`은(는) 필수 쿼리 매개 변수입니다.  `fields`, `nextPageToken` 및 `batchSize`은(는) 선택적 매개 변수입니다.  매개 변수는 Leads 및 Opportunities API의 해당 매개 변수와 동일하게 작동합니다. `fields` 목록을 요청할 때 특정 필드가 요청되었지만 반환되지 않은 경우 값이 null인 것으로 간주됩니다.
 
@@ -114,17 +114,17 @@ GET /rest/v1/companies.json?filterType=id&filterValues=3433,5345
 ```
 
 ```json
-{  
+{
    "requestId":"e42b#14272d07d78",
    "success":true,
-   "result":[  
-      {  
+   "result":[
+      {
          "seq":0,
          "id":3433,
          "externalCompanyId":"19UYA31581L000000",
          "company":"Google"
       },
-      {  
+      {
          "seq":1,
          "id":5345,
          "externalCompanyId":"29UYA31581L000000",
@@ -147,15 +147,15 @@ Content-Type: application/json
 ```
 
 ```json
-{  
+{
    "action":"createOrUpdate",
    "dedupeBy":"dedupeFields",
-   "input":[  
-      {  
+   "input":[
+      {
          "externalCompanyId":"19UYA31581L000000",
          "company":"Google"
       },
-      {  
+      {
          "externalCompanyId":"29UYA31581L000000",
          "company":"Yahoo"
       }
@@ -164,16 +164,16 @@ Content-Type: application/json
 ```
 
 ```json
-{  
+{
    "requestId":"e42b#14272d07d78",
    "success":true,
-   "result":[  
-      {  
+   "result":[
+      {
          "seq":0,
          "status":"updated",
          "id":1232
       },
-      {  
+      {
          "seq":1,
          "status":"created",
          "id":1323
@@ -312,16 +312,16 @@ POST /rest/v1/companies/delete.json
 ```
 
 ```json
-{  
+{
    "deleteBy":"dedupeFields",
-   "input":[  
-      {  
+   "input":[
+      {
          "externalCompanyId":"19UYA31581L000000"
       },
-      {  
+      {
          "externalCompanyId":"29UYA31581L000000"
       },
-      {  
+      {
          "externalCompanyId":"39UYA31581L000000"
       }
    ]
@@ -329,25 +329,25 @@ POST /rest/v1/companies/delete.json
 ```
 
 ```json
-{  
+{
    "requestId":"e42b#14272d07d78",
    "success":true,
-   "result":[  
-      {  
+   "result":[
+      {
          "seq":0,
          "id":1234,
          "status":"deleted"
       },
-      {  
+      {
          "seq":1,
          "id":56456,
          "status":"deleted"
       },
-      {  
+      {
          "seq":2,
          "status":"skipped",
-         "reasons":[  
-            {  
+         "reasons":[
+            {
                "code":"1013",
                "message":"Record not found"
             }

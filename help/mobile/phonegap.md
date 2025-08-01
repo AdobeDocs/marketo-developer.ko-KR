@@ -3,10 +3,10 @@ title: PhoneGap
 feature: Mobile Marketing
 description: 모바일 장치에서 Marketo과 PhoneGap 사용
 exl-id: 99f14c76-9438-4942-9309-643bca434d07
-source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
 source-wordcount: '797'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 Marketo PhoneGap 플러그인 통합
 
-## 필요 조건
+## 사전 요구 사항
 
-1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)(응용 프로그램 비밀 키 및 Munchkin Id 얻기).
+1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin Id 얻기).
 1. 푸시 알림 설정([iOS](push-notifications.md) | [Android](push-notifications.md)).
 1. [PhoneGap/Cordova CLI를 설치합니다](https://cordova.apache.org/docs/en/latest/guide/cli/).
 
@@ -48,10 +48,10 @@ Marketo PhoneGap 플러그인 통합
 
 **Cordova 버전 8.0.0(Cordova@Android7.0.0) 이상**
 
-Cordova Android 플랫폼이 빌드되면 Android Studio로 앱을 열고 `com.marketo.plugin` 폴더에 있는 `Marketo.gradle` 파일의 `dirs` 값을 업데이트합니다.
+Cordova Android 플랫폼이 빌드되면 Android Studio로 앱을 열고 `dirs` 폴더에 있는 `Marketo.gradle` 파일의 `com.marketo.plugin` 값을 업데이트합니다.
 
 ```
-repositories{    
+repositories{
   jcenter()
   flatDir{
       dirs '../app/src/main/aar'
@@ -66,12 +66,12 @@ repositories{
 1. Firebase 클라우드 메시징 지원
 
 1. Firebase 콘솔에서 Firebase 앱을 구성합니다.
-   1. [&#128279;](https://console.firebase.google.com/)Firebase 콘솔에서 프로젝트를 만들거나 추가합니다.
+   1. [](https://console.firebase.google.com/)Firebase 콘솔에서 프로젝트를 만들거나 추가합니다.
       1. [Firebase 콘솔](https://console.firebase.google.com/)에서 **[!UICONTROL Add Project]**&#x200B;을(를) 선택합니다.
       1. 기존 Google Cloud 프로젝트 목록에서 GCM 프로젝트를 선택하고 **[!UICONTROL Add Firebase]**&#x200B;을(를) 선택합니다.
       1. Firebase 시작 화면에서 &#39;Android 앱에 Firebase 추가&#39;를 선택합니다.
       1. 패키지 이름과 SHA-1을 입력하고 **[!UICONTROL Add App]**&#x200B;을(를) 선택하십시오. Firebase 앱에 대한 새 `google-services.json` 파일이 다운로드되었습니다.
-   1. [!UICONTROL Project Overview]의 **[!UICONTROL Project Settings]**(으)로 이동
+   1. **[!UICONTROL Project Settings]**&#x200B;의 [!UICONTROL Project Overview]&#x200B;(으)로 이동
       1. **[!UICONTROL General]** 탭을 클릭합니다. &quot;google-services.json&quot; 파일을 다운로드합니다.
       1. **[!UICONTROL Cloud Messaging]** 탭을 클릭합니다. [!UICONTROL Server Key] 및 [!UICONTROL Sender ID]을(를) 복사합니다. 이 [!UICONTROL Server Key] 및 [!UICONTROL Sender ID]을(를) Marketo에 제공하십시오.
    1. Phonegap 앱에서 FCM 변경 사항 구성
@@ -114,11 +114,11 @@ repositories{
             ```
 
 
-### 3. xCode에서 푸시 알림 활성화
+### &#x200B;3. xCode에서 푸시 알림 활성화
 
 xCode 프로젝트에서 푸시 알림 기능을 켭니다.
 
-### 4. 푸시 알림 추적
+### &#x200B;4. 푸시 알림 추적
 
 `application:didFinishLaunchingWithOptions:` 함수 내에 다음 코드를 붙여넣습니다.
 
@@ -146,7 +146,7 @@ sharedInstance.trackPushNotification(launchOptions)
 
 >[!ENDTABS]
 
-### 5. Marketo 프레임워크 초기화
+### &#x200B;5. Marketo 프레임워크 초기화
 
 앱 시작 시 Marketo 프레임워크가 시작되도록 하려면 기본 JavaScript 파일의 `onDeviceReady` 함수 아래에 다음 코드를 추가하십시오.
 
@@ -160,25 +160,25 @@ marketo.initialize(
   function() { console.log("MarketoSDK Init done."); },
   function(error) { console.log("an error occurred:" + error); },
   'YOUR_MUNCHKIN_ID',
-  'YOUR_SECRET_KEY', 
+  'YOUR_SECRET_KEY',
   'FRAMEWORK_TYPE'
 );
 
-// For session tracking, add following. 
+// For session tracking, add following.
 marketo.onStart(
   function(){ console.log("onStart."); },
   function(error){ console.log("Failed to report onStart." + error); }
 );
 ```
 
-### 매개 변수
+### 매개변수
 
 - Success Callback : Marketo 프레임워크가 성공적으로 초기화된 경우 실행할 함수입니다.
 - Failure Callback : Marketo 프레임워크를 초기화하지 못할 경우 실행할 함수입니다.
-- MUNCHKIN ID : 등록 시 Marketo에서 받은 Munchkin ID입니다.
+- MUNCHKIN ID : 등록 시 Munchkin ID가 Marketo에서 수신되었습니다.
 - 비밀 키 : 등록 시 Marketo에서 받은 비밀 키.
 
-### 6. Marketo 푸시 알림 초기화
+### &#x200B;6. Marketo 푸시 알림 초기화
 
 Marketo 푸시 알림이 시작되었는지 확인하려면 기본 JavaScript 파일에서 초기화 함수 뒤에 다음 코드를 추가합니다.
 
@@ -193,7 +193,7 @@ marketo.initializeMarketoPush(
 );
 ```
 
-### 매개 변수
+### 매개변수
 
 - Success Callback : Marketo 푸시 알림이 성공적으로 초기화된 경우 실행되는 함수입니다.
 - Failure Callback : Marketo 푸시 알림이 초기화되지 않는 경우 실행할 함수입니다.
@@ -222,7 +222,7 @@ marketo.associateLead(
 );
 ```
 
-### 매개 변수
+### 매개변수
 
 - Success Callback : Marketo 프레임워크가 리드를 성공적으로 연결하면 실행되는 함수입니다.
 - Failure Callback : Marketo 프레임워크가 리드를 연결하지 못할 경우 실행할 함수입니다.
@@ -268,7 +268,7 @@ marketo.reportaction(
 );
 ```
 
-### 매개 변수
+### 매개변수
 
 - 성공 콜백 : Marketo 프레임워크가 작업을 성공적으로 보고하면 실행할 함수입니다.
 - 실패 콜백 : Marketo 프레임워크가 작업을 보고하지 못하는 경우 실행할 함수입니다.
@@ -329,4 +329,4 @@ onStart: function() {
 
 사용된 방법에 따라 새로 생성된 리드가 다른 트리거 및 필터에 의해 인식됩니다. MME SDK 또는 REST API를 사용하여 생성된 리드는 &quot;생성된 리드&quot; 트리거 및 필터에 표시됩니다. 양식 제출로 생성된 리드는 &quot;양식 작성&quot; 트리거 및 필터에 표시됩니다.
 
-가장 좋은 방법은 리드를 만들 때 웹 앱에서 사용하는 방법과 일관되게 유지하는 것입니다. 양식 제출을 리드를 만드는 메커니즘으로 사용하는 웹 앱이 이미 있는 경우 하이브리드 앱에서 리드를 만들 때 동일한 메커니즘을 사용합니다. REST API를 리드 생성 메커니즘으로 사용하는 웹 앱이 이미 있는 경우 하이브리드 앱에서 리드를 생성할 때도 이와 동일한 메커니즘을 사용합니다. 양식 제출이나 REST API를 웹 앱에서 리드를 만드는 메커니즘으로 사용하지 않는 경우 MME SDK를 사용하여 Marketo에서 리드를 만드는 것이 좋습니다.
+가장 좋은 방법은 리드를 만들 때 웹 앱에서 사용하는 방법과 일관되게 유지하는 것입니다. 양식 제출을 리드를 만드는 메커니즘으로 사용하는 웹 앱이 이미 있는 경우 하이브리드 앱에서 리드를 만들 때 동일한 메커니즘을 사용합니다. REST API를 리드 생성 메커니즘으로 사용하는 웹 앱이 이미 있는 경우 하이브리드 앱에서 리드를 생성할 때도 이와 동일한 메커니즘을 사용합니다. 양식 제출이나 REST API를 웹 앱에서 리드를 만드는 메커니즘으로 사용하지 않는 경우 MME SDK을 사용하여 Marketo에서 리드를 만드는 것을 고려할 수 있습니다.

@@ -3,10 +3,10 @@ title: 웹 Personalization
 description: 웹 Personalization
 feature: Web Personalization, Javascript
 exl-id: b2c26b28-e9bf-4faf-8b6e-c102f41aeaa1
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
 source-wordcount: '401'
-ht-degree: 4%
+ht-degree: 5%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 4%
 
 웹 Personalization JavaScript API는 플랫폼의 자동화된 개인화 기능을 확장합니다. 웹 페이지의 이벤트 추적 및 동적 사용자 지정을 허용합니다. 추가 기능: [사용자 지정 데이터 이벤트](custom-data-events.md), [동적 콘텐츠](web-personalization.md), [방문자 데이터 가져오기](get-visitor-data.md), [특정 봇에 대한 태그 제외](#exclude_tag_for_specific_bots).
 
-- User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
+- User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
 - RTP는 계정 기반 마케팅 명명된 계정 목록을 지원하지 않습니다. ABM 목록 및 코드는 RTP 내에서 관리되는 업로드된 계정 목록(CSV 파일)에만 해당됩니다.
 
 ## 태그 설정
@@ -22,7 +22,7 @@ ht-degree: 4%
 RTP 태그는 개인화된 페이지의 헤더에 삽입해야 합니다.
 
 ```javascript
-<!-- RTP tag --> 
+<!-- RTP tag -->
 <script type='text/javascript'>
 (function(c,h,a,f,e,i){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
 c[a].p=e;c[a].a=i;var g=h.createElement("script");g.async=true;g.type="text/javascript";
@@ -36,7 +36,7 @@ g.src=f;var b=h.getElementsByTagName("script")[0];b.parentNode.insertBefore(g,b)
 
 이 메서드는 관련 계정 ID를 설정하기 위해 태그 수준에서 자동으로 호출됩니다. 다른 도메인 간에 분할하려는 경우 계정 ID를 설정할 수 있습니다.
 
-| 매개 변수 | 선택 사항/필수 | 유형 | 설명 |
+| 매개변수 | 선택 사항/필수 | 유형 | 설명 |
 |--------------|-------------------|--------|--------------|
 | &#39;setAccount&#39; | 필수 | 문자열 | 메서드 이름입니다. |
 | accountId | 필수 | 문자열 | 계정 ID. |
@@ -53,11 +53,11 @@ rtp('setAccount', accountId);
 
 이 메서드에서 선택적 &quot;page&quot; 매개 변수를 전달하여 현재 페이지를 재정의할 수 있습니다.
 
-| 매개 변수 | 선택 사항/필수 | 유형 | 설명 |
+| 매개변수 | 선택 사항/필수 | 유형 | 설명 |
 |-----------|-------------------|--------|---------------------------------|
 | &#39;보내기&#39; | 필수 | 문자열 | 메서드 작업. |
 | &#39;보기&#39; | 필수 | 문자열 | 메서드 이름입니다. |
-| 페이지 | 선택 사항 | 문자열 | 상대 경로 또는 전체 페이지 URL. |
+| 페이지 | 선택 사항입니다 | 문자열 | 상대 경로 또는 전체 페이지 URL. |
 
 
 ```javascript
@@ -76,7 +76,7 @@ rtp('send', 'view', page);
 아래 코드 예제에서 &quot;Googlebot|msnbot&quot;은 웹 Personalization 활동에서 제외하는 봇 예제로 사용됩니다.
 
 ```javascript
-<!-- RTP tag --> 
+<!-- RTP tag -->
 <script type='text/javascript'>
 if(navigator.userAgent.match(/.(Googlebot|msnbot)./gi) == null){
     (function(c,h,a,f,i){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

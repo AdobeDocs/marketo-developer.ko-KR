@@ -3,7 +3,7 @@ title: 영업 기회 역할
 feature: REST API
 description: Marketo에서 영업 기회 역할 처리.
 exl-id: 2ba84f4d-82d0-4368-94e8-1fc6d17b69ed
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
 source-wordcount: '253'
 ht-degree: 0%
@@ -27,72 +27,72 @@ GET /rest/v1/opportunities/roles/describe.json
 ```
 
 ```json
-{  
+{
    "requestId":"185d6#14b51985ff0",
    "success":true,
-   "result":[  
-      {  
+   "result":[
+      {
          "name":"opportunityRole",
          "displayName":"Opportunity Role",
          "createdAt":"2015-02-03T22:36:23Z",
          "updatedAt":"2015-02-03T22:36:24Z",
          "idField":"marketoGUID",
-         "dedupeFields":[  
+         "dedupeFields":[
             "externalOpportunityId",
             "leadId",
             "role"
          ],
-         "searchableFields":[  
-            [  
+         "searchableFields":[
+            [
                "externalOpportunityId",
                "leadId",
                "role"
             ],
-            [  
+            [
                "marketoGUID"
             ],
-            [  
+            [
                "leadId"
             ],
-            [  
+            [
                "externalOpportunityId"
             ]
          ],
-         "fields":[  
-            {  
+         "fields":[
+            {
                "name":"marketoGUID",
                "displayName":"Marketo GUID",
                "dataType":"string",
                "length":36,
                "updateable":false
             },
-            {  
+            {
                "name":"externalOpportunityId",
                "displayName":"External Opportunity Id",
                "dataType":"string",
                "length":50,
                "updateable":false
             },
-            {  
+            {
                "name":"leadId",
                "displayName":"Lead Id",
                "dataType":"integer",
                "updateable":false
             },
-            {  
+            {
                "name":"role",
                "displayName":"Role",
                "dataType":"string",
                "length":50,
                "updateable":false
             },
-            {  
+            {
                "name":"isPrimary",
                "displayName":"Is Primary",
                "dataType":"boolean",
                "updateable":true
             },
-            {  
+            {
                "name":"externalCreatedDate",
                "displayName":"External Created Date",
                "dataType":"datetime",
@@ -106,33 +106,33 @@ GET /rest/v1/opportunities/roles/describe.json
 
 ## 쿼리
 
-`dedupeFields`과(와) `searchableFields`이(가) 모두 기회와 약간 다릅니다. `dedupeFields`은(는) 실제로 복합 키를 제공하므로 `externalOpportunityId`, `leadId` 및 `role`의 세 가지 키가 모두 필요합니다. 레코드 만들기에 성공하려면 ID 필드를 통한 영업 기회와 잠재 고객 링크가 모두 대상 인스턴스에 있어야 합니다. `searchableFields`의 경우 `marketoGUID`, `leadId` 및 `externalOpportunityId`은(는) 모두 자체 쿼리에 유효하며 Opportunities와 동일한 패턴을 사용하지만 쿼리에 복합 키를 사용하는 추가 옵션이 있습니다. 이 경우 추가 쿼리 매개 변수 `_method=GET`을(를) 사용하여 POST을 통해 JSON 개체를 제출해야 합니다.
+`dedupeFields`과(와) `searchableFields`이(가) 모두 기회와 약간 다릅니다. `dedupeFields`은(는) 실제로 복합 키를 제공하므로 `externalOpportunityId`, `leadId` 및 `role`의 세 가지 키가 모두 필요합니다. 레코드 만들기에 성공하려면 ID 필드를 통한 영업 기회와 잠재 고객 링크가 모두 대상 인스턴스에 있어야 합니다. `searchableFields`의 경우 `marketoGUID`, `leadId` 및 `externalOpportunityId`은(는) 모두 자체 쿼리에 유효하며 Opportunity와 동일한 패턴을 사용하지만 쿼리에 복합 키를 사용하는 추가 옵션이 있습니다. 추가 쿼리 매개 변수 `_method=GET`을(를) 사용하여 POST를 통해 JSON 개체를 제출해야 합니다.
 
 ```
 POST /rest/v1/opportunities/roles.json?_method=GET
 ```
 
 ```json
-{  
+{
    "filterType": "dedupeFields",
-   "fields": [  
+   "fields": [
       "marketoGuid",
       "externalOpportunityId",
       "leadId",
       "role"
    ],
-   "input": [  
-      {  
+   "input": [
+      {
         "externalOpportunityId": "Opportunity1",
         "leadId": 1,
         "role": "Captain"
       },
-      {  
+      {
         "externalOpportunityId": "Opportunity2",
         "leadId": 1872,
         "role": "Commander"
       },
-      {  
+      {
         "externalOpportunityId": "Opportunity3",
         "leadId": 273891,
         "role": "Lieutenant Commander"
@@ -141,7 +141,7 @@ POST /rest/v1/opportunities/roles.json?_method=GET
 }
 ```
 
-이렇게 하면 표준 GET 쿼리와 동일한 유형의 응답이 생성되며, 단순히 요청을 수행하기 위한 다른 인터페이스가 있습니다.
+이렇게 하면 표준 GET 쿼리와 동일한 유형의 응답이 생성되며, 요청을 수행하기 위한 다른 인터페이스가 있을 뿐입니다.
 
 ## 만들기 및 업데이트
 
@@ -156,7 +156,7 @@ POST /rest/v1/opportunities/roles.json
    "action": "createOrUpdate",
    "dedupeBy": "dedupeFields",
    "input": [
-      {  
+      {
          "externalOpportunityId": "19UYA31581L000000",
          "leadId": 456783,
          "role": "Technical Buyer",
@@ -200,10 +200,10 @@ POST /rest/v1/opportunities/roles/delete.json
 ```
 
 ```json
-{  
+{
    "deleteBy": "dedupeFields",
-   "input": [  
-      {  
+   "input": [
+      {
         "externalOpportunityId": "19UYA31581L000000",
         "leadId": 456783,
         "role": "Technical Buyer"

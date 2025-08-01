@@ -3,10 +3,10 @@ title: getLeadChanges
 feature: SOAP
 description: getLeadChanges SOAP 호출
 exl-id: 23445684-d8d9-407b-8f19-cb69e806795c
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
 source-wordcount: '402'
-ht-degree: 1%
+ht-degree: 3%
 
 ---
 
@@ -20,9 +20,9 @@ ht-degree: 1%
 
 일부 활동 유형은 &quot;웹 페이지 방문&quot;, &quot;양식 작성&quot; 및 &quot;링크 클릭&quot;입니다.
 
-SOAP API 버전 2_2 후에는 `leadSelector`을(를) 포함할 수 있습니다.
+SOAP API 버전 2_2 이후에 `leadSelector`을(를) 포함할 수 있습니다.
 
-`LastUpdateAtSelector`의 경우 `oldestUpdatedAt` 값은 `startPosition`의 `oldestCreatedAt` 값에 해당합니다. `latestUpdatedAt` 값은 `startPosition`의 `latestCreatedAt` 값에 해당합니다.
+`LastUpdateAtSelector`의 경우 `oldestUpdatedAt` 값은 `oldestCreatedAt`의 `startPosition` 값에 해당합니다. `latestUpdatedAt` 값은 `latestCreatedAt`의 `startPosition` 값에 해당합니다.
 
 참고: `LeadKeySelector`에서 지원되는 잠재 고객의 제한 수는 100개입니다. 리드 수가 100개를 초과하는 경우 API에 잘못된 매개 변수 예외가 발생하고 SOAP 오류가 반환됩니다.
 
@@ -31,14 +31,14 @@ SOAP API 버전 2_2 후에는 `leadSelector`을(를) 포함할 수 있습니다.
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
 | activityFilter->includeAttributes->activityType | 선택 사항(더 이상 사용되지 않음) 대신 `activityNameFilter` 사용 | 지정된 활동 유형만 포함하도록 응답을 제한합니다. 모든 활동 유형에 대해서는 WSDL을 참조하십시오. |
-| activityFilter->excludeAttributes->activityType | 선택 사항 | 지정된 활동 유형을 제외하도록 응답을 제한합니다. 모든 활동 유형에 대해서는 WSDL을 참조하십시오. 참고: 동일한 호출 내에서 `includeAttributes`과(와) `excludeAttributes`을(를) 모두 지정할 수 없습니다. |
-| activityNameFilter | 선택 사항 | 지정된 활동 필터만 포함하도록 응답을 제한합니다. |
-| batchSize | 선택 사항 | 반환할 최대 레코드 수. 시스템이 1,000개 또는 `batchSize`(둘 중 더 작은 것)로 제한되었습니다. |
+| activityFilter->excludeAttributes->activityType | 선택 사항입니다 | 지정된 활동 유형을 제외하도록 응답을 제한합니다. 모든 활동 유형에 대해서는 WSDL을 참조하십시오. 참고: 동일한 호출 내에서 `includeAttributes`과(와) `excludeAttributes`을(를) 모두 지정할 수 없습니다. |
+| activityNameFilter | 선택 사항입니다 | 지정된 활동 필터만 포함하도록 응답을 제한합니다. |
+| batchSize | 선택 사항입니다 | 반환할 최대 레코드 수. 시스템이 1,000개 또는 `batchSize`(둘 중 더 작은 것)로 제한되었습니다. |
 | startPosition | 필수 | 많은 수의 활동 응답을 통해 페이지를 매기는 데 사용됩니다. |
-| startPosition->offset | 선택 사항 | 오프셋 값은 이전 호출 응답 필드 newStartPosition->offset에 의해 반환됩니다. |
-| startPosition->oldestCreatedAt | 선택 사항 | oldestCreatedAt 이후 생성된 리드만 포함하도록 결과를 필터링하는 데 사용되는 타임스탬프입니다. 참고: `LastUpdateAtSelector->oldestUpdatedAt` 타임스탬프를 사용하여 `oldestCreatedAt`을(를) 지정할 수 있습니다. |
-| startPosition->activityCreatedAt | 선택 사항 | activityCreatedAt 이후 활동이 있는 리드만 포함하도록 결과를 필터링하는 데 사용되는 타임스탬프입니다. 참고: `LastUpdateAtSelector->latestUpdatedAt` 타임스탬프를 사용하여 `activityCreatedAt`을(를) 지정할 수 있습니다. |
-| leadSelector | 선택 사항 | 다음 세 가지 형식 중 하나일 수 있습니다. `LeadKeySelector`, `StaticListSelector`, `LastUpdateAtSelector` |
+| startPosition->offset | 선택 사항입니다 | 오프셋 값은 이전 호출 응답 필드 newStartPosition->offset에 의해 반환됩니다. |
+| startPosition->oldestCreatedAt | 선택 사항입니다 | oldestCreatedAt 이후 생성된 리드만 포함하도록 결과를 필터링하는 데 사용되는 타임스탬프입니다. 참고: `LastUpdateAtSelector->oldestUpdatedAt` 타임스탬프를 사용하여 `oldestCreatedAt`을(를) 지정할 수 있습니다. |
+| startPosition->activityCreatedAt | 선택 사항입니다 | activityCreatedAt 이후 활동이 있는 리드만 포함하도록 결과를 필터링하는 데 사용되는 타임스탬프입니다. 참고: `LastUpdateAtSelector->latestUpdatedAt` 타임스탬프를 사용하여 `activityCreatedAt`을(를) 지정할 수 있습니다. |
+| leadSelector | 선택 사항입니다 | 다음 세 가지 형식 중 하나일 수 있습니다. `LeadKeySelector`, `StaticListSelector`, `LastUpdateAtSelector` |
 | LeadKeySelector: leadSelector->keyType | 필수 | 쿼리할 ID 유형입니다. 값은 `IDNUM`, `COOKIE`, `EMAIL`, `LEADOWNEREMAIL`, `SFDCACCOUNTID`, `SFDCCONTACTID`, `SFDCLEADID`, `SFDCLEADOWNERID`, `SFDCOPPTYID`입니다. |
 | LeadKeySelector: leadSelector->keyValues->stringItem | 필수 | 키 값 목록. 즉, &quot;lead@email.com&quot; |
 | StaticListSelector: leadSelector->staticListName | `leadSelector->staticListId`이(가) 있는 경우 선택 사항 | 정적 목록의 이름 |
@@ -497,14 +497,14 @@ $marketoSoapEndPoint    = "";  // CHANGE ME
 $marketoUserId      = "";  // CHANGE ME
 $marketoSecretKey   = ""; // CHANGE ME
 $marketoNameSpace   = "http://www.marketo.com/mktows/";
- 
+
 // Create Signature
 $dtzObj = new DateTimeZone("America/Los_Angeles");
 $dtObj  = new DateTime('now', $dtzObj);
 $timeStamp = $dtObj->format(DATE_W3C);
 $encryptString = $timeStamp . $marketoUserId;
 $signature = hash_hmac('sha1', $encryptString, $marketoSecretKey);
- 
+
 // Create SOAP Header
 $attrs = new stdClass();
 $attrs->mktowsUserId = $marketoUserId;
@@ -515,7 +515,7 @@ $options = array("connection_timeout" => 600, "location" => $marketoSoapEndPoint
 if ($debug) {
   $options["trace"] = 1;
 }
- 
+
 // Create Request
 $params = new stdClass();
 $filter = new stdClass();
@@ -564,73 +564,73 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.Marshaller;
 import java.util.GregorianCalendar;
- 
- 
+
+
 public class GetLeadChanges {
- 
+
     public static void main(String[] args) {
         System.out.println("Executing Get Lead Changes");
         try {
             URL marketoSoapEndPoint = new URL("CHANGE ME" + "?WSDL");
             String marketoUserId = "CHANGE ME";
             String marketoSecretKey = "CHANGE ME";
-             
+
             QName serviceName = new QName("http://www.marketo.com/mktows/", "MktMktowsApiService");
             MktMktowsApiService service = new MktMktowsApiService(marketoSoapEndPoint, serviceName);
             MktowsPort port = service.getMktowsApiSoapPort();
-             
+
             // Create Signature
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
             String text = df.format(new Date());
-            String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);           
+            String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);
             String encryptString = requestTimestamp + marketoUserId;
-             
+
             SecretKeySpec secretKey = new SecretKeySpec(marketoSecretKey.getBytes(), "HmacSHA1");
             Mac mac = Mac.getInstance("HmacSHA1");
             mac.init(secretKey);
             byte[] rawHmac = mac.doFinal(encryptString.getBytes());
             char[] hexChars = Hex.encodeHex(rawHmac);
-            String signature = new String(hexChars); 
-             
+            String signature = new String(hexChars);
+
             // Set Authentication Header
             AuthenticationHeader header = new AuthenticationHeader();
             header.setMktowsUserId(marketoUserId);
             header.setRequestTimestamp(requestTimestamp);
             header.setRequestSignature(signature);
-             
+
             // Create Request
             ParamsGetLeadChanges request = new ParamsGetLeadChanges();
- 
+
             ObjectFactory objectFactory = new ObjectFactory();
             JAXBElement<Integer> batchSize = objectFactory.createParamsGetLeadActivityBatchSize(10);
             request.setBatchSize(batchSize);
-             
+
             ArrayOfString activities = new ArrayOfString();
             activities.getStringItems().add("Visit Webpage");
             activities.getStringItems().add("Click Link");
-            
+
             JAXBElement<ArrayOfString> activityFilter = objectFactory.createParamsGetLeadChangesActivityNameFilter(activities);
             request.setActivityNameFilter(activityFilter);
-             
+
             // Create oldestCreateAt timestamp from 5 days ago
             GregorianCalendar gc = new GregorianCalendar();
             gc.setTimeInMillis(new Date().getTime());
             gc.add( GregorianCalendar.DAY_OF_YEAR, -5);
-             
+
             DatatypeFactory factory = DatatypeFactory.newInstance();
             JAXBElement<XMLGregorianCalendar> oldestCreateAtValue =objectFactory.createStreamPositionOldestCreatedAt(factory.newXMLGregorianCalendar(gc));
- 
+
             StreamPosition sp = new StreamPosition();
             sp.setOldestCreatedAt(oldestCreateAtValue);
             request.setStartPosition(sp);
-             
+
             SuccessGetLeadChanges result = port.getLeadChanges(request, header);
- 
+
             JAXBContext context = JAXBContext.newInstance(SuccessGetLeadChanges.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             m.marshal(result, System.out);
-             
+
         }
         catch(Exception e) {
             e.printStackTrace();
@@ -659,9 +659,9 @@ hashedsignature = OpenSSL::HMAC.hexdigest(digest, marketoSecretKey, encryptStrin
 requestSignature = hashedsignature.to_s
 
 #Create SOAP Header
-headers = { 
-    'ns1:AuthenticationHeader' => { "mktowsUserId" => mktowsUserId, "requestSignature" => requestSignature,                     
-    "requestTimestamp"  => requestTimestamp 
+headers = {
+    'ns1:AuthenticationHeader' => { "mktowsUserId" => mktowsUserId, "requestSignature" => requestSignature,
+    "requestTimestamp"  => requestTimestamp
     }
 }
 

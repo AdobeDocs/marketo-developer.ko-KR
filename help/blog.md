@@ -2,9 +2,9 @@
 title: 블로그 아카이브
 description: 2014-2023의 Marketo 개발자 블로그 아카이브
 exl-id: d7ae88dd-9938-4957-9798-db43090dab4e
-source-git-commit: 8a785b0719e08544ed1a87772faf90bd9dda3077
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
-source-wordcount: '61741'
+source-wordcount: '61715'
 ht-degree: 0%
 
 ---
@@ -14,15 +14,15 @@ ht-degree: 0%
 >[!INFO]
 >
 >Marketo 블로그의 보관 파일이며, 2014년부터 2023년까지 걸쳐 진행됩니다. 여기에서는 역사적 참조로만 제공됩니다.
->&#x200B;>일부 정보가 최신 정보가 아닐 수 있습니다.  항상 최신 기능에 대한 최신 설명서를 확인하십시오.
+>>일부 정보가 최신 정보가 아닐 수 있습니다.  항상 최신 기능에 대한 최신 설명서를 확인하십시오.
 >
 
 >[!IMPORTANT]
->SOAP API는 더 이상 사용되지 않으며 2025년 10월 31일 이후부터 더 이상 사용할 수 없습니다. 모든 새로운 개발은 Marketo REST API를 사용하여 수행해야 하며, 서비스가 중단되지 않도록 기존 서비스를 해당 날짜까지 마이그레이션해야 합니다. SOAP API를 사용하는 서비스가 있는 경우 마이그레이션 방법에 대한 자세한 내용은 [SOAP API 마이그레이션 안내서](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/soap/migration)를 참조하십시오.
+>SOAP API는 더 이상 사용되지 않으며 2025년 10월 31일 이후부터 더 이상 사용할 수 없습니다. 모든 새로운 개발은 Marketo REST API를 사용하여 수행해야 하며, 서비스가 중단되지 않도록 기존 서비스를 해당 날짜까지 마이그레이션해야 합니다. SOAP API를 사용하는 서비스가 있는 경우 마이그레이션 방법에 대한 자세한 내용은 [SOAP API 마이그레이션 안내서](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/migration)를 참조하십시오.
 >
 
 >[!IMPORTANT]
->`access_token` 쿼리 매개 변수를 사용한 인증 지원이 2025년 10월 31일에 제거됩니다. 프로젝트에서 쿼리 매개 변수를 사용하여 액세스 토큰을 전달하는 경우 가능한 한 빨리 [인증 헤더](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/authentication#using-an-access-token)를 사용하도록 업데이트해야 합니다. 새 개발에서는 Authorization 헤더만 사용해야 합니다.
+>`access_token` 쿼리 매개 변수를 사용한 인증 지원이 2025년 10월 31일에 제거됩니다. 프로젝트에서 쿼리 매개 변수를 사용하여 액세스 토큰을 전달하는 경우 가능한 한 빨리 [인증 헤더](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/authentication#using-an-access-token)를 사용하도록 업데이트해야 합니다. 새 개발에서는 Authorization 헤더만 사용해야 합니다.
 >
 
 ## Marketo 개발자 블로그 시작
@@ -182,9 +182,9 @@ public class GetMultipleLeads {
         URL marketoSoapEndPoint = new URL("CHANGE ME" + "?WSDL");
         String marketoUserId = "CHANGE ME";
         String marketoSecretKey = "CHANGE ME";
-        QName serviceName = new QName("<http://www.marketo.com/mktows/>", 
+        QName serviceName = new QName("<http://www.marketo.com/mktows/>",
         "MktMktowsApiService");
-        MktMktowsApiService service = new 
+        MktMktowsApiService service = new
         MktMktowsApiService(marketoSoapEndPoint, serviceName);
         MktowsPort port = service.getMktowsApiSoapPort();
 
@@ -233,7 +233,7 @@ public class GetMultipleLeads {
         attributes.getStringItems().add("Email");
         request.setIncludeAttributes(attributes);
 
-        JAXBElement<Integer> batchSize = new 
+        JAXBElement<Integer> batchSize = new
         ObjectFactory().createParamsGetMultipleLeadsBatchSize(2);
         request.setBatchSize(batchSize);
 
@@ -243,15 +243,15 @@ public class GetMultipleLeads {
 
         do {
         if (count > 0) {
-        // Set the streamPosition on subsequent calls to paginate 
+        // Set the streamPosition on subsequent calls to paginate
         through large result sets
         String pos = result.getResult().getNewStreamPosition();
-        JAXBElement<String> streamPos = new 
+        JAXBElement<String> streamPos = new
         ObjectFactory().createParamsGetMultipleLeadsStreamPosition(pos);
         request.setStreamPosition(streamPos);
         }
 
-        JAXBContext context = 
+        JAXBContext context =
         JAXBContext.newInstance(ParamsGetMultipleLeads.class);
         Marshaller m = context.createMarshaller();
         m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
@@ -328,7 +328,7 @@ _2014-04-22_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
 ### Marketo Forms 보안 업데이트:
 
-단일 IP 주소에서 양식 게시물 제출 횟수와 빈도에 대한 제한을 도입했습니다. 이 제한은 이제 프로그램 양식 제출을 악의적으로 사용하지 않도록 고객을 보호하기 위해 분당 30회 게시물로 적용됩니다. [syncLead API](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/soap/leads/synclead)는 Marketo에서 새 연락처를 프로그래밍 방식으로 제출하기 위한 권장 통합 수단입니다.    
+단일 IP 주소에서 양식 게시물 제출 횟수와 빈도에 대한 제한을 도입했습니다. 이 제한은 이제 프로그램 양식 제출을 악의적으로 사용하지 않도록 고객을 보호하기 위해 분당 30회 게시물로 적용됩니다. [syncLead API](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/leads/synclead)는 Marketo에서 새 연락처를 프로그래밍 방식으로 제출하기 위한 권장 통합 수단입니다.    
 
 _Travis Kaufman_&#x200B;이(가) _2014-04-29_&#x200B;에 게시함
 
@@ -409,71 +409,71 @@ import org.apache.commons.codec.binary.Hex;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.Marshaller;
- 
- 
+
+
 public class RequestCampaign {
- 
+
     public static void main(String[] args) {
         System.out.println("Executing Request Campaign");
         try {
             URL marketoSoapEndPoint = new URL("CHANGE ME" + "?WSDL");
             String marketoUserId = "CHANGE ME";
             String marketoSecretKey = "CHANGE ME";
-             
+
             QName serviceName = new QName("http://www.marketo.com/mktows/", "MktMktowsApiService");
             MktMktowsApiService service = new MktMktowsApiService(marketoSoapEndPoint, serviceName);
             MktowsPort port = service.getMktowsApiSoapPort();
-             
+
             // Create Signature
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
             String text = df.format(new Date());
-            String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);           
+            String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);
             String encryptString = requestTimestamp + marketoUserId ;
-             
+
             SecretKeySpec secretKey = new SecretKeySpec(marketoSecretKey.getBytes(), "HmacSHA1");
             Mac mac = Mac.getInstance("HmacSHA1");
             mac.init(secretKey);
             byte[] rawHmac = mac.doFinal(encryptString.getBytes());
             char[] hexChars = Hex.encodeHex(rawHmac);
-            String signature = new String(hexChars); 
-             
+            String signature = new String(hexChars);
+
             // Set Authentication Header
             AuthenticationHeader header = new AuthenticationHeader();
             header.setMktowsUserId(marketoUserId);
             header.setRequestTimestamp(requestTimestamp);
             header.setRequestSignature(signature);
-             
+
             // Create Request
             ParamsRequestCampaign request = new ParamsRequestCampaign();
-             
+
             request.setSource(ReqCampSourceType.MKTOWS);
-             
+
             ObjectFactory objectFactory = new ObjectFactory();
             JAXBElement<Integer> campaignId = objectFactory.createParamsRequestCampaignCampaignId(4496);
             request.setCampaignId(campaignId);
-             
+
             ArrayOfLeadKey leadKeyList = new ArrayOfLeadKey();
             LeadKey key = new LeadKey();
             key.setKeyType(LeadKeyRef.EMAIL);
             key.setKeyValue("lead@company.com");
-             
+
             LeadKey key2 = new LeadKey();
             key2.setKeyType(LeadKeyRef.EMAIL);
             key2.setKeyValue("anotherlead@company.com");
-             
+
             leadKeyList.getLeadKeies().add(key);
             leadKeyList.getLeadKeies().add(key2);
-             
+
             JAXBElement<ArrayOfLeadKey> arrayOfLeadKey = objectFactory.createParamsRequestCampaignLeadList(leadKeyList);
             request.setLeadList(arrayOfLeadKey);
- 
+
             SuccessRequestCampaign result = port.requestCampaign(request, header);
- 
+
             JAXBContext context = JAXBContext.newInstance(SuccessRequestCampaign.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             m.marshal(result, System.out);
-             
+
         }
         catch(Exception e) {
             e.printStackTrace();
@@ -490,7 +490,7 @@ _2014-05-16_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
 Marketo에서 사용자 지정 활동을 추적해 보겠습니다. 예를 들어 웹 페이지에 비디오가 있고 50% 이상의 비디오를 시청하는 방문자를 추적하려고 합니다. Munchkin의 사용자 지정 활동 추적 기능을 사용하여 이 작업을 수행할 수 있습니다. 이는 50%에 달하는 비디오인 페이지에서 이벤트를 수신한 다음 Munchkin API를 호출하여 구현됩니다. 이렇게 하려면 페이지의 이 이벤트를 기반으로 호출할 Marketo의 사용자 지정 활동을 설정해야 합니다. 비디오 플레이어에 YouTube을 사용하고 해당 [YouTube Iframe API](https://developers.google.com/youtube/iframe_api_reference)를 사용하여 Munchkin API에서 메서드를 호출합니다.
 
-먼저 Marketo에서 Munchkin 추적 코드를 생성하는 방법, 두 번째 페이지 이벤트를 기반으로 트리거하기 위해 Munchkin 샘플 코드를 수정하는 방법, 세 번째 흐름 단계가 있는 페이지의 작업으로 정의되는 스마트 목록으로 캠페인을 설정하는 방법, 다섯 번째 익명 사용자의 페이지 방문이 Marketo에 기록되었는지 확인하는 방법을 보여 줍니다. ==== 이 블로그 게시물은 설명되는 코드의 라이브 예입니다. Marketo에서 잘 알려진 사용자이오니 이 양식을 작성해 주십시오. 이렇게 하면 비디오의 50%를 시청하면 나머지 비디오를 전송하고 비디오의 100%를 시청하면 다른 블로그 게시물로 연결되는 링크를 전송합니다. ===0&rbrace; 사용<https://developers.google.com/youtube/iframe_api_reference>
+먼저 Marketo에서 Munchkin 추적 코드를 생성하는 방법, 두 번째 페이지 이벤트를 기반으로 트리거하기 위해 Munchkin 샘플 코드를 수정하는 방법, 세 번째 흐름 단계가 있는 페이지의 작업으로 정의되는 스마트 목록으로 캠페인을 설정하는 방법, 다섯 번째 익명 사용자의 페이지 방문이 Marketo에 기록되었는지 확인하는 방법을 보여 줍니다. ==== 이 블로그 게시물은 설명되는 코드의 라이브 예입니다. Marketo에서 잘 알려진 사용자이오니 이 양식을 작성해 주십시오. 이렇게 하면 비디오의 50%를 시청하면 나머지 비디오를 전송하고 비디오의 100%를 시청하면 다른 블로그 게시물로 연결되는 링크를 전송합니다. ===0} 사용<https://developers.google.com/youtube/iframe_api_reference>
 
 **Munchkin 추적 코드를 생성하는 방법** Munchkin 추적 코드를 사용하면 웹 사이트 방문 횟수를 추적할 수 있습니다. 아래에 세 가지 유형의 Munchkin 코드가 설명되어 있지만 이 예제에서는 비동기 Munchkin 추적 코드를 사용합니다. A) 단순: 가장 적은 코드 줄이 있지만 웹 페이지 로드 시간에 최적화되지 않습니다. 이 코드는 웹 페이지가 로드될 때마다 jQuery 라이브러리를 로드합니다. B) 비동기: 웹 페이지 로드 시간을 줄입니다. 이 코드는 jQuery 라이브러리가 이미 있는지 확인하고 누락된 경우 로드한 다음 웹 페이지의 나머지 부분이 로드되면 추적 코드를 실행하는 데 사용합니다. C) 비동기 jQuery: 웹 페이지 로드 시간을 줄이고 시스템 성능도 향상시킵니다. 이 코드는 사용자가 이미 jQuery를 가지고 있다고 가정하고 로드를 선택하지 않습니다.
 
@@ -529,14 +529,14 @@ Marketo에서 사용자 지정 활동을 추적해 보겠습니다. 예를 들�
 이 코드 샘플은 사용자가 페이지에 5초 동안 있고 500픽셀을 페이지 아래로 스크롤한 후 Munchkin API를 호출합니다.
 
 ```javascript
-<script src="https://code.jquery.com/jquery-2.1.0.min.js"></script> 
+<script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
 $(function(){
  setTimeout(function(){
   $(window).scroll(function() {
       var y_scroll_position = window.pageYOffset;
-      var scroll_position = 500; //Sets number of pixels user must scroll to be tracked        
-  
+      var scroll_position = 500; //Sets number of pixels user must scroll to be tracked
+
   if(y_scroll_position > scroll_position) {
   //Munchkin tracking code
    (function() {
@@ -547,7 +547,7 @@ $(function(){
         Munchkin.init('XXX-XXX-XXX');
       }
      }
-     
+
      var s = document.createElement('script');
      s.type = 'text/javascript';
      s.async = true;
@@ -560,7 +560,7 @@ $(function(){
      s.onload = initMunchkin;
      document.getElementsByTagName('head')[0].appendChild(s);
    })();
-   }   
+   }
  },5000); //Sets time delay before tracking user
 });
 </script>
@@ -582,7 +582,7 @@ $(function(){
 또한 웹 개발자는 다른 기능을 사용하여 Flash 또는 Ajax와 같은 다양한 웹 환경에서 웹 활동 정보를 캡처하고 추적할 수 있습니다. 참고: 적절한 개발 리소스가 있는 경우 이 API 대신 통합을 위해 SOAP API를 사용하는 것이 좋습니다. SOAP API는 Munchkin API보다 더 강력하고 더 많은 기능을 제공합니다. Marketo SOAP API 요구 사항 이 작업을 수행하려면 웹 페이지에 Munchkin JavaScript 코드를 포함해야 합니다. Munchkin 자습서에서 필요한 스크립트 태그를 찾을 수 있습니다. 또한 자습서에 설명된 Munchkin API를 활성화합니다.
 Munchkin API 호출을 수행하면 쿠키가 없는 사용자에게 자동으로 쿠키가 쿠키됩니다. Marketo에서는 개인의 활동 로그에 이벤트(링크 클릭, 웹 페이지 방문 또는 새 잠재 고객)를 기록합니다. 클릭 링크를 사용하거나 웹 페이지 호출을 방문하는 경우 해당 잠재 고객의 활동 로그(알려진 항목 또는 익명의 항목)에 이벤트가 추가됩니다. 새 잠재 고객이고 연결된 잠재 고객 호출을 사용하는 경우 해당 잠재 고객이 알려진 잠재 고객이 되고 활동 내역이 보존됩니다. 기존 잠재 고객인 경우(이메일 주소 일치 기반) 변경 또는 새 값은 해당 잠재 고객의 레코드에서 업데이트됩니다.
 
-다음은 `munchkinFunction` 호출의 일반적인 형식입니다. 호출하려는 웹 페이지에 태그로 포함하십시오. 다른 JavaScript 함수와 같이 이 함수를 호출할 수 있습니다. 그러나 `mktoMunchkinFunction()`을(를) 호출하기 전에 Munchkin 추적 함수 `mktoMunchkin()`을(를) 호출해야 합니다.
+다음은 `munchkinFunction` 호출의 일반적인 형식입니다. 호출하려는 웹 페이지에 태그로 포함하십시오. 다른 JavaScript 함수와 같이 이 함수를 호출할 수 있습니다. 그러나 `mktoMunchkin()`을(를) 호출하기 전에 Munchkin 추적 함수 `mktoMunchkinFunction()`을(를) 호출해야 합니다.
 
 ```javascript
 <script src="http://munchkin.marketo.net/munchkin.js" type="text/javascript"> mktoMunchkin("###-###-###"); mktoMunchkinFunction('function', { key: 'value', key2: 'value'}, 'hash');
@@ -596,7 +596,7 @@ _1970-01-01_&#x200B;에 _Murta_&#x200B;에 게시됨
 
 아래 프레젠테이션은 Marketo으로 데이터를 가져오는 다양한 방법을 보여 줍니다. 양식, 사용자 정의 개체 및 통합에 중점을 둡니다.
 
-[Murtza Manzur](https://www.slideshare.net/MurtzaManzur)에서 [Marketo으로 데이터 가져오기](https://www.slideshare.net/MurtzaManzur/getting-data-into-marketo-35662408)
+[Murtza Manzur](https://www.slideshare.net/MurtzaManzur/getting-data-into-marketo-35662408)에서 [Marketo으로 데이터 가져오기](https://www.slideshare.net/MurtzaManzur)
 
 _2014-06-06_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
@@ -687,71 +687,71 @@ import org.apache.commons.codec.binary.Hex;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.Marshaller;
- 
- 
+
+
 public class RequestCampaign {
- 
+
     public static void main(String[] args) {
         System.out.println("Executing Request Campaign");
         try {
             URL marketoSoapEndPoint = new URL("CHANGE ME" + "?WSDL");
             String marketoUserId = "CHANGE ME";
             String marketoSecretKey = "CHANGE ME";
-             
+
             QName serviceName = new QName("http://www.marketo.com/mktows/", "MktMktowsApiService");
             MktMktowsApiService service = new MktMktowsApiService(marketoSoapEndPoint, serviceName);
             MktowsPort port = service.getMktowsApiSoapPort();
-             
+
             // Create Signature
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
             String text = df.format(new Date());
-            String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);           
+            String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);
             String encryptString = requestTimestamp + marketoUserId ;
-             
+
             SecretKeySpec secretKey = new SecretKeySpec(marketoSecretKey.getBytes(), "HmacSHA1");
             Mac mac = Mac.getInstance("HmacSHA1");
             mac.init(secretKey);
             byte[] rawHmac = mac.doFinal(encryptString.getBytes());
             char[] hexChars = Hex.encodeHex(rawHmac);
-            String signature = new String(hexChars); 
-             
+            String signature = new String(hexChars);
+
             // Set Authentication Header
             AuthenticationHeader header = new AuthenticationHeader();
             header.setMktowsUserId(marketoUserId);
             header.setRequestTimestamp(requestTimestamp);
             header.setRequestSignature(signature);
-             
+
             // Create Request
             ParamsRequestCampaign request = new ParamsRequestCampaign();
-             
+
             request.setSource(ReqCampSourceType.MKTOWS);
-             
+
             ObjectFactory objectFactory = new ObjectFactory();
             JAXBElement<Integer> campaignId = objectFactory.createParamsRequestCampaignCampaignId(4496);
             request.setCampaignId(campaignId);
-             
+
             ArrayOfLeadKey leadKeyList = new ArrayOfLeadKey();
             LeadKey key = new LeadKey();
             key.setKeyType(LeadKeyRef.EMAIL);
             key.setKeyValue("lead@company.com");
-             
+
             LeadKey key2 = new LeadKey();
             key2.setKeyType(LeadKeyRef.EMAIL);
             key2.setKeyValue("anotherlead@company.com");
-             
+
             leadKeyList.getLeadKeies().add(key);
             leadKeyList.getLeadKeies().add(key2);
-             
+
             JAXBElement<ArrayOfLeadKey> arrayOfLeadKey = objectFactory.createParamsRequestCampaignLeadList(leadKeyList);
             request.setLeadList(arrayOfLeadKey);
- 
+
             SuccessRequestCampaign result = port.requestCampaign(request, header);
- 
+
             JAXBContext context = JAXBContext.newInstance(SuccessRequestCampaign.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             m.marshal(result, System.out);
-             
+
         }
         catch(Exception e) {
             e.printStackTrace();
@@ -878,9 +878,9 @@ hashedsignature = OpenSSL::HMAC.hexdigest(digest, marketoSecretKey, encryptStrin
 requestSignature = hashedsignature.to_s
 
 # Create SOAP Header
-headers = { 
- 'ns1:AuthenticationHeader' => { "mktowsUserId" => mktowsUserId, "requestSignature" => requestSignature,      
- "requestTimestamp"  => requestTimestamp 
+headers = {
+ 'ns1:AuthenticationHeader' => { "mktowsUserId" => mktowsUserId, "requestSignature" => requestSignature,
+ "requestTimestamp"  => requestTimestamp
  }
 }
 
@@ -921,7 +921,6 @@ response = client.call(:sync_multiple_leads, message: request)
 
 puts response
 ```
-
  
 
 이 문서에는 사용자 정의 통합을 구현하는 데 사용되는 코드가 포함되어 있습니다. 맞춤화된 특성으로 인해 Marketo 기술 지원 팀에서 사용자 정의 작업 문제를 해결할 수 없습니다. 적절한 기술 경험이나 숙련된 개발자 액세스 없이 다음 코드 샘플을 구현하지 마십시오.
@@ -933,86 +932,86 @@ _2014-06-27_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 사용자가 사이트에서 Marketo 양식을 작성한다고 가정해 보겠습니다. 무슨 일이 일어납니까? Marketo은 사용자를 쿠키하고 쿠키를 제공한 이메일과 연결합니다. 다음에 사용자가 웹 사이트를 방문할 때 동일한 양식을 다른 이메일로 다시 작성하는 경우 어떻게 합니까? 무슨 일이 일어날까요? Marketo은 새 잠재 고객 레코드를 만들고, 사용자 브라우저의 첫 번째 쿠키를 덮어씁니다. 이제 사용자는 Marketo의 새로운/다른 리더입니다. [syncLead API 메서드](/help/soap-api/synclead.md), 양식 방법의 사용자 지정 필드, Marketo UI를 포함하여 Marketo에서 목록을 가져와서 잠재 고객의 이메일 주소를 업데이트하는 네 가지 방법을 보여 줍니다. **syncLead API를 통해** [syncLead API](/help/soap-api/synclead.md)를 사용하여 Marketo ID와 새 전자 메일 주소를 사용하여 잠재 고객 레코드를 업데이트할 수 있습니다. `syncMultipleLeads` SOAP API 호출에 대한 XML 요청
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>  
-<SOAP-ENV:Envelope xmlns:SOAP-ENV="<http://schemas.xmlsoap.org/soap/envelope/>" xmlns:ns1="<http://www.marketo.com/mktows/">  
-  <SOAP-ENV:Header>  
-    <ns1:AuthenticationHeader>  
-      <mktowsUserId>bigcorp1_461839624B16E06BA2D663</mktowsUserId>  
-      <requestSignature>92f05a7be4838ae1c0e5aafe814891ee72968a08</requestSignature>  
-      <requestTimestamp>2013-07-31T12:38:47-07:00</requestTimestamp>  
-    </ns1:AuthenticationHeader>  
-  </SOAP-ENV:Header>  
-  <SOAP-ENV:Body>  
-    <ns1:paramsSyncLead>  
-      <leadRecord>  
-        <leadId>1090240</leadId>  
-        <Email>t@t.com</Email>  
-      </leadRecord>  
-      <returnLead>false</returnLead>  
-    </ns1:paramsSyncLead>  
-  </SOAP-ENV:Body>  
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="<http://schemas.xmlsoap.org/soap/envelope/>" xmlns:ns1="<http://www.marketo.com/mktows/">
+  <SOAP-ENV:Header>
+    <ns1:AuthenticationHeader>
+      <mktowsUserId>bigcorp1_461839624B16E06BA2D663</mktowsUserId>
+      <requestSignature>92f05a7be4838ae1c0e5aafe814891ee72968a08</requestSignature>
+      <requestTimestamp>2013-07-31T12:38:47-07:00</requestTimestamp>
+    </ns1:AuthenticationHeader>
+  </SOAP-ENV:Header>
+  <SOAP-ENV:Body>
+    <ns1:paramsSyncLead>
+      <leadRecord>
+        <leadId>1090240</leadId>
+        <Email>t@t.com</Email>
+      </leadRecord>
+      <returnLead>false</returnLead>
+    </ns1:paramsSyncLead>
+  </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
 ```
 
 syncMultipleLeads SOAP API 호출에 대한 응답 XML
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>  
-<SOAP-ENV:Envelope xmlns:SOAP-ENV="<http://schemas.xmlsoap.org/soap/envelope/>" xmlns:xsi="<http://www.w3.org/2001/XMLSchema-instance>" xmlns:ns1="<http://www.marketo.com/mktows/">  
-  <SOAP-ENV:Body>  
-    <ns1:successSyncLead>  
-      <result>  
-        <leadId>1090240</leadId>  
-        <syncStatus>  
-          <leadId>1090240</leadId>  
-          <status>UPDATED</status>  
-          <error xsi:nil="true" />  
-        </syncStatus>  
-        <leadRecord xsi:nil="true" />  
-      </result>  
-    </ns1:successSyncLead>  
-  </SOAP-ENV:Body>  
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="<http://schemas.xmlsoap.org/soap/envelope/>" xmlns:xsi="<http://www.w3.org/2001/XMLSchema-instance>" xmlns:ns1="<http://www.marketo.com/mktows/">
+  <SOAP-ENV:Body>
+    <ns1:successSyncLead>
+      <result>
+        <leadId>1090240</leadId>
+        <syncStatus>
+          <leadId>1090240</leadId>
+          <status>UPDATED</status>
+          <error xsi:nil="true" />
+        </syncStatus>
+        <leadRecord xsi:nil="true" />
+      </result>
+    </ns1:successSyncLead>
+  </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>
 ```
 
 위의 요청 XML을 출력하는 샘플 Ruby 프로그램을 아래를 참조하십시오.
 
 ```java
-require 'savon' # Use version 2.0 Savon gem  
-require 'date'  
-  
-mktowsUserId = "" # CHANGE ME  
-marketoSecretKey = "" # CHANGE ME  
-marketoSoapEndPoint = "" # CHANGE ME  
-marketoNameSpace = "<http://www.marketo.com/mktows/>"  
-  
-# Create Signature  
-Timestamp = DateTime.now  
-requestTimestamp = Timestamp.to_s  
-encryptString = requestTimestamp + mktowsUserId  
-digest = OpenSSL::Digest.new('sha1')  
-hashedsignature = OpenSSL::HMAC.hexdigest(digest, marketoSecretKey, encryptString)  
-requestSignature = hashedsignature.to_s  
-  
-# Create SOAP Header  
-headers = {   
- 'ns1:AuthenticationHeader' => { "mktowsUserId" => mktowsUserId, "requestSignature" => requestSignature,        
- "requestTimestamp"  => requestTimestamp   
- }  
-}  
-  
-client = Savon.client(wsdl: '<http://app.marketo.com/soap/mktows/2_3?WSDL>', soap_header: headers, endpoint: marketoSoapEndPoint, open_timeout: 90, read_timeout: 90, namespace_identifier: :ns1, env_namespace: 'SOAP-ENV')  
-  
-# Create Request  
-request = {  
- :lead_record => {  
-  :Email => "<t@t.com>",  
-  :lead_id => "1090240",  
- :return_lead => "false"  
-}  
-  
-response = client.call(:sync_lead, message: request)  
-  
+require 'savon' # Use version 2.0 Savon gem
+require 'date'
+
+mktowsUserId = "" # CHANGE ME
+marketoSecretKey = "" # CHANGE ME
+marketoSoapEndPoint = "" # CHANGE ME
+marketoNameSpace = "<http://www.marketo.com/mktows/>"
+
+# Create Signature
+Timestamp = DateTime.now
+requestTimestamp = Timestamp.to_s
+encryptString = requestTimestamp + mktowsUserId
+digest = OpenSSL::Digest.new('sha1')
+hashedsignature = OpenSSL::HMAC.hexdigest(digest, marketoSecretKey, encryptString)
+requestSignature = hashedsignature.to_s
+
+# Create SOAP Header
+headers = {
+ 'ns1:AuthenticationHeader' => { "mktowsUserId" => mktowsUserId, "requestSignature" => requestSignature,
+ "requestTimestamp"  => requestTimestamp
+ }
+}
+
+client = Savon.client(wsdl: '<http://app.marketo.com/soap/mktows/2_3?WSDL>', soap_header: headers, endpoint: marketoSoapEndPoint, open_timeout: 90, read_timeout: 90, namespace_identifier: :ns1, env_namespace: 'SOAP-ENV')
+
+# Create Request
+request = {
+ :lead_record => {
+  :Email => "<t@t.com>",
+  :lead_id => "1090240",
+ :return_lead => "false"
+}
+
+response = client.call(:sync_lead, message: request)
+
 puts response
 ```
 
@@ -1032,14 +1031,14 @@ require 'json'
 
 # Build request URL
 # Replace AAA-BBB-CCC with your Marketo instance
-marketo_instance = "<https://AAA-BBB-CCC.mktorest.com>" 
+marketo_instance = "<https://AAA-BBB-CCC.mktorest.com>"
 endpoint = "/rest/v1/leads.json"
 # Replace with your access token
-auth_token =  "?access_token=" + "ac756f7a-d54d-41ac-8c3c-f2d2a39ee325:ab" 
+auth_token =  "?access_token=" + "ac756f7a-d54d-41ac-8c3c-f2d2a39ee325:ab"
 request_url = marketo_instance + endpoint + auth_token
 
 # Build request body
-data = { "action" => "updateOnly", "input" => [ { "email" => "<example@email.com>", "leadScore" => "30" } ] } 
+data = { "action" => "updateOnly", "input" => [ { "email" => "<example@email.com>", "leadScore" => "30" } ] }
 
 # Make request
 response = RestClient.post request_url, data.to_json, :content_type => :json, :accept => :json
@@ -1052,7 +1051,7 @@ _2015-02-20_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
 ## Marketo에서 사용자 정의 필드를 만들고 AP를 통해 이 필드 업데이트
 
-표준 Marketo 필드에 맞지 않는 잠재 고객에 대한 추가 데이터가 있다고 가정해 보겠습니다. 예를 들어 이 사용자 지정 필드는 서드파티 점수일 수 있습니다. Marketo에서 타사 점수에 대한 사용자 지정 필드를 만든 다음, Marketo [REST API](https://developer.adobe.com/marketo-apis/) 또는 [SOAP API](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/soap/activity-type-filters)를 통해 이 필드의 값을 업데이트할 수 있습니다. 먼저 Marketo에서 사용자 정의 필드를 만드는 방법을 보여 주고, 두 번째로 REST API를 사용하여 이 필드를 업데이트하는 방법을 보여 줍니다.
+표준 Marketo 필드에 맞지 않는 잠재 고객에 대한 추가 데이터가 있다고 가정해 보겠습니다. 예를 들어 이 사용자 지정 필드는 서드파티 점수일 수 있습니다. Marketo에서 타사 점수에 대한 사용자 지정 필드를 만든 다음, Marketo [REST API](https://developer.adobe.com/marketo-apis/) 또는 [SOAP API](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/activity-type-filters)를 통해 이 필드의 값을 업데이트할 수 있습니다. 먼저 Marketo에서 사용자 정의 필드를 만드는 방법을 보여 주고, 두 번째로 REST API를 사용하여 이 필드를 업데이트하는 방법을 보여 줍니다.
 
 ### Marketo에서 사용자 정의 필드를 만드는 방법
 
@@ -1073,10 +1072,10 @@ _2015-02-20_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 **요청 본문**
 
 ```json
-{  
+{
    "action":"createOrUpdate",
-   "input":[  
-      {  
+   "input":[
+      {
          "email":"<example@example.com>",
          "myCustomField":"examplestring"
       }
@@ -1103,9 +1102,9 @@ _2014-08-19_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 ```javascript
 var MARKETO_MUNCHKIN_ID='614-CGT-700';
 var MARKETO_ACCOUNT_STRING = 'fpmarkets';
-  
-var UNBOUNCE_MARKETO_FIELD_MAP = new Object(); 
-  
+
+var UNBOUNCE_MARKETO_FIELD_MAP = new Object();
+
 //default field mappings
 UNBOUNCE_MARKETO_FIELD_MAP['first_name'] = 'FirstName';
 UNBOUNCE_MARKETO_FIELD_MAP['email'] = 'Email';
@@ -1115,39 +1114,39 @@ UNBOUNCE_MARKETO_FIELD_MAP['phone_number'] = 'Phone';
 function getMarketoField(k) {
     return UNBOUNCE_MARKETO_FIELD_MAP[k];
 }
-  
-  
+
+
 var formFields = [];
 var hiddenClonedFields = [];
-var firstForm = document.forms[0];  
-  
-//Convert Unbounce form names to Marketo field names  
+var firstForm = document.forms[0];
+
+//Convert Unbounce form names to Marketo field names
 for(i=0; i<firstForm.elements.length; i++){
  var formField = firstForm.elements[i];
  var newFieldName = getMarketoField(formField.name);
-  
+
   if(newFieldName != undefined) {
-        
-    
+
+
     //save original field as hidden field
     var hiddenField = document.createElement("input");
     hiddenField.setAttribute("type", "hidden");
     hiddenField.setAttribute("name", formField.name);
     hiddenField.setAttribute("id", formField.id);
     hiddenClonedFields.push(hiddenField);
-    
+
     //change original field
     console.log ( 'Changed form field name: ' + formField.name + '=>' + newFieldName );
     formField.name = newFieldName;
     formField.id = newFieldName;
     formFields.push(formField);
-    
-    
+
+
   } else {
     console.log ( 'Couldn't map:' + formField.name );
   }
 }
-  
+
 //Add hidden cloned Unbounce fields to form
 //for Unbounce validation
 for(i=0; i<hiddenClonedFields.length; i++){
@@ -1160,8 +1159,8 @@ for(i=0; i<hiddenClonedFields.length; i++){
     }(hiddenClonedFields[i]));
     console.log ( 'Added cloned field: ' + hiddenClonedFields[i].name );
 }
-  
-   
+
+
 //Add MunchkinId to form
 var input = document.createElement("input");
 input.setAttribute("type", "hidden");
@@ -1199,7 +1198,7 @@ _2014-07-30_&#x200B;에 _Murta_&#x200B;에 게시됨
 
 ## 단일 페이지에서 여러 Munchkin 추적 코드 사용
 
-여러 Marketo 인스턴스가 있고 이러한 여러 인스턴스에 대한 페이지 방문 또는 클릭한 링크와 같은 웹 추적 이벤트를 전송하려고 한다고 가정해 보겠습니다. Munchkin을 사용하면 이러한 작업을 수행할 수 있습니다. Marketo은 도메인별로 웹 사이트 방문자를 추적합니다(예: &quot;marketo.com&quot;). 기본 도메인과 다른 도메인(예: &quot;company.com&quot;)에서 이 Munchkin 스크립트를 호스팅하는 경우 해당 방문자가 다른 도메인에서 양식을 작성할 때까지 익명 리드로 표시됩니다. 이렇게 하려면 `Munchkin.init` 호출에 `altIds` 매개 변수를 추가하십시오. altIds 매개 변수에는 웹 이벤트를 전송해야 하는 추가 Munchkin ID 배열이 포함됩니다. 아래 예를 사용하여 강조 표시된 Munchkin ID(XXX-XXX-XXX, YYY-YYY 및 ZZZ-ZZZ-ZZZ)를 추적 정보를 전송해야 하는 각 Marketo 인스턴스의 Munchkin ID로 교체합니다.
+여러 Marketo 인스턴스가 있고 이러한 여러 인스턴스에 대한 페이지 방문 또는 클릭한 링크와 같은 웹 추적 이벤트를 전송하려고 한다고 가정해 보겠습니다. Munchkin을 사용하면 이러한 작업을 수행할 수 있습니다. Marketo은 도메인별로 웹 사이트 방문자를 추적합니다(예: &quot;marketo.com&quot;). 기본 도메인과 다른 도메인(예: &quot;company.com&quot;)에서 이 Munchkin 스크립트를 호스팅하는 경우 해당 방문자가 다른 도메인에서 양식을 작성할 때까지 익명 리드로 표시됩니다. 이렇게 하려면 `altIds` 호출에 `Munchkin.init` 매개 변수를 추가하십시오. altIds 매개 변수에는 웹 이벤트를 전송해야 하는 추가 Munchkin ID 배열이 포함됩니다. 아래 예를 사용하여 강조 표시된 Munchkin ID(XXX-XXX-XXX, YYY-YYY 및 ZZZ-ZZZ-ZZZ)를 추적 정보를 전송해야 하는 각 Marketo 인스턴스의 Munchkin ID로 교체합니다.
 
 ```javascript
 <script src="http://munchkin.marketo.net/munchkin.js" type="text/javascript"></script>
@@ -1430,12 +1429,12 @@ Forms 1.0에는 Munchkin 추적 쿠키 값이 DOM의 필드로 포함되어 있�
 ```javascript
 <script>
 //add a callback to the first ready form on the page
-MktoForms2.whenReady( function(form){ 
+MktoForms2.whenReady( function(form){
  //add the tracking field to be submitted
         form.addHiddenFields({"_mkt_trk":""});
         //clear the value during the onSubmit event to prevent tracking association
  form.onSubmit( function(form){
-  form.vals({"_mkt_trk":""}); 
+  form.vals({"_mkt_trk":""});
  })
 })
 </script>
@@ -1459,7 +1458,7 @@ _2014-09-16_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 ```javascript
 <script>
 //modify the form and grab the user
-MktoForms2.whenReady( function(form) { 
+MktoForms2.whenReady( function(form) {
         //add the hidden fields to the form
  form.addHiddenFields({
   "mostRecentCountry":"",
@@ -1560,7 +1559,7 @@ _2014-09-24_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
 `$current_date`
 
-1. 이메일 템플릿에서 토큰을 참조합니다.** 토큰의 이름을 확인합니다. 이메일 초안으로 이동합니다. 토큰을 포함합니다.  이메일을 보내면 토큰의 값이 채워집니다. 자세한 내용은 [전자 메일 스크립팅 개발자 설명서](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/email-scripting)를 참조하세요.
+1. 이메일 템플릿에서 토큰을 참조합니다.** 토큰의 이름을 확인합니다. 이메일 초안으로 이동합니다. 토큰을 포함합니다.  이메일을 보내면 토큰의 값이 채워집니다. 자세한 내용은 [전자 메일 스크립팅 개발자 설명서](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/email-scripting)를 참조하세요.
 
 _2014-11-22_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
@@ -1619,11 +1618,11 @@ Marketo forms는 Marketo 랜딩 페이지 외부에서 로드할 때 기본 미�
 이 호출을 수행하면 다음과 같은 JSON 개체가 반환됩니다.
 
 ```json
-{  
+{
     "requestId":"e42b#14272d07d78",
     "success":true,
-    "result":[  
-        {  
+    "result":[
+        {
         "id":50,
         "firstName":"Kenny",
  "lastName":"Elkington",
@@ -1638,11 +1637,11 @@ Marketo forms는 Marketo 랜딩 페이지 외부에서 로드할 때 기본 미�
 ```javascript
 <script>
 //print your JSON object dynamically as the mktoLead variable
-var mktoLead = {  
+var mktoLead = {
     "requestId":"e42b#14272d07d78",
     "success":true,
-    "result":[  
-        {  
+    "result":[
+        {
         "id":50,
         "firstName":"Kenny",
   "lastName":"Elkington",
@@ -1661,7 +1660,7 @@ MktoForms2.whenReady( function(form) {
  //set the first result as local variable
  var mktoLeadFields = mktoLead.result[0];
     //map your results from REST call to the corresponding field name on the form
- var prefillFields = { 
+ var prefillFields = {
    "Email" : mktoLeadFields.email,
    "FirstName" : mktoLeadFields.firstName,
    "LastName" : mktoLeadFields.lastName,
@@ -1799,7 +1798,7 @@ Facebook에서 Marketo 랜딩 페이지를 공유할 때 이미지가 자동으�
 1. 페이지 메타 태그 편집을 클릭합니다.
 1. Facebook OG 태그 섹션에 오픈 그래프 메타 추가 . 그런 다음 [저장]을 클릭합니다. 형식은 다음과 같습니다. `<meta property="og:image" content="http://example.com/example.jpg"/>`
 
-자세한 내용은 Facebook의 개발자 설명서를 참조하십시오[&#128279;](https://developers.facebook.com/docs/sharing/best-practices) 오픈 그래프 메타 태그에 대한 정보.
+자세한 내용은 Facebook의 개발자 설명서를 참조하십시오[ 오픈 그래프 메타 태그에 대한 정보.](https://developers.facebook.com/docs/sharing/best-practices)
 
 _2014-11-17_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
@@ -2278,14 +2277,14 @@ Google Analytics에서 사용자 지정 데이터 이벤트를 보낸 다음 데
 ```javascript
 function pushFormDataToGa(a){
 setTimeout(function () {
-document.getElementsByTagName('form')[0].getElementsByClassName(a.submitButton)[0].addEventListener('click', function() { 
+document.getElementsByTagName('form')[0].getElementsByClassName(a.submitButton)[0].addEventListener('click', function() {
   allFields = document.getElementsByTagName('form')[0].getElementsByTagName('input');
   for(i=0;i<allFields.length;i++){
    if( (allFields[i].type !="hidden" && allFields[i].type !="submit" && allFields[i].value !="" && a.fieldsToExclude.indexOf(allFields[i].id) === -1  ) || (allFields[i].type === "hidden" && a.sendHiddenFields) ){
     console.log( allFields[i].name + ": "  + allFields[i].value);
     if(typeof(_gaq) != "undefined"){
     //Classic
-    _trackEvent("Marketo Form Submission", allFields[i].value , allFields[i].name 
+    _trackEvent("Marketo Form Submission", allFields[i].value , allFields[i].name
 {'nonInteraction': 1});
     }else if(typeof(ga) !="undefined"){
     //Universal
@@ -2295,7 +2294,7 @@ document.getElementsByTagName('form')[0].getElementsByClassName(a.submitButton)[
 pushFormDataToGa({
  submitButton: "mktoButton",
  fieldsToExclude: ["Email","LastName", "FirstName"],
- sendHiddenFields : false  
+ sendHiddenFields : false
 });
 ```
 
@@ -2376,7 +2375,7 @@ _요르단_&#x200B;이 _2014-12-16_&#x200B;에 게시함
 <form id="mktoForm_19"></form>
 <script>
 MktoForms2.loadForm("//app-e.marketo.com", "212-RBI-463", 19,function(form){
- 
+
 //Add this function to your Marketo form script
 form.onSubmit(function(){
 alert("Do you really want to submit the form?");
@@ -2497,7 +2496,7 @@ Forms 2.0에서 힌트 텍스트 색상(자리 표시자 텍스트라고도 함)
 ::-webkit-input-placeholder {
   color: blue;
 }
-::-moz-placeholder { 
+::-moz-placeholder {
   color: blue;
 }
 :-ms-input-placeholder {
@@ -2508,20 +2507,20 @@ Forms 2.0에서 힌트 텍스트 색상(자리 표시자 텍스트라고도 함)
 }
 ```
 
-**옵션 2: Marketo 양식을 포함할 때 `<head>` 섹션의 `<style></style>` 태그 사이에 페이지에서 직접 CSS를 추가할 수 있습니다.**
+**옵션 2: Marketo 양식을 포함할 때 `<style></style>` 섹션의 `<head>` 태그 사이에 페이지에서 직접 CSS를 추가할 수 있습니다.**
 
 ```css
 <style>
 ::-webkit-input-placeholder {
   color: blue;
 }
-::-moz-placeholder { 
+::-moz-placeholder {
   color: blue;
 }
 :-ms-input-placeholder {
   color: blue;
 }
-:-moz-placeholder { 
+:-moz-placeholder {
   color: blue;
 }
 </style>
@@ -2534,13 +2533,13 @@ Forms 2.0에서 힌트 텍스트 색상(자리 표시자 텍스트라고도 함)
 ::-webkit-input-placeholder {
   color: blue;
 }
-::-moz-placeholder { 
+::-moz-placeholder {
   color: blue;
 }
 :-ms-input-placeholder {
   color: blue;
 }
-:-moz-placeholder { 
+:-moz-placeholder {
   color: blue;
 }
 </style>
@@ -2584,7 +2583,7 @@ require 'json'
 
 # Build request URL
 # Replace AAA-BBB-CCC with your Marketo instance
-marketo_instance = "<https://AAA-BBB-CCC.mktorest.com>" 
+marketo_instance = "<https://AAA-BBB-CCC.mktorest.com>"
 endpoint = "/rest/v1/activities/pagingtoken.json"
 # Replace with your access token
 auth_token =  "?access_token=" + "ac756f7a-d54d-41ac-8c3c-f2d2a39ee325:ab"
@@ -2607,7 +2606,7 @@ require 'json'
 
 # Build request URL
 # Replace AAA-BBB-CCC with your Marketo instance
-marketo_instance = "<https://AAA-BBB-CCC.mktorest.com>" 
+marketo_instance = "<https://AAA-BBB-CCC.mktorest.com>"
 endpoint = "/rest/v1/activities.json"
 # Replace with your access token
 auth_token =  "?access_token=" + "ac756f7a-d54d-41ac-8c3c-f2d2a39ee325:ab"
@@ -2787,7 +2786,7 @@ _2015-01-26_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 ## Marketo REST API에서 모든 리드 가져오기
 
 REST API를 통해 Marketo에서 모든 잠재 고객 목록을 가져오는 방법을 묻는 [질문이 StackOverflow에 있습니다](https://stackoverflow.com/questions/28184900/how-do-i-get-the-list-of-all-the-leads-in-marketo). 필터 유형 REST API 끝점별 [여러 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadsByFilterUsingGET)를 사용하여 이 데이터를 쿼리할 수 있습니다. Marketo의 잠재 고객에는 1부터 시작하여 순차적 순서로 잠재 고객 ID가 지정됩니다. [필터 유형별 여러 리드 가져오기 REST API 끝점](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadsByFilterUsingGET)을 사용하여 각 호출에서 리드 ID별로 300개의 리드를 쿼리할 수 있습니다. 이 끝점에 대한 각 호출에서 id를 filterType으로 지정하고 리드 id를 filterValues로 지정해야 합니다. 모든 리드를 가져오려면 한 번에 총 리드 수 300개를 반복합니다. Y
-Marketo UI를 통해 Marketo 인스턴스의 총 리드 수를 가져올 수 있습니다. Marketo UI에서 리드 데이터베이스 탭으로 이동하여 시스템 스마트 목록을 클릭하고 모든 리드 스마트 목록을 클릭한 다음 마지막으로 &quot;리드&quot; 탭을 클릭합니다. 그런 다음 ID 열을 클릭하고 내림차순으로 정렬합니다. 리드가 정렬되면 모든 리드를 쿼리할 때 첫 번째 리드의 ID가 리드 ID의 상한이 됩니다. 총 리드 수를 가져올 수 있는 Marketo UI에 대한 액세스 권한이 없는 경우 리드 활동 가져오기 REST API[&#128279;](https://stackoverflow.com/questions/28419967/get-all-leads-programmatically-in-marketo-v1)를 사용하여 이 값을 가져올 수 있는 대체 방법이 있습니다.
+Marketo UI를 통해 Marketo 인스턴스의 총 리드 수를 가져올 수 있습니다. Marketo UI에서 리드 데이터베이스 탭으로 이동하여 시스템 스마트 목록을 클릭하고 모든 리드 스마트 목록을 클릭한 다음 마지막으로 &quot;리드&quot; 탭을 클릭합니다. 그런 다음 ID 열을 클릭하고 내림차순으로 정렬합니다. 리드가 정렬되면 모든 리드를 쿼리할 때 첫 번째 리드의 ID가 리드 ID의 상한이 됩니다. 총 리드 수를 가져올 수 있는 Marketo UI에 대한 액세스 권한이 없는 경우 리드 활동 가져오기 REST API[를 사용하여 이 값을 가져올 수 있는 ](https://stackoverflow.com/questions/28419967/get-all-leads-programmatically-in-marketo-v1)대체 방법이 있습니다.
 
 1. 첫 번째 API 호출: 바꾸기 ...를 다음 범위의 모든 값으로 바꿉니다.
 
@@ -2801,7 +2800,7 @@ require 'json'
 
 # Build request URL
 # Replace AAA-BBB-CCC with your Marketo instance
-marketo_instance = "<https://AAA-BBB-CCC.mktorest.com>" 
+marketo_instance = "<https://AAA-BBB-CCC.mktorest.com>"
 endpoint = "/rest/v1/leads.json"
 # Replace with your access token
 auth_token =  "?access_token=" + "ac756f7a-d54d-41ac-8c3c-f2d2a39ee325:ab"
@@ -2894,7 +2893,7 @@ events: {
 
 function onPlayerStateChange(event) {
 switch( event.data ) {
-//Send video started event to Marketo 
+//Send video started event to Marketo
 case YT.PlayerState.PLAYING: Munchkin.munchkinFunction('visitWebPage', {
 url: '/video/'+videoId
 , params: 'video=started'
@@ -3056,14 +3055,14 @@ require 'json'
 
 # Build request URL
 # Replace AAA-BBB-CCC with your Marketo instance
-marketo_instance = "https://AAA-BBB-CCC.mktorest.com" 
+marketo_instance = "https://AAA-BBB-CCC.mktorest.com"
 endpoint = "/rest/v1/leads.json"
 # Replace with your access token
-auth_token =  "?access_token=" + "ac756f7a-d54d-41ac-8c3c-f2d2a39ee325:ab" 
+auth_token =  "?access_token=" + "ac756f7a-d54d-41ac-8c3c-f2d2a39ee325:ab"
 request_url = marketo_instance + endpoint + auth_token
 
 # Build request body
-data = { "action" => "updateOnly", "input" => [ { "email" => "<example@email.com>", "leadScore" => "30" } ] } 
+data = { "action" => "updateOnly", "input" => [ { "email" => "<example@email.com>", "leadScore" => "30" } ] }
 
 # Make request
 response = RestClient.post request_url, data.to_json, :content_type => :json, :accept => :json
@@ -3095,7 +3094,7 @@ _2015-02-20_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 1. 양식이 편집기 보기에 표시되지 않지만, 양식을 미리 보고 캠페인에서 어떻게 렌더링될지 확인할 수 있습니다.
 1. 캠페인을 시작하려면 **시작**&#x200B;을 클릭하세요.
 
-### 참고
+### 메모
 
 양식에 대한 모든 변경 사항은 양식 초안 편집에서 Marketo의 마케팅 활동 내에서 수행해야 합니다.
 
@@ -3131,8 +3130,8 @@ _2015-03-23_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 <script>
 function sendCustomRTPEvent(a){
  var eventValue="t="+a;
- setTimeout(function(){ 
-  rtp('send', 'event', {value: eventValue}); 
+ setTimeout(function(){
+  rtp('send', 'event', {value: eventValue});
   rtp('get', 'campaign',true);
  }, 1000 \* a);
 }
@@ -3221,7 +3220,7 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class SyncEmailUnsubscribe {
-    // Define Marketo instance meta data here.  
+    // Define Marketo instance meta data here.
     // Each row contains three elements: Account Id, Client Id, Client Secret.
     // For example:
     //  public static String instanceData[][] = {
@@ -3806,7 +3805,7 @@ iOS 0.3.5
 
 Android 0.3.3
 
-* 테스트 장치를 추가하고 방향을 변경했을 때 진행 대화 상자가 해제되지 않도록 AndroidManifest.xml `<activity>` 요소에 android:configChanges 특성을 추가했습니다. [MOB-687]
+* 테스트 장치를 추가하고 방향을 변경했을 때 진행 대화 상자가 해제되지 않도록 AndroidManifest.xml :configChanges 요소에 android`<activity>` 특성이 추가되었습니다. [MOB-687]
 
 _David_&#x200B;이(가) _2015-06-30_&#x200B;에 게시함
 
@@ -3845,7 +3844,7 @@ Marketo REST API를 사용하여 필요한 호출을 실행하기 위한 Marketo
 * Marketo 인스턴스에서 만들고 승인한 트랜잭션 이메일이 있어야 합니다.
 * 이메일을 보내도록 설정된 Source: 웹 서비스 API인 캠페인이 요청됨 상태의 활성 트리거 캠페인이 있어야 합니다
 
-먼저 [전자 메일을 만들고 승인](https://experienceleague.adobe.com/ko/docs/marketo/using/home)하세요. 이메일이 실제로 트랜잭션된 경우, 이를 작동 상태로 설정해야 하지만 적법하게 작동 가능한지 확인해야 합니다. 이는 이메일 작업 > 이메일 설정 아래의 편집 화면에서 구성됩니다. 승인하면 캠페인을 만들 준비가 되었습니다. 캠페인을 처음 만드는 경우 docs.marketo.com에서 [새 스마트 캠페인 만들기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/create-a-new-smart-campaign) 문서를 확인하십시오. 캠페인을 만든 후에는 다음 단계를 수행해야 합니다. Campaign이 요청한 트리거를 사용하여 스마트 목록 구성: 이제 이메일을 보내기 단계를 가리키도록 흐름을 구성해야 합니다. 활성화하기 전에 예약 탭에서 일부 설정을 결정해야 합니다. 이 특정 이메일을 지정된 레코드로 한 번만 전송해야 하는 경우 자격 설정을 그대로 둡니다. 그러나 이메일을 여러 번 받아야 하는 경우 매번 또는 사용 가능한 케이던스 중 하나로 조정할 수 있습니다. 이제 활성화할 준비가 되었습니다.
+먼저 [전자 메일을 만들고 승인](https://experienceleague.adobe.com/ko/docs/marketo/using/home)하세요. 이메일이 실제로 트랜잭션된 경우, 이를 작동 상태로 설정해야 하지만 적법하게 작동 가능한지 확인해야 합니다. 이는 이메일 작업 > 이메일 설정 아래의 편집 화면에서 구성됩니다. 승인하면 캠페인을 만들 준비가 되었습니다. 캠페인을 처음 만드는 경우 docs.marketo.com에서 [새 스마트 캠페인 만들기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/create-a-new-smart-campaign) 문서를 확인하십시오. 캠페인을 만든 후에는 다음 단계를 수행해야 합니다. Campaign이 요청한 트리거를 사용하여 스마트 목록 구성: 이제 이메일을 보내기 단계를 가리키도록 흐름을 구성해야 합니다. 활성화하기 전에 예약 탭에서 일부 설정을 결정해야 합니다. 이 특정 이메일을 지정된 레코드로 한 번만 전송해야 하는 경우 자격 설정을 그대로 둡니다. 그러나 이메일을 여러 번 받아야 하는 경우 매번 또는 사용 가능한 케이던스 중 하나로 조정할 수 있습니다. 이제 활성화할 준비가 되었습니다.
 
 ### API 호출 전송
 
@@ -3856,7 +3855,7 @@ package dev.marketo.blog_request_campaign;
 
 import com.eclipsesource.json.JsonArray;
 
-public class App 
+public class App
 {
     public static void main( String[] args )
     {
@@ -3909,7 +3908,7 @@ public class RequestCampaign {
  private Auth auth;
  public ArrayList leads = new ArrayList();
  public ArrayList tokens = new ArrayList();
- 
+
  public RequestCampaign(Auth auth, int campaignId) {
   this.auth = auth;
   this.endpoint = this.auth.marketoInstance + "/rest/v1/campaigns/" + campaignId + "/trigger.json";
@@ -3938,7 +3937,7 @@ public class RequestCampaign {
    JsonObject requestBody = buildRequest(); //builds the Json Request Body
    String s = endpoint + "?access_token=" + auth.getToken(); //takes the endpoint URL and appends the access_token parameter to authenticate
    System.out.println("Executing RequestCampaign calln" + "Endpoint: " + s + "nRequest Body:n"  + requestBody);
-   URL url = new URL(s); 
+   URL url = new URL(s);
    HttpsURLConnection urlConn = (HttpsURLConnection) url.openConnection(); //Return a URL connection and cast to HttpsURLConnection
    urlConn.setRequestMethod("POST");
    urlConn.setRequestProperty("Content-type", "application/json");
@@ -3958,7 +3957,7 @@ public class RequestCampaign {
   }
   return result;
  }
- 
+
  private JsonObject buildRequest(){
   JsonObject requestBody = new JsonObject(); //Create a new JsonObject for the Request Body
   JsonObject input = new JsonObject();
@@ -4006,7 +4005,7 @@ public class Auth {
  private String idEndpoint; //idEndpoint constructed to authenticate with service when constructor is used
  private String token; //token is stored for reuse until expiration
  private Long expiry; //used to store time of expiration
- 
+
  //Creates an instance of Auth which is used to Authenticate with a particular service on a particular instance
  public Auth(String id, String secret, String instanceUrl) {
   this.clientId = id;
@@ -4054,7 +4053,7 @@ public class Auth {
 }
 ```
 
-이 코드를 사용하면 [관리] -> [실행 지점] (ID 및 암호) 및 [관리] -> [웹 서비스] (호스트)에서 클라이언트 ID, 클라이언트 암호 및 호스트(marketoInstance로서)로 인증 인스턴스를 만들 수 있습니다. 현재 저장된 토큰이 null인지 또는 만료되었는지 테스트한 다음 기존 토큰을 반환하거나 새 인증 요청을 수행한 다음 JSON 응답의 &quot;access_token&quot; 멤버에서 새 토큰을 반환하는 getToken 메서드를 표시합니다. 이제 Marketo 인스턴스를 인증할 수 있으므로 다음 단계는 리드를 검색하는 것입니다. 이 클래스를 사용하고 있습니다.
+이 코드를 사용하면 [관리] -> [실행 지점](ID 및 암호) 및 [관리] -> [웹 서비스](호스트)에서 클라이언트 ID, 클라이언트 암호 및 호스트(marketoInstance로서)로 인증 인스턴스를 만들 수 있습니다. 현재 저장된 토큰이 null인지 또는 만료되었는지 테스트한 다음 기존 토큰을 반환하거나 새 인증 요청을 수행한 다음 JSON 응답의 &quot;access_token&quot; 멤버에서 새 토큰을 반환하는 getToken 메서드를 표시합니다. 이제 Marketo 인스턴스를 인증할 수 있으므로 다음 단계는 리드를 검색하는 것입니다. 이 클래스를 사용하고 있습니다.
 
 ```java
 package dev.marketo.blog_leads;
@@ -4076,7 +4075,7 @@ public class Leads {
  public Integer batchSize;
  public String nextPageToken;
  public ArrayList fields = new ArrayList();
- 
+
  public Leads(Auth a) {
   this.auth = a;
   this.endpoint = new StringBuilder(this.auth.marketoInstance + "/rest/v1/leads.json");
@@ -4158,7 +4157,7 @@ package dev.marketo.blog_leads;
 
 import com.eclipsesource.json.JsonObject;
 
-public class App 
+public class App
 {
     public static void main( String[] args )
     {
@@ -4181,7 +4180,7 @@ public class App
 토큰이 비어 있거나 만료되었습니다. 새 인증 시도 중
 <https://299-BYM-827.mktorest.com/identity/oauth/token?grant_type=client_credentials&client_id=b417d98f-9289-47d1-a61f-db141bf0267f&client_secret=0DipOvz4h2wP1ANeVjlfwMvECJpo0ZYc>(으)로 인증 시도 중
 Got 인증 응답: {&quot;access_token&quot;:&quot;ec0f02c0-28ac-4d6c-b7d7-00e47ae85ff1:st&quot;,&quot;token_type&quot;:&quot;bearer&quot;,&quot;expires_in&quot;:538,&quot;scope&quot;:&quot;<apiuser@mktosupport.com>&quot;}
-{&quot;requestId&quot;:&quot;14fb6#14e6a7a9ad6&quot;,&quot;result&quot;:[{&quot;id&quot;:1026322,&quot;updatedAt&quot;:&quot;2015-07-07T21:43:25Z&quot;,&quot;lastName&quot;:&quot;Lead&quot;,&quot;email&quot;:&quot;<testlead@marketo.com>&quot;,&quot;createdAt&quot;:&quot;2015-07-07T21:43:25Z&quot;,&quot;firstName&quot;:&quot;Test&quot;},{&quot;id&quot;:1026323,&quot;updatedAt&quot;:&quot;2015-07-07T21:43:43T z&quot;,&quot;lastName&quot;:&quot;Lead2&quot;,&quot;email&quot;:&quot;<testlead@marketo.com>&quot;,&quot;createdAt&quot;:&quot;2015-07-07T21:43:43Z&quot;,&quot;firstName&quot;:&quot;Test&quot;}],&quot;success&quot;:true}
+{&quot;requestId&quot;:&quot;14fb6#14e6a7a9ad6&quot;,&quot;result&quot;:[{&quot;id&quot;:1026322,&quot;updatedAt&quot;:&quot;2015-07-07T21:43:25Z&quot;,&quot;lastName&quot;:&quot;Lead&quot;,&quot;email&quot;:&quot;<testlead@marketo.com>&quot;,&quot;createdAt&quot;:&quot;2015-07-07T21:43:25Z&quot;,&quot;firstName&quot;:&quot;Test&quot;},{&quot;id&quot;:1026323,&quot;updatedAt&quot;:&quot;2015-07-07A t21:43:43Z&quot;,&quot;lastName&quot;:&quot;Lead2&quot;,&quot;email&quot;:&quot;<testlead@marketo.com>&quot;,&quot;createdAt&quot;:&quot;2015-07-07T21:43:43Z&quot;,&quot;firstName&quot;:&quot;Test&quot;}],&quot;success&quot;:true
 
 이제 필요한 방식으로 처리할 수 있는 리드 데이터가 있습니다. 읽어주셔서 감사드리며, 의견을 남겨주시기 바랍니다.
 
@@ -4227,7 +4226,7 @@ Marketo에는 영업 기회 보고를 완전히 수립하는 데 필요한 몇 �
 * Has Opportunity 스마트 목록 필터 자격을 얻으려면 잠재 고객에게 Opportunity 와 관련된 OpportunityRole 이 있어야 합니다.
 * 기회는 externalCompanyId 필드를 통해 Company 객체와 다대일 관계를 갖습니다.
 * 리드는 externalCompanyId 필드를 통해 회사와 일대다 관계를 갖습니다.
-* 영업 기회는 잠재 고객의 확보 프로그램을 기반으로 한 프로그램 또는 해당 멤버십과 프로그램 성공에 기인합니다([속성 이해](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/reporting/revenue-cycle-analytics/revenue-tools/attribution/understanding-attribution) 참조).
+* 영업 기회는 잠재 고객의 확보 프로그램을 기반으로 한 프로그램 또는 해당 멤버십과 프로그램 성공에 기인합니다([속성 이해](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/reporting/revenue-cycle-analytics/revenue-tools/attribution/understanding-attribution) 참조).
 
 리드 데이터베이스 전반에 걸쳐 이러한 관계를 구축하면 Marketo 분석을 완전히 활용하고 프로그램이 기회 창출 및 승률에 미치는 영향을 확인할 수 있습니다.
 
@@ -4255,12 +4254,12 @@ import com.eclipsesource.json.JsonObject;
 
 public class UpsertCompanies {
  public List<JsonObject> input; //a list of Companies to use for input.  Each must have a member "externalCompanyId".
- public String action; //specify the action to be undertaken, createOnly, updateOnly, createOrUpdate 
+ public String action; //specify the action to be undertaken, createOnly, updateOnly, createOrUpdate
  public String dedupeBy; //select mode of Deduplication, dedupeFields for all dedupe parameters(externalCompanyId), idField for marketoId
  private String endpoint; //endpoint URL created with Constructor
  private Auth auth; //Marketo Auth Object
- 
- 
+
+
  //Constructs an UpsertOpportunities with Auth, but with no input set
  public UpsertCompanies(Auth auth){
   this.auth = auth;
@@ -4282,13 +4281,13 @@ public class UpsertCompanies {
   }
   return this;
  }
- 
+
  public JsonObject postData(){
   JsonObject result = null;
   try {
    JsonObject requestBody = buildRequest(); //builds the Json Request Body
    String s = endpoint + "?access_token=" + auth.getToken(); //takes the endpoint URL and appends the access_token parameter to authenticate
-   URL url = new URL(s); 
+   URL url = new URL(s);
    HttpsURLConnection urlConn = (HttpsURLConnection) url.openConnection(); //Return a URL connection and cast to HttpsURLConnection
    urlConn.setRequestMethod("POST");
    urlConn.setRequestProperty("Content-type", "application/json");
@@ -4308,7 +4307,7 @@ public class UpsertCompanies {
   }
   return result;
  }
- 
+
  private JsonObject buildRequest(){
   JsonObject requestBody = new JsonObject(); //Create a new JsonObject for the Request Body
   JsonArray in = new JsonArray(); //Create a JsonArray for the "input" member to hold Opp records
@@ -4348,7 +4347,7 @@ public class UpsertCompanies {
   this.dedupeBy = dedupeBy;
   return this;
  }
- 
+
 }
 ```
 
@@ -4388,12 +4387,12 @@ import com.eclipsesource.json.JsonObject;
 
 public class UpsertOpportunities {
  public List<JsonObject> input; //a list of Opportunities to use for input.  Each must have a member "externalopportunityid".  Each can optionally include "externalCompanyId" for company association
- public String action; //specify the action to be undertaken, createOnly, updateOnly, createOrUpdate 
+ public String action; //specify the action to be undertaken, createOnly, updateOnly, createOrUpdate
  public String dedupeBy; //select mode of Deduplication, dedupeFields for all dedupe parameters, idField for marketoId
  private String endpoint; //endpoint URL created with Constructor
  private Auth auth; //Marketo Auth Object
- 
- 
+
+
  //Constructs an UpsertOpportunities with Auth, but with no input set
  public UpsertOpportunities(Auth auth){
   this.auth = auth;
@@ -4414,13 +4413,13 @@ public class UpsertOpportunities {
   }
   return this;
  }
- 
+
  public JsonObject postData(){
   JsonObject result = null;
   try {
    JsonObject requestBody = buildRequest(); //builds the Json Request Body
    String s = endpoint + "?access_token=" + auth.getToken(); //takes the endpoint URL and appends the access_token parameter to authenticate
-   URL url = new URL(s); 
+   URL url = new URL(s);
    HttpsURLConnection urlConn = (HttpsURLConnection) url.openConnection(); //Return a URL connection and cast to HttpsURLConnection
    urlConn.setRequestMethod("POST");
    urlConn.setRequestProperty("Content-type", "application/json");
@@ -4440,7 +4439,7 @@ public class UpsertOpportunities {
   }
   return result;
  }
- 
+
  private JsonObject buildRequest(){
   JsonObject requestBody = new JsonObject(); //Create a new JsonObject for the Request Body
   JsonArray in = new JsonArray(); //Create a JsonArray for the "input" member to hold Opp records
@@ -4479,7 +4478,7 @@ public class UpsertOpportunities {
   this.dedupeBy = dedupeBy;
   return this;
  }
- 
+
 }
 ```
 
@@ -4534,7 +4533,7 @@ public class UpsertOpportunityRoles {
  public String dedupeBy;//select mode of Deduplication, dedupeFields for all dedupe parameters, idField for marketoId
  private String endpoint; //endpoint URL created with Constructor
  private Auth auth; //Marketo Auth Object
- 
+
  //Constructs an UpsertOpportunityRoles with Auth, but with no input set
  public UpsertOpportunityRoles(Auth auth) {
   this.auth = auth;
@@ -4581,7 +4580,7 @@ public class UpsertOpportunityRoles {
   }
   return result;
  }
- 
+
  public JsonObject buildRequest(){
   JsonObject requestBody = new JsonObject();
   JsonArray in = new JsonArray();
@@ -4620,7 +4619,7 @@ public class UpsertOpportunityRoles {
   this.dedupeBy = dedupeBy;
   return this;
  }
- 
+
 }
 ```
 
@@ -4657,19 +4656,19 @@ package dev.marketo.opportunities;
 
 import com.eclipsesource.json.JsonObject;
 
-public class App 
+public class App
 {
     public static void main( String[] args )
     {
-     //create an Instance of Auth 
+     //create an Instance of Auth
         Auth auth = new Auth("CLIENT_ID_CHANGE_ME", "CLIENT_SECRET_CHANGE_ME", "MARKETO_HOST_CHANGE_ME");
-        
+
         //Create a new company to associate to
         JsonObject myCompany = new JsonObject().add("externalCompanyId", "myCompany");
         UpsertCompanies upsertCompanies = new UpsertCompanies(auth).addCompanies(myCompany);
         JsonObject companiesResult = upsertCompanies.postData();
         System.out.println(companiesResult);
-        
+
         //Create some JsonObjects for Opportunity Data
         JsonObject opp1 = new JsonObject().add("name", "opportunity1")
            .add("externalopportunityid", "Opportunity1Test")
@@ -4686,7 +4685,7 @@ public class App
                                 .addOpportunities(opp1, opp2);
         JsonObject oppsResult = upsertOpps.postData();
         System.out.println(oppsResult);
-        
+
         //Create Some opp roles now
         JsonObject opp1Role = new JsonObject()
            .add("role", "Captain")
@@ -4696,7 +4695,7 @@ public class App
            .add("role", "Commander")
            .add("externalopportunityid", opp2.get("externalopportunityid").asString())
            .add("leadId", 318795);
-        
+
         //Create an Instance of UpsertOpportunityRoles and POST it
         UpsertOpportunityRoles upsertRoles = new UpsertOpportunityRoles(auth)
            .setAction("createOnly")
@@ -4714,11 +4713,11 @@ _케니_&#x200B;이(가) _2015-08-07_&#x200B;에 게시함
 
 ## Marketo REST API를 사용하여 트랜잭션 이메일 보내기: 2부, 사용자 지정 콘텐츠
 
-이번 주에는 요청 캠페인 API 호출을 통해 다이내믹 콘텐츠를 이메일에 전달하는 방법을 살펴봅니다. 요청 캠페인을 사용하면 외부에서 전자 메일을 트리거할 수 있을 뿐만 아니라 전자 메일 내의 [내 토큰](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/programs/tokens/understanding-my-tokens-in-a-program)의 콘텐츠를 바꿀 수도 있습니다. 내 토큰은 프로그램 또는 마케팅 폴더 수준에서 사용자 지정할 수 있는 재사용 가능한 콘텐츠입니다. 이는 요청 캠페인 호출을 통해 대체할 자리 표시자로 존재할 수도 있습니다.
+이번 주에는 요청 캠페인 API 호출을 통해 다이내믹 콘텐츠를 이메일에 전달하는 방법을 살펴봅니다. 요청 캠페인을 사용하면 외부에서 전자 메일을 트리거할 수 있을 뿐만 아니라 전자 메일 내의 [내 토큰](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/tokens/understanding-my-tokens-in-a-program)의 콘텐츠를 바꿀 수도 있습니다. 내 토큰은 프로그램 또는 마케팅 폴더 수준에서 사용자 지정할 수 있는 재사용 가능한 콘텐츠입니다. 이는 요청 캠페인 호출을 통해 대체할 자리 표시자로 존재할 수도 있습니다.
 
 ### 이메일 작성
 
-콘텐츠를 사용자 지정하려면 먼저 Marketo에서 [프로그램](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/create-a-program) 및 [이메일](https://experienceleague.adobe.com/ko/docs/marketo/using/home)을 구성해야 합니다. 사용자 지정 콘텐츠를 생성하려면 프로그램 내부에 토큰을 만든 다음 전송할 이메일에 배치해야 합니다. 간결성을 위해 이 예제에서는 하나의 토큰만 사용하고 있지만, 보낸 사람 이메일, 보낸 사람 이름, 회신 주소 또는 이메일의 모든 콘텐츠에서 토큰의 숫자를 바꿀 수 있습니다. 그러면 교체를 위해 하나의 리치 텍스트 토큰을 만들고 이를 &quot;bodyReplacement&quot;라고 하겠습니다. 리치 텍스트를 사용하면 토큰의 모든 컨텐츠를 입력하려는 임의의 HTML으로 바꿀 수 있습니다. 비어 있는 동안에는 토큰을 저장할 수 없습니다. 먼저 여기에 자리 표시자 텍스트를 삽입하십시오. 이제 이메일에 토큰을 삽입해야 합니다. 이제 요청 캠페인 호출을 통해 이 토큰을 교체할 수 있습니다. 이 토큰은 이메일별로 대체해야 하는 단일 텍스트 행만큼 단순하거나 이메일의 거의 전체 레이아웃을 포함할 수 있습니다.
+콘텐츠를 사용자 지정하려면 먼저 Marketo에서 [프로그램](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/create-a-program) 및 [이메일](https://experienceleague.adobe.com/ko/docs/marketo/using/home)을 구성해야 합니다. 사용자 지정 콘텐츠를 생성하려면 프로그램 내부에 토큰을 만든 다음 전송할 이메일에 배치해야 합니다. 간결성을 위해 이 예제에서는 하나의 토큰만 사용하고 있지만, 보낸 사람 이메일, 보낸 사람 이름, 회신 주소 또는 이메일의 모든 콘텐츠에서 토큰의 숫자를 바꿀 수 있습니다. 그러면 교체를 위해 하나의 리치 텍스트 토큰을 만들고 이를 &quot;bodyReplacement&quot;라고 하겠습니다. 리치 텍스트를 사용하면 토큰의 모든 컨텐츠를 입력하려는 임의의 HTML으로 바꿀 수 있습니다. 비어 있는 동안에는 토큰을 저장할 수 없습니다. 먼저 여기에 자리 표시자 텍스트를 삽입하십시오. 이제 이메일에 토큰을 삽입해야 합니다. 이제 요청 캠페인 호출을 통해 이 토큰을 교체할 수 있습니다. 이 토큰은 이메일별로 대체해야 하는 단일 텍스트 행만큼 단순하거나 이메일의 거의 전체 레이아웃을 포함할 수 있습니다.
 
 ### 코드
 
@@ -4729,22 +4728,22 @@ package dev.marketo.blog_request_campaign;
 
 import com.eclipsesource.json.JsonArray;
 
-public class App 
+public class App
 {
     public static void main( String[] args )
     {
      //Create an instance of Auth so that we can authenticate with our Marketo instance
         Auth auth = new Auth("Client ID - CHANGE ME", "Client Secret - CHANGE ME", "Host - CHANGE ME");
-        
+
         //Create and parameterize an instance of Leads
         Leads leadsRequest = new Leads(auth).setFilterType("email").addFilterValue("requestCampaign.test@marketo.com");
-        
+
         //get the inner results array of the response
         JsonArray leadsResult = leadsRequest.getData().get("result").asArray();
-        
+
         //get the id of the record indexed at 0
         int lead = leadsResult.get(0).asObject().get("id").asInt();
-        
+
         //Set the ID of our campaign from Marketo
         int campaignId = 1578;
         RequestCampaign rc = new RequestCampaign(auth, campaignId).addLead(lead);
@@ -5002,13 +5001,13 @@ class SalesPerson{
  private $action;// string designating request action, createOnly, updateOnly, createOrUpdate
  private $dedupeBy;//dedupeFields or idField
  private $input;//array of salesperson objects for input
- 
+
  //takes an Auth object as the first argument
  public function _construct($auth, $input){
   $this->auth = $auth;
   $this->input = $input;
  }
- 
+
  //constructs the json request body
  private function bodyBuilder(){
   $body = new stdClass();
@@ -5064,7 +5063,7 @@ class SalesPerson{
  public function getInput(){
   return $this->input;
  }
- 
+
 }
 ```
 
@@ -5172,7 +5171,7 @@ class Leads{
  public function getPartitionName() {
   return $this->partitionName;
  }
- 
+
 }
 ```
 
@@ -5245,7 +5244,7 @@ class Auth{
  private $clientSecret;//client secret
  private $token;//access_token
  private $expiry;
- 
+
  function _construct($host, $clientId, $clientSecret){
   $this->host = $host;
   $this->clientId = $clientId;
@@ -5300,13 +5299,13 @@ Marketo의 REST API는 인증을 위해 사용자 지정 서비스를 사용하�
 
 ### Workspace 관리
 
-Marketo Enterprise 구독의 경우 서비스는 단일 작업 영역에만 액세스해야 하는 것이 일반적이며 API 사용자에게 [역할 할당에 의해 강제 적용](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/allow-user-access-to-a-workspace)될 수 있습니다. 각 사용자 역할은 전역적으로 또는 작업 영역별로 할당할 수 있으므로, 작업 영역에서 필요한 경우 액세스를 제한할 수 있으며, 가능한 한 가장 최소한의 권한을 제공합니다.
+Marketo Enterprise 구독의 경우 서비스는 단일 작업 영역에만 액세스해야 하는 것이 일반적이며 API 사용자에게 [역할 할당에 의해 강제 적용](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/allow-user-access-to-a-workspace)될 수 있습니다. 각 사용자 역할은 전역적으로 또는 작업 영역별로 할당할 수 있으므로, 작업 영역에서 필요한 경우 액세스를 제한할 수 있으며, 가능한 한 가장 최소한의 권한을 제공합니다.
 
 _케니_&#x200B;이(가) _2015-08-28_&#x200B;에 게시함
 
 ## REST API를 사용하여 리드 파티션을 지정하는 방법
 
-**리드 파티션 나누기** Marketo 리드 파티션을 사용하면 리드를 편리하게 분리할 수 있습니다. 파티션을 사용하면 조직 내의 다른 마케팅 그룹에서 단일 Marketo 인스턴스를 공유할 수 있습니다. 자세한 내용은 [작업 영역 및 리드 파티션 이해](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions)를 참조하십시오. 리드 파티션을 사용하고 Marketo REST API를 사용하여 프로그래밍 방식으로 리드를 만든다고 가정합니다. 생성한 잠재 고객이 올바른 파티션에 도달하도록 하려면 어떻게 해야 합니까? 이 게시물은 방법을 보여 줍니다! 이 예에서는 작업 공간 및 파티션 을 사용하여 지역을 기준으로 리드를 분리합니다.
+**리드 파티션 나누기** Marketo 리드 파티션을 사용하면 리드를 편리하게 분리할 수 있습니다. 파티션을 사용하면 조직 내의 다른 마케팅 그룹에서 단일 Marketo 인스턴스를 공유할 수 있습니다. 자세한 내용은 [작업 영역 및 리드 파티션 이해](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions)를 참조하십시오. 리드 파티션을 사용하고 Marketo REST API를 사용하여 프로그래밍 방식으로 리드를 만든다고 가정합니다. 생성한 잠재 고객이 올바른 파티션에 도달하도록 하려면 어떻게 해야 합니까? 이 게시물은 방법을 보여 줍니다! 이 예에서는 작업 공간 및 파티션 을 사용하여 지역을 기준으로 리드를 분리합니다.
 
 먼저 &quot;국가&quot;라는 작업 영역을 정의합니다. 그런 다음 &quot;멕시코&quot;와 &quot;캐나다&quot;라는 작업 영역 내에 두 개의 파티션을 만듭니다.  **파티션에서 잠재 고객 만들기** &quot;멕시코&quot; 파티션에서 두 개의 잠재 고객을 만들려고 한다고 가정합니다. 리드를 만들려면 를 호출합니다. 파티션을 지정하려면 요청 본문에 &quot;partitionName&quot; 특성을 포함해야 합니다. partitionName 값에 사용할 항목을 어떻게 알 수 있습니까? 다음과 같이 [리드 파티션 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#operation/describeProgramMemberUsingGET) API를 호출하여 인스턴스에 대한 올바른 파티션 이름 값 목록을 검색할 수 있습니다.
 
@@ -5413,8 +5412,8 @@ _David_&#x200B;이(가) _2015-09-04_&#x200B;에 게시함
 ### 두 숫자를 비교하려면 필드 값을 정수로 변환해야 합니다
 
 ```
-#set ($score1 = $math.toInteger(${lead.Apple_Score})) 
-#set ($score2 = $math.toInteger(${lead.Banana_Score})) 
+#set ($score1 = $math.toInteger(${lead.Apple_Score}))
+#set ($score2 = $math.toInteger(${lead.Banana_Score}))
 ##check if the lead score is greater than feature score
 #if($score1 >= $score2)
                 ##if Apple score is greater
@@ -5441,7 +5440,7 @@ _케니_&#x200B;이(가) _2015-09-14_&#x200B;에 게시함
 
 `<form id="mktoForm_1068"></form>`
 
-다음과 같이 요소에 &#39;style=&quot;display:none&quot;&#39;을 추가하여 표시되지 않도록 할 수 있습니다.
+다음과 같이 &#39;style=&quot;display:none&quot;&#39;을(를) 요소에 추가하여 표시되지 않도록 할 수 있습니다.
 
 `<form id="mktoForm_1068" style="display:none"></form>`
 
@@ -5495,9 +5494,9 @@ Munchkin Associate Lead에서 마이그레이션
         </script>
 </head>
 
-<body> 
+<body>
   <!--
-    Start Embed code.  
+    Start Embed code.
     Pasted from Form Actions -> Embed Code except for addition of 'style="display:none"' to the form tag in order to hide it, and instance-specific codes redacted
     Replace with your own code for testing
   -->
@@ -5522,11 +5521,11 @@ Munchkin Associate Lead에서 마이그레이션
 
             //the addHiddenFields methods lets us add arbitrary fields to the form as well as their values
             form.addHiddenFields(values);
-            
+
             //submit the form
             form.submit();
-            
-            
+
+
         })
     </script>
 </body>
@@ -5638,9 +5637,9 @@ Marketo API 소비자로서, 이는 눈여겨봐야 할 유용한 정보입니�
 출력 파일 예 usage_2015_10_111-AAA-222.json
 
 ```json
-[ 
-    { "date": "2015-10-15", "total": 0, "users" : [] }, 
-    { "date": "2015-10-16", "total": 9, "users": [ { "userId": "some.body@yahoo.com", "count": 9 } ] }, 
+[
+    { "date": "2015-10-15", "total": 0, "users" : [] },
+    { "date": "2015-10-16", "total": 9, "users": [ { "userId": "some.body@yahoo.com", "count": 9 } ] },
     { "date": "2015-10-17", "total": 1120, "users": [ { "userId": "some.body@yahoo.com", "count": 200 }, { "userId": "some.body@marketo.com", "count": 200 }, { "userId": "some.body@gmail.com", "count": 720 } ] },
 ]
 ```
@@ -6451,7 +6450,7 @@ syncMultilpeLeads의 SOAP 응답:
 </ns2:successSyncMultipleLeads>
 ```
 
-`syncMultipleLeads`에서 업데이트 작업을 수행합니다. 제출된 이메일 주소를 기반으로 Marketo 내에 이미 연락처가 있는 경우 특성이 업데이트됩니다. 연락처가 없으면 생성됩니다. `syncMultipleLeads`의 응답이 제출된 각 연락처의 상태를 반환합니다. `<leadAttributeList/>` 내의 `<attrName/>` 값은 해당 Marketo 구독에 대해 정의된 SOAP API 이름과 일치해야 합니다. 필드 이름을 내보내서 Marketo 관리 패널의 필드 관리 섹션 내에서 SOAP API 이름을 검색할 수 있습니다.
+`syncMultipleLeads`에서 업데이트 작업을 수행합니다. 제출된 이메일 주소를 기반으로 Marketo 내에 이미 연락처가 있는 경우 특성이 업데이트됩니다. 연락처가 없으면 생성됩니다. `syncMultipleLeads`의 응답이 제출된 각 연락처의 상태를 반환합니다. `<attrName/>` 내의 `<leadAttributeList/>` 값은 해당 Marketo 구독에 대해 정의된 SOAP API 이름과 일치해야 합니다. 필드 이름을 내보내서 Marketo 관리 패널의 필드 관리 섹션 내에서 SOAP API 이름을 검색할 수 있습니다.
 
 위에서 설명한 시나리오를 실행하는 아래 샘플 Java 프로그램을 참조하십시오.
 
@@ -6486,7 +6485,7 @@ public class SyncMultipleLeadsExample {
       // Create Signature
       DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
       String text = df.format(new Date());
-      String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);      
+      String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);
       String encryptString = requestTimestamp + marketoUserId ;
 
       SecretKeySpec secretKey = new SecretKeySpec(marketoSecretKey.getBytes(), "HmacSHA1");
@@ -6494,7 +6493,7 @@ public class SyncMultipleLeadsExample {
       mac.init(secretKey);
       byte[] rawHmac = mac.doFinal(encryptString.getBytes());
       char[] hexChars = Hex.encodeHex(rawHmac);
-      String signature = new String(hexChars); 
+      String signature = new String(hexChars);
 
       // Set Authentication Header
       AuthenticationHeader header = new AuthenticationHeader();
@@ -6528,7 +6527,7 @@ public class SyncMultipleLeadsExample {
         LeadRecord leadRec = new LeadRecord();
 
         JAXBElement email = objectFactory.createLeadRecordEmail(c.email);
-        leadRec.setEmail(email);      
+        leadRec.setEmail(email);
 
         Attribute attr1 = new Attribute();
         attr1.setAttrName("FirstName");
@@ -6555,7 +6554,7 @@ public class SyncMultipleLeadsExample {
 
       }
 
-      request.setLeadRecordList(arrayOfLeadRecords);      
+      request.setLeadRecordList(arrayOfLeadRecords);
 
       JAXBContext context = JAXBContext.newInstance(SuccessSyncMultipleLeads.class);
       Marshaller m = context.createMarshaller();
@@ -6584,7 +6583,6 @@ public class SyncMultipleLeadsExample {
   }
 }
 ```
-
  
 이 문서에는 사용자 정의 통합을 구현하는 데 사용되는 코드가 포함되어 있습니다. 맞춤화된 특성으로 인해 Marketo 기술 지원 팀에서 사용자 정의 작업 문제를 해결할 수 없습니다. 적절한 기술 경험이나 숙련된 개발자 액세스 없이 다음 코드 샘플을 구현하지 마십시오.
 
@@ -6664,71 +6662,71 @@ import org.apache.commons.codec.binary.Hex;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.Marshaller;
- 
- 
+
+
 public class RequestCampaign {
- 
+
     public static void main(String[] args) {
         System.out.println("Executing Request Campaign");
         try {
             URL marketoSoapEndPoint = new URL("CHANGE ME" + "?WSDL");
             String marketoUserId = "CHANGE ME";
             String marketoSecretKey = "CHANGE ME";
-             
+
             QName serviceName = new QName("http://www.marketo.com/mktows/", "MktMktowsApiService");
             MktMktowsApiService service = new MktMktowsApiService(marketoSoapEndPoint, serviceName);
             MktowsPort port = service.getMktowsApiSoapPort();
-             
+
             // Create Signature
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
             String text = df.format(new Date());
-            String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);           
+            String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);
             String encryptString = requestTimestamp + marketoUserId ;
-             
+
             SecretKeySpec secretKey = new SecretKeySpec(marketoSecretKey.getBytes(), "HmacSHA1");
             Mac mac = Mac.getInstance("HmacSHA1");
             mac.init(secretKey);
             byte[] rawHmac = mac.doFinal(encryptString.getBytes());
             char[] hexChars = Hex.encodeHex(rawHmac);
-            String signature = new String(hexChars); 
-             
+            String signature = new String(hexChars);
+
             // Set Authentication Header
             AuthenticationHeader header = new AuthenticationHeader();
             header.setMktowsUserId(marketoUserId);
             header.setRequestTimestamp(requestTimestamp);
             header.setRequestSignature(signature);
-             
+
             // Create Request
             ParamsRequestCampaign request = new ParamsRequestCampaign();
-             
+
             request.setSource(ReqCampSourceType.MKTOWS);
-             
+
             ObjectFactory objectFactory = new ObjectFactory();
             JAXBElement<Integer> campaignId = objectFactory.createParamsRequestCampaignCampaignId(4496);
             request.setCampaignId(campaignId);
-             
+
             ArrayOfLeadKey leadKeyList = new ArrayOfLeadKey();
             LeadKey key = new LeadKey();
             key.setKeyType(LeadKeyRef.EMAIL);
             key.setKeyValue("lead@company.com");
-             
+
             LeadKey key2 = new LeadKey();
             key2.setKeyType(LeadKeyRef.EMAIL);
             key2.setKeyValue("anotherlead@company.com");
-             
+
             leadKeyList.getLeadKeies().add(key);
             leadKeyList.getLeadKeies().add(key2);
-             
+
             JAXBElement<ArrayOfLeadKey> arrayOfLeadKey = objectFactory.createParamsRequestCampaignLeadList(leadKeyList);
             request.setLeadList(arrayOfLeadKey);
- 
+
             SuccessRequestCampaign result = port.requestCampaign(request, header);
- 
+
             JAXBContext context = JAXBContext.newInstance(SuccessRequestCampaign.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             m.marshal(result, System.out);
-             
+
         }
         catch(Exception e) {
             e.printStackTrace();
@@ -6752,9 +6750,9 @@ _2014-03-27_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
 **API를 사용하여 다이내믹 콘텐츠를 전달하는 방법** Marketo에서 내 토큰은 프로그램에서 사용할 수 있는 변수입니다. 내 토큰을 사용하면 한 위치에 프로그램과 관련된 정보를 입력하고 해당 정보를 지정한 값으로 대체하며 이 정보를 전자 메일 템플릿과 같은 애플리케이션의 다른 부분에서 검색할 수 있습니다. requestCampaign SOAP API를 사용하여 기존 토큰을 재정의하는 프로그램 토큰 배열을 전달할 수 있습니다. 캠페인 실행 후 토큰이 삭제됩니다. Campaign 폴더 수준 또는 프로그램 수준에서 내 토큰을 만듭니다. Campaign 폴더 수준의 내 토큰은 Campaign 폴더에 포함된 모든 프로그램으로 상속됩니다. Campaign 폴더 수준에서 내 토큰을 만들면 프로그램 수준에서 상속된 값을 덮어쓸 수 있습니다. 예를 들어 캠페인 폴더 수준에서 프로그램 날짜 및 프로그램 설명에 대한 토큰을 정의하는 경우 개별 프로그램 수준에서 이러한 값을 덮어쓸 수 있습니다.
 
-방법은 다음과 같습니다. 1. 마케팅 활동 트리에서 토큰을 생성할 Campaign 폴더 또는 프로그램을 선택합니다. 상단 메뉴 모음에서 내 토큰 을 선택합니다. 그러면 내 토큰 캔버스가 표시됩니다. 오른쪽 트리에서 토큰 유형을 캔버스로 드래그합니다(이 경우 &quot;텍스트&quot;). 토큰 이름 필드에서 내 토큰을 강조 표시하고 고유한 토큰 이름을 입력합니다. 이 경우 &quot;my.conversationtopic&quot;입니다. 값 필드에 토큰에 대한 관련 값을 입력합니다. 이 경우 &quot;오늘 전화해 주셔서 감사합니다.&quot;라고 표시됩니다. API를 사용하면 기본 내 토큰 값이 재정의됩니다. 사용자 지정 토큰을 저장하려면 &quot;저장&quot;을 클릭합니다.  1. 새로 만들기를 클릭하여 새 이메일을 만듭니다. 그런 다음 새 로컬 Assets 를 클릭하고 이메일을 선택합니다. 그런 다음 관련 필드를 작성하여 이메일 이름을 지정하십시오. 이메일 초안을 작성할 때 토큰 아이콘을 클릭하여 이메일에 토큰을 포함합니다. 토큰을 사용하여 템플릿 이메일을 만들었으므로 이제 이메일을 후속 단계에서 Campaign에 대한 흐름 동작으로 추가합니다. 따라서 API를 통해 캠페인을 호출하면 이메일이 발송됩니다.\
+방법은 다음과 같습니다. 1. 마케팅 활동 트리에서 토큰을 생성할 Campaign 폴더 또는 프로그램을 선택합니다. 상단 메뉴 모음에서 내 토큰 을 선택합니다. 그러면 내 토큰 캔버스가 표시됩니다. 오른쪽 트리에서 토큰 유형을 캔버스로 드래그합니다(이 경우 &quot;텍스트&quot;). 토큰 이름 필드에서 내 토큰을 강조 표시하고 고유한 토큰 이름을 입력합니다. 이 경우 &quot;my.conversationtopic&quot;입니다. 값 필드에 토큰에 대한 관련 값을 입력합니다. 이 경우 &quot;오늘 전화해 주셔서 감사합니다.&quot;라고 표시됩니다. API를 사용하면 기본 내 토큰 값이 재정의됩니다. 사용자 지정 토큰을 저장하려면 &quot;저장&quot;을 클릭합니다.  1. 새로 만들기를 클릭하여 새 이메일을 만듭니다. 그런 다음 새 로컬 Assets 를 클릭하고 이메일을 선택합니다. 그런 다음 관련 필드를 작성하여 이메일 이름을 지정하십시오. 이메일 초안을 작성할 때 토큰 아이콘을 클릭하여 이메일에 토큰을 포함합니다. 토큰을 사용하여 템플릿 이메일을 만들었으므로 이제 이메일을 후속 단계에서 Campaign에 대한 흐름 동작으로 추가합니다. 따라서 API를 통해 캠페인을 호출하면 이메일이 발송됩니다.
 **Campaign에서 전자 메일 흐름 동작을 만드는 방법** 스마트 캠페인과 전자 메일을 연결하면 마케터는 전자 메일이 표시되는 방식을 관리하고 서드파티 응용 프로그램은 전자 메일을 받는 사람과 시기를 결정할 수 있습니다. 이메일을 새 로컬 자산으로 만든 후 캠페인에서 흐름 작업으로 설정할 수 있습니다. 보낼 이메일을 찾아 선택합니다.
-**requestCampaign API를 호출하는 코드 샘플** Marketo 인터페이스에서 캠페인 및 트리거를 설정한 후 API를 사용하여 전자 메일을 보내는 방법을 보여 줍니다. 첫 번째 샘플은 XML 요청이고, 두 번째 샘플은 XML 응답이며, 마지막 샘플은 XML 요청을 생성하는 데 사용할 수 있는 Java 코드 샘플입니다. requestCampaign API를 호출할 때 사용되는 캠페인 ID를 찾는 방법도 보여 줍니다. 또한 API를 호출하려면 Marketo 캠페인의 ID를 미리 알고 있어야 합니다. 다음 방법 중 하나를 사용하여 캠페인 ID를 결정할 수 있습니다. 1. [getCampaignsForSource](/help/soap-api/getcampaignsforsource.md) API 1을 사용합니다. 브라우저에서 Marketo 캠페인을 열고 URL 주소 표시줄을 봅니다. 캠페인 ID(4자리 정수로 표시됨)는 &quot;SC&quot; 바로 다음에 찾을 수 있습니다. 예, `<https://app-stage.marketo.com/#SC&#x200B;**1025**&#x200B;A1>`. 굵게 표시된 부분은 캠페인 ID - &quot;1025&quot;입니다. requestCampaign에 대한 SOAP 요청
+**requestCampaign API를 호출하는 코드 샘플** Marketo 인터페이스에서 캠페인 및 트리거를 설정한 후 API를 사용하여 전자 메일을 보내는 방법을 보여 줍니다. 첫 번째 샘플은 XML 요청이고, 두 번째 샘플은 XML 응답이며, 마지막 샘플은 XML 요청을 생성하는 데 사용할 수 있는 Java 코드 샘플입니다. requestCampaign API를 호출할 때 사용되는 캠페인 ID를 찾는 방법도 보여 줍니다. 또한 API를 호출하려면 Marketo 캠페인의 ID를 미리 알고 있어야 합니다. 다음 방법 중 하나를 사용하여 캠페인 ID를 결정할 수 있습니다. 1. [getCampaignsForSource](/help/soap-api/getcampaignsforsource.md) API 1을 사용합니다. 브라우저에서 Marketo 캠페인을 열고 URL 주소 표시줄을 봅니다. 캠페인 ID(4자리 정수로 표시됨)는 &quot;SC&quot; 바로 다음에 찾을 수 있습니다. 예, `<https://app-stage.marketo.com/#SC**1025**A1>`. 굵게 표시된 부분은 캠페인 ID - &quot;1025&quot;입니다. requestCampaign에 대한 SOAP 요청
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -6815,77 +6813,77 @@ import org.apache.commons.codec.binary.Hex;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.Marshaller;
- 
- 
+
+
 public class RequestCampaign {
- 
+
     public static void main(String[] args) {
         System.out.println("Executing Request Campaign");
         try {
             URL marketoSoapEndPoint = new URL("CHANGE ME" + "?WSDL");
             String marketoUserId = "CHANGE ME";
             String marketoSecretKey = "CHANGE ME";
-             
+
             QName serviceName = new QName("http://www.marketo.com/mktows/", "MktMktowsApiService");
             MktMktowsApiService service = new MktMktowsApiService(marketoSoapEndPoint, serviceName);
             MktowsPort port = service.getMktowsApiSoapPort();
-             
+
             // Create Signature
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
             String text = df.format(new Date());
-            String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);           
+            String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);
             String encryptString = requestTimestamp + marketoUserId ;
-             
+
             SecretKeySpec secretKey = new SecretKeySpec(marketoSecretKey.getBytes(), "HmacSHA1");
             Mac mac = Mac.getInstance("HmacSHA1");
             mac.init(secretKey);
             byte[] rawHmac = mac.doFinal(encryptString.getBytes());
             char[] hexChars = Hex.encodeHex(rawHmac);
-            String signature = new String(hexChars); 
-             
+            String signature = new String(hexChars);
+
             // Set Authentication Header
             AuthenticationHeader header = new AuthenticationHeader();
             header.setMktowsUserId(marketoUserId);
             header.setRequestTimestamp(requestTimestamp);
             header.setRequestSignature(signature);
-             
+
             // Create Request
             ParamsRequestCampaign request = new ParamsRequestCampaign();
-             
+
             request.setSource(ReqCampSourceType.MKTOWS);
-             
+
             ObjectFactory objectFactory = new ObjectFactory();
             JAXBElement<Integer> campaignId = objectFactory.createParamsRequestCampaignCampaignId(4496);
             request.setCampaignId(campaignId);
-             
+
             ArrayOfLeadKey leadKeyList = new ArrayOfLeadKey();
             LeadKey key = new LeadKey();
             key.setKeyType(LeadKeyRef.EMAIL);
             key.setKeyValue("lead@company.com");
-             
+
             leadKeyList.getLeadKeies().add(key);
-             
+
             JAXBElement<ArrayOfLeadKey> arrayOfLeadKey = objectFactory.createParamsRequestCampaignLeadList(leadKeyList);
             request.setLeadList(arrayOfLeadKey);
 
             ArrayOfAttrib aoa = new ArrayOfAttrib();
-             
+
             Attrib attrib = new Attrib();
             attrib.setName("{{my.conversationtopic}}");
             attrib.setValue("Thank you for calling about adding a line of service to your current plan.");
-             
+
             aoa.getAttribs().add(attrib);
-             
+
             JAXBElement<ArrayOfAttrib> arrayOfAttrib = objectFactory.createParamsRequestCampaignProgramTokenList(aoa);
             request.setProgramTokenList(arrayOfAttrib);
- 
+
             SuccessRequestCampaign result = port.requestCampaign(request, header);
- 
+
             JAXBContext context = JAXBContext.newInstance(SuccessRequestCampaign.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             m.marshal(result, System.out);
-             
+
         }
         catch(Exception e) {
             e.printStackTrace();
@@ -6935,14 +6933,14 @@ _2014-04-03_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 이 코드 샘플은 사용자가 페이지에 5초 동안 있고 500픽셀을 페이지 아래로 스크롤한 후 Munchkin API를 호출합니다.
 
 ```javascript
-<script src="https://code.jquery.com/jquery-2.1.0.min.js"></script> 
+<script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
 $(function(){
  setTimeout(function(){
   $(window).scroll(function() {
       var y_scroll_position = window.pageYOffset;
-      var scroll_position = 500; //Sets number of pixels user must scroll to be tracked        
-  
+      var scroll_position = 500; //Sets number of pixels user must scroll to be tracked
+
   if(y_scroll_position > scroll_position) {
   //Munchkin tracking code
    (function() {
@@ -6953,7 +6951,7 @@ $(function(){
         Munchkin.init('XXX-XXX-XXX');
       }
      }
-     
+
      var s = document.createElement('script');
      s.type = 'text/javascript';
      s.async = true;
@@ -6966,7 +6964,7 @@ $(function(){
      s.onload = initMunchkin;
      document.getElementsByTagName('head')[0].appendChild(s);
    })();
-   }   
+   }
  },5000); //Sets time delay before tracking user
 });
 </script>
@@ -6986,7 +6984,7 @@ _2014-04-17_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
 ## RTP를 사용하여 로컬 전화 번호를 동적으로 변경
 
-Personalization이 전부입니다. 우리는 오래 전에 이 사실을 파악했습니다. 그 말이 나온 김에, 즉각적인 지원이 필요할 때마다 웹사이트에서 관련 지역 전화번호를 찾는 것이 너무 힘들다는 것이 아직도 저에게는 놀랍습니다. <https://business.adobe.com/products/marketo/adobe-marketo.html>에 [Marketo 실시간 Personalization](https://business.adobe.com/products/marketo/content-personalization.html)&#x200B;(RTP)이 설치되어 있습니다. [RTP 방문자 API](/help/javascript-api/web-personalization.md)를 활용하여 웹 사이트의 여러 섹션에서 웹 방문자가 보는 전화 번호를 동적으로 변경할 수 있습니다. 와우! 믿겨지니? 이 마법은 어떻게 작동합니까? 먼저 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)에 설명된 대로 웹 사이트에 RTP를 설치해야 합니다. 그런 다음 아래 지침에 따라 웹 사이트에서 JavaScript 코드를 구현합니다.
+Personalization이 전부입니다. 우리는 오래 전에 이 사실을 파악했습니다. 그 말이 나온 김에, 즉각적인 지원이 필요할 때마다 웹사이트에서 관련 지역 전화번호를 찾는 것이 너무 힘들다는 것이 아직도 저에게는 놀랍습니다. [에 ](https://business.adobe.com/products/marketo/content-personalization.html)Marketo 실시간 Personalization<https://business.adobe.com/products/marketo/adobe-marketo.html>(RTP)이 설치되어 있습니다. [RTP 방문자 API](/help/javascript-api/web-personalization.md)를 활용하여 웹 사이트의 여러 섹션에서 웹 방문자가 보는 전화 번호를 동적으로 변경할 수 있습니다. 와우! 믿겨지니? 이 마법은 어떻게 작동합니까? 먼저 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)에 설명된 대로 웹 사이트에 RTP를 설치해야 합니다. 그런 다음 아래 지침에 따라 웹 사이트에서 JavaScript 코드를 구현합니다.
 
 1. **defaultPhone** 구성에 국제 전화 번호 삽입
 1. **divIds** 구성에 HTML 요소 ID를 삽입합니다.
@@ -7040,7 +7038,7 @@ Personalization이 전부입니다. 우리는 오래 전에 이 사실을 파악
                         document.getElementById(d[i]).href= "tel:" + p;
                     }
                     console.log(p);
-                }                
+                }
             }
             loop = false;
             phoneChanged = true;
@@ -7073,7 +7071,7 @@ Personalization이 전부입니다. 우리는 오래 전에 이 사실을 파악
     mobileLink: true,  //if you use click to call link (with href="tel:") you can also change its number
 
     cityPhone: {
-        "<a href='#'>yanir</a>": ["San Mateo", "San Francisco"],        
+        "<a href='#'>yanir</a>": ["San Mateo", "San Francisco"],
         "+353.1.242.3000": ["tel-aviv"]
     },
     statePhone: {
@@ -7094,7 +7092,7 @@ _Yanir_&#x200B;에 의해 _2016-02-02_&#x200B;에 게시됨
 
 ### 사용자 지정 개체
 
-* [사용자 지정 개체 N:N 관계가 이제 지원됨](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-objects/create-marketo-custom-objects)
+* [사용자 지정 개체 N:N 관계가 이제 지원됨](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-objects/create-marketo-custom-objects)
    * 이제 리드 또는 계정 레코드는 중간 개체의 정의를 통해 사용자 지정 개체를 통해 다대다 관계를 가질 수 있습니다. 독립형 사용자 정의 객체 유형을 생성한 후, 독립형 객체와 리드 또는 계정 모두에 대한 링크 필드를 사용하여 중간 객체 유형을 생성할 수 있습니다.
    * 이 기능에 대한 새 API 호출은 없지만 API를 통해 이러한 관계를 활용하려면 개체 정의를 올바르게 구성해야 합니다.
 * `getLeadActivities` 및 `getLeadChanges`은(는) 더 이상 익명 잠재 고객의 활동을 반환하지 않습니다. 자세한 내용은 [차세대 Munchkin 추적 FAQ](https://experienceleague.adobe.com/ko/docs/marketo/using/home)를 참조하십시오
@@ -7107,7 +7105,7 @@ _케니_&#x200B;이(가) _2016-02-05_&#x200B;에 게시함
 
 &quot;개별 리드에 대한 이전 활동 목록을 가져오려면 어떻게 해야 합니까?&quot;
 
-최근까지 REST API를 사용하여 이를 수행하는 간단한 방법은 없었습니다. 하지만 지금은 있습니다! REST API의 2016년 겨울 릴리스에는 약간의 개선 사항이 포함되어 있습니다. [리드 활동 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadActivitiesUsingGET)에서 이제 리드 ID를 지정하는 데 사용할 수 있는 **leadIds** 매개 변수를 허용합니다. **leadIds** 매개 변수를 지정하면 해당 잠재 고객 ID에 대한 활동만 반환됩니다. 리드 ID 필터로 생각할 수 있습니다. 둘 이상의 잠재 고객에 대한 결과를 필터링하려는 경우 **leadIds** 매개 변수는 쉼표로 구분된 잠재 고객 ID 목록을 사용할 수 있습니다(최대 30개). 예를 들어 활동을 특정 회사의 리드로 제한할 때 유용합니다. 아래 **예**&#x200B;은(는) **leadIds** 매개 변수를 포함하는 [리드 활동 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadActivitiesUsingGET)에 대한 샘플 요청입니다. **leadIds** 매개 변수에 &quot;50&quot; 값을 지정했습니다. 이는 내 Marketo 인스턴스의 임의 리드에 해당합니다. Marketo 인스턴스의 &quot;모바일 앱 세션&quot; 활동에 해당하는 activityTypeIds 매개 변수에 &quot;129&quot; 값을 지정했습니다.
+최근까지 REST API를 사용하여 이를 수행하는 간단한 방법은 없었습니다. 하지만 지금은 있습니다! REST API의 2016년 겨울 릴리스에는 약간의 개선 사항이 포함되어 있습니다. [리드 활동 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadActivitiesUsingGET)에서 이제 리드 ID를 지정하는 데 사용할 수 있는 **leadIds** 매개 변수를 허용합니다. **leadIds** 매개 변수를 지정하면 해당 잠재 고객 ID에 대한 활동만 반환됩니다. 리드 ID 필터로 생각할 수 있습니다. 둘 이상의 잠재 고객에 대한 결과를 필터링하려는 경우 **leadIds** 매개 변수는 쉼표로 구분된 잠재 고객 ID 목록을 사용할 수 있습니다(최대 30개). 예를 들어 활동을 특정 회사의 리드로 제한할 때 유용합니다. 아래 **예**&#x200B;은(는) [leadIds](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadActivitiesUsingGET) 매개 변수를 포함하는 **리드 활동 가져오기**&#x200B;에 대한 샘플 요청입니다. **leadIds** 매개 변수에 &quot;50&quot; 값을 지정했습니다. 이는 내 Marketo 인스턴스의 임의 리드에 해당합니다. Marketo 인스턴스의 &quot;모바일 앱 세션&quot; 활동에 해당하는 activityTypeIds 매개 변수에 &quot;129&quot; 값을 지정했습니다.
 
 `<https://123-abc-456.mktorest.com/rest/v1/activities.json?leadIds=50&activityTypeIds=129&nextPageToken=WQV2VQVPPCKHC6AQYVK7JDSA3J4SMAZRQO4RKIXCEMLFCM2APRSQ====>`
 
@@ -7259,7 +7257,7 @@ Munchkin 계정 ID는 Munchkin 또는 웹 서비스 관리 화면에서 가져�
 
   `{"access_token":"{{access_token}}"}`
 
-* Access Token Placement&#x200B;**:**&#x200B;의 토큰
+* Access Token Placement**:**의 토큰
 
 Marketo 사용자 지정 서비스가 만들어지면 클라이언트 ID 및 클라이언트 암호를 사용할 수 있게 됩니다. 클라이언트 ID와 클라이언트 암호를 사용하여 REST API [인증](/help/rest-api/authentication.md) 끝점을 통해 액세스 토큰을 생성합니다. 그런 다음 이 액세스 토큰을 사용하여 REST API에 대한 후속 요청을 수행할 수 있습니다. 토큰은 1시간 후 만료되며 REST API 호출을 계속하려면 다시 생성해야 합니다. 세션 토큰이 만료될 때마다 사용자 지정 인증 스크립트를 실행할 수 있으므로 인증 유형 = &#39;세션 인증&#39;을 선택했습니다. &#39;스크립팅 API&#39; 섹션에서 이 유형의 인증으로만 작동할 수 있는 이 메커니즘을 구현하는 방법을 살펴보겠습니다.
 **트리거** Zapier 트리거를 사용하여 데이터를 Zapier로 가져올 수 있습니다. Marketo Webhook을 대신 활용하므로 사용 사례에 필요하지 않습니다. 그러나 Marketo 커넥터에 대한 필수 테스트로 더미 트리거 를 작성해야 합니다. Marketo REST API [일별 사용 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getDailyUsageUsingGET) 끝점을 호출하는 테스트 트리거를 만듭니다. **새 트리거 추가**&#x200B;를 클릭하여 마법사를 시작하고 다음 필드를 채웁니다(언급하지 않은 필드는 비워 둘 수 있음). 이름 및 설명
@@ -7308,16 +7306,16 @@ Zapier의 스크립팅 기능을 사용하면 앱의 API와 Zapier 간에 교환
 
 ```javascript
 var Zap = {
-     
+
     get_session_info: function(bundle) {
-  
+
        console.log('Entering get_session_info method ...');
-    
+
          var access_token,
             access_token_request_payload,
             access_token_response;
 
-    
+
         // Assemble the meta data for our Access Token swap request
          console.log('building Request with client_id=' + bundle.auth_fields.client_id + ', and client_secret=' + bundle.auth_fields.client_secret);
         access_token_request_payload = {
@@ -7330,7 +7328,7 @@ var Zap = {
             },
             headers: {
                 'Content-Type': 'application/json',  // Could be anything.
-                Accept: 'application/json' 
+                Accept: 'application/json'
             }
         };
 
@@ -7340,55 +7338,55 @@ var Zap = {
         // Extract the Access Token from returned JSON.
         access_token = JSON.parse(access_token_response.content).access_token;
         console.log('New Access_Token=' + access_token);
-   
+
         // This will be mixed into bundle.auth_fields in future calls.
         //bundle.auth_fields.access_token=access_token;
         return {'access_token': access_token};
     },
-  
-  
+
+
     test_trigger_pre_poll: function(bundle) {
-     
+
          console.log('Entering test_trigger_pre_poll method ...');
-         
+
          bundle.request.params = {
          'access_token':bundle.auth_fields.access_token
          };
-         
+
          return bundle.request;
-        
+
     },
-  
+
 
     test_trigger_post_poll: function(bundle) {
-    
+
         console.log('Entering test_trigger_post_poll method ...');
-        
+
         var data = JSON.parse(bundle.response.content);
         if ((!data.success)&&((data.errors[0].code=="601")||(data.errors[0].code=="600"))){
             console.log('Access Token expired or invalid, requesting new one - data.success=' + data.success + ', data.errors[0].code=' + data.errors[0].code);
-            
+
            throw new InvalidSessionException(); // Calling get_session_info() to regenerate Access Token
         }
 
         return JSON.parse(bundle.response.content);
     },
-     
+
     create_update_lead_pre_write: function(bundle) {
-    
-       bundle.request.params = {'access_token':bundle.auth_fields.access_token};  
+
+       bundle.request.params = {'access_token':bundle.auth_fields.access_token};
        return bundle.request;
     },
 
     create_update_lead_post_write: function(bundle) {
-         
+
          var data = JSON.parse(bundle.response.content);
          if ((!data.success)&&((data.errors[0].code=="601")||(data.errors[0].code=="600"))){
             console.log('Access Token expired or invalid, requesting new one - data.success=' + data.success + ', data.errors[0].code=' + data.errors[0].code);
             throw new InvalidSessionException(); // Calling get_session_info() to regenerate Access Token
         }
         return JSON.parse(bundle.response.content);
-    } 
+    }
 };
 ```
 
@@ -7643,7 +7641,7 @@ $client_id = "client_id_example";
 $client_secret = "client_secret_example";
 $grant_type = "grant_type_example";
 
-try { 
+try {
     $result = $api_instance->identityOauthTokenGet($client_id, $client_secret, $grant_type);
     print_r($result->getAccessToken);
 } catch (Exception $e) {
@@ -7742,12 +7740,12 @@ let
     clientSecretStr = Excel.CurrentWorkbook(){[Name="REST_API_Authentication"]}[Content]{0}[Client Secret],
 
     // Calling Marketo API Get Access Token
-    getAccessTokenUrl = mktoUrlStr & "/identity/oauth/token?grant_type=client_credentials&client_id=" & clientIdStr & "&client_secret=" & clientSecretStr, 
+    getAccessTokenUrl = mktoUrlStr & "/identity/oauth/token?grant_type=client_credentials&client_id=" & clientIdStr & "&client_secret=" & clientSecretStr,
     TokenJson = try Json.Document(Web.Contents(getAccessTokenUrl)) otherwise "Marketo REST API Authentication failed, please check your credentials",
 
     // Parsing access token
     accessTokenStr = TokenJson [access_token]
-       
+
 in
     accessTokenStr
 ```
@@ -7769,14 +7767,14 @@ let
             clientSecretStr = Excel.CurrentWorkbook(){[Name="REST_API_Authentication"]}[Content]{0}[Client Secret],
 
             // Calling Marketo API Get Access Token
-           getAccessTokenUrl = mktoUrlStr & "/identity/oauth/token?grant_type=client_credentials&client_id=" & clientIdStr & "&client_secret=" & clientSecretStr, 
+           getAccessTokenUrl = mktoUrlStr & "/identity/oauth/token?grant_type=client_credentials&client_id=" & clientIdStr & "&client_secret=" & clientSecretStr,
            TokenJson = try Json.Document(Web.Contents(getAccessTokenUrl)) otherwise "Marketo REST API Authentication failed, please check your credentials",
 
-            // Parsing access token from Json 
+            // Parsing access token from Json
            accessTokenStr = TokenJson [access_token]
-       
+
         in
-            accessTokenStr 
+            accessTokenStr
 
 in FnMktoGetAccessToken
 ```
@@ -7807,7 +7805,7 @@ let
 
     // Build Multiple Leads by List Id URL
     getMultipleLeadsByListIdUrl = mktoUrlStr & "/rest/v1/list/" & listIdStr & "/leads.json?fields=" & LeadFieldsStr,
-   
+
     // Build Marketo Access Token URL parameter
     accessTokenParamStr = "&access_token=" & FnMktoGetAccessToken(),
 
@@ -7817,16 +7815,16 @@ let
     FnProcessOnePage =
     (accessTokenParamStr, pagingTokenParamStr) as record =>
         let
-        
-            // Send REST API Request             
+
+            // Send REST API Request
             content = Web.Contents(getMultipleLeadsByListIdUrl & accessTokenParamStr & pagingTokenParamStr),
-            
+
             // Recover Json output and watch if token is expired, in that case, regenerate access token
             newAccessTokenParamStr = if Json.Document(content)[success]=true then accessTokenParamStr else "?access_token=" & FnMktoGetAccessToken(),
             getMultipleLeadsByListIdJson = if Json.Document(content)[success]=true then Json.Document(content) else Json.Document(Web.Contents(getMultipleLeadsByListIdUrl & newAccessTokenParamStr & pagingTokenParamStr)),
-            
-            // Parse Json outputs: data and next page token     
-            data = try getMultipleLeadsByListIdJson[result] otherwise null,          
+
+            // Parse Json outputs: data and next page token
+            data = try getMultipleLeadsByListIdJson[result] otherwise null,
             next  = try  "&nextPageToken=" & getMultipleLeadsByListIdJson[nextPageToken] otherwise null,
             res = [Data=data, Next=next, Access=newAccessTokenParamStr]
         in
@@ -7880,7 +7878,7 @@ let
     FnMktoGetPagedData =(url, accessTokenParamStr, pagingTokenParamStr)=>
 
     let
-    
+
         // Get the number of iterations (pages of 300 records) - Table Scoping
         iterationsNum = Excel.CurrentWorkbook(){[Name="Scoping"]}[Content]{0}[Max Records Pages],
 
@@ -7888,16 +7886,16 @@ let
         FnProcessOnePage =
         (accessTokenParamStr, pagingTokenParamStr) as record =>
             let
-        
-                // Send REST API Request             
+
+                // Send REST API Request
                 content = Web.Contents(url& accessTokenParamStr & pagingTokenParamStr),
-            
+
                 // Recover Json output and watch if token is expired, in that case, regenerate access token
                 newAccessTokenParamStr = if Json.Document(content)[success]=true then accessTokenParamStr else "?access_token=" & FnMktoGetAccessToken(),
                 contentJson = if Json.Document(content)[success]=true then Json.Document(content) else Json.Document(Web.Contents(url & newAccessTokenParamStr & pagingTokenParamStr)),
-            
-                // Parse Json outputs: data and next page token     
-                data = try contentJson[result] otherwise null,          
+
+                // Parse Json outputs: data and next page token
+                data = try contentJson[result] otherwise null,
                 next  = try  "&nextPageToken=" & contentJson[nextPageToken] otherwise null,
                 res = [Data=data, Next=next, Access=newAccessTokenParamStr]
             in
@@ -7934,7 +7932,7 @@ let
 
     // Build Multiple Leads by List Id URL
     getMultipleLeadsByListIdUrl = mktoUrlStr & "/rest/v1/list/" & listIdStr & "/leads.json?fields=" & LeadFieldsStr,
-   
+
     // Build Marketo Access Token URL parameter
     accessTokenParamStr = "&access_token=" & FnMktoGetAccessToken(),
 
@@ -7942,8 +7940,8 @@ let
     pagingTokenParamStr = "",
 
     // Invoke the multiple REST API calls through the FnMktoGetPagedData function
-    result = FnMktoGetPagedData (getMultipleLeadsByListIdUrl , accessTokenParamStr, pagingTokenParamStr) 
-        
+    result = FnMktoGetPagedData (getMultipleLeadsByListIdUrl , accessTokenParamStr, pagingTokenParamStr)
+
 in
     result
 ```
@@ -7977,20 +7975,20 @@ let
             mktoPTSinceDatetimeStr = DateTime.ToText(Excel.CurrentWorkbook(){[Name="Scoping"]}[Content]{0}[Paging Token SinceDatetime], "yyyy-MM-ddThh:mm:ss"),
 
             // Building URL for API Call
-            getPagingTokenUrl = mktoUrlStr & "/rest/v1/activities/pagingtoken.json?access_token=" & accessTokenStr & "&sinceDatetime=" & mktoPTSinceDatetimeStr, 
+            getPagingTokenUrl = mktoUrlStr & "/rest/v1/activities/pagingtoken.json?access_token=" & accessTokenStr & "&sinceDatetime=" & mktoPTSinceDatetimeStr,
 
             // Calling Marketo API Get Paging Token
             content = Web.Contents(getPagingTokenUrl),
 
             // Recover Json output and watch if access token is expired, in that case, regenerate it
             newAccessTokenStr = if Json.Document(content)[success]=true then accessTokenStr else "?access_token=" & FnMktoGetAccessToken(),
-            pagingTokenJson = if Json.Document(content)[success]=true then Json.Document(content) else Json.Document(Web.Contents(mktoUrlStr & "/rest/v1/activities/pagingtoken.json?access_token=" & newAccessTokenStr & "&sinceDatetime=" & mktoPTSinceDatetimeStr)),           
+            pagingTokenJson = if Json.Document(content)[success]=true then Json.Document(content) else Json.Document(Web.Contents(mktoUrlStr & "/rest/v1/activities/pagingtoken.json?access_token=" & newAccessTokenStr & "&sinceDatetime=" & mktoPTSinceDatetimeStr)),
 
             // Parsing Paging Token
             pagingTokenStr = pagingTokenJson[nextPageToken]
-       
+
         in
-            pagingTokenStr 
+            pagingTokenStr
 
 in FnMktoGetPagingToken
 ```
@@ -8003,7 +8001,7 @@ in FnMktoGetPagingToken
 
 ```
 let
-    
+
     // Get Url from config worksheet - Table REST_API_Authentication
     mktoUrlStr = Excel.CurrentWorkbook(){[Name="REST_API_Authentication"]}[Content]{0}[URL],
     // Get the List id - Table Scoping
@@ -8011,7 +8009,7 @@ let
 
     // Build Get Activities URL
     getActivitiesUrl = mktoUrlStr & "/rest/v1/activities.json?ListId=" & listIdStr & "&activityTypeIds=46",
-   
+
     // Build Marketo Access Token URL parameter
     accessTokenStr = FnMktoGetAccessToken(),
     accessTokenParamStr = "&access_token=" & accessTokenStr,
@@ -8021,7 +8019,7 @@ let
 
     // Invoke the multiple REST API calls through the FnMktoGetPagedData function
     result = FnMktoGetPagedData (getActivitiesUrl , accessTokenParamStr, pagingTokenParamStr)
-   
+
 in
     result
 ```
@@ -8147,7 +8145,7 @@ Marketo 구성 워크시트에서 필요한 모든 정보를 입력합니다.
 
 ### 데이터 분석 표현식(DAX)
 
-일부 보고서에 대한 데이터를 보강하거나 다시 포맷해야 합니다. Power Pivot 데이터 분석 표현식(DAX)을 사용하여 계산된 열 및 측정값(계산된 필드라고도 함)으로 일부 사용자 지정 계산을 정의해 보겠습니다. DAX에 대한 자세한 내용은 참조 섹션의 &#39;Power Pivot에서 DAX&#39; 링크를 참조하십시오. [계산 영역]이 [파워 피벗] 창에 표시되는지 확인합니다. 표시되지 않으면 [파워 피벗] 홈 메뉴에서 사용하도록 설정합니다.  **MktoLeads** 탭을 선택하고 **리드 수** 측정값을 리드 계산 영역 **리드 수:=**&#x200B;**DISTINCTCOUNT**&#x200B;**([id])**&#x200B;의 어디에나 추가하십시오. 이 측정은 ID를 기반으로 목록에서 사용할 수 있는 개별 리드를 카운트하는 것입니다. 또한 보고서 컨텍스트에서 적용된 최종 필터도 고려합니다. 보고서에서 리드 수를 합할 수 있으므로 이 조치는 실제로 필요하지 않지만 &#39;MktoLeads의 합계&#39;보다 더 나은 이름의 리드 수를 갖도록 했습니다. 또한 특정 유형의 데이터 입력(예: 50보다 높은 점수, 평균 점수 등을 가진 모든 리드)에 대해 평균, 최소, 최대값을 수행하는 보다 복잡한 측정을 쉽게 상상할 수 있도록 해주는 간단한 예입니다. ...)  이제 **MktoWebActivities** 탭을 선택하고 3개의 계산된 열을 만들겠습니다. 표의 맨 오른쪽 끝으로 스크롤하고 &#39;열 추가&#39; 열을 클릭하여 다음 계산된 열을 삽입합니다. **활동:** MktoActivityTypes 테이블에서 활동 ID를 조회하여 사용자에게 친숙한 활동 레이블을 얻습니다. **\=**&#x200B;**LOOKUPVALUE**&#x200B;**(MktoActivityTypes[name],MktoActivityTypes[id],[activityTypeId])** **Year-Month:** 일부 보고서에 더 적합한 &#39;YYYYmm&#39; 패턴으로 활동 날짜를 다시 포맷합니다. **\=**&#x200B;**LEFT**&#x200B;**([activityDate],4)&amp;**&#x200B;**MID**&#x200B;**([activityDate],6,2)** **날짜:** 활동 날짜는 원래 쿼리의 문자열이므로 적절한 날짜로 변환하십시오. **\=**&#x200B;**DATE**&#x200B;**(**&#x200B;**LEFT**&#x200B;**([activityDate],4),**&#x200B;**MID**&#x200B;**([activityDate],6,2),**&#x200B;**MID**&#x200B;**([activityDate],9,2))** 이제 **MktoEmailActivities** 탭에 대해 동일한 세 개의 측정값을 만들고 두 개의 추가 측정값을 추가해 보겠습니다. **캠페인:** MktoCampaigns 테이블에서 캠페인 ID를 조회하여 사용자에게 친숙한 캠페인 이름을 얻으십시오. **\=**&#x200B;**LOOKUPVALUE**&#x200B;**(MktoCampaigns[name],MktoCampaigns[id],[campaignId])** **프로그램:** MktoCampaigns 테이블에서 캠페인 ID를 조회하여 사용자에게 친숙한 프로그램 이름을 얻습니다. MktoPrograms 표에서는 폴더, 작업 영역 등과 같은 프로그램에 대한 자세한 내용을 제공할 수 있습니다. **\=**&#x200B;**LOOKUPVALUE**&#x200B;**(MktoCampaigns[programName],MktoCampaigns[id],[campaignId])**
+일부 보고서에 대한 데이터를 보강하거나 다시 포맷해야 합니다. Power Pivot 데이터 분석 표현식(DAX)을 사용하여 계산된 열 및 측정값(계산된 필드라고도 함)으로 일부 사용자 지정 계산을 정의해 보겠습니다. DAX에 대한 자세한 내용은 참조 섹션의 &#39;Power Pivot에서 DAX&#39; 링크를 참조하십시오. [계산 영역]이 [파워 피벗] 창에 표시되는지 확인합니다. 표시되지 않으면 [파워 피벗] 홈 메뉴에서 사용하도록 설정합니다.  **MktoLeads** 탭을 선택하고 **리드 수** 측정값을 리드 계산 영역 **리드 수:=****DISTINCTCOUNT****([id])**&#x200B;의 어디에나 추가하십시오. 이 측정은 ID를 기반으로 목록에서 사용할 수 있는 개별 리드를 카운트하는 것입니다. 또한 보고서 컨텍스트에서 적용된 최종 필터도 고려합니다. 보고서에서 리드 수를 합할 수 있으므로 이 조치는 실제로 필요하지 않지만 &#39;MktoLeads의 합계&#39;보다 더 나은 이름의 리드 수를 갖도록 했습니다. 또한 특정 유형의 데이터 입력(예: 50보다 높은 점수, 평균 점수 등을 가진 모든 리드)에 대해 평균, 최소, 최대값을 수행하는 보다 복잡한 측정을 쉽게 상상할 수 있도록 해주는 간단한 예입니다. ...)  이제 **MktoWebActivities** 탭을 선택하고 3개의 계산된 열을 만들겠습니다. 표의 맨 오른쪽 끝으로 스크롤하고 &#39;열 추가&#39; 열을 클릭하여 다음 계산된 열을 삽입합니다. **활동:** MktoActivityTypes 테이블에서 활동 ID를 조회하여 사용자에게 친숙한 활동 레이블을 얻습니다. **\=****LOOKUPVALUE****(MktoActivityTypes[name],MktoActivityTypes[id],[activityTypeId])** **Year-Month:** 일부 보고서에 더 적합한 &#39;YYYYmm&#39; 패턴으로 활동 날짜를 다시 포맷합니다. **\=****LEFT****([activityDate],4)&amp;****MID****([activityDate],6,2)** **날짜:** 활동 날짜는 원래 쿼리의 문자열이므로 적절한 날짜로 변환하십시오. **\=****DATE****(****LEFT****([activityDate],4),****MID****([activityDate],6,2),****MID****([activityDate],9,2))** 이제 **MktoEmailActivities** 탭에 대해 동일한 세 개의 측정값을 만들고 두 개의 추가 측정값을 추가해 보겠습니다. **캠페인:** MktoCampaigns 테이블에서 캠페인 ID를 조회하여 사용자에게 친숙한 캠페인 이름을 얻으십시오. **\=****LOOKUPVALUE****(MktoCampaigns[name],MktoCampaigns[id],[campaignId])** **프로그램:** MktoCampaigns 테이블에서 캠페인 ID를 조회하여 사용자에게 친숙한 프로그램 이름을 얻습니다. MktoPrograms 표에서는 폴더, 작업 영역 등과 같은 프로그램에 대한 자세한 내용을 제공할 수 있습니다. **\=****LOOKUPVALUE****(MktoCampaigns[programName],MktoCampaigns[id],[campaignId])**
 
 ### 엔티티 관계
 
@@ -8163,7 +8161,7 @@ Marketo 구성 워크시트에서 필요한 모든 정보를 입력합니다.
 
 ### 전자 메일 성능 피벗 차트
 
-이 첫 번째 보고서는 표준 Excel 피벗 차트를 기반으로 이메일 성과 KPI를 보여 줍니다. 이를 통해 업계 및/또는 캠페인별로 데이터를 필터링할 수 있습니다. [피벗 테이블] 선택기에서 [피벗 차트]를 선택하여 [파워 피벗] 메뉴에서 [피벗 차트]를 바로 만들 수 있습니다.  다른 방법은 Excel 스프레드시트에서 직접 피벗 차트를 만들어 &#39;이 통합 문서의 데이터 모델 사용&#39; 옵션을 표시하는 것입니다.  아래 그림과 같이 **MktoEmailActivities** 및 **MktoLeads** 테이블에서 필드를 끌어다 놓습니다. **MktoEmailActivities.Activity →** **Legend** (이 항목은 **MktoEmailActivities**&#x200B;에 구현한 DAX 계산 열을 사용) **MktoEmailActivities.Date →** **Axis** (이 항목은 **MktoEmailActivities**&#x200B;에 구현한 DAX 계산 열을 사용) **MktoEmailActivities.Id→7&rbrace;**∑ 값&#x200B;**&#x200B;** MktoEmailActivities.Campaign →**&#x200B;**&#x200B;필터&#x200B;**&#x200B;** MktoLeads.industry →**&#x200B;**&#x200B;필터&#x200B;**&#x200B;**
+이 첫 번째 보고서는 표준 Excel 피벗 차트를 기반으로 이메일 성과 KPI를 보여 줍니다. 이를 통해 업계 및/또는 캠페인별로 데이터를 필터링할 수 있습니다. [피벗 테이블] 선택기에서 [피벗 차트]를 선택하여 [파워 피벗] 메뉴에서 [피벗 차트]를 바로 만들 수 있습니다.  다른 방법은 Excel 스프레드시트에서 직접 피벗 차트를 만들어 &#39;이 통합 문서의 데이터 모델 사용&#39; 옵션을 표시하는 것입니다.  아래 그림과 같이 **MktoEmailActivities** 및 **MktoLeads** 테이블에서 필드를 끌어다 놓습니다. **MktoEmailActivities.Activity →** **Legend** (이 항목은 **MktoEmailActivities**&#x200B;에 구현한 DAX 계산 열을 사용) **MktoEmailActivities.Date →** **Axis** (이 항목은 **MktoEmailActivities**&#x200B;에 구현한 DAX 계산 열을 사용) **MktoEmailActivities.Id→7}**∑ 값&#x200B;**** MktoEmailActivities.Campaign →****&#x200B;필터&#x200B;**** MktoLeads.industry →****&#x200B;필터&#x200B;****
 
 드롭된 각 필드에서 &#39;값 필드 설정&#39;을 선택하여 사용자 지정 이름을 만들 수 있습니다. 이 경우 이메일 활동 id 필드를 &#39;∑ 값&#39; 섹션에 삭제하고 사용자 정의 이름을 &#39;활동 수&#39;로 편집했습니다. 이제 피벗 차트를 구성하겠습니다. 차트를 마우스 오른쪽 버튼으로 클릭하고 상황별 메뉴에서 &#39;차트 유형 변경&#39; 옵션을 선택합니다. 모든 데이터 시리즈에 대해 서로 다른 차트 유형을 선택한 방법은 다음과 같습니다.
 
@@ -8205,7 +8203,7 @@ _2017-02-02_&#x200B;에 _필립_&#x200B;이 게시함
 
 영향을 받는 SOAP 유형은 `ActivityRecord` 및 `LeadChangeRecord`입니다.
 
-### 예시
+### 예
 
 다음 예는 영향을 받을 레코드 유형을 보여 줍니다. 두 예에서 영향을 주는 필드를 &quot;id&quot;라고 합니다.
 
@@ -8334,7 +8332,7 @@ _David_&#x200B;이(가) _2017-06-16_&#x200B;에 게시함
 
 ## IFTTT 및 Zapier를 사용하는 마케터용 사물 인터넷
 
-사물 인터넷(IoT)은 연결된 장치, 가전 기기, 웨어러블, 차량 등의 인터네트워킹이다. 임베디드 전자 제품, 소프트웨어, 센서 및 네트워크 연결 기능을 통해 이러한 오브젝트는 클라우드 정보 시스템과 데이터를 수집하고 교환할 수 있습니다. 이러한 기술은 빠르게 성장하고 있으며 추세에 있어 우리의 생활 방식, 업무 방식 및 비즈니스를 신속하게 수행하는 방식에 영향을 미칠 것입니다. Marketo의 선도적인 Marketing Engagement Platform은 모든 형태의 커뮤니케이션 채널을 확장하고 상호 작용할 수 있는 기능을 갖춘 IoT에 대비합니다. Marketo은 이메일, 웹, 모바일, CRM 등과 관련된 70개 이상의 활동을 추적할 수 있으며, 모든 서드파티 시스템에서 제공할 수 있는 [사용자 지정 활동](https://experienceleague.adobe.com/docs/marketo/using/product-docs/administration/marketo-custom-activities/create-a-custom-activity.html?lang=ko)도 지원합니다. Marketo [사용자 지정 개체](https://experienceleague.adobe.com/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects.html?lang=ko)를 사용하면 비즈니스와 관련된 모든 종류의 타사 지표를 추적할 수 있으며 마케터가 Marketo 스마트 캠페인 필터 및 트리거에서 이러한 지표를 바로 활용할 수 있습니다. 소비자를 위한 IoT를 구현하려면 중앙 서버가 소비자 장치와 상호 작용해야 하며 이 서버는 REST API, 사용자 지정 개체, 사용자 지정 활동 등의 기능을 사용하여 Marketo 오픈 플랫폼과 데이터를 교환해야 합니다. - 문서화된 [여기](http://eto.com/). 블로그 게시물을 통해 시연하는 것은 쉽지 않다. 대신 IFTTT 서비스를 Marketo과 통합하여 다음과 같은 마케터를 위한 멋진 IoT 사용 사례를 구현합니다.
+사물 인터넷(IoT)은 연결된 장치, 가전 기기, 웨어러블, 차량 등의 인터네트워킹이다. 임베디드 전자 제품, 소프트웨어, 센서 및 네트워크 연결 기능을 통해 이러한 오브젝트는 클라우드 정보 시스템과 데이터를 수집하고 교환할 수 있습니다. 이러한 기술은 빠르게 성장하고 있으며 추세에 있어 우리의 생활 방식, 업무 방식 및 비즈니스를 신속하게 수행하는 방식에 영향을 미칠 것입니다. Marketo의 선도적인 Marketing Engagement Platform은 모든 형태의 커뮤니케이션 채널을 확장하고 상호 작용할 수 있는 기능을 갖춘 IoT에 대비합니다. Marketo은 이메일, 웹, 모바일, CRM 등과 관련된 70개 이상의 활동을 추적할 수 있으며, 모든 서드파티 시스템에서 제공할 수 있는 [사용자 지정 활동](https://experienceleague.adobe.com/docs/marketo/using/product-docs/administration/marketo-custom-activities/create-a-custom-activity.html)도 지원합니다. Marketo [사용자 지정 개체](https://experienceleague.adobe.com/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects.html)를 사용하면 비즈니스와 관련된 모든 종류의 타사 지표를 추적할 수 있으며 마케터가 Marketo 스마트 캠페인 필터 및 트리거에서 이러한 지표를 바로 활용할 수 있습니다. 소비자를 위한 IoT를 구현하려면 중앙 서버가 소비자 장치와 상호 작용해야 하며 이 서버는 REST API, 사용자 지정 개체, 사용자 지정 활동 등의 기능을 사용하여 Marketo 오픈 플랫폼과 데이터를 교환해야 합니다. - 문서화된 [여기](http://eto.com/). 블로그 게시물을 통해 시연하는 것은 쉽지 않다. 대신 IFTTT 서비스를 Marketo과 통합하여 다음과 같은 마케터를 위한 멋진 IoT 사용 사례를 구현합니다.
 
 * 사무실에 컬러 조명을 깜박여 잠재 고객이 로드쇼에 등록될 때마다 마케팅 팀을 응원하십시오.
 * 연결된 전원 플러그에 연결된 벨을 자동으로 발사하여 거래가 성사될 때마다 영업 팀을 격려합니다.
@@ -8363,7 +8361,7 @@ IFTTT에서 &quot;Maker&quot; 서비스를 검색하고 클릭합니다.  처음
 
 ### Market에서 직접 IFTTT 조치 트리거
 
-먼저 Marketo에서 모든 종류의 타사 웹 서비스 작업을 트리거하는 데 중점을 둡니다. 이를 위해 [Marketo Webhook](https://experienceleague.adobe.com/docs/marketo/using/product-docs/administration/additional-integrations/create-a-webhook.html?lang=ko)을(를) 사용합니다. IFTTT 모바일 앱을 통해 휴대폰 또는 태블릿에 푸시 메시지를 표시한 다음 필립스 색조 조명을 깜박이는 IoT 시나리오를 구현합니다.
+먼저 Marketo에서 모든 종류의 타사 웹 서비스 작업을 트리거하는 데 중점을 둡니다. 이를 위해 [Marketo Webhook](https://experienceleague.adobe.com/docs/marketo/using/product-docs/administration/additional-integrations/create-a-webhook.html)을(를) 사용합니다. IFTTT 모바일 앱을 통해 휴대폰 또는 태블릿에 푸시 메시지를 표시한 다음 필립스 색조 조명을 깜박이는 IoT 시나리오를 구현합니다.
 
 ### Marketo Webhook
 
@@ -8405,7 +8403,7 @@ secret_key, IFTTT Maker 서비스의 비밀 키를 사용합니다.
 
 ### IFTTT 애플릿
 
-IFTTT 웹 포털의 메인 메뉴에서 &quot;내 애플릿&quot;을 선택합니다.  &quot;새 애플릿&quot; 단추를 클릭하고 **+this** 섹션을 클릭합니다.  Maker 서비스를 검색합니다.  Maker 서비스가 이벤트를 알리는 웹 요청을 받을 때마다 실행되는 트리거를 만듭니다. Marketo 웹후크의 URL에 지정된 것과 동일한 이벤트 이름(예: &quot;MarketoProgramSuccess&quot;)을 사용하고 &quot;Create trigger&quot; 단추를 클릭합니다.  이제 섹션 **+that**&#x200B;을(를) 클릭하여 작업 서비스를 지정할 차례입니다.  우리는 IoT 기기에 투자하지 않고도 누구나 테스트할 수 있는 간단한 액션 서비스인 알림 서비스를 시작할 것입니다. 알림 서비스를 검색하고 선택합니다.
+IFTTT 웹 포털의 메인 메뉴에서 &quot;내 애플릿&quot;을 선택합니다.  &quot;새 애플릿&quot; 단추를 클릭하고 **+this** 섹션을 클릭합니다.  Maker 서비스를 검색합니다.  Maker 서비스가 이벤트를 알리는 웹 요청을 받을 때마다 실행되는 트리거를 만듭니다. Marketo 웹후크의 URL에 지정된 것과 동일한 이벤트 이름(예: &quot;MarketoProgramSuccess&quot;)을 사용하고 &quot;Create trigger&quot; 단추를 클릭합니다.  이제 섹션 **+that**을(를) 클릭하여 작업 서비스를 지정할 차례입니다.  우리는 IoT 기기에 투자하지 않고도 누구나 테스트할 수 있는 간단한 액션 서비스인 알림 서비스를 시작할 것입니다. 알림 서비스를 검색하고 선택합니다.
 디바이스에 알림을 보내는 &quot;알림 보내기&quot; 작업을 선택합니다.  아래 예와 같이 Marketo에서 보낸 3개의 값을 구성 요소로 추가하여 사용자에게 의미 있는 알림을 전달한 다음 &quot;작업 만들기&quot; 버튼을 클릭할 수 있습니다. IFTTT 애플릿을 검토하고 완료합니다. 활성화되었는지 확인합니다.
 
 ### IFTTT 애플릿 테스트
@@ -8456,16 +8454,16 @@ Zapier의 스크립팅 기능을 사용하면 앱의 API와 Zapier 간에 교환
 
 ```javascript
 var Zap = {
- 
+
  get_session_info: function(bundle) {
- 
+
  console.log('Entering get_session_info method ...');
- 
+
  var access_token,
  access_token_request_payload,
  access_token_response;
 
- 
+
  // Assemble the meta data for our Access Token swap request
  console.log('building Request with client_id=' + bundle.auth_fields.client_id + ', and client_secret=' + bundle.auth_fields.client_secret);
  access_token_request_payload = {
@@ -8478,7 +8476,7 @@ var Zap = {
  },
  headers: {
  'Content-Type': 'application/json', // Could be anything.
- Accept: 'application/json' 
+ Accept: 'application/json'
  }
  };
 
@@ -8488,46 +8486,46 @@ var Zap = {
  // Extract the Access Token from returned JSON.
  access_token = JSON.parse(access_token_response.content).access_token;
  console.log('New Access_Token=' + access_token);
- 
+
  // This will be mixed into bundle.auth_fields in future calls.
  //bundle.auth_fields.access_token=access_token;
  return {'access_token': access_token};
  },
- 
+
  test_trigger_pre_poll: function(bundle) {
- 
+
  console.log('Entering test_trigger_pre_poll method ...');
- 
+
  bundle.request.params = {
  'access_token':bundle.auth_fields.access_token
  };
- 
+
  return bundle.request;
- 
+
  },
- 
+
  test_trigger_post_poll: function(bundle) {
- 
+
  console.log('Entering test_trigger_post_poll method ...');
- 
+
  var data = JSON.parse(bundle.response.content);
  if ((!data.success)&&((data.errors[0].code=="601")||(data.errors[0].code=="600"))){
  console.log('Access Token expired or invalid, requesting new one - data.success=' + data.success + ', data.errors[0].code=' + data.errors[0].code);
- 
+
  throw new InvalidSessionException(); // Calling get_session_info() to regenerate Access Token
  }
 
  return JSON.parse(bundle.response.content);
  },
- 
+
  launch_campaign_pre_write: function(bundle) {
- 
- bundle.request.params = {'access_token':bundle.auth_fields.access_token}; 
+
+ bundle.request.params = {'access_token':bundle.auth_fields.access_token};
  return bundle.request;
  },
 
  launch_campaign_post_write: function(bundle) {
- 
+
  var data = JSON.parse(bundle.response.content);
  if ((!data.success)&&((data.errors[0].code=="601")||(data.errors[0].code=="600"))){
  console.log('Access Token expired or invalid, requesting new one - data.success=' + data.success + ', data.errors[0].code=' + data.errors[0].code);
@@ -8535,7 +8533,7 @@ var Zap = {
  }
  return JSON.parse(bundle.response.content);
  }
- 
+
 };
 ```
 
@@ -8642,7 +8640,7 @@ Google Cloud 계정이 필요합니다. 이 자습서를 실행하기에 충분�
      \*/
     exports.scoreCompare = function scoreCompare (req, res) {
      var onlineScore=parseInt(req.body.onlineScore);
-     var offlineScore=parseInt(req.body.offlineScore); 
+     var offlineScore=parseInt(req.body.offlineScore);
      console.log('/scoreCompare: got values onlineScore =' + onlineScore + ', offlineScore =' + offlineScore);
      var result;
      if (onlineScore>offlineScore) {result = 'online';} else {result = 'offline';}
@@ -8703,7 +8701,7 @@ _2017-11-21_&#x200B;에 _필립_&#x200B;이 게시함
 
 ### 이메일 2.0의 HTML 바꾸기
 
-HTML 전자 메일 콘텐츠 블록을 바꿀 수 있도록 [전자 메일 전체 콘텐츠 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#operation/createEmailFullContentUsingPOST) 끝점을 추가했습니다. Marketo 이메일 2.0 편집기를 사용하여 Marketo 이메일의 HTML 코드를 편집하면 이메일과 해당 템플릿 간의 관계가 끊어집니다. 자세한 내용은 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/edit-an-emails-html)를 참조하세요. 이 끝점을 사용하면 관계가 끊어진 이메일의 HTML 콘텐츠를 프로그래밍 방식으로 업데이트할 수 있습니다. 또한 관계가 끊어진 이메일과 호환되도록 다른 모든 이메일 라이프사이클 관련 엔드포인트를 수정했습니다.
+HTML 전자 메일 콘텐츠 블록을 바꿀 수 있도록 [전자 메일 전체 콘텐츠 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#operation/createEmailFullContentUsingPOST) 끝점을 추가했습니다. Marketo 이메일 2.0 편집기를 사용하여 Marketo 이메일의 HTML 코드를 편집하면 이메일과 해당 템플릿 간의 관계가 끊어집니다. 자세한 내용은 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/edit-an-emails-html)를 참조하세요. 이 끝점을 사용하면 관계가 끊어진 이메일의 HTML 콘텐츠를 프로그래밍 방식으로 업데이트할 수 있습니다. 또한 관계가 끊어진 이메일과 호환되도록 다른 모든 이메일 라이프사이클 관련 엔드포인트를 수정했습니다.
 
 * 이메일 초안 승인
 * 이메일 승인 취소
@@ -8734,7 +8732,7 @@ _David_&#x200B;에 의해 _1970-01-01_&#x200B;에 게시됨
 
 ### 이름으로 프로그램 가져오기
 
-프로그램 비용 및 프로그램 태그를 쉽게 검색할 수 있도록 [이름별 프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#operation/getProgramByNameUsingGET) 끝점에 매개 변수 두 개를 추가했습니다. 자세한 내용은 [프로그램](/help/rest-api/assets.md) 설명서의 **includeCosts** 및 **includeTags** 매개 변수를 참조하십시오.
+프로그램 비용 및 프로그램 태그를 쉽게 검색할 수 있도록 [이름별 프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#operation/getProgramByNameUsingGET) 끝점에 매개 변수 두 개를 추가했습니다. 자세한 내용은 **프로그램** 설명서의 **includeCosts** 및 [includeTags](/help/rest-api/assets.md) 매개 변수를 참조하십시오.
 
 ### 기타 개선 사항
 
@@ -8804,7 +8802,7 @@ _David_&#x200B;이(가) _2018-06-29_&#x200B;에 게시함
 [프로그램 복제](https://developer.adobe.com/marketo-apis/api/asset/#operation/cloneProgramUsingPOST)
 
 * 이메일 프로그램을 복제한 경우, SmartList 필터 로직은 초기 설정에 관계없이 결과 프로그램에서 &quot;모두&quot;로 재설정되었습니다.
-* 삭제된 정적 목록이 포함된 프로그램을 복제하려고 하면 709, &quot;다음 자산은 지원되지 않습니다:List&quot; 오류가 표시됩니다.
+* 삭제된 정적 목록이 포함된 프로그램을 복제하려고 하면 &quot;다음 자산은 지원되지 않습니다:List&quot; 오류가 표시됩니다.
 * 작업 영역 간에 프로그램을 복제하려고 하면 611, &quot;프로그램을 복제할 수 없습니다.&quot; 오류가 표시됩니다.
 
 [Id별 정적 목록 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#operation/getStaticListByIdUsingGET)
@@ -8837,7 +8835,7 @@ _David_&#x200B;이(가) _2018-10-12_&#x200B;에 게시함
 
 ### 향상된 기능
 
-* [자산 API](/help/rest-api/assets.md)에 대한 [전자 메일 CC 필드](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/email-cc) 지원이 추가되었습니다. CC 필드 설정은 승인/복제 작업(이메일 또는 이메일 템플릿 초안 승인, 이메일 또는 프로그램 복제) 중에 예상대로 전파됩니다. 이제 모든 전자 메일 관련 끝점이 **ccFields** 속성의 CC 필드 값을 반환합니다. 예를 보려면 아래 응답에서 아래로 스크롤합니다. 이 변경 사항은 다음 끝점에 영향을 줍니다. [ID별 이메일 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#operation/getEmailByIdUsingGET), [이름별 이메일 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#operation/getEmailByNameUsingGET), [이메일 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#operation/getEmailUsingGET), [이메일 초안 승인](https://developer.adobe.com/marketo-apis/api/asset/#operation/approveDraftUsingPOST), [이메일 템플릿 초안 승인](https://developer.adobe.com/marketo-apis/api/asset/#operation/approveDraftUsingPOST_1), [이메일 복제](https://developer.adobe.com/marketo-apis/api/asset/#operation/cloneEmailUsingPOST), [프로그램 복제](https://developer.adobe.com/marketo-apis/api/asset/#operation/cloneProgramUsingPOST)
+* [자산 API](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/email-cc)에 대한 [전자 메일 CC 필드](/help/rest-api/assets.md) 지원이 추가되었습니다. CC 필드 설정은 승인/복제 작업(이메일 또는 이메일 템플릿 초안 승인, 이메일 또는 프로그램 복제) 중에 예상대로 전파됩니다. 이제 모든 전자 메일 관련 끝점이 **ccFields** 속성의 CC 필드 값을 반환합니다. 예를 보려면 아래 응답에서 아래로 스크롤합니다. 이 변경 사항은 다음 끝점에 영향을 줍니다. [ID별 이메일 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#operation/getEmailByIdUsingGET), [이름별 이메일 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#operation/getEmailByNameUsingGET), [이메일 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#operation/getEmailUsingGET), [이메일 초안 승인](https://developer.adobe.com/marketo-apis/api/asset/#operation/approveDraftUsingPOST), [이메일 템플릿 초안 승인](https://developer.adobe.com/marketo-apis/api/asset/#operation/approveDraftUsingPOST_1), [이메일 복제](https://developer.adobe.com/marketo-apis/api/asset/#operation/cloneEmailUsingPOST), [프로그램 복제](https://developer.adobe.com/marketo-apis/api/asset/#operation/cloneProgramUsingPOST)
 
 ```json
 {
@@ -8910,7 +8908,7 @@ _David_&#x200B;이(가) _2018-10-12_&#x200B;에 게시함
 
 ### 결함 해결
 
-* [자산 API](/help/rest-api/assets.md)에 대한 [여러 브랜딩 도메인](https://experienceleague.adobe.com/ko/docs/marketo/using/home) 지원을 조정했습니다. 이전에는 이메일 초안 승인, 이메일 복제 또는 프로그램 복제 시 여러 브랜딩 도메인 설정이 전파되지 않았습니다. 이 문제가 해결되었습니다. 이 변경 사항은 다음 끝점에 영향을 줍니다. [이메일 초안 승인](https://developer.adobe.com/marketo-apis/api/asset/#operation/approveDraftUsingPOST), [이메일 복제](https://developer.adobe.com/marketo-apis/api/asset/#operation/cloneEmailUsingPOST), [프로그램 복제](https://developer.adobe.com/marketo-apis/api/asset/#operation/cloneProgramUsingPOST)
+* [자산 API](https://experienceleague.adobe.com/ko/docs/marketo/using/home)에 대한 [여러 브랜딩 도메인](/help/rest-api/assets.md) 지원을 조정했습니다. 이전에는 이메일 초안 승인, 이메일 복제 또는 프로그램 복제 시 여러 브랜딩 도메인 설정이 전파되지 않았습니다. 이 문제가 해결되었습니다. 이 변경 사항은 다음 끝점에 영향을 줍니다. [이메일 초안 승인](https://developer.adobe.com/marketo-apis/api/asset/#operation/approveDraftUsingPOST), [이메일 복제](https://developer.adobe.com/marketo-apis/api/asset/#operation/cloneEmailUsingPOST), [프로그램 복제](https://developer.adobe.com/marketo-apis/api/asset/#operation/cloneProgramUsingPOST)
 * [apiOnly](/help/javascript-api/configuration.md) 구성 설정이 추가되었습니다. 기본적으로 Munchkin 태그가 들어 있는 웹 페이지는 웹 페이지가 브라우저에 로드될 때 &quot;웹 페이지 방문 횟수&quot; 이벤트를 실행합니다. 경우에 따라 이는 바람직하지 않습니다. 예를 들어 이 이벤트가 실행되는 시기를 완전히 제어해야 하는 단일 페이지 웹 애플리케이션입니다. 이 사용 사례를 지원하기 위해 새 **apiOnly** 구성 설정을 추가했습니다. true로 설정하면 Munchkin 태그가 페이지 로드 중 &quot;방문 웹 페이지&quot; 활동을 생성하지 않습니다.
 * [domainSelectorV2](/help/javascript-api/configuration.md) 구성 설정이 추가되었습니다. 기본적으로 Munchkin 태그는 두 글자 [국가 코드 최상위 도메인](https://en.wikipedia.org/wiki/Country_code_top-level_domain)이 있는 사이트에서 호스팅되는 웹 페이지를 올바르게 처리하지 않습니다(예: .io, .co, .ly). 이로 인해 Munchkin 쿠키 도메인 속성이 잘못 설정됩니다. 더 나은 기본 환경을 제공하기 위해 새 **domainSelectorV2** 구성 설정을 추가했습니다. true로 설정하면 Munchkin 쿠키 도메인 속성을 자동으로 설정하는 개선된 알고리즘이 사용됩니다.
 * [옵트아웃](/help/javascript-api/lead-tracking.md) 쿠키 도메인을 조정했습니다. 경우에 따라 Munchkin 옵트아웃 쿠키(mkto_opt_out)의 도메인 속성이 잘못 설정되었습니다. 이제 Munchkin 옵트아웃 쿠키는 Munchkin 쿠키(_mkto_trk)와 동일한 로직을 사용하여 **domainLevel** 구성 설정을 준수하는 등 도메인 쿠키 속성을 결정합니다.
@@ -8982,7 +8980,7 @@ _David_&#x200B;이(가) _2019-06-14_&#x200B;에 게시함
 1. 스마트 목록 정의를 추출하기 위한 엔드포인트가 추가되었습니다.
    1. 스마트 캠페인 ID로 [스마트 목록 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#operation/getSmartListBySmartCampaignIdUsingGET) 끝점은 지정된 스마트 캠페인 ID에 대한 스마트 목록 레코드를 반환합니다.
    1. [프로그램 ID별 스마트 목록 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#operation/getSmartListByProgramIdUsingGET) 끝점은 지정된 프로그램 ID에 대한 스마트 목록 레코드를 반환합니다.
-1. 서식 파일(제목, 이름, 전자 메일, 회신)에서 손상된 전자 메일의 전자 메일 헤더 필드를 업데이트할 수 있도록 [전자 메일 콘텐츠 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#operation/updateEmailContentUsingPOST) 끝점을 개선했습니다. 템플릿에서 분리된 항목은 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/edit-an-emails-html)에 설명되어 있습니다.
+1. 서식 파일(제목, 이름, 전자 메일, 회신)에서 손상된 전자 메일의 전자 메일 헤더 필드를 업데이트할 수 있도록 [전자 메일 콘텐츠 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#operation/updateEmailContentUsingPOST) 끝점을 개선했습니다. 템플릿에서 분리된 항목은 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/edit-an-emails-html)에 설명되어 있습니다.
 
 ### 결함 해결
 
@@ -9013,7 +9011,7 @@ _David_&#x200B;이(가) _2020-01-17_&#x200B;에 게시함
 
 ## 모든 사용자 지정 개체를 검색하는 방법
 
-Marketo의 API를 사용하여 모든 [사용자 지정 개체](https://experienceleague.adobe.com/ko/docs/marketo/using/home)&#x200B;(CO) 목록을 가져오는 방법에 대한 메시지가 자주 표시됩니다. CO에 대한 쿼리에는 이름 이상이 필요합니다. 각 CO에 대한 _선험적_ 지식도 필요합니다. API에서 직접 쿼리하는 메서드를 제공하지 않으므로 지식을 가져오는 메서드가 명확하지 않을 수 있습니다. Marketo Engage의 많은 목표와 마찬가지로 스마트 목록은 사람(잠재 고객)과 연결된 CO에 대한 답변을 제공합니다. 스마트 목록은 회사와 다르게 작동하며, 필터에 대한 오브젝트 유형에 회사가 연결된 모든 사람 목록이 표시되므로 목표에 따라 회사를 중복 제거해야 할 수도 있습니다. 새 사용자 지정 개체가 승인될 때마다 관련 필터가 만들어집니다. 이름은 &quot;**HAS CO NAME**&quot; 형식으로 지정됩니다. 아래 예에서 사용자 지정 개체 이름은 &quot;**전화 회의 트랙 구독&quot;**&#x200B;이고 해당 필터의 이름은 &quot;**전화 회의 트랙 구독 있음**&quot;입니다. 스마트 목록을 만든 후에는 [사용자 지정 개체 끝점](/help/rest-api/custom-objects.md)을 사용하여 연결된 CO를 쿼리하는 데 필요한 정보를 검색할 수 있습니다. 연결된 필드(ID 또는 이메일 주소)가 포함되도록 목록을 내보냅니다. **smartListName** 또는 **smartListId** 필터 또는 [UI에서 내보내기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/managing-people-in-smart-lists/export-people-to-excel-from-a-list-or-smart-list)에 의한 [잠재 고객 추출 API](/help/rest-api/bulk-lead-extract.md) 필터링을 사용하여 내보낼 수 있습니다. 다음 단계에서는 연결된 각 필드 값을 사용하여 연결된 사용자 지정 개체를 개별적으로 쿼리합니다. 이 예제에서 사용자 지정 개체의 이름은 **&quot;Conference Track Subscription&quot;**&#x200B;이고 해당 API 이름은 **conferenceTrackSubscription_c**&#x200B;입니다. UI에서 API 이름을 &quot;**API 이름**&quot;으로, API를 통해 &quot;**이름**&quot;으로 찾습니다.  관리자 | Marketo 사용자 지정 개체[/caption] 및 [목록 사용자 지정 개체 API](https://developer.adobe.com/marketo-apis/api/mapi/#operation/listCustomObjectsUsingGET) 끝점에서 반환된 조각은 다음과 같습니다.
+Marketo의 API를 사용하여 모든 [사용자 지정 개체](https://experienceleague.adobe.com/ko/docs/marketo/using/home)&#x200B;(CO) 목록을 가져오는 방법에 대한 메시지가 자주 표시됩니다. CO에 대한 쿼리에는 이름 이상이 필요합니다. 각 CO에 대한 _선험적_ 지식도 필요합니다. API에서 직접 쿼리하는 메서드를 제공하지 않으므로 지식을 가져오는 메서드가 명확하지 않을 수 있습니다. Marketo Engage의 많은 목표와 마찬가지로 스마트 목록은 사람(잠재 고객)과 연결된 CO에 대한 답변을 제공합니다. 스마트 목록은 회사와 다르게 작동하며, 필터에 대한 오브젝트 유형에 회사가 연결된 모든 사람 목록이 표시되므로 목표에 따라 회사를 중복 제거해야 할 수도 있습니다. 새 사용자 지정 개체가 승인될 때마다 관련 필터가 만들어집니다. 이름은 &quot;**HAS CO NAME**&quot; 형식으로 지정됩니다. 아래 예에서 사용자 지정 개체 이름은 &quot;**전화 회의 트랙 구독&quot;**&#x200B;이고 해당 필터의 이름은 &quot;**전화 회의 트랙 구독 있음**&quot;입니다. 스마트 목록을 만든 후에는 [사용자 지정 개체 끝점](/help/rest-api/custom-objects.md)을 사용하여 연결된 CO를 쿼리하는 데 필요한 정보를 검색할 수 있습니다. 연결된 필드(ID 또는 이메일 주소)가 포함되도록 목록을 내보냅니다. [smartListName](/help/rest-api/bulk-lead-extract.md) 또는 **smartListId** 필터 또는 **UI에서 내보내기**&#x200B;에 의한 [잠재 고객 추출 API](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/managing-people-in-smart-lists/export-people-to-excel-from-a-list-or-smart-list) 필터링을 사용하여 내보낼 수 있습니다. 다음 단계에서는 연결된 각 필드 값을 사용하여 연결된 사용자 지정 개체를 개별적으로 쿼리합니다. 이 예제에서 사용자 지정 개체의 이름은 **&quot;Conference Track Subscription&quot;**&#x200B;이고 해당 API 이름은 **conferenceTrackSubscription_c**&#x200B;입니다. UI에서 API 이름을 &quot;**API 이름**&quot;으로, API를 통해 &quot;**이름**&quot;으로 찾습니다.  관리자 | Marketo 사용자 지정 개체[/caption] 및 [목록 사용자 지정 개체 API](https://developer.adobe.com/marketo-apis/api/mapi/#operation/listCustomObjectsUsingGET) 끝점에서 반환된 조각은 다음과 같습니다.
 
 ```json
 {
@@ -9050,11 +9048,11 @@ Marketo의 API를 사용하여 모든 [사용자 지정 개체](https://experien
 }
 ```
 
-Smart List의 Persons를 사용하여 일대다(1:1) 또는 일대다(1:N)에 연결된 사용자 지정 개체를 검색하려면 다음과 같이 요청하십시오.
+Smart List의 Persons를 사용하여 일대다(1:1) 또는 일대다(1:N)와 연결된 사용자 지정 개체를 검색하려면 다음과 같이 요청하십시오.
 
 `GET /rest/v1/customobjects/conferenceTrackSubscription_c.json?filterType=leadID&filterValues=1000302,1000303,1000304,1000306,1000307`
 
-이 예제에서 이 사용자 지정 개체는 **leadID** 필드를 통해 개인에 연결되므로 필터 유형은 &quot;**leadID**&quot;입니다. 필터 값 매개 변수는 스마트 목록 내보내기에서 가져온 ID를 쉼표로 구분한 목록입니다. 요청에는 단일 요청 URI에 맞출 수 있는 최대 8K자의 필터 값이 포함될 수 있습니다. 이 길이를 초과하는 요청은 414 HTTP 수준 오류 코드를 반환합니다. 응답은 두 개 이상의 청크로 반환될 수 있습니다. 이 경우 **moreResult**&#x200B;은(는) **true**&#x200B;이(가) 되고 **nextPageToken**&#x200B;이(가) 포함됩니다. **moreResult**&#x200B;이(가) **false**&#x200B;가 될 때까지 결과를 [페이지 ~](/help/rest-api/paging-tokens.md)해야 합니다. 다음은 위의 API 요청에 대한 결과의 일부입니다.
+이 예제에서 이 사용자 지정 개체는 **leadID** 필드를 통해 개인에 연결되므로 필터 유형은 &quot;**leadID**&quot;입니다. 필터 값 매개 변수는 스마트 목록 내보내기에서 가져온 ID를 쉼표로 구분한 목록입니다. 요청에는 단일 요청 URI에 맞출 수 있는 최대 8K자의 필터 값이 포함될 수 있습니다. 이 길이를 초과하는 요청은 414 HTTP 수준 오류 코드를 반환합니다. 응답은 두 개 이상의 청크로 반환될 수 있습니다. 이 경우 **moreResult**&#x200B;은(는) **true**&#x200B;이(가) 되고 **nextPageToken**&#x200B;이(가) 포함됩니다. [moreResult](/help/rest-api/paging-tokens.md)이(가) **false**&#x200B;가 될 때까지 결과를 **페이지 ~**&#x200B;해야 합니다. 다음은 위의 API 요청에 대한 결과의 일부입니다.
 
 ```json
 "result": [
@@ -9100,13 +9098,13 @@ Smart List의 Persons를 사용하여 일대다(1:1) 또는 일대다(1:N)에 �
     }
 ```
 
-이제 스마트 목록의 사용자와 직접 연결된 각 사용자 지정 개체에 대한 값을 갖게 되었으며 값을 검색하는 것 외에 **marketoGUID**&#x200B;을(를) 사용하여 이러한 개체를 [업데이트](/help/rest-api/custom-objects.md) 또는 [삭제](/help/rest-api/custom-objects.md)할 수 있습니다. 다대다 관계(N:N)에서 개인과 연관된 사용자 정의 객체의 경우 위의 기법은 각 개인을 여러 개의 두 번째 수준 CO에 연결하는 중간 객체인 첫 번째 수준 객체를 반환합니다.
+이제 스마트 목록의 사용자와 직접 연결된 각 사용자 지정 개체에 대한 값을 갖게 되었으며 값을 검색하는 것 외에 **marketoGUID**&#x200B;을(를) 사용하여 이러한 개체를 [업데이트](/help/rest-api/custom-objects.md) 또는 [삭제](/help/rest-api/custom-objects.md)할 수 있습니다. 다대다 관계(N:N)의 개인과 연결된 사용자 지정 개체의 경우 위의 기법은 각 개인을 여러 개의 두 번째 수준 CO에 연결하는 중간 개체인 첫 번째 수준 개체를 반환합니다.
 
 이러한 2차 수준 CO를 검색하려면 링크 필드 및 1차 수준 중간 개체에서 추출된 값을 필터링하여 2차 수준 CO 유형에 대한 새 쿼리 세트를 시작하십시오. 예를 들어, 위의 &quot;**전화 회의 트랙 구독&quot;** 개체에는 **subscriptionID**&#x200B;에 의해 연결될 수 있는 **&quot;Session&quot;**&#x200B;이라는 세션을 나타내는 다른 수준의 개체가 있을 수 있습니다. 위의 전화 회의 트랙 구독에 연결된 세션 검색 요청은 다음과 같습니다.
 
 `GET /rest/v1/customobjects/session_c.json?filterType=subscriptionID&filterValues=4ad59184-6bf1-4eeb-a583-d82aeee68210,e5e0aba4-f27f-494d-93ed-9cb580989bf3,e65007cd-86b1-4c17-8d55-057c96e1788a,39d956b2-85e2-4c24-94e7-e9fa5a09d3d0,bf14218c-ae6a-42b3-a14e-f7182903cbcd`
 
-_각주_ _1)**smartListName**&#x200B;및&#x200B;**smartListId**&#x200B;필터 형식을 일부 구독에서 사용할 수 없습니다. 구독에 사용할 수 없는 경우 잠재 고객 만들기 작업 끝점(**&quot;1035, 대상 구독에 대해 지원되지 않는 필터 유형&quot;**)을 호출할 때 오류가 표시됩니다. 고객은 Marketo 지원 팀에 문의하여 구독에서 이 기능을 활성화할 수 있습니다._
+_각주_ _1)**smartListName**및&#x200B;**smartListId**필터 형식을 일부 구독에서 사용할 수 없습니다. 구독에 사용할 수 없는 경우 잠재 고객 만들기 작업 끝점(**&quot;1035, 대상 구독에 대해 지원되지 않는 필터 유형&quot;**)을 호출할 때 오류가 표시됩니다. 고객은 Marketo 지원 팀에 문의하여 구독에서 이 기능을 활성화할 수 있습니다._
 
 _2020-01-14_&#x200B;에 _Tony_&#x200B;에 의해 게시됨
 
@@ -9187,11 +9185,11 @@ Marketo Engage 인스턴스에서 모든 사용자(잠재 고객)를 검색하�
 
 ### 내보내기 작업 날짜 범위: 각각 31일
 
-각 내보내기 작업은 최대 31일에 걸쳐 수행할 수 있습니다. 제가 사용하고 있는 데모 인스턴스는 2016년 8월에 만들어졌기 때문에 저는 오늘 40개 이상의 일자리를 만들어야 합니다. 첫 번째 생성 날짜를 31로 나눈 이후의 일 수입니다. API를 사용하면 두 개의 작업을 동시에 처리할 수 있으므로 두 개의 작업을 동시에 실행하여 추출할 수 있습니다. 대량 추출 작업은 다른 모든 통합과 공유되는 리소스이므로 친절하게 대할 것입니다. 다른 통합에 사용할 수 있는 다른 작업을 종료하고 단일 작업을 차례로 수행하는 방법을 보여 줍니다. **createdAt** 필터에 사용되는 날짜는 [ISO 8601 사양](https://www.w3.org/TR/NOTE-datetime)을 사용하여 형식이 지정됩니다. 시간대는 항상 GMT(Z+0000)이므로 단순히 &quot;Z&quot; 또는 &quot;+00:00&quot;으로 표시됩니다. 2016년 8월 1일은 **2016-08-01T00:00:00+00:00**&#x200B;이고 31일 후는 2016년 9월 1일 **2016-09-01T00:00:00+00:00입니다.** 시작 및 종료 시간이 모두 포괄적이므로 해당 종료 시간에서 1초를 빼려고 합니다. **2016-09-01T00:00:00+00:00**&#x200B;은(는) **2016-08-31T23:59:59+00:00**&#x200B;이(가) 됩니다. 1초를 빼면 겹치는 시간이 줄어듭니다. GMT가 기본값이므로 **Z** 또는 **+00:00**&#x200B;을(를) 해제할 수도 있습니다.
+각 내보내기 작업은 최대 31일에 걸쳐 수행할 수 있습니다. 제가 사용하고 있는 데모 인스턴스는 2016년 8월에 만들어졌기 때문에 저는 오늘 40개 이상의 일자리를 만들어야 합니다. 첫 번째 생성 날짜를 31로 나눈 이후의 일 수입니다. API를 사용하면 두 개의 작업을 동시에 처리할 수 있으므로 두 개의 작업을 동시에 실행하여 추출할 수 있습니다. 대량 추출 작업은 다른 모든 통합과 공유되는 리소스이므로 친절하게 대할 것입니다. 다른 통합에 사용할 수 있는 다른 작업을 종료하고 단일 작업을 차례로 수행하는 방법을 보여 줍니다. **createdAt** 필터에 사용되는 날짜는 [ISO 8601 사양](https://www.w3.org/TR/NOTE-datetime)을 사용하여 형식이 지정됩니다. 시간대는 항상 GMT(Z+0000)이므로 단순히 &quot;Z&quot; 또는 &quot;+00:00&quot;(으)로 표시됩니다. 2016년 8월 1일은 **2016-08-01T00:00:00+00:00**&#x200B;이고 31일 후는 2016년 9월 1일 **2016-09-01T00:00:00+00:00입니다.** 시작 및 종료 시간이 모두 포괄적이므로 해당 종료 시간에서 1초를 빼려고 합니다. **2016-09-01T00:00:00+00:00**&#x200B;은(는) **2016-08-31T23:59:59+00:00**&#x200B;이(가) 됩니다. 1초를 빼면 겹치는 시간이 줄어듭니다. GMT가 기본값이므로 **Z** 또는 **+00:00**&#x200B;을(를) 해제할 수도 있습니다.
 
 ### 중복 제거
 
-시간이 겹치는 것을 피하는 데 어려움을 겪었지만 중복 제거 기능도 구현했습니다. 시간이 변경되는 일부 경계 사례([일광 절약 시간](https://en.wikipedia.org/wiki/Daylight_saving_time))가 있어 값이 모호해지고, 그 결과 Marketo의 대량 추출 API가 예기치 않은 중복 리드를 반환할 수 있으므로 이 작업을 수행했습니다. 드물지만 날짜/시간 필터 범위를 사용하는 통합에서 고려해야 합니다. 나는 시간이 포괄적이라는 것을 분명히 하기 위해 1초를 제거했다. 각각 **2016-08-01T00:00:00Z** 및 **2016-09-01T00:00:00Z**&#x200B;의 **createdAt** 및 **endAt** 횟수로 작업을 만드는 경우 **2016-09-01T00:00:00Z**&#x200B;에 만들어진 리드가 포함되지 않는다고 생각해서는 안 됩니다.
+시간이 겹치는 것을 피하는 데 어려움을 겪었지만 중복 제거 기능도 구현했습니다. 시간이 변경되는 일부 경계 사례([일광 절약 시간](https://en.wikipedia.org/wiki/Daylight_saving_time))가 있어 값이 모호해지고, 그 결과 Marketo의 대량 추출 API가 예기치 않은 중복 리드를 반환할 수 있으므로 이 작업을 수행했습니다. 드물지만 날짜/시간 필터 범위를 사용하는 통합에서 고려해야 합니다. 나는 시간이 포괄적이라는 것을 분명히 하기 위해 1초를 제거했다. 각각 **2016-08-01T00** 00Z **및** 2016-09-01T00 **00Z:00:의** createdAt **및 :00:endAt** 횟수로 작업을 만드는 경우 **2016-09-01T00:00:00Z**&#x200B;에 만들어진 리드가 포함되지 않는다고 생각해서는 안 됩니다.
 
 ### 작업 만들기
 
@@ -9224,7 +9222,7 @@ Marketo Engage 인스턴스에서 모든 사용자(잠재 고객)를 검색하�
 
 ### 작업 큐에 넣기
 
-그 일은 이제 생겨났지만 그냥 앉아서 아무 것도 하지 않고 있다. 작업을 실행하려면 **exportId** 값을 사용하여 [enqueue 끝점](https://developer.adobe.com/marketo-apis/api/mapi/#operation/enqueueExportLeadsUsingPOST)을 호출하여 요청에 대한 URI를 빌드해야 합니다. 다음과 같습니다.
+그 일은 이제 생겨났지만 그냥 앉아서 아무 것도 하지 않고 있다. 작업을 실행하려면 [exportId](https://developer.adobe.com/marketo-apis/api/mapi/#operation/enqueueExportLeadsUsingPOST) 값을 사용하여 **enqueue 끝점**&#x200B;을 호출하여 요청에 대한 URI를 빌드해야 합니다. 다음과 같습니다.
 
 `POST /bulk/v1/leads/export/4f2b9115-c3f2-4e40-a87c-bf803bbfed99/enqueue.json`
 
@@ -9364,7 +9362,7 @@ _케니_&#x200B;이(가) _2020-05-06_&#x200B;에 게시함
 
 `<form id="mktoForm_1068"></form>`
 
-다음과 같이 요소에 &#39;style=&quot;display:none&quot;&#39;을 추가하여 표시되지 않도록 할 수 있습니다.
+다음과 같이 &#39;style=&quot;display:none&quot;&#39;을(를) 요소에 추가하여 표시되지 않도록 할 수 있습니다.
 
 `<form id="mktoForm_1068" style="display:none"></form>`
 
@@ -9418,9 +9416,9 @@ myForm.submit();
         </script>
 </head>
 
-<body> 
+<body>
   <!--
-    Start Embed code.  
+    Start Embed code.
     Pasted from Form Actions -> Embed Code except for addition of 'style="display:none"' to the form tag in order to hide it, and instance-specific codes redacted
     Replace with your own code for testing
   -->
@@ -9449,18 +9447,17 @@ myForm.submit();
             //pass the same set of values to associateLead
             //hashString: secret + email
             Munchkin.munchkinFunction('associateLead', values, "CHANGE ME");
-            
+
             //submit the form
             form.submit();
-            
-            
+
+
         })
     </script>
 </body>
 
 </html>
 ```
-
    
 _케니_&#x200B;이(가) _2020-05-26_&#x200B;에 게시함
 
@@ -9615,7 +9612,7 @@ _2020-10-18_&#x200B;에 _Amit_&#x200B;에 의해 게시됨
 
 * 프로그래밍 양식 제출을 수행할 수 있는 [양식 제출](/help/rest-api/leads.md) 끝점이 추가되었습니다. 이제 서드파티 양식을 Marketo 양식과 통합하여 기존 마케팅 워크플로우를 활용할 수 있습니다.
 * 랜딩 페이지의 직렬화된 HTML 버전을 반환하는 [랜딩 페이지 전체 콘텐츠 가져오기](/help/rest-api/landing-pages.md) 끝점을 추가했습니다. Marketo Engage에 로그인하지 않고도 랜딩 페이지의 완전히 개인화된 미리 보기를 렌더링할 수 있습니다. 이를 통해 통합 애플리케이션 내에서 편집 및 번역 워크플로를 간소화할 수 있습니다.
-* 이제 Velocity 스크립트를 통해 액세스할 수 있는 사용자 지정 개체 수를 구성할 수 있습니다. 구성 지침은 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/email-setup/change-custom-object-retrieval-limits-in-velocity-scripting)에서 찾을 수 있습니다.
+* 이제 Velocity 스크립트를 통해 액세스할 수 있는 사용자 지정 개체 수를 구성할 수 있습니다. 구성 지침은 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/email-setup/change-custom-object-retrieval-limits-in-velocity-scripting)에서 찾을 수 있습니다.
 
 ### 결함 해결
 
@@ -9635,7 +9632,7 @@ _David_&#x200B;이(가) _2021-01-15_&#x200B;에 게시함
 
 ### Beacon API 테스트
 
-예정된 버전이 있을 것으로 예상하여 업데이트된 비콘 API를 테스트하려면 외부 테스트 페이지에서 Munchkin 구성에 **useBeaconAPI** 매개 변수를 추가하면 됩니다. 이 테스트는 Munchkin의 GA 또는 베타 버전에서 작동합니다. 구성 매개 변수는 7행 `{ 'useBeaconAPI': true}`에서 `Munchkin.init()` 메서드 호출의 두 번째 인수에 아래에 나와 있습니다.
+예정된 버전이 있을 것으로 예상하여 업데이트된 비콘 API를 테스트하려면 외부 테스트 페이지에서 Munchkin 구성에 **useBeaconAPI** 매개 변수를 추가하면 됩니다. 이 테스트는 Munchkin의 GA 또는 베타 버전에서 작동합니다. 구성 매개 변수는 7행 `Munchkin.init()`에서 `{ 'useBeaconAPI': true}` 메서드 호출의 두 번째 인수에 아래에 나와 있습니다.
 
 ```javascript
 <script type="text/javascript">
@@ -9664,11 +9661,11 @@ _David_&#x200B;이(가) _2021-01-15_&#x200B;에 게시함
 
 ### Marketo 랜딩 페이지에서 Munchkin Beta 비활성화
 
-Marketo 랜딩 페이지에서 Munchkin Beta을 비활성화하려면 구독의 관리 섹션에서 [보물 상자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features) 메뉴에 액세스하고 랜딩 페이지의 Munchkin Beta 설정을 비활성화로 변경해야 합니다.
+Marketo 랜딩 페이지에서 Munchkin Beta을 비활성화하려면 구독의 관리 섹션에서 [보물 상자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features) 메뉴에 액세스하고 랜딩 페이지의 Munchkin Beta 설정을 비활성화로 변경해야 합니다.
 
 ### 외부 페이지에서 Munchkin Beta 비활성화
 
-Beta 버전의 Munchkin JavaScript을 외부 웹 페이지에 배포한 경우 일반적으로 사용할 수 있을 때까지 이 변경 사항을 취소하려면 **munchkin&quot;을 타깃팅하기 위해 Munchkin JS 코드 조각을 변경해야 합니다.**{munchkin-beta가 아닌 **js**&#x200B;1} 파일을 저장합니다.**&#x200B;**&#x200B;**js** 파일입니다. 아래 예에서는 11행에 있는 **s.src** 변수의 값입니다. 코드 조각이 예제와 유사하지 않거나, 태그 관리자가 외부 페이지에 배포할 수 있으며, IT 리소스 또는 Munchkin 추적이 활성화된 웹 사이트를 관리하는 사람에게 연락해야 할 수 있습니다.
+Beta 버전의 Munchkin JavaScript을 외부 웹 페이지에 배포한 경우 일반적으로 사용할 수 있을 때까지 이 변경 사항을 취소하려면 **munchkin&quot;을 타깃팅하기 위해 Munchkin JS 코드 조각을 변경해야 합니다.**{munchkin-beta가 아닌 **js**1} 파일을 저장합니다.******js** 파일입니다. 아래 예에서는 11행에 있는 **s.src** 변수의 값입니다. 코드 조각이 예제와 유사하지 않거나, 태그 관리자가 외부 페이지에 배포할 수 있으며, IT 리소스 또는 Munchkin 추적이 활성화된 웹 사이트를 관리하는 사람에게 연락해야 할 수 있습니다.
 
 ```javascript
 <script type="text/javascript">
@@ -9699,7 +9696,7 @@ _케니_&#x200B;이(가) _2021-01-08_&#x200B;에 게시함
 
 ## 이메일 V1의 최종 API 사용 중단
 
-[이메일 V1의 사용 중단 2년 전부터](https://nation.marketo.com:443/t5/knowledgebase/email-editor-1-0-is-being-deprecated-june-18th/ta-p/250666) 및 2021년 3월 17일 런던 및 네덜란드 구독과 2021년 3월 19일 기타 모든 구독에 대한 3월 유지 관리 릴리스부터 V1 이메일에 대한 모든 API 지원이 종료됩니다. 이 릴리스 이후 Asset API를 통해 V1 이메일과 상호 작용하려고 하면 오류가 발생하고 아무 작업도 수행되지 않습니다. 2021년 2월 24일 이후의 알려진 나머지 모든 사용자에게 알림이 전송되었지만, 이러한 에셋과 상호 작용하려고 하는 통합이 아직 있을 수 있습니다. 영향을 받는 통합의 가장 일반적인 유형은 디지털 에셋 관리, 번역 및 현지화를 제공하는 서비스입니다. 이 변경으로 인해 통합 오류가 발생하는 경우에도 [자산을 편집하고 승인하여 문제가 있는 자산을 업그레이드할 수 있습니다](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/transitioning-to-email-editor-2-0). 이메일 에셋이 V2로 업그레이드되면 통합 서비스와 함께 사용을 재개할 수 있습니다.
+[이메일 V1의 사용 중단 2년 전부터](https://nation.marketo.com:443/t5/knowledgebase/email-editor-1-0-is-being-deprecated-june-18th/ta-p/250666) 및 2021년 3월 17일 런던 및 네덜란드 구독과 2021년 3월 19일 기타 모든 구독에 대한 3월 유지 관리 릴리스부터 V1 이메일에 대한 모든 API 지원이 종료됩니다. 이 릴리스 이후 Asset API를 통해 V1 이메일과 상호 작용하려고 하면 오류가 발생하고 아무 작업도 수행되지 않습니다. 2021년 2월 24일 이후의 알려진 나머지 모든 사용자에게 알림이 전송되었지만, 이러한 에셋과 상호 작용하려고 하는 통합이 아직 있을 수 있습니다. 영향을 받는 통합의 가장 일반적인 유형은 디지털 에셋 관리, 번역 및 현지화를 제공하는 서비스입니다. 이 변경으로 인해 통합 오류가 발생하는 경우에도 [자산을 편집하고 승인하여 문제가 있는 자산을 업그레이드할 수 있습니다](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/transitioning-to-email-editor-2-0). 이메일 에셋이 V2로 업그레이드되면 통합 서비스와 함께 사용을 재개할 수 있습니다.
 
 _케니_&#x200B;이(가) _2021-03-17_&#x200B;에 게시함
 
@@ -9709,10 +9706,10 @@ _케니_&#x200B;이(가) _2021-03-17_&#x200B;에 게시함
 
 * 프로그램 멤버십 레코드를 검색, 업데이트 및 삭제할 수 있는 프로그램 멤버 API가 추가되었습니다. 자세한 내용은 [REST API > 잠재 고객 데이터베이스 > 프로그램 구성원](/help/rest-api/program-members.md)을 참조하세요.
 * 일대다 관계의 리드와 연결된 첫 번째 수준 Marketo 사용자 지정 개체 레코드를 내보낼 수 있는 대량 사용자 지정 개체 추출 API가 추가되었습니다. 자세한 내용은 [REST API > 대량 추출 > 대량 사용자 지정 개체 추출](/help/rest-api/bulk-custom-object-extract.md)을 참조하십시오.
-* 사용자가 ECID(Adobe Experience Cloud ID)를 검색할 수 있도록 [리드 API](/help/rest-api/leads.md) 및 [리드 추출 API](/help/rest-api/bulk-lead-extract.md)를 모두 개선했습니다. 이를 통해 [Adobe Experience Cloud의 대상자를 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-experience-cloud-audience-sharing.html?lang=ko)하는 사용자는 ECID가 연결된 리드를 식별할 수 있습니다. 이렇게 하면 다른 Adobe Experience Cloud 제품과의 [통합 가능성](https://adobeexchangeec.zendesk.com/hc/en-us/articles/360024277392-Adobe-Experience-Cloud-Using-the-ECID-for-integration)이 열립니다.
+* 사용자가 ECID(Adobe Experience Cloud ID)를 검색할 수 있도록 [리드 API](/help/rest-api/leads.md) 및 [리드 추출 API](/help/rest-api/bulk-lead-extract.md)를 모두 개선했습니다. 이를 통해 [Adobe Experience Cloud의 대상자를 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/miscellaneous/set-up-adobe-experience-cloud-audience-sharing.html)하는 사용자는 ECID가 연결된 리드를 식별할 수 있습니다. 이렇게 하면 다른 Adobe Experience Cloud 제품과의 [통합 가능성](https://adobeexchangeec.zendesk.com/hc/en-us/articles/360024277392-Adobe-Experience-Cloud-Using-the-ECID-for-integration)이 열립니다.
 * 가져오기 프로세스 중에 회사 레코드로 리드를 추가할 수 있도록 [대량 리드 가져오기 API](/help/rest-api/bulk-lead-import.md)를 개선했습니다. 이 작업은 가져오기 파일에 **externalCompanyId** 필드를 포함하여 수행됩니다.
 * Marketo Engage UI에서 발견된 기능과 패리티를 제공하기 위해 여러 프로그램 엔드포인트가 향상되었습니다. 이벤트 프로그램에서 만들기, 복제 또는 이동 작업을 허용하도록 [프로그램 만들기](/help/rest-api/assets.md) 및 [프로그램 복제](https://developer.adobe.com/marketo-apis/api/asset/) 끝점을 개선했습니다. 다른 프로그램 유형 아래에 이벤트 프로그램을 &quot;중첩&quot;하여 구성하는 사용자를 위한 것입니다. 또한 푸시 알림, 인앱 메시지, 보고서, 포함된 소셜 Assets이 있는 랜딩 페이지를 포함하는 프로그램을 삭제할 수 있도록 [프로그램 삭제](https://developer.adobe.com/marketo-apis/api/asset/) 끝점을 개선했습니다.
-* Marketo 관리자는 [특정 필드를 &quot;중요&quot;로 표시](https://experienceleague.adobe.com/ko/docs/marketo/using/home)할 수 있으므로 해당 값을 [양식에서 미리 채우지 않음](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/forms/form-fields/disable-pre-fill-for-a-form-field)하여 사용자의 중요한 데이터를 보호할 수 있습니다. Marketo Engage UI에 있는 이 기능과 동등하도록 여러 양식 필드 끝점을 개선했습니다.
+* Marketo 관리자는 [특정 필드를 &quot;중요&quot;로 표시](https://experienceleague.adobe.com/ko/docs/marketo/using/home)할 수 있으므로 해당 값을 [양식에서 미리 채우지 않음](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/forms/form-fields/disable-pre-fill-for-a-form-field)하여 사용자의 중요한 데이터를 보호할 수 있습니다. Marketo Engage UI에 있는 이 기능과 동등하도록 여러 양식 필드 끝점을 개선했습니다.
 
 ### 결함 해결
 
@@ -9757,11 +9754,11 @@ _David_&#x200B;이(가) _2021-07-22_&#x200B;에 게시함
 ### 이메일
 
 * `earliestUpdatedAt`/`latestUpdatedAt` 필터를 추가하여 전자 메일 가져오기 끝점을 개선했습니다. 이를 통해 `updatedAt` 필드를 사용하여 전자 메일의 하위 집합만 검색할 수 있으므로 증분 동기화를 허용할 수 있습니다.
-* [챔피언 및 챌린저](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/email-tests-champion-challenger/add-an-email-champion-challenger) 유형 전자 메일 레코드 검색을 지원하도록 전자 메일 가져오기, 이름별 전자 메일 가져오기, ID 끝점별 전자 메일 가져오기를 개선했습니다.
+* [챔피언 및 챌린저](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/email-tests-champion-challenger/add-an-email-champion-challenger) 유형 전자 메일 레코드 검색을 지원하도록 전자 메일 가져오기, 이름별 전자 메일 가져오기, ID 끝점별 전자 메일 가져오기를 개선했습니다.
 
 ### 결함 해결
 
-* 사용자 가져오기 엔드포인트 문제를 수정했습니다. [마케팅 일정](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/marketing-calendar/understanding-the-calendar/issue-revoke-a-marketing-calendar-license) 라이선스를 발급받은 사용자가 반환되지 않았습니다. 이제 마케팅 달력 사용자가 올바르게 반환됩니다.
+* 사용자 가져오기 엔드포인트 문제를 수정했습니다. [마케팅 일정](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/marketing-calendar/understanding-the-calendar/issue-revoke-a-marketing-calendar-license) 라이선스를 발급받은 사용자가 반환되지 않았습니다. 이제 마케팅 달력 사용자가 올바르게 반환됩니다.
 * 양식 제출 엔드포인트 문제를 수정했습니다. 중복 가망 고객 레코드가 있는 경우 제출 양식을 사용하여 &quot;1007, 여러 가망 고객 일치 조회 기준&quot; 오류를 발행합니다. 이제 양식 제출로 [Forms 2.0 API](/help/javascript-api/forms-api-reference.md)와 같은 방식으로 가장 최근에 업데이트된 레코드가 업데이트됩니다.
 * 리드 필드 업데이트 및 리드 필드 만들기 엔드포인트에서 반환되는 몇 가지 오해의 소지가 있는 오류 메시지가 개선되었습니다. [LM-151890, LM-151888, LM-151889]
 * 이름별 리드 필드 가져오기 및 리드 필드 엔드포인트 가져오기 문제를 수정했습니다. 두 종단점은 잠재적으로 오래된 정보를 반환할 수 있습니다. 이제 항상 현재 정보를 반환합니다.
@@ -9774,7 +9771,7 @@ _David_&#x200B;이(가) _2021-08-22_&#x200B;에 게시함
 
 ## Munchkin 버전 161 롤아웃
 
-Munchkin 버전 161은 2021년 9월 7일부터 Munchkin Beta이 활성화되면서 구독률 10%로 롤아웃이 시작되며, 이어 9월 16일 50%, 9월 30일 100%로 롤아웃된다. 이 변경 사항은 Marketo 랜딩 페이지 및 새 버전이 롤아웃된 구독으로부터 로드되는 외부 랜딩 페이지에 제공되는 munchkin-beta.js 파일의 버전에 영향을 줍니다. 이 버전에서는 Munchkin Associate Lead 메서드를 완전히 사용하지 않습니다. 이 메서드는 Marketo 구독에 사용자 데이터를 제출하고 알려진 사용자 레코드와 연결된 웹 검색 기록을 허용하는 기능입니다. [Forms JS API](/help/javascript-api/forms-api-reference.md), 양식 제출 API 및 [리드 REST API 연결](/help/rest-api/leads.md)과 같은 보다 현대적이고 안전한 대안을 위해 리드 연결이 제거됩니다. 귀하 또는 귀사에서 이 방법을 사용하는 경우 10월 릴리스 롤아웃이 시작되도록 예정된 2021년 10월 12일까지 사용을 중단해야 합니다. Munchkin Beta를 더 이상 사용하지 않으려면 [보물 상자 메뉴](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features)에서 &quot;랜딩 페이지의 Munchkin Beta&quot; 기능을 `disabled`(으)로 전환하여 Marketo 랜딩 페이지의 사용을 비활성화할 수 있습니다. Munchkin Beta JavaScript을 외부 웹 페이지에 배포하고 기본 Munchkin 릴리스 채널로 전환하려면 코드 조각을 업데이트하여 munchkin-beta.js 대신 munchkin.js에서 Munchkin JavaScript을 로드해야 합니다.
+Munchkin 버전 161은 2021년 9월 7일부터 Munchkin Beta이 활성화되면서 구독률 10%로 롤아웃이 시작되며, 이어 9월 16일 50%, 9월 30일 100%로 롤아웃된다. 이 변경 사항은 Marketo 랜딩 페이지 및 새 버전이 롤아웃된 구독으로부터 로드되는 외부 랜딩 페이지에 제공되는 munchkin-beta.js 파일의 버전에 영향을 줍니다. 이 버전에서는 Munchkin Associate Lead 메서드를 완전히 사용하지 않습니다. 이 메서드는 Marketo 구독에 사용자 데이터를 제출하고 알려진 사용자 레코드와 연결된 웹 검색 기록을 허용하는 기능입니다. [Forms JS API](/help/javascript-api/forms-api-reference.md), 양식 제출 API 및 [리드 REST API 연결](/help/rest-api/leads.md)과 같은 보다 현대적이고 안전한 대안을 위해 리드 연결이 제거됩니다. 귀하 또는 귀사에서 이 방법을 사용하는 경우 10월 릴리스 롤아웃이 시작되도록 예정된 2021년 10월 12일까지 사용을 중단해야 합니다. Munchkin Beta를 더 이상 사용하지 않으려면 `disabled`보물 상자 메뉴[에서 &quot;랜딩 페이지의 Munchkin Beta&quot; 기능을 ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features)&#x200B;(으)로 전환하여 Marketo 랜딩 페이지의 사용을 비활성화할 수 있습니다. Munchkin Beta JavaScript을 외부 웹 페이지에 배포하고 기본 Munchkin 릴리스 채널로 전환하려면 코드 조각을 업데이트하여 munchkin-beta.js 대신 munchkin.js에서 Munchkin JavaScript을 로드해야 합니다.
 
 _케니_&#x200B;이(가) _2021-08-24_&#x200B;에 게시함
 
@@ -9790,7 +9787,7 @@ _케니_&#x200B;이(가) _2021-10-04_&#x200B;에 게시함
 
 * 양식 제출의 일부로 프로그램 구성원 사용자 지정 필드를 지원하도록 [양식 제출](https://developer.adobe.com/marketo-apis/api/mapi/#operation/SubmitFormUsingPOST) 끝점을 개선했습니다. 선택적으로 [여기](/help/rest-api/leads.md)에 설명된 대로 양식을 추가할 프로그램으로 프로그램을 지정하거나 프로그램 멤버 사용자 정의 필드를 추가할 프로그램으로 지정할 수 있습니다.
 updatedAt 특성을 기반으로 날짜 범위 기반 쿼리를 지원하도록 [프로그램 구성원 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getProgramMembersUsingGET) 끝점을 개선했습니다. [여기](/help/rest-api/program-members.md)에 설명된 대로 시작 및 종료 날짜/시간 매개 변수를 전달하여 이 작업을 수행합니다.
-* [중요 필드](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/field-management/mark-a-field-as-sensitive)을(를) 지원하도록 [리드 필드](/help/rest-api/leads.md) API를 개선했습니다. [이름별 리드 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadFieldByNameUsingGET), [리드 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadFieldsUsingGET), [리드 필드 만들기](https://developer.adobe.com/marketo-apis/api/mapi/#operation/createLeadFieldUsingPOST) 및 [리드 필드 업데이트](https://developer.adobe.com/marketo-apis/api/mapi/#operation/updateLeadFieldUsingPOST) 엔드포인트는 이제 isSensitive 특성을 지원합니다.
+* [중요 필드](/help/rest-api/leads.md)을(를) 지원하도록 [리드 필드](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/field-management/mark-a-field-as-sensitive) API를 개선했습니다. [이름별 리드 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadFieldByNameUsingGET), [리드 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadFieldsUsingGET), [리드 필드 만들기](https://developer.adobe.com/marketo-apis/api/mapi/#operation/createLeadFieldUsingPOST) 및 [리드 필드 업데이트](https://developer.adobe.com/marketo-apis/api/mapi/#operation/updateLeadFieldUsingPOST) 엔드포인트는 이제 isSensitive 특성을 지원합니다.
 
 ### 결함 해결
 
@@ -9803,7 +9800,7 @@ _David_&#x200B;이(가) _2021-10-25_&#x200B;에 게시함
 
 2022년 1월에는 기존 REST API를 개선하고 여러 결함을 해결하고 있습니다. 아래의 전체 업데이트 목록을 참조하십시오.
 
-* 사용자가 **updatedAt** 날짜 범위를 사용하여 필터링할 수 있도록 [대량 사용자 지정 개체 추출](/help/rest-api/bulk-custom-object-extract.md) API를 개선했습니다.
+* 사용자가 [updatedAt](/help/rest-api/bulk-custom-object-extract.md) 날짜 범위를 사용하여 필터링할 수 있도록 **대량 사용자 지정 개체 추출** API를 개선했습니다.
 * 프로그램 멤버 필드에 대한 메타데이터를 만들고, 업데이트하고, 검색할 수 있도록 해 주는 프로그램 멤버 필드 메타데이터 API가 추가되었습니다. 자세한 내용은 [프로그램 구성원 > 필드](/help/rest-api/program-members.md)를 참조하세요.
 * 회사 필드에 대한 메타데이터를 검색할 수 있도록 해 주는 회사 필드 메타데이터 API가 추가되었습니다. 자세한 내용은 [회사 > 필드](/help/rest-api/companies.md)를 참조하세요.
 * Opportunity 필드에 대한 메타데이터를 검색할 수 있도록 해 주는 Opportunity 필드 메타데이터 API가 추가되었습니다. 자세한 내용은 [기회 > 필드](/help/rest-api/opportunities.md)를 참조하세요.
@@ -9813,7 +9810,7 @@ _David_&#x200B;이(가) _2021-10-25_&#x200B;에 게시함
 ### 결함 해결
 
 * [리드 필드 만들기](https://developer.adobe.com/marketo-apis/api/mapi/#operation/createLeadFieldUsingPOST) 엔드포인트에 대한 호출 시간과 새로 만든 리드 필드를 스마트 목록에서 사용할 수 있는 시간 사이의 지연 문제를 해결했습니다. [LM-152838]
-* Marketo Engage UI에서 [양식에 필드 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/forms/creating-a-form/add-a-field-to-a-form)에 사용되는 양식 필드 드롭다운 목록에서 생성된 필드를 사용할 수 없는 [리드 필드 만들기](https://developer.adobe.com/marketo-apis/api/mapi/#operation/createLeadFieldUsingPOST) 엔드포인트와 관련된 문제가 수정되었습니다. [LM-158243]
+* Marketo Engage UI에서 [양식에 필드 추가](https://developer.adobe.com/marketo-apis/api/mapi/#operation/createLeadFieldUsingPOST)에 사용되는 양식 필드 드롭다운 목록에서 생성된 필드를 사용할 수 없는 [리드 필드 만들기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/forms/creating-a-form/add-a-field-to-a-form) 엔드포인트와 관련된 문제가 수정되었습니다. [LM-158243]
 * isTriggerable=true 매개 변수가 지정된 경우 트리거 가능한 캠페인이 반환되지 않는 [캠페인 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getCampaignsUsingGET) 엔드포인트 문제를 수정했습니다. [LM-158283]
 * [목록 ID로 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#operation/deleteTokenByNameUsingPOST) 끝점이 특정 경우에 오류 &quot;611, 시스템 오류&quot;를 반환하는 문제를 해결했습니다. [LM-157214]
 * [리드 필드 업데이트](/help/rest-api/leads.md) 끝점에서 반환된 여러 오류 메시지를 정리했습니다. [LM-151886, LM-151888, LM-151889]
@@ -9825,10 +9822,10 @@ _David_&#x200B;이(가) _2022-01-27_&#x200B;에 게시함
 2022년 3월에는 기존 REST API를 개선하고 몇 가지 오류를 해결하고 있습니다. 아래의 전체 업데이트 목록을 참조하십시오.
 
 * 일괄 활동 추출 API에서 생성한 내보내기 파일에 **actionResult** 필드를 추가했습니다. 이 필드는 성공, 건너뜀 및 실패한 활동을 구분하는 데 사용할 수 있습니다.
-* [전자 메일 API](/help/rest-api/emails.md)의 응답에 **isOpenTrackingDisabled** 필드를 추가했습니다. 이 필드를 사용하여 [공개 추적 사용 안 함](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-editor-v2-0-overview) 기능을 사용할지 여부를 확인할 수 있습니다.
+* **전자 메일 API**&#x200B;의 응답에 [isOpenTrackingDisabled](/help/rest-api/emails.md) 필드를 추가했습니다. 이 필드를 사용하여 [공개 추적 사용 안 함](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-editor-v2-0-overview) 기능을 사용할지 여부를 확인할 수 있습니다.
 * 프로그램 태그를 선택적으로 관리할 수 있는 두 가지 끝점이 추가되었습니다. [프로그램 태그 업데이트](/help/rest-api/programs.md) 끝점을 사용하면 프로그램 태그를 선택적으로 업데이트할 수 있습니다. [프로그램 태그 삭제](/help/rest-api/programs.md) 끝점을 사용하면 프로그램 태그를 선택적으로 삭제할 수 있습니다.
 * **isExecutable** 매개 변수를 [Clone Smart Campaign](/help/rest-api/smart-campaigns.md) 끝점에 추가했습니다. 이 매개 변수를 사용하면 프로그램을 실행 프로그램으로 복제할 수 있습니다.
-* **headStart** 필드를 [프로그램 API](/help/rest-api/programs.md)에 추가했습니다. 이를 통해 전자 메일 프로그램에 대한 [Head Start](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/email-programs/email-program-actions/head-start-for-email-programs) 설정을 만들고, 업데이트하고, 검색할 수 있습니다.
+* **headStart** 필드를 [프로그램 API](/help/rest-api/programs.md)에 추가했습니다. 이를 통해 전자 메일 프로그램에 대한 [Head Start](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/email-programs/email-program-actions/head-start-for-email-programs) 설정을 만들고, 업데이트하고, 검색할 수 있습니다.
 
 ### 결함 해결
 
@@ -9838,7 +9835,7 @@ _David_&#x200B;이(가) _2022-01-27_&#x200B;에 게시함
 
 ### Adobe IMS 통합
 
-* [Adobe IMS](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-with-adobe-identity/adobe-identity-management-overview)에 온보딩한 사용자는 [Marketo 사용자 관리 API](/help/rest-api/user-management.md)를 모두 사용할 수 없습니다. 다음 엔드포인트는 Adobe IMS와 통합된 Marketo 인스턴스에서 호출될 때 오류를 반환합니다. [사용자 초대](https://developer.adobe.com/marketo-apis/api/user/#operation/inviteUserUsingPOST), [ID로 초대된 사용자 가져오기](https://developer.adobe.com/marketo-apis/api/user/#operation/getInvitedUserUsingGET), [사용자 특성 업데이트](https://developer.adobe.com/marketo-apis/api/user/#operation/updateUserAttributeUsingPOST), [사용자 삭제](https://developer.adobe.com/marketo-apis/api/user/#operation/deleteUserUsingPOST) 및 [초대된 사용자 삭제](https://developer.adobe.com/marketo-apis/api/user/#operation/deleteInvitedUserUsingPOST). 대신 [Adobe 사용자 관리 API](https://developer.adobe.com/umapi/)를 사용해야 합니다.
+* [Adobe IMS](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-with-adobe-identity/adobe-identity-management-overview)에 온보딩한 사용자는 [Marketo 사용자 관리 API](/help/rest-api/user-management.md)를 모두 사용할 수 없습니다. 다음 엔드포인트는 Adobe IMS와 통합된 Marketo 인스턴스에서 호출될 때 오류를 반환합니다. [사용자 초대](https://developer.adobe.com/marketo-apis/api/user/#operation/inviteUserUsingPOST), [ID로 초대된 사용자 가져오기](https://developer.adobe.com/marketo-apis/api/user/#operation/getInvitedUserUsingGET), [사용자 특성 업데이트](https://developer.adobe.com/marketo-apis/api/user/#operation/updateUserAttributeUsingPOST), [사용자 삭제](https://developer.adobe.com/marketo-apis/api/user/#operation/deleteUserUsingPOST) 및 [초대된 사용자 삭제](https://developer.adobe.com/marketo-apis/api/user/#operation/deleteInvitedUserUsingPOST). 대신 [Adobe 사용자 관리 API](https://developer.adobe.com/umapi/)를 사용해야 합니다.
 
 _David_&#x200B;이(가) _2022-03-14_&#x200B;에 게시함
 
@@ -9846,12 +9843,12 @@ _David_&#x200B;이(가) _2022-03-14_&#x200B;에 게시함
 
 2022년 5월에는 기존 REST API를 개선하고 여러 결함을 해결하고 있습니다. 아래의 전체 업데이트 목록을 참조하십시오.
 
-* Marketo Engage 인스턴스에서 [SFDC 동기화](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync)를 사용하도록 설정한 경우 [회사](/help/rest-api/companies.md), [영업 기회](/help/rest-api/opportunities.md) 및 [영업 사원](/help/rest-api/sales-persons.md) 레코드를 검색하는 기능을 추가했습니다.
-* 이메일 제목줄에서 [다이내믹 콘텐츠](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/using-dynamic-content-in-an-email)을(를) 검색할 수 있도록 [이메일 다이내믹 콘텐츠 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#operation/getEmailDynamicContentUsingGET) 끝점을 업데이트했습니다. 이 기능은 지정된 이메일이 이메일 템플릿에 연결되어 있는지 여부에 관계없이 작동합니다.
+* Marketo Engage 인스턴스에서 [SFDC 동기화](/help/rest-api/companies.md) 또는 [Microsoft Dynamics 동기화](/help/rest-api/opportunities.md)를 사용하도록 설정한 경우 [회사](/help/rest-api/sales-persons.md), [영업 기회](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) 및 [영업 사원](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync) 레코드를 검색하는 기능을 추가했습니다.
+* 이메일 제목줄에서 [다이내믹 콘텐츠](https://developer.adobe.com/marketo-apis/api/asset/#operation/getEmailDynamicContentUsingGET)을(를) 검색할 수 있도록 [이메일 다이내믹 콘텐츠 가져오기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/using-dynamic-content-in-an-email) 끝점을 업데이트했습니다. 이 기능은 지정된 이메일이 이메일 템플릿에 연결되어 있는지 여부에 관계없이 작동합니다.
 
 `POST /rest/asset/v1/form/{id}/field/State.json?values=[{"label":"Alaska"},{"value":"AK"},{"label":"West Virginia","value":"WV"},{"label":"Wyoming","value":"WY"}]`
 
-* **isNot** 유형 [Invisibility 규칙](/help/rest-api/forms.md)에 대해 여러 비교 값을 추가할 수 있도록 [양식 필드 표시 규칙 추가](https://developer.adobe.com/marketo-apis/api/asset/#operation/getAllProgramMemberFieldsUsingGET) 끝점을 업데이트했습니다. 다음은 한 예입니다.
+* [isNot](https://developer.adobe.com/marketo-apis/api/asset/#operation/getAllProgramMemberFieldsUsingGET) 유형 **Invisibility 규칙**&#x200B;에 대해 여러 비교 값을 추가할 수 있도록 [양식 필드 표시 규칙 추가](/help/rest-api/forms.md) 끝점을 업데이트했습니다. 다음은 한 예입니다.
 
 `POST /rest/asset/v1/form/{id}/field/LastName/visibility.json?visibilityRule={"ruleType":"show","rules":[{"subjectField":"LastName","operator":"isNot","values":["A","B","C"]}`
 
@@ -9868,9 +9865,9 @@ _David_&#x200B;이(가) _2022-05-09_&#x200B;에 게시함
 LWe가 내보내기 프로그램 멤버 작업 끝점 만들기를 호출할 때 사용할 수 있는 몇 가지 필터를 새로 추가했습니다. 많은 필터들이 추출된 데이터 세트를 정제하기 위해 서로 조합되어 사용될 수 있다는 점에 유의한다.
 
 * **programIds** 필터를 사용하여 처리량을 개선하는 데 도움이 되는 최대 10개의 프로그램 식별자를 지정할 수 있습니다.
-* **isExhausted** 필터를 사용하여 [콘텐츠를 모두 사용한 사용자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/drip-nurturing/using-engagement-programs/people-who-have-exhausted-content)의 레코드를 필터링할 수 있습니다.
-* **groothCadence** 필터를 사용하여 [참여 프로그램 케이던스](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/program-flow-actions/change-engagement-program-cadence)를 기준으로 레코드를 필터링할 수 있습니다.
-* **statusNames** 필터를 사용하여 하나 이상의 [프로그램 상태](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/understanding-program-membership)에 대한 레코드를 필터링할 수 있습니다.
+* **isExhausted** 필터를 사용하여 [콘텐츠를 모두 사용한 사용자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/drip-nurturing/using-engagement-programs/people-who-have-exhausted-content)의 레코드를 필터링할 수 있습니다.
+* **groothCadence** 필터를 사용하여 [참여 프로그램 케이던스](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/program-flow-actions/change-engagement-program-cadence)를 기준으로 레코드를 필터링할 수 있습니다.
+* **statusNames** 필터를 사용하여 하나 이상의 [프로그램 상태](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/understanding-program-membership)에 대한 레코드를 필터링할 수 있습니다.
 * **updatedAt** 필터를 사용하여 날짜 범위를 기준으로 레코드를 필터링할 수 있습니다.
 
 ### 공지
@@ -9884,7 +9881,7 @@ _David_&#x200B;이(가) _2022-09-03_&#x200B;에 게시함
 2022년 10월에 기존 REST API를 개선합니다. 아래의 전체 업데이트 목록을 참조하십시오.
 
 * 가져오기 프로세스 중에 영업 사원 레코드에 잠재 고객 추가를 지원하도록 [대량 잠재 고객 가져오기 API](/help/rest-api/bulk-lead-import.md)를 개선했습니다. 이 작업은 가져오기 파일에 **externalSalesPersonId** 필드를 포함하여 수행됩니다.
-* 점수 유형 필드를 만들 때 발생한 [잠재 고객 필드 만들기](/help/rest-api/leads.md) 엔드포인트 문제를 해결했습니다. 이 필드는 Marketo Engage UI의 [점수 변경](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/change-score) 흐름 작업에서 사용할 수 없습니다. [LM-166815]
+* 점수 유형 필드를 만들 때 발생한 [잠재 고객 필드 만들기](/help/rest-api/leads.md) 엔드포인트 문제를 해결했습니다. 이 필드는 Marketo Engage UI의 [점수 변경](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/change-score) 흐름 작업에서 사용할 수 없습니다. [LM-166815]
 
 ### 공지
 
@@ -9906,7 +9903,7 @@ _케니_&#x200B;이(가) _2022-11-04_&#x200B;에 게시함
 
 ### 벌크 납 추출
 
-* 구독에 대한 대량 추출 API 일일 용량 할당을 볼 수 있도록 Marketo Engage 관리 UI가 향상되었습니다. 또한 지난 7일 동안 API-User의 용량 사용을 볼 수 있습니다. 자세한 내용은 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/settings/bulk-export-api-information)를 참조하세요.
+* 구독에 대한 대량 추출 API 일일 용량 할당을 볼 수 있도록 Marketo Engage 관리 UI가 향상되었습니다. 또한 지난 7일 동안 API-User의 용량 사용을 볼 수 있습니다. 자세한 내용은 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/settings/bulk-export-api-information)를 참조하세요.
 
 ### 결함 해결
 
@@ -9914,7 +9911,7 @@ _케니_&#x200B;이(가) _2022-11-04_&#x200B;에 게시함
 
 ### 공지
 
-* REST API 및 HTTP 응답 메시지 변경 [이유 구문](https://www.rfc-editor.org/rfc/rfc7230#section-3.1.2)에 대해서는 Marketo 커뮤니티에서 [이 문서](https://nation.marketo.com/t5/product-documents/upcoming-change-to-marketo-rest-api/ta-p/331698)를 참조하십시오.
+* REST API 및 HTTP 응답 메시지 변경 [이유 구문](https://nation.marketo.com/t5/product-documents/upcoming-change-to-marketo-rest-api/ta-p/331698)에 대해서는 Marketo 커뮤니티에서 [이 문서](https://www.rfc-editor.org/rfc/rfc7230#section-3.1.2)를 참조하십시오.
 * 프로그램 구성원 특성 **statusReason**&#x200B;을(를) 업데이트할 수 있도록 변경했습니다.
 
 _David_&#x200B;이(가) _2023-01-21_&#x200B;에 게시함

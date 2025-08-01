@@ -2,7 +2,7 @@
 title: 데이터 스트림
 description: 데이터 스트림 개요
 exl-id: 5617b6a5-ebc8-4d97-a290-e3b87f83e360
-source-git-commit: 43bcafd335a2fdc709e917ef74504500422c2889
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
 source-wordcount: '1596'
 ht-degree: 1%
@@ -95,7 +95,7 @@ Dell 고객의 마케팅 조직은 적시에 집중하는 마케팅 캠페인에
 | 마케팅 폴더 | 만들기, 편집, 삭제 |
 | 육성 프로그램 | 복제, 생성, 삭제, 채널 편집, 프로그램 설정 수정, 프로그램 스트림 수정, 프로그램 토큰 수정, 이름 바꾸기 |
 | 세그먼트 | 만들기, 삭제, 편집, 이름 바꾸기 |
-| 세그먼테이션 | 승인, 만들기, 삭제, 초안 작성, 초안 삭제됨, 이름 바꾸기, 승인 취소 |
+| 세분화 | 승인, 만들기, 삭제, 초안 작성, 초안 삭제됨, 이름 바꾸기, 승인 취소 |
 | 스마트 캠페인 | 중단, 활성화, 복제, 생성, 비활성화, 삭제, 편집, 캠페인 일정 수정, 흐름 단계 작업 수정, 스마트 목록 설정 수정, 이동, 이름 바꾸기 |
 | 코드 조각 | 승인, 초안이 없는 승인, 복제, 생성, 삭제, 편집, 이름 변경, 승인 취소 |
 | 관리자 UI -> Launchpoint -> 통합 | 만들기, 삭제, 편집 |
@@ -124,7 +124,7 @@ Dell 고객의 마케팅 조직은 적시에 집중하는 마케팅 캠페인에
             "munchkinId": "123-ABC-456",
             "imsOrgId": "ADOBEORGID@AdobeOrg",
             "user": 253,
-            "userId": "example@marketo.com"          
+            "userId": "example@marketo.com"
         }
     }
 }
@@ -262,7 +262,7 @@ Adobe IO를 설정하려면 공개 설명서 섹션에서 [Adobe IO를 사용하
 
 ### Marketo에서 사용자 감사 데이터 스트림 설정
 
-사용자 감사 데이터 스트림은 현재 다른 3개의 데이터 스트림과 함께 성능 패키지의 일부로 사용할 수 있습니다. 패키지에 대한 자세한 내용은 제품 제한 및 기능에 대한 [제품 설명 페이지](https://helpx.adobe.com/kr/legal/product-descriptions/adobe-marketo-engage---product-description.html)를 참조하세요.
+사용자 감사 데이터 스트림은 현재 다른 3개의 데이터 스트림과 함께 성능 패키지의 일부로 사용할 수 있습니다. 패키지에 대한 자세한 내용은 제품 제한 및 기능에 대한 [제품 설명 페이지](https://helpx.adobe.com/legal/product-descriptions/adobe-marketo-engage---product-description.html)를 참조하세요.
 
 ### Adobe I/O 설정
 

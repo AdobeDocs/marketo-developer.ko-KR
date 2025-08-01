@@ -3,10 +3,10 @@ title: scheduleCampaign
 feature: SOAP, Smart Campaigns
 description: schedule캠페인 SOAP 호출
 exl-id: a9ef2c16-34ef-4e0f-b765-e332335b0b81
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
 source-wordcount: '252'
-ht-degree: 2%
+ht-degree: 3%
 
 ---
 
@@ -30,10 +30,10 @@ requestCampaign 함수와 유사하게 기존 토큰을 재정의하는 내 토�
 | --- | --- | --- |
 | programName | 필수 | 포함된 프로그램의 이름 |
 | campaignName | 필수 | 스마트 캠페인의 이름 |
-| 캠페인 실행 | 선택 사항 | 예약된 캠페인을 실행하는 시간(W3C WSDL 날짜 형식)입니다. |
-| cloneToProgramName | 선택 사항 | 이 속성이 있으면 캠페인의 상위 프로그램이 복제되고 새로 생성된 캠페인이 예약됩니다. 속성은 결과 프로그램에 대해 원하는 이름을 지정합니다. 참고: 이 필드를 사용하는 경우 하루에 10번만 호출할 수 있습니다. |
-| programTokenList->attrib->name | 선택 사항 | 새 값을 보낼 토큰의 이름입니다. Marketo UI 내에서처럼 전체 토큰 형식을 사용합니다. 즉, &quot;{{my.message}}&quot; |
-| programTokenList->attrib->value | 선택 사항 | 연결된 토큰 이름의 값입니다. |
+| 캠페인 실행 | 선택 사항입니다 | 예약된 캠페인을 실행하는 시간(W3C WSDL 날짜 형식)입니다. |
+| cloneToProgramName | 선택 사항입니다 | 이 속성이 있으면 캠페인의 상위 프로그램이 복제되고 새로 생성된 캠페인이 예약됩니다. 속성은 결과 프로그램에 대해 원하는 이름을 지정합니다. 참고: 이 필드를 사용하는 경우 하루에 10번만 호출할 수 있습니다. |
+| programTokenList->attrib->name | 선택 사항입니다 | 새 값을 보낼 토큰의 이름입니다. Marketo UI 내에서처럼 전체 토큰 형식을 사용합니다. 즉, &quot;{{my.message}}&quot; |
+| programTokenList->attrib->value | 선택 사항입니다 | 연결된 토큰 이름의 값입니다. |
 
 ## 요청 XML
 
@@ -87,21 +87,21 @@ requestCampaign 함수와 유사하게 기존 토큰을 재정의하는 내 토�
 
 ```php
  <?php
- 
+
   $debug = true;
- 
+
   $marketoSoapEndPoint     = "";  // CHANGE ME
   $marketoUserId           = "";  // CHANGE ME
   $marketoSecretKey        = "";  // CHANGE ME
   $marketoNameSpace        = "http://www.marketo.com/mktows/";
- 
+
   // Create Signature
   $dtzObj = new DateTimeZone("America/Los_Angeles");
   $dtObj  = new DateTime('now', $dtzObj);
   $timeStamp = $dtObj->format(DATE_W3C);
   $encryptString = $timeStamp . $marketoUserId;
   $signature = hash_hmac('sha1', $encryptString, $marketoSecretKey);
- 
+
   // Create SOAP Header
   $attrs = new stdClass();
   $attrs->mktowsUserId = $marketoUserId;
@@ -112,7 +112,7 @@ requestCampaign 함수와 유사하게 기존 토큰을 재정의하는 내 토�
   if ($debug) {
     $options["trace"] = true;
   }
- 
+
   // Create Request
   $params = new stdClass();
   $params->programName = "Trav-Demo-Program";
@@ -120,14 +120,14 @@ requestCampaign 함수와 유사하게 기존 토큰을 재정의하는 내 토�
   $dtObj = new DateTime('now', $dtzObj);
   $params->campaignRunAt = $dtObj->format(DATE_W3C);
   $params->cloneToProgramName = "TestProgramCloneFromSOAP";
- 
+
   $token = new stdClass();
   $token->name = "{{my.message}}";
   $token->value = "Updated message";
- 
+
   $params->programTokenList = array("attrib" => $token);
   $params = array("paramsScheduleCampaign" => $params);
- 
+
   $soapClient = new SoapClient($marketoSoapEndPoint ."?WSDL", $options);
   try {
     $response = $soapClient->__soapCall('scheduleCampaign', $params, $options, $authHdr);
@@ -140,7 +140,7 @@ requestCampaign 함수와 유사하게 기존 토큰을 재정의하는 내 토�
     print "RAW response:\n" .$soapClient->__getLastResponse() ."\n";
   }
   print_r($response);
- 
+
 ?>
 ```
 
@@ -162,75 +162,75 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.Marshaller;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
- 
+
 public class ScheduleCampaign {
- 
- 
+
+
     public static void main(String[] args) {
         System.out.println("Executing Schedule Campaign");
         try {
             URL marketoSoapEndPoint = new URL("CHANGE ME" + "?WSDL");
             String marketoUserId = "CHANGE ME";
             String marketoSecretKey = "CHANGE ME";
-             
+
             QName serviceName = new QName("http://www.marketo.com/mktows/", "MktMktowsApiService");
             MktMktowsApiService service = new MktMktowsApiService(marketoSoapEndPoint, serviceName);
             MktowsPort port = service.getMktowsApiSoapPort();
-             
+
             // Create Signature
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
             String text = df.format(new Date());
-            String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);           
+            String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);
             String encryptString = requestTimestamp + marketoUserId ;
-             
+
             SecretKeySpec secretKey = new SecretKeySpec(marketoSecretKey.getBytes(), "HmacSHA1");
             Mac mac = Mac.getInstance("HmacSHA1");
             mac.init(secretKey);
             byte[] rawHmac = mac.doFinal(encryptString.getBytes());
             char[] hexChars = Hex.encodeHex(rawHmac);
-            String signature = new String(hexChars); 
-             
+            String signature = new String(hexChars);
+
             // Set Authentication Header
             AuthenticationHeader header = new AuthenticationHeader();
             header.setMktowsUserId(marketoUserId);
             header.setRequestTimestamp(requestTimestamp);
             header.setRequestSignature(signature);
-             
+
             // Create Request
             ParamsScheduleCampaign request = new ParamsScheduleCampaign();
-             
+
             request.setProgramName("Trav-Demo-Program");
             request.setCampaignName("Batch Campaign Example");
-             
+
             // Create setCampaignRunAt timestamp
             GregorianCalendar gc = new GregorianCalendar();
             gc.setTimeInMillis(new Date().getTime());
-             
+
             DatatypeFactory factory = DatatypeFactory.newInstance();
             ObjectFactory objectFactory = new ObjectFactory();
             JAXBElement<XMLGregorianCalendar> setCampaignRunAtValue = objectFactory.createParamsScheduleCampaignCampaignRunAt(factory.newXMLGregorianCalendar(gc));
             request.setCampaignRunAt(setCampaignRunAtValue);
 
             request.setCloneToProgramName("TestProgramCloneFromSOAP");
-             
+
             ArrayOfAttrib aoa = new ArrayOfAttrib();
-             
+
             Attrib attrib = new Attrib();
             attrib.setName("{{my.message}}");
             attrib.setValue("Updated message");
-             
+
             aoa.getAttribs().add(attrib);
-             
+
             JAXBElement<ArrayOfAttrib> arrayOfAttrib = objectFactory.createParamsScheduleCampaignProgramTokenList(aoa);
-            request.setProgramTokenList(arrayOfAttrib);         
-             
+            request.setProgramTokenList(arrayOfAttrib);
+
             SuccessScheduleCampaign result = port.scheduleCampaign(request, header);
- 
+
             JAXBContext context = JAXBContext.newInstance(SuccessScheduleCampaign.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             m.marshal(result, System.out);
-             
+
         }
         catch(Exception e) {
             e.printStackTrace();
@@ -259,9 +259,9 @@ hashedsignature = OpenSSL::HMAC.hexdigest(digest, marketoSecretKey, encryptStrin
 requestSignature = hashedsignature.to_s
 
 #Create SOAP Header
-headers = { 
-    'ns1:AuthenticationHeader' => { "mktowsUserId" => mktowsUserId, "requestSignature" => requestSignature,                     
-    "requestTimestamp"  => requestTimestamp 
+headers = {
+    'ns1:AuthenticationHeader' => { "mktowsUserId" => mktowsUserId, "requestSignature" => requestSignature,
+    "requestTimestamp"  => requestTimestamp
     }
 }
 

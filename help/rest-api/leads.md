@@ -3,7 +3,7 @@ title: 잠재 고객
 feature: REST API
 description: 잠재 고객 API 호출에 대한 세부 정보
 exl-id: 0a2f7c38-02ae-4d97-acfe-9dd108a1f733
-source-git-commit: 7a3df193e47e7ee363c156bf24f0941879c6bd13
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
 source-wordcount: '3338'
 ht-degree: 2%
@@ -37,20 +37,20 @@ GET /rest/v1/leads/describe.json
 ### 응답
 
 ```json
-{  
+{
    "requestId":"37ca#1475b74e276",
    "success":true,
-   "result":[  
-      {  
+   "result":[
+      {
          "id":2,
          "displayName":"Company Name",
          "dataType":"string",
          "length":255,
-         "rest":{  
+         "rest":{
             "name":"company",
             "readOnly":false
          },
-         "soap":{  
+         "soap":{
             "name":"Company",
             "readOnly":false
          }
@@ -95,11 +95,11 @@ GET /rest/v1/lead/{id}.json
 
 필터 유형별 리드 가져오기는 동일한 유형의 레코드를 반환하지만, 페이지당 최대 300개를 반환할 수 있습니다. `filterType` 및 `filterValues` 쿼리 매개 변수가 필요합니다.
 
-`filterType`은(는) 모든 사용자 지정 필드 또는 일반적으로 사용되는 대부분의 필드를 허용합니다. `filterType`에서 사용할 수 있는 검색 가능한 필드의 포괄적인 목록을 가져오려면 `Describe2` 끝점을 호출하십시오. 사용자 지정 필드로 검색할 때 `string`, `email`, `integer` 데이터 형식만 지원됩니다. 위에서 설명한 Describe 방법을 사용하여 필드 세부 사항(설명, 유형 등)을 가져올 수 있습니다.
+`filterType`은(는) 모든 사용자 지정 필드 또는 일반적으로 사용되는 대부분의 필드를 허용합니다. `Describe2`에서 사용할 수 있는 검색 가능한 필드의 포괄적인 목록을 가져오려면 `filterType` 끝점을 호출하십시오. 사용자 지정 필드로 검색할 때 `string`, `email`, `integer` 데이터 형식만 지원됩니다. 위에서 설명한 Describe 방법을 사용하여 필드 세부 사항(설명, 유형 등)을 가져올 수 있습니다.
 
 `filterValues`은(는) 쉼표로 구분된 형식으로 최대 300개의 값을 허용합니다. 호출은 잠재 고객 필드가 포함된 `filterValues` 중 하나와 일치하는 레코드를 검색합니다. 리드 필터와 일치하는 리드 수가 1,000보다 크면 &quot;1003, 필터와 일치하는 결과가 너무 많습니다.&quot;라는 오류가 반환됩니다.
 
-GET 요청의 총 길이가 8KB를 초과하는 경우 HTTP 오류: &quot;414, URI 너무 김&quot;(RFC 7231에 따라)이 반환됩니다. 이 문제를 해결하려면 GET을 요청으로 변경하고, _method=GET 매개 변수를 추가하고, POST 본문에 쿼리 문자열을 배치할 수 있습니다.
+GET 요청의 총 길이가 8KB를 초과하는 경우 HTTP 오류: &quot;414, URI 너무 김&quot;(RFC 7231에 따라)이 반환됩니다. 해결 방법으로, GET을 POST로 변경하고, _method=GET 매개 변수를 추가하고, 요청 본문에 쿼리 문자열을 배치할 수 있습니다.
 
 ### 요청
 
@@ -175,21 +175,21 @@ POST /rest/v1/leads.json
 ### 본문
 
 ```json
-{  
+{
    "action":"createOnly",
    "lookupField":"email",
-   "input":[  
-      {  
+   "input":[
+      {
          "email":"kjashaedd-1@klooblept.com",
          "firstName":"Kataldar-1",
          "postalCode":"04828"
       },
-      {  
+      {
          "email":"kjashaedd-2@klooblept.com",
          "firstName":"Kataldar-2",
          "postalCode":"04828"
       },
-      {  
+      {
          "email":"kjashaedd-3@klooblept.com",
          "firstName":"Kataldar-3",
          "postalCode":"04828"
@@ -201,19 +201,19 @@ POST /rest/v1/leads.json
 ### 응답
 
 ```json
-{  
+{
    "requestId":"e42b#14272d07d78",
    "success":true,
-   "result":[  
-      {  
+   "result":[
+      {
          "id":50,
          "status":"created"
       },
-      {  
+      {
          "id":51,
          "status":"created"
       },
-      {  
+      {
          "id":52,
          "status":"created"
       }
@@ -700,7 +700,7 @@ POST /rest/v1/leads/push.json
 * 쿠키 값을 기반으로 잠재 고객 연결 허용
 * 양식 필드 유효성 검사 수행
 
-양식을 제출하는 것은 표준 리드 데이터베이스 패턴을 따릅니다. 단일 오브젝트 레코드가 POST 요청의 JSON 본문의 필수 입력 멤버에 전달됩니다. 필수 `formId` 구성원에 대상 Marketo 양식 ID가 포함되어 있습니다.
+양식을 제출하는 것은 표준 리드 데이터베이스 패턴을 따릅니다. 단일 오브젝트 레코드가 POST 요청의 JSON 본문의 필수 입력 멤버로 전달됩니다. 필수 `formId` 구성원에 대상 Marketo 양식 ID가 포함되어 있습니다.
 
 선택적 `programId`을(를) 사용하여 리드를 추가할 프로그램을 지정하거나 프로그램 멤버 사용자 지정 필드를 추가할 프로그램을 지정할 수 있습니다. `programId`을(를) 제공하면 프로그램에 잠재 고객이 추가되고 양식에 포함된 모든 프로그램 멤버 필드도 추가됩니다. 지정된 프로그램은 양식과 동일한 작업 영역에 있어야 합니다. 양식에 프로그램 멤버 사용자 지정 필드가 없고 `programId`이(가) 제공되지 않으면 프로그램에 잠재 고객이 추가되지 않습니다. 양식이 프로그램에 있고 `programId`이(가) 제공되지 않은 경우 양식에 하나 이상의 프로그램 멤버 사용자 정의 필드가 있으면 해당 프로그램이 사용됩니다.
 
@@ -764,7 +764,7 @@ Content-Type: application/json
 }
 ```
 
-여기에서 Marketo Engage UI 내에서 해당 &quot;양식 작성&quot; 활동 세부 사항을 볼 수 있습니다.
+여기에서는 Marketo Engage UI 내에서 해당 &quot;양식 작성&quot; 활동 세부 사항을 볼 수 있습니다.
 
 ![양식 UI 작성](assets/fill_out_form_activity_details.png)
 
@@ -781,7 +781,7 @@ POST /rest/v1/leads/{id}/merge.json?leadId=1324
 ### 응답
 
 ```json
-{  
+{
    "requestId":"e42b#14272d07d78",
    "success":true
 }
@@ -804,7 +804,7 @@ POST /rest/v1/leads/{id}/associate.json?cookie=id:287-GTJ-838%26token:_mch-marke
 ### 응답
 
 ```json
-{  
+{
    "requestId":"e42b#14272d07d78",
    "success":true
 }
@@ -816,7 +816,7 @@ POST /rest/v1/leads/{id}/associate.json?cookie=id:287-GTJ-838%26token:_mch-marke
 잠재 고객 레코드는 정적 목록 또는 프로그램의 구성원을 기반으로 검색할 수도 있습니다. 또한 잠재 고객이 멤버인 모든 정적 목록, 프로그램 또는 스마트 캠페인을 검색할 수 있습니다.
 
 응답 구조 및 선택적 매개 변수는 필터 유형별 리드 가져오기의 매개 변수와 동일하지만 filterType 및 filterValues를 이 API와 함께 사용할 수 없습니다.
-Marketo UI를 통해 목록 ID에 액세스하려면 목록으로 이동합니다. `id` 목록은 정적 목록 `https://app-**&#x200B;**.marketo.com/#ST1001A1`의 URL에 있습니다. 이 예제에서 1001은 목록의 `id`입니다.
+Marketo UI를 통해 목록 ID에 액세스하려면 목록으로 이동합니다. `id` 목록은 정적 목록 `https://app-****.marketo.com/#ST1001A1`의 URL에 있습니다. 이 예제에서 1001은 목록의 `id`입니다.
 
 ### 요청
 
@@ -827,14 +827,14 @@ GET /rest/v1/list/{listId}/leads.json?batchSize=3
 ### 응답
 
 ```json
-{ 
+{
    "requestId":"e42b#14272d07d78",
    "success":true,
    "nextPageToken":
 "PS5VL5WD4UOWGOUCJR6VY7JQO2KUXL7BGBYXL4XH4BYZVPYSFBAONP4V4KQKN4SSBS55U4LEMAKE6===",
     "result":[
        {
-            "id":50,  
+            "id":50,
             "email":"kjashaedd@klooblept.com",
             "firstName":"Kataldar",
              "postalCode":"04828"
@@ -843,11 +843,11 @@ GET /rest/v1/list/{listId}/leads.json?batchSize=3
            "id":2343,
            "email":"kjashaedd@klooblept.com",
            "firstName":"Kataldar",
-           "postalCode":"04828" 
+           "postalCode":"04828"
        },
       {
            "id":88498,
-           "email":"kjashaedd@klooblept.com", 
+           "email":"kjashaedd@klooblept.com",
            "firstName":"Kataldar",
          "postalCode":"04828"
          }

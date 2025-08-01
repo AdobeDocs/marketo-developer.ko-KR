@@ -3,7 +3,7 @@ title: 기회
 feature: REST API
 description: ' Marketo API를 사용하여 기회를 구성합니다.'
 exl-id: 46451285-4125-4857-890a-575069a68288
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
 source-wordcount: '786'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Marketo은 영업 기회 레코드를 읽고, 쓰고, 만들고, 업데이트하는 API를 표시합니다. Marketo에서 기회 레코드는 중간 Opportunity Role 객체를 통해 Lead 및 Contact Records에 연결되므로 Opportunity 는 많은 개별 Lead에 연결될 수 있습니다.  이러한 객체 유형은 모두 API를 통해 노출되며 대부분의 리드 데이터베이스 객체 유형과 마찬가지로 둘 다 해당 Describe 호출을 가지고 있습니다. 이 호출은 객체 유형에 대한 메타데이터를 반환합니다.
 
-영업 기회 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=ko) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=ko)가 활성화된 구독에 대한 읽기 전용 액세스입니다.
+영업 기회 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=en) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=en)가 활성화된 구독에 대한 읽기 전용 액세스입니다.
 
 ## 설명
 
@@ -27,48 +27,48 @@ GET /rest/v1/opportunities/describe.json
 ```
 
 ```json
-{  
+{
    "requestId":"185d6#14b51985ff0",
    "success":true,
-   "result":[  
-      {  
+   "result":[
+      {
          "name":"opportunity",
          "displayName":"Opportunity",
          "createdAt":"2015-02-03T22:36:23Z",
          "updatedAt":"2015-02-03T22:36:24Z",
          "idField":"marketoGUID",
-         "dedupeFields":[  
+         "dedupeFields":[
             "externalOpportunityId"
          ],
-         "searchableFields":[  
-            [  
+         "searchableFields":[
+            [
                "externalOpportunityId"
             ],
-            [  
+            [
                "marketoGUID"
             ]
          ],
-         "fields":[  
-            {  
+         "fields":[
+            {
                "name":"marketoGUID",
                "displayName":"Marketo GUID",
                "dataType":"string",
                "length":36,
                "updateable":false
             },
-            {  
+            {
                "name":"createdAt",
                "displayName":"Created At",
                "dataType":"datetime",
                "updateable":false
             },
-            {  
+            {
                "name":"updatedAt",
                "displayName":"Updated At",
                "dataType":"datetime",
                "updateable":false
             },
-            {  
+            {
                "name":"externalOpportunityId",
                "displayName":"External Opportunity Id",
                "dataType":"string",
@@ -92,11 +92,11 @@ GET /rest/v1/opportunities.json?filterType=marketoGUID&filterValues=dff23271-f99
 ```
 
 ```json
-{  
+{
    "requestId":"e42b#14272d07d78",
    "success":true,
-   "result":[  
-      {  
+   "result":[
+      {
          "seq":0,
          "marketoGUID":"dff23271-f996-47d7-984f-f2676861b5fa ",
          "externalOpportunityId":"19UYA31581L000000",
@@ -105,7 +105,7 @@ GET /rest/v1/opportunities.json?filterType=marketoGUID&filterValues=dff23271-f99
          "amount":"1604.47",
          "source":"Inbound Sales Call/Email"
       },
-      {  
+      {
          "seq":1,
          "marketoGUID":"dff23271-f996-47d7-984f-f2676861b5fc ",
          "externalOpportunityId":"29UYA31581L000000",
@@ -118,7 +118,7 @@ GET /rest/v1/opportunities.json?filterType=marketoGUID&filterValues=dff23271-f99
 }
 ```
 
-또한 기본 및 최대 300인 배치 크기 `batchSize`보다 큰 집합을 통해 페이징하기 위한 추가 영업 기회 필드 반환용 선택적 쿼리 매개 변수 `fields`, `nextPageToken`을(를) 포함할 수 있습니다.  `fields` 목록을 요청할 때 특정 필드가 요청되었지만 반환되지 않은 경우 값이 null인 것으로 간주됩니다.
+또한 기본 및 최대 300인 배치 크기 `fields`보다 큰 집합을 통해 페이징하기 위한 추가 영업 기회 필드 반환용 선택적 쿼리 매개 변수 `nextPageToken`, `batchSize`을(를) 포함할 수 있습니다.  `fields` 목록을 요청할 때 특정 필드가 요청되었지만 반환되지 않은 경우 값이 null인 것으로 간주됩니다.
 
 ## 만들기 및 업데이트
 
@@ -133,18 +133,18 @@ POST /rest/v1/opportunities.json
 ```
 
 ```json
-{  
+{
    "action":"createOrUpdate",
    "dedupeBy":"dedupeFields",
-   "input":[  
-      {  
+   "input":[
+      {
          "externalOpportunityId":"19UYA31581L000000",
          "name":"Chairs",
          "description":"Chairs",
          "amount":"1604.47",
          "source":"Inbound Sales Call/Email"
       },
-      {  
+      {
          "externalOpportunityId":"29UYA31581L000000",
          "name":"Big Dog Day Care-Phase12",
          "description":"Big Dog Day Care-Phase12",
@@ -156,16 +156,16 @@ POST /rest/v1/opportunities.json
 ```
 
 ```json
-{  
+{
    "requestId":"e42b#14272d07d78",
    "success":true,
-   "result":[  
-      {  
+   "result":[
+      {
          "seq":0,
          "status":"updated",
          "marketoGUID":"dff23271-f996-47d7-984f-f2676861b5fb"
       },
-      {  
+      {
          "seq":1,
          "status":"created",
          "marketoGUID":"cff23271-f996-47d7-984f-f2676861b5fb"
@@ -303,13 +303,13 @@ POST /rest/v1/opportunities/delete.json
 ```
 
 ```json
-{ 
+{
    "deleteBy":"dedupeFields",
-   "input":[ 
-      { 
+   "input":[
+      {
          "externalOpportunityId":"19UYA31581L000000"
       },
-      { 
+      {
          "externalOpportunityId":"29UYA31581L000000"
       }
    ]
@@ -317,16 +317,16 @@ POST /rest/v1/opportunities/delete.json
 ```
 
 ```json
-{ 
+{
    "requestId":"e42b#14272d07d78",
    "success":true,
-   "result":[ 
-      { 
+   "result":[
+      {
          "seq":0,
          "marketoGUID":"dff23271-f996-47d7-984f-f2676861b5fb",
          "status":"deleted"
       },
-      { 
+      {
          "seq":1,
          "marketoGUID":"cff23271-f996-47d7-984f-f2676861b5fb",
          "status":"deleted"

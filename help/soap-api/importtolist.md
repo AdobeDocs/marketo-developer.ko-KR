@@ -3,7 +3,7 @@ title: 가져오기 대상 목록
 feature: SOAP
 description: importToList SOAP 호출
 exl-id: 7e4930a9-a78f-44a3-9e8c-eeca908080c8
-source-git-commit: 8a019985fc9ce7e1aa690ca26bfa263cd3c48cfc
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
 source-wordcount: '393'
 ht-degree: 3%
@@ -24,7 +24,7 @@ ht-degree: 3%
 | mary@company.com | Mary | 로저스 |
 | wanda@megacorp.com | 완다 | 윌리엄스 |
 
-`name` 값이 아닌 `importFileHeader`에서 `displayName` 값을 사용해야 합니다.
+`displayName` 값이 아닌 `importFileHeader`에서 `name` 값을 사용해야 합니다.
 
 **다이내믹 전자 메일 콘텐츠:** 선택적으로, 전자 메일에서 내 토큰에 대한 대체 요소로 작용하는 리드별로 값을 전달할 수 있습니다.
 
@@ -44,12 +44,12 @@ ht-degree: 3%
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
-| programName | 필수 여부 | 정적 목록이 포함된 프로그램 이름 |
+| programName | 필수 | 정적 목록이 포함된 프로그램 이름 |
 | campaignName | 선택 사항입니다 | 내 토큰 재정의를 사용하는 경우 이는 해당 토큰이 사용될 캠페인의 이름입니다. 캠페인은 지정된 프로그램 내에 있어야 합니다. |
-| listName | 필수 여부 | 리드가 추가되는 Marketo의 정적 목록 이름 |
-| importFileHeader | 필수 여부 | 리드 속성 및 내 토큰 이름을 포함하여 가져올 리드에 대한 열 헤더입니다. |
-| importFileRows->stringItem | 필수 여부 | 쉼표로 구분된 값, 리드당 하나의 행 포함 |
-| importListMode | 필수 여부 | 유효한 옵션: `UPSERTLEADS` 및 `LISTONLY` |
+| listName | 필수 | 리드가 추가되는 Marketo의 정적 목록 이름 |
+| importFileHeader | 필수 | 리드 속성 및 내 토큰 이름을 포함하여 가져올 리드에 대한 열 헤더입니다. |
+| importFileRows->stringItem | 필수 | 쉼표로 구분된 값, 리드당 하나의 행 포함 |
+| importListMode | 필수 | 유효한 옵션: `UPSERTLEADS` 및 `LISTONLY` |
 | clearList | 선택 사항입니다 | true인 경우 가져오기 전에 정적 목록이 지워지고 false인 경우 잠재 고객이 추가됩니다. |
 
 ## 요청 XML
@@ -101,21 +101,21 @@ ht-degree: 3%
 
 ```php
  <?php
- 
+
   $debug = true;
- 
+
   $marketoSoapEndPoint     = "";  // CHANGE ME
   $marketoUserId           = "";  // CHANGE ME
   $marketoSecretKey        = "";  // CHANGE ME
   $marketoNameSpace        = "http://www.marketo.com/mktows/";
- 
+
   // Create Signature
   $dtzObj = new DateTimeZone("America/Los_Angeles");
   $dtObj  = new DateTime('now', $dtzObj);
   $timeStamp = $dtObj->format(DATE_W3C);
   $encryptString = $timeStamp . $marketoUserId;
   $signature = hash_hmac('sha1', $encryptString, $marketoSecretKey);
- 
+
   // Create SOAP Header
   $attrs = new stdClass();
   $attrs->mktowsUserId = $marketoUserId;
@@ -126,20 +126,20 @@ ht-degree: 3%
   if ($debug) {
     $options["trace"] = true;
   }
- 
+
   // Create Request
   $request = new stdClass();
   $request->programName = "Trav-Demo-Program";
   $request->campaignName = "Batch Campaign Example";
   $request->importFileHeader = "Last Name,First Name,Job Title,Company Name,Email Address";
- 
- 
+
+
   $request->importFileRows = array("Awesomesauce,Developer,Code Slinger,Marketo,dawesomesauce@marketo.com","Doe,Jane,VP Marketing,Jane Consulting,jdoe@janeconsulting.com");
   $request->importListMode = "UPSERTLEADS"; // UPSERTLEADS or LISTONLY
   $request->listName = "Trav-Test-List";
   $request->clearList = false;
   $params = array("paramsImportToList" => $request);
- 
+
   $soapClient = new SoapClient($marketoSoapEndPoint ."?WSDL", $options);
   try {
     $response = $soapClient->__soapCall('importToList', $params, $options, $authHdr);
@@ -151,7 +151,7 @@ ht-degree: 3%
     print "RAW request:\n" .$soapClient->__getLastRequest() ."\n";
     print "RAW response:\n" .$soapClient->__getLastResponse() ."\n";
   }
- 
+
   print_r($response);
 ?>
 ```
@@ -175,63 +175,63 @@ import javax.xml.bind.JAXBElement;
 import javax.xml.bind.Marshaller;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
- 
+
 public class ImportToList {
- 
+
     public static void main(String[] args) {
         System.out.println("Executing Import To List");
         try {
             URL marketoSoapEndPoint = new URL("CHANGE ME" + "?WSDL");
             String marketoUserId = "CHANGE ME";
             String marketoSecretKey = "CHANGE ME";
-             
+
             QName serviceName = new QName("http://www.marketo.com/mktows/", "MktMktowsApiService");
             MktMktowsApiService service = new MktMktowsApiService(marketoSoapEndPoint, serviceName);
             MktowsPort port = service.getMktowsApiSoapPort();
-             
+
             // Create Signature
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ");
             String text = df.format(new Date());
-            String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);           
+            String requestTimestamp = text.substring(0, 22) + ":" + text.substring(22);
             String encryptString = requestTimestamp + marketoUserId ;
-             
+
             SecretKeySpec secretKey = new SecretKeySpec(marketoSecretKey.getBytes(), "HmacSHA1");
             Mac mac = Mac.getInstance("HmacSHA1");
             mac.init(secretKey);
             byte[] rawHmac = mac.doFinal(encryptString.getBytes());
             char[] hexChars = Hex.encodeHex(rawHmac);
-            String signature = new String(hexChars); 
-             
+            String signature = new String(hexChars);
+
             // Set Authentication Header
             AuthenticationHeader header = new AuthenticationHeader();
             header.setMktowsUserId(marketoUserId);
             header.setRequestTimestamp(requestTimestamp);
             header.setRequestSignature(signature);
-             
+
             // Create Request
             ParamsImportToList request = new ParamsImportToList();
-             
+
             request.setProgramName("Trav-Demo-Program");
             request.setCampaignName("Batch Campaign Example");
             request.setImportFileHeader("Last Name,First Name,Job Title,Company Name,Email Address");
-             
+
             ArrayOfString rows = new ArrayOfString();
             rows.getStringItems().add("Awesomesauce,Developer,Code Slinger,Marketo,dawesomesauce@marketo.com");
             rows.getStringItems().add("Doe,Jane,VP Marketing,Jane Consulting,jdoe@janeconsulting.com");
             request.setImportFileRows(rows);
-             
+
             request.setImportListMode(ImportToListModeEnum.UPSERTLEADS);
             request.setListName("Trav-Test-List");
             request.setClearList(false);
-             
+
             SuccessImportToList result = port.importToList(request, header);
- 
- 
+
+
             JAXBContext context = JAXBContext.newInstance(SuccessImportToList.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
             m.marshal(result, System.out);
-             
+
         }
         catch(Exception e) {
             e.printStackTrace();
@@ -260,13 +260,13 @@ hashedsignature = OpenSSL::HMAC.hexdigest(digest, marketoSecretKey, encryptStrin
 requestSignature = hashedsignature.to_s
 
 #Create SOAP Header
-headers = { 
-    'ns1:AuthenticationHeader' => { "mktowsUserId" => mktowsUserId, "requestSignature" => requestSignature,                     
-    "requestTimestamp"  => requestTimestamp 
+headers = {
+    'ns1:AuthenticationHeader' => { "mktowsUserId" => mktowsUserId, "requestSignature" => requestSignature,
+    "requestTimestamp"  => requestTimestamp
     }
 }
 
-client = Savon.client(wsdl: 'http://app.marketo.com/soap/mktows/2_3?WSDL', soap_header: headers, endpoint: marketoSoapEndPoint, open_timeout: 90, read_timeout: 90, namespace_identifier: :ns1, env_namespace: 'SOAP-ENV') 
+client = Savon.client(wsdl: 'http://app.marketo.com/soap/mktows/2_3?WSDL', soap_header: headers, endpoint: marketoSoapEndPoint, open_timeout: 90, read_timeout: 90, namespace_identifier: :ns1, env_namespace: 'SOAP-ENV')
 
 #Create Request
 request = {

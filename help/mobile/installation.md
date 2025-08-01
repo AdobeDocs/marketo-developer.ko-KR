@@ -3,22 +3,22 @@ title: 설치
 feature: Mobile Marketing
 description: Mobile Marketo용 SDK를 설치하는 방법
 exl-id: e0b79d85-3509-46d2-a77d-cee211c5ec7f
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
-source-wordcount: '758'
+source-wordcount: '757'
 ht-degree: 0%
 
 ---
 
 # 설치
 
-Marketo Mobile SDK에 대한 설치 지침 아래 단계는 푸시 알림 및/또는 인앱 메시지를 보내는 데 필요합니다.
+Marketo Mobile SDK 설치 지침 아래 단계는 푸시 알림 및/또는 인앱 메시지를 보내는 데 필요합니다.
 
 ## iOS에 Marketo SDK 설치
 
-### 필요 조건
+### 사전 요구 사항
 
-1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)(응용 프로그램 비밀 키 및 Munchkin Id 얻기)
+1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin ID 얻기)
 1. [푸시 알림 설정](push-notifications.md)(선택 사항)
 
 ### CocoaPod를 통해 프레임워크 설치
@@ -28,7 +28,7 @@ Marketo Mobile SDK에 대한 설치 지침 아래 단계는 푸시 알림 및/�
 1. Podfile을 엽니다. `$ open -a Xcode Podfile`
 1. Podfile에 다음 줄을 추가합니다. `$ pod 'Marketo-iOS-SDK'`
 1. Podfile을 저장하고 닫습니다.
-1. Marketo iOS SDK를 다운로드하고 설치합니다. `$ pod install`
+1. Marketo iOS SDK을 다운로드하여 설치합니다. `$ pod install`
 1. Xcode에서 작업 영역을 엽니다. `$ open App.xcworkspace`
 
 ### Swift 패키지 관리자를 사용하여 프레임워크 설치
@@ -59,7 +59,7 @@ Marketo Mobile SDK에 대한 설치 지침 아래 단계는 푸시 알림 및/�
 
 ## SDK 초기화
 
-Marketo iOS SDK를 사용하려면 먼저 Munchkin 계정 ID 및 앱 비밀 키로 초기화해야 합니다. Marketo 관리 영역에서 &quot;모바일 앱 및 장치&quot; 아래에 있는 각 앱을 찾을 수 있습니다.
+Marketo iOS SDK을 사용하려면 먼저 Munchkin 계정 ID 및 앱 비밀 키로 초기화해야 합니다. Marketo 관리 영역에서 &quot;모바일 앱 및 장치&quot; 아래에 있는 각 앱을 찾을 수 있습니다.
 
 1. AppDelegate.m 파일(Objective-C) 또는 브리징 파일(Swift)을 열고 Marketo.h 헤더 파일을 가져옵니다.
 
@@ -91,7 +91,7 @@ sharedInstance.initialize(withMunchkinID: "munchkinAccountId", appSecret: "secre
 
 >[!ENDTABS]
 
-1. Marketo **[!UICONTROL Admin]** > **[!UICONTROL Mobile Apps and Devices]** 섹션에 있는 &quot;Munchkin 계정 ID&quot; 및 &quot;비밀 키&quot;를 사용하여 위의 `munkinAccountId` 및 `secretKey`을(를) 바꾸십시오.
+1. Marketo `munkinAccountId` > `secretKey` 섹션에 있는 &quot;Munchkin 계정 ID&quot; 및 &quot;비밀 키&quot;를 사용하여 위의 **[!UICONTROL Admin]** 및 **[!UICONTROL Mobile Apps and Devices]**&#x200B;을(를) 바꾸십시오.
 
 ## iOS 테스트 장치
 
@@ -110,10 +110,10 @@ sharedInstance.initialize(withMunchkinID: "munchkinAccountId", appSecret: "secre
 - (BOOL)application:(UIApplication *)app
             openURL:(NSURL *)url
             options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
-   
+
     return [[Marketo sharedInstance] application:app
                                          openURL:url
-                                         options:options];    
+                                         options:options];
 }
 ```
 
@@ -128,11 +128,11 @@ private func application(_ app: UIApplication, open url: URL, options: [UIApplic
 
 >[!ENDTABS]
 
-## Android에 Marketo SDK를 설치하는 방법
+## Android에 Marketo SDK을 설치하는 방법
 
-### 필요 조건
+### 사전 요구 사항
 
-1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)(응용 프로그램 비밀 키 및 Munchkin Id 얻기)
+1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin ID 얻기)
 1. [푸시 알림 설정](push-notifications.md#android_setup_push)(선택 사항)
 1. [Android용 Marketo SDK 다운로드](https://codeload.github.com/Marketo/android-sdk/zip/refs/heads/master)
 
@@ -165,7 +165,7 @@ private func application(_ app: UIApplication, open url: URL, options: [UIApplic
 
 ### SDK 초기화
 
-1. 앱에서 Application 또는 Activity 클래스를 열고 setContentView나 Application Context에서 Marketo SDK를 활동으로 가져옵니다.
+1. 앱에서 Application 또는 Activity 클래스를 열고 setContentView나 Application Context에서 Marketo SDK을 Activity로 가져옵니다.
 
    ```java
    // Initialize Marketo
@@ -175,7 +175,7 @@ private func application(_ app: UIApplication, open url: URL, options: [UIApplic
 
 1. ProGuard 구성(선택 사항)
 
-   앱에 ProGuard를 사용하는 경우 `proguard.cfg` 파일에 다음 줄을 추가합니다. 파일은 프로젝트 폴더 내에 있습니다. 이 코드를 추가하면 난독화 프로세스에서 Marketo SDK가 제외됩니다.
+   앱에 ProGuard를 사용하는 경우 `proguard.cfg` 파일에 다음 줄을 추가합니다. 파일은 프로젝트 폴더 내에 있습니다. 이 코드를 추가하면 난독화 프로세스에서 Marketo SDK이 제외됩니다.
 
    ```
    -dontwarn com.marketo.*
@@ -200,16 +200,16 @@ private func application(_ app: UIApplication, open url: URL, options: [UIApplic
 
 ## Firebase 클라우드 메시징 지원
 
-Android용 MME SDK(Software Development Kit)가 Android 앱 개발자를 위한 보다 유연하고 새로운 엔지니어링 기능을 포함하는 보다 현대적이고 안정적이며 확장 가능한 프레임워크로 업데이트되었습니다.
+Android용 MME 소프트웨어 개발 키트(SDK)가 Android 앱 개발자를 위한 유연성과 새로운 엔지니어링 기능을 포함하는 보다 현대적이고 안정적이며 확장 가능한 프레임워크로 업데이트되었습니다.
 
-이제 Android 앱 개발자는 이 SDK로 Google의 [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/)(FCM)을 직접 사용할 수 있습니다.
+이제 Android 앱 개발자는 이 SDK에서 Google의 [Firebase Cloud Messaging](https://firebase.google.com/docs/cloud-messaging/)&#x200B;(FCM)을 직접 사용할 수 있습니다.
 
 ### 애플리케이션에 FCM 추가
 
-1. Android 앱에서 최신 Marketo Android SDK를 통합합니다.  단계는 [GitHub](https://github.com/Marketo/android-sdk)에서 확인할 수 있습니다.
+1. Android 앱에서 최신 Marketo Android SDK 통합.  단계는 [GitHub](https://github.com/Marketo/android-sdk)에서 확인할 수 있습니다.
 1. Firebase 콘솔에서 Firebase 앱을 구성합니다.
-   1. [&#128279;](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/)Firebase 콘솔에서 프로젝트를 만들거나 추가합니다.
-      1. [Firebase 콘솔](https://accounts.google.com/ServiceLogin?passive=1209600&amp;osid=1&amp;continue=https://console.firebase.google.com/&amp;followup=https://console.firebase.google.com/)에서 `Add Project`을(를) 선택합니다.
+   1. [](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)Firebase 콘솔에서 프로젝트를 만들거나 추가합니다.
+      1. [Firebase 콘솔](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)에서 `Add Project`을(를) 선택합니다.
       1. 기존 Google Cloud 프로젝트 목록에서 GCM 프로젝트를 선택하고 `Add Firebase`을(를) 선택합니다.
       1. Firebase 시작 화면에서 `Add Firebase to your Android App`을(를) 선택합니다.
       1. 패키지 이름과 SHA-1을 입력하고 `Add App`을(를) 선택하십시오. Firebase 앱에 대한 새 `google-services.json` 파일이 다운로드되었습니다.
@@ -236,13 +236,13 @@ Android용 MME SDK(Software Development Kit)가 Android 앱 개발자를 위한 
             ```
             dependencies {
               compile 'com.google.firebase:firebase-core:17.4.0'
-            } 
-            // Add to the bottom of the file 
+            }
+            // Add to the bottom of the file
             apply plugin: 'com.google.gms.google-services'
             ```
 
          1. 마지막으로 ID에 나타나는 막대에서 &quot;지금 동기화&quot;를 클릭합니다
-   1. 앱의 매니페스트 편집 FCM SDK는 필요한 모든 권한과 필요한 수신기 기능을 자동으로 추가합니다. 앱 매니페스트에서 다음 사용되지 않거나 메시지 중복을 일으킬 수 있으므로 유해할 수 있는 요소를 제거해야 합니다.
+   1. 앱의 매니페스트 편집 FCM SDK은 필요한 모든 권한과 필요한 수신기 기능을 자동으로 추가합니다. 앱 매니페스트에서 다음 사용되지 않거나 메시지 중복을 일으킬 수 있으므로 유해할 수 있는 요소를 제거해야 합니다.
 
       ```xml
       <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -258,6 +258,6 @@ Android용 MME SDK(Software Development Kit)가 Android 앱 개발자를 위한 
         <intent-filter>
           <action android:name="com.google.android.c2dm.intent.RECEIVE" />
           <category android:name="<your-package-name> />
-        </intent-filter> 
+        </intent-filter>
       </receiver>
       ```

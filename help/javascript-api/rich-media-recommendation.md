@@ -3,10 +3,10 @@ title: 리치 미디어 권장 사항
 description: 리치 미디어 권장 사항
 feature: Javascript
 exl-id: ee92e46d-e529-40a2-a0d0-ee233916f004
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
 source-wordcount: '812'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 3%
 1. 페이지 본문에서
    1. 템플릿을 표시할 위치에 템플릿 태그(div 클래스)를 배치합니다
 
-자세한 내용은 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media)를 참조하세요.
+자세한 내용은 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media)를 참조하세요.
 
 ## 템플릿 태그
 
@@ -30,7 +30,7 @@ ht-degree: 3%
 | 클래스 | 필수 | 이 div HTML 요소가 RTP 권장 div라고 지정합니다. |
 | data-rtp-template-id | 필수 | 템플릿 ID입니다. 이렇게 하면 권장 사항의 맞춤이 결정됩니다. 가로 정렬에는 &quot;template1&quot;, 세로 정렬에는 &quot;template2&quot; 또는 제목과 설명만 포함하는 세로 정렬에는 &quot;template3&quot;을 사용합니다. 스크립트는 이 `div.Permissible` 값(template1, template2, template3)에 일치하는 템플릿을 삽입합니다. |
 
-### 예시
+### 예
 
 권장 사항을 수평 정렬로 표시하려면 &quot;template1&quot;을 사용합니다.
 
@@ -56,11 +56,11 @@ ht-degree: 3%
 
 이 메서드는 페이지의 모든 리치 미디어 `<divs>`을(를) 권장 사항으로 채웁니다.
 
-### 사용량
+### 사용
 
 `rtp('get', 'rcmd', 'richmedia');`
 
-| 매개 변수 | 선택 사항/필수 | 유형 | 설명 |
+| 매개변수 | 선택 사항/필수 | 유형 | 설명 |
 |---|---|---|---|
 | &#39;get&#39; | 필수 | 문자열 | 메서드 작업. |
 | &#39;rcmd&#39; | 필수 | 문자열 | 메서드 이름입니다. |
@@ -73,20 +73,20 @@ ht-degree: 3%
 
 참고: 이 메서드를 사용할 때는 rtp(&#39;get&#39;,&#39;rcmd&#39;, &#39;richmedia&#39;)를 호출하기 전에 호출해야 합니다.
 
-### 사용량
+### 사용
 
 `rtp('set', 'rcmd', 'richmedia', 'template_id', conf_obj);`
 
-| 매개 변수 | 선택 사항/필수 | 유형 | 설명 |
+| 매개변수 | 선택 사항/필수 | 유형 | 설명 |
 |---|---|---|---|
 | &#39;설정&#39; | 필수 | 문자열 | 메서드 작업. |
 | &#39;rcmd&#39; | 필수 | 문자열 | 메서드 이름입니다. |
 | &#39;richmedia&#39; | 필수 | 문자열 | 하위 메서드 이름. |
-| template_id | 선택 사항 | 문자열 | 구성 변경에 대한 템플릿 ID입니다. 한 템플릿에 대한 설정 변경 사항을 지정하는 데 사용합니다. |
+| template_id | 선택 사항입니다 | 문자열 | 구성 변경에 대한 템플릿 ID입니다. 한 템플릿에 대한 설정 변경 사항을 지정하는 데 사용합니다. |
 | conf_obj | 필수 | 오브젝트 | 새 구성. 개체에는 모든 구성이 키/값 쌍으로 저장됩니다. |
 
 
-### 예시
+### 예
 
 이 코드 조각은 템플릿의 제목 텍스트를 변경합니다.
 
@@ -103,7 +103,7 @@ rtp("set", "rcmd", "richmedia","template1",
 ```javascript
 rtp("set", "rcmd", "richmedia",
     {
-        "template1": 
+        "template1":
         {
             "rcmd.title.text": "RECOMMENDED CONTENT",
             "rcmd.general.font.family": "arial",
@@ -164,7 +164,7 @@ rtp("set", "rcmd", "richmedia",
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>RTP recommendation</title>
-<!-- RTP tag --> 
+<!-- RTP tag -->
 <script type='text/javascript'>
 
 // This tag needs to be replaced with your account tag
@@ -196,7 +196,7 @@ rtp('get','rcmd', 'richmedia');
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>RTP recommendation</title>
-<!-- RTP tag --> 
+<!-- RTP tag -->
 <script type='text/javascript'>
 
 // This tag needs to be replaced with your account tag
@@ -232,13 +232,13 @@ rtp('get','rcmd', 'richmedia');
 
 #### 리치 미디어 추천 템플릿 #1의 예
 
-**이름**: template1 **설명**: 이미지, 제목, 설명 및 콜 투 액션 단추를 포함하는 가로 콘텐츠.
+**이름**: template1 **설명**: 이미지, 제목, 설명 및 call to action 단추가 포함된 가로 콘텐츠
 
 ![리치 미디어 템플릿](assets/rich-media-template1.png)
 
 #### 리치 미디어 추천 템플릿 #2의 예
 
-**이름**: template2 **설명**: 이미지, 제목, 설명 및 콜 투 액션 단추를 포함하는 세로 콘텐츠
+**이름**: template2 **설명**: 이미지, 제목, 설명 및 call to action 단추가 포함된 세로 콘텐츠입니다.
 
 ![리치 미디어 템플릿](assets/rich-media-template2.png)
 

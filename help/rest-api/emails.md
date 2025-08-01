@@ -3,7 +3,7 @@ title: 이메일
 feature: REST API
 description: 이메일 에셋 조작을 위한 API입니다.
 exl-id: 6875730d-c74a-42cf-a3d2-dad7a3ac535d
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
 source-wordcount: '1946'
 ht-degree: 1%
@@ -14,13 +14,13 @@ ht-degree: 1%
 
 [전자 메일 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails) 전자 메일 자산을 조작하기 위해 전체 REST 끝점 집합이 제공됩니다.
 
-참고: [Marketo Predictive Content](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/predictive-content/working-with-predictive-content/understanding-predictive-content)을(를) 사용하는 경우 예측 콘텐츠가 포함된 이메일을 참조하는 경우 다음 끝점이 실패합니다. [이메일 콘텐츠 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailContentByIdUsingGET), [이메일 콘텐츠 업데이트 섹션](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateEmailComponentContentUsingPOST), [이메일 초안 승인](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/approveDraftUsingPOST). 호출은 709 오류 코드와 해당 오류 메시지를 반환합니다.
+참고: [Marketo Predictive Content](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/predictive-content/working-with-predictive-content/understanding-predictive-content)을(를) 사용하는 경우 예측 콘텐츠가 포함된 이메일을 참조하는 경우 다음 끝점이 실패합니다. [이메일 콘텐츠 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailContentByIdUsingGET), [이메일 콘텐츠 업데이트 섹션](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateEmailComponentContentUsingPOST), [이메일 초안 승인](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/approveDraftUsingPOST). 호출은 709 오류 코드와 해당 오류 메시지를 반환합니다.
 
 ## 쿼리
 
 전자 메일의 쿼리 패턴은 템플릿의 쿼리 패턴과 동일하여 [id](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByIdUsingGET), [이름](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByNameUsingGET) 및 [찾아보기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailUsingGET)와(과) 찾아보기 및 이름 API가 있는 폴더를 기준으로 필터링을 허용합니다.
 
-참고: 전자 메일이 [A/B 테스트](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/email-programs/email-program-actions/email-test-a-b-test/add-an-a-b-test)를 사용하는 전자 메일 프로그램의 일부인 경우 [Id로 전자 메일 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByIdUsingGET), [이름별로 전자 메일 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByNameUsingGET), [전자 메일 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailUsingGET) 끝점을 사용하여 해당 전자 메일을 쿼리할 수 없습니다. 호출은 성공을 나타내지만 다음 경고를 포함합니다. &quot;지정된 검색 기준에 대한 에셋을 찾을 수 없습니다.&quot;
+참고: 전자 메일이 [A/B 테스트](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/email-programs/email-program-actions/email-test-a-b-test/add-an-a-b-test)를 사용하는 전자 메일 프로그램의 일부인 경우 [Id로 전자 메일 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByIdUsingGET), [이름별로 전자 메일 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByNameUsingGET), [전자 메일 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailUsingGET) 끝점을 사용하여 해당 전자 메일을 쿼리할 수 없습니다. 호출은 성공을 나타내지만 다음 경고를 포함합니다. &quot;지정된 검색 기준에 대한 에셋을 찾을 수 없습니다.&quot;
 
 ### ID별
 
@@ -260,19 +260,19 @@ GET /rest/asset/v1/email/ccFields.json
 ```
 
 ```json
-{  
+{
    "success":true,
    "errors":[ ],
    "requestId":"e54b#16796fdbd4e",
    "warnings":[ ],
-   "result":[  
-      {  
+   "result":[
+      {
          "attributeId":"157",
          "objectName":"lead",
          "displayName":"Lead Owner Email Address",
          "apiName":"leadOwnerEmailAddress"
       },
-      {  
+      {
          "attributeId":"396",
          "objectName":"company",
          "displayName":"Account Owner Email Address",
@@ -345,7 +345,7 @@ name=My New Email 02 - deverly&folder={"id":1017,"type":"Program"}&template=24&d
             "isOpenTrackingDisabled": false,
             "version": 2,
             "autoCopyToText": false,
-            "ccFields": null,  
+            "ccFields": null,
             "preHeader": null
         }
     ]
@@ -411,7 +411,7 @@ description=This is an Email&name=Updated Email
             "isOpenTrackingDisabled": false,
             "version": 2,
             "autoCopyToText": false,
-            "ccFields": null,  
+            "ccFields": null,
             "preHeader": null
         }
     ]
@@ -452,7 +452,7 @@ subject={"type":"Text","value":"Gettysburg Address"}&fromEmail={"type":"Text","v
 
 ### 편집 가능한 섹션 업데이트
 
-편집 가능한 섹션은 개별 htmlId로 업데이트됩니다. 경로 매개 변수로는 이메일 ID와 섹션의 htmlId만 필요하지만 유형, 값 및 textValue는 선택 사항입니다. 유형은 &quot;Text&quot;, &quot;DynamicContent&quot; 또는 &quot;Snippet&quot; 중 하나일 수 있으며 값에 전달되는 내용에 영향을 줍니다. 유형이 텍스트이면 값은 섹션의 HTML 콘텐츠를 포함하는 문자열입니다. DynamicContent이면 3개의 멤버가 있는 JSON 블록이며, 유형은 &quot;DynamicContent&quot;이고, 콘텐츠는 사용할 세그먼테이션의 ID인 세그먼테이션이며, 기본값은 섹션의 기본 HTML 콘텐츠를 포함하는 문자열입니다. 선택적 textValue 매개 변수는 섹션의 텍스트 버전을 포함하는 문자열입니다. 데이터는 JSON이 아닌 POST x-www-form-urlencoded로 전달됩니다.
+편집 가능한 섹션은 개별 htmlId로 업데이트됩니다. 경로 매개 변수로는 이메일 ID와 섹션의 htmlId만 필요하지만 유형, 값 및 textValue는 선택 사항입니다. 유형은 &quot;Text&quot;, &quot;DynamicContent&quot; 또는 &quot;Snippet&quot; 중 하나일 수 있으며 값에 전달되는 내용에 영향을 줍니다. 유형이 텍스트이면 값은 섹션의 HTML 콘텐츠가 포함된 문자열입니다. DynamicContent이면 3개의 멤버가 있는 JSON 블록이며, 유형은 &quot;DynamicContent&quot;이고, 콘텐츠는 사용할 세그먼테이션의 ID인 세그먼테이션이며, 기본값은 섹션의 기본 HTML 콘텐츠가 포함된 문자열입니다. 선택적 textValue 매개 변수는 섹션의 텍스트 버전을 포함하는 문자열입니다. 데이터는 JSON이 아닌 POST x-www-form-urlencoded로 전달됩니다.
 
 ```
 POST /rest/asset/v1/email/{id}/content/{htmlId}.json
@@ -480,11 +480,11 @@ type=Text&value=<h1>Hello World!</h1>&textValue=Hello World!
 }
 ```
 
-참고: 이메일에 포함된 코드 조각에 대해 텍스트에 대한 자동 복사가 비활성화되면 코드 조각의 HTML 값이 업데이트되고, 이메일에 있는 다른 섹션의 텍스트 버전이 업데이트되므로 이메일의 텍스트 버전에는 자동 복사가 비활성화되는 경우 예상대로 이전 버전이 아닌 코드 조각 HTML의 업데이트된 값이 반영된 텍스트가 표시됩니다.
+참고: 이메일에 포함된 코드 조각에 대해 텍스트에 대한 자동 복사가 비활성화되면 코드 조각의 HTML 값이 업데이트되고, 이메일에 있는 다른 섹션의 텍스트 버전이 업데이트되므로 이메일의 텍스트 버전에는 자동 복사가 비활성화되는 이전 버전이 아니라 코드 조각 HTML의 업데이트된 값이 반영된 텍스트가 표시됩니다.
 
 ## 모듈
 
-이메일 편집기 1.0에서 모듈은 템플릿에 정의된 이메일의 섹션입니다. 모듈은 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Modules)에서 설명한 대로 요소, 변수 및 기타 HTML 컨텐츠의 조합을 포함할 수 있습니다. Marketo은 이메일 내의 모듈 관리를 위한 API 세트를 제공합니다. HTTP POST 메서드가 필요한 모듈 관련 끝점의 경우 본문의 형식은 &quot;application/x-www-form-urlencoded&quot;(JSON이 아님)로 지정됩니다.
+이메일 편집기 1.0에서 모듈은 템플릿에 정의된 이메일의 섹션입니다. 모듈은 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Modules)에서 설명한 대로 요소, 변수 및 기타 HTML 컨텐츠의 조합을 포함할 수 있습니다. Marketo은 이메일 내의 모듈 관리를 위한 API 세트를 제공합니다. HTTP POST 메서드가 필요한 모듈 관련 끝점의 경우 본문의 형식은 &quot;application/x-www-form-urlencoded&quot;(JSON이 아님)로 지정됩니다.
 
 대부분의 모듈 관련 끝점에는 경로 매개 변수로 &quot;moduleId&quot;가 필요합니다. 모듈을 설명하는 문자열입니다. moduleIds가 [전자 메일 콘텐츠 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailContentByIdUsingGET) 끝점에 의해 &quot;htmlId&quot; 특성으로 반환됩니다(아래 [쿼리](#modules_query) 섹션 참조).
 
@@ -535,7 +535,7 @@ GET /rest/asset/v1/email/{moduleId}/content.json
     {
       "htmlId": "video2",
       "value": {
-        
+
       },
       "contentType": "Video",
       "parentHtmlId": "video",
@@ -705,7 +705,7 @@ GET /rest/asset/v1/email/{moduleId}/content.json
 }
 ```
 
-결과 배열에는 모듈 및 HTML 요소를 함께 설명하는 요소가 포함되어 있습니다. 모듈 요소에는 &quot;contentType&quot;: &quot;Module&quot; 속성과 &quot;index&quot; 속성이 포함됩니다. moduleId는 &quot;htmlId&quot; 속성에 저장됩니다.
+결과 배열에는 모듈 요소와 HTML 요소를 함께 설명하는 요소가 포함되어 있습니다. 모듈 요소에는 &quot;contentType&quot;: &quot;Module&quot; 속성과 &quot;index&quot; 속성이 포함됩니다. moduleId는 &quot;htmlId&quot; 속성에 저장됩니다.
 
 위의 &quot;Skeleton&quot; 예제를 계속 진행하면 다음 표에는 이메일에 포함된 moduleIds 및 해당 인덱스에 대한 요약이 나와 있습니다.
 
@@ -720,7 +720,7 @@ GET /rest/asset/v1/email/{moduleId}/content.json
 | 문서 | 6 |
 | 꼬리말 | 7 |
 
-#### 추가
+#### 이벤트가 복제되지 않도록 하면서 현재 이벤트 변수에
 
 사용 중인 전자 메일 템플릿에 포함된 기존 모듈 중 하나를 선택하여 전자 메일에 [모듈을 추가](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/addModuleUsingPOST)합니다. 이렇게 하려면 경로 매개 변수로 이메일 ID와 moduleId를 지정합니다. 색인 쿼리 매개 변수는 필수이며 이메일에 있는 모듈의 순서를 결정합니다. 인덱스 값이 기존의 가장 큰 인덱스 값을 초과하는 경우 모듈이 이메일에 추가됩니다.
 
@@ -856,7 +856,7 @@ name=MarketoVideo
 
 ## 변수
 
-이메일 편집기 1.0에서는 변수를 사용하여 이메일의 요소에 대한 값을 저장합니다. 각 변수는 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Variables)에서 설명한 대로 HTML에 Marketo 관련 구문을 추가하여 정의됩니다. Marketo은 이메일 내에서 변수를 관리하기 위한 API 세트를 제공합니다.
+이메일 편집기 1.0에서는 변수를 사용하여 이메일의 요소에 대한 값을 저장합니다. 각 변수는 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Variables)에 설명된 대로 Marketo 관련 구문을 HTML에 추가하여 정의합니다. Marketo은 이메일 내에서 변수를 관리하기 위한 API 세트를 제공합니다.
 
 ### 쿼리
 
@@ -1112,7 +1112,7 @@ value=2
 }
 ```
 
-다음 예제에서는 &quot;ctaLinkText&quot; 라는 로컬 변수를 &quot;Click this button!&quot; 값으로 업데이트합니다. in moduleId &quot;CTA&quot;.
+다음 예제에서는 &quot;ctaLinkText&quot; 라는 로컬 변수를 &quot;Click this button!&quot; 값으로 업데이트합니다. moduleId &quot;CTA&quot;에 있습니다.
 
 ```
 POST /rest/asset/v1/email/1032/variable/ctaLinkText.json
@@ -1235,7 +1235,7 @@ POST /rest/asset/v1/email/{id}/delete.json
 
 ## 복제
 
-Marketo은 이메일을 복제하는 간단한 방법을 제공합니다. 이 유형의 요청은 application/x-www-url-urlencoded POST으로 만들어지며 2개의 필수 매개 변수인 이름 및 폴더를 사용합니다. ID와 유형이 포함된 JSON 개체입니다. 설명은 선택적 매개 변수도 됩니다. 승인된 버전이 없으면 초안 버전이 복제됩니다.
+Marketo은 이메일을 복제하는 간단한 방법을 제공합니다. 이 유형의 요청은 application/x-www-url-urlencoded POST로 수행되며, 두 개의 필수 매개 변수인 이름 및 폴더를 ID와 유형이 포함된 JSON 개체로 사용합니다. 설명은 선택적 매개 변수도 됩니다. 승인된 버전이 없으면 초안 버전이 복제됩니다.
 
 ```
 POST /rest/asset/v1/email/{id}/clone.json
@@ -1357,9 +1357,9 @@ GET /rest/asset/v1/email/{id}/fullContent.json
 
 ## HTML 바꾸기
 
-Marketo은 전자 메일 에셋의 전체 콘텐츠를 대체할 [전자 메일 전체 콘텐츠 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/createEmailFullContentUsingPOST) 끝점을 제공합니다. 이 엔드포인트는 UI &quot;코드 편집&quot; 기능이 사용된 버전 1.0 이메일과 상위 템플릿과의 관계가 끊어진 이메일에서만 사용할 수 있습니다. 이 API는 주로 프로그램의 일부로 복제된 에셋에서 사용하기 위한 것이며 표준 콘텐츠 끝점으로 수정할 수 없습니다. 다이내믹 콘텐츠가 포함된 이메일은 지원되지 않습니다. 또한 관계가 손상되지 않은 이메일에 대한 HTML을 바꾸려고 하면 오류가 반환됩니다.
+Marketo은 전자 메일 에셋의 전체 콘텐츠를 대체할 [전자 메일 전체 콘텐츠 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/createEmailFullContentUsingPOST) 끝점을 제공합니다. 이 엔드포인트는 UI &quot;코드 편집&quot; 기능이 사용된 버전 1.0 이메일과 상위 템플릿과의 관계가 끊어진 이메일에서만 사용할 수 있습니다. 이 API는 주로 프로그램의 일부로 복제된 에셋에서 사용하기 위한 것이며 표준 콘텐츠 끝점으로 수정할 수 없습니다. 다이내믹 콘텐츠가 포함된 이메일은 지원되지 않습니다. 또한 관계가 손상되지 않은 이메일에서 HTML을 바꾸려고 하면 오류가 반환됩니다.
 
-이 엔드포인트에는 콘텐츠 유형이 필요합니다. 경로에 id 매개 변수, 이메일 ID를 포함하고 본문에 매개 변수 하나를 포함하는 multipart/form-data가 콘텐츠 유형이 &quot;text/html&quot;인 전체 HTML 이메일 문서입니다. 잘못된 형식의 HTML 문서에서 경고가 발생하지만 승인을 허용하지 않을 수 있지만, 문서에 JavaScript 및/또는 `<script>`태그를 포함하면 호출이 실패하고 오류가 발생합니다.
+이 엔드포인트에는 콘텐츠 유형이 필요합니다. 경로에 id 매개 변수, 이메일 ID를 포함하고 본문에 매개 변수 하나를 포함하는 multipart/form-data가 콘텐츠 유형이 &quot;text/html&quot;인 전체 HTML 이메일 문서로서 콘텐츠입니다. 잘못된 형식의 HTML 문서에서 경고가 발생하지만 승인을 허용하지 않을 수 있지만, 문서에 JavaScript 및/또는 `<script>`태그를 포함하면 호출이 실패하고 오류가 발생합니다.
 
 ```
 POST /rest/asset/v1/email/{id}/fullContent.json

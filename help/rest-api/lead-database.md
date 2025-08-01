@@ -3,9 +3,9 @@ title: 잠재 고객 데이터베이스
 feature: REST API, Database
 description: 주 리드 데이터베이스를 조작합니다.
 exl-id: e62e381f-916b-4d56-bc3d-0046219b68d3
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
 workflow-type: tm+mt
-source-wordcount: '1345'
+source-wordcount: '1342'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 Marketo 리드 데이터베이스 API는 활동, 기회 및 회사와 같은 Marketo의 개인 및 개인 관련 데이터를 교환할 수 있도록 Marketo에서 제공하는 가장 자주 사용되는 API입니다.
 
-## 오브젝트
+## 개체
 
 리드 데이터베이스 객체에는 다음이 포함됩니다.
 
@@ -34,7 +34,7 @@ Marketo 리드 데이터베이스 API는 활동, 기회 및 회사와 같은 Mar
 
 매개 변수 및 모델링 정보를 포함한 리드 데이터베이스 API 끝점의 전체 목록은 [리드 데이터베이스 API 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/)를 참조하십시오.
 
-기본 CRM 통합이 활성화된 인스턴스(Microsoft Dynamics 또는 Salesforce.com)의 경우 Company, Opportunity, Opportunity Role 및 Sales Person API가 비활성화됩니다. 이 레코드는 활성화되면 CRM을 통해 관리되며 Marketo의 API를 통해 액세스하거나 업데이트할 수 없습니다.
+기본 CRM 통합이 활성화된 인스턴스(Microsoft Dynamics 또는 Salesforce.com)의 경우 회사, 영업 기회, 영업 기회 역할 및 영업 사원 API가 비활성화됩니다. 이 레코드는 활성화되면 CRM을 통해 관리되며 Marketo의 API를 통해 액세스하거나 업데이트할 수 없습니다.
 
 - 최대 배치 크기(표준): 300개 레코드
 - 최대 배치 크기(벌크): 10MB 파일
@@ -44,79 +44,79 @@ Marketo 리드 데이터베이스 API는 활동, 기회 및 회사와 같은 Mar
 
 ## 설명
 
-리드, 회사, 기회, 역할, SalesPersons 및 사용자 정의 객체의 경우 description API가 제공됩니다. 이를 호출하면 개체의 메타데이터와 업데이트 및 쿼리에 사용할 수 있는 필드 목록이 검색됩니다. 설명은 Marketo과의 적절한 통합을 디자인하는 데 있어 중요한 부분입니다. 또한 객체를 생성, 업데이트 및 쿼리할 수 있는 방법뿐만 아니라 객체와 상호 작용할 수 있고 상호 작용할 수 없는 방법에 대한 풍부한 메타데이터를 제공합니다. Describe Leads 외에도 각 Leads는 `dedupeFields` 응답 매개 변수에서 `deduplication`에 사용할 수 있는 키 목록을 반환합니다. 필드 목록은 `searchableFields` 응답 매개 변수에서 쿼리를 위한 키로 사용할 수 있습니다.
+리드, 회사, 기회, 역할, SalesPersons 및 사용자 정의 객체의 경우 description API가 제공됩니다. 이를 호출하면 개체의 메타데이터와 업데이트 및 쿼리에 사용할 수 있는 필드 목록이 검색됩니다. 설명은 Marketo과의 적절한 통합을 디자인하는 데 있어 중요한 부분입니다. 또한 객체를 생성, 업데이트 및 쿼리할 수 있는 방법뿐만 아니라 객체와 상호 작용할 수 있고 상호 작용할 수 없는 방법에 대한 풍부한 메타데이터를 제공합니다. Describe Leads 외에도 각 Leads는 `deduplication` 응답 매개 변수에서 `dedupeFields`에 사용할 수 있는 키 목록을 반환합니다. 필드 목록은 `searchableFields` 응답 매개 변수에서 쿼리를 위한 키로 사용할 수 있습니다.
 
 ```
 GET /rest/v1/opportunities/roles/describe.json
 ```
 
 ```json
-{  
+{
    "requestId":"185d6#14b51985ff0",
    "success":true,
-   "result":[  
-      {  
+   "result":[
+      {
          "name":"opportunityRole",
          "displayName":"Opportunity Role",
          "createdAt":"2015-02-03T22:36:23Z",
          "updatedAt":"2015-02-03T22:36:24Z",
          "idField":"marketoGUID",
-         "dedupeFields":[  
+         "dedupeFields":[
             "externalOpportunityId",
             "leadId",
             "role"
          ],
-         "searchableFields":[  
-            [  
+         "searchableFields":[
+            [
                "externalOpportunityId",
                "leadId",
                "role"
             ],
-            [  
+            [
                "marketoGUID"
             ],
-            [  
+            [
                "leadId"
             ],
-            [  
+            [
                "externalOpportunityId"
             ]
          ],
-         "fields":[  
-            {  
+         "fields":[
+            {
                "name":"marketoGUID",
                "displayName":"Marketo GUID",
                "dataType":"string",
                "length":36,
                "updateable":false
             },
-            {  
+            {
                "name":"externalOpportunityId",
                "displayName":"External Opportunity Id",
                "dataType":"string",
                "length":50,
                "updateable":false
             },
-            {  
+            {
                "name":"leadId",
                "displayName":"Lead Id",
                "dataType":"integer",
                "updateable":false
             },
-            {  
+            {
                "name":"role",
                "displayName":"Role",
                "dataType":"string",
                "length":50,
                "updateable":false
             },
-            {  
+            {
                "name":"isPrimary",
                "displayName":"Is Primary",
                "dataType":"boolean",
                "updateable":true
             },
-            {  
+            {
                "name":"externalCreatedDate",
                "displayName":"External Created Date",
                "dataType":"datetime",
@@ -140,7 +140,7 @@ GET /rest/v1/opportunities/roles/describe.json
 GET /rest/v1/{type}.json?filterType={field to query}&filterValues={comma-separated list of possible values}
 ```
 
-리드를 제외한 모든 오브젝트에 대해 해당 설명 호출의 searchableFields에서 {쿼리할 필드}를 선택하고 최대 300개의 값을 쉼표로 구분한 목록을 구성할 수 있습니다. 다음과 같은 선택적 쿼리 매개 변수도 있습니다.
+가망 고객을 제외한 모든 개체에 대해 해당 설명 호출의 searchableFields에서 {field to query}을(를) 선택하고 최대 300개의 값을 쉼표로 구분한 목록을 구성할 수 있습니다. 다음과 같은 선택적 쿼리 매개 변수도 있습니다.
 
 - `batchSize` - 반환할 결과 수의 정수 수입니다. 기본값과 최대값은 300입니다.
 - `nextPageToken` - 페이징에 대한 이전 호출에서 반환된 토큰입니다. 자세한 내용은 [페이징 토큰](paging-tokens.md)을 참조하십시오.
@@ -154,11 +154,11 @@ GET /rest/v1/opportunities.json?filterType=idField&filterValues=dff23271-f996-47
 ```
 
 ```json
-{  
+{
    "requestId":"e42b#14272d07d78",
    "success":true,
-   "result":[  
-      {  
+   "result":[
+      {
          "seq":0,
          "marketoGUID":"dff23271-f996-47d7-984f-f2676861b5fa ",
          "externalOpportunityId":"19UYA31581L000000",
@@ -167,7 +167,7 @@ GET /rest/v1/opportunities.json?filterType=idField&filterValues=dff23271-f996-47
          "amount":"1604.47",
          "source":"Inbound Sales Call/Email"
       },
-      {  
+      {
          "seq":1,
          "marketoGUID":"dff23271-f996-47d7-984f-f2676861b5fc ",
          "externalOpportunityId":"29UYA31581L000000",
@@ -204,33 +204,33 @@ filterType=idField&filterValues=dff23271-f996-47d7-984f-f2676861b5fa&dff23271-f9
 
 ### 복합 키
 
-복합 키를 쿼리하는 패턴은 JSON 본문이 있는 POST을 제출해야 하므로 단순 키와 다릅니다. 여러 필드가 있는 `dedupeFields` 옵션이 `filterType`(으)로 사용되는 경우에만 모든 경우에 필요하지 않습니다. 현재 복합 키는 Opportunity 역할과 일부 사용자 지정 개체에서만 사용됩니다. `dedupeFields`의 복합 키가 있는 영업 기회 역할에 대한 쿼리의 예를 살펴보겠습니다.
+복합 키를 쿼리하는 패턴은 JSON 본문이 있는 POST를 제출해야 하므로 단순 키와 다릅니다. 여러 필드가 있는 `dedupeFields` 옵션이 `filterType`(으)로 사용되는 경우에만 모든 경우에 필요하지 않습니다. 현재 복합 키는 Opportunity 역할과 일부 사용자 지정 개체에서만 사용됩니다. `dedupeFields`의 복합 키가 있는 영업 기회 역할에 대한 쿼리의 예를 살펴보겠습니다.
 
 ```
 POST /rest/v1/opportunities/roles.json?_method=GET
 ```
 
 ```json
-{  
+{
    "filterType":"dedupeFields",
-   "fields":[  
+   "fields":[
       "marketoGuid",
       "externalOpportunityId",
       "leadId",
       "role"
    ],
-   "input":[  
-      {  
+   "input":[
+      {
         "externalOpportunityId":"Opportunity1",
         "leadId": 1,
         "role": "Captain"
       },
-      {  
+      {
         "externalOpportunityId":"Opportunity2",
         "leadId": 1872,
         "role": "Commander"
       },
-      {  
+      {
         "externalOpportunityId":"Opportunity3",
         "leadId": 273891,
         "role": "Lieutenant Commander"
@@ -245,7 +245,7 @@ JSON 개체의 구조는 대부분 평평하며, 간단한 키가 있는 쿼리�
 
 리드 데이터베이스 레코드에 대한 생성 및 업데이트는 모두 JSON 본문이 있는 POST를 통해 수행됩니다. Opportunity, Roles, Custom Object, Company 및 SalesPersons에 대한 인터페이스는 각각 동일합니다. Lead 의 인터페이스가 약간 다르며 그에 대한 자세한 내용은 여기에서 자세히 읽어볼 수 있습니다.
 
-필수 매개 변수는 최대 300개의 개체가 포함된 `input` 배열입니다. 각 배열에는 멤버로 삽입/업데이트할 필드가 있습니다. `createOnly`, `updateOnly` 또는 `createOrUpdate` 중 하나일 수 있는 `action` 매개 변수를 선택적으로 포함할 수도 있습니다. 작업이 생략되면 모드는 기본적으로 `createOrUpdate`로 설정됩니다. `dedupeBy`은(는) action이 createOnly 또는 `createOrUpdate` 중 하나로 설정된 경우 사용할 수 있는 다른 선택적 매개 변수입니다. ` dedupeBy`은(는) `idField` 또는 `dedupeFields`일 수 있습니다. `idField`을(를) 선택한 경우 설명에 나열된 `idField`이(가) 중복 제거에 사용되며 각 레코드에 포함되어야 합니다. `idField` 모드가 `createOnly` 모드와 호환되지 않습니다. `dedupeFields`을(를) 선택한 경우 사용된 개체 설명에 나열된 `dedupeFields`이(가) 포함되며 각 레코드가 포함되어야 합니다. `dedupeBy` 매개 변수를 생략하면 모드는 기본적으로 `dedupeFields`(으)로 설정됩니다.
+필수 매개 변수는 최대 300개의 개체가 포함된 `input` 배열입니다. 각 배열에는 멤버로 삽입/업데이트할 필드가 있습니다. `action`, `createOnly` 또는 `updateOnly` 중 하나일 수 있는 `createOrUpdate` 매개 변수를 선택적으로 포함할 수도 있습니다. 작업이 생략되면 모드는 기본적으로 `createOrUpdate`로 설정됩니다. `dedupeBy`은(는) action이 createOnly 또는 `createOrUpdate` 중 하나로 설정된 경우 사용할 수 있는 다른 선택적 매개 변수입니다. ` dedupeBy`은(는) `idField` 또는 `dedupeFields`일 수 있습니다. `idField`을(를) 선택한 경우 설명에 나열된 `idField`이(가) 중복 제거에 사용되며 각 레코드에 포함되어야 합니다. `idField` 모드가 `createOnly` 모드와 호환되지 않습니다. `dedupeFields`을(를) 선택한 경우 사용된 개체 설명에 나열된 `dedupeFields`이(가) 포함되며 각 레코드가 포함되어야 합니다. `dedupeBy` 매개 변수를 생략하면 모드는 기본적으로 `dedupeFields`(으)로 설정됩니다.
 
 필드 값 목록을 전달할 때 `null`의 값 또는 빈 문자열이 `null`(으)로 데이터베이스에 기록됩니다.
 
@@ -254,18 +254,18 @@ POST /rest/v1/opportunities.json
 ```
 
 ```json
-{  
+{
    "action":"createOrUpdate",
    "dedupeBy":"dedupeFields",
-   "input":[  
-      {  
+   "input":[
+      {
          "externalOpportunityId":"19UYA31581L000000",
          "name":"Chairs",
          "description":"Chairs",
          "amount":"1604.47",
          "source":"Inbound Sales Call/Email"
       },
-      {  
+      {
          "externalOpportunityId":"29UYA31581L000000",
          "name":"Big Dog Day Care-Phase12",
          "description":"Big Dog Day Care-Phase12",
@@ -277,16 +277,16 @@ POST /rest/v1/opportunities.json
 ```
 
 ```json
-{  
+{
    "requestId":"e42b#14272d07d78",
    "success":true,
-   "result":[  
-      {  
+   "result":[
+      {
          "seq":0,
          "status":"updated",
          "marketoGUID":"dff23271-f996-47d7-984f-f2676861b5fb"
       },
-      {  
+      {
          "seq":1,
          "status":"created",
          "marketoGUID":"cff23271-f996-47d7-984f-f2676861b5fb"
@@ -295,7 +295,7 @@ POST /rest/v1/opportunities.json
 }
 ```
 
-리드 API 이외의 리드 데이터베이스 개체를 만들거나 업데이트하기 위한 호출은 `result` 배열의 각 개체에서 `seq` 필드를 반환합니다. 나열된 숫자는 요청에서 업데이트된 레코드의 순서에 해당합니다. 각 항목은 개체 형식에 대한 `idField` 값과 `status`을(를) 반환합니다. 상태 필드는 &quot;생성됨&quot;, &quot;업데이트됨&quot; 또는 &quot;건너뜀&quot; 중 하나를 나타냅니다.  상태를 건너뛸 경우, 레코드를건너뛴 이유를 나타내는 코드와 메시지를 포함하는 하나 이상의 이유 오브젝트가 있는 해당 &quot;이유&quot; 배열도 있습니다. 자세한 내용은 [오류 코드](error-codes.md)를 참조하세요.
+리드 API 이외의 리드 데이터베이스 개체를 만들거나 업데이트하기 위한 호출은 `seq` 배열의 각 개체에서 `result` 필드를 반환합니다. 나열된 숫자는 요청에서 업데이트된 레코드의 순서에 해당합니다. 각 항목은 개체 형식에 대한 `idField` 값과 `status`을(를) 반환합니다. 상태 필드는 &quot;생성됨&quot;, &quot;업데이트됨&quot; 또는 &quot;건너뜀&quot; 중 하나를 나타냅니다.  상태를 건너뛸 경우, 레코드를건너뛴 이유를 나타내는 코드와 메시지를 포함하는 하나 이상의 이유 오브젝트가 있는 해당 &quot;이유&quot; 배열도 있습니다. 자세한 내용은 [오류 코드](error-codes.md)를 참조하세요.
 
 ### 삭제
 
@@ -306,16 +306,16 @@ POST /rest/v1/customobjects/{name}/delete.json
 ```
 
 ```json
-{  
+{
    "deleteBy":"dedupeFields",
-   "input":[  
-      {  
+   "input":[
+      {
          "vin":"19UYA31581L000000"
       },
-      {  
+      {
          "vin":"29UYA31581L000000"
       },
-      {  
+      {
          "vin":"39UYA31581L000000"
       }
    ]
