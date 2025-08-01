@@ -14,7 +14,7 @@ ht-degree: 0%
 >[!INFO]
 >
 >Marketo 블로그의 보관 파일이며, 2014년부터 2023년까지 걸쳐 진행됩니다. 여기에서는 역사적 참조로만 제공됩니다.
->>일부 정보가 최신 정보가 아닐 수 있습니다.  항상 최신 기능에 대한 최신 설명서를 확인하십시오.
+>&#x200B;>일부 정보가 최신 정보가 아닐 수 있습니다.  항상 최신 기능에 대한 최신 설명서를 확인하십시오.
 >
 
 >[!IMPORTANT]
@@ -490,7 +490,7 @@ _2014-05-16_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
 Marketo에서 사용자 지정 활동을 추적해 보겠습니다. 예를 들어 웹 페이지에 비디오가 있고 50% 이상의 비디오를 시청하는 방문자를 추적하려고 합니다. Munchkin의 사용자 지정 활동 추적 기능을 사용하여 이 작업을 수행할 수 있습니다. 이는 50%에 달하는 비디오인 페이지에서 이벤트를 수신한 다음 Munchkin API를 호출하여 구현됩니다. 이렇게 하려면 페이지의 이 이벤트를 기반으로 호출할 Marketo의 사용자 지정 활동을 설정해야 합니다. 비디오 플레이어에 YouTube을 사용하고 해당 [YouTube Iframe API](https://developers.google.com/youtube/iframe_api_reference)를 사용하여 Munchkin API에서 메서드를 호출합니다.
 
-먼저 Marketo에서 Munchkin 추적 코드를 생성하는 방법, 두 번째 페이지 이벤트를 기반으로 트리거하기 위해 Munchkin 샘플 코드를 수정하는 방법, 세 번째 흐름 단계가 있는 페이지의 작업으로 정의되는 스마트 목록으로 캠페인을 설정하는 방법, 다섯 번째 익명 사용자의 페이지 방문이 Marketo에 기록되었는지 확인하는 방법을 보여 줍니다. ==== 이 블로그 게시물은 설명되는 코드의 라이브 예입니다. Marketo에서 잘 알려진 사용자이오니 이 양식을 작성해 주십시오. 이렇게 하면 비디오의 50%를 시청하면 나머지 비디오를 전송하고 비디오의 100%를 시청하면 다른 블로그 게시물로 연결되는 링크를 전송합니다. ===0} 사용<https://developers.google.com/youtube/iframe_api_reference>
+먼저 Marketo에서 Munchkin 추적 코드를 생성하는 방법, 두 번째 페이지 이벤트를 기반으로 트리거하기 위해 Munchkin 샘플 코드를 수정하는 방법, 세 번째 흐름 단계가 있는 페이지의 작업으로 정의되는 스마트 목록으로 캠페인을 설정하는 방법, 다섯 번째 익명 사용자의 페이지 방문이 Marketo에 기록되었는지 확인하는 방법을 보여 줍니다. ==== 이 블로그 게시물은 설명되는 코드의 라이브 예입니다. Marketo에서 잘 알려진 사용자이오니 이 양식을 작성해 주십시오. 이렇게 하면 비디오의 50%를 시청하면 나머지 비디오를 전송하고 비디오의 100%를 시청하면 다른 블로그 게시물로 연결되는 링크를 전송합니다. ===0&rbrace; 사용<https://developers.google.com/youtube/iframe_api_reference>
 
 **Munchkin 추적 코드를 생성하는 방법** Munchkin 추적 코드를 사용하면 웹 사이트 방문 횟수를 추적할 수 있습니다. 아래에 세 가지 유형의 Munchkin 코드가 설명되어 있지만 이 예제에서는 비동기 Munchkin 추적 코드를 사용합니다. A) 단순: 가장 적은 코드 줄이 있지만 웹 페이지 로드 시간에 최적화되지 않습니다. 이 코드는 웹 페이지가 로드될 때마다 jQuery 라이브러리를 로드합니다. B) 비동기: 웹 페이지 로드 시간을 줄입니다. 이 코드는 jQuery 라이브러리가 이미 있는지 확인하고 누락된 경우 로드한 다음 웹 페이지의 나머지 부분이 로드되면 추적 코드를 실행하는 데 사용합니다. C) 비동기 jQuery: 웹 페이지 로드 시간을 줄이고 시스템 성능도 향상시킵니다. 이 코드는 사용자가 이미 jQuery를 가지고 있다고 가정하고 로드를 선택하지 않습니다.
 
@@ -921,6 +921,7 @@ response = client.call(:sync_multiple_leads, message: request)
 
 puts response
 ```
+
  
 
 이 문서에는 사용자 정의 통합을 구현하는 데 사용되는 코드가 포함되어 있습니다. 맞춤화된 특성으로 인해 Marketo 기술 지원 팀에서 사용자 정의 작업 문제를 해결할 수 없습니다. 적절한 기술 경험이나 숙련된 개발자 액세스 없이 다음 코드 샘플을 구현하지 마십시오.
@@ -4053,7 +4054,7 @@ public class Auth {
 }
 ```
 
-이 코드를 사용하면 [관리] -> [실행 지점](ID 및 암호) 및 [관리] -> [웹 서비스](호스트)에서 클라이언트 ID, 클라이언트 암호 및 호스트(marketoInstance로서)로 인증 인스턴스를 만들 수 있습니다. 현재 저장된 토큰이 null인지 또는 만료되었는지 테스트한 다음 기존 토큰을 반환하거나 새 인증 요청을 수행한 다음 JSON 응답의 &quot;access_token&quot; 멤버에서 새 토큰을 반환하는 getToken 메서드를 표시합니다. 이제 Marketo 인스턴스를 인증할 수 있으므로 다음 단계는 리드를 검색하는 것입니다. 이 클래스를 사용하고 있습니다.
+이 코드를 사용하면 [관리] -> [실행 지점] (ID 및 암호) 및 [관리] -> [웹 서비스] (호스트)에서 클라이언트 ID, 클라이언트 암호 및 호스트(marketoInstance로서)로 인증 인스턴스를 만들 수 있습니다. 현재 저장된 토큰이 null인지 또는 만료되었는지 테스트한 다음 기존 토큰을 반환하거나 새 인증 요청을 수행한 다음 JSON 응답의 &quot;access_token&quot; 멤버에서 새 토큰을 반환하는 getToken 메서드를 표시합니다. 이제 Marketo 인스턴스를 인증할 수 있으므로 다음 단계는 리드를 검색하는 것입니다. 이 클래스를 사용하고 있습니다.
 
 ```java
 package dev.marketo.blog_leads;
@@ -4180,7 +4181,7 @@ public class App
 토큰이 비어 있거나 만료되었습니다. 새 인증 시도 중
 <https://299-BYM-827.mktorest.com/identity/oauth/token?grant_type=client_credentials&client_id=b417d98f-9289-47d1-a61f-db141bf0267f&client_secret=0DipOvz4h2wP1ANeVjlfwMvECJpo0ZYc>(으)로 인증 시도 중
 Got 인증 응답: {&quot;access_token&quot;:&quot;ec0f02c0-28ac-4d6c-b7d7-00e47ae85ff1:st&quot;,&quot;token_type&quot;:&quot;bearer&quot;,&quot;expires_in&quot;:538,&quot;scope&quot;:&quot;<apiuser@mktosupport.com>&quot;}
-{&quot;requestId&quot;:&quot;14fb6#14e6a7a9ad6&quot;,&quot;result&quot;:[{&quot;id&quot;:1026322,&quot;updatedAt&quot;:&quot;2015-07-07T21:43:25Z&quot;,&quot;lastName&quot;:&quot;Lead&quot;,&quot;email&quot;:&quot;<testlead@marketo.com>&quot;,&quot;createdAt&quot;:&quot;2015-07-07T21:43:25Z&quot;,&quot;firstName&quot;:&quot;Test&quot;},{&quot;id&quot;:1026323,&quot;updatedAt&quot;:&quot;2015-07-07A t21:43:43Z&quot;,&quot;lastName&quot;:&quot;Lead2&quot;,&quot;email&quot;:&quot;<testlead@marketo.com>&quot;,&quot;createdAt&quot;:&quot;2015-07-07T21:43:43Z&quot;,&quot;firstName&quot;:&quot;Test&quot;}],&quot;success&quot;:true
+&lbrace;&quot;requestId&quot;:&quot;14fb6#14e6a7a9ad6&quot;,&quot;result&quot;:[{&quot;id&quot;:1026322,&quot;updatedAt&quot;:&quot;2015-07-07T21:43:25Z&quot;,&quot;lastName&quot;:&quot;Lead&quot;,&quot;email&quot;:&quot;<testlead@marketo.com>&quot;,&quot;createdAt&quot;:&quot;2015-07-07T21:43:25Z&quot;,&quot;firstName&quot;:&quot;Test&quot;},{&quot;id&quot;:1026323,&quot;updatedAt&quot;:&quot;2015-07-07A t21:43:43Z&quot;,&quot;lastName&quot;:&quot;Lead2&quot;,&quot;email&quot;:&quot;<testlead@marketo.com>&quot;,&quot;createdAt&quot;:&quot;2015-07-07T21:43:43Z&quot;,&quot;firstName&quot;:&quot;Test&quot;}],&quot;success&quot;:true
 
 이제 필요한 방식으로 처리할 수 있는 리드 데이터가 있습니다. 읽어주셔서 감사드리며, 의견을 남겨주시기 바랍니다.
 
@@ -6583,6 +6584,7 @@ public class SyncMultipleLeadsExample {
   }
 }
 ```
+
  
 이 문서에는 사용자 정의 통합을 구현하는 데 사용되는 코드가 포함되어 있습니다. 맞춤화된 특성으로 인해 Marketo 기술 지원 팀에서 사용자 정의 작업 문제를 해결할 수 없습니다. 적절한 기술 경험이나 숙련된 개발자 액세스 없이 다음 코드 샘플을 구현하지 마십시오.
 
@@ -6752,7 +6754,7 @@ _2014-03-27_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
 방법은 다음과 같습니다. 1. 마케팅 활동 트리에서 토큰을 생성할 Campaign 폴더 또는 프로그램을 선택합니다. 상단 메뉴 모음에서 내 토큰 을 선택합니다. 그러면 내 토큰 캔버스가 표시됩니다. 오른쪽 트리에서 토큰 유형을 캔버스로 드래그합니다(이 경우 &quot;텍스트&quot;). 토큰 이름 필드에서 내 토큰을 강조 표시하고 고유한 토큰 이름을 입력합니다. 이 경우 &quot;my.conversationtopic&quot;입니다. 값 필드에 토큰에 대한 관련 값을 입력합니다. 이 경우 &quot;오늘 전화해 주셔서 감사합니다.&quot;라고 표시됩니다. API를 사용하면 기본 내 토큰 값이 재정의됩니다. 사용자 지정 토큰을 저장하려면 &quot;저장&quot;을 클릭합니다.  1. 새로 만들기를 클릭하여 새 이메일을 만듭니다. 그런 다음 새 로컬 Assets 를 클릭하고 이메일을 선택합니다. 그런 다음 관련 필드를 작성하여 이메일 이름을 지정하십시오. 이메일 초안을 작성할 때 토큰 아이콘을 클릭하여 이메일에 토큰을 포함합니다. 토큰을 사용하여 템플릿 이메일을 만들었으므로 이제 이메일을 후속 단계에서 Campaign에 대한 흐름 동작으로 추가합니다. 따라서 API를 통해 캠페인을 호출하면 이메일이 발송됩니다.
 **Campaign에서 전자 메일 흐름 동작을 만드는 방법** 스마트 캠페인과 전자 메일을 연결하면 마케터는 전자 메일이 표시되는 방식을 관리하고 서드파티 응용 프로그램은 전자 메일을 받는 사람과 시기를 결정할 수 있습니다. 이메일을 새 로컬 자산으로 만든 후 캠페인에서 흐름 작업으로 설정할 수 있습니다. 보낼 이메일을 찾아 선택합니다.
-**requestCampaign API를 호출하는 코드 샘플** Marketo 인터페이스에서 캠페인 및 트리거를 설정한 후 API를 사용하여 전자 메일을 보내는 방법을 보여 줍니다. 첫 번째 샘플은 XML 요청이고, 두 번째 샘플은 XML 응답이며, 마지막 샘플은 XML 요청을 생성하는 데 사용할 수 있는 Java 코드 샘플입니다. requestCampaign API를 호출할 때 사용되는 캠페인 ID를 찾는 방법도 보여 줍니다. 또한 API를 호출하려면 Marketo 캠페인의 ID를 미리 알고 있어야 합니다. 다음 방법 중 하나를 사용하여 캠페인 ID를 결정할 수 있습니다. 1. [getCampaignsForSource](/help/soap-api/getcampaignsforsource.md) API 1을 사용합니다. 브라우저에서 Marketo 캠페인을 열고 URL 주소 표시줄을 봅니다. 캠페인 ID(4자리 정수로 표시됨)는 &quot;SC&quot; 바로 다음에 찾을 수 있습니다. 예, `<https://app-stage.marketo.com/#SC**1025**A1>`. 굵게 표시된 부분은 캠페인 ID - &quot;1025&quot;입니다. requestCampaign에 대한 SOAP 요청
+**requestCampaign API를 호출하는 코드 샘플** Marketo 인터페이스에서 캠페인 및 트리거를 설정한 후 API를 사용하여 전자 메일을 보내는 방법을 보여 줍니다. 첫 번째 샘플은 XML 요청이고, 두 번째 샘플은 XML 응답이며, 마지막 샘플은 XML 요청을 생성하는 데 사용할 수 있는 Java 코드 샘플입니다. requestCampaign API를 호출할 때 사용되는 캠페인 ID를 찾는 방법도 보여 줍니다. 또한 API를 호출하려면 Marketo 캠페인의 ID를 미리 알고 있어야 합니다. 다음 방법 중 하나를 사용하여 캠페인 ID를 결정할 수 있습니다. 1. [getCampaignsForSource](/help/soap-api/getcampaignsforsource.md) API 1을 사용합니다. 브라우저에서 Marketo 캠페인을 열고 URL 주소 표시줄을 봅니다. 캠페인 ID(4자리 정수로 표시됨)는 &quot;SC&quot; 바로 다음에 찾을 수 있습니다. 예, `<https://app-stage.marketo.com/#SC&#x200B;**1025**&#x200B;A1>`. 굵게 표시된 부분은 캠페인 ID - &quot;1025&quot;입니다. requestCampaign에 대한 SOAP 요청
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -7257,7 +7259,7 @@ Munchkin 계정 ID는 Munchkin 또는 웹 서비스 관리 화면에서 가져�
 
   `{"access_token":"{{access_token}}"}`
 
-* Access Token Placement**:**의 토큰
+* Access Token Placement&#x200B;**:**&#x200B;의 토큰
 
 Marketo 사용자 지정 서비스가 만들어지면 클라이언트 ID 및 클라이언트 암호를 사용할 수 있게 됩니다. 클라이언트 ID와 클라이언트 암호를 사용하여 REST API [인증](/help/rest-api/authentication.md) 끝점을 통해 액세스 토큰을 생성합니다. 그런 다음 이 액세스 토큰을 사용하여 REST API에 대한 후속 요청을 수행할 수 있습니다. 토큰은 1시간 후 만료되며 REST API 호출을 계속하려면 다시 생성해야 합니다. 세션 토큰이 만료될 때마다 사용자 지정 인증 스크립트를 실행할 수 있으므로 인증 유형 = &#39;세션 인증&#39;을 선택했습니다. &#39;스크립팅 API&#39; 섹션에서 이 유형의 인증으로만 작동할 수 있는 이 메커니즘을 구현하는 방법을 살펴보겠습니다.
 **트리거** Zapier 트리거를 사용하여 데이터를 Zapier로 가져올 수 있습니다. Marketo Webhook을 대신 활용하므로 사용 사례에 필요하지 않습니다. 그러나 Marketo 커넥터에 대한 필수 테스트로 더미 트리거 를 작성해야 합니다. Marketo REST API [일별 사용 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getDailyUsageUsingGET) 끝점을 호출하는 테스트 트리거를 만듭니다. **새 트리거 추가**&#x200B;를 클릭하여 마법사를 시작하고 다음 필드를 채웁니다(언급하지 않은 필드는 비워 둘 수 있음). 이름 및 설명
@@ -8145,7 +8147,7 @@ Marketo 구성 워크시트에서 필요한 모든 정보를 입력합니다.
 
 ### 데이터 분석 표현식(DAX)
 
-일부 보고서에 대한 데이터를 보강하거나 다시 포맷해야 합니다. Power Pivot 데이터 분석 표현식(DAX)을 사용하여 계산된 열 및 측정값(계산된 필드라고도 함)으로 일부 사용자 지정 계산을 정의해 보겠습니다. DAX에 대한 자세한 내용은 참조 섹션의 &#39;Power Pivot에서 DAX&#39; 링크를 참조하십시오. [계산 영역]이 [파워 피벗] 창에 표시되는지 확인합니다. 표시되지 않으면 [파워 피벗] 홈 메뉴에서 사용하도록 설정합니다.  **MktoLeads** 탭을 선택하고 **리드 수** 측정값을 리드 계산 영역 **리드 수:=****DISTINCTCOUNT****([id])**&#x200B;의 어디에나 추가하십시오. 이 측정은 ID를 기반으로 목록에서 사용할 수 있는 개별 리드를 카운트하는 것입니다. 또한 보고서 컨텍스트에서 적용된 최종 필터도 고려합니다. 보고서에서 리드 수를 합할 수 있으므로 이 조치는 실제로 필요하지 않지만 &#39;MktoLeads의 합계&#39;보다 더 나은 이름의 리드 수를 갖도록 했습니다. 또한 특정 유형의 데이터 입력(예: 50보다 높은 점수, 평균 점수 등을 가진 모든 리드)에 대해 평균, 최소, 최대값을 수행하는 보다 복잡한 측정을 쉽게 상상할 수 있도록 해주는 간단한 예입니다. ...)  이제 **MktoWebActivities** 탭을 선택하고 3개의 계산된 열을 만들겠습니다. 표의 맨 오른쪽 끝으로 스크롤하고 &#39;열 추가&#39; 열을 클릭하여 다음 계산된 열을 삽입합니다. **활동:** MktoActivityTypes 테이블에서 활동 ID를 조회하여 사용자에게 친숙한 활동 레이블을 얻습니다. **\=****LOOKUPVALUE****(MktoActivityTypes[name],MktoActivityTypes[id],[activityTypeId])** **Year-Month:** 일부 보고서에 더 적합한 &#39;YYYYmm&#39; 패턴으로 활동 날짜를 다시 포맷합니다. **\=****LEFT****([activityDate],4)&amp;****MID****([activityDate],6,2)** **날짜:** 활동 날짜는 원래 쿼리의 문자열이므로 적절한 날짜로 변환하십시오. **\=****DATE****(****LEFT****([activityDate],4),****MID****([activityDate],6,2),****MID****([activityDate],9,2))** 이제 **MktoEmailActivities** 탭에 대해 동일한 세 개의 측정값을 만들고 두 개의 추가 측정값을 추가해 보겠습니다. **캠페인:** MktoCampaigns 테이블에서 캠페인 ID를 조회하여 사용자에게 친숙한 캠페인 이름을 얻으십시오. **\=****LOOKUPVALUE****(MktoCampaigns[name],MktoCampaigns[id],[campaignId])** **프로그램:** MktoCampaigns 테이블에서 캠페인 ID를 조회하여 사용자에게 친숙한 프로그램 이름을 얻습니다. MktoPrograms 표에서는 폴더, 작업 영역 등과 같은 프로그램에 대한 자세한 내용을 제공할 수 있습니다. **\=****LOOKUPVALUE****(MktoCampaigns[programName],MktoCampaigns[id],[campaignId])**
+일부 보고서에 대한 데이터를 보강하거나 다시 포맷해야 합니다. Power Pivot 데이터 분석 표현식(DAX)을 사용하여 계산된 열 및 측정값(계산된 필드라고도 함)으로 일부 사용자 지정 계산을 정의해 보겠습니다. DAX에 대한 자세한 내용은 참조 섹션의 &#39;Power Pivot에서 DAX&#39; 링크를 참조하십시오. [계산 영역]이 [파워 피벗] 창에 표시되는지 확인합니다. 표시되지 않으면 [파워 피벗] 홈 메뉴에서 사용하도록 설정합니다.  **MktoLeads** 탭을 선택하고 **리드 수** 측정값을 리드 계산 영역 **리드 수:=**&#x200B;**DISTINCTCOUNT**&#x200B;**([id])**&#x200B;의 어디에나 추가하십시오. 이 측정은 ID를 기반으로 목록에서 사용할 수 있는 개별 리드를 카운트하는 것입니다. 또한 보고서 컨텍스트에서 적용된 최종 필터도 고려합니다. 보고서에서 리드 수를 합할 수 있으므로 이 조치는 실제로 필요하지 않지만 &#39;MktoLeads의 합계&#39;보다 더 나은 이름의 리드 수를 갖도록 했습니다. 또한 특정 유형의 데이터 입력(예: 50보다 높은 점수, 평균 점수 등을 가진 모든 리드)에 대해 평균, 최소, 최대값을 수행하는 보다 복잡한 측정을 쉽게 상상할 수 있도록 해주는 간단한 예입니다. ...)  이제 **MktoWebActivities** 탭을 선택하고 3개의 계산된 열을 만들겠습니다. 표의 맨 오른쪽 끝으로 스크롤하고 &#39;열 추가&#39; 열을 클릭하여 다음 계산된 열을 삽입합니다. **활동:** MktoActivityTypes 테이블에서 활동 ID를 조회하여 사용자에게 친숙한 활동 레이블을 얻습니다. **\=**&#x200B;**LOOKUPVALUE**&#x200B;**(MktoActivityTypes[name],MktoActivityTypes[id],[activityTypeId])** **Year-Month:** 일부 보고서에 더 적합한 &#39;YYYYmm&#39; 패턴으로 활동 날짜를 다시 포맷합니다. **\=**&#x200B;**LEFT**&#x200B;**([activityDate],4)&amp;**&#x200B;**MID**&#x200B;**([activityDate],6,2)** **날짜:** 활동 날짜는 원래 쿼리의 문자열이므로 적절한 날짜로 변환하십시오. **\=**&#x200B;**DATE**&#x200B;**(**&#x200B;**LEFT**&#x200B;**([activityDate],4),**&#x200B;**MID**&#x200B;**([activityDate],6,2),**&#x200B;**MID**&#x200B;**([activityDate],9,2))** 이제 **MktoEmailActivities** 탭에 대해 동일한 세 개의 측정값을 만들고 두 개의 추가 측정값을 추가해 보겠습니다. **캠페인:** MktoCampaigns 테이블에서 캠페인 ID를 조회하여 사용자에게 친숙한 캠페인 이름을 얻으십시오. **\=**&#x200B;**LOOKUPVALUE**&#x200B;**(MktoCampaigns[name],MktoCampaigns[id],[campaignId])** **프로그램:** MktoCampaigns 테이블에서 캠페인 ID를 조회하여 사용자에게 친숙한 프로그램 이름을 얻습니다. MktoPrograms 표에서는 폴더, 작업 영역 등과 같은 프로그램에 대한 자세한 내용을 제공할 수 있습니다. **\=**&#x200B;**LOOKUPVALUE**&#x200B;**(MktoCampaigns[programName],MktoCampaigns[id],[campaignId])**
 
 ### 엔티티 관계
 
@@ -8161,7 +8163,7 @@ Marketo 구성 워크시트에서 필요한 모든 정보를 입력합니다.
 
 ### 전자 메일 성능 피벗 차트
 
-이 첫 번째 보고서는 표준 Excel 피벗 차트를 기반으로 이메일 성과 KPI를 보여 줍니다. 이를 통해 업계 및/또는 캠페인별로 데이터를 필터링할 수 있습니다. [피벗 테이블] 선택기에서 [피벗 차트]를 선택하여 [파워 피벗] 메뉴에서 [피벗 차트]를 바로 만들 수 있습니다.  다른 방법은 Excel 스프레드시트에서 직접 피벗 차트를 만들어 &#39;이 통합 문서의 데이터 모델 사용&#39; 옵션을 표시하는 것입니다.  아래 그림과 같이 **MktoEmailActivities** 및 **MktoLeads** 테이블에서 필드를 끌어다 놓습니다. **MktoEmailActivities.Activity →** **Legend** (이 항목은 **MktoEmailActivities**&#x200B;에 구현한 DAX 계산 열을 사용) **MktoEmailActivities.Date →** **Axis** (이 항목은 **MktoEmailActivities**&#x200B;에 구현한 DAX 계산 열을 사용) **MktoEmailActivities.Id→7}**∑ 값&#x200B;**** MktoEmailActivities.Campaign →****&#x200B;필터&#x200B;**** MktoLeads.industry →****&#x200B;필터&#x200B;****
+이 첫 번째 보고서는 표준 Excel 피벗 차트를 기반으로 이메일 성과 KPI를 보여 줍니다. 이를 통해 업계 및/또는 캠페인별로 데이터를 필터링할 수 있습니다. [피벗 테이블] 선택기에서 [피벗 차트]를 선택하여 [파워 피벗] 메뉴에서 [피벗 차트]를 바로 만들 수 있습니다.  다른 방법은 Excel 스프레드시트에서 직접 피벗 차트를 만들어 &#39;이 통합 문서의 데이터 모델 사용&#39; 옵션을 표시하는 것입니다.  아래 그림과 같이 **MktoEmailActivities** 및 **MktoLeads** 테이블에서 필드를 끌어다 놓습니다. **MktoEmailActivities.Activity →** **Legend** (이 항목은 **MktoEmailActivities**&#x200B;에 구현한 DAX 계산 열을 사용) **MktoEmailActivities.Date →** **Axis** (이 항목은 **MktoEmailActivities**&#x200B;에 구현한 DAX 계산 열을 사용) **MktoEmailActivities.Id→7&rbrace;**∑ 값&#x200B;**&#x200B;** MktoEmailActivities.Campaign →**&#x200B;**&#x200B;필터&#x200B;**&#x200B;** MktoLeads.industry →**&#x200B;**&#x200B;필터&#x200B;**&#x200B;**
 
 드롭된 각 필드에서 &#39;값 필드 설정&#39;을 선택하여 사용자 지정 이름을 만들 수 있습니다. 이 경우 이메일 활동 id 필드를 &#39;∑ 값&#39; 섹션에 삭제하고 사용자 정의 이름을 &#39;활동 수&#39;로 편집했습니다. 이제 피벗 차트를 구성하겠습니다. 차트를 마우스 오른쪽 버튼으로 클릭하고 상황별 메뉴에서 &#39;차트 유형 변경&#39; 옵션을 선택합니다. 모든 데이터 시리즈에 대해 서로 다른 차트 유형을 선택한 방법은 다음과 같습니다.
 
@@ -8403,7 +8405,7 @@ secret_key, IFTTT Maker 서비스의 비밀 키를 사용합니다.
 
 ### IFTTT 애플릿
 
-IFTTT 웹 포털의 메인 메뉴에서 &quot;내 애플릿&quot;을 선택합니다.  &quot;새 애플릿&quot; 단추를 클릭하고 **+this** 섹션을 클릭합니다.  Maker 서비스를 검색합니다.  Maker 서비스가 이벤트를 알리는 웹 요청을 받을 때마다 실행되는 트리거를 만듭니다. Marketo 웹후크의 URL에 지정된 것과 동일한 이벤트 이름(예: &quot;MarketoProgramSuccess&quot;)을 사용하고 &quot;Create trigger&quot; 단추를 클릭합니다.  이제 섹션 **+that**을(를) 클릭하여 작업 서비스를 지정할 차례입니다.  우리는 IoT 기기에 투자하지 않고도 누구나 테스트할 수 있는 간단한 액션 서비스인 알림 서비스를 시작할 것입니다. 알림 서비스를 검색하고 선택합니다.
+IFTTT 웹 포털의 메인 메뉴에서 &quot;내 애플릿&quot;을 선택합니다.  &quot;새 애플릿&quot; 단추를 클릭하고 **+this** 섹션을 클릭합니다.  Maker 서비스를 검색합니다.  Maker 서비스가 이벤트를 알리는 웹 요청을 받을 때마다 실행되는 트리거를 만듭니다. Marketo 웹후크의 URL에 지정된 것과 동일한 이벤트 이름(예: &quot;MarketoProgramSuccess&quot;)을 사용하고 &quot;Create trigger&quot; 단추를 클릭합니다.  이제 섹션 **+that**&#x200B;을(를) 클릭하여 작업 서비스를 지정할 차례입니다.  우리는 IoT 기기에 투자하지 않고도 누구나 테스트할 수 있는 간단한 액션 서비스인 알림 서비스를 시작할 것입니다. 알림 서비스를 검색하고 선택합니다.
 디바이스에 알림을 보내는 &quot;알림 보내기&quot; 작업을 선택합니다.  아래 예와 같이 Marketo에서 보낸 3개의 값을 구성 요소로 추가하여 사용자에게 의미 있는 알림을 전달한 다음 &quot;작업 만들기&quot; 버튼을 클릭할 수 있습니다. IFTTT 애플릿을 검토하고 완료합니다. 활성화되었는지 확인합니다.
 
 ### IFTTT 애플릿 테스트
@@ -9104,7 +9106,7 @@ Smart List의 Persons를 사용하여 일대다(1:1) 또는 일대다(1:N)와 �
 
 `GET /rest/v1/customobjects/session_c.json?filterType=subscriptionID&filterValues=4ad59184-6bf1-4eeb-a583-d82aeee68210,e5e0aba4-f27f-494d-93ed-9cb580989bf3,e65007cd-86b1-4c17-8d55-057c96e1788a,39d956b2-85e2-4c24-94e7-e9fa5a09d3d0,bf14218c-ae6a-42b3-a14e-f7182903cbcd`
 
-_각주_ _1)**smartListName**및&#x200B;**smartListId**필터 형식을 일부 구독에서 사용할 수 없습니다. 구독에 사용할 수 없는 경우 잠재 고객 만들기 작업 끝점(**&quot;1035, 대상 구독에 대해 지원되지 않는 필터 유형&quot;**)을 호출할 때 오류가 표시됩니다. 고객은 Marketo 지원 팀에 문의하여 구독에서 이 기능을 활성화할 수 있습니다._
+_각주_ _1)**smartListName**&#x200B;및&#x200B;**smartListId**&#x200B;필터 형식을 일부 구독에서 사용할 수 없습니다. 구독에 사용할 수 없는 경우 잠재 고객 만들기 작업 끝점(**&quot;1035, 대상 구독에 대해 지원되지 않는 필터 유형&quot;**)을 호출할 때 오류가 표시됩니다. 고객은 Marketo 지원 팀에 문의하여 구독에서 이 기능을 활성화할 수 있습니다._
 
 _2020-01-14_&#x200B;에 _Tony_&#x200B;에 의해 게시됨
 
@@ -9458,6 +9460,7 @@ myForm.submit();
 
 </html>
 ```
+
    
 _케니_&#x200B;이(가) _2020-05-26_&#x200B;에 게시함
 
@@ -9665,7 +9668,7 @@ Marketo 랜딩 페이지에서 Munchkin Beta을 비활성화하려면 구독의 
 
 ### 외부 페이지에서 Munchkin Beta 비활성화
 
-Beta 버전의 Munchkin JavaScript을 외부 웹 페이지에 배포한 경우 일반적으로 사용할 수 있을 때까지 이 변경 사항을 취소하려면 **munchkin&quot;을 타깃팅하기 위해 Munchkin JS 코드 조각을 변경해야 합니다.**{munchkin-beta가 아닌 **js**1} 파일을 저장합니다.******js** 파일입니다. 아래 예에서는 11행에 있는 **s.src** 변수의 값입니다. 코드 조각이 예제와 유사하지 않거나, 태그 관리자가 외부 페이지에 배포할 수 있으며, IT 리소스 또는 Munchkin 추적이 활성화된 웹 사이트를 관리하는 사람에게 연락해야 할 수 있습니다.
+Beta 버전의 Munchkin JavaScript을 외부 웹 페이지에 배포한 경우 일반적으로 사용할 수 있을 때까지 이 변경 사항을 취소하려면 **munchkin&quot;을 타깃팅하기 위해 Munchkin JS 코드 조각을 변경해야 합니다.**{munchkin-beta가 아닌 **js**&#x200B;1} 파일을 저장합니다.**&#x200B;**&#x200B;**js** 파일입니다. 아래 예에서는 11행에 있는 **s.src** 변수의 값입니다. 코드 조각이 예제와 유사하지 않거나, 태그 관리자가 외부 페이지에 배포할 수 있으며, IT 리소스 또는 Munchkin 추적이 활성화된 웹 사이트를 관리하는 사람에게 연락해야 할 수 있습니다.
 
 ```javascript
 <script type="text/javascript">
