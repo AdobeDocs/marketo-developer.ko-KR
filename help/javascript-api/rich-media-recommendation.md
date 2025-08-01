@@ -21,7 +21,7 @@ ht-degree: 4%
 1. 페이지 본문에서
    1. 템플릿을 표시할 위치에 템플릿 태그(div 클래스)를 배치합니다
 
-자세한 내용은 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media)를 참조하세요.
+자세한 내용은 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media)를 참조하세요.
 
 ## 템플릿 태그
 

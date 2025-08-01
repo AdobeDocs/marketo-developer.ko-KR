@@ -262,7 +262,7 @@ Adobe IO를 설정하려면 공개 설명서 섹션에서 [Adobe IO를 사용하
 
 ### Marketo에서 사용자 감사 데이터 스트림 설정
 
-사용자 감사 데이터 스트림은 현재 다른 3개의 데이터 스트림과 함께 성능 패키지의 일부로 사용할 수 있습니다. 패키지에 대한 자세한 내용은 제품 제한 및 기능에 대한 [제품 설명 페이지](https://helpx.adobe.com/legal/product-descriptions/adobe-marketo-engage---product-description.html)를 참조하세요.
+사용자 감사 데이터 스트림은 현재 다른 3개의 데이터 스트림과 함께 성능 패키지의 일부로 사용할 수 있습니다. 패키지에 대한 자세한 내용은 제품 제한 및 기능에 대한 [제품 설명 페이지](https://helpx.adobe.com/kr/legal/product-descriptions/adobe-marketo-engage---product-description.html)를 참조하세요.
 
 ### Adobe I/O 설정
 

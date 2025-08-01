@@ -16,7 +16,7 @@ ht-degree: 1%
 
 회사는 잠재 고객 레코드가 속한 조직을 나타냅니다. 리드는 `externalCompanyId`리드 동기화[ 또는 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST)리드 일괄 가져오기[ 끝점을 사용하여 해당 ](bulk-lead-import.md) 필드를 채워 회사에 추가됩니다. 리드가 회사에 추가되면 해당 회사에서 리드를 삭제할 수 없습니다(다른 회사에 리드를 추가하지 않은 경우). 회사 레코드에 연결된 잠재 고객은 잠재 고객의 자체 레코드에 있는 것처럼 회사 레코드에서 값을 직접 상속합니다.
 
-회사 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=en) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=en)가 활성화된 구독에 대한 읽기 전용 액세스입니다.
+회사 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=ko) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=ko)가 활성화된 구독에 대한 읽기 전용 액세스입니다.
 
 ## 설명
 
