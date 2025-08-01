@@ -3,7 +3,7 @@ title: 이메일 스크립팅
 feature: Email Programs
 description: 이메일 스크립팅 개요
 exl-id: ff396f8b-80c2-4c87-959e-fb8783c391bf
-source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
+source-git-commit: 9012135dc7a295c2462574dad1aca2d06a9077ea
 workflow-type: tm+mt
 source-wordcount: '947'
 ht-degree: 0%
@@ -17,19 +17,19 @@ ht-degree: 0%
 [Apache Velocity](https://velocity.apache.org/)은(는) HTML 콘텐츠를 템플릿화하고 스크립팅하도록 설계된 Java 기반 언어입니다. Marketo에서는 스크립팅 토큰을 사용하여 이메일 컨텍스트에서 사용할 수 있습니다. 이를 통해 Opportunities 및 Custom Objects에 저장된 데이터에 액세스할 수 있으며 Email에 동적 콘텐츠를 만들 수 있습니다. Velocity는 조건부 및 반복적인 컨텐츠 조작을 허용하기 위해 각 컨텐츠에 대한 if/else, for 및 for 와 함께 표준 고급 제어 흐름을 제공합니다. 다음은 올바른 인사말로 인사말을 인쇄하는 간단한 예입니다.
 
 ```java
-//check if the lead is male
-if(${lead.MarketoSocialGender} == "Male")
-    if the lead is male, use the salutation 'Mr.'
-    set($greeting = "Dear Mr. ${lead.LastName},")
-//check is the lead is female
-elseif(${lead.MarketoSocialGender} == "Female")
-    if female, use the salutation 'Ms.'
-    set($greeting = "Dear Ms. ${lead.LastName},")
-else
-    //otherwise, use the first name
-    set($greeting = "Dear ${lead.FirstName},")
-end
-print the greeting and some content
+##check if the lead is male
+#if(${lead.MarketoSocialGender} == "Male")
+    ##if the lead is male, use the salutation 'Mr.'
+    #set($greeting = "Dear Mr. ${lead.LastName},")
+##check is the lead is female
+#elseif(${lead.MarketoSocialGender} == "Female")
+    ##if female, use the salutation 'Ms.'
+    #set($greeting = "Dear Ms. ${lead.LastName},")
+#else
+    ##otherwise, use the first name
+    #set($greeting = "Dear ${lead.FirstName},")
+#end
+##print the greeting and some content
 ${greeting}
 
     Lorem ipsum dolor sit amet...
@@ -51,7 +51,7 @@ $variablename ##outputs '$variablename'
 ${variable}name ##outputs 'valuename'
 ```
 
-`$` 뒤에 포함된 `!`이(가) 있는 자동 참조 표기법도 있습니다. 일반적으로 속도가 정의되지 않은 참조를 발견하면 참조를 나타내는 문자열이 제자리에 남게 됩니다. 자동 참조 표기법을 사용할 때 정의되지 않은 참조가 발생하면 값이 전송되지 않습니다.
+`!` 뒤에 포함된 `$`이(가) 있는 자동 참조 표기법도 있습니다. 일반적으로 속도가 정의되지 않은 참조를 발견하면 참조를 나타내는 문자열이 제자리에 남게 됩니다. 자동 참조 표기법을 사용할 때 정의되지 않은 참조가 발생하면 값이 전송되지 않습니다.
 
 ```
 ##Defined Reference
@@ -130,7 +130,7 @@ Marketo 이메일 디자이너 내에서 [!UICONTROL Send Sample Email] 이메�
 - 리드, 연락처 또는 계정에 연결된 사용자 지정 개체를 참조할 수 있지만 두 개 이하여야 합니다.
 - 사용자 지정 오브젝트는 단일 연결, 리드, 연락처 또는 계정을 통해서만 참조될 수 있습니다.
 - 사용 중인 필드가 처리되지 않는 경우 스크립트 편집기의 상자를 선택해야 합니다
-- 각 사용자 정의 객체에 대해 개인/연락처당 가장 최근에 업데이트된 10개의 레코드는 런타임에 사용할 수 있으며 가장 최근에 업데이트된 레코드(0)에서 가장 오래 업데이트된 레코드(9)로 순서가 지정됩니다. [지침에 따라](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/email-setup/change-custom-object-retrieval-limits-in-velocity-scripting)사용 가능한 레코드 수를 늘릴 수 있습니다.
+- 각 사용자 정의 객체에 대해 개인/연락처당 가장 최근에 업데이트된 10개의 레코드는 런타임에 사용할 수 있으며 가장 최근에 업데이트된 레코드(0)에서 가장 오래 업데이트된 레코드(9)로 순서가 지정됩니다. [지침에 따라](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/email-setup/change-custom-object-retrieval-limits-in-velocity-scripting)사용 가능한 레코드 수를 늘릴 수 있습니다.
 - 이메일 내에 이메일 스크립트를 두 개 이상 포함하는 경우 스크립트는 위쪽에서 아래쪽으로 실행됩니다. 실행할 첫 번째 스크립트에 정의된 변수의 범위는 후속 스크립트에서 사용할 수 있습니다.
 - 도구 참조: [https://velocity.apache.org/tools/2.0/index.html](https://velocity.apache.org/tools/2.0/index.html)
 - 줄바꿈 문자 &quot;\\n&quot; 또는 &quot;\\r\\n&quot;이 포함된 토큰에 대한 참고 사항입니다. 샘플 보내기 또는 배치 캠페인을 통해 이메일을 전송하면 토큰의 새 줄 문자가 공백으로 대체됩니다. 트리거 캠페인을 통해 이메일을 전송하면 줄바꿈 문자가 그대로 유지됩니다.

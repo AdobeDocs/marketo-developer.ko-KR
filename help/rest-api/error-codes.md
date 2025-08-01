@@ -3,9 +3,9 @@ title: 오류 코드
 feature: REST API
 description: Marketo 오류 코드 설명.
 exl-id: a923c4d6-2bbc-4cb7-be87-452f39b464b6
-source-git-commit: d44ec0442bc33e3e5cb7e2dd6ce3947036c7cd25
+source-git-commit: 9012135dc7a295c2462574dad1aca2d06a9077ea
 workflow-type: tm+mt
-source-wordcount: '2283'
+source-wordcount: '2320'
 ht-degree: 3%
 
 ---
@@ -110,7 +110,7 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
     <tr>
       <td><a name="603"></a>603</td>
       <td>액세스 거부됨</td>
-      <td>인증에 성공했지만 사용자에게 이 API를 호출할 권한이 없습니다. [추가 권한](custom-services.md)을 사용자 역할에 할당하거나 <a href="https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/additional-integrations/create-an-allowlist-for-ip-based-api-access">IP 기반 API 액세스에 대한 허용 목록</a>을 사용하도록 설정할 수 있습니다.</td>
+      <td>인증에 성공했지만 사용자에게 이 API를 호출할 권한이 없습니다. [추가 권한](custom-services.md)을 사용자 역할에 할당하거나 <a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/create-an-allowlist-for-ip-based-api-access">IP 기반 API 액세스에 대한 허용 목록</a>을 사용하도록 설정할 수 있습니다.</td>
     </tr>
     <tr>
       <td><a name="604"></a>604*</td>
@@ -124,7 +124,7 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
     </tr>
     <tr>
       <td><a name="606"></a>606</td>
-      <td>최대 속도 제한 &grave;%s';이(가) '%s'초 단위로 초과되었습니다.</td>
+      <td>최대 속도 제한 `%s';이(가) '%s'초 단위로 초과되었습니다.</td>
       <td>지난 20초 동안의 호출 수가 100보다 컸습니다.</td>
     </tr>
     <tr>
@@ -290,204 +290,209 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
 >[!NOTE]
 >
 ><table>
-><tbody>
->    <tr>
->      <td>응답 코드</td>
->      <td>설명</td>
->      <td>댓글</td>
->    </tr>
->    <tr>
->      <td><a name="1001"></a>1001</td>
->      <td>값 '%s'이(가) 잘못되었습니다. '%s' 유형의 필수 항목</td>
->      <td>매개 변수 값에 형식이 일치하지 않을 때마다 오류가 발생합니다. 예를 들어 정수 매개 변수에 대해 지정된 문자열 값입니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1002"></a>1002</td>
->      <td>필수 매개 변수 '%s'에 대한 값이 없습니다.</td>
->      <td>요청에서 필수 매개 변수가 누락되면 오류가 생성됩니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1003"></a>1003</td>
->      <td>잘못된 데이터</td>
->      <td>작업이 createOnly로 지정된 잠재 고객에 대해 ID가 제출되거나 배치 캠페인에서 요청 캠페인을 사용할 때와 같이 제출된 데이터가 지정된 엔드포인트 또는 모드에 대해 유효한 유형이 아닌 경우.</td>
->    </tr>
->    <tr>
->      <td><a name="1004"></a>1004</td>
->      <td>리드를 찾을 수 없음</td>
->      <td>syncLead 의 경우 작업이 "updateOnly"이고 lead 를 찾을 수 없는 경우</td>
->    </tr>
->    <tr>
->      <td><a name="1005"></a>1005</td>
->      <td>리드가 이미 있음</td>
->      <td>syncLead 의 경우 작업이 "createOnly"이고 잠재 고객이 이미 있는 경우</td>
->    </tr>
->    <tr>
->      <td><a name="1006"></a>1006</td>
->      <td>'%s' 필드를 찾을 수 없습니다.</td>
->      <td>호출에 포함된 필드가 올바른 필드가 아닙니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1007"></a>1007</td>
->      <td>여러 잠재 고객이 조회 기준과 일치함</td>
->      <td>여러 잠재 고객이 조회 기준과 일치합니다. 키가 단일 레코드와 일치하는 경우에만 업데이트를 수행할 수 있습니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1008"></a>1008</td>
->      <td>'%s' 파티션에 대한 액세스가 거부되었습니다.</td>
->      <td>사용자 정의 서비스의 사용자는 레코드가 존재하는 파티션이 있는 작업 영역에 액세스할 수 없습니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1009"></a>1009</td>
->      <td>파티션 이름을 지정해야 합니다.</td>
->      <td></td>
->    </tr>
->    <tr>
->      <td><a name="1010"></a>1010</td>
->      <td>파티션 업데이트가 허용되지 않음</td>
->      <td>지정한 레코드가 별도의 잠재 고객 파티션에 이미 있습니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1011"></a>1011</td>
->      <td>'%s' 필드는 지원되지 않습니다.</td>
->      <td>조회 필드 또는 'filterType'이 지원되지 않는 표준 필드로 지정된 경우(예: firstName, lastName)</td>
->    </tr>
->    <tr>
->      <td><a name="1012"></a>1012</td>
->      <td>잘못된 쿠키 값 '%s'</td>
->      <td>'cookie' 매개 변수에 대해 잘못된 값으로 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST">리드 연결</a>을 호출할 때 발생할 수 있습니다.
->        이는 'filterType=cookies' 및 'filterValues' 매개 변수에 대한 잘못된 값이 있는 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET">필터 유형별 리드 가져오기</a>를 호출할 때도 발생합니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1013"></a>1013</td>
->      <td>오브젝트를 찾을 수 없음</td>
->      <td>ID별 개체(목록, 캠페인) 가져오기에서 이 오류 코드를 반환합니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1014"></a>1014</td>
->      <td>개체를 만들지 못했습니다.</td>
->      <td>개체(목록)를 만들지 못했습니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1015"></a>1015</td>
->      <td>리드가 목록에 없음</td>
->      <td>지정된 잠재 고객이 대상 목록의 구성원이 아닙니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1016"></a>1016</td>
->      <td>가져오기가 너무 많음</td>
->      <td>대기 중인 가져오기가 너무 많습니다. 최대 10개가 허용됩니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1017"></a>1017</td>
->      <td>개체가 이미 있습니다.</td>
->      <td>레코드가 이미 있으므로 만들지 못했습니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1018"></a>1018</td>
->      <td>CRM 활성화됨</td>
->      <td>인스턴스에 기본 CRM 통합이 활성화되어 있으므로 작업을 수행할 수 없습니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1019"></a>1019</td>
->      <td>가져오기 진행 중</td>
->      <td>대상 목록을 이미 (으)로 가져오고 있습니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1020"></a>1020</td>
->      <td>너무 많은 클론이 프로그램에 할당됨</td>
->      <td>구독이 당일 일정 프로그램에서 할당된 'cloneToProgramName' 용도에 도달했습니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1021"></a>1021</td>
->      <td>회사 업데이트가 허용되지 않음</td>
->      <td>syncLead 중에는 회사 업데이트가 허용되지 않음</td>
->    </tr>
->    <tr>
->      <td><a name="1022"></a>1022</td>
->      <td>사용 중인 오브젝트</td>
->      <td>다른 오브젝트에서 오브젝트를 사용 중이면 삭제가 허용되지 않습니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1025"></a>1025</td>
->      <td>프로그램 상태를 찾을 수 없음</td>
->      <td>프로그램 채널에 사용 가능한 상태와 일치하지 않는 잠재 고객 프로그램 상태 변경에 상태가 지정되었습니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1026"></a>1026</td>
->      <td>사용자 지정 개체가 활성화되지 않음</td>
->      <td>인스턴스에 사용자 지정 개체 통합이 활성화되어 있지 않아 작업을 수행할 수 없습니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1027"></a>1027</td>
->      <td>최대 활동 유형 제한에 도달했습니다.</td>
->      <td>구독이 사용 가능한 최대 사용자 지정 활동 유형 수에 도달했습니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1028"></a>1028</td>
->      <td>최대 필드 제한에 도달했습니다.</td>
->      <td>사용자 지정 활동에는 최대 20개의 보조 속성이 있습니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1029"></a>1029</td>
->      <td><ul>
->          <li>큐에 작업이 너무 많음</li>
->          <li>일일 내보내기 할당량 초과</li>
->          <li>작업이 이미 큐에 추가됨</li>
->        </ul></td>
->      <td><ul>
->          <li>구독에는 지정된 시간에 큐에 최대 10개의 대량 추출 작업이 허용됩니다.</li>
->          <li>기본적으로 추출 작업은 하루에 500MB로 제한됩니다(매일 오전 12:00CST에 재설정).</li>
->          <li>내보내기 ID는 이미 큐에 있습니다.</li>
->        </ul></td>
->    </tr>
->    <tr>
->      <td><a name="1035"></a>1035</td>
->      <td>지원되지 않는 필터 유형</td>
->      <td>일부 구독에서는 updateAt, smartListId, smartListName과 같은 대량 리드 추출 필터 유형이 지원되지 않습니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1036"></a>1036</td>
->      <td>입력에서 중복 개체가 발견되었습니다.</td>
->      <td>동일한 외래 키를 사용하여 두 개 이상의 레코드를 업데이트하라는 호출이 발생했습니다. 예를 들어 동기화 회사는 둘 이상의 회사에 대해 동일한 externalCompanyId를 사용하여 를 호출합니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1037"></a>1037</td>
->      <td>잠재 고객 건너뜀</td>
->      <td>이미 이 상태 또는 그 이후이므로 잠재 고객을 건너뛰었습니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1042"></a>1042</td>
->      <td>잘못된 runAt 날짜</td>
->      <td>일정 캠페인에 대해 지정된 runAt 날짜가 너무 먼 미래입니다(최대 2년).</td>
->    </tr>
->    <tr>
->      <td><a name="1048"></a>1048</td>
->      <td>사용자 지정 개체 초안 삭제 실패</td>
->      <td>사용자 지정 개체의 초안 버전을 삭제하라는 호출이 수행되었습니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1049"></a>1049</td>
->      <td>활동을 만들지 못했습니다.</td>
->      <td>특성 배열이 너무 깁니다.
->        레코드에 전달된 특성의 배열이 최대 길이(65536바이트)를 초과했습니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1076"></a>1076</td>
->      <td>mergeInCRM 플래그가 있는 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST">잠재 고객 병합</a> 호출은 4입니다.</td>
->      <td>중복 레코드를 만들고 있습니다. 기존 레코드를 대신 사용하는 것이 좋습니다.
->        Salesforce에서 병합할 때 Marketo에서 수신하는 오류 메시지입니다.</td>
->    </tr>
->    <tr>
->      <td><a name="1077"></a>1077</td>
->      <td>'SFDC 필드' 길이로 인해 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST">리드 병합</a> 호출이 실패했습니다.</td>
->      <td>'SFDC 필드'가 허용된 문자 제한을 초과하여 mergeInCRM이 true로 설정된 병합 리드 호출이 실패했습니다. 수정하려면 'SFDC 필드'의 길이를 줄이거나 mergeInCRM을 false로 설정하십시오.</td>
->    </tr>
->    <tr>
->      <td><a name="1078"></a>1078</td>
->      <td>잠재 고객/연락처가 아닌 삭제된 엔터티로 인해 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST">잠재 고객 병합</a> 호출에 실패했습니다. 또는 필드 필터 기준이 일치하지 않습니다.</td>
->      <td>병합 실패, 고유하게 동기화된 CRM에서 병합 작업을 수행할 수 없음
->        Salesforce에서 병합할 때 Marketo에서 수신하는 오류 메시지입니다.</td>
->    </tr>
->  </tbody>
-></table>
+<tbody>
+    <tr>
+      <td>응답 코드</td>
+      <td>설명</td>
+      <td>댓글</td>
+    </tr>
+    <tr>
+      <td><a name="1001"></a>1001</td>
+      <td>값 '%s'이(가) 잘못되었습니다. '%s' 유형의 필수 항목</td>
+      <td>매개 변수 값에 형식이 일치하지 않을 때마다 오류가 발생합니다. 예를 들어 정수 매개 변수에 대해 지정된 문자열 값입니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1002"></a>1002</td>
+      <td>필수 매개 변수 '%s'에 대한 값이 없습니다.</td>
+      <td>요청에서 필수 매개 변수가 누락되면 오류가 생성됩니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1003"></a>1003</td>
+      <td>잘못된 데이터</td>
+      <td>작업이 createOnly로 지정된 잠재 고객에 대해 ID가 제출되거나 배치 캠페인에서 요청 캠페인을 사용할 때와 같이 제출된 데이터가 지정된 엔드포인트 또는 모드에 대해 유효한 유형이 아닌 경우.</td>
+    </tr>
+    <tr>
+      <td><a name="1004"></a>1004</td>
+      <td>리드를 찾을 수 없음</td>
+      <td>syncLead 의 경우 작업이 "updateOnly"이고 lead 를 찾을 수 없는 경우</td>
+    </tr>
+    <tr>
+      <td><a name="1005"></a>1005</td>
+      <td>리드가 이미 있음</td>
+      <td>syncLead 의 경우 작업이 "createOnly"이고 잠재 고객이 이미 있는 경우</td>
+    </tr>
+    <tr>
+      <td><a name="1006"></a>1006</td>
+      <td>'%s' 필드를 찾을 수 없습니다.</td>
+      <td>호출에 포함된 필드가 올바른 필드가 아닙니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1007"></a>1007</td>
+      <td>여러 잠재 고객이 조회 기준과 일치함</td>
+      <td>여러 잠재 고객이 조회 기준과 일치합니다. 키가 단일 레코드와 일치하는 경우에만 업데이트를 수행할 수 있습니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1008"></a>1008</td>
+      <td>'%s' 파티션에 대한 액세스가 거부되었습니다.</td>
+      <td>사용자 정의 서비스의 사용자는 레코드가 존재하는 파티션이 있는 작업 영역에 액세스할 수 없습니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1009"></a>1009</td>
+      <td>파티션 이름을 지정해야 합니다.</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td><a name="1010"></a>1010</td>
+      <td>파티션 업데이트가 허용되지 않음</td>
+      <td>지정한 레코드가 별도의 잠재 고객 파티션에 이미 있습니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1011"></a>1011</td>
+      <td>'%s' 필드는 지원되지 않습니다.</td>
+      <td>조회 필드 또는 'filterType'이 지원되지 않는 표준 필드로 지정된 경우(예: firstName, lastName)</td>
+    </tr>
+    <tr>
+      <td><a name="1012"></a>1012</td>
+      <td>잘못된 쿠키 값 '%s'</td>
+      <td>'cookie' 매개 변수에 대해 잘못된 값으로 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/associateLeadUsingPOST">리드 연결</a>을 호출할 때 발생할 수 있습니다.
+        이는 'filterType=cookies' 및 'filterValues' 매개 변수에 대한 잘못된 값이 있는 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET">필터 유형별 리드 가져오기</a>를 호출할 때도 발생합니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1013"></a>1013</td>
+      <td>오브젝트를 찾을 수 없음</td>
+      <td>ID별 개체(목록, 캠페인) 가져오기에서 이 오류 코드를 반환합니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1014"></a>1014</td>
+      <td>개체를 만들지 못했습니다.</td>
+      <td>개체(목록)를 만들지 못했습니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1015"></a>1015</td>
+      <td>리드가 목록에 없음</td>
+      <td>지정된 잠재 고객이 대상 목록의 구성원이 아닙니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1016"></a>1016</td>
+      <td>가져오기가 너무 많음</td>
+      <td>대기 중인 가져오기가 너무 많습니다. 최대 10개가 허용됩니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1017"></a>1017</td>
+      <td>개체가 이미 있습니다.</td>
+      <td>레코드가 이미 있으므로 만들지 못했습니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1018"></a>1018</td>
+      <td>CRM 활성화됨</td>
+      <td>인스턴스에 기본 CRM 통합이 활성화되어 있으므로 작업을 수행할 수 없습니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1019"></a>1019</td>
+      <td>가져오기 진행 중</td>
+      <td>대상 목록을 이미 (으)로 가져오고 있습니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1020"></a>1020</td>
+      <td>너무 많은 클론이 프로그램에 할당됨</td>
+      <td>구독이 당일 일정 프로그램에서 할당된 'cloneToProgramName' 용도에 도달했습니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1021"></a>1021</td>
+      <td>회사 업데이트가 허용되지 않음</td>
+      <td>syncLead 중에는 회사 업데이트가 허용되지 않음</td>
+    </tr>
+    <tr>
+      <td><a name="1022"></a>1022</td>
+      <td>사용 중인 오브젝트</td>
+      <td>다른 오브젝트에서 오브젝트를 사용 중이면 삭제가 허용되지 않습니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1025"></a>1025</td>
+      <td>프로그램 상태를 찾을 수 없음</td>
+      <td>프로그램 채널에 사용 가능한 상태와 일치하지 않는 잠재 고객 프로그램 상태 변경에 상태가 지정되었습니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1026"></a>1026</td>
+      <td>사용자 지정 개체가 활성화되지 않음</td>
+      <td>인스턴스에 사용자 지정 개체 통합이 활성화되어 있지 않아 작업을 수행할 수 없습니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1027"></a>1027</td>
+      <td>최대 활동 유형 제한에 도달했습니다.</td>
+      <td>구독이 사용 가능한 최대 사용자 지정 활동 유형 수에 도달했습니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1028"></a>1028</td>
+      <td>최대 필드 제한에 도달했습니다.</td>
+      <td>사용자 지정 활동에는 최대 20개의 보조 속성이 있습니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1029"></a>1029</td>
+      <td><ul>
+          <li>큐에 작업이 너무 많음</li>
+          <li>일일 내보내기 할당량 초과</li>
+          <li>작업이 이미 큐에 추가됨</li>
+        </ul></td>
+      <td><ul>
+          <li>구독에는 지정된 시간에 큐에 최대 10개의 대량 추출 작업이 허용됩니다.</li>
+          <li>기본적으로 추출 작업은 하루에 500MB로 제한됩니다(매일 오전 12:00CST에 재설정).</li>
+          <li>내보내기 ID는 이미 큐에 있습니다.</li>
+        </ul></td>
+    </tr>
+    <tr>
+      <td><a name="1035"></a>1035</td>
+      <td>지원되지 않는 필터 유형</td>
+      <td>일부 구독에서는 updateAt, smartListId, smartListName과 같은 대량 리드 추출 필터 유형이 지원되지 않습니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1036"></a>1036</td>
+      <td>입력에서 중복 개체가 발견되었습니다.</td>
+      <td>동일한 외래 키를 사용하여 두 개 이상의 레코드를 업데이트하라는 호출이 발생했습니다. 예를 들어 동기화 회사는 둘 이상의 회사에 대해 동일한 externalCompanyId를 사용하여 를 호출합니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1037"></a>1037</td>
+      <td>잠재 고객 건너뜀</td>
+      <td>이미 이 상태 또는 그 이후이므로 잠재 고객을 건너뛰었습니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1042"></a>1042</td>
+      <td>잘못된 runAt 날짜</td>
+      <td>일정 캠페인에 대해 지정된 runAt 날짜가 너무 먼 미래입니다(최대 2년).</td>
+    </tr>
+    <tr>
+      <td><a name="1048"></a>1048</td>
+      <td>사용자 지정 개체 초안 삭제 실패</td>
+      <td>사용자 지정 개체의 초안 버전을 삭제하라는 호출이 수행되었습니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1049"></a>1049</td>
+      <td>활동을 만들지 못했습니다.</td>
+      <td>특성 배열이 너무 깁니다.
+        레코드에 전달된 특성의 배열이 최대 길이(65536바이트)를 초과했습니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1076"></a>1076</td>
+      <td>mergeInCRM 플래그가 있는 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST">잠재 고객 병합</a> 호출은 4입니다.</td>
+      <td>중복 레코드를 만들고 있습니다. 기존 레코드를 대신 사용하는 것이 좋습니다.
+        Salesforce에서 병합할 때 Marketo에서 수신하는 오류 메시지입니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1077"></a>1077</td>
+      <td>'SFDC 필드' 길이로 인해 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST">리드 병합</a> 호출이 실패했습니다.</td>
+      <td>'SFDC 필드'가 허용된 문자 제한을 초과하여 mergeInCRM이 true로 설정된 병합 리드 호출이 실패했습니다. 수정하려면 'SFDC 필드'의 길이를 줄이거나 mergeInCRM을 false로 설정하십시오.</td>
+    </tr>
+    <tr>
+      <td><a name="1078"></a>1078</td>
+      <td>잠재 고객/연락처가 아닌 삭제된 엔터티로 인해 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST">잠재 고객 병합</a> 호출에 실패했습니다. 또는 필드 필터 기준이 일치하지 않습니다.</td>
+      <td>병합 실패, 고유하게 동기화된 CRM에서 병합 작업을 수행할 수 없음
+        Salesforce에서 병합할 때 Marketo에서 수신하는 오류 메시지입니다.</td>
+    </tr>
+    <tr>
+      <td><a name="1079"></a>1079</td>
+      <td>중복 레코드의 개인화된 URL 충돌로 인해 <a href="https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/mergeLeadsUsingPOST">리드 병합</a> 호출이 실패했습니다.</td>
+      <td>병합 리드 호출에서 동일한 개인화된 URL을 사용하는 여러 리드를 지정했습니다. 해결하려면 Marketo Engage 사용자 인터페이스를 사용하여 이러한 레코드를 병합합니다.</td>
+    </tr>
+  </tbody>
+</table>
 
