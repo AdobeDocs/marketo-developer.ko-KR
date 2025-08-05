@@ -3,10 +3,10 @@ title: Forms
 feature: REST API, Forms
 description: API를 통해 양식을 만들고 관리합니다.
 exl-id: 2e5dfa70-3163-4ab4-b269-3112417714c3
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '1598'
-ht-degree: 0%
+ht-degree: 1%
 
 ---
 
@@ -297,7 +297,7 @@ GET /rest/asset/v1/form/{id}/fields.json
 | 선택 목록 | 선택 목록 |
 | 문자열 | 문자열 |
 | 이메일 | 이메일 |
-| 날짜 | 날짜 |
+| Date | 날짜 |
 | 숫자 | 번호 |
 | 더블 | 더블 |
 | 전화 | 전화 |
@@ -305,7 +305,6 @@ GET /rest/asset/v1/form/{id}/fields.json
 | 통화 | 통화 |
 | 확인란 | single_checkbox |
 | 슬라이더 | 범위 |
-
 
 ### 종속성
 
@@ -789,8 +788,6 @@ values=[{"label":"Select...","value":"","isDefault":true,"selected":true}, {"lab
 }
 ```
 
- 
-
 복잡한 양식 필드의 형식을 지정하는 방법을 결정하려면 양식에 필드 추가에서 응답을 확인하십시오.
 
 ### 필드 재정렬
@@ -833,7 +830,7 @@ positions=[{"columnNumber":0,"rowNumber":0,"fieldName":"FirstName"},{"columnNumb
 
 ### 리치 텍스트
 
-리치 텍스트 필드가 리드 필드와 [개별 엔드포인트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/addRichTextFieldUsingPOST)를 통해 추가됩니다. 필드 콘텐츠는 다중 파트/양식 데이터로 전달됩니다. 스크립트, 메타 태그 또는 링크 태그를 포함하지 않는 HTML 컨텐츠로 구조화해야 합니다.
+리치 텍스트 필드가 리드 필드와 [개별 엔드포인트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/addRichTextFieldUsingPOST)를 통해 추가됩니다. 필드 콘텐츠는 다중 파트/양식 데이터로 전달됩니다. 스크립트, 메타 태그 또는 링크 태그를 포함하지 않는 HTML 콘텐츠로 구조화해야 합니다.
 
 ```
 POST /rest/asset/v1/form/{id}/richText.json
@@ -874,7 +871,7 @@ Content-Type: text/html
 
 Marketo forms에는 필드 세트라는 선택적 구성 요소가 있습니다. 필드 세트는 가시성 규칙에 의한 이동 및 처리를 위해 최상위 필드 목록 내에서 단일 필드로 처리되는 필드 그룹입니다. 예를 들어 준수 요구 사항에 대한 필드가 있고 클라이언트가 예 를 선택하면 HIPAA 및 PCI 준수 요구 사항에 대한 필드가 포함된 필드 세트가 표시될 수 있습니다.
 
-필드 세트 내의 필드는 전체적으로 양식에 고유하므로 중복 필드가 양식의 상위 필드 목록과 하위 필드 세트 모두에 있지 않을 수 있습니다. 필드 집합은 [Form](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/addFieldSetUsingPOST) 끝점에 필드 집합 추가를 통해 추가되며 [Form에 대한 필드 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/getFormFieldByFormVidUsingGET)의 결과에 나타납니다. [필드 위치 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/updateFieldPositionsUsingPOST)를 통해 필드를 필드 집합의 fieldList로 이동하여 필드 집합에 추가합니다. 이러한 끝점의 경우 데이터는 JSON이 아닌 POST x-www-form-urlencoded로 전달됩니다.
+필드 세트 내의 필드는 전체적으로 양식에 고유하므로 중복 필드가 양식의 상위 필드 목록과 하위 필드 세트 모두에 있지 않을 수 있습니다. 필드 집합은 [Form](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/addFieldSetUsingPOST) 끝점에 필드 집합 추가를 통해 추가되며 [Form에 대한 필드 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/getFormFieldByFormVidUsingGET)의 결과에 나타납니다. [필드 위치 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/operation/updateFieldPositionsUsingPOST)를 통해 필드를 필드 집합의 fieldList로 이동하여 필드 집합에 추가합니다. 이러한 엔드포인트의 경우 데이터는 JSON이 아닌 POST x-www-form-urlencoded로 전달됩니다.
 
 ## 가시성 규칙
 

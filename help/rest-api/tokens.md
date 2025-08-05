@@ -3,7 +3,7 @@ title: 토큰
 feature: REST API, Tokens
 description: Marketo에서 토큰을 관리합니다.
 exl-id: 4f8d87d7-ba2a-4c90-8b39-4d20679d404a
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '297'
 ht-degree: 2%
@@ -28,7 +28,6 @@ Marketo의 토큰은 런타임에 별도의 데이터로 대체되는 단축 코
 | 점수 | 부호 있는 32비트 정수 |
 | sfdc 캠페인 | Salesforce 캠페인 관리 통합에 사용됨 |
 | 텍스트 | 텍스트 문자열 |
-
 
 API를 통해 토큰을 생성할 때 사용할 수 있는 유일한 데이터 유형입니다.
 

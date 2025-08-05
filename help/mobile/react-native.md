@@ -3,7 +3,7 @@ title: React Native
 feature: Mobile Marketing
 description: Marketo용 React Native 설치
 exl-id: 462fd32e-91f1-4582-93f2-9efe4d4761ff
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '810'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 ## 사전 요구 사항
 
-[Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin Id 얻기).
+[Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin Id 얻기).
 
 ## SDK 통합
 
@@ -393,7 +393,7 @@ const { RNMarketoModule } = NativeModules;
 
 위의 파일을 올바르게 배치하면 모든 js 클래스에서 js 모듈을 가져와 해당 메서드를 직접 호출할 수 있습니다. 예:
 
-React 네이티브 앱에 대한 프레임워크 유형으로 &quot;reactNative&quot;를 전달해야 합니다. 
+React 네이티브 앱에 대한 프레임워크 유형으로 &quot;reactNative&quot;를 전달해야 합니다.
 
 ```
 // Initialize marketo SDK with Munchkin & Seretkey you have from step 1.
@@ -489,7 +489,6 @@ RNMarketoModule.registerForRemoteNotifications();
 
 export { requestPermission, registerForRemoteNotifications };
 ```
-
 
 푸시 알림을 허용하도록 `App.tsx` 추가
 
@@ -595,7 +594,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 1. `application:openURL:sourceApplication:annotation:`에서 `AppDelegate.m` 파일 포함(Objective-C)
 
-**iOS - AppDelegate에서 사용자 지정 Url 형식/딥링크 처리** 
+**iOS - AppDelegate에서 사용자 지정 Url 형식/딥링크 처리**
 
 ```
 - (BOOL)application:(UIApplication *)app

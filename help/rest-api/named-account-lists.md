@@ -3,7 +3,7 @@ title: 명명된 계정 목록
 feature: REST API
 description: 명명된 계정 목록을 구성합니다.
 exl-id: 98f42780-8329-42fb-9cd8-58e5dbea3809
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '696'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 [명명된 계정 목록 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Account-Lists)
 
-Marketo의 [명명된 계정 목록](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/target-account-management/target/account-lists)은(는) 명명된 계정의 컬렉션을 나타냅니다. 분류, 데이터 보강 및 스마트 캠페인 필터링을 포함하여 다양한 경우에 사용할 수 있습니다. 명명된 계정 목록 API를 사용하면 이러한 목록 에셋과 해당 멤버십을 원격으로 관리할 수 있습니다.
+Marketo의 [명명된 계정 목록](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/target-account-management/target/account-lists)은(는) 명명된 계정의 컬렉션을 나타냅니다. 분류, 데이터 보강 및 스마트 캠페인 필터링을 포함하여 다양한 경우에 사용할 수 있습니다. 명명된 계정 목록 API를 사용하면 이러한 목록 에셋과 해당 멤버십을 원격으로 관리할 수 있습니다.
 `Content`
 
 ## 권한
@@ -33,7 +33,6 @@ Marketo의 [명명된 계정 목록](https://experienceleague.adobe.com/ko/docs/
 | createdAt | 날짜/시간 | False | 목록 작성의 날짜/시간입니다. 이 필드는 시스템 관리이며, 레코드를 만들거나 업데이트할 때 필드로 사용할 수 없습니다. |
 | updatedAt | 날짜/시간 | False | 목록에 대한 최신 업데이트의 날짜/시간입니다. 이 필드는 시스템 관리이며, 레코드를 만들거나 업데이트할 때 필드로 사용할 수 없습니다. |
 | 유형 | 문자열 | False | 목록 유형. 값은 &quot;default&quot; 또는 &quot;external&quot;일 수 있습니다. 외부 목록은 CRM 계정 보기에서 만든 목록입니다. |
-
 
 ## 쿼리
 
@@ -294,9 +293,9 @@ POST /rest/v1/namedAccountList/{id}/namedAccounts/remove.json
 ## 시간 초과
 
 - 아래에 명시하지 않은 경우 명명된 계정 목록 엔드포인트의 시간 제한은 30초입니다.
-   - 명명된 계정 목록 동기화: 60s 
-   - 명명 계정 목록 삭제: 60s 
-   - 명명된 계정 목록 가져오기: 60s 
-   - 명명된 계정 목록 구성원 추가: 60s 
-   - 명명된 계정 목록 구성원 제거: 60s 
+   - 명명된 계정 목록 동기화: 60s
+   - 명명 계정 목록 삭제: 60s
+   - 명명된 계정 목록 가져오기: 60s
+   - 명명된 계정 목록 구성원 추가: 60s
+   - 명명된 계정 목록 구성원 제거: 60s
    - 명명된 계정 목록 구성원 가져오기: 60s

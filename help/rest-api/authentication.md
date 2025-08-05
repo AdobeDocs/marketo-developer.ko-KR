@@ -3,7 +3,7 @@ title: 인증
 feature: REST API
 description: API 사용을 위한 Marketo 사용자 인증.
 exl-id: f89a8389-b50c-4e86-a9e4-6f6acfa98e7e
-source-git-commit: 206724e5177eb9040fa36202d91b2ed9daa734c3
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '609'
 ht-degree: 0%
@@ -16,7 +16,7 @@ Marketo의 REST API는 2개의 레그 OAuth 2.0으로 인증됩니다. 클라이
 
 ## 액세스 토큰 만들기
 
-사용자 지정 서비스를 선택하고 **[!UICONTROL View Details]**&#x200B;을(를) 클릭하여 **[!UICONTROL Admin]** > **[!UICONTROL Integration]** > **[!UICONTROL LaunchPoint]** 메뉴에서 `Client ID` 및 `Client Secret`을(를) 찾을 수 있습니다.
+사용자 지정 서비스를 선택하고 `Client ID`을(를) 클릭하여 `Client Secret` > **[!UICONTROL Admin]** > **[!UICONTROL Integration]** 메뉴에서 **[!UICONTROL LaunchPoint]** 및 **[!UICONTROL View Details]**&#x200B;을(를) 찾을 수 있습니다.
 
 ![REST 서비스 세부 정보 가져오기](assets/authentication-service-view-details.png)
 
@@ -55,10 +55,9 @@ REST API 메서드를 호출할 때 호출이 성공하려면 모든 호출에 �
 
 >[!IMPORTANT]
 >
->`access_token` 쿼리 매개 변수를 사용한 인증 지원이 2025년 10월 31일에 제거됩니다. 프로젝트에서 쿼리 매개 변수를 사용하여 액세스 토큰을 전달하는 경우 가능한 한 빨리 [인증 헤더](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/authentication#using-an-access-token)를 사용하도록 업데이트해야 합니다. 새 개발에서는 `Authorization` 헤더만 사용해야 합니다.
+>`access_token` 쿼리 매개 변수를 사용한 인증 지원이 2025년 10월 31일에 제거됩니다. 프로젝트에서 쿼리 매개 변수를 사용하여 액세스 토큰을 전달하는 경우 가능한 한 빨리 [인증 헤더](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/authentication#using-an-access-token)를 사용하도록 업데이트해야 합니다. 새 개발에서는 `Authorization` 헤더만 사용해야 합니다.
 
 ### 인증 헤더로 전환
-
 
 `access_token` 쿼리 매개 변수를 사용에서 인증 헤더로 전환하려면 작은 코드 변경이 필요합니다.
 

@@ -3,7 +3,7 @@ title: Forms API 참조
 description: Forms API 참조
 feature: Forms, Javascript
 exl-id: 0f8d242f-0b27-4087-b080-3d41ebaa25b3
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '1327'
 ht-degree: 1%
@@ -19,9 +19,9 @@ Forms 2.0 API를 사용하여 상호 작용할 두 개의 기본 개체가 있�
 <table>
   <tbody>
     <tr valign="top">
-      <td><strong>방법</strong></td>
+      <td><strong>메서드</strong></td>
       <td><strong>설명</strong></td>
-      <td><strong>매개 변수</strong></td>
+      <td><strong>매개변수</strong></td>
       <td><strong>반환</strong></td>
     </tr>
     <tr valign="top">
@@ -122,15 +122,14 @@ Forms 2.0 API를 사용하여 상호 작용할 두 개의 기본 개체가 있�
     </tr>
 </table>
 
-
 ## 양식 메서드
 
 <table>
   <tbody>
     <tr valign="top">
-      <td><strong>방법</strong></td>
+      <td><strong>메서드</strong></td>
       <td><strong>설명</strong></td>
-      <td><strong>매개 변수</strong></td>
+      <td><strong>매개변수</strong></td>
       <td><strong>반환</strong></td>
     </tr>
     <tr valign="top">
@@ -220,7 +219,7 @@ Forms 2.0 API를 사용하여 상호 작용할 두 개의 기본 개체가 있�
     <tr valign="top">
       <td>.showErrorMessage(msg, elem)</td>
       <td>요소를 가리키는 오류 메시지를 표시합니다.</td>
-      <td>msg (HTML 문자열) - 표시하려는 오류 텍스트가 포함된 문자열입니다.</td>
+      <td>msg (HTML의 문자열) - 표시할 오류 텍스트가 포함된 문자열입니다.</td>
             <td>양식 개체 - 이 양식 개체(체인용).</td>
     </tr>
     <tr>

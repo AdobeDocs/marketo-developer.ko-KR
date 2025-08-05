@@ -3,7 +3,7 @@ title: 리치 미디어 권장 사항
 description: 리치 미디어 권장 사항
 feature: Javascript
 exl-id: ee92e46d-e529-40a2-a0d0-ee233916f004
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '812'
 ht-degree: 4%
@@ -21,7 +21,7 @@ ht-degree: 4%
 1. 페이지 본문에서
    1. 템플릿을 표시할 위치에 템플릿 태그(div 클래스)를 배치합니다
 
-자세한 내용은 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media)를 참조하세요.
+자세한 내용은 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media)를 참조하세요.
 
 ## 템플릿 태그
 
@@ -66,7 +66,6 @@ ht-degree: 4%
 | &#39;rcmd&#39; | 필수 | 문자열 | 메서드 이름입니다. |
 | &#39;richmedia&#39; | 필수 | 문자열 | 하위 메서드 이름. |
 
-
 ## 템플릿 구성 변경
 
 이 메서드는 템플릿에 대한 기본 구성을 변경합니다.
@@ -84,7 +83,6 @@ ht-degree: 4%
 | &#39;richmedia&#39; | 필수 | 문자열 | 하위 메서드 이름. |
 | template_id | 선택 사항입니다 | 문자열 | 구성 변경에 대한 템플릿 ID입니다. 한 템플릿에 대한 설정 변경 사항을 지정하는 데 사용합니다. |
 | conf_obj | 필수 | 오브젝트 | 새 구성. 개체에는 모든 구성이 키/값 쌍으로 저장됩니다. |
-
 
 ### 예
 
@@ -150,7 +148,6 @@ rtp("set", "rcmd", "richmedia",
 | rcmd.cta.font.color | &quot;rcmd.cta.font.color&quot; : &quot;rgb(90, 84, 164)&quot; | 단추 글꼴 색상을 변경합니다. 이 속성은 모든 글꼴 색상 값(rgb, hex, ...)을 지원합니다. |
 | rcmd.cta.text | &quot;rcmd.cta.text&quot; : &quot;푸시&quot; | 단추 텍스트를 변경합니다. 텍스트는 모든 단추에 대해 동일합니다. |
 | 범주 | &quot;category&quot; : [&quot;one category&quot;] | 이 템플릿이 지원하는 권장 사항 범주를 변경합니다. 템플릿에는 이 구성에 의해 설정된 카테고리 중 하나가 있는 권장 사항만 표시됩니다. |
-
 
 참고: 구성 지원은 템플릿별로 변경될 수 있습니다.
 

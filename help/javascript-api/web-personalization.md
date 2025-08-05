@@ -3,7 +3,7 @@ title: 웹 Personalization
 description: 웹 Personalization
 feature: Web Personalization, Javascript
 exl-id: b2c26b28-e9bf-4faf-8b6e-c102f41aeaa1
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '401'
 ht-degree: 5%
@@ -14,7 +14,7 @@ ht-degree: 5%
 
 웹 Personalization JavaScript API는 플랫폼의 자동화된 개인화 기능을 확장합니다. 웹 페이지의 이벤트 추적 및 동적 사용자 지정을 허용합니다. 추가 기능: [사용자 지정 데이터 이벤트](custom-data-events.md), [동적 콘텐츠](web-personalization.md), [방문자 데이터 가져오기](get-visitor-data.md), [특정 봇에 대한 태그 제외](#exclude_tag_for_specific_bots).
 
-- User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
+- User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
 - RTP는 계정 기반 마케팅 명명된 계정 목록을 지원하지 않습니다. ABM 목록 및 코드는 RTP 내에서 관리되는 업로드된 계정 목록(CSV 파일)에만 해당됩니다.
 
 ## 태그 설정
@@ -41,7 +41,6 @@ g.src=f;var b=h.getElementsByTagName("script")[0];b.parentNode.insertBefore(g,b)
 | &#39;setAccount&#39; | 필수 | 문자열 | 메서드 이름입니다. |
 | accountId | 필수 | 문자열 | 계정 ID. |
 
-
 ```javascript
 var accountId = '561-HYG-937';
 rtp('setAccount', accountId);
@@ -58,7 +57,6 @@ rtp('setAccount', accountId);
 | &#39;보내기&#39; | 필수 | 문자열 | 메서드 작업. |
 | &#39;보기&#39; | 필수 | 문자열 | 메서드 이름입니다. |
 | 페이지 | 선택 사항입니다 | 문자열 | 상대 경로 또는 전체 페이지 URL. |
-
 
 ```javascript
 // Example for Default Page
@@ -103,7 +101,6 @@ if(navigator.userAgent.match(/.(Googlebot|msnbot)./gi) == null){
 | jquery.min.js | v1.8.3 | Marketo 고객 지원 센터에 문의하여 비활성화할 수 있습니다. |
 | jquery-custom-ui-min.js | v1.9.2 | Marketo 고객 지원 센터에 문의하여 비활성화할 수 있습니다. |
 | query-ui-1.8.17-dialog.js | v1.9.2* | Marketo 고객 지원 센터에 문의하여 비활성화할 수 있습니다. |
-
 
 *jQuery UI에 대화 상자가 없는 경우에만 사용됩니다.
 

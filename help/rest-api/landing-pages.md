@@ -3,7 +3,7 @@ title: 랜딩 페이지
 feature: REST API, Landing Pages
 description: Marketo의 랜딩 페이지를 쿼리합니다.
 exl-id: 2f986fb0-0a6b-469f-b199-1c526cd5a882
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '1000'
 ht-degree: 1%
@@ -113,7 +113,7 @@ name=createLandingPage&folder={"type": "Folder", "id": 11}&template=1&descriptio
 
 ## 삭제
 
-랜딩 페이지를 삭제하려면 먼저 사용 중이고 다른 Marketo 에셋에서 참조하지 않아야 하며 승인되지 않아야 합니다. 페이지는 [랜딩 페이지 삭제](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Pages/operation/deleteLandingPageByIdUsingPOST) 끝점을 사용하여 개별적으로 삭제됩니다. 이 API를 통해 포함된 소셜 단추가 있는 랜딩 페이지를 삭제할 수 없습니다. 
+랜딩 페이지를 삭제하려면 먼저 사용 중이고 다른 Marketo 에셋에서 참조하지 않아야 하며 승인되지 않아야 합니다. 페이지는 [랜딩 페이지 삭제](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Pages/operation/deleteLandingPageByIdUsingPOST) 끝점을 사용하여 개별적으로 삭제됩니다. 이 API를 통해 포함된 소셜 단추가 있는 랜딩 페이지를 삭제할 수 없습니다.
 
 ## 복제
 
@@ -173,7 +173,7 @@ name=MyNewLandingPage&folder={"type":"Program","id":1119}&template=57
 
 ## 콘텐츠 관리 섹션
 
-콘텐츠 섹션은 색인 속성별로 정렬되며, 최종적으로 클라이언트가 표시할 때 적용되는 CSS 규칙에 따라 배열됩니다. 콘텐츠 섹션은 해당 [추가](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/addLandingPageContentUsingPOST), [업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/updateLandingPageContentUsingPOST) 및 [삭제](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/removeLandingPageContentUsingPOST) 랜딩 페이지 콘텐츠 섹션 끝점으로 포함 및 관리되며 [랜딩 페이지 콘텐츠 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/getLandingPageContentUsingGET)를 사용하여 쿼리할 수 있습니다. 각 섹션에는 유형 및 값 매개 변수가 있습니다. 유형은 값에 입력할 항목을 결정합니다.  이러한 끝점의 경우 데이터는 JSON이 아닌 POST x-www-form-urlencoded로 전달됩니다.
+콘텐츠 섹션은 색인 속성별로 정렬되며, 최종적으로 클라이언트가 표시할 때 적용되는 CSS 규칙에 따라 배열됩니다. 콘텐츠 섹션은 해당 [추가](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/addLandingPageContentUsingPOST), [업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/updateLandingPageContentUsingPOST) 및 [삭제](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/removeLandingPageContentUsingPOST) 랜딩 페이지 콘텐츠 섹션 끝점으로 포함 및 관리되며 [랜딩 페이지 콘텐츠 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/getLandingPageContentUsingGET)를 사용하여 쿼리할 수 있습니다. 각 섹션에는 유형 및 값 매개 변수가 있습니다. 유형은 값에 입력할 항목을 결정합니다.  이러한 엔드포인트의 경우 데이터는 JSON이 아닌 POST x-www-form-urlencoded로 전달됩니다.
 
 **섹션 유형**
 
@@ -274,7 +274,7 @@ segment=New Segment&value=New Content
 </head>
 ```
 
-자세한 내용은 [안내 랜딩 페이지 템플릿 만들기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template) 설명서의 &quot;편집 가능한 변수&quot; 섹션을 참조하십시오.
+자세한 내용은 [안내 랜딩 페이지 템플릿 만들기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template) 설명서의 &quot;편집 가능한 변수&quot; 섹션을 참조하십시오.
 
 ### 쿼리
 

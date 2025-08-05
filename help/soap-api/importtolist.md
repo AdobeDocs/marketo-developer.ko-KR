@@ -3,9 +3,9 @@ title: 가져오기 대상 목록
 feature: SOAP
 description: importToList SOAP 호출
 exl-id: 7e4930a9-a78f-44a3-9e8c-eeca908080c8
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
-source-wordcount: '393'
+source-wordcount: '387'
 ht-degree: 3%
 
 ---
@@ -20,9 +20,9 @@ ht-degree: 3%
 
 | 이메일 | 첫 번째 | 마지막 |
 | --- | --- | --- |
-| joe@company.com | Joe | Smith |
-| mary@company.com | Mary | 로저스 |
-| wanda@megacorp.com | 완다 | 윌리엄스 |
+| <joe@company.com> | Joe | Smith |
+| <mary@company.com> | Mary | 로저스 |
+| <wanda@megacorp.com> | 완다 | 윌리엄스 |
 
 `displayName` 값이 아닌 `importFileHeader`에서 `name` 값을 사용해야 합니다.
 
@@ -30,9 +30,9 @@ ht-degree: 3%
 
 | 이메일 | 첫 번째 | 마지막 | {{my.specialToken}} | {{my.otherToken}} |
 | --- | --- | --- | --- | --- |
-| joe@company.com | Joe | Smith | 물고기 | 파랑 |
-| mary@company.com | Mary | 로저스 | 치킨 | 갈색 |
-| wanda@megacorp.com | 완다 | 윌리엄스 | 채소 | 헤이즐 |
+| <joe@company.com> | Joe | Smith | 물고기 | 파랑 |
+| <mary@company.com> | Mary | 로저스 | 치킨 | 갈색 |
+| <wanda@megacorp.com> | 완다 | 윌리엄스 | 채소 | 헤이즐 |
 
 **중요:** 잠재 고객에 대한 토큰을 추가하는 경우 해당 토큰을 사용하는 Smart Campaign을 지정해야 합니다. 다음에 지정된 스마트 캠페인이 실행될 때 일반 내 토큰 값 대신 목록의 값이 사용됩니다. 단일 Campaign 실행 후 토큰이 삭제됩니다.
 

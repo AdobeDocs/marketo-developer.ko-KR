@@ -3,7 +3,7 @@ title: 랜딩 페이지 리디렉션 규칙
 feature: REST API, Landing Pages
 description: API를 통해 랜딩 페이지 리디렉션 규칙을 구성합니다.
 exl-id: f63aa5ef-5872-4401-be75-6fb9b2977734
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '641'
 ht-degree: 2%
@@ -136,18 +136,17 @@ GET /rest/asset/v1/redirectRules.json&maxReturn=3
 
 ## 만들기
 
-[랜딩 페이지 리디렉션 규칙 만들기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Redirect-Rules/operation/createLandingPageRedirectRuleUsingPOST) 끝점은 다음 세 가지 필수 매개 변수가 있는 application/x-www-form-urlencoded POST으로 실행됩니다.
+[랜딩 페이지 리디렉션 규칙 만들기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Redirect-Rules/operation/createLandingPageRedirectRuleUsingPOST) 끝점은 다음 세 가지 필수 매개 변수가 있는 application/x-www-form-urlencoded POST로 실행됩니다.
 
 `hostname` 매개 변수는 랜딩 페이지의 호스트 이름을 지정합니다. 브랜딩 도메인 또는 별칭에 속해야 합니다. 최대 길이는 255자입니다.
 
 `redirectFrom` 매개 변수는 원본 랜딩 페이지를 지정합니다. 소스가 Marketo 랜딩 페이지인지 또는 Marketo이 아닌 랜딩 페이지인지를 결정하는 유형/값 쌍을 포함하는 JSON 개체입니다. `type` 특성은 &quot;landingPageId&quot; 또는 &quot;path&quot;일 수 있습니다.
 
-| 매개 변수 | 선택 사항/필수 | 유형 | 설명 |
+| 매개변수 | 선택 사항/필수 | 유형 | 설명 |
 |---|---|---|---|
 | &#39;get&#39; | 필수 | 문자열 | 메서드 작업. |
 | &#39;visitor&#39; | 필수 | 문자열 | 메서드 이름입니다. |
 | callback | 필수 | 함수 | 반환된 각 캠페인에 대해 트리거될 콜백 함수입니다. |
-
 
 `redirectTo` 매개 변수는 대상 랜딩 페이지를 지정합니다. 소스가 Marketo 랜딩 페이지인지 또는 Marketo이 아닌 랜딩 페이지인지를 결정하는 유형/값 쌍을 포함하는 JSON 개체입니다. `type` 특성은 &quot;landingPageId&quot; 또는 &quot;url&quot;일 수 있습니다.
 
@@ -156,7 +155,7 @@ GET /rest/asset/v1/redirectRules.json&maxReturn=3
 | Marketo | 랜딩 페이지 ID | {&quot;type&quot;:&quot;landingPageId&quot;,&quot;value&quot;:&quot;1774&quot;} |
 | 비 Marketo | url | {&quot;type&quot;:&quot;url&quot;,&quot;value&quot;:&quot;www.contactLogs.com&quot;} |
 
-랜딩 페이지 리디렉션 규칙을 만드는 방법에 대한 자세한 내용은 [여기](https://experienceleague.adobe.com/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-actions/redirect-a-marketo-landing-page-to-another-page.html?lang=ko)에서 확인할 수 있습니다.
+랜딩 페이지 리디렉션 규칙을 만드는 방법에 대한 자세한 내용은 [여기](https://experienceleague.adobe.com/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-actions/redirect-a-marketo-landing-page-to-another-page.html)에서 확인할 수 있습니다.
 
 ```
 POST /rest/asset/v1/redirectRules.json
@@ -199,7 +198,7 @@ hostname=calqeauto.com&redirectFrom={"type":"landingPageId", "value":"5483"}&red
 
 ## 업데이트
 
-[랜딩 페이지 리디렉션 규칙 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Redirect-Rules/operation/updateLandingPageRedirectRuleUsingPOST) 끝점은 하나의 랜딩 페이지 리디렉션 규칙 `id` 경로 매개 변수를 사용합니다. 이 끝점은 application/x-www-form-urlencoded POST으로 실행됩니다.
+[랜딩 페이지 리디렉션 규칙 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Redirect-Rules/operation/updateLandingPageRedirectRuleUsingPOST) 끝점은 하나의 랜딩 페이지 리디렉션 규칙 `id` 경로 매개 변수를 사용합니다. 이 끝점은 application/x-www-form-urlencoded POST로 실행됩니다.
 
 위에서 설명한 만들기 호출과 마찬가지로, 업데이트할 규칙의 특성을 지정하기 위해 하나 이상의 쿼리 매개 변수가 전달됩니다. `hostname`, `redirectFrom`, `redirectTo`.
 

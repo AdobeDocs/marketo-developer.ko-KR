@@ -3,7 +3,7 @@ title: 푸시 알림
 feature: Mobile Marketing
 description: Marketo Mobile용 푸시 알림 활성화
 exl-id: 41d657d8-9eea-4314-ab24-fd4cb2be7f61
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '1329'
 ht-degree: 0%
@@ -285,7 +285,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
    ```
 
-1. HTTPv1로 FCM 설정(Google은 2023년 6월 12일에 [더 이상 사용되지 않는 XMPP 프로토콜](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref)이 있으며 2024년 6월에 제거됩니다.) 
+1. HTTPv1로 FCM 설정(Google은 2023년 6월 12일에 [더 이상 사용되지 않는 XMPP 프로토콜](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref)이 있으며 2024년 6월에 제거됩니다.)
 
 - Marketo 기능 관리자 ![](assets/feature-manager.png)에서 MME FCM HTTPv1 사용
    - MLM에서 앱에 대한 서비스 계정 Json 파일을 업로드합니다.
@@ -390,7 +390,6 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 ```
 
 1. Marketo 푸시 초기화 위의 구성을 저장한 후 Marketo 푸시 알림을 초기화해야 합니다. Application 클래스를 만들거나 열고 아래 코드를 복사하거나 붙여 넣습니다. Firebase 콘솔에서 발신자 ID를 가져올 수 있습니다.
-
 
    ```java
    Marketo marketoSdk = Marketo.getInstance(getApplicationContext());

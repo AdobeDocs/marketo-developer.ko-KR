@@ -3,7 +3,7 @@ title: 기회
 feature: REST API
 description: ' Marketo API를 사용하여 기회를 구성합니다.'
 exl-id: 46451285-4125-4857-890a-575069a68288
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '786'
 ht-degree: 0%
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Marketo은 영업 기회 레코드를 읽고, 쓰고, 만들고, 업데이트하는 API를 표시합니다. Marketo에서 기회 레코드는 중간 Opportunity Role 객체를 통해 Lead 및 Contact Records에 연결되므로 Opportunity 는 많은 개별 Lead에 연결될 수 있습니다.  이러한 객체 유형은 모두 API를 통해 노출되며 대부분의 리드 데이터베이스 객체 유형과 마찬가지로 둘 다 해당 Describe 호출을 가지고 있습니다. 이 호출은 객체 유형에 대한 메타데이터를 반환합니다.
 
-영업 기회 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=ko) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=ko)가 활성화된 구독에 대한 읽기 전용 액세스입니다.
+영업 기회 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=en) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=en)가 활성화된 구독에 대한 읽기 전용 액세스입니다.
 
 ## 설명
 
@@ -338,5 +338,5 @@ POST /rest/v1/opportunities/delete.json
 ## 시간 초과
 
 - 아래에 명시되지 않는 한 영업 기회 엔드포인트의 시간 제한은 30초입니다.
-   - 동기화 기회: 60초 
+   - 동기화 기회: 60초
    - 기회 삭제: 60초

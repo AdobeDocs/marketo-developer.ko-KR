@@ -1,9 +1,9 @@
 ---
 title: 데이터 수집
 description: 데이터 수집 API 개요
-source-git-commit: 6fc45ff98998217923e2a5b02d00d1522fe3272c
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
-source-wordcount: '945'
+source-wordcount: '940'
 ht-degree: 10%
 
 ---
@@ -11,7 +11,7 @@ ht-degree: 10%
 
 # 데이터 수집
 
-데이터 수집 API는 대량의 개인 및 개인 관련 데이터 수집을 효율적이고 최소한의 지연으로 처리하도록 설계된 대량의 짧은 지연 시간 고가용성 서비스입니다. 
+데이터 수집 API는 대량의 개인 및 개인 관련 데이터 수집을 효율적이고 최소한의 지연으로 처리하도록 설계된 대량의 짧은 지연 시간 고가용성 서비스입니다.
 
 비동기적으로 실행되는 요청을 제출하면 데이터가 수집됩니다. [Marketo Observability 데이터 스트림](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-observability-data-stream-setup/)에서 이벤트를 구독하여 요청 상태를 검색할 수 있습니다&#x200B;.
 
@@ -42,26 +42,26 @@ ht-degree: 10%
 
 ### 요청
 
-| 키 | 값 | 필수 여부 | 설명 |
+| 키 | 값 | 필수 | 설명 |
 |---|---|---|---|
 | X-Correlation-Id | 임의 문자열(최대 길이 255자). | 아니요 | 시스템을 통해 요청을 추적하는 데 사용할 수 있습니다. Marketo Observability 데이터 스트림 참조 |
 | X-Request-Source | 임의 문자열(최대 길이 50자). | 아니요 | 시스템을 통해 요청 소스를 추적하는 데 사용할 수 있습니다. Marketo Observability 데이터 스트림 참조 |
 
 ### 응답
 
-| 키 | 값 | 필수 여부 | 설명 |
+| 키 | 값 | 필수 | 설명 |
 |---|---|---|---|
 | X-Request-Id | 고유 요청 ID. | 예 | |
 
 ## 요청
 
-HTTP POST 메서드를 사용하여 서버로 데이터를 전송합니다.
+HTTP POST 메서드를 사용하여 데이터를 서버로 전송합니다.
 
 데이터 표현은 요청 본문에 application/json으로 포함됩니다.
 
 도메인 이름: `mkto-ingestion-api.adobe.io`
 
-경로는 `/subscriptions/_MunchkinId_`로 시작합니다. 여기서 `_MunchkinId_`은(는) Marketo 인스턴스에만 해당됩니다. Marketo Engage UI의 **관리자** >**내 계정** > **지원 정보**&#x200B;에서 Munchkin ID를 찾을 수 있습니다. 경로의 나머지 부분은 관심 리소스를 지정하는 데 사용됩니다.
+경로는 `/subscriptions/_MunchkinId_`로 시작합니다. 여기서 `_MunchkinId_`은(는) Marketo 인스턴스에만 해당됩니다. Munchkin ID는 Marketo Engage UI의 **관리자** >**내 계정** > **지원 정보**&#x200B;에서 찾을 수 있습니다. 경로의 나머지 부분은 관심 리소스를 지정하는 데 사용됩니다.
 
 개인용 예제 URL:
 
@@ -141,9 +141,9 @@ HTTP POST 메서드를 사용하여 서버로 데이터를 전송합니다.
 
 요청 본문
 
-| 키 | 데이터 유형 | 필수 여부 | 값 | 기본 값 |
+| 키 | 데이터 유형 | 필수 | 값 | 기본 값 |
 |---|---|---|---|---|
-| 우선 순위 | 문자열 | 아니요 | 요청의 우선 순위:보통 높음 | 표준 |
+| 우선 순위 | 문자열 | 아니요 | 요청의 우선 순위:normalhigh | 표준 |
 | partitionName | 문자열 | 아니요 | 개인 파티션 이름 | 기본 |
 | 데이터 중복 제거 필드 | 오브젝트 | 아니요 | 중복을 제거할 속성입니다. 하나 또는 두 개의 속성 이름이 허용됩니다. AND 작업에는 두 가지 속성이 사용됩니다. 예를 들어 `email`과(와) `firstName`이(가) 모두 지정된 경우 AND 작업을 사용하여 사람을 찾는 데 둘 다 사용됩니다. 지원되는 특성은 다음과 같습니다. `idemail`, `sfdcAccountId`, `sfdcContactId`, `sfdcLeadId`, `sfdcLeadOwnerIdCustom` 특성(&quot;string&quot; 및 &quot;integer&quot; 형식만 해당) | 이메일 |
 | 개인 | 개체 배열 | 예 | 개인용 속성 이름-값 쌍 목록 | - |
@@ -212,10 +212,10 @@ X-Request-ID: WOUBf3fHJNU6sTmJqLL281lOmAEpMZFw
 
 요청 본문
 
-| 키 | 데이터 유형 | 필수 여부 | 값 | 기본 값 |
+| 키 | 데이터 유형 | 필수 | 값 | 기본 값 |
 |---|---|---|---|---|
-| 우선 순위 | 문자열 | 아니요 | 요청의 우선 순위:보통 높음 | 표준 |
-| 중복 제거 기준 | 문자열 | 아니요 | 중복 제거할 속성:dedupeFieldsmarketoGUID | 데이터 중복 제거 필드 |
+| 우선 순위 | 문자열 | 아니요 | 요청의 우선 순위:normalhigh | 표준 |
+| 중복 제거 기준 | 문자열 | 아니요 | :dedupeFieldsmarketoGUID에서 중복을 제거할 특성 | 데이터 중복 제거 필드 |
 | 사용자 지정 개체 | 개체 배열 | 예 | 개체의 특성 이름-값 쌍 목록입니다. | - |
 
 | 사용 권한 |

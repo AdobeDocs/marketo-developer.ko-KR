@@ -3,7 +3,7 @@ title: 대량 사용자 지정 개체 추출
 feature: REST API, Custom Objects
 description: 사용자 지정 Marketo 개체를 일괄 처리 중입니다.
 exl-id: 86cf02b0-90a3-4ec6-8abd-b4423cdd94eb
-source-git-commit: 9830572277db2709c6853bea56fc70c455fd5e54
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '1298'
 ht-degree: 1%
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 대량 사용자 지정 개체 추출 REST API 세트는 Marketo에서 대량의 사용자 지정 개체 레코드를 검색할 수 있는 프로그래밍 방식 인터페이스를 제공합니다. ETL, 데이터 웨어하우징 및 보관 목적으로 Marketo과 하나 이상의 외부 시스템 간에 데이터를 지속적으로 교환해야 하는 사용 사례에 권장되는 인터페이스입니다.
 
-이 API는 리드에 직접 연결된 첫 번째 수준 Marketo 사용자 지정 개체 레코드 내보내기를 지원합니다. 사용자 지정 개체의 이름과 개체가 연결된 리드 목록을 전달합니다. 목록의 각 리드에 대해 지정된 사용자 지정 개체 이름과 일치하는 연결된 사용자 지정 개체 레코드는 내보내기 파일에 행으로 기록됩니다. 사용자 지정 개체 데이터는 Marketo UI의 잠재 고객 세부 정보 페이지에 있는 [사용자 지정 개체 탭](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects)에서 볼 수 있습니다.
+이 API는 리드에 직접 연결된 첫 번째 수준 Marketo 사용자 지정 개체 레코드 내보내기를 지원합니다. 사용자 지정 개체의 이름과 개체가 연결된 리드 목록을 전달합니다. 목록의 각 리드에 대해 지정된 사용자 지정 개체 이름과 일치하는 연결된 사용자 지정 개체 레코드는 내보내기 파일에 행으로 기록됩니다. 사용자 지정 개체 데이터는 Marketo UI의 잠재 고객 세부 정보 페이지에 있는 [사용자 지정 개체 탭](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects)에서 볼 수 있습니다.
 
 ## 권한
 
@@ -44,12 +44,11 @@ ht-degree: 1%
 - 이 필드의 열 헤더 이름 바꾸기
 - 내보낸 파일의 형식 지정
 
-| 매개변수 | 데이터 유형 | 필수 여부 | 참고 |
+| 매개변수 | 데이터 유형 | 필수 | 참고 |
 |---|---|---|---|
 | `fields` | 배열[문자열] | 예 | 사용자 지정 개체 설명 끝점에서 반환된 사용자 지정 개체 특성 이름의 값이 포함된 문자열 배열입니다. 나열된 필드는 내보낸 파일에 포함됩니다. |
 | `columnHeaderNames` | 오브젝트 | 아니요 | 필드 및 열 헤더 이름의 키-값 쌍을 포함하는 JSON 개체입니다. 키는 내보내기 작업에 포함된 필드 이름이어야 합니다. 값은 해당 필드에 대해 내보낸 열 헤더의 이름입니다. |
 | `format` | 문자열 | 아니요 | CSV, TSV, SSV 중 하나를 허용합니다. 내보낸 파일은 쉼표로 구분된 값, 탭으로 구분된 값 또는 공백으로 구분된 값 파일로 렌더링됩니다(설정된 경우). 설정하지 않으면 기본값이 CSV로 설정됩니다. |
-
 
 ## 작업 생성
 
@@ -62,7 +61,6 @@ ht-degree: 1%
 사용자 지정 개체 정의
 
 ![사용자 지정 개체](assets/custom-object-car.png)
-
 
 사용자 정의 오브젝트 필드
 
@@ -237,7 +235,7 @@ POST /rest/v1/customobjects/car_c.json
 }
 ```
 
-위에서 참조한 세 개의 리드는 각각 [목록 ID로 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists/operation/getLeadsByListIdUsingGET_1) 끝점을 호출하여 아래에서 볼 수 있듯이 `id`이(가) 1081인 &quot;자동차 구매자&quot;라는 정적 목록에 속합니다.
+위에서 참조한 세 개의 리드는 각각 `id`목록 ID로 리드 가져오기[ 끝점을 호출하여 아래에서 볼 수 있듯이 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists/operation/getLeadsByListIdUsingGET_1)이(가) 1081인 &quot;자동차 구매자&quot;라는 정적 목록에 속합니다.
 
 ```
 GET /rest/v1/lists/1081/leads.json
@@ -312,7 +310,7 @@ POST /bulk/v1/customobjects/car_c/export/create.json
 }
 ```
 
-작업이 생성되었음을 나타내는 상태가 응답에 반환됩니다. 작업이 정의되고 생성되었지만 아직 시작되지 않았습니다. 이렇게 하려면 `apiName`과(와) 만들기 상태 응답의 `exportId`을(를) 사용하여 [Enqueue 내보내기 사용자 지정 개체 작업](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/enqueueExportCustomObjectsUsingPOST) 끝점을 호출해야 합니다.
+작업이 생성되었음을 나타내는 상태가 응답에 반환됩니다. 작업이 정의되고 생성되었지만 아직 시작되지 않았습니다. 이렇게 하려면 [과(와) 만들기 상태 응답의 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/enqueueExportCustomObjectsUsingPOST)을(를) 사용하여 `apiName`Enqueue 내보내기 사용자 지정 개체 작업`exportId` 끝점을 호출해야 합니다.
 
 ```
 POST /bulk/v1/customobjects/car_c/export/f2c03f1d-226f-47c1-a557-357af8c2b32a/enqueue.json
@@ -388,7 +386,7 @@ GET /bulk/v1/customobjects/{apiName}/export/{exportId}/status.json
 
 ## 데이터 검색 중
 
-완료된 사용자 지정 개체 내보내기의 파일을 검색하려면 `apiName` 및 `exportId`을(를) 사용하여 [사용자 지정 개체 파일 내보내기 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/getExportCustomObjectsFileUsingGET) 끝점을 호출하면 됩니다.
+완료된 사용자 지정 개체 내보내기의 파일을 검색하려면 [ 및 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/getExportCustomObjectsFileUsingGET)을(를) 사용하여 `apiName`사용자 지정 개체 파일 내보내기 가져오기`exportId` 끝점을 호출하면 됩니다.
 
 응답에는 작업이 구성된 방식으로 포맷된 파일이 포함됩니다. 끝점이 파일의 내용에 응답합니다. 요청한 사용자 지정 개체 특성이 비어 있으면(데이터 없음) `null`이(가) 내보내기 파일의 해당 필드에 배치됩니다.
 
@@ -403,7 +401,7 @@ leadId,color,make,model,vIN
 13,Fusion Red,Tesla,Roadster,SFGRC3C41FF154321
 ```
 
-추출된 데이터의 부분 검색과 재시작 친화적 검색을 지원하기 위해 파일 끝점은 선택적으로 `bytes` 형식의 HTTP 헤더 `Range`을(를) 지원합니다. 헤더가 설정되지 않은 경우 전체 콘텐츠가 반환됩니다. Marketo [일괄 추출](bulk-extract.md)에서 범위 헤더 사용에 대한 자세한 내용을 읽을 수 있습니다.
+추출된 데이터의 부분 검색과 재시작 친화적 검색을 지원하기 위해 파일 끝점은 선택적으로 `Range` 형식의 HTTP 헤더 `bytes`을(를) 지원합니다. 헤더가 설정되지 않은 경우 전체 콘텐츠가 반환됩니다. Marketo [일괄 추출](bulk-extract.md)에서 범위 헤더 사용에 대한 자세한 내용을 읽을 수 있습니다.
 
 ## 작업 취소
 

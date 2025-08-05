@@ -3,9 +3,9 @@ title: getLeadChanges
 feature: SOAP
 description: getLeadChanges SOAP 호출
 exl-id: 23445684-d8d9-407b-8f19-cb69e806795c
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
-source-wordcount: '402'
+source-wordcount: '401'
 ht-degree: 3%
 
 ---
@@ -40,7 +40,7 @@ SOAP API 버전 2_2 이후에 `leadSelector`을(를) 포함할 수 있습니다.
 | startPosition->activityCreatedAt | 선택 사항입니다 | activityCreatedAt 이후 활동이 있는 리드만 포함하도록 결과를 필터링하는 데 사용되는 타임스탬프입니다. 참고: `LastUpdateAtSelector->latestUpdatedAt` 타임스탬프를 사용하여 `activityCreatedAt`을(를) 지정할 수 있습니다. |
 | leadSelector | 선택 사항입니다 | 다음 세 가지 형식 중 하나일 수 있습니다. `LeadKeySelector`, `StaticListSelector`, `LastUpdateAtSelector` |
 | LeadKeySelector: leadSelector->keyType | 필수 | 쿼리할 ID 유형입니다. 값은 `IDNUM`, `COOKIE`, `EMAIL`, `LEADOWNEREMAIL`, `SFDCACCOUNTID`, `SFDCCONTACTID`, `SFDCLEADID`, `SFDCLEADOWNERID`, `SFDCOPPTYID`입니다. |
-| LeadKeySelector: leadSelector->keyValues->stringItem | 필수 | 키 값 목록. 즉, &quot;lead@email.com&quot; |
+| LeadKeySelector: leadSelector->keyValues->stringItem | 필수 | 키 값 목록. 즉, &quot;<lead@email.com>&quot; |
 | StaticListSelector: leadSelector->staticListName | `leadSelector->staticListId`이(가) 있는 경우 선택 사항 | 정적 목록의 이름 |
 | StaticListSelector: leadSelector->staticListId | `leadSelector->staticListName`이(가) 있는 경우 선택 사항 | 정적 목록의 ID |
 

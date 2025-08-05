@@ -3,7 +3,7 @@ title: 일괄 가져오기
 feature: REST API
 description: 개인 데이터를 일괄 가져오는 중.
 exl-id: f7922fd2-8408-4d04-8955-0f8f58914d24
-source-git-commit: e7d893a81d3ed95e34eefac1ee8f1ddd6852f5cc
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '592'
 ht-degree: 1%
@@ -46,7 +46,7 @@ Marketo은 일괄 가져오기라고 하는 대규모 개인 및 개인 관련 �
 
 ## 작업 생성
 
-Marketo의 벌크 가져오기 API는 데이터 가져오기를 실행하는 작업 개념을 사용합니다. [리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/importLeadUsingPOST) 끝점을 사용하여 간단한 리드 가져오기 작업을 만드는 방법을 살펴보겠습니다.  이 끝점은 [multipart/form-data를 content-type](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html)(으)로 사용합니다. 이 방법은 올바른 이해에 까다로울 수 있으므로 가장 좋은 방법은 선택한 언어에 HTTP 지원 라이브러리를 사용하는 것입니다.  발을 막 젖게 하는 경우에는 [curl](https://curl.se/)을(를) 사용하는 것이 좋습니다.
+Marketo의 벌크 가져오기 API는 데이터 가져오기를 실행하는 작업 개념을 사용합니다. [리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/importLeadUsingPOST) 끝점을 사용하여 간단한 리드 가져오기 작업을 만드는 방법을 살펴보겠습니다.  이 끝점은 [multipart/form-data를 content-type](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html)&#x200B;(으)로 사용합니다. 이 방법은 올바른 이해에 까다로울 수 있으므로 가장 좋은 방법은 선택한 언어에 HTTP 지원 라이브러리를 사용하는 것입니다.  발을 막 젖게 하는 경우에는 [curl](https://curl.se/)을(를) 사용하는 것이 좋습니다.
 
 ```
 POST /bulk/v1/leads.json?format=csv
@@ -96,7 +96,6 @@ Easy,Fox,easyfox@marketo.com
 |---|---|---|
 | 형식 | 문자열 | 쉼표로 구분된 값, 탭으로 구분된 값 및 세미콜론으로 구분된 값에 대한 옵션을 사용하여 가져온 데이터의 파일 형식을 결정합니다. CSV, SSV, TSV 중 하나를 허용합니다. 형식은 기본적으로 CSV로 설정됩니다. |
 | 파일 | 문자열 | 데이터는 파일의 여러 부분 양식 데이터를 통해 지정됩니다. |
-
 
 ## 폴링 작업 상태
 

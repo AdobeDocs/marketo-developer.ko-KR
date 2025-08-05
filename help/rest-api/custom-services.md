@@ -3,7 +3,7 @@ title: 사용자 정의 서비스
 feature: REST API
 description: Marketo을 사용한 인증 자격 증명입니다.
 exl-id: 38b05c4c-4404-4c30-a7cb-d31b28a3a72e
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '968'
 ht-degree: 0%
@@ -43,7 +43,6 @@ ht-degree: 0%
 >[!MORELIKETHIS]
 >
 >API 전용 사용자를 만들려면 **[!UICONTROL Admin]** > **[!UICONTROL Users & Roles]** > **[!UICONTROL Users]** 메뉴로 이동한 다음 [!UICONTROL Invite New User]을(를) 클릭합니다.
-
 
 ![새 사용자 정보](assets/new-user-info.png)
 

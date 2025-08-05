@@ -3,7 +3,7 @@ title: 성능
 feature: REST API
 description: Marketo API 작업에 대한 성능 팁입니다.
 exl-id: 173a398a-9d36-4e8d-9dd3-7d0d375b085a
-source-git-commit: 4e64b8a801e443471f52090b7f008b11e628012d
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '122'
 ht-degree: 0%
@@ -37,5 +37,5 @@ Content-Encoding: gzip
 다음은 Curl을 사용하여 [필터 유형별 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadsByFilterUsingGET) 끝점을 호출하여 5개의 리드를 검색하는 예입니다.
 
 ```bash
-$ curl -H 'Accept-Encoding: gzip' 'https://123-ABC-456.mktorest.com/rest/v1/leads.json?filterType=id&filterValues=4,5,7,12,13'
+curl -H 'Accept-Encoding: gzip' 'https://123-ABC-456.mktorest.com/rest/v1/leads.json?filterType=id&filterValues=4,5,7,12,13'
 ```

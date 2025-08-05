@@ -3,7 +3,7 @@ title: 활동
 feature: REST API
 description: Marketo Engage 활동 관리를 위한 API입니다.
 exl-id: 1e69af23-2b0c-467a-897c-1dcf81343e73
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '2029'
 ht-degree: 0%
@@ -131,7 +131,7 @@ GET /rest/v1/activities.json?activityTypeIds=1&nextPageToken=WQV2VQVPPCKHC6AQYVK
 
 경우에 따라 이 API는 300개 미만의 활동 항목으로 응답할 수 있지만 `moreResult` 특성도 true로 설정되어 있습니다.  이는 반환할 수 있는 활동이 더 있으며 반환된 `nextPageToken`을(를) 후속 호출에 포함하여 더 최근의 활동에 대해 끝점을 쿼리할 수 있음을 나타냅니다.
 
-각 결과 배열 항목 내에서 `id` 정수 특성은 고유 식별자로 `marketoGUID` 문자열 특성으로 대체됩니다. 
+각 결과 배열 항목 내에서 `id` 정수 특성은 고유 식별자로 `marketoGUID` 문자열 특성으로 대체됩니다.
 
 ### 데이터 값 변경
 
@@ -435,7 +435,6 @@ POST /rest/v1/activities/external/type/{apiName}.json
 
 유형은 표준 Marketo 에셋과 마찬가지로 사용자 지정 활동 유형 승인, 사용자 지정 활동 유형 초안 폐기 및 사용자 지정 활동 유형 삭제로 관리할 수 있습니다.
 
-
 ## 사용자 지정 활동 유형 속성
 
 각 사용자 지정 활동 유형에는 0~20개의 보조 속성이 있을 수 있습니다. 보조 속성에는 Marketo 필드에 대한 유효한 필드 유형이 있을 수 있습니다. 상위 유형과 별도로 추가, 업데이트 및 제거되지만, 활동 유형이 사용 중인 동안 편집한 다음 승인될 수 있습니다. 라이브 유형에서 필드를 편집할 때 승인 후 생성된 해당 유형의 모든 활동에는 새 보조 속성이 설정됩니다. 변경 사항은 해당 유형을 공유하는 기존 활동에 소급하여 적용되지 않습니다.
@@ -450,7 +449,7 @@ POST /rest/v1/activities/external/type/{apiName}.json
 
 ### 속성 만들기
 
-특성을 만들려면 필요한 `apiName` 경로 매개 변수가 필요합니다. `name` 및 `dataType` 매개 변수도 필요합니다.` The description and` `isPrimary` 매개 변수는 선택 사항입니다.
+특성을 만들려면 필요한 `apiName` 경로 매개 변수가 필요합니다. `name` 및 `dataType` 매개 변수도 필요합니다.`The description and` `isPrimary` 매개 변수는 선택 사항입니다.
 
 ```
 POST /rest/v1/activities/external/type/{apiName}/attributes/create.json
@@ -709,5 +708,5 @@ POST /rest/v1/activities/external.json
 
 아래에 명시하지 않는 한 활동 엔드포인트에 30초의 시간 제한이 있습니다.
 
-* 페이징 토큰 가져오기: 300s 
+* 페이징 토큰 가져오기: 300s
 * 사용자 지정 활동 추가: 90초

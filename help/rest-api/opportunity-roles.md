@@ -3,7 +3,7 @@ title: 영업 기회 역할
 feature: REST API
 description: Marketo에서 영업 기회 역할 처리.
 exl-id: 2ba84f4d-82d0-4368-94e8-1fc6d17b69ed
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '253'
 ht-degree: 0%
@@ -229,5 +229,5 @@ POST /rest/v1/opportunities/roles/delete.json
 ## 시간 초과
 
 - 아래에 명시되지 않은 경우 Opportunity Role Endpoints 의 시간 제한은 30초입니다.
-   - 동기화 영업 기회 역할: 60초 
+   - 동기화 영업 기회 역할: 60초
    - 영업 기회 역할 삭제: 60초

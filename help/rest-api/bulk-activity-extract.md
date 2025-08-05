@@ -3,7 +3,7 @@ title: 일괄 활동 추출
 feature: REST API
 description: Marketo에서 활동 데이터를 일괄 처리합니다.
 exl-id: 6bdfa78e-bc5b-4eea-bcb0-e26e36cf6e19
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '1332'
 ht-degree: 3%
@@ -105,7 +105,6 @@ REST API의 벌크 활동 추출 세트는 Marketo에서 대량의 활동 데이
 | 형식 | 문자열 | 아니요 | CSV, TSV, SSV 중 하나 허용 내보낸 파일은 설정된 경우 각각 쉼표로 구분된 값, 탭으로 구분된 값 또는 공백으로 구분된 값 파일로 렌더링됩니다. 설정하지 않으면 기본값이 CSV로 설정됩니다. |
 | 열 머리글 이름 | 오브젝트 | 아니요 | 필드 및 열 헤더 이름의 키-값 쌍을 포함하는 JSON 개체입니다. 키는 내보내기 작업에 포함된 필드 이름이어야 합니다. 값은 해당 필드에 대해 내보낸 열 헤더의 이름입니다. |
 | 필드 | 배열[문자열] | 아니요 | 필드 값을 포함하는 선택적 문자열 배열입니다. 나열된 필드는 내보낸 파일에 포함됩니다. 기본적으로 다음 필드가 반환됩니다. <ul><li>`marketoGUIDleadId`</li><li> `activityDate` </li><li>`activityTypeId` </li><li>`campaignId`</li><li> `primaryAttributeValueId` </li><li>`primaryAttributeValue`</li><li> `attributes`</li></ul>. 이 매개 변수는 위의 목록에서 하위 집합을 지정하여 반환되는 필드 수를 줄이는 데 사용할 수 있습니다. `"fields": ["leadId", "activityDate", "activityTypeId"]`. 활동 작업 `actionResult`을(를) 포함하도록 추가 필드 `("succeeded", "skipped", or "failed")`을(를) 지정할 수 있습니다. |
-
 
 ## 작업 생성
 

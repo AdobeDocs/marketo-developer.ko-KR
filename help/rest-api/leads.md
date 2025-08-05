@@ -3,7 +3,7 @@ title: 잠재 고객
 feature: REST API
 description: 잠재 고객 API 호출에 대한 세부 정보
 exl-id: 0a2f7c38-02ae-4d97-acfe-9dd108a1f733
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '3338'
 ht-degree: 2%
@@ -430,7 +430,6 @@ API를 사용하여 Marketo Engage의 프로덕션 인스턴스에서 만드는 
 POST /rest/v1/leads/schema/fields.json
 ```
 
-
 ### 본문
 
 ```json
@@ -451,7 +450,6 @@ POST /rest/v1/leads/schema/fields.json
   ]
 }
 ```
-
 
 ### 응답
 
@@ -816,7 +814,7 @@ POST /rest/v1/leads/{id}/associate.json?cookie=id:287-GTJ-838%26token:_mch-marke
 잠재 고객 레코드는 정적 목록 또는 프로그램의 구성원을 기반으로 검색할 수도 있습니다. 또한 잠재 고객이 멤버인 모든 정적 목록, 프로그램 또는 스마트 캠페인을 검색할 수 있습니다.
 
 응답 구조 및 선택적 매개 변수는 필터 유형별 리드 가져오기의 매개 변수와 동일하지만 filterType 및 filterValues를 이 API와 함께 사용할 수 없습니다.
-Marketo UI를 통해 목록 ID에 액세스하려면 목록으로 이동합니다. `id` 목록은 정적 목록 `https://app-**&#x200B;**.marketo.com/#ST1001A1`의 URL에 있습니다. 이 예제에서 1001은 목록의 `id`입니다.
+Marketo UI를 통해 목록 ID에 액세스하려면 목록으로 이동합니다. `id` 목록은 정적 목록 `https://app-****.marketo.com/#ST1001A1`의 URL에 있습니다. 이 예제에서 1001은 목록의 `id`입니다.
 
 ### 요청
 

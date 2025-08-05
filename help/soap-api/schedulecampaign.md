@@ -3,7 +3,7 @@ title: scheduleCampaign
 feature: SOAP, Smart Campaigns
 description: schedule캠페인 SOAP 호출
 exl-id: a9ef2c16-34ef-4e0f-b765-e332335b0b81
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '252'
 ht-degree: 3%
@@ -14,7 +14,7 @@ ht-degree: 3%
 
 이 함수는 즉시 또는 미래 날짜에 실행되도록 배치 스마트 캠페인의 일정을 설정합니다. 성공적으로 완료하려면 기존 스마트 캠페인이 필요합니다. ImportToList와 함께 사용하여 리드 목록을 업로드한 다음 새로 생성된 해당 목록에 대해 배치 캠페인을 실행할 수 있습니다.
 
-## 선택적 프로그램 토큰:
+## 선택적 프로그램 토큰
 
 requestCampaign 함수와 유사하게 기존 토큰을 재정의하는 내 토큰 배열을 이 API 호출에 전달할 수 있습니다. 캠페인 실행 후 토큰이 삭제됩니다.
 

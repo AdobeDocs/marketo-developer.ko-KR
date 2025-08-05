@@ -3,7 +3,7 @@ title: Munchkin API 참조
 description: Munchkin Javascript API를 사용하여 Munchkin 데이터를 사용자 지정합니다.
 feature: Munchkin Tracking Code, Javascript
 exl-id: e9727691-5501-4223-bc98-2b4bacc33513
-source-git-commit: 1ad2d793832d882bb32ebf7ef1ecd4148a6ef8d5
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '414'
 ht-degree: 7%
@@ -26,7 +26,7 @@ Munchkin API는 다음 함수로 구성됩니다. `init`, `createTrackingCookie`
 
 | 매개 변수 이름 | 선택 사항/필수 | 유형 | 설명 |
 | --- | --- | --- | --- |
-| Munchkin ID | 필수 여부 | 문자열 | Munchkin 계정 ID는 관리 > 통합 > Munchkin 메뉴에서 찾을 수 있습니다. 활동을 보낼 대상 인스턴스를 설정합니다. |
+| Munchkin ID | 필수 | 문자열 | Munchkin 계정 ID는 관리 > 통합 > Munchkin 메뉴에서 찾을 수 있습니다. 활동을 보낼 대상 인스턴스를 설정합니다. |
 | [구성 설정](configuration.md) | 선택 사항입니다 | 오브젝트 | Munchkin에 대한 대체 동작 설정을 활성화합니다. |
 
 ```javascript
@@ -39,8 +39,7 @@ Munchkin.init('299-BYM-827');
 
 | 매개 변수 이름 | 선택 사항/필수 | 유형 | 설명 |
 | --- | --- | --- | --- |
-| forceCreate | 필수 여부 | 부울 | `cookieAnon`이(가) false로 설정된 경우에도 쿠키를 만듭니다. |
-
+| forceCreate | 필수 | 부울 | `cookieAnon`이(가) false로 설정된 경우에도 쿠키를 만듭니다. |
 
 ```javascript
 Munchkin.createTrackingCookie(true);
@@ -52,17 +51,17 @@ Munchkin.createTrackingCookie(true);
 
 | 매개 변수 이름 | 선택 사항/필수 | 유형 | 설명 |
 | --- | --- | --- | --- |
-| 함수 유형 | 필수 여부 | 문자열 | 기록할 활동을 결정합니다. 허용되는 값: `visitWebPage`, `clickLink`, `associateLead` |
-| 데이터 | 필수 여부 | 오브젝트 | 기록할 활동에 대한 데이터를 포함합니다. |
+| 함수 유형 | 필수 | 문자열 | 기록할 활동을 결정합니다. 허용되는 값: `visitWebPage`, `clickLink`, `associateLead` |
+| 데이터 | 필수 | 오브젝트 | 기록할 활동에 대한 데이터를 포함합니다. |
 
 #### visitWebpage
 
-`visitWebPage`(으)로 `munchkinFunction()`을(를) 호출하면 현재 사용자에 대한 &#39;방문&#39; 활동이 Marketo으로 전송됩니다. 두 번째 인수의 데이터 개체와 함께 전송되는 URL 및 `querystring`을(를) 사용자 지정할 수 있습니다.
+`munchkinFunction()`(으)로 `visitWebPage`을(를) 호출하면 현재 사용자에 대한 &#39;방문&#39; 활동이 Marketo으로 전송됩니다. 두 번째 인수의 데이터 개체와 함께 전송되는 URL 및 `querystring`을(를) 사용자 지정할 수 있습니다.
 
 | 데이터 속성 이름 | 선택 사항/필수 | 유형 | 설명 |
 | --- | --- | --- | --- |
-| url | 필수 여부 | 문자열 | 페이지 방문을 기록하는 데 사용되는 URL 파일 경로입니다.  이 값은 전체 페이지 이름을 만들기 위해 현재 도메인 이름에 추가됩니다. 예를 들어 URL이 `/index.html`이고 도메인 이름이 `www.example.com`인 경우 방문한 페이지는 `www.example.com/index.html`(으)로 기록됩니다. |
-| 매개 변수 | 선택 사항입니다 | 문자열 | 기록할 원하는 매개 변수의 쿼리 문자열입니다. |
+| url | 필수 | 문자열 | 페이지 방문을 기록하는 데 사용되는 URL 파일 경로입니다.  이 값은 전체 페이지 이름을 만들기 위해 현재 도메인 이름에 추가됩니다. 예를 들어 URL이 `/index.html`이고 도메인 이름이 `www.example.com`인 경우 방문한 페이지는 `www.example.com/index.html`(으)로 기록됩니다. |
+| params | 선택 사항입니다 | 문자열 | 기록할 원하는 매개 변수의 쿼리 문자열입니다. |
 
 예: `foo=bar&biz=baz`.
 
@@ -76,11 +75,11 @@ Munchkin.munchkinFunction('visitWebPage', {
 
 #### clickLink
 
-`clickLink`(으)로 `munchkinFunction()`을(를) 호출하면 현재 사용자에 대한 클릭 활동이 Marketo으로 전송됩니다. 데이터 개체에서 `href` 속성을 사용하여 클릭 URL을 사용자 지정할 수 있습니다.
+`munchkinFunction()`(으)로 `clickLink`을(를) 호출하면 현재 사용자에 대한 클릭 활동이 Marketo으로 전송됩니다. 데이터 개체에서 `href` 속성을 사용하여 클릭 URL을 사용자 지정할 수 있습니다.
 
 | 데이터 속성 이름 | 선택 사항/필수 | 유형 | 설명 |
 | --- | --- | --- | --- |
-| href | 필수 여부 | 문자열 | 링크 클릭을 기록하는 데 사용되는 URL 파일 경로입니다. 이 값은 전체 링크를 만들기 위해 현재 도메인 이름에 추가됩니다. |
+| href | 필수 | 문자열 | 링크 클릭을 기록하는 데 사용되는 URL 파일 경로입니다. 이 값은 전체 링크를 만들기 위해 현재 도메인 이름에 추가됩니다. |
 
 예를 들어 href가 `/index.html`이고 도메인 이름이 `www.example.com`인 경우 링크 클릭은 `www.example.com/index.html`(으)로 기록됩니다.
 

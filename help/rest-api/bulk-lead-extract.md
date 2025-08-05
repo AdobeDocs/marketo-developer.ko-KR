@@ -3,7 +3,7 @@ title: 벌크 납 추출
 feature: REST API
 description: 리드 데이터의 일괄 추출.
 exl-id: 42796e89-5468-463e-9b67-cce7e798677b
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
 source-wordcount: '1173'
 ht-degree: 2%
@@ -24,7 +24,7 @@ REST API의 벌크 리드 추출 세트는 Marketo에서 대규모 리드/개인
 
 리드는 다양한 필터 옵션을 지원합니다. `updatedAt`, `smartListName` 및 `smartListId`을(를) 포함한 특정 필터에는 모든 구독으로 아직 롤아웃되지 않은 추가 인프라 구성 요소가 필요합니다. 내보내기 작업당 하나의 필터 유형만 지정할 수 있습니다.
 
-| 필터 유형 | 데이터 유형 | 참고 사항 |
+| 필터 유형 | 데이터 유형 | 참고 |
 |---|---|---|
 | createdAt | 날짜 범위 | `startAt` 및 `endAt` 멤버를 사용하여 JSON 개체를 허용합니다. `startAt`은(는) 로우 워터마크를 나타내는 날짜/시간을 수락하고 `endAt`은(는) 하이 워터마크를 나타내는 날짜/시간을 수락합니다. 범위는 31일 이하여야 합니다. 날짜/시간은 밀리초 없이 ISO-8601 형식이어야 합니다. 이 필터 유형의 작업은 날짜 범위 내에서 만든 액세스 가능한 모든 레코드를 반환합니다. |
 | updatedAt* | 날짜 범위 | `startAt` 및 `endAt` 멤버를 사용하여 JSON 개체를 허용합니다. `startAt`은(는) 로우 워터마크를 나타내는 날짜/시간을 수락하고 `endAt`은(는) 하이 워터마크를 나타내는 날짜/시간을 수락합니다. 범위는 31일 이하여야 합니다. 날짜/시간은 밀리초 없이 ISO-8601 형식이어야 합니다. 참고: 이 필터는 표준 필드에 대한 업데이트만 반영하는 표시되는 &quot;updatedAt&quot; 필드를 필터링하지 않습니다. 이 필터는 잠재 고객 레코드에 대한 가장 최근 필드 업데이트가 이루어진 시점을 기준으로 필터링합니다.이 필터 유형을 가진 작업은 날짜 범위 내에서 가장 최근 업데이트된 액세스 가능한 모든 레코드를 반환합니다. |
@@ -33,19 +33,17 @@ REST API의 벌크 리드 추출 세트는 Marketo에서 대규모 리드/개인
 | smartListName* | 문자열 | 스마트 목록의 이름을 허용합니다. 이 필터 유형의 작업은 작업 처리를 시작할 때 스마트 목록의 구성원인 액세스 가능한 모든 레코드를 반환합니다. 스마트 목록 가져오기 끝점을 사용하여 스마트 목록 이름을 검색합니다. |
 | smartListId* | 정수 | 스마트 목록의 ID를 허용합니다. 이 필터 유형의 작업은 작업 처리를 시작할 때 스마트 목록의 구성원인 액세스 가능한 모든 레코드를 반환합니다. 스마트 목록 가져오기 끝점을 사용하여 스마트 목록 ID를 검색합니다. |
 
-
 일부 구독에서는 필터 유형을 사용할 수 없습니다. 구독에 사용할 수 없는 경우 리드 작업 내보내기 만들기 엔드포인트를 호출할 때 오류가 발생합니다(&quot;1035, 대상 구독에 대해 지원되지 않는 필터 유형&quot;). 고객은 Marketo 지원 센터에 문의하여 구독에서 이 기능을 활성화할 수 있습니다.
 
 ## 옵션
 
 리드 작업 내보내기 만들기 엔드포인트는 사용자에게 내보낸 파일 내에 특정 필드를 포함할 수 있는 기능, 이러한 필드의 열 헤더 이름을 바꿀 수 있는 기능 및 내보낸 파일의 형식을 제공하는 몇 가지 서식 옵션을 제공합니다.
 
-| 매개 변수 | 데이터 유형 | 필수 | 참고 사항 |
+| 매개변수 | 데이터 유형 | 필수 | 참고 |
 |---|---|---|---|
 | 필드 | 배열[문자열] | 예 | 필드 매개 변수는 JSON 문자열 배열을 수락합니다. 각 문자열은 Marketo 리드 필드의 REST API 이름이어야 합니다. 나열된 필드는 내보낸 파일에 포함됩니다. columnHeader로 재정의되지 않는 한, 각 필드의 열 헤더는 각 필드의 REST API 이름이 됩니다. 참고: [!DNL Adobe Experience Cloud Audience Sharing] 기능을 사용하면 [!DNL Adobe Experience Cloud] ID(ECID)를 Marketo 리드와 연결하는 쿠키 동기화 프로세스가 발생합니다. 내보내기 파일에 ECID를 포함하도록 &quot;ecids&quot; 필드를 지정할 수 있습니다. |
 | 열 머리글 이름 | 오브젝트 | 아니요 | 필드 및 열 헤더 이름의 키-값 쌍을 포함하는 JSON 개체입니다. 키는 내보내기 작업에 포함된 필드 이름이어야 합니다. Describe Lead 를 호출하여 검색할 수 있는 필드의 API 이름입니다. 값은 해당 필드에 대해 내보낸 열 헤더의 이름입니다. |
 | 형식 | 문자열 | 아니요 | CSV, TSV, SSV 중 하나를 허용합니다. 내보낸 파일은 쉼표로 구분된 값, 탭으로 구분된 값 또는 공백으로 구분된 값 파일로 렌더링됩니다(설정된 경우). 설정하지 않으면 기본값이 CSV로 설정됩니다. |
-
 
 ## 작업 생성
 
@@ -151,7 +149,7 @@ GET /bulk/v1/leads/export/{exportId}/status.json
 
 상태 필드는 다음 중 하나로 응답할 수 있습니다.
 
-- 제작
+- 생성됨
 - 대기열에 추가됨
 - 처리 중
 - 취소됨
@@ -160,7 +158,7 @@ GET /bulk/v1/leads/export/{exportId}/status.json
 
 ## 데이터 검색 중
 
-완료된 잠재 고객 내보내기의 파일을 검색하려면 `exportId`을(를) 사용하여 [잠재 고객 파일 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/getExportLeadsFileUsingGET) 끝점을 호출하면 됩니다.
+완료된 잠재 고객 내보내기의 파일을 검색하려면 [을(를) 사용하여 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/getExportLeadsFileUsingGET)잠재 고객 파일 가져오기`exportId` 끝점을 호출하면 됩니다.
 
 ```
 GET /bulk/v1/leads/export/{exportId}/file.json

@@ -3,9 +3,9 @@ title: getMultipleLead
 feature: SOAP
 description: getMultipleLeads SOAP 호출
 exl-id: db9aabec-8705-40c6-b264-740fdcef8a52
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
 workflow-type: tm+mt
-source-wordcount: '384'
+source-wordcount: '383'
 ht-degree: 3%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 3%
 | --- | --- | --- |
 | leadSelector | 필수 | 다음 세 가지 형식 중 하나일 수 있습니다.`LeadKeySelector`, `StaticListSelector`,`LastUpdateAtSelector` |
 | 키 유형 | 필수 | 쿼리할 ID 유형입니다. 값에는 IDNUM, COOKIE, EMAIL, LEADOWNEEREMAIL, SFDCACCOUNTID, SFDCCONTACTID, SFDCLEADID, SFDCLEADOWNERID, SFDCOPPTYID가 포함됩니다. |
-| 키 값->문자열 항목 | 필수 | 키 값 목록. 즉, &quot;lead@email.com&quot; |
+| 키 값->문자열 항목 | 필수 | 키 값 목록. 즉, &quot;<lead@email.com>&quot; |
 | 마지막 업데이트: leadSelector->oldestUpdatedAt | 필수 | &quot;이후&quot; 기준을 지정하는 타임스탬프입니다. 즉, 지정된 시간 이후 업데이트된 모든 리드 반환 (W3C WSDL 날짜-시간 형식) |
 | 마지막 업데이트: leadSelector->latestUpdatedAt | 선택 사항입니다 | &quot;종료&quot; 기준을 지정하는 타임스탬프입니다. 즉, 지정된 시간까지 업데이트된 모든 리드를 반환합니다. (W3C WSDL 날짜-시간 형식) |
 | StaticListSelector: leadSelector->staticListName | `leadSelector->staticListId`이(가) 있는 경우 선택 사항 | 정적 목록의 이름 |
