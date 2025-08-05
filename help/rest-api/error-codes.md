@@ -109,7 +109,7 @@ GET 요청의 URI가 8KB를 초과하면 414가 반환됩니다. 이를 방지�
     <tr>
       <td><a name="603"></a>603</td>
       <td>액세스 거부됨</td>
-      <td>인증에 성공했지만 사용자에게 이 API를 호출할 권한이 없습니다. [추가 권한](custom-services.md)을 사용자 역할에 할당하거나 <a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/create-an-allowlist-for-ip-based-api-access">IP 기반 API 액세스에 대한 허용 목록</a>을 사용하도록 설정할 수 있습니다.</td>
+      <td>인증에 성공했지만 사용자에게 이 API를 호출할 권한이 없습니다. [추가 권한](custom-services.md)을 사용자 역할에 할당하거나 <a href="https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/additional-integrations/create-an-allowlist-for-ip-based-api-access">IP 기반 API 액세스에 대한 허용 목록</a>을 사용하도록 설정할 수 있습니다.</td>
     </tr>
     <tr>
       <td><a name="604"></a>604*</td>
