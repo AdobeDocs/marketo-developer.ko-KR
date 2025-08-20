@@ -3,7 +3,7 @@ title: 데이터 수집
 feature: REST API, Dynamic Content
 description: Marketo API를 사용하여 데이터를 사용합니다.
 exl-id: 1d501916-53ac-42d8-a804-abb4ab01c7e8
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 4bac6968867f1fbee0846b1bcd75b5e34ad91dee
 workflow-type: tm+mt
 source-wordcount: '965'
 ht-degree: 10%
@@ -18,7 +18,9 @@ ht-degree: 10%
 
 인터페이스는 사용자, 사용자 정의 객체, 이렇게 두 가지 객체 유형에 대해 제공됩니다. 레코드 작업은 &quot;삽입 또는 업데이트&quot;만 가능합니다.
 
-데이터 수집 API는 현재 비공개 베타에 있습니다.  초대자는 [Marketo Engage 성능 계층](https://nation.marketo.com/t5/product-documents/marketo-engage-performance-tiers/ta-p/328835) 패키지에 대한 권한이 있어야 합니다.
+>[!NOTE]
+>
+>데이터 수집 API는 현재 비공개 베타에 있습니다.  초대자는 [Marketo Engage 성능 계층](https://nation.marketo.com/t5/product-documents/marketo-engage-performance-tiers/ta-p/328835) 패키지에 대한 권한이 있어야 합니다.
 
 ## 인증
 
