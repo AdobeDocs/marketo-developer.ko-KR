@@ -3,10 +3,10 @@ title: JAVASCRIPT API
 description: Javascript API
 feature: Munchkin Tracking Code, Forms, Web Personalization, Predictive Content, Social, Javascript
 exl-id: 6129a467-be44-44bd-9e02-62009070c318
-source-git-commit: e63db409981d10cfea6206cf91340428e5d0b17f
+source-git-commit: f314f153c80416bbccc4328756e71c07e696dd00
 workflow-type: tm+mt
-source-wordcount: '337'
-ht-degree: 0%
+source-wordcount: '289'
+ht-degree: 1%
 
 ---
 
@@ -24,14 +24,11 @@ Marketo의 [Munchkin JavaScript 추적 코드](lead-tracking.md)는 Marketo의 �
 
 [Forms 2.0](forms-api-reference.md)은(는) 마케터가 프로그래밍 지식 없이도 아름답고 안정적이며 유연한 웹 양식을 만들 수 있도록 합니다. Forms은 Marketo 랜딩 페이지에 상주할 수 있으며 웹 사이트의 모든 페이지에 임베드될 수 있습니다. Marketo 웹 양식의 핵심 기능은 Forms 2.0 JavaScript API를 사용하여 확장할 수 있습니다.
 
-## 웹 Personalization
+## 웹 개인화
 
 [Marketo Web Personalization](web-personalization.md)은(는) 웹 사이트에서 잠재 고객 수천 명을 대상으로 현재 사용자와 수행 내용에 따라 실시간으로 참여하는 데 도움이 되는 타깃팅 및 Personalization 플랫폼입니다.
 
-## 예측  콘텐츠
+## 예측 콘텐츠
 
 [Marketo 예측 콘텐츠](predictive-content.md)를 사용하면 기계 학습 및 예측 분석을 통해 가장 관련성이 높은 콘텐츠를 웹 방문자에게 제공할 수 있습니다. 텍스트 설명 및 이미지로 콘텐츠를 개선하고 웹 사이트에 여러 콘텐츠 권장 사항을 임베드할 수 있습니다.
 
-## 소셜 마케팅
-
-[Marketo 소셜 마케팅](social.md)을 통해 마케터는 웹 사이트 및 랜딩 페이지 내에 소셜 위젯을 포함할 수 있습니다. 소셜 위젯에는 투표, 소셜 공유 버튼, 비디오, 경품 및 추천 오퍼와 같은 프로모션이 포함됩니다. 이러한 위젯의 표시는 고유한 사용자 경험을 만들기 위해 캡처한 이벤트뿐만 아니라 사용자 지정할 수 있습니다.

@@ -5,9 +5,9 @@ breadcrumb-title: '[!DNL Marketo] 개발자 안내서'
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: f269cbe6edbd6d3fd5b579b1ea03bab8b99208be
+source-git-commit: f314f153c80416bbccc4328756e71c07e696dd00
 workflow-type: tm+mt
-source-wordcount: '252'
+source-wordcount: '251'
 ht-degree: 28%
 
 ---
@@ -31,7 +31,6 @@ ht-degree: 28%
    - [예측 콘텐츠](javascript-api/predictive-content.md)
    - [리디렉션](javascript-api/redirect.md)
    - [리치 미디어 권장 사항](javascript-api/rich-media-recommendation.md)
-   - [소셜](javascript-api/social.md)
    - [트리거](javascript-api/triggers.md)
    - [웹 개인화](javascript-api/web-personalization.md)
 - 모바일 {#mobile}
