@@ -3,9 +3,9 @@ title: 데이터 수집
 feature: REST API, Dynamic Content
 description: Marketo API를 사용하여 데이터를 사용합니다.
 exl-id: 1d501916-53ac-42d8-a804-abb4ab01c7e8
-source-git-commit: 4bac6968867f1fbee0846b1bcd75b5e34ad91dee
+source-git-commit: af2d0f266a271696dbf7d334f23bcd9962b9eba4
 workflow-type: tm+mt
-source-wordcount: '965'
+source-wordcount: '957'
 ht-degree: 10%
 
 ---
@@ -14,13 +14,13 @@ ht-degree: 10%
 
 데이터 수집 API는 대량의 개인 및 개인 관련 데이터 수집을 효율적이고 최소한의 지연으로 처리하도록 설계된 대량의 짧은 지연 시간 고가용성 서비스입니다.
 
-비동기적으로 실행되는 요청을 제출하면 데이터가 수집됩니다. [Marketo Observability 데이터 스트림](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-observability-data-stream-setup)에서 이벤트를 구독하여 요청 상태를 검색할 수 있습니다&#x200B;.
+비동기적으로 실행되는 요청을 제출하면 데이터가 수집됩니다. [Marketo Observability 데이터 스트림](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-observability-data-stream-setup)에서 이벤트를 구독하여 요청 상태를 검색할 수 있습니다.
 
 인터페이스는 사용자, 사용자 정의 객체, 이렇게 두 가지 객체 유형에 대해 제공됩니다. 레코드 작업은 &quot;삽입 또는 업데이트&quot;만 가능합니다.
 
 >[!NOTE]
 >
->데이터 수집 API는 현재 비공개 베타에 있습니다.  초대자는 [Marketo Engage 성능 계층](https://nation.marketo.com/t5/product-documents/marketo-engage-performance-tiers/ta-p/328835) 패키지에 대한 권한이 있어야 합니다.
+>데이터 수집 API에 액세스하려면 [Marketo Engage 성능 계층](https://nation.marketo.com/t5/product-documents/marketo-engage-performance-tiers/ta-p/328835) 패키지에 대한 권한이 필요합니다.
 
 ## 인증
 
