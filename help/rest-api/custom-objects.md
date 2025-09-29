@@ -890,7 +890,7 @@ POST /rest/v1/customobjects/schema/{apiName}/delete.json
 일대다 사용자 지정 개체 구조의 경우 사용자 지정 개체의 링크 필드를 사용하여 표준 개체(리드 또는 회사)에 연결합니다. Marketo 제품 설명서 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-link-fields#AddMarketoCustomObjectLinkFields-CreateaLinkFieldforaOne-to-ManyStructure)의 자동차 소유자 예제를 사용하여 리드에 연결할 자동차 관련 정보가 포함된 사용자 지정 개체를 만듭니다.
 
 1. **Car** 개체 만들기
-1. **Car** 개체에 필드 추가: **VIN**&#x200B;에서 중복 제거, **잠재 고객****/잠재 고객 ID에 연결**
+1. **Car** 개체에 필드 추가: **VIN**&#x200B;에서 중복 제거, **잠재 고객**&#x200B;**/잠재 고객 ID에 연결**
 1. **자동차** 개체 승인
 
 먼저, 차량별 정보를 포함할 사용자 지정 개체 유형을 만듭니다.
@@ -994,7 +994,7 @@ POST /rest/v1/customobjects/schema/course/approve.json
 1. **과정 ID**&#x200B;에서 **과정:** 중복 제거에 필드 추가
 1. **과정** 승인
 1. **등록** 브리지 개체 만들기
-1. **등록:** **등록 ID**&#x200B;에 대한 중복 제거, **과정****/과정 ID** 필드 및 **잠재 고객****/잠재 고객 ID에 대한 링크 추가**
+1. **등록:** **등록 ID**&#x200B;에 대한 중복 제거, **과정**&#x200B;**/과정 ID** 필드 및 **잠재 고객**&#x200B;**/잠재 고객 ID에 대한 링크 추가**
 1. **등록** 승인
 
 먼저 과정별 정보를 포함할 Edge 객체 유형을 생성합니다.
