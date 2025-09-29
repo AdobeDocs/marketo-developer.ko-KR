@@ -1,11 +1,11 @@
 ---
 title: listOperation
 feature: SOAP
-description: listOperation SOAP 호출
+description: Marketo SOAP list정적 목록 구성원을 제거하거나 확인하는 작업을 추가합니다. 엄격 모드, XML 예제, PHP 및 Java 코드를 사용하여 호출당 최대 1000개의 리드를 지원합니다.
 exl-id: 8332cc22-c5a9-43d6-9e92-8d62265cfab2
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '187'
+source-wordcount: '211'
 ht-degree: 6%
 
 ---

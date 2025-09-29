@@ -1,11 +1,11 @@
 ---
 title: 벌크 납 추출
 feature: REST API
-description: 리드 데이터의 일괄 추출.
+description: Marketo 대량 리드 추출 REST API를 사용하여 날짜, 목록 및 스마트 목록 필터, 사용자 정의 필드 및 CSV/TSV 형식으로 리드를 대량 내보내는 방법에 대해 알아봅니다.
 exl-id: 42796e89-5468-463e-9b67-cce7e798677b
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1173'
+source-wordcount: '1195'
 ht-degree: 2%
 
 ---
@@ -149,7 +149,7 @@ GET /bulk/v1/leads/export/{exportId}/status.json
 
 상태 필드는 다음 중 하나로 응답할 수 있습니다.
 
-- 생성됨
+- 생성일
 - 대기열에 추가됨
 - 처리 중
 - 취소됨

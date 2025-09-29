@@ -1,11 +1,11 @@
 ---
 title: 설치
 feature: Mobile Marketing
-description: Mobile Marketo용 SDK를 설치하는 방법
+description: 푸시 및 인앱 메시지를 활성화하면서 CocoaPods, Swift Package Manager 또는 Gradle을 사용하여 iOS 및 Android에서 Marketo Mobile SDK을 설치하고 초기화하는 방법에 대해 안내합니다.
 exl-id: e0b79d85-3509-46d2-a77d-cee211c5ec7f
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '756'
+source-wordcount: '774'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ Marketo Mobile SDK 설치 지침 아래 단계는 푸시 알림 및/또는 인�
 
 ### 사전 요구 사항
 
-1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin ID 얻기)
+1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin ID 얻기)
 1. [푸시 알림 설정](push-notifications.md)(선택 사항)
 
 ### CocoaPod를 통해 프레임워크 설치
@@ -132,7 +132,7 @@ private func application(_ app: UIApplication, open url: URL, options: [UIApplic
 
 ### 사전 요구 사항
 
-1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin ID 얻기)
+1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin ID 얻기)
 1. [푸시 알림 설정](push-notifications.md#android_setup_push)(선택 사항)
 1. [Android용 Marketo SDK 다운로드](https://codeload.github.com/Marketo/android-sdk/zip/refs/heads/master)
 
@@ -208,7 +208,7 @@ Android용 MME 소프트웨어 개발 키트(SDK)가 Android 앱 개발자를 �
 
 1. Android 앱에서 최신 Marketo Android SDK 통합.  단계는 [GitHub](https://github.com/Marketo/android-sdk)에서 확인할 수 있습니다.
 1. Firebase 콘솔에서 Firebase 앱을 구성합니다.
-   1. [&#128279;](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)Firebase 콘솔에서 프로젝트를 만들거나 추가합니다.
+   1. [](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)Firebase 콘솔에서 프로젝트를 만들거나 추가합니다.
       1. [Firebase 콘솔](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)에서 `Add Project`을(를) 선택합니다.
       1. 기존 Google Cloud 프로젝트 목록에서 GCM 프로젝트를 선택하고 `Add Firebase`을(를) 선택합니다.
       1. Firebase 시작 화면에서 `Add Firebase to your Android App`을(를) 선택합니다.

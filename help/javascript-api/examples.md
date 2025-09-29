@@ -1,11 +1,11 @@
 ---
 title: 예
-description: 양식 작업 구성을 위한 Marketo 코드의 예
+description: 제출 시 숨기거나 리디렉션하고, 필드를 설정하고 읽고, 사용자 지정 오류, Lightbox 및 외부 트리거를 사용하여 유효성 검사를 수행하는 Marketo Forms 2.0 JavaScript 사례입니다.
 feature: Javascript
 exl-id: dc5f0cc5-ff5a-48b0-be36-52c10e56f798
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '211'
+source-wordcount: '226'
 ht-degree: 0%
 
 ---

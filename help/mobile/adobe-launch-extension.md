@@ -1,22 +1,22 @@
 ---
 title: ' [!DNL Adobe Launch]용 Marketo Mobile 확장'
 feature: Mobile Marketing
-description: ' [!DNL Adobe Launch] 용 Marketo Mobile 확장 개요'
+description: 푸시 알림 및 인앱 메시지 설정을 포함하여 iOS 및 Android용 Adobe Launch에 Marketo Mobile SDK 확장 기능을 설치 및 구성합니다.
 exl-id: 2f8691ff-0442-45a5-aeba-c91c3af5c711
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '269'
-ht-degree: 0%
+source-wordcount: '287'
+ht-degree: 1%
 
 ---
 
 # [!DNL Adobe Launch]용 Marketo Mobile 확장
 
-[!DNL Adobe Launch]의 Marketo Mobile SDK 확장에 대한 설치 지침입니다. 아래 단계는 푸시 알림 및/또는 인앱 메시지를 보내는 데 필요합니다.
+[!DNL Adobe Launch]의 Marketo Mobile SDK 확장 설치 지침입니다. 아래 단계는 푸시 알림 및/또는 인앱 메시지를 보내는 데 필요합니다.
 
-## 필요 조건
+## 사전 요구 사항
 
-- [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)(응용 프로그램 비밀 키 및 Munchkin Id 얻기)
+- [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin ID 얻기)
 - 설치를 위해 [!DNL Adobe Launch] 포털에 제공된 지침을 따르십시오.
 - [푸시 알림 설정](push-notifications.md)(선택 사항)
 
@@ -59,7 +59,7 @@ Swift 사용자의 경우: 위의 단계에서 브리징 헤더가 추가되므�
 
 ### ProGuard 구성(선택 사항)
 
-앱에 ProGuard를 사용하는 경우 `proguard.cfg` 파일에 다음 줄을 추가합니다. 파일은 프로젝트 폴더 내에 있습니다. 이 코드를 추가하면 난독화 프로세스에서 Marketo SDK가 제외됩니다.
+앱에 ProGuard를 사용하는 경우 `proguard.cfg` 파일에 다음 줄을 추가합니다. 파일은 프로젝트 폴더 내에 있습니다. 이 코드를 추가하면 난독화 프로세스에서 Marketo SDK이 제외됩니다.
 
 ```
 -dontwarn com.marketo.*

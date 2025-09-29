@@ -1,12 +1,12 @@
 ---
 title: describeMObject
 feature: SOAP
-description: describeMObjects SOAP 호출
+description: Marketo SOAP에서 describeMObject를 사용하여 ActivityRecord, LeadRecord, Opportunity 및 OpportunityPersonRole에 대한 메타데이터와 필드 속성을 검색하는 방법을 알아봅니다.
 exl-id: a5ee60c4-b0ec-49a2-9a9d-22806ddde8f7
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '71'
-ht-degree: 7%
+source-wordcount: '87'
+ht-degree: 5%
 
 ---
 

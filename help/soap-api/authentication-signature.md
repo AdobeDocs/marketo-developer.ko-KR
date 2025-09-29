@@ -1,11 +1,11 @@
 ---
 title: 인증 서명
 feature: SOAP
-description: 인증 서명을 사용한 API 보안
+description: HTTPS에서 HMAC-SHA1을 사용하는 Marketo SOAP API 인증, 필수 헤더 필드, 타임스탬프 형식, 샘플 요청 및 오류 응답 가이드
 exl-id: d6bed8ee-77fa-440c-8f35-a71cf77f45d3
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '209'
+source-wordcount: '225'
 ht-degree: 3%
 
 ---

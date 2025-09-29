@@ -1,11 +1,11 @@
 ---
 title: SOAP FAQ
 feature: SOAP
-description: SOAP FAQ
+description: Marketo SOAP API를 통해 getMObject를 사용하여 프로그램을 나열하고, getMultipleLeads를 최적화하고, 기회를 만들고, 개인화된 이메일을 보내거나 예약하는 방법을 알아봅니다.
 exl-id: a2d8f144-cd5f-41bc-8231-29c42af935b8
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '333'
+source-wordcount: '353'
 ht-degree: 0%
 
 ---
@@ -20,9 +20,9 @@ ht-degree: 0%
 
 **A:** getMultipleLeads 호출의 성능을 빠르게 하기 위한 몇 가지 옵션이 있습니다. 첫 번째는 각 호출에 대해 요청하는 batchSize를 줄이는 것입니다. 200이 권장되는 배치 크기입니다. 두 번째 옵션은 includeAttributes 필터를 사용하여 원하는 필드를 지정하는 것입니다. 이렇게 하면 쿼리 속도가 빨라지고 수신하는 응답의 페이로드가 줄어듭니다. 마지막 접근 방법은 LastUpdateAtSelector를 사용하고 oldestUpdatedAt 및 latestUpdatedAt를 지정하는 것입니다. 서로 다른 날짜 범위를 지정한 다음 여러 요청을 동시에 스레드할 수 있습니다. 스레드 접근 방식을 사용하는 경우 SOAP/WSDL 클라이언트가 [영구 연결](https://www.w3.org/Protocols/rfc2616/rfc2616-sec8.html)을 지원하는지 확인하십시오.
 
-**Q:** SalesForce 또는 Microsoft Dynamics와 같은 CRM과 통합되지 않은 경우 SOAP API를 통해 기회를 만들려면 어떻게 해야 합니까?
+**Q:** Salesforce 또는 Microsoft Dynamics과 같은 CRM과 통합되지 않은 경우 SOAP API를 통해 기회를 만들려면 어떻게 해야 합니까?
 
-**A:** OpportunityPersonRole 및 Opportunity [MObject](marketo-objects.md) 유형에 쓰는 [syncMObjects](syncmobjects.md) 호출을 사용하여 SOAP API를 사용하여 기회를 만들 수 있습니다.
+**A:** OpportunityPersonRole 및 Opportunity [MObject](syncmobjects.md) 유형에 쓰는 [syncMObjects](marketo-objects.md) 호출을 사용하여 SOAP API를 사용하여 기회를 만들 수 있습니다.
 
 **Q:** Marketo에서 이메일을 프로그래밍 방식으로 보낼 수 있습니까? 그렇다면 각 이메일 수신자에 대한 사용자 지정 콘텐츠를 보내려면 어떻게 해야 합니까?
 

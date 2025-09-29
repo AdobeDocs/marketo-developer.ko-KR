@@ -1,11 +1,11 @@
 ---
 title: 파일
 feature: REST API
-description: Marketo 파일 저장 및 조작.
+description: ID 또는 이름별로 Marketo REST API 파일 쿼리, 폴더 및 오프셋으로 검색, 다중 부분 업로드를 통해 만들기 또는 업데이트, insertOnly, MIME 유형, 스트리밍 없음 등에 대한 안내서입니다.
 exl-id: 17361cdc-2309-442c-803c-34ce187aee1a
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '267'
+source-wordcount: '289'
 ht-degree: 1%
 
 ---

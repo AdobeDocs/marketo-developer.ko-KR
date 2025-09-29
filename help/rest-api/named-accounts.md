@@ -1,16 +1,16 @@
 ---
-title: 명명된 계정
+title: 지정 계정
 feature: REST API
-description: API를 통해 명명된 계정을 조작합니다.
+description: 설명, 쿼리, 업데이트 예 만들기, 검색 가능한 필드, 중복 제거 규칙 및 리드 연결 없음을 포함하여 ABM의 명명된 계정에 대한 Marketo REST 안내서.
 exl-id: 2aa1d2a0-9e54-4a9a-abb1-0d0479ed3558
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '679'
-ht-degree: 0%
+source-wordcount: '697'
+ht-degree: 1%
 
 ---
 
-# 명명된 계정
+# 지정 계정
 
 [명명된 계정 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Accounts)
 

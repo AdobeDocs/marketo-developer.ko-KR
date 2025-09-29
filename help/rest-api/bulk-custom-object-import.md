@@ -1,11 +1,11 @@
 ---
 title: 대량 사용자 지정 개체 가져오기
 feature: Custom Objects
-description: 사용자 지정 개체의 일괄 가져오기.
+description: CSV, TSV 또는 SSV 파일을 사용하여 REST를 통해 Marketo 사용자 지정 개체를 대량 가져오는 방법에 대해 알아봅니다.
 exl-id: e795476c-14bc-4e8c-b611-1f0941a65825
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '855'
+source-wordcount: '866'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 ## 사용자 지정 개체 예
 
-벌크 API를 사용하기 전에 먼저 Marketo 관리 UI를 사용하여 [사용자 지정 개체를 만들기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-objects/create-marketo-custom-objects)해야 합니다. 예를 들어 &quot;Color&quot;, &quot;Make&quot;, &quot;Model&quot; 및 &quot;VIN&quot; 필드가 있는 &quot;Car&quot; 사용자 지정 개체를 만들었다고 가정합니다. 다음은 사용자 지정 개체를 보여주는 관리자 UI 화면입니다. 중복 제거를 위해 VIN 필드를 사용했음을 알 수 있습니다. API 이름은 일괄 API 관련 끝점을 호출할 때 사용해야 하므로 강조 표시됩니다.
+벌크 API를 사용하기 전에 먼저 Marketo 관리 UI를 사용하여 [사용자 지정 개체를 만들기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-objects/create-marketo-custom-objects)해야 합니다. 예를 들어 &quot;Color&quot;, &quot;Make&quot;, &quot;Model&quot; 및 &quot;VIN&quot; 필드가 있는 &quot;Car&quot; 사용자 지정 개체를 만들었다고 가정합니다. 다음은 사용자 지정 개체를 보여주는 관리자 UI 화면입니다. 중복 제거를 위해 VIN 필드를 사용했음을 알 수 있습니다. API 이름은 일괄 API 관련 끝점을 호출할 때 사용해야 하므로 강조 표시됩니다.
 
 ![사용자 지정 개체 삽입](assets/bulk-insert-co-car-1.png)
 
@@ -190,7 +190,7 @@ blue,bmw,325i,WBS3U9C52HP970604
 
 ## 폴링 작업 상태
 
-가져오기 작업이 생성되면 해당 상태를 쿼리해야 합니다. 가져오기 작업을 5-30초마다 폴링하는 것이 가장 좋습니다. 이렇게 하려면 [사용자 지정 개체 가져오기 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectStatusUsingGET) 끝점에 대한 경로에 사용자 지정 개체의 API 이름과 `batchId`을(를) 전달합니다.
+가져오기 작업이 생성되면 해당 상태를 쿼리해야 합니다. 가져오기 작업을 5-30초마다 폴링하는 것이 가장 좋습니다. 이렇게 하려면 `batchId`사용자 지정 개체 가져오기 상태 가져오기[ 끝점에 대한 경로에 사용자 지정 개체의 API 이름과 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectStatusUsingGET)을(를) 전달합니다.
 
 ```
 GET /bulk/v1/customobjects/{apiName}/import/{batchId}/status.json
@@ -220,7 +220,7 @@ GET /bulk/v1/customobjects/{apiName}/import/{batchId}/status.json
 
 ## 실패
 
-[사용자 지정 개체 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectStatusUsingGET) 응답에서 `numOfRowsFailed` 특성으로 오류가 표시됩니다. numOfRowsFailed가 0보다 크면 해당 값은 발생한 실패 횟수를 나타냅니다. [사용자 지정 개체 가져오기 실패](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectFailuresUsingGET) 끝점을 호출하여 실패 세부 정보가 포함된 파일을 가져옵니다. 다시 경로에 사용자 지정 개체 API 이름과 `batchId`을(를) 전달해야 합니다. 오류 파일이 없으면 HTTP 404 상태 코드가 반환됩니다.
+`numOfRowsFailed`사용자 지정 개체 상태 가져오기[ 응답에서 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectStatusUsingGET) 특성으로 오류가 표시됩니다. numOfRowsFailed가 0보다 크면 해당 값은 발생한 실패 횟수를 나타냅니다. [사용자 지정 개체 가져오기 실패](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectFailuresUsingGET) 끝점을 호출하여 실패 세부 정보가 포함된 파일을 가져옵니다. 다시 경로에 사용자 지정 개체 API 이름과 `batchId`을(를) 전달해야 합니다. 오류 파일이 없으면 HTTP 404 상태 코드가 반환됩니다.
 
 예제를 계속 진행하여 헤더를 수정하고 &quot;vin&quot;을 &quot;vin&quot;으로 변경합니다(쉼표와 &quot;vin&quot; 사이에 공백을 추가).
 

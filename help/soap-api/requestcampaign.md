@@ -1,11 +1,11 @@
 ---
 title: request캠페인
 feature: SOAP, Smart Campaigns
-description: requestCampaign SOAP 호출
+description: 매개 변수 세트, 토큰 처리, 100개의 리드 제한, XML 요청 및 PHP Java 예제를 포함하여 SOAP requestCampaign을 통해 Marketo Smart Campaign에서 리드를 실행합니다.
 exl-id: b5367eb9-4f4c-4e1d-8b6d-36de8f134f0e
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '277'
+source-wordcount: '298'
 ht-degree: 3%
 
 ---

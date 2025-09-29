@@ -1,11 +1,11 @@
 ---
 title: 사용자 정의 서비스
 feature: REST API
-description: Marketo을 사용한 인증 자격 증명입니다.
+description: Marketo 사용자 지정 서비스를 만들고, API 전용 역할 및 권한을 설정하고, LaunchPoint에서 클라이언트 ID와 클라이언트 암호를 획득하고, 액세스 토큰을 받습니다.
 exl-id: 38b05c4c-4404-4c30-a7cb-d31b28a3a72e
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '968'
+source-wordcount: '985'
 ht-degree: 0%
 
 ---

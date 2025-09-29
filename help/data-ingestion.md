@@ -1,9 +1,9 @@
 ---
 title: 데이터 수집
-description: 데이터 수집 API 개요
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+description: 개인 및 사용자 정의 오브젝트의 대량 저지연 업데이트를 위한 Marketo 데이터 수집 API, Observability를 통한 비동기 상태, OAuth 헤더 인증, 비공개 베타.
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '940'
+source-wordcount: '960'
 ht-degree: 10%
 
 ---

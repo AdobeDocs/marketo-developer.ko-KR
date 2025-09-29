@@ -1,12 +1,12 @@
 ---
 title: 사용자 프로필
 feature: Mobile Marketing, Users and Roles
-description: Marketo Mobile에서 사용자 프로필 사용
+description: Objective C Swift 및 Java, 표준 및 사용자 정의 필드, associateLead 를 사용하여 iOS 및 Android의 Marketo Mobile SDK에서 사용자 프로필을 만들고 업데이트하는 방법에 대해 알아봅니다
 exl-id: 1b2cfb7f-d678-4022-8cd9-a56004a1ac46
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '83'
-ht-degree: 0%
+source-wordcount: '103'
+ht-degree: 1%
 
 ---
 

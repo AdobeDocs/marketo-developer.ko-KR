@@ -1,16 +1,16 @@
 ---
-title: 잠재 고객 데이터베이스
+title: 리드 데이터베이스
 feature: REST API, Database
-description: 주 리드 데이터베이스를 조작합니다.
+description: 오브젝트, CRUD 및 설명 방법, 쿼리 패턴, 배치 제한 및 CRM 통합 제한을 다루는 Marketo 리드 데이터베이스 API에 대한 안내입니다.
 exl-id: e62e381f-916b-4d56-bc3d-0046219b68d3
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1342'
+source-wordcount: '1357'
 ht-degree: 0%
 
 ---
 
-# 잠재 고객 데이터베이스
+# 리드 데이터베이스
 
 Marketo 리드 데이터베이스 API는 활동, 기회 및 회사와 같은 Marketo의 개인 및 개인 관련 데이터를 교환할 수 있도록 Marketo에서 제공하는 가장 자주 사용되는 API입니다.
 
@@ -20,7 +20,7 @@ Marketo 리드 데이터베이스 API는 활동, 기회 및 회사와 같은 Mar
 
 - 잠재 고객
 - 회사/계정
-- 명명된 계정
+- 지정 계정
 - 기회
 - OpportunityRoles
 - SalesPerson

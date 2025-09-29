@@ -1,11 +1,11 @@
 ---
 title: 웹훅
 feature: Webhooks
-description: Webhooks 개요
+description: 타사 서비스를 호출하도록 Marketo 웹후크를 구성하고, 페이로드 템플릿, 인코딩, 응답 매핑, 토큰, 사용자 지정 헤더 및 팁을 설정하는 방법에 대해 알아봅니다.
 exl-id: fd283c66-05a1-4aa4-8412-0d41b8d1e3c8
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '562'
+source-wordcount: '580'
 ht-degree: 0%
 
 ---
@@ -14,9 +14,9 @@ ht-degree: 0%
 
 Marketo에서는 웹후크를 사용하여 서드파티 웹 서비스와 통신할 수 있습니다. Webhooks는 GET 또는 POST HTTP 동사를 사용하여 특정 URL에서 데이터를 푸시하거나 검색할 수 있도록 지원합니다. Webhooks의 애플리케이션 내 생성 및 Smart Campaign에 추가하는 방법에 대한 자세한 지침은 다음 문서를 참조하십시오.
 
-- [웹후크 만들기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/additional-integrations/create-a-webhook)
-- [Webhook를 호출합니다](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/call-webhook)
-- [스마트 캠페인에서 웹후크 사용](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/use-a-webhook-in-a-smart-campaign)
+- [웹후크 만들기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/create-a-webhook)
+- [Webhook를 호출합니다](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/call-webhook)
+- [스마트 캠페인에서 웹후크 사용](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/use-a-webhook-in-a-smart-campaign)
 
 각 개별 웹후크에는 다음 속성이 있습니다.
 
@@ -33,9 +33,9 @@ Marketo에서는 웹후크를 사용하여 서드파티 웹 서비스와 통신�
 
 Webhook의 모든 발신 필드(URL, 템플릿 및 사용자 지정 헤더)는 흐름 단계의 동일한 컨텍스트에서 토큰 콘텐츠를 채웁니다. 즉, 리드 및 시스템 토큰은 항상 사용할 수 있는 반면 트리거, 캠페인 및 프로그램 토큰은 해당 범위에서 사용할 수 있습니다. 토큰 관련 문서 를 참조하십시오.
 
-- [토큰 개요](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/personalizing-landing-pages/tokens-overview)
-- [시스템 토큰 용어집](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/using-tokens/system-tokens-glossary)
-- [즐거운 순간을 위한 토큰](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/marketo-sales-insight/msi-for-salesforce/features/tabs-in-the-msi-panel/interesting-moments/trigger-tokens-for-interesting-moments)
+- [토큰 개요](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/personalizing-landing-pages/tokens-overview)
+- [시스템 토큰 용어집](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/using-tokens/system-tokens-glossary)
+- [즐거운 순간을 위한 토큰](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-sales-insight/msi-for-salesforce/features/tabs-in-the-msi-panel/interesting-moments/trigger-tokens-for-interesting-moments)
 
 일반적인 사례는 프로그램 또는 캠페인이 서드파티 리소스에 명시적으로 매핑된 경우입니다. 프로그램 수준에서 ID를 `My Token`(으)로 설정한 다음 Webhook 요청에 토큰으로 전달할 수 있습니다.
 

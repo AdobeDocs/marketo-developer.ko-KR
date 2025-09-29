@@ -1,12 +1,12 @@
 ---
 title: 패턴 일치
-description: 패턴 일치
+description: RTP rtp.checkPattern 유틸리티를 사용하여 비율 와일드카드로 문자열 패턴을 테스트합니다. 동기화 제한 사항, 사용 및 URL 예제, 필수 RTP 태그 설정을 참조하십시오.
 feature: Javascript
 exl-id: 4ebd13e3-375b-449b-850f-3b18f570ca75
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '133'
-ht-degree: 6%
+source-wordcount: '155'
+ht-degree: 5%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 6%
 
 RTP는 패턴이 특정 문자열과 일치하는지 확인하기 위한 유틸리티 함수를 노출합니다. 일치하는 항목이 있는지 여부를 나타내므로 이 유틸리티는 비동기 방식으로 사용할 수 없습니다.
 
-User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
+User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
 
 ## 사용
 

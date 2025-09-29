@@ -1,11 +1,11 @@
 ---
 title: 벌크 리드 가져오기
 feature: REST API
-description: 리드 데이터의 일괄 가져오기.
+description: CSV TSV 또는 SSV를 사용하여 Marketo에서 비동기 대량 리드 가져오기를 만들고 모니터링합니다.
 exl-id: 615f158b-35f9-425a-b568-0a7041262504
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '803'
+source-wordcount: '812'
 ht-degree: 0%
 
 ---
@@ -75,7 +75,7 @@ Easy,Fox,easyfox@marketo.com,Marketo
 }
 ```
 
-이 끝점은 [multipart/form-data를 content-type](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html)(으)로 사용합니다. 이 방법은 올바른 이해에 까다로울 수 있으므로 가장 좋은 방법은 선택한 언어에 HTTP 지원 라이브러리를 사용하는 것입니다. 명령줄에서 cURL을 사용하여 이 작업을 수행하는 간단한 방법은 다음과 같습니다.
+이 끝점은 [multipart/form-data를 content-type](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html)&#x200B;(으)로 사용합니다. 이 방법은 올바른 이해에 까다로울 수 있으므로 가장 좋은 방법은 선택한 언어에 HTTP 지원 라이브러리를 사용하는 것입니다. 명령줄에서 cURL을 사용하여 이 작업을 수행하는 간단한 방법은 다음과 같습니다.
 
 ```
 curl -i -F format=csv -F file=@lead_data.csv -F access_token=<Access Token> <REST API Endpoint Base URL>/bulk/v1/leads.json

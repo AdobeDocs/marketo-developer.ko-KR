@@ -1,11 +1,11 @@
 ---
 title: 리치 미디어 권장 사항
-description: 리치 미디어 권장 사항
+description: Marketo 예측 컨텐츠 RTP 태그, template1 template2 template3 div, 채울 GET, SET를 사용하여 리치 미디어 권장 사항을 설정하여 범주를 구성합니다.
 feature: Javascript
 exl-id: ee92e46d-e529-40a2-a0d0-ee233916f004
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '812'
+source-wordcount: '831'
 ht-degree: 4%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 4%
 1. 페이지 본문에서
    1. 템플릿을 표시할 위치에 템플릿 태그(div 클래스)를 배치합니다
 
-자세한 내용은 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media)를 참조하세요.
+자세한 내용은 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media)를 참조하세요.
 
 ## 템플릿 태그
 

@@ -1,11 +1,11 @@
 ---
 title: 이메일 스크립팅
 feature: Email Programs
-description: 이메일 스크립팅 개요
+description: Apache Velocity 토큰, 변수, Velocity 도구를 사용하여 다이내믹 Marketo 이메일을 스크립팅하고 샘플 전송 및 이메일 미리 보기를 통해 테스트하는 방법을 알아봅니다.
 exl-id: ff396f8b-80c2-4c87-959e-fb8783c391bf
-source-git-commit: 9012135dc7a295c2462574dad1aca2d06a9077ea
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '947'
+source-wordcount: '965'
 ht-degree: 0%
 
 ---
@@ -130,7 +130,7 @@ Marketo 이메일 디자이너 내에서 [!UICONTROL Send Sample Email] 이메�
 - 리드, 연락처 또는 계정에 연결된 사용자 지정 개체를 참조할 수 있지만 두 개 이하여야 합니다.
 - 사용자 지정 오브젝트는 단일 연결, 리드, 연락처 또는 계정을 통해서만 참조될 수 있습니다.
 - 사용 중인 필드가 처리되지 않는 경우 스크립트 편집기의 상자를 선택해야 합니다
-- 각 사용자 정의 객체에 대해 개인/연락처당 가장 최근에 업데이트된 10개의 레코드는 런타임에 사용할 수 있으며 가장 최근에 업데이트된 레코드(0)에서 가장 오래 업데이트된 레코드(9)로 순서가 지정됩니다. [지침에 따라](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/email-setup/change-custom-object-retrieval-limits-in-velocity-scripting)사용 가능한 레코드 수를 늘릴 수 있습니다.
+- 각 사용자 정의 객체에 대해 개인/연락처당 가장 최근에 업데이트된 10개의 레코드는 런타임에 사용할 수 있으며 가장 최근에 업데이트된 레코드(0)에서 가장 오래 업데이트된 레코드(9)로 순서가 지정됩니다. [지침에 따라](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/email-setup/change-custom-object-retrieval-limits-in-velocity-scripting)사용 가능한 레코드 수를 늘릴 수 있습니다.
 - 이메일 내에 이메일 스크립트를 두 개 이상 포함하는 경우 스크립트는 위쪽에서 아래쪽으로 실행됩니다. 실행할 첫 번째 스크립트에 정의된 변수의 범위는 후속 스크립트에서 사용할 수 있습니다.
 - 도구 참조: [https://velocity.apache.org/tools/2.0/index.html](https://velocity.apache.org/tools/2.0/index.html)
 - 줄바꿈 문자 &quot;\\n&quot; 또는 &quot;\\r\\n&quot;이 포함된 토큰에 대한 참고 사항입니다. 샘플 보내기 또는 배치 캠페인을 통해 이메일을 전송하면 토큰의 새 줄 문자가 공백으로 대체됩니다. 트리거 캠페인을 통해 이메일을 전송하면 줄바꿈 문자가 그대로 유지됩니다.

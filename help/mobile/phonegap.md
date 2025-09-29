@@ -1,11 +1,11 @@
 ---
 title: PhoneGap
 feature: Mobile Marketing
-description: 모바일 장치에서 Marketo과 PhoneGap 사용
+description: Cordova를 사용하여 Marketo PhoneGap 플러그인 설정, Firebase 클라우드 메시징 구성, iOS 및 Android 푸시 활성화, 알림 추적 및 SDK 초기화.
 exl-id: 99f14c76-9438-4942-9309-643bca434d07
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '797'
+source-wordcount: '813'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ Marketo PhoneGap 플러그인 통합
 
 ## 사전 요구 사항
 
-1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin Id 얻기).
+1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin Id 얻기).
 1. 푸시 알림 설정([iOS](push-notifications.md) | [Android](push-notifications.md)).
 1. [PhoneGap/Cordova CLI를 설치합니다](https://cordova.apache.org/docs/en/latest/guide/cli/).
 
@@ -66,7 +66,7 @@ repositories{
 1. Firebase 클라우드 메시징 지원
 
 1. Firebase 콘솔에서 Firebase 앱을 구성합니다.
-   1. [&#128279;](https://console.firebase.google.com/)Firebase 콘솔에서 프로젝트를 만들거나 추가합니다.
+   1. [](https://console.firebase.google.com/)Firebase 콘솔에서 프로젝트를 만들거나 추가합니다.
       1. [Firebase 콘솔](https://console.firebase.google.com/)에서 **[!UICONTROL Add Project]**&#x200B;을(를) 선택합니다.
       1. 기존 Google Cloud 프로젝트 목록에서 GCM 프로젝트를 선택하고 **[!UICONTROL Add Firebase]**&#x200B;을(를) 선택합니다.
       1. Firebase 시작 화면에서 &#39;Android 앱에 Firebase 추가&#39;를 선택합니다.

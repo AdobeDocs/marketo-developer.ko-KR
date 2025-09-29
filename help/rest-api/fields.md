@@ -1,18 +1,18 @@
 ---
 title: 필드
 feature: REST API, Field Management
-description: 지원되는 필드 이름 목록입니다.
+description: REST 및 SOAP 리드 필드 이름 지정, REST를 통한 목록 필드 리드 설명, 기능 매핑, sfdcId가 null인 이유 및 sfdcLeadId 또는 sfdcContactId를 사용하는 방법을 알아봅니다.
 exl-id: 9033f32a-c7cb-4bbf-abcf-38ca4112139f
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '194'
+source-wordcount: '212'
 ht-degree: 2%
 
 ---
 
 # 필드
 
-REST API 및 SOAP API는 리드 필드에 대해 서로 다른 이름 지정 규칙을 사용합니다.
+REST API 및 SOAP API는 리드 필드에 서로 다른 이름 지정 규칙을 사용합니다.
 
 ## 필드 이름 목록 검색
 

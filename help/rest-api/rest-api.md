@@ -1,11 +1,11 @@
 ---
 title: REST API
 feature: REST API
-description: REST API 개요
+description: Marketo REST API를 사용하고, API 사용자 및 LaunchPoint를 설정하고, 할당량 및 한도를 보고, 인증 헤더로 인증하고, 리드를 검색하는 방법에 대해 알아봅니다.
 exl-id: 4b9beaf0-fc04-41d7-b93a-a1ae3147ce67
-source-git-commit: 8ad3e3f0958ea705375651b1c8a75967d807ca80
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '770'
+source-wordcount: '790'
 ht-degree: 1%
 
 ---
@@ -20,7 +20,7 @@ Marketo은 시스템 기능 중 대부분을 원격으로 실행할 수 있도�
 >SOAP API는 더 이상 사용되지 않으며 2025년 10월 31일 이후부터 더 이상 사용할 수 없습니다. 모든 새 개발은 Marketo [REST API](./rest-api.md)를 사용하여 수행해야 하며, 서비스가 중단되지 않도록 기존 서비스를 해당 날짜까지 마이그레이션해야 합니다. SOAP API를 사용하는 서비스가 있는 경우 마이그레이션 방법에 대한 자세한 내용은 SOAP API [마이그레이션 안내서](../soap-api/migration.md)를 참조하십시오.
 >
 
-- **일일 할당량:** 구독에는 하루에 50,000개의 API 호출이 할당됩니다(매일 오전 12시(CST) 재설정됨). 계정 관리자를 통해 일일 할당량을 늘릴 수 있습니다.
+- **일일 할당량:** 구독에는 하루에 50,000개의 API 호출이 할당됩니다(12:00AM CST에서 매일 재설정됨). 계정 관리자를 통해 일일 할당량을 늘릴 수 있습니다.
 - 인스턴스당 **속도 제한:** API 액세스가 20초당 100개의 호출로 제한됩니다.
 - **동시 실행 제한:**  최대 10개의 동시 API 호출.
 
@@ -54,7 +54,7 @@ Marketo에 대한 첫 번째 호출의 경우 리드 레코드를 검색합니�
 
 ![시작 지점](assets/admin-launchpoint.png)
 
-**[!UICONTROL New]** 메뉴를 클릭하고 **[!UICONTROL New Service]**&#x200B;을(를) 선택합니다. 서비스에 수사적 이름을 지정하고 [!UICONTROL Service] 드롭다운 메뉴에서 **[!UICONTROL Custom]**&#x200B;을(를) 선택합니다. 설명을 입력한 다음 [!UICONTROL API Only User] 드롭다운 메뉴에서 새 사용자를 선택하고 **[!UICONTROL Create]**&#x200B;을(를) 클릭합니다.
+**[!UICONTROL New]** 메뉴를 클릭하고 **[!UICONTROL New Service]**&#x200B;을(를) 선택합니다. 서비스에 수사적 이름을 지정하고 **[!UICONTROL Custom]** 드롭다운 메뉴에서 [!UICONTROL Service]을(를) 선택합니다. 설명을 입력한 다음 [!UICONTROL API Only User] 드롭다운 메뉴에서 새 사용자를 선택하고 **[!UICONTROL Create]**&#x200B;을(를) 클릭합니다.
 
 ![새 Launchpoint 서비스](assets/admin-launchpoint-new-service.png)
 

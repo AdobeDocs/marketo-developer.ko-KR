@@ -1,12 +1,12 @@
 ---
 title: 활동 유형 필터
 feature: SOAP
-description: SOAP 호출에 대한 활동 유형 필터.
+description: 이메일 클릭 수 및 양식 채우기에서 SOAP 캠페인 변경 사항 및 영업 기회 업데이트에 이르기까지 SFDC 호출에 대해 지원되는 모든 활동 유형 필터를 찾아봅니다.
 exl-id: d661bb41-5615-4394-ade0-29254e48f7eb
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '210'
-ht-degree: 0%
+source-wordcount: '226'
+ht-degree: 23%
 
 ---
 
@@ -37,14 +37,14 @@ ht-degree: 0%
 | 점수 변경 |
 | 세그먼트 변경 |
 | 진행 상태 변경 |
-| SFDC 캠페인의 상태 변경 |
+| SFDC 캠페인 상태 변경 |
 | 이메일 클릭 |
 | 링크 클릭 |
-| Sales Email 클릭 |
+| 판매 이메일 클릭 |
 | 공유 링크 클릭 |
 | 잠재 고객 전환 |
 | 작업 만들기 |
-| SFDC에서 잠재 고객 삭제 |
+| SFDC에서 리드 삭제 |
 | 반송된 이메일 |
 | 가볍게 반송된 이메일 |
 | 이메일 전달됨 |
@@ -54,10 +54,10 @@ ht-degree: 0%
 | 할당된 잠재 고객 |
 | 잠재 고객 병합 |
 | 새 잠재 고객 |
-| 새 SFDC 영업 기회 |
+| 새로운 SFDC 영업 기회 |
 | 육성 배포 |
-| 이메일 열기 |
-| 영업 이메일 열기 |
+| 이메일 열람 |
+| 판매 이메일 열람 |
 | 판매 이메일 수신 |
 | 친구에게 이메일 발송 |
 | 플로우에서 제거 |

@@ -1,11 +1,11 @@
 ---
 title: syncMObjects
 feature: SOAP
-description: syncMObjects SOAP 호출
+description: 최대 100개의 프로그램, 기회 및 OpportunityPersonRoles, 반환 상태 및 Marketo ID를 삽입, 업데이트 또는 업데이트하는 Marketo SOAP syncMObjects.
 exl-id: 68bb69ce-aa8c-40b7-8938-247f4fe97b5d
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '426'
+source-wordcount: '443'
 ht-degree: 4%
 
 ---

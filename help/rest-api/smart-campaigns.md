@@ -1,11 +1,11 @@
 ---
 title: 스마트 캠페인
 feature: REST API, Smart Campaigns
-description: 스마트 캠페인 개요
+description: ID 또는 이름별 쿼리, 필터 찾아보기, 복제 삭제 만들기, 일정 또는 요청 트리거 등 스마트 캠페인용 Marketo REST API를 사용하는 방법에 대해 알아봅니다
 exl-id: 540bdf59-b102-4081-a3d7-225494a19fdd
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '989'
+source-wordcount: '1012'
 ht-degree: 1%
 
 ---
@@ -185,7 +185,7 @@ GET /rest/asset/v1/smartCampaigns.json?earliestUpdatedAt=2016-09-10T23:15:00-00:
 
 ## 만들기
 
-[스마트 캠페인 만들기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Campaigns/operation/createSmartCampaignUsingPOST) 끝점은 두 개의 필수 매개 변수가 있는 application/x-www-form-urlencoded POST으로 실행됩니다. `name` 매개 변수는 만들 스마트 캠페인의 이름을 지정합니다. `folder` 매개 변수는 스마트 캠페인을 만들 부모 폴더를 지정합니다. 형식은 `id` 및 `type` 특성이 포함된 JSON 블록입니다.
+[스마트 캠페인 만들기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Campaigns/operation/createSmartCampaignUsingPOST) 끝점은 두 개의 필수 매개 변수가 있는 application/x-www-form-urlencoded POST로 실행됩니다. `name` 매개 변수는 만들 스마트 캠페인의 이름을 지정합니다. `folder` 매개 변수는 스마트 캠페인을 만들 부모 폴더를 지정합니다. 형식은 `id` 및 `type` 특성이 포함된 JSON 블록입니다.
 
 필요한 경우 `description` 매개 변수(최대 2,000자)를 사용하여 스마트 캠페인을 설명할 수 있습니다.
 
@@ -239,7 +239,7 @@ name=Smart Campaign 02&folder={"type": "folder","id": 640}&description=This is a
 
 ## 업데이트
 
-[스마트 캠페인 업데이트](https://developer.adobe.com/marketo-apis/api/asset/) 끝점은 application/x-www-form-urlencoded POST으로 실행됩니다. 단일 스마트 캠페인 `id`을(를) 경로 매개 변수로 사용합니다. `name` 매개 변수를 사용하여 스마트 캠페인의 이름을 업데이트하거나 `description` 매개 변수를 사용하여 스마트 캠페인의 설명을 업데이트할 수 있습니다.
+[스마트 캠페인 업데이트](https://developer.adobe.com/marketo-apis/api/asset/) 끝점은 application/x-www-form-urlencoded POST로 실행됩니다. 단일 스마트 캠페인 `id`을(를) 경로 매개 변수로 사용합니다. `name` 매개 변수를 사용하여 스마트 캠페인의 이름을 업데이트하거나 `description` 매개 변수를 사용하여 스마트 캠페인의 설명을 업데이트할 수 있습니다.
 
 ```
 POST /rest/asset/v1/smartCampaign/{id}.json
@@ -291,7 +291,7 @@ name=Smart Campaign 02 Update&description=This is a smart campaign update test.
 
 ## 복제
 
-[복제 스마트 POST](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) 끝점은 세 개의 필수 매개 변수가 있는 application/x-www-form-urlencoded 캠페인으로 실행됩니다. 복제할 스마트 캠페인을 지정하는 `id` 매개 변수, 새 스마트 캠페인의 이름을 지정하는 `name` 매개 변수 및 새 스마트 캠페인이 만들어지는 상위 폴더를 지정하는 `folder` 매개 변수를 사용합니다. 형식은 `id` 및 `type` 특성이 포함된 JSON 블록입니다.
+[복제 스마트 캠페인](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) 끝점은 세 개의 필수 매개 변수가 있는 application/x-www-form-urlencoded POST로 실행됩니다. 복제할 스마트 캠페인을 지정하는 `id` 매개 변수, 새 스마트 캠페인의 이름을 지정하는 `name` 매개 변수 및 새 스마트 캠페인이 만들어지는 상위 폴더를 지정하는 `folder` 매개 변수를 사용합니다. 형식은 `id` 및 `type` 특성이 포함된 JSON 블록입니다.
 
 필요한 경우 `description` 매개 변수(최대 2,000자)를 사용하여 스마트 캠페인을 설명할 수 있습니다.
 
@@ -369,7 +369,7 @@ POST /rest/asset/v1/smartCampaign/{id}/delete.json
 
 일괄 스마트 캠페인은 특정 시간에 시작되며 특정 리드 세트에 한 번에 영향을 줍니다.
 
-## 예약
+## 일정
 
 [캠페인 예약](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Campaigns/operation/scheduleCampaignUsingPOST) 끝점을 사용하여 일괄 캠페인을 즉시 또는 미래 날짜에 실행하도록 예약합니다. `id` 캠페인은 필수 경로 매개 변수입니다. 선택적 매개 변수는 요청 본문에 application/json으로 전달되는 `tokens`, `runAt` 및 `cloneToProgram`입니다.
 
@@ -426,7 +426,7 @@ POST /rest/v1/campaigns/{id}/schedule.json
 
 이 끝점에는 경로 매개 변수로 캠페인 `id`이(가) 필요하며 리드 ID가 포함된 정수 배열 매개 변수 `leads`이(가) 필요합니다. 호출당 최대 100개의 리드가 허용됩니다.
 
-선택적으로 `tokens` 배열 매개 변수를 사용하여 캠페인의 상위 프로그램에 로컬인 내 토큰을 재정의할 수 있습니다. `tokens`은(는) 최대 100개의 토큰을 허용합니다. 각 `tokens` 배열 항목에는 이름/값 쌍이 있습니다. 토큰 이름의 형식은 &quot;{{my.name}}&quot;이어야 합니다. [전자 메일에 시스템 토큰을 링크로 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/using-tokens/add-a-system-token-as-a-link-in-an-email) 접근 방식을 사용하여 &quot;viewAsWebpageLink&quot; 시스템 토큰을 추가하는 경우 `tokens`을(를) 사용하여 재정의할 수 없습니다. 대신 `tokens`을(를) 사용하여 &quot;viewAsWebPageLink&quot;를 재정의할 수 있는 [전자 메일에 웹 페이지로 보기 링크를 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-a-view-as-web-page-link-to-an-email) 방법을 사용하십시오.
+선택적으로 `tokens` 배열 매개 변수를 사용하여 캠페인의 상위 프로그램에 로컬인 내 토큰을 재정의할 수 있습니다. `tokens`은(는) 최대 100개의 토큰을 허용합니다. 각 `tokens` 배열 항목에는 이름/값 쌍이 있습니다. 토큰 이름의 형식은 &quot;{{my.name}}&quot;이어야 합니다. [전자 메일에 시스템 토큰을 링크로 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/using-tokens/add-a-system-token-as-a-link-in-an-email) 접근 방식을 사용하여 &quot;viewAsWebpageLink&quot; 시스템 토큰을 추가하는 경우 `tokens`을(를) 사용하여 재정의할 수 없습니다. 대신 [을(를) 사용하여 &quot;viewAsWebPageLink&quot;를 재정의할 수 있는 ](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-a-view-as-web-page-link-to-an-email)전자 메일에 웹 페이지로 보기 링크를 추가`tokens` 방법을 사용하십시오.
 
 `leads` 및 `tokens` 매개 변수가 요청 본문에 application/json으로 전달됩니다.
 

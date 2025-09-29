@@ -1,12 +1,12 @@
 ---
 title: 정적 목록
 feature: REST API, Static Lists
-description: 정적 목록에서 CRUD 작업을 수행합니다.
+description: Marketo REST API를 사용하여 ID, 이름 및 찾아보기, 폴더 범위, 페이징 및 날짜 필터에 대한 끝점이 있는 정적 목록을 쿼리, 만들기, 업데이트 및 삭제합니다.
 exl-id: 20679fd2-fae2-473e-84bc-cb4fdf2f5151
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '741'
-ht-degree: 0%
+source-wordcount: '760'
+ht-degree: 1%
 
 ---
 
@@ -133,7 +133,7 @@ GET /rest/asset/v1/staticLists.json?folder={"id":13,"type":"Folder"}
 
 ## 만들기 및 업데이트
 
-[정적 목록 만들기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists/createStaticListUsingPOST)는 두 개의 필수 매개 변수가 있는 application/x-www-form-urlencoded POST으로 실행됩니다. `folder` 매개 변수는 정적 목록을 만들 상위 폴더를 지정하는 데 사용되며 ID 및 형식을 포함하는 JSON 개체로 서식이 지정됩니다. `name` 매개 변수는 정적 목록의 이름을 지정하는 데 사용되며 고유해야 합니다. 선택적으로 `description` 매개 변수를 사용하여 정적 목록을 설명할 수 있습니다.
+[정적 목록 만들기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists/createStaticListUsingPOST)는 두 개의 필수 매개 변수가 있는 application/x-www-form-urlencoded POST로 실행됩니다. `folder` 매개 변수는 정적 목록을 만들 상위 폴더를 지정하는 데 사용되며 ID 및 형식을 포함하는 JSON 개체로 서식이 지정됩니다. `name` 매개 변수는 정적 목록의 이름을 지정하는 데 사용되며 고유해야 합니다. 선택적으로 `description` 매개 변수를 사용하여 정적 목록을 설명할 수 있습니다.
 
 ```
 POST /rest/asset/v1/staticLists.json

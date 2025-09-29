@@ -1,16 +1,16 @@
 ---
-title: 코드 조각
+title: 스니펫
 feature: REST API, Snippets
-description: Marketo API를 통해 코드 조각 관리.
+description: 스니펫용 Marketo Asset REST API로, ID별 쿼리를 다루고 상태 찾아보기, 콘텐츠 가져오기, HTML, 텍스트 및 동적 콘텐츠 만들기 및 업데이트.
 exl-id: 87901c29-ee59-4224-848d-3bd6a6c52718
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '438'
+source-wordcount: '456'
 ht-degree: 1%
 
 ---
 
-# 코드 조각
+# 스니펫
 
 [코드 조각 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets)
 
@@ -139,7 +139,7 @@ GET /rest/asset/v1/snippet/{id}/content.json
 }
 ```
 
-이 호출은 콘텐츠 섹션 목록을 반환합니다.  HTML 또는 DynamicContent 형식의 섹션과 선택적으로 텍스트 형식의 섹션으로 구성됩니다.
+이 호출은 콘텐츠 섹션 목록을 반환합니다.  HTML 또는 DynamicContent 형식의 섹션과 선택적으로 Text 형식의 섹션으로 구성됩니다.
 
 ## 만들기 및 업데이트
 
@@ -183,7 +183,7 @@ name=Test Snippet 09 - deverly&folder={"id":395,"type":"Folder"}&description=Thi
 }
 ```
 
-코드 조각의 컨텐츠를 추가하거나 바꾸는 작업은 ID로 수행됩니다. 컨텐츠는 텍스트, HTML 또는 DynamicContent 유형일 수 있습니다. 유형이 텍스트이면 컨텐츠 매개 변수는 일반 텍스트 엔드포인트이며, HTML이 텍스트이면 원하는 마크업 텍스트입니다. 유형이 DynamicContent로 설정된 경우 콘텐츠 매개 변수는 코드 조각과 연결할 세그먼테이션의 ID로 설정해야 합니다.
+코드 조각의 컨텐츠를 추가하거나 바꾸는 작업은 ID로 수행됩니다. 컨텐츠는 텍스트, HTML 또는 DynamicContent 유형일 수 있습니다. 유형이 텍스트이면 컨텐츠 매개 변수는 일반 텍스트 엔드포인트이며, HTML이면 원하는 마크업 텍스트입니다. 유형이 DynamicContent로 설정된 경우 콘텐츠 매개 변수는 코드 조각과 연결할 세그먼테이션의 ID로 설정해야 합니다.
 
 ```
 POST /rest/asset/v1/snippet/{id}/content.json
@@ -251,7 +251,7 @@ name=Test Snippet&description=New Description
 }
 ```
 
-## 다이내믹 콘텐츠
+## 동적 콘텐츠
 
 스니펫은 다이내믹 컨텐츠에 대한 표준 패턴을 따르지만, 하나의 전체 컨텐츠 섹션만 나타내므로 각 스니펫은 하나의 동적 섹션만 포함할 수 있으며, 사용된 세그먼테이션의 각 세그먼트에 대해 선택적으로 내부 섹션 목록이 포함됩니다. 코드 조각에 동적 콘텐츠 섹션이 하나만 있을 수 있으므로 동적 콘텐츠는 코드 조각 ID만으로 쿼리할 수 있습니다.
 

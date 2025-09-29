@@ -1,12 +1,12 @@
 ---
 title: 기본 URL
 feature: REST API
-description: Marketo용 URL을 사용하는 방법에 대해 설명합니다.
+description: Marketo REST API 요청을 빌드하고, 기본 URL 경로 리소스 및 매개 변수를 이해하고, 고유한 기본 URL을 찾는 방법에 대해 알아봅니다.
 exl-id: 6c3f122c-3ace-4ed3-bed0-a6b89cedc99a
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '138'
-ht-degree: 0%
+source-wordcount: '152'
+ht-degree: 2%
 
 ---
 

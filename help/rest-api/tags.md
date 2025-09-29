@@ -1,11 +1,11 @@
 ---
 title: 태그
 feature: REST API, Tags
-description: Marketo의 프로그램에 대한 태그를 관리합니다.
+description: 요청 예와 함께, 태그 유형을 쿼리하고 이름별로 허용 값을 얻으며 REST 자산 API를 통해 Marketo에서 프로그램 태그를 업데이트하거나 삭제합니다.
 exl-id: 64731d1a-a749-4d6f-b336-16c733d002f0
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '205'
+source-wordcount: '221'
 ht-degree: 2%
 
 ---

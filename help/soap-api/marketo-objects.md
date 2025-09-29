@@ -1,11 +1,11 @@
 ---
 title: Marketo 개체
 feature: SOAP
-description: Marketo 개체 개요
+description: 영업 기회, 프로그램 및 관련 레코드에 대한 유형, 속성, 외부 키 동작 및 지원되는 SOAP API를 포함한 Marketo MObject에 대한 개요입니다.
 exl-id: 99b9aed4-94e8-46e8-84d9-2cc5215b0c13
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '249'
+source-wordcount: '265'
 ht-degree: 0%
 
 ---

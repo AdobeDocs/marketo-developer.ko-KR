@@ -1,11 +1,11 @@
 ---
 title: 페이징 토큰
 feature: REST API
-description: 페이징 토큰 데이터 보기.
+description: Marketo REST API 페이징 토큰을 사용하여 날짜 기반 및 위치 기반 토큰, ISO 8601 sinceDatetime 및 414 오류를 포함하는 활동 및 리드를 검색합니다.
 exl-id: 63fbbf03-8daf-4add-85b0-a8546c825e5b
-source-git-commit: a00583f367c2da36d9d1d6e0b05bfd4216573fbb
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '352'
+source-wordcount: '370'
 ht-degree: 0%
 
 ---
@@ -49,7 +49,7 @@ GET /rest/v1/activities/pagingtoken.json?sinceDatetime=2014-10-06T13:22:17-08:00
 
 `yyyy-mm-ddThh:mm:ssZ`
 
-예시
+예
 
 `2016-09-15T15:53:00+05:00`
 

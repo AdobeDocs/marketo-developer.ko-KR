@@ -1,11 +1,11 @@
 ---
 title: 프로그램
 feature: REST API, Programs
-description: 프로그램 정보를 만들고 편집합니다.
+description: 유형, 채널, 태그, 멤버 상태 및 엔드포인트를 다루는 Asset REST API에 대한 Marketo 프로그램 안내서를 참조하여 id 또는 이름별로 가져오고, 찾아보고, 상태별로 필터링합니다.
 exl-id: 30700de2-8f4a-4580-92f2-7036905deb80
-source-git-commit: f28aa6daf53063381077b357061fe7813c64b5de
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '848'
+source-wordcount: '870'
 ht-degree: 1%
 
 ---
@@ -187,7 +187,7 @@ GET /rest/asset/v1/programs.json
 
 ### 날짜 범위별
 
-[프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) 끝점에 대한 `earliestUpdatedAt` 및 `latestUpdatedAt` 매개 변수를 사용하면 지정된 범위 내에서 업데이트되었거나 처음 만들어진 프로그램을 반환하는 데 대해 낮거나 높은 날짜/시간 워터마크를 설정할 수 있습니다.
+`earliestUpdatedAt`프로그램 가져오기`latestUpdatedAt` 끝점에 대한 [ 및 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) 매개 변수를 사용하면 지정된 범위 내에서 업데이트되었거나 처음 만들어진 프로그램을 반환하는 데 대해 낮거나 높은 날짜/시간 워터마크를 설정할 수 있습니다.
 
 ```
 GET /rest/asset/v1/programs.json?earliestUpdatedAt=2017-01-01T00:00:00-05:00&latestUpdatedAt=2017-01-30T00:00:00-05:00
@@ -320,7 +320,7 @@ GET /rest/asset/v1/program/byTag.json?tagType=Presenter&tagValue=Dennis
 
 ## 만들기 및 업데이트
 
-[만들기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/createProgramUsingPOST) 및 [업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/updateProgramUsingPOST) 프로그램은 표준 자산 패턴을 따르며 필수 매개 변수로 `folder`, `name`, `type` 및 `channel`을(를) 포함합니다. `description`, `costs` 및 `tags`은(는) 선택 사항입니다. 채널 및 유형은 프로그램 생성 시에만 설정할 수 있습니다. 추가 `costsDestructiveUpdate` 매개 변수가 허용되면 설명, 이름, `tags` 및 `costs`만 업데이트할 수 있습니다. `costsDestructiveUpdate`을(를) true로 전달하면 기존 비용이 모두 지워지고 호출에 포함된 비용으로 대체됩니다. 일부 구독의 일부 프로그램 유형에는 태그가 필요할 수 있지만, 이는 구성에 따라 달라지며 먼저 태그 가져오기 를 사용하여 인스턴스별 요구 사항이 있는지 확인해야 합니다.
+[만들기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/createProgramUsingPOST) 및 [업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/updateProgramUsingPOST) 프로그램은 표준 자산 패턴을 따르며 필수 매개 변수로 `folder`, `name`, `type` 및 `channel`을(를) 포함합니다. `description`, `costs` 및 `tags`은(는) 선택 사항입니다. 채널 및 유형은 프로그램 생성 시에만 설정할 수 있습니다. 추가 `tags` 매개 변수가 허용되면 설명, 이름, `costs` 및 `costsDestructiveUpdate`만 업데이트할 수 있습니다. `costsDestructiveUpdate`을(를) true로 전달하면 기존 비용이 모두 지워지고 호출에 포함된 비용으로 대체됩니다. 일부 구독의 일부 프로그램 유형에는 태그가 필요할 수 있지만, 이는 구성에 따라 달라지며 먼저 태그 가져오기 를 사용하여 인스턴스별 요구 사항이 있는지 확인해야 합니다.
 
 전자 메일 프로그램을 만들거나 업데이트할 때 `startDate` 및 `endDate`도 UTC 날짜/시간으로 전달될 수 있습니다.
 
@@ -379,7 +379,7 @@ name=API Test Program&folder={"id":1035,"type":"Folder"}&description=Sample API 
 
 ### 업데이트
 
-프로그램 비용을 업데이트할 때 새 비용을 추가하려면 `costs` 배열에 추가하기만 하면 됩니다. 원본에 영향을 주는 업데이트를 수행하려면 `true`(으)로 설정된 `costsDestructiveUpdate` 매개 변수와 함께 새 비용을 전달하십시오. 프로그램에서 모든 비용을 지우려면 `costs` 매개 변수를 전달하지 말고 `true`(으)로 설정된 `costsDestructiveUpdate`만 전달하십시오.
+프로그램 비용을 업데이트할 때 새 비용을 추가하려면 `costs` 배열에 추가하기만 하면 됩니다. 원본에 영향을 주는 업데이트를 수행하려면 `costsDestructiveUpdate`(으)로 설정된 `true` 매개 변수와 함께 새 비용을 전달하십시오. 프로그램에서 모든 비용을 지우려면 `costs` 매개 변수를 전달하지 말고 `costsDestructiveUpdate`(으)로 설정된 `true`만 전달하십시오.
 
 ```
 POST /rest/asset/v1/program/{id}.json

@@ -1,12 +1,12 @@
 ---
 title: 스마트 목록
 feature: REST API
-description: 스마트 목록을 만들고 편집합니다.
+description: Marketo REST API를 사용하여 ID, 이름, 캠페인 및 규칙이 있는 프로그램별 끝점을 포함하여 사용자가 만든 스마트 목록을 쿼리, 복제 및 삭제하는 방법에 대해 알아봅니다.
 exl-id: 4ba37e57-ee56-48c3-bb2b-b4ec8e907911
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '419'
-ht-degree: 0%
+source-wordcount: '439'
+ht-degree: 1%
 
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 Marketo은 스마트 목록에서 작업을 수행하기 위한 일련의 REST API를 제공합니다. 이러한 API는 쿼리, 삭제 및 복제 옵션을 제공하는 에셋 API에 대한 표준 인터페이스 패턴을 따릅니다.
 
-참고: 이러한 API는 사용자가 만든 스마트 목록에서만 지원됩니다. [기본 제공/시스템 스마트 목록](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/using-smart-lists/use-built-in-system-smart-lists)에는 사용할 수 없습니다.
+참고: 이러한 API는 사용자가 만든 스마트 목록에서만 지원됩니다. [기본 제공/시스템 스마트 목록](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/using-smart-lists/use-built-in-system-smart-lists)에는 사용할 수 없습니다.
 
 ## 쿼리
 
@@ -245,7 +245,7 @@ GET /rest/asset/v1/smartLists.json?folder={"id":31,"type":"Folder"}
 
 ## 복제
 
-[스마트 목록 복제](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/cloneSmartListUsingPOST)이(가) application/x-www-form-urlencoded POST을 사용하여 실행됩니다. 복제할 스마트 목록이 `id` 경로 매개 변수에 지정되었습니다. `folder` 매개 변수는 스마트 목록을 만들 상위 폴더를 지정하는 데 사용되며 ID 및 형식을 포함하는 JSON 개체로 서식이 지정됩니다. 상위 폴더는 프로그램 또는 스마트 목록 폴더여야 합니다. `name` 매개 변수는 새 스마트 목록의 이름을 지정하는 데 사용되며 고유해야 합니다. 필요한 경우 `description` 매개 변수를 사용하여 스마트 목록을 설명할 수 있습니다.
+[스마트 목록 복제](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists/operation/cloneSmartListUsingPOST)이(가) application/x-www-form-urlencoded POST를 사용하여 실행됩니다. 복제할 스마트 목록이 `id` 경로 매개 변수에 지정되었습니다. `folder` 매개 변수는 스마트 목록을 만들 상위 폴더를 지정하는 데 사용되며 ID 및 형식을 포함하는 JSON 개체로 서식이 지정됩니다. 상위 폴더는 프로그램 또는 스마트 목록 폴더여야 합니다. `name` 매개 변수는 새 스마트 목록의 이름을 지정하는 데 사용되며 고유해야 합니다. 필요한 경우 `description` 매개 변수를 사용하여 스마트 목록을 설명할 수 있습니다.
 
 ```
 POST /rest/asset/v1/smartList/{id}/clone.json

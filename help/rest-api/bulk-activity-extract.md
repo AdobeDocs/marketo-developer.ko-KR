@@ -1,12 +1,12 @@
 ---
 title: 일괄 활동 추출
 feature: REST API
-description: Marketo에서 활동 데이터를 일괄 처리합니다.
+description: Marketo 벌크 활동 REST API를 추출하여 31일 날짜 범위, 활동 및 ETL 및 CRM에 대한 기본 속성 필터를 사용하여 대용량 활동 데이터를 내보냅니다.
 exl-id: 6bdfa78e-bc5b-4eea-bcb0-e26e36cf6e19
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1332'
-ht-degree: 3%
+source-wordcount: '1351'
+ht-degree: 4%
 
 ---
 
@@ -204,7 +204,7 @@ GET /bulk/v1/activities/export/{exportId}/status.json
 
 상태 필드는 다음 값 중 하나로 응답할 수 있습니다.
 
-- 생성됨
+- 생성일
 - 대기열에 추가됨
 - 처리 중
 - 취소됨

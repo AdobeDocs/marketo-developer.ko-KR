@@ -1,22 +1,22 @@
 ---
-title: 다이내믹 콘텐츠
+title: 동적 콘텐츠
 feature: REST API, Dynamic Content
-description: Marketo API를 사용하여 다이내믹 콘텐츠를 구성합니다.
+description: 세분화를 사용하여 REST API를 통해 섹션 수준 Marketo 다이내믹 콘텐츠를 구성하여 엔드포인트 및 예를 통해 이메일, 랜딩 페이지 및 코드 조각을 개인화할 수 있습니다
 exl-id: 8ab97624-5fb5-4a41-911f-ec8616dd43c9
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '426'
-ht-degree: 1%
+source-wordcount: '441'
+ht-degree: 2%
 
 ---
 
-# 다이내믹 콘텐츠
+# 동적 콘텐츠
 
 Marketo은 여러 에셋 유형에 대한 리드 세분화를 통해 다이내믹 콘텐츠를 쉽게 사용할 수 있습니다.
 
 - 이메일
 - 랜딩 페이지
-- 코드 조각
+- 스니펫
 
 ## 개요
 

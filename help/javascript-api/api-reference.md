@@ -1,11 +1,11 @@
 ---
 title: Munchkin API 참조
-description: Munchkin Javascript API를 사용하여 Munchkin 데이터를 사용자 지정합니다.
+description: init, createTrackingCookie 및 munchkinFunction 메서드를 사용하여 Munchkin Javascript API를 사용하여 페이지 방문 횟수, 링크 클릭 수 및 사용자 지정 이벤트를 추적합니다.
 feature: Munchkin Tracking Code, Javascript
 exl-id: e9727691-5501-4223-bc98-2b4bacc33513
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '414'
+source-wordcount: '424'
 ht-degree: 7%
 
 ---

@@ -1,11 +1,11 @@
 ---
 title: getCustomObjects
 feature: SOAP, Custom Objects
-description: getCustomObjects SOAP 호출
+description: getCustomObjects를 사용하여 키, includeAttributes, 최대 100의 일괄 처리 크기 및 streamPosition 페이지 매김을 사용하여 SOAP을 통해 Marketo 사용자 지정 개체를 검색하는 방법에 대해 알아봅니다.
 exl-id: 32ff208a-f824-4420-a26f-1fd969a2bc4c
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '156'
+source-wordcount: '176'
 ht-degree: 5%
 
 ---

@@ -1,16 +1,16 @@
 ---
-title: Forms
+title: 양식
 feature: REST API, Forms
-description: API를 통해 양식을 만들고 관리합니다.
+description: 양식 만들기 및 관리, id 또는 이름별로 검색, 상태 필터 찾아보기, 필드, 필드 세트 및 규칙 관리를 위한 Marketo Forms REST API 안내서.
 exl-id: 2e5dfa70-3163-4ab4-b269-3112417714c3
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1598'
+source-wordcount: '1616'
 ht-degree: 1%
 
 ---
 
-# Forms
+# 양식
 
 [Forms 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms)
 

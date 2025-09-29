@@ -1,11 +1,11 @@
 ---
 title: 일괄 가져오기
 feature: REST API
-description: 개인 데이터를 일괄 가져오는 중.
+description: 다중 부분 업로드를 통해 리드, 사용자 지정 개체 및 프로그램 구성원을 로드하고 비동기 작업을 생성하며, 폴링 상태가 설정되고, 오류가 처리되는 Marketo 일괄 가져오기.
 exl-id: f7922fd2-8408-4d04-8955-0f8f58914d24
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '592'
+source-wordcount: '610'
 ht-degree: 1%
 
 ---

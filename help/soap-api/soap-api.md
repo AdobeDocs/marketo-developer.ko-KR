@@ -1,11 +1,11 @@
 ---
 title: SOAP API
 feature: SOAP
-description: Marketo SOAP 개요
+description: Marketo SOAP API는 2025년 10월 31일 이후 더 이상 사용되지 않습니다. REST로 마이그레이션하고 WSDL을 검색하는 방법에 대해 알아보고 할당량, 속도 제한 및 인증 설정을 참조하십시오.
 exl-id: 6618cc82-15ae-4030-aa00-438e635d8369
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '228'
+source-wordcount: '249'
 ht-degree: 0%
 
 ---

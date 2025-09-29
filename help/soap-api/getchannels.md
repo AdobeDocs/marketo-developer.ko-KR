@@ -1,12 +1,12 @@
 ---
 title: getChannels
 feature: SOAP
-description: getChannels SOAP 호출
+description: Marketo SOAP getChannels가 요청 및 응답 XML 예제를 통해 채널 진행 상태, 단계 번호 및 성공 플래그를 검색하는 방법을 알아봅니다.
 exl-id: bcaef85b-154b-4571-ad24-07a36707a6ef
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '92'
-ht-degree: 5%
+source-wordcount: '109'
+ht-degree: 4%
 
 ---
 

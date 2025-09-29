@@ -1,11 +1,11 @@
 ---
 title: 성능
 feature: REST API
-description: Marketo API 작업에 대한 성능 팁입니다.
+description: HTTP 압축으로 Marketo REST API 성능을 향상시킵니다. gzip을 활성화하여 대역폭을 줄입니다. 벌크 API는 지원되지 않으며 1024바이트 미만이면 압축되지 않습니다.
 exl-id: 173a398a-9d36-4e8d-9dd3-7d0d375b085a
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '122'
+source-wordcount: '136'
 ht-degree: 0%
 
 ---

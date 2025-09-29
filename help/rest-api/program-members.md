@@ -1,11 +1,11 @@
 ---
 title: 프로그램 구성원
 feature: REST API
-description: 프로그램 구성원을 만들고 관리합니다.
+description: Marketo REST API를 사용하여 프로그램 구성원을 읽고, 만들고, 업데이트하고, 삭제하고, 표준 및 사용자 정의 필드를 관리하고, 검색 가능한 필드를 사용하여 쿼리합니다.
 exl-id: 22f29a42-2a30-4dce-a571-d7776374cf43
-source-git-commit: 8a785b0719e08544ed1a87772faf90bd9dda3077
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1708'
+source-wordcount: '1726'
 ht-degree: 2%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 [프로그램 구성원 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Program-Members)
 
-Marketo은 프로그램 멤버 레코드를 읽고, 만들고, 업데이트하고, 삭제하기 위한 API를 노출합니다. 프로그램 구성원 레코드는 잠재 고객 ID 필드를 통해 잠재 고객 레코드와 관련되어 있습니다. 레코드는 표준 필드 세트와 선택적으로 최대 20개의 추가 사용자 정의 필드로 구성됩니다. 필드에는 각 멤버에 대한 프로그램별 데이터가 포함되어 있으며 양식, 필터, 트리거 및 흐름 작업에 사용할 수 있습니다. 이 데이터는 Marketo Engage UI의 프로그램 [구성원 탭](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/manage-and-view-members)에서 볼 수 있습니다.
+Marketo은 프로그램 멤버 레코드를 읽고, 만들고, 업데이트하고, 삭제하기 위한 API를 노출합니다. 프로그램 구성원 레코드는 잠재 고객 ID 필드를 통해 잠재 고객 레코드와 관련되어 있습니다. 레코드는 표준 필드 세트와 선택적으로 최대 20개의 추가 사용자 정의 필드로 구성됩니다. 필드에는 각 멤버에 대한 프로그램별 데이터가 포함되어 있으며 양식, 필터, 트리거 및 흐름 작업에 사용할 수 있습니다. 이 데이터는 Marketo Engage UI의 프로그램 [구성원 탭](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/manage-and-view-members)에서 볼 수 있습니다.
 
 ## 설명
 
@@ -222,7 +222,7 @@ GET /rest/v1/programs/members/describe.json
 
 `filterValues`은(는) 검색할 값을 지정하는 데 사용되며 쉼표로 구분된 형식으로 최대 300개의 값을 허용합니다. 호출은 프로그램 멤버의 필드가 포함된 filterValues 중 하나와 일치하는 레코드를 검색합니다.
 
-또는 `startAt` 및 `endAt` datetime 매개 변수를 사용하여 `updatedAt`을(를) filterType으로 지정하여 날짜 범위별로 필터링할 수 있습니다. 범위는 7일 이하여야 합니다. 날짜/시간은 밀리초 없이 ISO-8601 형식이어야 합니다.
+또는 `updatedAt` 및 `startAt` datetime 매개 변수를 사용하여 `endAt`을(를) filterType으로 지정하여 날짜 범위별로 필터링할 수 있습니다. 범위는 7일 이하여야 합니다. 날짜/시간은 밀리초 없이 ISO-8601 형식이어야 합니다.
 
 선택적 `fields` 쿼리 매개 변수는 [Describe Program Member](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Program-Members/operation/describeProgramMemberUsingGET2) 끝점에서 반환된 필드 API 이름의 쉼표로 구분된 목록을 허용합니다. 포함되는 경우 응답의 각 레코드에는 지정된 필드가 포함됩니다. 생략하면 반환되는 기본 필드 집합은 `acquiredBy`, `leadId`, `membershipDate`, `programId` 및 `reachedSuccess`입니다.
 
@@ -597,13 +597,13 @@ GET /rest/v1/programs/members/schema/fields.json?batchSize=5
 
 ### 필드 만들기
 
-[프로그램 구성원 필드 만들기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Program-Members/operation/createProgramMemberFieldUsingPOST) 끝점은 프로그램 구성원 개체에 사용자 지정 필드를 하나 이상 만듭니다. 이 끝점은 Marketo Engage UI에서 [사용할 수 있는 기능](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/program-member-custom-fields)과 비슷한 기능을 제공합니다. 이 끝점을 사용하여 최대 20개의 사용자 지정 필드를 만들 수 있습니다.
+[프로그램 구성원 필드 만들기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Program-Members/operation/createProgramMemberFieldUsingPOST) 끝점은 프로그램 구성원 개체에 사용자 지정 필드를 하나 이상 만듭니다. 이 끝점은 Marketo Engage UI에서 [사용할 수 있는 기능](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/program-member-custom-fields)과 비슷한 기능을 제공합니다. 이 끝점을 사용하여 최대 20개의 사용자 지정 필드를 만들 수 있습니다.
 
-API를 사용하여 Marketo Engage의 프로덕션 인스턴스에서 만드는 각 필드를 신중하게 고려합니다. 필드를 만든 후에는 삭제할 수 없습니다([숨길 수만 있음](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/field-management/delete-a-custom-field-in-marketo)). 사용하지 않는 필드의 확산은 인스턴스에 혼란을 가중시킬 나쁜 관행입니다.
+API를 사용하여 Marketo Engage의 프로덕션 인스턴스에서 만드는 각 필드를 신중하게 고려합니다. 필드를 만든 후에는 삭제할 수 없습니다([숨길 수만 있음](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/field-management/delete-a-custom-field-in-marketo)). 사용하지 않는 필드의 확산은 인스턴스에 혼란을 가중시킬 나쁜 관행입니다.
 
 필수 `input` 매개 변수는 프로그램 멤버 필드 개체의 배열입니다. 각 객체에는 하나 이상의 속성이 포함됩니다. 필수 특성은 각각 필드의 UI 표시 이름, 필드의 API 이름 및 필드 형식에 해당하는 `displayName`, `name` 및 `dataType`입니다. 선택적으로 `description`, `isHidden`, `isHtmlEncodingInEmail` 및 `isSensitive`을(를) 지정할 수 있습니다.
 
-`name` 및 `displayName` 명명과 관련된 규칙이 몇 가지 있습니다. `name` 특성은 고유해야 하며 문자로 시작하고 문자, 숫자 또는 밑줄만 포함해야 합니다. *`isplayName`은(는) 고유해야 하며 특수 문자를 포함할 수 없습니다. 일반적인 명명 규칙은 `name`을(를) 생성하기 위해 `displayName`에 [카멜 대/소문자](https://en.wikipedia.org/wiki/Camel_case#)을(를) 적용하는 것입니다. 예를 들어 `displayName`의 &quot;내 사용자 지정 필드&quot;는 `name`의 &quot;myCustomField&quot;를 생성합니다.
+`name` 및 `displayName` 명명과 관련된 규칙이 몇 가지 있습니다. `name` 특성은 고유해야 하며 문자로 시작하고 문자, 숫자 또는 밑줄만 포함해야 합니다. *`isplayName`은(는) 고유해야 하며 특수 문자를 포함할 수 없습니다. 일반적인 명명 규칙은 [을(를) 생성하기 위해 ](https://en.wikipedia.org/wiki/Camel_case#)에 `displayName`카멜 대/소문자`name`을(를) 적용하는 것입니다. 예를 들어 `displayName`의 &quot;내 사용자 지정 필드&quot;는 `name`의 &quot;myCustomField&quot;를 생성합니다.
 
 ```
 POST /rest/v1/programs/members/schema/fields.json

@@ -1,10 +1,11 @@
 ---
 title: Marketo 개체
 feature: Email Programs
-description: Velocity 스크립팅과 함께 Marketo 개체 사용에 대한 개요
-source-git-commit: 3ccb27a0d184e0c1314979d404022bc4e0794f7b
+description: 리드, 기회 및 사용자 지정 개체와 함께 Marketo Velocity 사용, 필드 로드, 상위 10개 목록 액세스, SFDC 관계 및 $TriggerObject에 대해 안내합니다.
+exl-id: 88c63d72-7aa5-4550-9e1a-887a479872e1
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '518'
+source-wordcount: '530'
 ht-degree: 0%
 
 ---

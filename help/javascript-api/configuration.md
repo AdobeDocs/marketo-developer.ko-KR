@@ -1,11 +1,11 @@
 ---
 title: 구성
-description: Munchkin 사용 시 구성 값을 설정하려면 구성 Javascript API를 사용하십시오.
+description: JavaScript API를 사용하여 Marketo Munchkin을 구성합니다. altIds, anonymizeIP, asyncOnly, 쿠키 수명, domainLevel, 비콘 API와 같은 Munchkin.init 설정에 대해 알아봅니다.
 feature: Munchkin Tracking Code, Javascript
 exl-id: 4700ce7b-f624-4f27-871e-9a050f203973
-source-git-commit: 1ad2d793832d882bb32ebf7ef1ecd4148a6ef8d5
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '557'
+source-wordcount: '563'
 ht-degree: 3%
 
 ---
@@ -36,13 +36,13 @@ Munchkin.init("AAA-BBB-CCC", {
 | cookieAnon | 부울 | false로 설정하면, 새로운 익명 리드의 추적 및 쿠키 생성이 금지됩니다. 잠재 고객은 쿠키를 가지며, Marketo 양식을 작성한 후 또는 Marketo 이메일에서 클릭스루하여 추적됩니다. 기본값은 true입니다. |
 | cookieLifeDays | 정수 | 새로 생성된 Munchkin 추적 쿠키의 만료 날짜를 미래의 이 요일로 설정합니다. 기본값은 730일(2년)입니다. |
 | customName | 문자열 | 사용자 지정 페이지 이름. 시스템 전용. |
-| <a name="domainlevel"></a>domainLevel | 정수 | 쿠키의 도메인 속성을 설정할 때 사용할 페이지의 도메인 부분 수를 설정합니다.예를 들어 현재 페이지 도메인이 &quot;www.example.com&quot;이라고 가정해 보겠습니다.domainLevel: 2는 쿠키 도메인 속성을 &quot;.example.com&quot;으로 설정합니다.domainLevel: 3은 쿠키 도메인 속성을 &quot;.www.example.com&quot;으로 설정합니다.Background:Munchkin은 자동으로 두 글자로 된 특정 최상위 도메인을 관리합니다. 최상위 도메인이 3자인 일반적인 경우 기본적으로 두 부분으로 설정됩니다. 예를 들어 &quot;www.example.com&quot;과 같이 가장 오른쪽에 있는 두 부분을 사용하여 쿠키 &quot;.example.com&quot;을 설정합니다. &quot;.jp&quot;, &quot;.us&quot;, &quot;.cn&quot; 및 &quot;.uk&quot;와 같은 두 문자 국가 코드의 경우 기본값은 세 부분으로 설정됩니다. 예를 들어 &quot;www.example.co.jp&quot;은 세 개의 가장 오른쪽 도메인 부분인 &quot;.example.co.jp&quot;을 사용합니다. 도메인 패턴에 다른 동작이 필요한 경우 `domainLevel` 매개 변수를 사용하여 지정해야 합니다. |
+| <a name="domainlevel"></a>domainLevel | 정수 | 쿠키의 도메인 특성을 설정할 때 사용할 페이지의 도메인 부분 수를 설정합니다.예를 들어 현재 페이지 도메인이 &quot;www.example.com&quot;이라고 가정해 보겠습니다.domainLevel: 2는 쿠키 도메인 특성을 &quot;.example.com&quot;으로 설정합니다.domainLevel: 3은 쿠키 도메인 특성을 &quot;.www.example.com&quot;으로 설정합니다.:Munchkin은(는) 두 글자로 된 특정 최상위 수준 도메인을 자동으로 관리합니다. 최상위 도메인이 3자인 일반적인 경우 기본적으로 두 부분으로 설정됩니다. 예를 들어 &quot;www.example.com&quot;과 같이 가장 오른쪽에 있는 두 부분을 사용하여 쿠키 &quot;.example.com&quot;을 설정합니다. &quot;.jp&quot;, &quot;.us&quot;, &quot;.cn&quot; 및 &quot;.uk&quot;와 같은 두 문자 국가 코드의 경우 기본값은 세 부분으로 설정됩니다. 예를 들어 &quot;www.example.co.jp&quot;은 세 개의 가장 오른쪽 도메인 부분인 &quot;.example.co.jp&quot;을 사용합니다. 도메인 패턴에 다른 동작이 필요한 경우 `domainLevel` 매개 변수를 사용하여 지정해야 합니다. |
 | domainSelectorV2 | 부울 | true로 설정하면 는 향상된 방법을 사용하여 쿠키 도메인 속성을 설정하는 방법을 결정합니다. |
 | https만 | 부울 | 기본값은 false입니다. true로 설정되면 은 추적된 페이지가 https를 통해 제공되었을 때 보안 설정을 사용하도록 쿠키를 설정합니다. |
 | useBeaconAPI | 부울 | 기본값은 false입니다. true로 설정하면 [Beacon API](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API)를 사용하여 [XMLHttpRequest](https://developer.mozilla.org/ko_KR/docs/Web/API/XMLHttpRequest) 대신 비차단 요청을 보냅니다. 브라우저가 이 API를 지원하지 않는 경우 Munchkin은 XMLHttpRequest 사용으로 돌아갑니다. |
-| wsInfo | 문자열 | 작업 영역을 타깃팅할 문자열을 가져옵니다. 이 작업 공간 ID는 관리 > 통합 > Munchkin 메뉴에서 Workspace을 선택하여 가져옵니다. 이 설정은 익명 잠재 고객 레코드의 초기 생성에만 적용됩니다. 해당 잠재 고객 레코드에 대해 Munchkin 쿠키 값이 설정되면 wsInfo 매개 변수를 사용하여 해당 파티션을 변경할 수 없습니다. 이 설정은 익명 리드에만 영향을 주므로 파티션별 [웹 보고서의 익명 방문자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/reporting/basic-reporting/report-activity/display-people-or-anonymous-visitors-in-web-reports)에만 관련이 있습니다. |
+| wsInfo | 문자열 | 작업 영역을 타깃팅할 문자열을 가져옵니다. 이 작업 공간 ID는 관리 > 통합 > Munchkin 메뉴에서 Workspace을 선택하여 가져옵니다. 이 설정은 익명 잠재 고객 레코드의 초기 생성에만 적용됩니다. 해당 잠재 고객 레코드에 대해 Munchkin 쿠키 값이 설정되면 wsInfo 매개 변수를 사용하여 해당 파티션을 변경할 수 없습니다. 이 설정은 익명 리드에만 영향을 주므로 파티션별 [웹 보고서의 익명 방문자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/reporting/basic-reporting/report-activity/display-people-or-anonymous-visitors-in-web-reports)에만 관련이 있습니다. |
 
-## 예시
+## 예
 
 ### 여러 구독에 활동 보내기
 

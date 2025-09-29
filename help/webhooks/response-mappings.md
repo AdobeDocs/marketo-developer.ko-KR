@@ -1,11 +1,11 @@
 ---
 title: 응답 매핑
 feature: Webhooks
-description: Marketo에 대한 응답 매핑
+description: JSON 및 XML에 대한 Marketo 웹후크 응답 매핑, SOAP API 이름, 점 및 배열 표기법 및 유형 호환성을 사용하여 속성을 리드 필드에 매핑합니다.
 exl-id: 95c6e33e-487c-464b-b920-3c67e248d84e
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '460'
+source-wordcount: '480'
 ht-degree: 0%
 
 ---

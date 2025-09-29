@@ -1,12 +1,12 @@
 ---
 title: 오류 코드
 feature: SOAP
-description: SOAP 호출에 대한 오류 코드
+description: 메시지 및 메모가 포함된 Marketo SOAP API 오류 코드에 대한 참조 안내서로, 인증 실패, 환율 및 동시성 제한, 요청 문제를 다룹니다.
 exl-id: 71796520-7bd6-4a37-94e7-b073d17df06f
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '390'
-ht-degree: 10%
+source-wordcount: '407'
+ht-degree: 9%
 
 ---
 
@@ -16,7 +16,7 @@ Marketo용으로 개발할 때 예기치 않은 예외가 발생할 때 요청 �
 
 다음은 SOAP API 오류 코드 목록입니다.
 
-| 코드 | 메시지 | 참고 사항 |
+| 코드 | 메시지 | 참고 |
 |--- |--- |--- |
 | 10001 | 내부 오류 | 심각한 시스템 장애 |
 | 20011 | 내부 오류 | API 서비스 실패 |

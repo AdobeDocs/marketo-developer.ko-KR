@@ -1,12 +1,12 @@
 ---
 title: 토큰
 feature: REST API, Tokens
-description: Marketo에서 토큰을 관리합니다.
+description: Asset REST API를 사용하여 Marketo 내 토큰을 관리합니다. 지원되는 데이터 유형, 폴더 또는 프로그램별로 가져오기, 양식으로 인코딩된 POST를 통해 만들기 또는 업데이트 및 이름별 삭제 를 참조하십시오.
 exl-id: 4f8d87d7-ba2a-4c90-8b39-4d20679d404a
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '297'
-ht-degree: 2%
+source-wordcount: '320'
+ht-degree: 3%
 
 ---
 

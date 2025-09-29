@@ -1,11 +1,11 @@
 ---
 title: 잠재 고객 추적
-description: 잠재 고객 추적 API
+description: Marketo Munchkin JavaScript을 포함하고, 방문 횟수 및 클릭 수를 추적하고, 알려진 리드와 익명 리드를 관리하고, 도메인 간 쿠키를 관리하고, 스마트 캠페인을 옵트아웃하는 방법에 대해 알아봅니다.
 feature: Munchkin Tracking Code, Javascript
 exl-id: 7ece5133-9d32-4be3-a940-4ac0310c4d8b
-source-git-commit: 8ad3e3f0958ea705375651b1c8a75967d807ca80
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '764'
+source-wordcount: '784'
 ht-degree: 0%
 
 ---
@@ -66,7 +66,7 @@ Marketo Munchkin의 기본 동작은 페이지 로드 시 다음을 수행하는
 1. 현재 페이지 및 브라우저의 정보를 사용하여 지정된 Marketo 인스턴스로 &quot;웹 페이지 방문&quot; 이벤트를 보냅니다. 활동을 Marketo의 해당 레코드에 기록합니다.
 1. 링크에서 발생하는 모든 사용자 클릭에 대해 &quot;웹 페이지에서 클릭한 링크&quot; 이벤트를 보냅니다.
 
-Munchkin의 동작은 `cookieAnon` 설정으로 페이지를 방문할 때 모든 잠재 고객에 대해 쿠키가 생성되는지 또는 `clickTime` 설정으로 클릭 지연을 수정하는지 여부와 같은 Munchkin [구성 설정](configuration.md)을 사용하여 수정할 수 있습니다. apiOnly 설정을 true로 설정하여 방문 활동 전송을 비활성화할 수 있습니다. 버전 162(2022년 8월)부터 클릭 수 `tel` 및 `mailto`개와 링크 `http/s`개가 추적됩니다.
+Munchkin의 동작은 [ 설정으로 페이지를 방문할 때 모든 잠재 고객에 대해 쿠키가 생성되는지 또는 ](configuration.md) 설정으로 클릭 지연을 수정하는지 여부와 같은 Munchkin `cookieAnon`구성 설정`clickTime`을 사용하여 수정할 수 있습니다. apiOnly 설정을 true로 설정하여 방문 활동 전송을 비활성화할 수 있습니다. 버전 162(2022년 8월)부터 클릭 수 `tel` 및 `mailto`개와 링크 `http/s`개가 추적됩니다.
 
 ## 알려진 리드 및 익명 리드
 
@@ -86,7 +86,7 @@ Munchkin은 도메인별로 개별 쿠키를 만들고 추적하므로 알려진
 
 최상위 도메인이 `.co.uk`과(와) 같은 두 부분인 경우 코드가 올바르게 추적되도록 Munchkin 코드 조각에 domainLevel 매개 변수를 추가하십시오. 자세한 내용은 [여기](configuration.md#domainlevel)를 참조하세요.
 
-## Cookie
+## 쿠키
 
 Munchkin 쿠키는 키 `_mkto_trk`을(를) 사용하며 다음 패턴 값을 가집니다.
 
@@ -100,7 +100,7 @@ Munchkin 쿠키는 각 두 번째 수준 도메인, 즉 `example.com`에 한정�
 
 ## Beta
 
-랜딩 페이지에 Munchkin 베타 채널을 옵트인하려면 [관리자 -> 보물 상자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features) 메뉴로 이동하여 &quot;랜딩 페이지에 Munchkin Beta&quot; 설정을 활성화하십시오. **[!UICONTROL Admin]** ->에 새 코드 조각을 제공합니다.  외부 사이트에서 Beta 버전을 사용할 수 있는 **[!UICONTROL Munchkin]** 메뉴.
+랜딩 페이지에 Munchkin 베타 채널을 옵트인하려면 [관리자 -> 보물 상자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features) 메뉴로 이동하여 &quot;랜딩 페이지에 Munchkin Beta&quot; 설정을 활성화하십시오. **[!UICONTROL Admin]** ->에 새 코드 조각을 제공합니다.  외부 사이트에서 Beta 버전을 사용할 수 있는 **[!UICONTROL Munchkin]** 메뉴.
 
 ## 옵트아웃
 

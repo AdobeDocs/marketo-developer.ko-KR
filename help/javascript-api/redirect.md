@@ -1,12 +1,12 @@
 ---
 title: 리디렉션
-description: 리디렉션
+description: RTP 리디렉션 API를 구현하여 예제와 팁이 있는 ABM, 조직, 위치 및 세그먼트와 같은 필드를 사용하여 분할된 방문자를 타깃팅된 URL로 보냅니다.
 feature: Javascript
 exl-id: bbf91245-42e5-47ae-a561-e522cc65ff49
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '457'
-ht-degree: 8%
+source-wordcount: '480'
+ht-degree: 7%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 8%
 
 RTP Redirect API를 사용하면 분할된 대상을 대상 URL로 리디렉션할 수 있습니다.
 
-- User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
+- User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
 - RTP는 계정 기반 마케팅 명명된 계정 목록을 지원하지 않습니다. ABM 목록 및 코드는 RTP 내에서 관리되는 업로드된 계정 목록(CSV 파일)에만 해당됩니다.
 
 ## 사용

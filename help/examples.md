@@ -1,11 +1,12 @@
 ---
 title: 이메일 스크립팅 예
 feature: Email Programs
-description: Marketo 이메일 스크립팅의 예
-source-git-commit: 3ccb27a0d184e0c1314979d404022bc4e0794f7b
+description: 사용자 지정 개체를 통한 반복, 날짜 구문 분석/형식 지정, HTML 이스케이프 및 URL ID를 포함하여 Velocity를 사용한 Marketo 이메일 스크립팅 예입니다.
+exl-id: 7c801f1c-0ab3-49f0-8577-0c4dccc80d0b
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '52'
-ht-degree: 9%
+source-wordcount: '67'
+ht-degree: 7%
 
 ---
 

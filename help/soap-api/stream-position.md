@@ -1,11 +1,11 @@
 ---
 title: 스트림 위치
 feature: SOAP
-description: Steam 위치 개요
+description: SOAP에서 시간 시퀀스 데이터의 페이지 매김을 위한 스트림 위치, 간단하고 복잡한 형식, getLeadChanges, getLeadActivity 등에서의 사용에 대해 설명합니다.
 exl-id: c3a3fc1e-086b-4822-b2c7-2a7959db557c
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '138'
+source-wordcount: '156'
 ht-degree: 0%
 
 ---

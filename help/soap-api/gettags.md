@@ -1,12 +1,12 @@
 ---
 title: getTags
 feature: SOAP, Tags
-description: getTags SOAP 호출
+description: Marketo SOAP getTags는 선택적 태그 필터, 요청 필드 및 전체 XML 요청 응답 샘플을 사용하여 비채널 태그 유형 및 값을 검색합니다.
 exl-id: 4fd9de1a-9362-479a-afe1-09ef0aaf5e6e
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '94'
-ht-degree: 5%
+source-wordcount: '113'
+ht-degree: 4%
 
 ---
 

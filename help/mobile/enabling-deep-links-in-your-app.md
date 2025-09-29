@@ -1,11 +1,11 @@
 ---
 title: 딥링크 활성화
 feature: Mobile Marketing
-description: 딥링크 활성화 지침
+description: iOS, Android 및 PhoneGap의 지침 및 모범 사례를 통해 사용자 지정 URI 체계를 사용하여 Marketo 푸시 메시지에 대한 앱의 딥링크를 활성화하는 방법에 대해 알아봅니다.
 exl-id: c3647416-d81d-4f15-b660-bcb3e54cb9bc
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '376'
+source-wordcount: '397'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 0%
 프로세스는 다음과 같이 작동합니다.
 
 1. Marketo 사용자는 푸시 메시지에 대한 탭 작업에 사용자 지정 URI를 배치합니다.
-1. 사용자가 장치에서 푸시 메시지를 탭하면 Marketo MME SDK가 사용자 지정 URI로 이벤트를 트리거합니다.
+1. 사용자가 장치에서 푸시 메시지를 탭하면 Marketo MME SDK이 사용자 지정 URI로 이벤트를 트리거합니다.
 1. 그런 다음 앱에서 이벤트를 처리하고 사용자를 앱 내의 적절한 콘텐츠로 리디렉션합니다.
 
 이렇게 하려면 앱에 대한 사용자 지정 URI 구조를 정의하고, 앱의 매니페스트 내에서 스키마를 등록한 다음 딥링크 이벤트를 처리하고 앱의 적절한 위치로 라우팅하는 코드를 추가해야 합니다.

@@ -1,20 +1,20 @@
 ---
-title: Triggers
-description: Triggers
+title: 트리거
+description: 웹 Personalization의 RTP 트리거를 사용하여 userContextReady를 비롯한 rtp 상태에서 구문, 매개 변수 및 위치 예제와 함께 함수를 실행합니다.
 feature: Javascript
 exl-id: 588836fa-1e4d-41f3-aec5-5cd17eb16071
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '80'
-ht-degree: 13%
+source-wordcount: '100'
+ht-degree: 10%
 
 ---
 
-# Triggers
+# 트리거
 
 전역 rtp 개체의 특정 상태에서 함수를 트리거하는 기능을 추가합니다.
 
-User Context API를 사용하기 전에 웹 Personalization 고객이고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
+User Context API를 사용하기 전에 웹 Personalization 고객이고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
 
 ## 사용
 

@@ -1,11 +1,11 @@
 ---
 title: 인증
 feature: REST API
-description: API 사용을 위한 Marketo 사용자 인증.
+description: 2개의 legged OAuth 2.0으로 Marketo REST API를 인증하고, 액세스 토큰을 생성 및 사용하고, 인증 헤더로 전환하고, 만료를 관리하고, 601 및 602 오류를 처리합니다.
 exl-id: f89a8389-b50c-4e86-a9e4-6f6acfa98e7e
-source-git-commit: 36e768d562e6f69aeb70a83253dfcf41653f217a
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '609'
+source-wordcount: '628'
 ht-degree: 0%
 
 ---
@@ -55,7 +55,7 @@ REST API 메서드를 호출할 때 호출이 성공하려면 모든 호출에 �
 
 >[!IMPORTANT]
 >
->`access_token` 쿼리 매개 변수를 사용한 인증 지원이 2026년 1월 31일에 제거됩니다. 프로젝트에서 쿼리 매개 변수를 사용하여 액세스 토큰을 전달하는 경우 가능한 한 빨리 [인증 헤더](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/authentication#using-an-access-token)를 사용하도록 업데이트해야 합니다. 새 개발에서는 `Authorization` 헤더만 사용해야 합니다.
+>`access_token` 쿼리 매개 변수를 사용한 인증 지원이 2026년 1월 31일에 제거됩니다. 프로젝트에서 쿼리 매개 변수를 사용하여 액세스 토큰을 전달하는 경우 가능한 한 빨리 [인증 헤더](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/authentication#using-an-access-token)를 사용하도록 업데이트해야 합니다. 새 개발에서는 `Authorization` 헤더만 사용해야 합니다.
 
 ### 인증 헤더로 전환
 

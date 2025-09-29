@@ -1,12 +1,12 @@
 ---
 title: 끝점 참조
 feature: REST API
-description: Marketo API 끝점 참조
+description: 메서드, URI 및 활동, 벌크 내보내기, ID, 리드, 에셋, 사용자에 대한 필수 권한이 포함된 포괄적인 Marketo REST API 끝점 목록입니다.
 exl-id: 27d16b6f-865a-4e40-ab9c-cbabe2927472
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '4448'
-ht-degree: 5%
+source-wordcount: '4464'
+ht-degree: 7%
 
 ---
 
@@ -169,19 +169,19 @@ ht-degree: 5%
 | 양식에 대한 필드 가져오기 | 양식 필드 | GET | /rest/asset/v1/form/{id}/fields.json | 읽기 전용 자산 |
 | 필드 위치 업데이트 | 양식 필드 | POST | /rest/asset/v1/form/{id}/reArrange.json | 자산 읽기-쓰기 |
 | 양식 필드 업데이트 | 양식 필드 | POST | /rest/asset/v1/form/{id}/field/{fieldId}.json | 자산 읽기-쓰기 |
-| 양식 초안 승인 | Forms | POST | /rest/asset/v1/form/{id}/approveDraft.json | 자산 읽기-쓰기 |
-| 양식 복제 | Forms | POST | /rest/asset/v1/form/{id}/clone.json | 자산 읽기-쓰기 |
-| 양식 만들기 | Forms | POST | /rest/asset/v1/forms.json | 자산 읽기-쓰기 |
-| 다음에서 양식 사용: | Forms | GET | /rest/asset/v1/form/{id}/usedBy.json | 자산 읽기-쓰기 |
-| 양식 삭제 | Forms | POST | /rest/asset/v1/form/{id}/delete.json | 자산 읽기-쓰기 |
-| 양식 초안 삭제 | Forms | POST | /rest/asset/v1/form/{id}/discardDraft.json | 자산 읽기-쓰기 |
-| ID로 양식 가져오기 | Forms | GET | /rest/asset/v1/form/{id}.json | 읽기 전용 자산 |
-| 이름별 양식 가져오기 | Forms | GET | /rest/asset/v1/form/byName.json | 읽기 전용 자산 |
-| Forms 가져오기 | Forms | GET | /rest/asset/v1/forms.json | 읽기 전용 자산 |
-| 양식 ID로 감사 인사 페이지 받기 | Forms | GET | /rest/asset/v1/form/{id}/thankYouPage.json | 읽기 전용 자산 |
-| 양식 메타데이터 업데이트 | Forms | POST | /rest/asset/v1/form/{id}.json | 자산 읽기-쓰기 |
-| 업데이트 제출 단추 | Forms | POST | /rest/asset/v1/{id}/submitButton.json | 자산 읽기-쓰기 |
-| 감사 인사 페이지 업데이트 | Forms | POST | /rest/asset/v1/form/{id}/thankYouPage.json | 자산 읽기-쓰기 |
+| 양식 초안 승인 | 양식 | POST | /rest/asset/v1/form/{id}/approveDraft.json | 자산 읽기-쓰기 |
+| 양식 복제 | 양식 | POST | /rest/asset/v1/form/{id}/clone.json | 자산 읽기-쓰기 |
+| 양식 만들기 | 양식 | POST | /rest/asset/v1/forms.json | 자산 읽기-쓰기 |
+| 다음에서 양식 사용: | 양식 | GET | /rest/asset/v1/form/{id}/usedBy.json | 자산 읽기-쓰기 |
+| 양식 삭제 | 양식 | POST | /rest/asset/v1/form/{id}/delete.json | 자산 읽기-쓰기 |
+| 양식 초안 삭제 | 양식 | POST | /rest/asset/v1/form/{id}/discardDraft.json | 자산 읽기-쓰기 |
+| ID로 양식 가져오기 | 양식 | GET | /rest/asset/v1/form/{id}.json | 읽기 전용 자산 |
+| 이름별 양식 가져오기 | 양식 | GET | /rest/asset/v1/form/byName.json | 읽기 전용 자산 |
+| Forms 가져오기 | 양식 | GET | /rest/asset/v1/forms.json | 읽기 전용 자산 |
+| 양식 ID로 감사 인사 페이지 받기 | 양식 | GET | /rest/asset/v1/form/{id}/thankYouPage.json | 읽기 전용 자산 |
+| 양식 메타데이터 업데이트 | 양식 | POST | /rest/asset/v1/form/{id}.json | 자산 읽기-쓰기 |
+| 업데이트 제출 단추 | 양식 | POST | /rest/asset/v1/{id}/submitButton.json | 자산 읽기-쓰기 |
+| 감사 인사 페이지 업데이트 | 양식 | POST | /rest/asset/v1/form/{id}/thankYouPage.json | 자산 읽기-쓰기 |
 | 랜딩 페이지 콘텐츠 섹션 추가 | 랜딩 페이지 콘텐츠 | POST | /rest/asset/v1/landingPage/{id}/content.json | 자산 읽기-쓰기 |
 | 랜딩 페이지 콘텐츠 섹션 삭제 | 랜딩 페이지 콘텐츠 | POST | /rest/asset/v1/landingPage/{id}/content/{contentId}/delete.json | 자산 읽기-쓰기 |
 | 랜딩 페이지 콘텐츠 가져오기 | 랜딩 페이지 콘텐츠 | GET | /rest/asset/v1/landingPage/{id}/content.json | 읽기 전용 자산 |
@@ -247,12 +247,12 @@ ht-degree: 5%
 | 명명된 계정 목록 가져오기 | 명명된 계정 목록 | GET | /rest/v1/namedaccountlists.json | 읽기 전용 명명된 계정 목록 |
 | 명명된 계정 목록 구성원 제거 | 명명된 계정 목록 | POST | /rest/v1/namedaccountlist/{id}/namedaccounts/remove.json | 명명된 계정 읽기-쓰기 |
 | 명명된 계정 목록 동기화 | 명명된 계정 목록 | POST | /rest/v1/namedaccountlists.json | 명명된 계정 목록 읽기-쓰기 |
-| 명명 계정 삭제 | 명명된 계정 | POST | /rest/v1/namedaccounts/delete.json | 명명된 계정 읽기-쓰기 |
-| 명명 계정 설명 | 명명된 계정 | GET | /rest/v1/namedaccounts/describe.json | 읽기 전용 명명된 계정 |
-| 명명된 계정 가져오기 | 명명된 계정 | GET | /rest/v1/namedaccounts.json | 읽기 전용 명명된 계정 |
-| 명명 계정 동기화 | 명명된 계정 | POST | /rest/v1/namedaccounts.json | 명명된 계정 읽기-쓰기 |
-| 이름으로 명명된 계정 필드 가져오기 | 명명된 계정 | GET | /rest/v1/namedaccounts/schema/fields/{fieldApiName}.json | 읽기-쓰기 스키마 사용자 정의 필드 |
-| 명명된 계정 필드 가져오기 | 명명된 계정 | GET | /rest/v1/namedaccounts/schema/fields.json | 읽기-쓰기 스키마 사용자 정의 필드 |
+| 명명 계정 삭제 | 지정 계정 | POST | /rest/v1/namedaccounts/delete.json | 명명된 계정 읽기-쓰기 |
+| 명명 계정 설명 | 지정 계정 | GET | /rest/v1/namedaccounts/describe.json | 읽기 전용 명명된 계정 |
+| 명명된 계정 가져오기 | 지정 계정 | GET | /rest/v1/namedaccounts.json | 읽기 전용 명명된 계정 |
+| 명명 계정 동기화 | 지정 계정 | POST | /rest/v1/namedaccounts.json | 명명된 계정 읽기-쓰기 |
+| 이름으로 명명된 계정 필드 가져오기 | 지정 계정 | GET | /rest/v1/namedaccounts/schema/fields/{fieldApiName}.json | 읽기-쓰기 스키마 사용자 정의 필드 |
+| 명명된 계정 필드 가져오기 | 지정 계정 | GET | /rest/v1/namedaccounts/schema/fields.json | 읽기-쓰기 스키마 사용자 정의 필드 |
 | 기회 삭제 | 기회 | POST | /rest/v1/opportunities/delete.json | 읽기-쓰기 영업 기회 |
 | 영업 기회 역할 삭제 | 기회 | POST | /rest/v1/opportunities/roles/delete.json | 읽기-쓰기 영업 기회 |
 | 영업 기회 설명 | 기회 | GET | /rest/v1/opportunities/describe.json | 읽기 전용 영업 기회 |

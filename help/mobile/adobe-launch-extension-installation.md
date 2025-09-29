@@ -1,11 +1,11 @@
 ---
 title: '[!DNL Adobe Launch] 확장 설치'
 feature: Mobile Marketing
-description: '[!DNL Adobe Launch] 확장 설치 개요'
+description: 모바일용 Adobe Launch Marketo 확장 설치 푸시 및 인앱에 대해 iOS 및 Android 설정, 테스트 장치, 권한 및 FCM 단계를 따릅니다.
 exl-id: d71b7cd7-309b-4882-9bba-7daaaa5ef32d
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '664'
+source-wordcount: '684'
 ht-degree: 0%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 0%
 
 ## 사전 요구 사항
 
-1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin ID 얻기)
+1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin ID 얻기)
 1. [포털에서 속성 구성 [!DNL Adobe Launch] 포털](https://experience.adobe.com/#/@amc/data-collection/home)
 1. [!DNL Adobe Launch] 포털에서 속성에 대한 응용 프로그램 비밀 키 및 Munchkin ID를 구성합니다.
 1. [푸시 알림 설정](push-notifications.md)(선택 사항)
@@ -159,7 +159,7 @@ Android용 MME 소프트웨어 개발 키트(SDK)가 Android 앱 개발자를 �
 
 1. Android 앱에서 최신 Marketo Android SDK 통합.  단계는 [GitHub](https://github.com/Marketo/android-sdk)에서 확인할 수 있습니다.
 1. Firebase 콘솔에서 Firebase 앱을 구성합니다.
-   1. [&#128279;](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)Firebase 콘솔에서 프로젝트를 만들거나 추가합니다.
+   1. [](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)Firebase 콘솔에서 프로젝트를 만들거나 추가합니다.
       1. [Firebase 콘솔](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)에서 **[!UICONTROL Add Project]**&#x200B;을(를) 선택합니다.
       1. 기존 Google Cloud 프로젝트 목록에서 GCM 프로젝트를 선택하고 **[!UICONTROL Add Firebase]**&#x200B;을(를) 선택합니다.
       1. Firebase 시작 화면에서 **[!UICONTROL Add Firebase to your Android App]**&#x200B;을(를) 선택합니다.

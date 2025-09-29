@@ -1,12 +1,12 @@
 ---
 title: listMObjects
 feature: SOAP
-description: listMObjects SOAP 호출
+description: request 및 response XML 및 샘플 코드와 함께 describeMObjects에 대한 Marketo 개체 이름을 반환하는 listMObjects SOAP 호출에 대한 참조입니다.
 exl-id: d8b32ba2-7c20-4611-9062-c3c5db2d2ccb
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '48'
-ht-degree: 2%
+source-wordcount: '66'
+ht-degree: 1%
 
 ---
 

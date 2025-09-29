@@ -1,11 +1,11 @@
 ---
 title: 일괄 프로그램 멤버 추출
 feature: REST API
-description: 멤버 데이터 추출의 일괄 처리.
+description: Marketo 일괄 프로그램 멤버 추출 REST API를 사용하여 권한 및 필드 메타데이터와 함께 ETL, 데이터 웨어하우징 및 아카이브에 대한 대규모 멤버 레코드를 내보낼 수 있습니다.
 exl-id: 6e0a6bab-2807-429d-9c91-245076a34680
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1142'
+source-wordcount: '1160'
 ht-degree: 2%
 
 ---
@@ -235,7 +235,7 @@ GET /rest/v1/programs/members/describe.json
     <tr>
       <td>isExhausted</td>
       <td>부울</td>
-      <td><a href="https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/drip-nurturing/using-engagement-programs/people-who-have-exhausted-content">콘텐츠를 모두 사용한 사용자</a>의 프로그램 멤버십 레코드를 필터링하는 데 사용되는 부울을 허용합니다.</td>
+      <td><a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/drip-nurturing/using-engagement-programs/people-who-have-exhausted-content">콘텐츠를 모두 사용한 사용자</a>의 프로그램 멤버십 레코드를 필터링하는 데 사용되는 부울을 허용합니다.</td>
     </tr>
     <tr>
       <td>양육케이던스</td>
@@ -285,7 +285,7 @@ GET /rest/v1/programs/members/describe.json
             <tr>
               <td>전송됨</td>
               <td>구독 등록됨</td>
-              <td>주소 삭제</td>
+              <td>구독 취소</td>
             </tr>
             <tr>
               <td>조회함</td>

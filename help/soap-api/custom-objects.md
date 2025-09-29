@@ -1,11 +1,11 @@
 ---
 title: 사용자 지정 개체
 feature: SOAP
-description: 사용자 지정 개체 만들기
+description: Marketo 사용자 지정 오브젝트는 가져오기, 동기화, 삭제, 스마트 목록 및 이메일 사용에 대한 구조, 제한 및 SOAP API 호출을 사용하여 하나의 리드를 많은 레코드로 연결하는 방법을 알아봅니다.
 exl-id: 29d65841-4b44-4d94-b14e-c583d433d015
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '231'
+source-wordcount: '256'
 ht-degree: 0%
 
 ---

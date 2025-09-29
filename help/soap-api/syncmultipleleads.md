@@ -1,11 +1,11 @@
 ---
 title: syncMultipleLead
 feature: SOAP
-description: syncMultipleLeads SOAP 호출
+description: syncMultipleLeads를 사용하여 SOAP, 키 및 중복 제거 규칙, 배치 크기 제한, 샘플 XML, PHP 및 Java 코드를 통해 여러 Marketo 리드를 업데이트하는 방법에 대해 알아봅니다.
 exl-id: 91980b82-dff9-48a7-b03e-20dce9d0d046
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '221'
+source-wordcount: '244'
 ht-degree: 3%
 
 ---

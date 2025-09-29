@@ -1,11 +1,11 @@
 ---
 title: 대량 사용자 지정 개체 추출
 feature: REST API, Custom Objects
-description: 사용자 지정 Marketo 개체를 일괄 처리 중입니다.
+description: 업데이트된 At 및 목록 필터, 선택한 필드 등을 사용하여 리드 연결된 사용자 지정 개체를 내보내기 위한 Marketo 대량 사용자 지정 개체 추출 REST API에 대한 안내서입니다.
 exl-id: 86cf02b0-90a3-4ec6-8abd-b4423cdd94eb
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1298'
+source-wordcount: '1315'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 대량 사용자 지정 개체 추출 REST API 세트는 Marketo에서 대량의 사용자 지정 개체 레코드를 검색할 수 있는 프로그래밍 방식 인터페이스를 제공합니다. ETL, 데이터 웨어하우징 및 보관 목적으로 Marketo과 하나 이상의 외부 시스템 간에 데이터를 지속적으로 교환해야 하는 사용 사례에 권장되는 인터페이스입니다.
 
-이 API는 리드에 직접 연결된 첫 번째 수준 Marketo 사용자 지정 개체 레코드 내보내기를 지원합니다. 사용자 지정 개체의 이름과 개체가 연결된 리드 목록을 전달합니다. 목록의 각 리드에 대해 지정된 사용자 지정 개체 이름과 일치하는 연결된 사용자 지정 개체 레코드는 내보내기 파일에 행으로 기록됩니다. 사용자 지정 개체 데이터는 Marketo UI의 잠재 고객 세부 정보 페이지에 있는 [사용자 지정 개체 탭](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects)에서 볼 수 있습니다.
+이 API는 리드에 직접 연결된 첫 번째 수준 Marketo 사용자 지정 개체 레코드 내보내기를 지원합니다. 사용자 지정 개체의 이름과 개체가 연결된 리드 목록을 전달합니다. 목록의 각 리드에 대해 지정된 사용자 지정 개체 이름과 일치하는 연결된 사용자 지정 개체 레코드는 내보내기 파일에 행으로 기록됩니다. 사용자 지정 개체 데이터는 Marketo UI의 잠재 고객 세부 정보 페이지에 있는 [사용자 지정 개체 탭](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects)에서 볼 수 있습니다.
 
 ## 권한
 

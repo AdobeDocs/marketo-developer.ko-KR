@@ -1,11 +1,11 @@
 ---
 title: 사용자 지정 데이터 이벤트
-description: 고유한 이벤트를 추적하려면 사용자 지정 데이터 이벤트 Javascript API를 사용하십시오.
+description: Web Personalization용 RTP JavaScript API로 사용자 지정 이벤트를 보내고 매개 변수, 최대 4개의 항목 및 클릭 기반 트리거를 포함한 문자열 또는 배열 데이터를 보냅니다.
 feature: Javascript
 exl-id: ef7cab9c-3bd0-450e-9247-9324b1e6f9ab
-source-git-commit: e609f9d5d58f656298412acef5e2106a19765396
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '231'
+source-wordcount: '243'
 ht-degree: 3%
 
 ---
@@ -14,15 +14,15 @@ ht-degree: 3%
 
 이 메서드는 추적 및 실시간 개인화를 위한 사용자 지정 이벤트를 보냅니다. 타사 데이터를 보내거나 방문자 행동을 기반으로 사용자 지정 이벤트를 트리거하는 데 사용할 수 있습니다. 사용자 지정 데이터 이벤트는 방문자 세션에서 한 번 계산됩니다.
 
-User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
+User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
 
 | 매개변수 | 선택 사항/필수 | 유형 | 설명 |
 |---|---|---|---|
-| `send` | 필수 여부 | 문자열 | 메서드 작업. |
-| `event` | 필수 여부 | 문자열 | 메서드 이름입니다. |
-| `customData` | 필수 여부 | 문자열 또는 배열 | 사용자 지정 데이터. |
+| `send` | 필수 | 문자열 | 메서드 작업. |
+| `event` | 필수 | 문자열 | 메서드 이름입니다. |
+| `customData` | 필수 | 문자열 또는 배열 | 사용자 지정 데이터. |
 
-## 예시
+## 예
 
 ### 사용자 지정 데이터에 대한 문자열을 사용하여 이벤트 보내기
 

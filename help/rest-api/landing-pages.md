@@ -1,11 +1,11 @@
 ---
 title: 랜딩 페이지
 feature: REST API, Landing Pages
-description: Marketo의 랜딩 페이지를 쿼리합니다.
+description: Marketo REST API를 사용하여 안내식 및 자유 형식 유형을 비롯한 랜딩 페이지를 쿼리하고, 만들고, 업데이트하고, 승인하고, 삭제하고, 복제합니다.
 exl-id: 2f986fb0-0a6b-469f-b199-1c526cd5a882
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1000'
+source-wordcount: '1018'
 ht-degree: 1%
 
 ---
@@ -185,13 +185,13 @@ name=MyNewLandingPage&folder={"type":"Program","id":1119}&template=57
 | 이미지 | 이미지 에셋의 ID입니다. |
 | 사각형 | 비어 있음. |
 | 리치 텍스트 | 텍스트 HTML 컨텐츠.  리치 텍스트 요소만 포함할 수 있습니다. |
-| 코드 조각 | 코드 조각 ID입니다. |
+| 스니펫 | 코드 조각 ID입니다. |
 | SocialButton | 의 ID  소셜 단추. |
 | 비디오 | 비디오의 ID입니다. |
 
 자유 형식 페이지의 경우 원하는 모든 콘텐츠 섹션을 추가해야 하며 ID가 `mktoContent`인 div 요소에 임베드됩니다. 안내 페이지의 경우 [랜딩 페이지 콘텐츠 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/getLandingPageContentUsingGET) 끝점의 목록에 사전 정의된 요소 목록이 있을 수 있습니다. 해당 끝점을 통해 더 많은 콘텐츠를 추가하거나 [콘텐츠를 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/updateLandingPageContentUsingPOST)할 수 있습니다.
 
-### 다이내믹 콘텐츠
+### 동적 콘텐츠
 
 동적 콘텐츠 섹션을 만들려면 랜딩 페이지의 콘텐츠 목록에 동적 콘텐츠 섹션이 이미 있어야 합니다. [랜딩 페이지 콘텐츠 섹션 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/updateLandingPageContentUsingPOST) 끝점을 사용하여 형식을 &#39;DynamicContent&#39;로 설정해야 합니다. 섹션을 동적 컨텐츠로 설정하면 컨텐츠 섹션 내에 기본 동적 섹션이 만들어지고 이 섹션들은 모두 변환된 요소의 기본 유형을 상속합니다. 각 동적 섹션은 변환된 섹션의 컨텐츠도 상속합니다.
 
@@ -274,7 +274,7 @@ segment=New Segment&value=New Content
 </head>
 ```
 
-자세한 내용은 [안내 랜딩 페이지 템플릿 만들기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template) 설명서의 &quot;편집 가능한 변수&quot; 섹션을 참조하십시오.
+자세한 내용은 [안내 랜딩 페이지 템플릿 만들기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template) 설명서의 &quot;편집 가능한 변수&quot; 섹션을 참조하십시오.
 
 ### 쿼리
 

@@ -1,11 +1,11 @@
 ---
 title: 일괄 추출
 feature: REST API
-description: Marketo 데이터 추출을 위한 일괄 처리 작업.
+description: Marketo 벌크 추출 REST API를 사용하여 OAuth, 작업 큐 및 500MB 일일 제한으로 리드, 활동, 프로그램 멤버 및 사용자 지정 개체를 내보내는 방법에 대해 알아봅니다.
 exl-id: 6a15c8a9-fd85-4c7d-9f65-8b2e2cba22ff
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1682'
+source-wordcount: '1702'
 ht-degree: 0%
 
 ---

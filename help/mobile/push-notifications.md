@@ -1,11 +1,11 @@
 ---
 title: 푸시 알림
 feature: Mobile Marketing
-description: Marketo Mobile용 푸시 알림 활성화
+description: APNs 인증서 및 Xcode 설정에서 Marketo을 사용한 iOS 푸시 알림, Marketo SDK 통합, 토큰 등록 및 처리에 대한 안내서입니다.
 exl-id: 41d657d8-9eea-4314-ab24-fd4cb2be7f61
-source-git-commit: 3649db037a95cfd20ff0a2c3d81a3b40d0095c39
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1329'
+source-wordcount: '1344'
 ht-degree: 0%
 
 ---

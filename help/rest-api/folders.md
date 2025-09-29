@@ -1,12 +1,12 @@
 ---
 title: 폴더
 feature: REST API
-description: Marketo API를 사용하여 폴더 조작.
+description: 만들기, 업데이트, 삭제, ID 및 이름별 쿼리, 루트, 작업 공간, maxDepth 및 페이지 매김을 사용하여 벌크 찾아보기 등에 대한 Marketo REST API 안내서.
 exl-id: 4b55c256-ef0a-42b4-9548-ff8a4106f064
-source-git-commit: 66add4c38d0230c36d57009de985649bb67fde3e
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1008'
-ht-degree: 0%
+source-wordcount: '1025'
+ht-degree: 1%
 
 ---
 
@@ -65,7 +65,7 @@ GET /rest/asset/v1/folder/{id}.json?type=Folder
 - 이메일 템플릿
 - 랜딩 페이지
 - 랜딩 페이지 템플릿
-- 코드 조각
+- 스니펫
 - 파일
 
 ### 이름별
@@ -211,7 +211,7 @@ GET /rest/asset/v1/folders.json?root={"id":14,"type":"Folder"}
 
 ## 만들기 및 업데이트
 
-[폴더 만들기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Folders/operation/createFolderUsingPOST)는 간단하며 대상 폴더의 유형에 따라 두 개의 멤버, ID 및 유형이 폴더 또는 프로그램인 포함된 JSON 개체인 폴더를 만들 수 있는 두 개의 필수 매개 변수인 &quot;name&quot;, 문자열 및 &quot;parent&quot;가 있는 application/x-www-form-urlencoded POST으로 실행됩니다. 원할 경우 문자열인 &quot;설명&quot;도 포함할 수 있으며 최대 2000자일 수 있습니다.
+[폴더 만들기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Folders/operation/createFolderUsingPOST)는 단순하며 대상 폴더의 유형에 따라 두 개의 멤버, ID 및 유형이 폴더 또는 프로그램인 포함된 JSON 개체인 폴더를 만들 수 있는 두 개의 필수 매개 변수인 &quot;name&quot;, 문자열 및 &quot;parent&quot;가 있는 application/x-www-form-urlencoded POST로 실행됩니다. 원할 경우 문자열인 &quot;설명&quot;도 포함할 수 있으며 최대 2000자일 수 있습니다.
 
 ```
 POST /rest/asset/v1/folders.json

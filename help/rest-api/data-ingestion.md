@@ -1,11 +1,11 @@
 ---
 title: 데이터 수집
 feature: REST API, Dynamic Content
-description: Marketo API를 사용하여 데이터를 사용합니다.
+description: OAuth 헤더 인증, 비동기 상태 이벤트 및 다시 시도로 개인 및 사용자 지정 개체에 대한 대량, 짧은 지연 시간의 업데이트를 위해 Marketo 데이터 수집 API를 사용합니다.
 exl-id: 1d501916-53ac-42d8-a804-abb4ab01c7e8
-source-git-commit: af2d0f266a271696dbf7d334f23bcd9962b9eba4
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '957'
+source-wordcount: '978'
 ht-degree: 10%
 
 ---

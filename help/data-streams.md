@@ -1,10 +1,10 @@
 ---
 title: 데이터 스트림
-description: 데이터 스트림 개요
+description: 거의 실시간 리드 활동 및 사용자 감사 이벤트를 활성화하는 Marketo Engage 데이터 스트림의 개요로, 성능 계층 고객을 위한 API 제한을 완화합니다.
 exl-id: 5617b6a5-ebc8-4d97-a290-e3b87f83e360
-source-git-commit: 981ed9b254f277d647a844803d05a1a2549cbaed
+source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
 workflow-type: tm+mt
-source-wordcount: '1596'
+source-wordcount: '1615'
 ht-degree: 1%
 
 ---
@@ -97,7 +97,7 @@ Dell 고객의 마케팅 조직은 적시에 집중하는 마케팅 캠페인에
 | 세그먼트 | 만들기, 삭제, 편집, 이름 바꾸기 |
 | 세분화 | 승인, 만들기, 삭제, 초안 작성, 초안 삭제됨, 이름 바꾸기, 승인 취소 |
 | 스마트 캠페인 | 중단, 활성화, 복제, 생성, 비활성화, 삭제, 편집, 캠페인 일정 수정, 흐름 단계 작업 수정, 스마트 목록 설정 수정, 이동, 이름 바꾸기 |
-| 코드 조각 | 승인, 초안이 없는 승인, 복제, 생성, 삭제, 편집, 이름 변경, 승인 취소 |
+| 스니펫 | 승인, 초안이 없는 승인, 복제, 생성, 삭제, 편집, 이름 변경, 승인 취소 |
 | 관리자 UI -> Launchpoint -> 통합 | 만들기, 삭제, 편집 |
 | 관리자 UI -> 사용자 | 만들기, 편집, 삭제(API 전용 사용자와 동일) |
 | 관리자 로그인 -> 사용자 | 로그인 성공, 로그인 실패 |
@@ -262,7 +262,7 @@ Adobe IO를 설정하려면 공개 설명서 섹션에서 [Adobe IO를 사용하
 
 ### Marketo에서 사용자 감사 데이터 스트림 설정
 
-사용자 감사 데이터 스트림은 현재 다른 3개의 데이터 스트림과 함께 성능 패키지의 일부로 사용할 수 있습니다. 패키지에 대한 자세한 내용은 제품 제한 및 기능에 대한 [제품 설명 페이지](https://helpx.adobe.com/kr/legal/product-descriptions/adobe-marketo-engage---product-description.html)를 참조하세요.
+사용자 감사 데이터 스트림은 현재 다른 3개의 데이터 스트림과 함께 성능 패키지의 일부로 사용할 수 있습니다. 패키지에 대한 자세한 내용은 제품 제한 및 기능에 대한 [제품 설명 페이지](https://helpx.adobe.com/legal/product-descriptions/adobe-marketo-engage---product-description.html)를 참조하세요.
 
 ### Adobe I/O 설정
 
