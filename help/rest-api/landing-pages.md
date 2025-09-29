@@ -274,7 +274,7 @@ segment=New Segment&value=New Content
 </head>
 ```
 
-자세한 내용은 [안내 랜딩 페이지 템플릿 만들기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template) 설명서의 &quot;편집 가능한 변수&quot; 섹션을 참조하십시오.
+자세한 내용은 [안내 랜딩 페이지 템플릿 만들기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template) 설명서의 &quot;편집 가능한 변수&quot; 섹션을 참조하십시오.
 
 ### 쿼리
 

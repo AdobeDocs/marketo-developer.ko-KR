@@ -18,7 +18,7 @@ ht-degree: 1%
 
 ## 템플릿 유형
 
-Marketo에는 자유 양식과 안내식의 두 가지 유형의 랜딩 페이지 템플릿이 있습니다. 자유 양식 랜딩 페이지 템플릿은 템플릿에서 파생된 페이지에 느슨한 구조의 편집 환경을 제공합니다. 안내식 템플릿은 템플릿 수준에서 요소 유형 및 위치를 제한할 수 있는 상당히 구조화된 경험을 제공합니다. 차이점에 대한 자세한 내용은 [이 문서](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages)를 참조하세요.
+Marketo에는 자유 양식과 안내식의 두 가지 유형의 랜딩 페이지 템플릿이 있습니다. 자유 양식 랜딩 페이지 템플릿은 템플릿에서 파생된 페이지에 느슨한 구조의 편집 환경을 제공합니다. 안내식 템플릿은 템플릿 수준에서 요소 유형 및 위치를 제한할 수 있는 상당히 구조화된 경험을 제공합니다. 차이점에 대한 자세한 내용은 [이 문서](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages)를 참조하세요.
 
 ## 쿼리
 
@@ -167,9 +167,9 @@ name=Standard Template Clone&folder={"type": "Folder", "id": 732}
 
 템플릿을 승인하려면 유형에 대한 규칙(자유 형식의 안내)을 준수해야 합니다. 해당 유형의 템플릿을 만들고 승인하기 위한 요구 사항에 대한 자세한 내용은 해당 만들기 문서를 참조하십시오.
 
-- [자유 형식 랜딩 페이지 템플릿](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-free-form-landing-page-template)
-- [안내 랜딩 페이지 템플릿](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template)
-- [안내식 템플릿 예제](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/guided-landing-page-template-list)
+- [자유 형식 랜딩 페이지 템플릿](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-free-form-landing-page-template)
+- [안내 랜딩 페이지 템플릿](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template)
+- [안내식 템플릿 예제](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/guided-landing-page-template-list)
 
 ## 삭제
 

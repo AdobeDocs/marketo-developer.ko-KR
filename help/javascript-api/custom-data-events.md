@@ -14,7 +14,7 @@ ht-degree: 3%
 
 이 메서드는 추적 및 실시간 개인화를 위한 사용자 지정 이벤트를 보냅니다. 타사 데이터를 보내거나 방문자 행동을 기반으로 사용자 지정 이벤트를 트리거하는 데 사용할 수 있습니다. 사용자 지정 데이터 이벤트는 방문자 세션에서 한 번 계산됩니다.
 
-User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
+User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
 
 | 매개변수 | 선택 사항/필수 | 유형 | 설명 |
 |---|---|---|---|

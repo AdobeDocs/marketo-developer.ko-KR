@@ -14,7 +14,7 @@ ht-degree: 1%
 
 [전자 메일 템플릿 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates)
 
-이메일 템플릿은 Marketo의 각 새 이메일에 대한 기반을 구성합니다.  HTML 대체를 통해 템플릿에서 이메일의 연결을 해제할 수 있지만 처음에는 템플릿을 기반으로 이메일을 만들어야 합니다.  템플릿은 이름 및 설명과 같은 메타데이터를 사용하여 Marketo에서 순수 HTML 문서로 만들어집니다.  콘텐츠에 대한 제한은 거의 없지만 템플릿의 HTML이 유효해야 하며 [여기에 요약된](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-editable-sections-to-email-templates-v1-0) 요구 사항을 따르는 편집 가능한 섹션을 하나 이상 포함해야 합니다.
+이메일 템플릿은 Marketo의 각 새 이메일에 대한 기반을 구성합니다.  HTML 대체를 통해 템플릿에서 이메일의 연결을 해제할 수 있지만 처음에는 템플릿을 기반으로 이메일을 만들어야 합니다.  템플릿은 이름 및 설명과 같은 메타데이터를 사용하여 Marketo에서 순수 HTML 문서로 만들어집니다.  콘텐츠에 대한 제한은 거의 없지만 템플릿의 HTML이 유효해야 하며 [여기에 요약된](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-editable-sections-to-email-templates-v1-0) 요구 사항을 따르는 편집 가능한 섹션을 하나 이상 포함해야 합니다.
 
 ## 쿼리
 

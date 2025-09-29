@@ -16,7 +16,7 @@ ht-degree: 1%
 
 Marketo은 스마트 목록에서 작업을 수행하기 위한 일련의 REST API를 제공합니다. 이러한 API는 쿼리, 삭제 및 복제 옵션을 제공하는 에셋 API에 대한 표준 인터페이스 패턴을 따릅니다.
 
-참고: 이러한 API는 사용자가 만든 스마트 목록에서만 지원됩니다. [기본 제공/시스템 스마트 목록](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/using-smart-lists/use-built-in-system-smart-lists)에는 사용할 수 없습니다.
+참고: 이러한 API는 사용자가 만든 스마트 목록에서만 지원됩니다. [기본 제공/시스템 스마트 목록](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/using-smart-lists/use-built-in-system-smart-lists)에는 사용할 수 없습니다.
 
 ## 쿼리
 
