@@ -3,9 +3,9 @@ title: 잠재 고객
 feature: REST API
 description: 설명, ID 또는 필터별 쿼리, 기본 필드, 제한 및 ECID 검색을 포함한 Marketo Leads REST API 기능을 살펴봅니다.
 exl-id: 0a2f7c38-02ae-4d97-acfe-9dd108a1f733
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: cc4bd7c18124bb039386a1cec06b9f1da0d047cb
 workflow-type: tm+mt
-source-wordcount: '3351'
+source-wordcount: '3411'
 ht-degree: 2%
 
 ---
@@ -768,7 +768,12 @@ Content-Type: application/json
 
 ## 병합
 
-경우에 따라 중복 레코드를 병합해야 하며 Marketo은 리드 병합 API를 통해 이를 용이하게 합니다. 리드를 병합하면 활동 로그, 프로그램, 캠페인, 목록 멤버십 및 CRM 정보가 결합되고 모든 필드 값이 단일 레코드로 병합됩니다. 병합 리드는 리드 ID를 경로 매개 변수로 사용하고, 단일 `leadId`을(를) 쿼리 매개 변수로 사용하거나, `leadIds` 매개 변수에 쉼표로 구분된 ID 목록을 사용합니다.
+>[!NOTE]
+>2026년 3월 31일부터 병합 리드 API 호출의 `leadIds` 매개 변수에 25개 이상의 ID가 포함된 호출을 수행하면 1080 오류 코드가 발생하고 호출이 건너뜁니다. 25개 이상의 레코드를 하나로 병합해야 하는 작업은 이러한 호출이 성공할 수 있도록 여러 작업으로 분할해야 합니다.
+>
+
+경우에 따라 중복 레코드를 병합해야 하며 Marketo은 리드 병합 API를 통해 이를 용이하게 합니다. 리드를 병합하면 활동 로그, 프로그램, 캠페인, 목록 멤버십 및 CRM 정보가 결합되고 모든 필드 값이 단일 레코드로 병합됩니다. 병합 리드는 리드 ID를 경로 매개 변수로 사용하고, 단일 `leadId`을(를) 쿼리 매개 변수로 사용하거나, `leadIds` 매개 변수에서 25개 이하의 쉼표로 구분된 ID 목록을 사용합니다.
+
 
 ### 요청
 
@@ -814,7 +819,7 @@ POST /rest/v1/leads/{id}/associate.json?cookie=id:287-GTJ-838%26token:_mch-marke
 잠재 고객 레코드는 정적 목록 또는 프로그램의 구성원을 기반으로 검색할 수도 있습니다. 또한 잠재 고객이 멤버인 모든 정적 목록, 프로그램 또는 스마트 캠페인을 검색할 수 있습니다.
 
 응답 구조 및 선택적 매개 변수는 필터 유형별 리드 가져오기의 매개 변수와 동일하지만 filterType 및 filterValues를 이 API와 함께 사용할 수 없습니다.
-Marketo UI를 통해 목록 ID에 액세스하려면 목록으로 이동합니다. `id` 목록은 정적 목록 `https://app-**&#x200B;**.marketo.com/#ST1001A1`의 URL에 있습니다. 이 예제에서 1001은 목록의 `id`입니다.
+Marketo UI를 통해 목록 ID에 액세스하려면 목록으로 이동합니다. `id` 목록은 정적 목록 `https://app-****.marketo.com/#ST1001A1`의 URL에 있습니다. 이 예제에서 1001은 목록의 `id`입니다.
 
 ### 요청
 
