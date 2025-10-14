@@ -370,7 +370,7 @@ POST /bulk/v1/program/members/export/create.json
 }
 ```
 
-작업이 생성되었음을 나타내는 상태 응답이 반환됩니다. 작업이 정의되고 생성되었지만 아직 시작되지 않았습니다. 이렇게 하려면 만들기 상태 응답의 [을(를) 사용하여 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/enqueueExportProgramMembersUsingPOST)Enqueue 내보내기 프로그램 구성원 작업`exportId` 끝점을 호출해야 합니다.
+작업이 생성되었음을 나타내는 상태 응답이 반환됩니다. 작업이 정의되고 생성되었지만 아직 시작되지 않았습니다. 이렇게 하려면 만들기 상태 응답의 [을(를) 사용하여 &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/enqueueExportProgramMembersUsingPOST)Enqueue 내보내기 프로그램 구성원 작업`exportId` 끝점을 호출해야 합니다.
 
 ```
 POST /bulk/v1/program/members/export/{exportId}/enqueue.json
@@ -446,7 +446,7 @@ GET /bulk/v1/program/members/export/{exportId}/status.json
 
 ## 데이터 검색 중
 
-완료된 프로그램 구성원 내보내기의 파일을 검색하려면 [(으)로 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/getExportProgramMembersFileUsingGET)프로그램 구성원 파일 가져오기`exportId` 끝점을 호출하면 됩니다.
+완료된 프로그램 구성원 내보내기의 파일을 검색하려면 [(으)로 &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/getExportProgramMembersFileUsingGET)프로그램 구성원 파일 가져오기`exportId` 끝점을 호출하면 됩니다.
 
 응답에는 작업이 구성된 방식으로 포맷된 파일이 포함됩니다. 끝점이 파일의 내용에 응답합니다. 요청한 프로그램 구성원 필드가 비어 있으면(데이터 없음) `null`이(가) 내보내기 파일의 해당 필드에 배치됩니다.
 

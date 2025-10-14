@@ -158,7 +158,7 @@ GET /bulk/v1/leads/export/{exportId}/status.json
 
 ## 데이터 검색 중
 
-완료된 잠재 고객 내보내기의 파일을 검색하려면 [을(를) 사용하여 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/getExportLeadsFileUsingGET)잠재 고객 파일 가져오기`exportId` 끝점을 호출하면 됩니다.
+완료된 잠재 고객 내보내기의 파일을 검색하려면 [을(를) 사용하여 &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/getExportLeadsFileUsingGET)잠재 고객 파일 가져오기`exportId` 끝점을 호출하면 됩니다.
 
 ```
 GET /bulk/v1/leads/export/{exportId}/file.json

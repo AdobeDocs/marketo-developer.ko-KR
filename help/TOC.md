@@ -34,7 +34,7 @@ ht-degree: 28%
    - [트리거](javascript-api/triggers.md)
    - [웹 개인화](javascript-api/web-personalization.md)
 - 모바일 {#mobile}
-   - [ [!DNL Adobe Launch] 확장 설치](mobile/adobe-launch-extension-installation.md)
+   - [&#x200B; [!DNL Adobe Launch] 확장 설치](mobile/adobe-launch-extension-installation.md)
    - [[!DNL Adobe Launch] 확장](mobile/adobe-launch-extension.md)
    - [고급 보안 모드](mobile/advanced-security-access-mode.md)
    - [사용자 지정 작업](mobile/custom-actions.md)

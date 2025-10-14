@@ -1739,7 +1739,7 @@ _2014-10-30_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
 마케팅 자동화 플랫폼은 즉시 그리고 숙련된 운영자의 손에서 매우 강력합니다. 기본적으로 플랫폼은 확장 애플리케이션을 사용하여 시스템이 팀에 보다 놀라운 작업을 수행하도록 합니다. Marketo의 논리 엔진은 매우 많은 (그리고 그것은) 능력을 가지고 있다고 생각할 수 있지만 한계가 있습니다. Marketo이 모든 것을 여러분을 위해 할 수는 없으며, 그래서도 안 됩니다.
 
-Marketo이 빌드할 수 있는 것보다 더 나은 기능을 수행하는 다른 도구가 있습니다. Marketo의 플랫폼이 매우 열려 있으므로 [LaunchPoint 에코 시스템(응용 프로그램 ](https://exchange.adobe.com/apps/browse/ec?product=MRKTO))이 존재할 수 있습니다. 또한 이러한 개방성을 사용하여 비즈니스 요구 사항에 맞게 사이트와 Marketo의 기능을 확장할 수도 있습니다. Marketo과 같은 플랫폼의 가장 큰 장점은 일반적인 마케터가 완전한 프로그래머가 되지 않고도 페이지, 이메일 및 라우팅 논리를 작성할 수 있다는 것입니다.
+Marketo이 빌드할 수 있는 것보다 더 나은 기능을 수행하는 다른 도구가 있습니다. Marketo의 플랫폼이 매우 열려 있으므로 [LaunchPoint 에코 시스템(응용 프로그램 &#x200B;](https://exchange.adobe.com/apps/browse/ec?product=MRKTO))이 존재할 수 있습니다. 또한 이러한 개방성을 사용하여 비즈니스 요구 사항에 맞게 사이트와 Marketo의 기능을 확장할 수도 있습니다. Marketo과 같은 플랫폼의 가장 큰 장점은 일반적인 마케터가 완전한 프로그래머가 되지 않고도 페이지, 이메일 및 라우팅 논리를 작성할 수 있다는 것입니다.
 요즘 마케터는 논리를 이해해야 하지만 실제 프로그래밍은 전문가에게 맡기는 것이 가장 좋다. 개발자를 언제 호출해야 하는지 어떻게 알 수 있습니까? 프로그래머가 개입해야 하는 시기를 결정하는 몇 가지 기본 규칙 또는 휴리스틱이 있습니다. - Marketo에 필요성에 대한 명백한 필터, 트리거 또는 기능이 없는 경우 일부 JavaScript 또는 jQuery로 수행할 수 있습니다. - 이 작업이 Marketo에 비해 너무 복잡합니까? - Marketo이 이렇게 할 수 있습니까? - 이 웹 사이트 사용자 지정은 쉽게 지원되지 않습니까? - Marketo이 웹 사이트 또는 다른 데이터베이스와 이야기해야 합니까? &quot; 컴퓨터가 할 수 있는 것처럼 들리지만 Marketo에는 이에 대한 기능이 없습니까?&quot; Marketo은 기본 기능을 제공하지 않지만 많은 타사 통합 및 사용자 정의 연결에 연결합니다.
 
 [LaunchPoint 마켓플레이스](https://exchange.adobe.com/apps/browse/ec?product=MRKTO)에서 다음 범주 중 일부를 살펴보십시오. - [분석 도구](https://exchange.adobe.com/apps/browse/ec?product=MRKTO) - [데이터 추가](https://exchange.adobe.com/apps/browse/ec?product=MRKTO) - [콘텐츠 관리 시스템](https://exchange.adobe.com/apps/browse/ec?product=MRKTO) 일부 타사 애플리케이션은 플랫폼(GoToWebinar) 내에서 직관적인 컨트롤 패널 및 설정 도구를 제공합니다. 이러한 &quot;기본&quot; 통합은 로그인을 설정한 다음 Marketo에서 사용하면 가장 많은 작업을 수행해야 합니다. 그러나 다른 확장에서는 직접 프로그래밍해야 하는 보다 복잡한 API를 사용해야 합니다.
@@ -1794,7 +1794,7 @@ Facebook에서 Marketo 랜딩 페이지를 공유할 때 이미지가 자동으�
 1. 페이지 메타 태그 편집을 클릭합니다.
 1. Facebook OG 태그 섹션에 오픈 그래프 메타 추가 . 그런 다음 [저장]을 클릭합니다. 형식은 다음과 같습니다. `<meta property="og:image" content="http://example.com/example.jpg"/>`
 
-자세한 내용은 Facebook의 개발자 설명서를 참조하십시오[ 오픈 그래프 메타 태그에 대한 정보.](https://developers.facebook.com/docs/sharing/best-practices)
+자세한 내용은 Facebook의 개발자 설명서를 참조하십시오[&#x200B; 오픈 그래프 메타 태그에 대한 정보.](https://developers.facebook.com/docs/sharing/best-practices)
 
 _2014-11-17_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
@@ -2782,7 +2782,7 @@ _2015-01-26_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 ## Marketo REST API에서 모든 리드 가져오기
 
 REST API를 통해 Marketo에서 모든 잠재 고객 목록을 가져오는 방법을 묻는 [질문이 StackOverflow에 있습니다](https://stackoverflow.com/questions/28184900/how-do-i-get-the-list-of-all-the-leads-in-marketo). 필터 유형 REST API 끝점별 [여러 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadsByFilterUsingGET)를 사용하여 이 데이터를 쿼리할 수 있습니다. Marketo의 잠재 고객에는 1부터 시작하여 순차적 순서로 잠재 고객 ID가 지정됩니다. [필터 유형별 여러 리드 가져오기 REST API 끝점](https://developer.adobe.com/marketo-apis/api/mapi/#operation/getLeadsByFilterUsingGET)을 사용하여 각 호출에서 리드 ID별로 300개의 리드를 쿼리할 수 있습니다. 이 끝점에 대한 각 호출에서 id를 filterType으로 지정하고 리드 id를 filterValues로 지정해야 합니다. 모든 리드를 가져오려면 한 번에 총 리드 수 300개를 반복합니다. Y
-Marketo UI를 통해 Marketo 인스턴스의 총 리드 수를 가져올 수 있습니다. Marketo UI에서 리드 데이터베이스 탭으로 이동하여 시스템 스마트 목록을 클릭하고 모든 리드 스마트 목록을 클릭한 다음 마지막으로 &quot;리드&quot; 탭을 클릭합니다. 그런 다음 ID 열을 클릭하고 내림차순으로 정렬합니다. 리드가 정렬되면 모든 리드를 쿼리할 때 첫 번째 리드의 ID가 리드 ID의 상한이 됩니다. 총 리드 수를 가져올 수 있는 Marketo UI에 대한 액세스 권한이 없는 경우 리드 활동 가져오기 REST API[를 사용하여 이 값을 가져올 수 있는 ](https://stackoverflow.com/questions/28419967/get-all-leads-programmatically-in-marketo-v1)대체 방법이 있습니다.
+Marketo UI를 통해 Marketo 인스턴스의 총 리드 수를 가져올 수 있습니다. Marketo UI에서 리드 데이터베이스 탭으로 이동하여 시스템 스마트 목록을 클릭하고 모든 리드 스마트 목록을 클릭한 다음 마지막으로 &quot;리드&quot; 탭을 클릭합니다. 그런 다음 ID 열을 클릭하고 내림차순으로 정렬합니다. 리드가 정렬되면 모든 리드를 쿼리할 때 첫 번째 리드의 ID가 리드 ID의 상한이 됩니다. 총 리드 수를 가져올 수 있는 Marketo UI에 대한 액세스 권한이 없는 경우 리드 활동 가져오기 REST API[를 사용하여 이 값을 가져올 수 있는 &#x200B;](https://stackoverflow.com/questions/28419967/get-all-leads-programmatically-in-marketo-v1)대체 방법이 있습니다.
 
 1. 첫 번째 API 호출: 바꾸기 ...를 다음 범위의 모든 값으로 바꿉니다.
 
@@ -6975,7 +6975,7 @@ _2014-04-17_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
 ## RTP를 사용하여 로컬 전화 번호를 동적으로 변경
 
-Personalization이 전부입니다. 우리는 오래 전에 이 사실을 파악했습니다. 그 말이 나온 김에, 즉각적인 지원이 필요할 때마다 웹사이트에서 관련 지역 전화번호를 찾는 것이 너무 힘들다는 것이 아직도 저에게는 놀랍습니다. [에 ](https://business.adobe.com/products/marketo/content-personalization.html)Marketo 실시간 Personalization<https://business.adobe.com/products/marketo/adobe-marketo.html>(RTP)이 설치되어 있습니다. [RTP 방문자 API](/help/javascript-api/web-personalization.md)를 활용하여 웹 사이트의 여러 섹션에서 웹 방문자가 보는 전화 번호를 동적으로 변경할 수 있습니다. 와우! 믿겨지니? 이 마법은 어떻게 작동합니까? 먼저 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)에 설명된 대로 웹 사이트에 RTP를 설치해야 합니다. 그런 다음 아래 지침에 따라 웹 사이트에서 JavaScript 코드를 구현합니다.
+Personalization이 전부입니다. 우리는 오래 전에 이 사실을 파악했습니다. 그 말이 나온 김에, 즉각적인 지원이 필요할 때마다 웹사이트에서 관련 지역 전화번호를 찾는 것이 너무 힘들다는 것이 아직도 저에게는 놀랍습니다. [에 &#x200B;](https://business.adobe.com/products/marketo/content-personalization.html)Marketo 실시간 Personalization<https://business.adobe.com/products/marketo/adobe-marketo.html>(RTP)이 설치되어 있습니다. [RTP 방문자 API](/help/javascript-api/web-personalization.md)를 활용하여 웹 사이트의 여러 섹션에서 웹 방문자가 보는 전화 번호를 동적으로 변경할 수 있습니다. 와우! 믿겨지니? 이 마법은 어떻게 작동합니까? 먼저 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)에 설명된 대로 웹 사이트에 RTP를 설치해야 합니다. 그런 다음 아래 지침에 따라 웹 사이트에서 JavaScript 코드를 구현합니다.
 
 1. **defaultPhone** 구성에 국제 전화 번호 삽입
 1. **divIds** 구성에 HTML 요소 ID를 삽입합니다.
@@ -9752,7 +9752,7 @@ _David_&#x200B;이(가) _2021-08-22_&#x200B;에 게시함
 
 ## Munchkin 버전 161 롤아웃
 
-Munchkin 버전 161은 2021년 9월 7일부터 Munchkin Beta이 활성화되면서 구독률 10%로 롤아웃이 시작되며, 이어 9월 16일 50%, 9월 30일 100%로 롤아웃된다. 이 변경 사항은 Marketo 랜딩 페이지 및 새 버전이 롤아웃된 구독으로부터 로드되는 외부 랜딩 페이지에 제공되는 munchkin-beta.js 파일의 버전에 영향을 줍니다. 이 버전에서는 Munchkin Associate Lead 메서드를 완전히 사용하지 않습니다. 이 메서드는 Marketo 구독에 사용자 데이터를 제출하고 알려진 사용자 레코드와 연결된 웹 검색 기록을 허용하는 기능입니다. [Forms JS API](/help/javascript-api/forms-api-reference.md), 양식 제출 API 및 [리드 REST API 연결](/help/rest-api/leads.md)과 같은 보다 현대적이고 안전한 대안을 위해 리드 연결이 제거됩니다. 귀하 또는 귀사에서 이 방법을 사용하는 경우 10월 릴리스 롤아웃이 시작되도록 예정된 2021년 10월 12일까지 사용을 중단해야 합니다. Munchkin Beta를 더 이상 사용하지 않으려면 `disabled`보물 상자 메뉴[에서 &quot;랜딩 페이지의 Munchkin Beta&quot; 기능을 ](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features)&#x200B;(으)로 전환하여 Marketo 랜딩 페이지의 사용을 비활성화할 수 있습니다. Munchkin Beta JavaScript을 외부 웹 페이지에 배포하고 기본 Munchkin 릴리스 채널로 전환하려면 코드 조각을 업데이트하여 munchkin-beta.js 대신 munchkin.js에서 Munchkin JavaScript을 로드해야 합니다.
+Munchkin 버전 161은 2021년 9월 7일부터 Munchkin Beta이 활성화되면서 구독률 10%로 롤아웃이 시작되며, 이어 9월 16일 50%, 9월 30일 100%로 롤아웃된다. 이 변경 사항은 Marketo 랜딩 페이지 및 새 버전이 롤아웃된 구독으로부터 로드되는 외부 랜딩 페이지에 제공되는 munchkin-beta.js 파일의 버전에 영향을 줍니다. 이 버전에서는 Munchkin Associate Lead 메서드를 완전히 사용하지 않습니다. 이 메서드는 Marketo 구독에 사용자 데이터를 제출하고 알려진 사용자 레코드와 연결된 웹 검색 기록을 허용하는 기능입니다. [Forms JS API](/help/javascript-api/forms-api-reference.md), 양식 제출 API 및 [리드 REST API 연결](/help/rest-api/leads.md)과 같은 보다 현대적이고 안전한 대안을 위해 리드 연결이 제거됩니다. 귀하 또는 귀사에서 이 방법을 사용하는 경우 10월 릴리스 롤아웃이 시작되도록 예정된 2021년 10월 12일까지 사용을 중단해야 합니다. Munchkin Beta를 더 이상 사용하지 않으려면 `disabled`보물 상자 메뉴[에서 &quot;랜딩 페이지의 Munchkin Beta&quot; 기능을 &#x200B;](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features)&#x200B;(으)로 전환하여 Marketo 랜딩 페이지의 사용을 비활성화할 수 있습니다. Munchkin Beta JavaScript을 외부 웹 페이지에 배포하고 기본 Munchkin 릴리스 채널로 전환하려면 코드 조각을 업데이트하여 munchkin-beta.js 대신 munchkin.js에서 Munchkin JavaScript을 로드해야 합니다.
 
 _케니_&#x200B;이(가) _2021-08-24_&#x200B;에 게시함
 

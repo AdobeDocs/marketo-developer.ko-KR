@@ -603,7 +603,7 @@ API를 사용하여 Marketo Engage의 프로덕션 인스턴스에서 만드는 
 
 필수 `input` 매개 변수는 프로그램 멤버 필드 개체의 배열입니다. 각 객체에는 하나 이상의 속성이 포함됩니다. 필수 특성은 각각 필드의 UI 표시 이름, 필드의 API 이름 및 필드 형식에 해당하는 `displayName`, `name` 및 `dataType`입니다. 선택적으로 `description`, `isHidden`, `isHtmlEncodingInEmail` 및 `isSensitive`을(를) 지정할 수 있습니다.
 
-`name` 및 `displayName` 명명과 관련된 규칙이 몇 가지 있습니다. `name` 특성은 고유해야 하며 문자로 시작하고 문자, 숫자 또는 밑줄만 포함해야 합니다. *`isplayName`은(는) 고유해야 하며 특수 문자를 포함할 수 없습니다. 일반적인 명명 규칙은 [을(를) 생성하기 위해 ](https://en.wikipedia.org/wiki/Camel_case#)에 `displayName`카멜 대/소문자`name`을(를) 적용하는 것입니다. 예를 들어 `displayName`의 &quot;내 사용자 지정 필드&quot;는 `name`의 &quot;myCustomField&quot;를 생성합니다.
+`name` 및 `displayName` 명명과 관련된 규칙이 몇 가지 있습니다. `name` 특성은 고유해야 하며 문자로 시작하고 문자, 숫자 또는 밑줄만 포함해야 합니다. *`isplayName`은(는) 고유해야 하며 특수 문자를 포함할 수 없습니다. 일반적인 명명 규칙은 [을(를) 생성하기 위해 &#x200B;](https://en.wikipedia.org/wiki/Camel_case#)에 `displayName`카멜 대/소문자`name`을(를) 적용하는 것입니다. 예를 들어 `displayName`의 &quot;내 사용자 지정 필드&quot;는 `name`의 &quot;myCustomField&quot;를 생성합니다.
 
 ```
 POST /rest/v1/programs/members/schema/fields.json

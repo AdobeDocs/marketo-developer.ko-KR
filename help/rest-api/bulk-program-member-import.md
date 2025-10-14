@@ -139,7 +139,7 @@ GET /bulk/v1/program/members/import/{batchId}/status.json
 
 ## 실패
 
-`numOfRowsFailed`가져오기 프로그램 구성원 상태 가져오기[ 응답에서 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET) 특성으로 오류가 표시됩니다. numOfRowsFailed가 0보다 크면 해당 값은 발생한 실패 횟수를 나타냅니다.
+`numOfRowsFailed`가져오기 프로그램 구성원 상태 가져오기[&#x200B; 응답에서 &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET) 특성으로 오류가 표시됩니다. numOfRowsFailed가 0보다 크면 해당 값은 발생한 실패 횟수를 나타냅니다.
 
 가져오기 프로그램 멤버 오류 가져오기 끝점을 사용하여 `batchId` 경로 매개 변수를 전달하여 실패한 행의 레코드와 원인을 검색합니다.
 
@@ -193,7 +193,7 @@ Aerys,Targaryen,Aerys@Targaryen.com,Targaryen,House Targaryen,TEXT_VALUE_IN_INTE
 
 ## 경고
 
-`numOfRowsWithWarning`가져오기 프로그램 구성원 상태 가져오기[ 응답에서 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET) 특성에 경고가 표시됩니다. `numOfRowsWithWarning`이(가) 0보다 큰 경우 해당 값은 발생한 경고 수를 나타냅니다.
+`numOfRowsWithWarning`가져오기 프로그램 구성원 상태 가져오기[&#x200B; 응답에서 &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET) 특성에 경고가 표시됩니다. `numOfRowsWithWarning`이(가) 0보다 큰 경우 해당 값은 발생한 경고 수를 나타냅니다.
 
 [가져오기 프로그램 구성원 경고 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberWarningsUsingGET) 끝점을 사용하여 `batchId` 경로 매개 변수를 전달하여 레코드 및 경고 행 원인을 검색합니다.
 

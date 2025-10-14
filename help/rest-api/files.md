@@ -155,7 +155,7 @@ GET /rest/asset/v1/files.json?folder={"id":436, "type": "Folder"}&maxReturn=3
 
 ## 만들기 및 업데이트
 
-[다중 파트/양식 데이터 형식의 요청으로 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files/operation/createFileUsingPOST)파일을 만듭니다. 최소한으로, 이름, 폴더 및 파일은 요청에 필요하며, 선택적 설명과 insertOnly 플래그는 만들기 호출이 같은 이름의 기존 파일을 업데이트하는 것을 방지합니다. file 매개 변수의 경우 name 매개 변수 외에 Content-Disposition 헤더에 &quot;filename&quot;이 필요합니다. 또한 파일에 대한 Content-Type 헤더를 전달해야 합니다. 이 헤더는 Marketo이 파일을 제공하는 데 사용할 MIME 유형입니다.
+[다중 파트/양식 데이터 형식의 요청으로 &#x200B;](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files/operation/createFileUsingPOST)파일을 만듭니다. 최소한으로, 이름, 폴더 및 파일은 요청에 필요하며, 선택적 설명과 insertOnly 플래그는 만들기 호출이 같은 이름의 기존 파일을 업데이트하는 것을 방지합니다. file 매개 변수의 경우 name 매개 변수 외에 Content-Disposition 헤더에 &quot;filename&quot;이 필요합니다. 또한 파일에 대한 Content-Type 헤더를 전달해야 합니다. 이 헤더는 Marketo이 파일을 제공하는 데 사용할 MIME 유형입니다.
 
 ```
 POST /rest/asset/v1/files.json

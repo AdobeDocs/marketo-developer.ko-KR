@@ -187,7 +187,7 @@ GET /rest/asset/v1/programs.json
 
 ### 날짜 범위별
 
-`earliestUpdatedAt`프로그램 가져오기`latestUpdatedAt` 끝점에 대한 [ 및 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) 매개 변수를 사용하면 지정된 범위 내에서 업데이트되었거나 처음 만들어진 프로그램을 반환하는 데 대해 낮거나 높은 날짜/시간 워터마크를 설정할 수 있습니다.
+`earliestUpdatedAt`프로그램 가져오기`latestUpdatedAt` 끝점에 대한 [&#x200B; 및 &#x200B;](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) 매개 변수를 사용하면 지정된 범위 내에서 업데이트되었거나 처음 만들어진 프로그램을 반환하는 데 대해 낮거나 높은 날짜/시간 워터마크를 설정할 수 있습니다.
 
 ```
 GET /rest/asset/v1/programs.json?earliestUpdatedAt=2017-01-01T00:00:00-05:00&latestUpdatedAt=2017-01-30T00:00:00-05:00

@@ -14,7 +14,7 @@ ht-degree: 1%
 
 [회사 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies)
 
-회사는 잠재 고객 레코드가 속한 조직을 나타냅니다. 리드는 `externalCompanyId`리드 동기화[ 또는 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST)리드 일괄 가져오기[ 끝점을 사용하여 해당 ](bulk-lead-import.md) 필드를 채워 회사에 추가됩니다. 리드가 회사에 추가되면 해당 회사에서 리드를 삭제할 수 없습니다(다른 회사에 리드를 추가하지 않은 경우). 회사 레코드에 연결된 잠재 고객은 잠재 고객의 자체 레코드에 있는 것처럼 회사 레코드에서 값을 직접 상속합니다.
+회사는 잠재 고객 레코드가 속한 조직을 나타냅니다. 리드는 `externalCompanyId`리드 동기화[&#x200B; 또는 &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST)리드 일괄 가져오기[&#x200B; 끝점을 사용하여 해당 &#x200B;](bulk-lead-import.md) 필드를 채워 회사에 추가됩니다. 리드가 회사에 추가되면 해당 회사에서 리드를 삭제할 수 없습니다(다른 회사에 리드를 추가하지 않은 경우). 회사 레코드에 연결된 잠재 고객은 잠재 고객의 자체 레코드에 있는 것처럼 회사 레코드에서 값을 직접 상속합니다.
 
 회사 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=ko) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=ko)가 활성화된 구독에 대한 읽기 전용 액세스입니다.
 
@@ -98,7 +98,7 @@ GET /rest/v1/companies/describe.json
 
 ## 쿼리
 
-[ 매개 변수가 회사 설명 호출의 searchableFields 배열 또는 dedupeFields에 나열된 필드를 수락한다는 추가적인 제한을 사용하여 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies/operation/getCompaniesUsingGET)회사에 문의`filterType`하는 패턴은 리드 API의 패턴을 따릅니다.
+[&#x200B; 매개 변수가 회사 설명 호출의 searchableFields 배열 또는 dedupeFields에 나열된 필드를 수락한다는 추가적인 제한을 사용하여 &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies/operation/getCompaniesUsingGET)회사에 문의`filterType`하는 패턴은 리드 API의 패턴을 따릅니다.
 
 `filterType` 및 `filterValues`은(는) 필수 쿼리 매개 변수입니다.  `fields`, `nextPageToken` 및 `batchSize`은(는) 선택적 매개 변수입니다.  매개 변수는 Leads 및 Opportunities API의 해당 매개 변수와 동일하게 작동합니다. `fields` 목록을 요청할 때 특정 필드가 요청되었지만 반환되지 않은 경우 값이 null인 것으로 간주됩니다.
 

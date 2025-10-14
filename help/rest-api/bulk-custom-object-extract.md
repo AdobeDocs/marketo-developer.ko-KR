@@ -235,7 +235,7 @@ POST /rest/v1/customobjects/car_c.json
 }
 ```
 
-위에서 참조한 세 개의 리드는 각각 `id`목록 ID로 리드 가져오기[ 끝점을 호출하여 아래에서 볼 수 있듯이 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists/operation/getLeadsByListIdUsingGET_1)이(가) 1081인 &quot;자동차 구매자&quot;라는 정적 목록에 속합니다.
+위에서 참조한 세 개의 리드는 각각 `id`목록 ID로 리드 가져오기[&#x200B; 끝점을 호출하여 아래에서 볼 수 있듯이 &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists/operation/getLeadsByListIdUsingGET_1)이(가) 1081인 &quot;자동차 구매자&quot;라는 정적 목록에 속합니다.
 
 ```
 GET /rest/v1/lists/1081/leads.json
@@ -310,7 +310,7 @@ POST /bulk/v1/customobjects/car_c/export/create.json
 }
 ```
 
-작업이 생성되었음을 나타내는 상태가 응답에 반환됩니다. 작업이 정의되고 생성되었지만 아직 시작되지 않았습니다. 이렇게 하려면 [과(와) 만들기 상태 응답의 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/enqueueExportCustomObjectsUsingPOST)을(를) 사용하여 `apiName`Enqueue 내보내기 사용자 지정 개체 작업`exportId` 끝점을 호출해야 합니다.
+작업이 생성되었음을 나타내는 상태가 응답에 반환됩니다. 작업이 정의되고 생성되었지만 아직 시작되지 않았습니다. 이렇게 하려면 [과(와) 만들기 상태 응답의 &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/enqueueExportCustomObjectsUsingPOST)을(를) 사용하여 `apiName`Enqueue 내보내기 사용자 지정 개체 작업`exportId` 끝점을 호출해야 합니다.
 
 ```
 POST /bulk/v1/customobjects/car_c/export/f2c03f1d-226f-47c1-a557-357af8c2b32a/enqueue.json
@@ -386,7 +386,7 @@ GET /bulk/v1/customobjects/{apiName}/export/{exportId}/status.json
 
 ## 데이터 검색 중
 
-완료된 사용자 지정 개체 내보내기의 파일을 검색하려면 [ 및 ](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/getExportCustomObjectsFileUsingGET)을(를) 사용하여 `apiName`사용자 지정 개체 파일 내보내기 가져오기`exportId` 끝점을 호출하면 됩니다.
+완료된 사용자 지정 개체 내보내기의 파일을 검색하려면 [&#x200B; 및 &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Custom-Objects/operation/getExportCustomObjectsFileUsingGET)을(를) 사용하여 `apiName`사용자 지정 개체 파일 내보내기 가져오기`exportId` 끝점을 호출하면 됩니다.
 
 응답에는 작업이 구성된 방식으로 포맷된 파일이 포함됩니다. 끝점이 파일의 내용에 응답합니다. 요청한 사용자 지정 개체 특성이 비어 있으면(데이터 없음) `null`이(가) 내보내기 파일의 해당 필드에 배치됩니다.
 
