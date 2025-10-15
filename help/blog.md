@@ -6975,7 +6975,7 @@ _2014-04-17_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
 ## RTP를 사용하여 로컬 전화 번호를 동적으로 변경
 
-Personalization이 전부입니다. 우리는 오래 전에 이 사실을 파악했습니다. 그 말이 나온 김에, 즉각적인 지원이 필요할 때마다 웹사이트에서 관련 지역 전화번호를 찾는 것이 너무 힘들다는 것이 아직도 저에게는 놀랍습니다. [에 &#x200B;](https://business.adobe.com/products/marketo/content-personalization.html)Marketo 실시간 Personalization<https://business.adobe.com/products/marketo/adobe-marketo.html>(RTP)이 설치되어 있습니다. [RTP 방문자 API](/help/javascript-api/web-personalization.md)를 활용하여 웹 사이트의 여러 섹션에서 웹 방문자가 보는 전화 번호를 동적으로 변경할 수 있습니다. 와우! 믿겨지니? 이 마법은 어떻게 작동합니까? 먼저 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)에 설명된 대로 웹 사이트에 RTP를 설치해야 합니다. 그런 다음 아래 지침에 따라 웹 사이트에서 JavaScript 코드를 구현합니다.
+Personalization이 전부입니다. 우리는 오래 전에 이 사실을 파악했습니다. 그 말이 나온 김에, 즉각적인 지원이 필요할 때마다 웹사이트에서 관련 지역 전화번호를 찾는 것이 너무 힘들다는 것이 아직도 저에게는 놀랍습니다. [에 &#x200B;](https://business.adobe.com/kr/products/marketo/content-personalization.html)Marketo 실시간 Personalization<https://business.adobe.com/kr/products/marketo/adobe-marketo.html>(RTP)이 설치되어 있습니다. [RTP 방문자 API](/help/javascript-api/web-personalization.md)를 활용하여 웹 사이트의 여러 섹션에서 웹 방문자가 보는 전화 번호를 동적으로 변경할 수 있습니다. 와우! 믿겨지니? 이 마법은 어떻게 작동합니까? 먼저 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)에 설명된 대로 웹 사이트에 RTP를 설치해야 합니다. 그런 다음 아래 지침에 따라 웹 사이트에서 JavaScript 코드를 구현합니다.
 
 1. **defaultPhone** 구성에 국제 전화 번호 삽입
 1. **divIds** 구성에 HTML 요소 ID를 삽입합니다.
@@ -9772,7 +9772,7 @@ updatedAt 특성을 기반으로 날짜 범위 기반 쿼리를 지원하도록 
 
 ### 결함 해결
 
-* [사용자 관리](/help/rest-api/user-management.md) API 문제를 해결했습니다. [Sales Insight](https://business.adobe.com/products/marketo/sales-insight.html)과(와) 함께 사용하도록 구성된 Marketo 사용자에 관련되어 있습니다. 이제 [사용자 가져오기](https://developer.adobe.com/marketo-apis/api/user/#operation/getUsersUsingGET) 끝점에서 이러한 사용자를 반환했으며, 이제 [사용자 삭제](https://developer.adobe.com/marketo-apis/api/user/#operation/deleteUserUsingPOST) 끝점을 사용하여 이러한 사용자를 삭제할 수 있습니다. [LM-155864]
+* [사용자 관리](/help/rest-api/user-management.md) API 문제를 해결했습니다. [Sales Insight](https://business.adobe.com/kr/products/marketo/sales-insight.html)과(와) 함께 사용하도록 구성된 Marketo 사용자에 관련되어 있습니다. 이제 [사용자 가져오기](https://developer.adobe.com/marketo-apis/api/user/#operation/getUsersUsingGET) 끝점에서 이러한 사용자를 반환했으며, 이제 [사용자 삭제](https://developer.adobe.com/marketo-apis/api/user/#operation/deleteUserUsingPOST) 끝점을 사용하여 이러한 사용자를 삭제할 수 있습니다. [LM-155864]
 * [서식 있는 텍스트 필드](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields/addRichTextFieldUsingPOST) 끝점 추가 문제를 해결했습니다. 이메일, 랜딩 페이지, 코드 조각 또는 양식에 65k자보다 긴 서식 있는 텍스트 필드를 추가할 때 &quot;611, 시스템 오류&quot;가 반환되었습니다. 이제 오류 &quot;701, 작업을 완료할 수 없습니다. &#39;content&#39;가 최대 길이인 65,535바이트를 초과합니다.&quot;
 
 _David_&#x200B;이(가) _2021-10-25_&#x200B;에 게시함
