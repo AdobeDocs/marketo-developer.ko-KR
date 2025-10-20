@@ -3,7 +3,7 @@ title: SOAP API
 feature: SOAP
 description: Marketo SOAP API는 2025년 10월 31일 이후 더 이상 사용되지 않습니다. REST로 마이그레이션하고 WSDL을 검색하는 방법에 대해 알아보고 할당량, 속도 제한 및 인증 설정을 참조하십시오.
 exl-id: 6618cc82-15ae-4030-aa00-438e635d8369
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 5f2dcb4864cdcd110ba9f199ef9c86dcee522335
 workflow-type: tm+mt
 source-wordcount: '249'
 ht-degree: 0%
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # SOAP API
 
-SOAP API는 더 이상 사용되지 않으며 2025년 10월 31일 이후부터 더 이상 사용할 수 없습니다. 모든 새 개발은 Marketo [REST API](../rest-api/rest-api.md)를 사용하여 수행해야 하며, 서비스가 중단되지 않도록 기존 서비스를 해당 날짜까지 마이그레이션해야 합니다. SOAP API를 사용하는 서비스가 있는 경우 마이그레이션 방법에 대한 자세한 내용은 SOAP API [마이그레이션 안내서](./migration.md)를 참조하십시오.
+SOAP API는 더 이상 사용되지 않으며 2026년 1월 31일 이후부터 더 이상 사용할 수 없습니다. 모든 새 개발은 Marketo [REST API](../rest-api/rest-api.md)를 사용하여 수행해야 하며, 서비스가 중단되지 않도록 기존 서비스를 해당 날짜까지 마이그레이션해야 합니다. SOAP API를 사용하는 서비스가 있는 경우 마이그레이션 방법에 대한 자세한 내용은 SOAP API [마이그레이션 안내서](./migration.md)를 참조하십시오.
 
 ## SOAP WSDL
 

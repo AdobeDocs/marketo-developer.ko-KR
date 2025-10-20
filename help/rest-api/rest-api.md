@@ -3,10 +3,10 @@ title: REST API
 feature: REST API
 description: Marketo REST API를 사용하고, API 사용자 및 LaunchPoint를 설정하고, 할당량 및 한도를 보고, 인증 헤더로 인증하고, 리드를 검색하는 방법에 대해 알아봅니다.
 exl-id: 4b9beaf0-fc04-41d7-b93a-a1ae3147ce67
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 5f2dcb4864cdcd110ba9f199ef9c86dcee522335
 workflow-type: tm+mt
-source-wordcount: '790'
-ht-degree: 1%
+source-wordcount: '806'
+ht-degree: 0%
 
 ---
 
@@ -17,7 +17,11 @@ Marketo은 시스템 기능 중 대부분을 원격으로 실행할 수 있도�
 이러한 API는 일반적으로 [리드 데이터베이스](https://developer.adobe.com/marketo-apis/api/mapi/) 및 [에셋](https://developer.adobe.com/marketo-apis/api/asset/)의 두 가지 광범위한 범주에 속합니다. 잠재 고객 데이터베이스 API를 사용하면 Marketo 개인 레코드 및 관련 객체 유형(예: 영업 기회 및 회사)을 검색하고 상호 작용할 수 있습니다. 에셋 API를 사용하면 마케팅 자료 및 워크플로우 관련 레코드와 상호 작용할 수 있습니다.
 
 >[!NOTE]
->SOAP API는 더 이상 사용되지 않으며 2025년 10월 31일 이후부터 더 이상 사용할 수 없습니다. 모든 새 개발은 Marketo [REST API](./rest-api.md)를 사용하여 수행해야 하며, 서비스가 중단되지 않도록 기존 서비스를 해당 날짜까지 마이그레이션해야 합니다. SOAP API를 사용하는 서비스가 있는 경우 마이그레이션 방법에 대한 자세한 내용은 SOAP API [마이그레이션 안내서](../soap-api/migration.md)를 참조하십시오.
+>SOAP API는 더 이상 사용되지 않으며 2026년 1월 31일 이후부터 더 이상 사용할 수 없습니다. 모든 새 개발은 Marketo [REST API](./rest-api.md)를 사용하여 수행해야 하며, 서비스가 중단되지 않도록 기존 서비스를 해당 날짜까지 마이그레이션해야 합니다. SOAP API를 사용하는 서비스가 있는 경우 마이그레이션 방법에 대한 자세한 내용은 SOAP API [마이그레이션 안내서](../soap-api/migration.md)를 참조하십시오.
+>
+
+>[!IMPORTANT]
+>API 게이트웨이 URL에서 이중 슬래시를 사용하지 않는 방법은 이 [전국 게시물](https://nation.marketo.com/t5/product-blogs/rest-api-double-slash-deprecation/ba-p/358616)을 참조하세요.
 >
 
 - **일일 할당량:** 구독에는 하루에 50,000개의 API 호출이 할당됩니다(12:00AM CST에서 매일 재설정됨). 계정 관리자를 통해 일일 할당량을 늘릴 수 있습니다.

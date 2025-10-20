@@ -2,7 +2,7 @@
 title: 시작하기
 description: 리드, 활동, 프로그램, 태그, 목록, REST 지침 및 SOAP 사용 중단 알림을 포함한 Marketo Engage API 및 데이터 모델을 시작합니다.
 exl-id: 78c44c32-4e59-4d55-a45c-ef0d7dac814d
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 5f2dcb4864cdcd110ba9f199ef9c86dcee522335
 workflow-type: tm+mt
 source-wordcount: '1352'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 Marketo Engage은 마케터가 잠재 고객 및 고객에게 개인화된 멀티채널 프로그램 및 캠페인을 관리할 수 있도록 하는 마케팅 자동화 플랫폼입니다. 통합 포인트를 사용하여 Marketo Engage 플랫폼을 확장할 수 있습니다. 아래에서 핵심 엔티티와 해당 관계를 찾을 수 있습니다.
 
 >[!NOTE]
->SOAP API는 더 이상 사용되지 않으며 2025년 10월 31일 이후부터 더 이상 사용할 수 없습니다. 모든 새 개발은 Marketo [REST API](./rest-api/rest-api.md)를 사용하여 수행해야 하며, 서비스가 중단되지 않도록 기존 서비스를 해당 날짜까지 마이그레이션해야 합니다. SOAP API를 사용하는 서비스가 있는 경우 마이그레이션 방법에 대한 자세한 내용은 SOAP API [마이그레이션 안내서](./soap-api/migration.md)를 참조하십시오.
+>SOAP API는 더 이상 사용되지 않으며 2026년 1월 31일 이후부터 더 이상 사용할 수 없습니다. 모든 새 개발은 Marketo [REST API](./rest-api/rest-api.md)를 사용하여 수행해야 하며, 서비스가 중단되지 않도록 기존 서비스를 해당 날짜까지 마이그레이션해야 합니다. SOAP API를 사용하는 서비스가 있는 경우 마이그레이션 방법에 대한 자세한 내용은 SOAP API [마이그레이션 안내서](./soap-api/migration.md)를 참조하십시오.
 >
 
 Marketo Engage 인스턴스에서 기본 SFDC 또는 MS Dynamics CRM 연결을 활성화하면 회사, 영업 기회, 영업 기회 역할, 영업 담당자 등의 개체가 읽기 전용입니다
@@ -31,7 +31,7 @@ Marketo Engage 인스턴스에서 기본 SFDC 또는 MS Dynamics CRM 연결을 �
 
 리드는 몇 가지 방법으로 조직과 상호 작용합니다. 잠재 고객은 회사 웹 사이트의 페이지를 방문하거나, 무역 박람회에 참석하거나, 백서를 다운로드할 수 있습니다. 이러한 각 작업은 Marketo 내에서 캡처하여 마케터가 리드가 수행한 활동과 그 시기를 더 잘 이해하여 적절하고 관련 있는 커뮤니케이션을 조정할 수 있도록 할 수 있습니다. 활동은 항상 leadId를 통해 리드와 관련이 있습니다.
 
-사용자 지정 활동을 정의할 수 있습니다. 사용자 지정 활동을 만들어 게시하면 Marketo API를 통해 사용자 지정 활동을 추가할 수 있습니다. 사용자 지정 활동에 대한 자세한 내용은 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-activities/understanding-custom-activities)를 참조하세요.
+사용자 지정 활동을 정의할 수 있습니다. 사용자 지정 활동을 만들어 게시하면 Marketo API를 통해 사용자 지정 활동을 추가할 수 있습니다. 사용자 지정 활동에 대한 자세한 내용은 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-activities/understanding-custom-activities)를 참조하세요.
 
 관련 API: [REST](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities), [JavaScript](javascript-api/lead-tracking.md#munchkin-behavior)
 
@@ -49,7 +49,7 @@ Marketo Engage 인스턴스에서 기본 SFDC 또는 MS Dynamics CRM 연결을 �
 
 Marketo 관리자는 Marketo 사용자가 프로그램을 만들 때 선택할 수 있는 필수 및 선택적 태그 유형을 만들 수 있습니다. 이러한 각 태그 유형에 대해 가능한 값은 사용자가 정의하며, 회사에서 보고 목적으로 사용자 정의 태그를 사용하는 방법을 반영합니다.
 
-예를 들어, 가장 많은 리드를 생성하는 영역을 분석할 수 있도록 여러 태그 값(예: 북동부, 남동부)으로 사용자 정의 &quot;영역&quot; 태그 유형을 만들 수 있습니다. 또는 예를 들어 &quot;소유자&quot; 태그 유형을 만들어 리드 및 기회를 만드는 데 가장 큰 영향을 미치는 프로그램 소유자(예: Maria, David 또는 John)를 평가하고 이해할 수 있습니다. 태그에 대한 자세한 내용은 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/understanding-tags)를 참조하십시오.
+예를 들어, 가장 많은 리드를 생성하는 영역을 분석할 수 있도록 여러 태그 값(예: 북동부, 남동부)으로 사용자 정의 &quot;영역&quot; 태그 유형을 만들 수 있습니다. 또는 예를 들어 &quot;소유자&quot; 태그 유형을 만들어 리드 및 기회를 만드는 데 가장 큰 영향을 미치는 프로그램 소유자(예: Maria, David 또는 John)를 평가하고 이해할 수 있습니다. 태그에 대한 자세한 내용은 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/understanding-tags)를 참조하십시오.
 
 관련 API: [REST](https://developer.adobe.com/marketo-apis/api/asset/)
 
@@ -85,7 +85,7 @@ Assets은 프로그램 내에서 사용되는 랜딩 페이지, 이메일, 양�
 
 특정 캠페인 폴더 또는 프로그램 내에서 로컬로 생성된 내 토큰은 해당 특정 프로그램 또는 캠페인 폴더(로컬)에서 사용할 수 있습니다. 캠페인 폴더 수준에서 만든 내 토큰은 해당 캠페인 폴더(상속됨)에 포함된 모든 프로그램에서 사용할 수 있습니다. 프로그램 수준에서 사용자 지정 값으로 수정된 내 토큰은 프로그램 폴더 수준에서 토큰의 상위 내 토큰 값을 변경하지 않습니다(재정의됨).
 
-내 토큰은 이름 지정 규칙 {{my.My Token}}을(를) 사용하며 토큰 이름의 시작 부분에 &quot;my&quot;라는 단어가 추가됩니다. 예를 들어 EventDate라는 이름의 Date 형식 My Token을 만드는 경우 토큰의 이름은 {{my.EventDate}}입니다. 내 토큰에 대한 자세한 내용은 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/programs/tokens/understanding-my-tokens-in-a-program)에서 확인할 수 있습니다.
+내 토큰은 이름 지정 규칙 {{my.My Token}}을(를) 사용하며 토큰 이름의 시작 부분에 &quot;my&quot;라는 단어가 추가됩니다. 예를 들어 EventDate라는 이름의 Date 형식 My Token을 만드는 경우 토큰의 이름은 {{my.EventDate}}입니다. 내 토큰에 대한 자세한 내용은 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/tokens/understanding-my-tokens-in-a-program)에서 확인할 수 있습니다.
 
 관련 API: [REST](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tokens)
 
