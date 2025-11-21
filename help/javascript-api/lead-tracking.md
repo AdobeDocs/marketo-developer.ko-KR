@@ -66,7 +66,7 @@ Marketo Munchkin의 기본 동작은 페이지 로드 시 다음을 수행하는
 1. 현재 페이지 및 브라우저의 정보를 사용하여 지정된 Marketo 인스턴스로 &quot;웹 페이지 방문&quot; 이벤트를 보냅니다. 활동을 Marketo의 해당 레코드에 기록합니다.
 1. 링크에서 발생하는 모든 사용자 클릭에 대해 &quot;웹 페이지에서 클릭한 링크&quot; 이벤트를 보냅니다.
 
-Munchkin의 동작은 [ 설정으로 페이지를 방문할 때 모든 잠재 고객에 대해 쿠키가 생성되는지 또는 ](configuration.md) 설정으로 클릭 지연을 수정하는지 여부와 같은 Munchkin `cookieAnon`구성 설정`clickTime`을 사용하여 수정할 수 있습니다. apiOnly 설정을 true로 설정하여 방문 활동 전송을 비활성화할 수 있습니다. 버전 162(2022년 8월)부터 클릭 수 `tel` 및 `mailto`개와 링크 `http/s`개가 추적됩니다.
+Munchkin의 동작은 [&#x200B; 설정으로 페이지를 방문할 때 모든 잠재 고객에 대해 쿠키가 생성되는지 또는 &#x200B;](configuration.md) 설정으로 클릭 지연을 수정하는지 여부와 같은 Munchkin `cookieAnon`구성 설정`clickTime`을 사용하여 수정할 수 있습니다. apiOnly 설정을 true로 설정하여 방문 활동 전송을 비활성화할 수 있습니다. 버전 162(2022년 8월)부터 클릭 수 `tel` 및 `mailto`개와 링크 `http/s`개가 추적됩니다.
 
 ## 알려진 리드 및 익명 리드
 
