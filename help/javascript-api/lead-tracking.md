@@ -3,9 +3,9 @@ title: 잠재 고객 추적
 description: Marketo Munchkin JavaScript을 포함하고, 방문 횟수 및 클릭 수를 추적하고, 알려진 리드와 익명 리드를 관리하고, 도메인 간 쿠키를 관리하고, 스마트 캠페인을 옵트아웃하는 방법에 대해 알아봅니다.
 feature: Munchkin Tracking Code, Javascript
 exl-id: 7ece5133-9d32-4be3-a940-4ac0310c4d8b
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: c1b9763835b25584f0c085274766b68ddf5c7ae2
 workflow-type: tm+mt
-source-wordcount: '784'
+source-wordcount: '785'
 ht-degree: 0%
 
 ---
@@ -66,11 +66,11 @@ Marketo Munchkin의 기본 동작은 페이지 로드 시 다음을 수행하는
 1. 현재 페이지 및 브라우저의 정보를 사용하여 지정된 Marketo 인스턴스로 &quot;웹 페이지 방문&quot; 이벤트를 보냅니다. 활동을 Marketo의 해당 레코드에 기록합니다.
 1. 링크에서 발생하는 모든 사용자 클릭에 대해 &quot;웹 페이지에서 클릭한 링크&quot; 이벤트를 보냅니다.
 
-Munchkin의 동작은 [&#x200B; 설정으로 페이지를 방문할 때 모든 잠재 고객에 대해 쿠키가 생성되는지 또는 &#x200B;](configuration.md) 설정으로 클릭 지연을 수정하는지 여부와 같은 Munchkin `cookieAnon`구성 설정`clickTime`을 사용하여 수정할 수 있습니다. apiOnly 설정을 true로 설정하여 방문 활동 전송을 비활성화할 수 있습니다. 버전 162(2022년 8월)부터 클릭 수 `tel` 및 `mailto`개와 링크 `http/s`개가 추적됩니다.
+Munchkin의 동작은 [ 설정으로 페이지를 방문할 때 모든 잠재 고객에 대해 쿠키가 생성되는지 또는 ](configuration.md) 설정으로 클릭 지연을 수정하는지 여부와 같은 Munchkin `cookieAnon`구성 설정`clickTime`을 사용하여 수정할 수 있습니다. apiOnly 설정을 true로 설정하여 방문 활동 전송을 비활성화할 수 있습니다. 버전 162(2022년 8월)부터 클릭 수 `tel` 및 `mailto`개와 링크 `http/s`개가 추적됩니다.
 
 ## 알려진 리드 및 익명 리드
 
-도메인의 페이지에 대한 잠재 고객의 첫 번째 방문 시 Marketo에 새로운 익명 잠재 고객 레코드가 생성됩니다. 이 레코드의 기본 키는 사용자의 브라우저에서 만들어진 Munchkin 쿠키(`_mkto_trk`)입니다. 해당 브라우저의 모든 후속 웹 활동은 이 익명 레코드에 대해 기록됩니다. Marketo의 알려진 레코드에 연결하려면 다음 중 하나가 발생해야 합니다.
+도메인의 페이지에 대한 잠재 고객의 첫 번째 방문 시 Marketo에 새로운 익명 잠재 고객 레코드가 생성됩니다. 이 레코드의 기본 키는 사용자의 브라우저에서 만들어진 Munchkin 쿠키(`_mkto_trk`)입니다. 해당 브라우저의 모든 후속 웹 활동은 이 익명 레코드에 대해 기록됩니다. Marketo의 알려진 레코드와 연결하려면 다음 중 하나가 발생해야 합니다.
 
 - 잠재 고객은 추적된 Marketo 이메일 링크의 쿼리 문자열에 `mkt_tok` 매개 변수가 있는 Munchkin 추적 페이지를 방문해야 합니다.
 - 잠재 고객은 Marketo Form을 작성해야 합니다.
@@ -90,17 +90,17 @@ Munchkin은 도메인별로 개별 쿠키를 만들고 추적하므로 알려진
 
 Munchkin 쿠키는 키 `_mkto_trk`을(를) 사용하며 다음 패턴 값을 가집니다.
 
-`id:561\-HYG\-937&token:_mch\-marketo.com\-1374552656411\-90718`
+`id:561-HYG-937&token:_mch-marketo.com-1374552656411-90718`
 
-또는
+Or
 
-`id:561\-HYG\-937&token:_mch\-marketo.com\-97bf4361ef4433921a6da262e8df45a`
+`id:561-HYG-937&token:_mch-marketo.com-97bf4361ef4433921a6da262e8df45a`
 
 Munchkin 쿠키는 각 두 번째 수준 도메인, 즉 `example.com`에 한정됩니다. 쿠키의 기본 수명은 2년(730일)입니다.
 
 ## Beta
 
-랜딩 페이지에 Munchkin 베타 채널을 옵트인하려면 [관리자 -> 보물 상자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features) 메뉴로 이동하여 &quot;랜딩 페이지에 Munchkin Beta&quot; 설정을 활성화하십시오. **[!UICONTROL Admin]** ->에 새 코드 조각을 제공합니다.  외부 사이트에서 Beta 버전을 사용할 수 있는 **[!UICONTROL Munchkin]** 메뉴.
+랜딩 페이지에 Munchkin 베타 채널을 옵트인하려면 [관리자 -> 보물 상자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features) 메뉴로 이동하여 &quot;랜딩 페이지에 Munchkin Beta&quot; 설정을 활성화하십시오. **[!UICONTROL Admin]** ->에 새 코드 조각을 제공합니다.  외부 사이트에서 Beta 버전을 사용할 수 있는 **[!UICONTROL Munchkin]** 메뉴.
 
 ## 옵트아웃
 

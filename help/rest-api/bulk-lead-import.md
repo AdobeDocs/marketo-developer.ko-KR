@@ -3,9 +3,9 @@ title: 벌크 리드 가져오기
 feature: REST API
 description: CSV TSV 또는 SSV를 사용하여 Marketo에서 비동기 대량 리드 가져오기를 만들고 모니터링합니다.
 exl-id: 615f158b-35f9-425a-b568-0a7041262504
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: c1b9763835b25584f0c085274766b68ddf5c7ae2
 workflow-type: tm+mt
-source-wordcount: '812'
+source-wordcount: '795'
 ht-degree: 0%
 
 ---
@@ -18,13 +18,13 @@ ht-degree: 0%
 
 ## 처리 제한
 
-제한이 있는 두 개 이상의 일괄 가져오기 요청을 제출할 수 있습니다. 각 요청은 처리할 FIFO 대기열에 작업으로 추가됩니다. 최대 두 개의 작업이 동시에 처리됩니다. 지정된 시간에 큐에 최대 10개의 작업이 허용됩니다(현재 처리 중인 2개 포함). 최대 10개의 작업 수를 초과하면 &quot;1016, 너무 많은 가져오기&quot; 오류가 반환됩니다.
+제한이 있는 두 개 이상의 일괄 가져오기 요청을 제출할 수 있습니다. 각 요청은 처리할 FIFO 대기열에 작업으로 추가됩니다. 최대 두 개의 작업이 동시에 처리됩니다. 주어진 시간에 큐에 최대 10개의 작업이 허용됩니다(현재 처리 중인 두 작업 포함). 최대 작업 10개를 초과하면 `1016, Too many imports` 오류가 반환됩니다.
 
 ## 파일 가져오기
 
 파일의 첫 번째 행은 각 행의 값을 로 매핑할 해당 REST API 필드를 나열하는 헤더여야 합니다. 일반적인 파일은 다음 기본 패턴을 따릅니다.
 
-```
+```csv
 email,firstName,lastName
 test@example.com,John,Doe
 ```
@@ -37,7 +37,7 @@ test@example.com,John,Doe
 
 ## 작업 생성
 
-일괄 가져오기 요청을 수행하려면 콘텐츠 유형 헤더를 &quot;multipart/form-data&quot;로 설정하고 파일 콘텐츠가 있는 파일 매개 변수와 파일 형식을 나타내는 &quot;csv&quot;, &quot;tsv&quot; 또는 &quot;ssv&quot; 값이 있는 형식 매개 변수를 적어도 포함해야 합니다.
+대량 가져오기 요청을 수행하려면 콘텐츠 형식 헤더를 `multipart/form-data`(으)로 설정하고 파일 콘텐츠가 있는 `file` 매개 변수와 파일 형식을 나타내는 `format`, `csv` 또는 `tsv` 값이 있는 `ssv` 매개 변수를 포함해야 합니다.
 
 ```
 POST /bulk/v1/leads.json?format=csv
@@ -54,7 +54,7 @@ Host: <munchkinId>.mktorest.com
 Content-Disposition: form-data; name="file"; filename="leads.csv"
 Content-Type: text/csv
 
-FirstName,LastName,Email,Company
+firstName,lastName,email,company
 Able,Baker,ablebaker@marketo.com,Marketo
 Charlie,Dog,charliedog@marketo.com,Marketo
 Easy,Fox,easyfox@marketo.com,Marketo
@@ -75,16 +75,16 @@ Easy,Fox,easyfox@marketo.com,Marketo
 }
 ```
 
-이 끝점은 [multipart/form-data를 content-type](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html)&#x200B;(으)로 사용합니다. 이 방법은 올바른 이해에 까다로울 수 있으므로 가장 좋은 방법은 선택한 언어에 HTTP 지원 라이브러리를 사용하는 것입니다. 명령줄에서 cURL을 사용하여 이 작업을 수행하는 간단한 방법은 다음과 같습니다.
+이 끝점은 [multipart/form-data를 content-type](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html)&#x200B;(으)로 사용합니다. 가장 좋은 방법은 원하는 언어에 HTTP 지원 라이브러리를 사용하여 올바른 사용을 확인하는 것입니다. 다음 예제는 명령줄에서 cURL을 사용하여 이 작업을 수행하는 간단한 방법입니다.
 
 ```
 curl -i -F format=csv -F file=@lead_data.csv -F access_token=<Access Token> <REST API Endpoint Base URL>/bulk/v1/leads.json
 ```
 
-가져오기 파일 &quot;lead_data.csv&quot;에 다음이 포함된 경우:
+가져오기 파일 `lead_data.csv`에 다음이 포함된 경우:
 
 ```
-FirstName,LastName,Email,Company
+firstName,lastName,email,company
 Able,Baker,ablebaker@marketo.com,Marketo
 Charlie,Dog,charliedog@marketo.com,Marketo
 Easy,Fox,easyfox@marketo.com,Marketo
@@ -130,7 +130,7 @@ GET /bulk/v1/leads/batch/{id}.json
 
 ## 실패
 
-실패는 가져오기 리드 상태 가져오기 응답에서 &quot;numOfRowsFailed&quot; 속성으로 표시됩니다. numOfRowsFailed가 0보다 크면 이 값은 발생한 실패 횟수를 나타냅니다.
+가져오기 리드 상태 가져오기 응답에서 `numOfRowsFailed` 특성으로 오류가 표시됩니다. `numOfRowsFailed`이(가) 0보다 크면 이 값은 발생한 실패 횟수를 나타냅니다.
 
 실패한 행의 레코드와 원인을 검색하려면 실패 파일을 검색해야 합니다.
 
@@ -138,11 +138,11 @@ GET /bulk/v1/leads/batch/{id}.json
 GET /bulk/v1/leads/batch/{id}/failures.json
 ```
 
-API는 레코드가 실패한 이유를 나타내는 메시지와 함께 실패한 행을 나타내는 파일로 응답합니다. 파일 형식은 작업을 만드는 동안 &quot;format&quot; 매개 변수에 지정된 형식과 동일합니다. 각 레코드에 오류에 대한 설명과 함께 추가 필드가 추가됩니다.
+API는 레코드가 실패한 이유를 나타내는 메시지와 함께 실패한 행을 나타내는 파일로 응답합니다. 파일 형식은 작업을 만드는 동안 `format` 매개 변수에 지정된 형식과 동일합니다. 각 레코드에 오류에 대한 설명과 함께 추가 필드가 추가됩니다.
 
 ## 경고
 
-경고는 가져오기 리드 상태 가져오기 응답에서 &quot;numOfRowsWithWarning&quot; 속성으로 표시됩니다. &quot;numOfRowsWithWarning&quot;이 0보다 큰 경우 해당 값은 발생한 경고 수를 나타냅니다.
+가져오기 리드 상태 가져오기 응답에서 `numOfRowsWithWarning` 특성에 경고가 표시됩니다. `numOfRowsWithWarning`이(가) 0보다 큰 경우 해당 값은 발생한 경고 수를 나타냅니다.
 
 경고 행의 레코드와 원인을 검색하려면 다음과 같이 하십시오.
 
@@ -150,4 +150,4 @@ API는 레코드가 실패한 이유를 나타내는 메시지와 함께 실패�
 GET /bulk/v1/leads/batch/{id}/warnings.json
 ```
 
-API는 레코드가 실패한 이유를 나타내는 메시지와 함께 경고를 생성한 행을 나타내는 파일로 응답합니다. 파일 형식은 작업을 만드는 동안 &quot;format&quot; 매개 변수에 지정된 형식과 동일합니다. 각 레코드에 경고에 대한 설명과 함께 추가 필드가 추가됩니다.
+API는 레코드가 실패한 이유를 나타내는 메시지와 함께 경고를 생성한 행을 나타내는 파일로 응답합니다. 파일 형식은 작업을 만드는 동안 `format` 매개 변수에 지정된 형식과 동일합니다. 각 레코드에 경고에 대한 설명과 함께 추가 필드가 추가됩니다.
