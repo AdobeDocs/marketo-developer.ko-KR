@@ -3,9 +3,9 @@ title: getLeadChanges
 feature: SOAP
 description: Marketo SOAP getLeadChanges API를 사용하여 필터, leadSelector, 페이지 매김 및 XML 예제를 통해 리드 변경 활동을 검색하는 방법을 알아봅니다.
 exl-id: 23445684-d8d9-407b-8f19-cb69e806795c
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
-source-wordcount: '419'
+source-wordcount: '418'
 ht-degree: 3%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 3%
 
 SOAP API 버전 2_2 이후에 `leadSelector`을(를) 포함할 수 있습니다.
 
-`LastUpdateAtSelector`의 경우 `oldestUpdatedAt` 값은 `oldestCreatedAt`의 `startPosition` 값에 해당합니다. `latestUpdatedAt` 값은 `latestCreatedAt`의 `startPosition` 값에 해당합니다.
+`LastUpdateAtSelector`의 경우 `oldestUpdatedAt` 값은 `startPosition`의 `oldestCreatedAt` 값에 해당합니다. `latestUpdatedAt` 값은 `startPosition`의 `latestCreatedAt` 값에 해당합니다.
 
 참고: `LeadKeySelector`에서 지원되는 잠재 고객의 제한 수는 100개입니다. 리드 수가 100개를 초과하는 경우 API에 잘못된 매개 변수 예외가 발생하고 SOAP 오류가 반환됩니다.
 

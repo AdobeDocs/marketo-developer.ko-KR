@@ -3,16 +3,16 @@ title: 양식
 feature: REST API, Forms
 description: 양식 만들기 및 관리, id 또는 이름별로 검색, 상태 필터 찾아보기, 필드, 필드 세트 및 규칙 관리를 위한 Marketo Forms REST API 안내서.
 exl-id: 2e5dfa70-3163-4ab4-b269-3112417714c3
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
-source-wordcount: '1616'
+source-wordcount: '1823'
 ht-degree: 1%
 
 ---
 
 # 양식
 
-[Forms 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms)
+[Forms 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms)
 
 [양식 필드 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Form-Fields)
 
@@ -290,16 +290,16 @@ GET /rest/asset/v1/form/{id}/fields.json
 ### 필드 유형
 
 | UI 유형 | API 이름 |
-|--------------|-----------------|
+| --- | --- |
 | 확인란 | 확인란 |
 | 라디오 단추 | 라디오 |
 | 텍스트 영역 | 텍스트 영역 |
 | 선택 목록 | 선택 목록 |
 | 문자열 | 문자열 |
 | 이메일 | 이메일 |
-| Date | 날짜 |
+| 일자 | 날짜 |
 | 숫자 | 번호 |
-| 더블 | 더블 |
+| 더블 | 중복 |
 | 전화 | 전화 |
 | URL | url |
 | 통화 | 통화 |
@@ -918,7 +918,7 @@ visibilityRule={"ruleType":"show", "rules":[{"subjectField": "LastName", "operat
 
 ## 후속 작업
 
-Marketo forms에는 제출 시 지정된 필드의 내용에 따라 지정된 페이지로 리디렉션하거나 현재 페이지에 머무르는 규칙이 적용되는 동적 후속 페이지 동작이 있을 수 있습니다. 규칙은 서로 바꿔서 감사 페이지 규칙 또는 후속 페이지 규칙이라고 할 수 있습니다. 이러한 규칙은 `followupType`, `followupValue`, `operator`, `subjectField`, `values` 및 `default` 멤버와 함께 JSON 배열로 표시됩니다. `default`은(는) 배열에 있는 하나의 레코드만 true일 수 있는 부울 값입니다. 방문자가 다른 규칙을 사용할 수 없는 경우 기본값으로 지정된 규칙이 사용됩니다. `followupType`은(는) lp 또는 url일 수 있습니다. 여기서 lp는 `followupValue`에 대한 Marketo 랜딩 페이지 id를 나타내고 url은 다른 페이지에 대한 URL을 나타냅니다. 연산자는 제공된 값 목록과 주제 필드의 값을 비교하는 데 사용됩니다.
+Marketo forms에는 제출 시 지정된 필드의 내용에 따라 지정된 페이지로 리디렉션하거나 현재 페이지에 머무르는 규칙이 적용되는 동적 후속 페이지 동작이 있을 수 있습니다. 규칙은 서로 바꿔서 감사 페이지 규칙 또는 후속 페이지 규칙이라고 할 수 있습니다. 이러한 규칙은 `followupType`, `followupValue`, `operator`, `subjectField`, `values` 및 `default` 멤버와 함께 JSON 배열로 표시됩니다. `default` 는 배열에 있는 하나의 레코드만 true일 수 있는 부울 값입니다. 방문자가 다른 규칙을 사용할 수 없는 경우 기본값으로 지정된 규칙이 사용됩니다. `followupType` lp 또는 url일 수 있습니다. 여기서 lp는 `followupValue`에 대한 Marketo 랜딩 페이지 id를 나타내고 url은 다른 페이지에 대한 URL을 나타냅니다. 연산자는 제공된 값 목록과 주제 필드의 값을 비교하는 데 사용됩니다.
 
 ## 전송 단추
 

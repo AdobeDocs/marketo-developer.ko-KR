@@ -3,9 +3,9 @@ title: 랜딩 페이지 리디렉션 규칙
 feature: REST API, Landing Pages
 description: Marketo Asset REST API를 사용하여 필터, 페이지 매김, 호스트 이름 옵션, Marketo 이외의 타겟으로 랜딩 페이지 리디렉션 규칙을 만들고, 쿼리하고, 업데이트하고, 삭제합니다.
 exl-id: f63aa5ef-5872-4401-be75-6fb9b2977734
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
-source-wordcount: '655'
+source-wordcount: '776'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 Marketo은 랜딩 페이지 리디렉션 URL에서 CRUD 작업을 수행하기 위한 REST API 세트를 제공합니다. 이러한 API는 쿼리, 만들기, 업데이트 및 삭제 옵션을 제공하는 에셋 API에 대한 표준 인터페이스 패턴을 따릅니다.
 
-랜딩 페이지 리디렉션 규칙은 랜딩 페이지 URL을 다른 페이지 URL로 리디렉션하는 기능을 제공합니다. Marketo 랜딩 페이지, Marketo이 아닌 랜딩 페이지 또는 이들의 조합을 리디렉션할 수 있습니다. 리디렉션 랜딩 페이지 규칙에 대한 추가 정보는 [여기](https://experienceleague.adobe.com/docs/marketo/using/home.html?lang=ko)에서 확인할 수 있습니다.
+랜딩 페이지 리디렉션 규칙은 랜딩 페이지 URL을 다른 페이지 URL로 리디렉션하는 기능을 제공합니다. Marketo 랜딩 페이지, Marketo이 아닌 랜딩 페이지 또는 이들의 조합을 리디렉션할 수 있습니다. 리디렉션 랜딩 페이지 규칙에 대한 추가 정보는 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/home)에서 확인할 수 있습니다.
 
 ## 쿼리
 
@@ -143,7 +143,7 @@ GET /rest/asset/v1/redirectRules.json&maxReturn=3
 `redirectFrom` 매개 변수는 원본 랜딩 페이지를 지정합니다. 소스가 Marketo 랜딩 페이지인지 또는 Marketo이 아닌 랜딩 페이지인지를 결정하는 유형/값 쌍을 포함하는 JSON 개체입니다. `type` 특성은 &quot;landingPageId&quot; 또는 &quot;path&quot;일 수 있습니다.
 
 | 매개변수 | 선택 사항/필수 | 유형 | 설명 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | &#39;get&#39; | 필수 | 문자열 | 메서드 작업. |
 | &#39;visitor&#39; | 필수 | 문자열 | 메서드 이름입니다. |
 | callback | 필수 | 함수 | 반환된 각 캠페인에 대해 트리거될 콜백 함수입니다. |
@@ -151,11 +151,11 @@ GET /rest/asset/v1/redirectRules.json&maxReturn=3
 `redirectTo` 매개 변수는 대상 랜딩 페이지를 지정합니다. 소스가 Marketo 랜딩 페이지인지 또는 Marketo이 아닌 랜딩 페이지인지를 결정하는 유형/값 쌍을 포함하는 JSON 개체입니다. `type` 특성은 &quot;landingPageId&quot; 또는 &quot;url&quot;일 수 있습니다.
 
 | 랜딩 페이지 유형 | redirectTo 유형 | 예 |
-|---|---|---|
+| --- | --- | --- |
 | Marketo | 랜딩 페이지 ID | {&quot;type&quot;:&quot;landingPageId&quot;,&quot;value&quot;:&quot;1774&quot;} |
 | 비 Marketo | url | {&quot;type&quot;:&quot;url&quot;,&quot;value&quot;:&quot;www.contactLogs.com&quot;} |
 
-랜딩 페이지 리디렉션 규칙을 만드는 방법에 대한 자세한 내용은 [여기](https://experienceleague.adobe.com/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-actions/redirect-a-marketo-landing-page-to-another-page.html?lang=ko)에서 확인할 수 있습니다.
+랜딩 페이지 리디렉션 규칙을 만드는 방법에 대한 자세한 내용은 [여기](https://experienceleague.adobe.com/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-actions/redirect-a-marketo-landing-page-to-another-page.html)에서 확인할 수 있습니다.
 
 ```
 POST /rest/asset/v1/redirectRules.json

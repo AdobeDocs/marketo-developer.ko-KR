@@ -3,10 +3,10 @@ title: 구성
 description: JavaScript API를 사용하여 Marketo Munchkin을 구성합니다. altIds, anonymizeIP, asyncOnly, 쿠키 수명, domainLevel, 비콘 API와 같은 Munchkin.init 설정에 대해 알아봅니다.
 feature: Munchkin Tracking Code, Javascript
 exl-id: 4700ce7b-f624-4f27-871e-9a050f203973
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
-source-wordcount: '563'
-ht-degree: 3%
+source-wordcount: '613'
+ht-degree: 4%
 
 ---
 
@@ -27,7 +27,7 @@ Munchkin.init("AAA-BBB-CCC", {
 ## 속성
 
 | 이름 | 데이터 유형 | 설명 |
-|---|---|---|
+| --- | --- | --- |
 | altIds | 배열 | Munchkin ID 문자열 배열을 허용합니다. 활성화되면 Munchkin ID를 기반으로 타겟팅된 구독에 모든 웹 활동이 복제됩니다. |
 | 익명화 | 부울 | 신규 방문자를 위해 Marketo에 기록된 IP 주소를 익명화합니다. |
 | apiOnly | 부울 | true로 설정하면 `Munchkin.Init()` 함수가 `visitsWebPage`을(를) 호출하지 않습니다. 모든 `visitsWebPage` 이벤트를 완벽하게 제어해야 하는 단일 페이지 웹 응용 프로그램에 유용합니다. |
@@ -40,7 +40,7 @@ Munchkin.init("AAA-BBB-CCC", {
 | domainSelectorV2 | 부울 | true로 설정하면 는 향상된 방법을 사용하여 쿠키 도메인 속성을 설정하는 방법을 결정합니다. |
 | https만 | 부울 | 기본값은 false입니다. true로 설정되면 은 추적된 페이지가 https를 통해 제공되었을 때 보안 설정을 사용하도록 쿠키를 설정합니다. |
 | useBeaconAPI | 부울 | 기본값은 false입니다. true로 설정하면 [Beacon API](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API)를 사용하여 [XMLHttpRequest](https://developer.mozilla.org/ko_KR/docs/Web/API/XMLHttpRequest) 대신 비차단 요청을 보냅니다. 브라우저가 이 API를 지원하지 않는 경우 Munchkin은 XMLHttpRequest 사용으로 돌아갑니다. |
-| wsInfo | 문자열 | 작업 영역을 타깃팅할 문자열을 가져옵니다. 이 작업 공간 ID는 관리 > 통합 > Munchkin 메뉴에서 Workspace을 선택하여 가져옵니다. 이 설정은 익명 잠재 고객 레코드의 초기 생성에만 적용됩니다. 해당 잠재 고객 레코드에 대해 Munchkin 쿠키 값이 설정되면 wsInfo 매개 변수를 사용하여 해당 파티션을 변경할 수 없습니다. 이 설정은 익명 리드에만 영향을 주므로 파티션별 [웹 보고서의 익명 방문자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/reporting/basic-reporting/report-activity/display-people-or-anonymous-visitors-in-web-reports)에만 관련이 있습니다. |
+| wsInfo | 문자열 | 작업 영역을 타깃팅할 문자열을 가져옵니다. 이 작업 공간 ID는 관리 > 통합 > Munchkin 메뉴에서 Workspace을 선택하여 가져옵니다. 이 설정은 익명 잠재 고객 레코드의 초기 생성에만 적용됩니다. 해당 잠재 고객 레코드에 대해 Munchkin 쿠키 값이 설정되면 wsInfo 매개 변수를 사용하여 해당 파티션을 변경할 수 없습니다. 이 설정은 익명 리드에만 영향을 주므로 파티션별 [웹 보고서의 익명 방문자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/reporting/basic-reporting/report-activity/display-people-or-anonymous-visitors-in-web-reports)에만 관련이 있습니다. |
 
 ## 예
 

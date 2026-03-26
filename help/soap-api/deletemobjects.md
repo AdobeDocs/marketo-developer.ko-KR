@@ -3,10 +3,10 @@ title: deleteMObject
 feature: SOAP
 description: Marketo SOAP deleteMObjects를 사용하여 Opportunity 및 OpportunityPersonRole을 삭제하고, 요청 및 응답 XML, 코드 예제 등을 참조하십시오.
 exl-id: 31511584-5366-4af1-975b-94417680c4d9
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
 source-wordcount: '74'
-ht-degree: 8%
+ht-degree: 10%
 
 ---
 

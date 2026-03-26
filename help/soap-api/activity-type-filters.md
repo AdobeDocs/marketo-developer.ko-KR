@@ -3,7 +3,7 @@ title: 활동 유형 필터
 feature: SOAP
 description: 이메일 클릭 수 및 양식 채우기에서 SOAP 캠페인 변경 사항 및 영업 기회 업데이트에 이르기까지 SFDC 호출에 대해 지원되는 모든 활동 유형 필터를 찾아봅니다.
 exl-id: d661bb41-5615-4394-ade0-29254e48f7eb
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
 source-wordcount: '226'
 ht-degree: 23%
@@ -13,7 +13,7 @@ ht-degree: 23%
 # 활동 유형 필터
 
 | 목록에 추가 |
-|-------------------------------------|
+| --- |
 | 양육에 추가 |
 | 영업 기회에 추가 |
 | 세그먼트에 추가 |

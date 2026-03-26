@@ -3,10 +3,10 @@ title: getMultipleLead
 feature: SOAP
 description: Marketo SOAP getMultipleLeads를 사용하여 키, 정적 목록 또는 업데이트 날짜, 스트림 위치로 페이지를 매기고 필드를 필터링하여 최대 1000개의 리드를 가져오는 방법에 대해 알아봅니다.
 exl-id: db9aabec-8705-40c6-b264-740fdcef8a52
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
-source-wordcount: '407'
-ht-degree: 2%
+source-wordcount: '409'
+ht-degree: 3%
 
 ---
 
@@ -36,7 +36,7 @@ ht-degree: 2%
 | lastUpdatedAt | **사용되지 않음** | 대신 `LastUpdateAtSelector` 사용 |
 | includeAttributes | 선택 사항입니다 | 가져오려는 속성 목록입니다. 반환되는 리드 필드를 제한하면 API의 응답 시간을 향상시킬 수 있습니다. |
 | batchSize | 선택 사항입니다 | 반환할 최대 레코드 수. 시스템이 100 또는 `batchSize` 중 더 작은 값으로 제한됩니다. |
-| streamPosition | 선택 사항입니다 | 많은 수의 잠재 고객 응답을 통해 페이지를 매기는 데 사용됩니다. 이전 호출 응답 필드 `streamPosition`에서 `newStreamPosition` 값을 반환했습니다. |
+| streamPosition | 선택 사항입니다 | 많은 수의 잠재 고객 응답을 통해 페이지를 매기는 데 사용됩니다. 이전 호출 응답 필드 `newStreamPosition`에서 `streamPosition` 값을 반환했습니다. |
 
 ## 요청 XML
 

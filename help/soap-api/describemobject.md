@@ -3,10 +3,10 @@ title: describeMObject
 feature: SOAP
 description: Marketo SOAP에서 describeMObject를 사용하여 ActivityRecord, LeadRecord, Opportunity 및 OpportunityPersonRole에 대한 메타데이터와 필드 속성을 검색하는 방법을 알아봅니다.
 exl-id: a5ee60c4-b0ec-49a2-9a9d-22806ddde8f7
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
 source-wordcount: '87'
-ht-degree: 5%
+ht-degree: 8%
 
 ---
 
@@ -18,7 +18,7 @@ ht-degree: 5%
 
 | 필드 이름 | 필수/선택 사항 | 설명 |
 | --- | --- | --- |
-| objectName | 필수 | 메타데이터를 가져오려는 개체의 이름입니다. `objectName`은(는) `ActivityRecord`, `LeadRecord`, `Opportunity`, `OpportunityPersonRole` 중 하나일 수 있습니다. |
+| objectName | 필수 | 메타데이터를 가져오려는 개체의 이름입니다. `objectName` 다음 중 하나일 수 있음: `ActivityRecord`, `LeadRecord`, `Opportunity`, `OpportunityPersonRole` |
 
 ## 요청 XML
 

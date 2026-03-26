@@ -3,10 +3,10 @@ title: getMObjects
 feature: SOAP
 description: getMObjects를 사용하여 ID, 특성 또는 연결별로, 배치당 최대 100개까지, XML 예제를 사용하여 streamPosition으로 페이지를 매김, Marketo MObjects를 가져올 수 있습니다.
 exl-id: 5cf18161-f590-4dc3-bba1-ee3ed9fd7e9f
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
-source-wordcount: '245'
-ht-degree: 6%
+source-wordcount: '246'
+ht-degree: 7%
 
 ---
 

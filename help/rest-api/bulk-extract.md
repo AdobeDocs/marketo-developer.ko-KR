@@ -3,9 +3,9 @@ title: 일괄 추출
 feature: REST API
 description: Marketo 벌크 추출 REST API를 사용하여 OAuth, 작업 큐 및 500MB 일일 제한으로 리드, 활동, 프로그램 멤버 및 사용자 지정 개체를 내보내는 방법에 대해 알아봅니다.
 exl-id: 6a15c8a9-fd85-4c7d-9f65-8b2e2cba22ff
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
-source-wordcount: '1702'
+source-wordcount: '1723'
 ht-degree: 0%
 
 ---
@@ -118,7 +118,7 @@ POST /bulk/v1/leads/export/create.json
 각 작업 생성 끝점은 대량 추출 작업의 파일 형식, 필드 이름 및 필터를 구성하기 위한 몇 가지 일반적인 매개 변수를 공유합니다. 추출 작업의 각 하위 유형에는 추가 매개 변수가 있을 수 있습니다.
 
 | 매개변수 | 데이터 유형 | 참고 |
-|---|---|---|
+| --- | --- | --- |
 | 형식 | 문자열 | 쉼표로 구분된 값, 탭으로 구분된 값 및 세미콜론으로 구분된 값에 대한 옵션을 사용하여 추출된 데이터의 파일 형식을 결정합니다. CSV, SSV, TSV 중 하나를 허용합니다. 형식은 기본적으로 CSV로 설정됩니다. |
 | 열 머리글 이름 | 오브젝트 | 반환된 파일에서 열 헤더의 이름을 설정할 수 있습니다. 각 멤버 키는 이름을 바꿀 열 헤더의 이름이고 값은 열 헤더의 새 이름입니다. 예를 들어 &quot;columnHeaderNames&quot;: { &quot;firstName&quot;: &quot;First Name&quot;, &quot;lastName&quot;: &quot;Last Name&quot; }, |
 | filter | 오브젝트 | 추출 작업에 적용된 필터. 작업 유형에 따라 유형과 옵션이 달라집니다. |
@@ -208,7 +208,7 @@ GET /bulk/v1/leads/export/{exportId}/file.json
 
 응답에는 작업이 구성된 방식으로 포맷된 파일이 포함됩니다. 끝점이 파일의 내용에 응답합니다. 작업이 완료되지 않았거나 잘못된 작업 ID가 전달된 경우 파일 엔드포인트는 404 찾을 수 없음 상태로 응답하고 대부분의 다른 Marketo REST 엔드포인트와 달리 일반 텍스트 오류 메시지를 페이로드로 표시합니다.
 
-추출된 데이터의 부분 검색 및 재개 친화적인 검색을 지원하기 위해 파일 끝점은 선택적으로 `Range` 유형의 HTTP 헤더 `bytes`을(를) 지원합니다([RFC 7233](https://datatracker.ietf.org/doc/html/rfc7233)에 따라). 헤더가 설정되지 않은 경우 전체 콘텐츠가 반환됩니다. 파일의 처음 10,000바이트를 검색하려면 바이트 0부터 다음 헤더를 GET 요청의 일부로 엔드포인트에 전달합니다.
+추출된 데이터의 부분 검색 및 재개 친화적인 검색을 지원하기 위해 파일 끝점은 선택적으로 `bytes` 유형의 HTTP 헤더 `Range`을(를) 지원합니다([RFC 7233](https://datatracker.ietf.org/doc/html/rfc7233)에 따라). 헤더가 설정되지 않은 경우 전체 콘텐츠가 반환됩니다. 파일의 처음 10,000바이트를 검색하려면 바이트 0부터 다음 헤더를 GET 요청의 일부로 엔드포인트에 전달합니다.
 
 ```
 Range: bytes=0-9999
@@ -234,7 +234,7 @@ Range: bytes 724-999
 
 #### 파일 무결성 확인
 
-`fileChecksum`이(가) &quot;완료됨&quot;일 때 작업 상태 끝점이 `status` 특성에 체크섬을 반환합니다. 체크섬은 내보낸 파일의 SHA-256 해시입니다. 검색된 파일의 SHA-256 해시와 체크섬을 비교하여 파일이 완료되었는지 확인할 수 있습니다.
+`status`이(가) &quot;완료됨&quot;일 때 작업 상태 끝점이 `fileChecksum` 특성에 체크섬을 반환합니다. 체크섬은 내보낸 파일의 SHA-256 해시입니다. 검색된 파일의 SHA-256 해시와 체크섬을 비교하여 파일이 완료되었는지 확인할 수 있습니다.
 
 다음은 체크섬을 포함하는 예제 응답입니다.
 

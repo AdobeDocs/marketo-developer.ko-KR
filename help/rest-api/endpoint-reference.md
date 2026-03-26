@@ -3,9 +3,9 @@ title: 끝점 참조
 feature: REST API
 description: 메서드, URI 및 활동, 벌크 내보내기, ID, 리드, 에셋, 사용자에 대한 필수 권한이 포함된 포괄적인 Marketo REST API 끝점 목록입니다.
 exl-id: 27d16b6f-865a-4e40-ab9c-cbabe2927472
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
-source-wordcount: '4464'
+source-wordcount: '4793'
 ht-degree: 7%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 7%
 다음은 REST API 엔드포인트의 포괄적인 목록입니다.
 
 | 이름 | 그룹 | 메서드 | URI | 필수 권한 |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 사용자 지정 활동 추가 | 활동 | POST | /rest/v1/activities/external.json | 읽기-쓰기 활동 |
 | 사용자 지정 활동 유형 승인 | 활동 | POST | /rest/v1/activities/external/type/{apiName}/approve.json | 읽기-쓰기 활동 메타데이터 |
 | 사용자 지정 활동 유형 속성 만들기 | 활동 | POST | /rest/v1/activities/external/type/{apiName}/attributes/create.json | 읽기-쓰기 활동 메타데이터 |

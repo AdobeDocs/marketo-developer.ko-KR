@@ -5,10 +5,10 @@ breadcrumb-title: '[!DNL Marketo] 개발자 안내서'
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: f314f153c80416bbccc4328756e71c07e696dd00
+source-git-commit: 73fa4c85ecabd4cfd24bc6591aad11dc4e75010a
 workflow-type: tm+mt
-source-wordcount: '251'
-ht-degree: 28%
+source-wordcount: '277'
+ht-degree: 29%
 
 ---
 
@@ -34,7 +34,7 @@ ht-degree: 28%
    - [트리거](javascript-api/triggers.md)
    - [웹 개인화](javascript-api/web-personalization.md)
 - 모바일 {#mobile}
-   - [&#x200B; [!DNL Adobe Launch] 확장 설치](mobile/adobe-launch-extension-installation.md)
+   - [ [!DNL Adobe Launch] 확장 설치](mobile/adobe-launch-extension-installation.md)
    - [[!DNL Adobe Launch] 확장](mobile/adobe-launch-extension.md)
    - [고급 보안 모드](mobile/advanced-security-access-mode.md)
    - [사용자 지정 작업](mobile/custom-actions.md)
@@ -71,7 +71,7 @@ ht-degree: 28%
       - [트랜잭션 이메일](rest-api/transactional-email.md)
    - [인증](rest-api/authentication.md)
    - [기본 URL](rest-api/base-url.md)
-   - [우수 사례](rest-api/marketo-integration-best-practices.md)
+   - [모범 사례](rest-api/marketo-integration-best-practices.md)
    - 일괄 추출 {#bulk-extract}
       - [일괄 활동](rest-api/bulk-activity-extract.md)
       - [대량 사용자 지정 개체](rest-api/bulk-custom-object-extract.md)
@@ -102,6 +102,8 @@ ht-degree: 28%
       - [영업 기회 역할](rest-api/opportunity-roles.md)
       - [프로그램 구성원](rest-api/program-members.md)
       - [영업 담당자](rest-api/sales-persons.md)
+      - [정적 목록](rest-api/list-membership.md)
+      - [사용](rest-api/usage.md)
    - [페이징 토큰](rest-api/paging-tokens.md)
    - [성능](rest-api/performance.md)
    - [참조 아키텍처](rest-api/reference-architectures.md)

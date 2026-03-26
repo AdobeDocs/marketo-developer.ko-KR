@@ -3,10 +3,10 @@ title: 일괄 활동 추출
 feature: REST API
 description: Marketo 벌크 활동 REST API를 추출하여 31일 날짜 범위, 활동 및 ETL 및 CRM에 대한 기본 속성 필터를 사용하여 대용량 활동 데이터를 내보냅니다.
 exl-id: 6bdfa78e-bc5b-4eea-bcb0-e26e36cf6e19
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
-source-wordcount: '1351'
-ht-degree: 4%
+source-wordcount: '1571'
+ht-degree: 3%
 
 ---
 
@@ -24,7 +24,7 @@ REST API의 벌크 활동 추출 세트는 Marketo에서 대량의 활동 데이
 
 | 필터 유형 | 데이터 유형 | 필수 | 참고 |
 | --- | --- | --- | --- |
-| createdAt | 날짜 범위 | 예 | `startAt` 및 `endAt` 멤버를 사용하여 JSON 개체를 허용합니다. `startAt`은(는) 로우 워터마크를 나타내는 날짜/시간을 수락하고 `endAt`은(는) 하이 워터마크를 나타내는 날짜/시간을 수락합니다. 범위는 31일 이하여야 합니다. 이 필터 유형의 작업은 날짜 범위 내에서 만든 액세스 가능한 모든 레코드를 반환합니다. 날짜/시간은 밀리초 없이 ISO-8601 형식이어야 합니다. |
+| createdAt | 날짜 범위 | 예 | `startAt` 및 `endAt` 멤버를 사용하여 JSON 개체를 허용합니다. `startAt` 에서는 로우 워터마크를 나타내는 날짜/시간을 수락하고 `endAt`에서는 하이 워터마크를 나타내는 날짜/시간을 수락합니다. 범위는 31일 이하여야 합니다. 이 필터 유형의 작업은 날짜 범위 내에서 만든 액세스 가능한 모든 레코드를 반환합니다. 날짜/시간은 밀리초 없이 ISO-8601 형식이어야 합니다. |
 | activityTypeIds | Array\[Integer\] | 아니요 | 하나의 멤버 `activityTypeIds`이(가) 있는 JSON 개체를 허용합니다. 값은 원하는 활동 유형에 해당하는 정수 배열이어야 합니다. &quot;리드 삭제&quot; 활동은 지원되지 않습니다(대신 [삭제된 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getDeletedLeadsUsingGET) 엔드포인트를 사용). [활동 유형 가져오기 엔드포인트](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getAllActivityTypesUsingGET)를 사용하여 활동 유형 ID를 검색합니다. |
 | [primaryAttributeValueIds](#primaryattributevalueids-options) | Array\[Integer\] | 아니요 | 하나의 멤버 `primaryAttributeValueIds`이(가) 있는 JSON 개체를 허용합니다. 값은 필터링할 기본 속성을 지정하는 ID 배열입니다. 최대 50개의 ID를 지정할 수 있습니다. ID는 잠재 고객 필드 또는 에셋에 대한 고유 식별자이며 적절한 REST API 끝점을 호출하여 검색할 수 있습니다. 예를 들어 &quot;양식 채우기&quot; 활동에 대한 특정 양식을 필터링하려면 양식 이름을 [이름별 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByNameUsingGET) 엔드포인트에 전달하여 양식 ID를 검색합니다. 다음은 기본 속성 필터링이 지원되는 활동 유형 목록입니다. |
 | [primaryAttributeValue](#primaryattributevalues-options) | Array\[String\] | 아니요 | 하나의 멤버 `primaryAttributeValues`이(가) 있는 JSON 개체를 허용합니다. 값은 필터링할 기본 속성을 지정하는 이름 배열입니다. 최대 50개의 이름을 지정할 수 있습니다. 이름은 리드 필드 또는 에셋의 고유 식별자이며 적절한 REST API 끝점을 호출하여 검색할 수 있습니다. 예를 들어 &quot;양식 채우기&quot; 활동에 대한 특정 양식을 필터링하려면 양식 ID를 [ID별로 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) 엔드포인트에 전달하여 양식 이름을 검색합니다. 다음은 기본 속성 필터링이 지원되는 활동 유형 목록입니다. |
@@ -74,7 +74,7 @@ REST API의 벌크 활동 추출 세트는 Marketo에서 대량의 활동 데이
 | 목록에서 제거 | 정적 목록 이름 | [Id별 정적 목록 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByIdUsingGET) | 정적 목록 |
 | 양식 작성 | 양식 이름 | [Id로 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) | 웹 양식 |
 
-&quot;&lt;<em>program</em>>을 사용해야 합니다.마케팅 프로그램, 정적 목록, 웹 폼과 같은 자산 그룹의 이름을 지정하는 &lt;<em>자산</em>>&quot; 표기법 예를 들어 이름이 &quot;GL_OP_ALL_2021&quot;인 프로그램 아래에 있는 이름이 &quot;MPS Outbound&quot;인 양식은 &quot;GL_OP_ALL_2021.MPS Outbound&quot;로 지정됩니다.
+마케팅 프로그램, 정적 목록, 웹 폼 등의 자산 그룹에 대한 이름을 지정하려면 &quot;&lt;<em>프로그램</em>>.&lt;<em>자산</em>>&quot; 표기법을 사용해야 합니다. 예를 들어 이름이 &quot;GL_OP_ALL_2021&quot;인 프로그램 아래에 있는 이름이 &quot;MPS Outbound&quot;인 양식은 &quot;GL_OP_ALL_2021.MPS Outbound&quot;로 지정됩니다.
 
 예제 요청 본문:
 
@@ -95,16 +95,16 @@ REST API의 벌크 활동 추출 세트는 Marketo에서 대량의 활동 데이
 }
 ```
 
-`primaryAttributeValues`을(를) 사용하는 경우 `activityTypeIds` 필터가 있어야 하며 해당 자산 그룹과 일치하는 활동 ID만 포함해야 합니다. 예를 들어 웹 양식 자산을 필터링하는 경우 `activityTypeIds`에서 &quot;양식 작성&quot; 활동 유형 ID만 허용됩니다. `primaryAttributeValues`과(와) `primaryAttributeValueIds`은(는) 함께 사용할 수 없습니다.
+`primaryAttributeValues`을(를) 사용하는 경우 `activityTypeIds` 필터가 있어야 하며 해당 자산 그룹과 일치하는 활동 ID만 포함해야 합니다. 예를 들어 웹 양식 자산을 필터링하는 경우 `activityTypeIds`에서 &quot;양식 작성&quot; 활동 유형 ID만 허용됩니다. `primaryAttributeValues` 및 `primaryAttributeValueIds`은(는) 함께 사용할 수 없습니다.
 
 ## 옵션
 
 | 매개변수 | 데이터 유형 | 필수 | 참고 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | filter | 배열[개체] | 예 | 필터 배열을 허용합니다. 배열에 정확히 하나의 `createdAt` 필터가 포함되어야 합니다. 선택적 `activityTypeIds` 필터가 포함될 수 있습니다. 액세스 가능한 활동 세트에 필터가 적용되고 내보내기 작업에 의해 결과 활동 세트가 반환됩니다. |
 | 형식 | 문자열 | 아니요 | CSV, TSV, SSV 중 하나 허용 내보낸 파일은 설정된 경우 각각 쉼표로 구분된 값, 탭으로 구분된 값 또는 공백으로 구분된 값 파일로 렌더링됩니다. 설정하지 않으면 기본값이 CSV로 설정됩니다. |
 | 열 머리글 이름 | 오브젝트 | 아니요 | 필드 및 열 헤더 이름의 키-값 쌍을 포함하는 JSON 개체입니다. 키는 내보내기 작업에 포함된 필드 이름이어야 합니다. 값은 해당 필드에 대해 내보낸 열 헤더의 이름입니다. |
-| 필드 | 배열[문자열] | 아니요 | 필드 값을 포함하는 선택적 문자열 배열입니다. 나열된 필드는 내보낸 파일에 포함됩니다. 기본적으로 다음 필드가 반환됩니다. <ul><li>`marketoGUIDleadId`</li><li> `activityDate` </li><li>`activityTypeId` </li><li>`campaignId`</li><li> `primaryAttributeValueId` </li><li>`primaryAttributeValue`</li><li> `attributes`</li></ul>. 이 매개 변수는 위의 목록에서 하위 집합을 지정하여 반환되는 필드 수를 줄이는 데 사용할 수 있습니다. `"fields": ["leadId", "activityDate", "activityTypeId"]`. 활동 작업 `actionResult`을(를) 포함하도록 추가 필드 `("succeeded", "skipped", or "failed")`을(를) 지정할 수 있습니다. |
+| 필드 | 배열[문자열] | 아니요 | 필드 값을 포함하는 선택적 문자열 배열입니다. 나열된 필드는 내보낸 파일에 포함됩니다. 기본적으로 다음 필드가 반환됩니다. <ul><li>`marketoGUIDleadId`</li><li> `activityDate` </li><li>`activityTypeId` </li><li>`campaignId`</li><li> `primaryAttributeValueId` </li><li>`primaryAttributeValue`</li><li> `attributes`</li></ul>. 이 매개 변수는 위의 목록에서 하위 집합을 지정하여 반환되는 필드 수를 줄이는 데 사용할 수 있습니다. `"fields": ["leadId", "activityDate", "activityTypeId"]`. 활동 작업 `("succeeded", "skipped", or "failed")`을(를) 포함하도록 추가 필드 `actionResult`을(를) 지정할 수 있습니다. |
 
 ## 작업 생성
 
@@ -204,7 +204,7 @@ GET /bulk/v1/activities/export/{exportId}/status.json
 
 상태 필드는 다음 값 중 하나로 응답할 수 있습니다.
 
-- 생성일
+- 생성됨
 - 대기열에 추가됨
 - 처리 중
 - 취소됨
@@ -231,7 +231,7 @@ marketoGUID,leadId,activityDate,activityTypeId,campaignId,primaryAttributeValueI
 783961924,5316669,2022-02-13T14:27:21Z,104,11614,2333,Nurture Automation,"{""Program Member ID"":3240306,""Acquired By"":false,""Old Status"":""Not in Program"",""New Status ID"":27,""Success"":false,""New Status"":""Member"",""Old Status ID"":26}"
 ```
 
-추출된 데이터의 부분 검색과 재시작 친화적 검색을 지원하기 위해 파일 끝점은 선택적으로 `Range` 형식의 HTTP 헤더 `bytes`을(를) 지원합니다.  헤더가 설정되지 않은 경우 전체 콘텐츠가 반환됩니다.  Marketo [일괄 추출](bulk-extract.md)에서 범위 헤더 사용에 대한 자세한 내용을 읽을 수 있습니다.
+추출된 데이터의 부분 검색과 재시작 친화적 검색을 지원하기 위해 파일 끝점은 선택적으로 `bytes` 형식의 HTTP 헤더 `Range`을(를) 지원합니다.  헤더가 설정되지 않은 경우 전체 콘텐츠가 반환됩니다.  Marketo [일괄 추출](bulk-extract.md)에서 범위 헤더 사용에 대한 자세한 내용을 읽을 수 있습니다.
 
 ## 작업 취소
 

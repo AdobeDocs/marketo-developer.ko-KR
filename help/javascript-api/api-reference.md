@@ -3,9 +3,9 @@ title: Munchkin API 참조
 description: init, createTrackingCookie 및 munchkinFunction 메서드를 사용하여 Munchkin Javascript API를 사용하여 페이지 방문 횟수, 링크 클릭 수 및 사용자 지정 이벤트를 추적합니다.
 feature: Munchkin Tracking Code, Javascript
 exl-id: e9727691-5501-4223-bc98-2b4bacc33513
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
-source-wordcount: '424'
+source-wordcount: '426'
 ht-degree: 7%
 
 ---
@@ -56,7 +56,7 @@ Munchkin.createTrackingCookie(true);
 
 #### visitWebpage
 
-`munchkinFunction()`(으)로 `visitWebPage`을(를) 호출하면 현재 사용자에 대한 &#39;방문&#39; 활동이 Marketo으로 전송됩니다. 두 번째 인수의 데이터 개체와 함께 전송되는 URL 및 `querystring`을(를) 사용자 지정할 수 있습니다.
+`visitWebPage`(으)로 `munchkinFunction()`을(를) 호출하면 현재 사용자에 대한 &#39;방문&#39; 활동이 Marketo으로 전송됩니다. 두 번째 인수의 데이터 개체와 함께 전송되는 URL 및 `querystring`을(를) 사용자 지정할 수 있습니다.
 
 | 데이터 속성 이름 | 선택 사항/필수 | 유형 | 설명 |
 | --- | --- | --- | --- |
@@ -75,7 +75,7 @@ Munchkin.munchkinFunction('visitWebPage', {
 
 #### clickLink
 
-`munchkinFunction()`(으)로 `clickLink`을(를) 호출하면 현재 사용자에 대한 클릭 활동이 Marketo으로 전송됩니다. 데이터 개체에서 `href` 속성을 사용하여 클릭 URL을 사용자 지정할 수 있습니다.
+`clickLink`(으)로 `munchkinFunction()`을(를) 호출하면 현재 사용자에 대한 클릭 활동이 Marketo으로 전송됩니다. 데이터 개체에서 `href` 속성을 사용하여 클릭 URL을 사용자 지정할 수 있습니다.
 
 | 데이터 속성 이름 | 선택 사항/필수 | 유형 | 설명 |
 | --- | --- | --- | --- |

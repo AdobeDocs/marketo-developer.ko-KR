@@ -3,9 +3,9 @@ title: REST API
 feature: REST API
 description: Marketo REST API를 사용하고, API 사용자 및 LaunchPoint를 설정하고, 할당량 및 한도를 보고, 인증 헤더로 인증하고, 리드를 검색하는 방법에 대해 알아봅니다.
 exl-id: 4b9beaf0-fc04-41d7-b93a-a1ae3147ce67
-source-git-commit: a0901d2c67aa42368f03494dc8157d2ae93b3dce
+source-git-commit: 73fa4c85ecabd4cfd24bc6591aad11dc4e75010a
 workflow-type: tm+mt
-source-wordcount: '842'
+source-wordcount: '859'
 ht-degree: 2%
 
 ---
@@ -112,3 +112,5 @@ Authorization: Bearer cdf01657-110d-4155-99a7-f986b2ff13a0:int
 ## API 사용 정보
 
 각 API 사용자는 API 사용 보고서에 개별적으로 보고되므로, 사용자별로 웹 서비스를 분할하면 각 통합의 사용을 쉽게 고려할 수 있습니다. 인스턴스에 대한 API 호출 수가 제한을 초과하여 후속 호출이 실패하는 경우 이 방법을 사용하면 각 서비스의 볼륨을 고려하고 문제를 해결하는 방법을 평가할 수 있습니다. **[!UICONTROL Admin]** -> **[!UICONTROL Integration]** > **[!UICONTROL Web Services]**(으)로 이동하여 지난 7일 동안의 통화 수를 클릭하여 사용량을 확인하세요.
+
+일별 및 마지막 7일 사용 및 오류 통계를 반환하는 REST 끝점에 대해서는 [사용](usage.md)을 참조하십시오.

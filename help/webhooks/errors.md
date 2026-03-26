@@ -3,9 +3,9 @@ title: 오류수
 feature: Webhooks
 description: Marketo Webhook 오류 코드, 리드 필드를 업데이트하는 데 2xx 응답이 필요한 이유, Webhook에서 오류를 포착하고 처리하는 방법이 호출되는지 알아봅니다.
 exl-id: adce40c3-87b1-4f31-8995-eb64e8a72b55
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
-source-wordcount: '253'
+source-wordcount: '254'
 ht-degree: 1%
 
 ---

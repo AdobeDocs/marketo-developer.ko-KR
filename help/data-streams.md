@@ -2,10 +2,10 @@
 title: 데이터 스트림
 description: 거의 실시간 리드 활동 및 사용자 감사 이벤트를 활성화하는 Marketo Engage 데이터 스트림의 개요로, 성능 계층 고객을 위한 API 제한을 완화합니다.
 exl-id: 5617b6a5-ebc8-4d97-a290-e3b87f83e360
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
-source-wordcount: '1615'
-ht-degree: 1%
+source-wordcount: '1714'
+ht-degree: 3%
 
 ---
 
@@ -44,7 +44,7 @@ Dell 고객의 마케팅 조직은 적시에 집중하는 마케팅 캠페인에
 스트리밍된 활동 목록:
 
 | ObjectiveInReferral | ClickPredictiveContent | ReceivedForwardToFriendEmail |
-|--- |--- |--- |
+| --- | --- | --- |
 | 목록 추가 | ClickRTPCallToAction | ReceiveSalesEmail |
 | AddToGrooth | ClickSalesEmail | ReferToSocialApp |
 | AddToOpportunity | ClickSharedLink | RemoveFromList |
@@ -79,7 +79,7 @@ Dell 고객의 마케팅 조직은 적시에 집중하는 마케팅 캠페인에
 스트리밍된 사용자 감사 이벤트 목록:
 
 | 구성 요소 | 이벤트 유형 목록 |
-|--- |--- |
+| --- | --- |
 | 기본 프로그램 | 복제, 생성, 삭제, 채널 편집, 내보내기, 프로그램 설정 수정, 프로그램 토큰 수정, 이름 바꾸기 |
 | 이메일 | 승인, 복제, 생성, 삭제, 편집, 이동, 이름 변경, 승인 취소 |
 | 이메일 일괄 처리 프로그램 | 승인, 하위 업데이트, 복제, 만들기, 삭제, 편집, 채널 편집, 프로그램 일정 수정, 프로그램 설정 수정, 프로그램 토큰 수정, 이름 바꾸기, 승인 취소 |
@@ -139,7 +139,7 @@ Dell 고객의 마케팅 조직은 적시에 집중하는 마케팅 캠페인에
 알림 이벤트 목록:
 
 | 구성 요소 | 이벤트 유형 목록 |
-|--- |--- |
+| --- | --- |
 | 알림 | 캠페인 중단, 캠페인 실패, 육성(프로그램 소진), salesforce 동기화 실패, 테스트 그룹(A/B 테스트 결과), 웹 서비스(일일 할당량) |
 
 알림 이벤트의 예:
@@ -266,7 +266,7 @@ Adobe IO를 설정하려면 공개 설명서 섹션에서 [Adobe IO를 사용하
 
 ### Adobe I/O 설정
 
-[Adobe I/O Events 시작](https://developer.adobe.com/runtime/docs/guides/getting-started/)
+[Adobe I/O Events 시작하기 를 참조하십시오](https://developer.adobe.com/runtime/docs/guides/getting-started/)
 
 이 사용 사례에 대한 기본 지침은 [console.adobe.io](https://developer.adobe.com/console)부터 시작됩니다.
 

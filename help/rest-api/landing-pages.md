@@ -3,9 +3,9 @@ title: 랜딩 페이지
 feature: REST API, Landing Pages
 description: Marketo REST API를 사용하여 안내식 및 자유 형식 유형을 비롯한 랜딩 페이지를 쿼리하고, 만들고, 업데이트하고, 승인하고, 삭제하고, 복제합니다.
 exl-id: 2f986fb0-0a6b-469f-b199-1c526cd5a882
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
-source-wordcount: '1018'
+source-wordcount: '1221'
 ht-degree: 1%
 
 ---
@@ -178,7 +178,7 @@ name=MyNewLandingPage&folder={"type":"Program","id":1119}&template=57
 **섹션 유형**
 
 | 유형 | 값 |
-|--- |--- |
+| --- | --- |
 | DynamicContent | 세분화 ID. |
 | 양식 | 양식 ID. |
 | HTML | 텍스트 HTML 컨텐츠. |
@@ -274,7 +274,7 @@ segment=New Segment&value=New Content
 </head>
 ```
 
-자세한 내용은 [안내 랜딩 페이지 템플릿 만들기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template) 설명서의 &quot;편집 가능한 변수&quot; 섹션을 참조하십시오.
+자세한 내용은 [안내 랜딩 페이지 템플릿 만들기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template) 설명서의 &quot;편집 가능한 변수&quot; 섹션을 참조하십시오.
 
 ### 쿼리
 

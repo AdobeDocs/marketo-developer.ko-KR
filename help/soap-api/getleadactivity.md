@@ -3,7 +3,7 @@ title: getLeadActivity
 feature: SOAP
 description: getLeadActivity SOAP 를 사용하여 키별로 리드 활동 내역을 가져오고, 활동 유형을 필터링하고, 배치 크기를 설정하고, XML 예와 함께 스트림 위치를 통해 페이지를 매깁니다.
 exl-id: f38dee95-235f-4dc2-8839-61d6008132a5
-source-git-commit: d674384b3ab979df2322ece3f02155259d05431a
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
 source-wordcount: '366'
 ht-degree: 4%

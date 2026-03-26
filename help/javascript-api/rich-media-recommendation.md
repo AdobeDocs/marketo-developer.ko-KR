@@ -3,10 +3,10 @@ title: 리치 미디어 권장 사항
 description: Marketo 예측 컨텐츠 RTP 태그, template1 template2 template3 div, 채울 GET, SET를 사용하여 리치 미디어 권장 사항을 설정하여 범주를 구성합니다.
 feature: Javascript
 exl-id: ee92e46d-e529-40a2-a0d0-ee233916f004
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
 workflow-type: tm+mt
-source-wordcount: '831'
-ht-degree: 4%
+source-wordcount: '854'
+ht-degree: 3%
 
 ---
 
@@ -21,12 +21,12 @@ ht-degree: 4%
 1. 페이지 본문에서
    1. 템플릿을 표시할 위치에 템플릿 태그(div 클래스)를 배치합니다
 
-자세한 내용은 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media)를 참조하세요.
+자세한 내용은 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media)를 참조하세요.
 
 ## 템플릿 태그
 
 | 속성 | 선택 사항/필수 | 설명 |
-|---|---|---|
+| --- | --- | --- |
 | 클래스 | 필수 | 이 div HTML 요소가 RTP 권장 div라고 지정합니다. |
 | data-rtp-template-id | 필수 | 템플릿 ID입니다. 이렇게 하면 권장 사항의 맞춤이 결정됩니다. 가로 정렬에는 &quot;template1&quot;, 세로 정렬에는 &quot;template2&quot; 또는 제목과 설명만 포함하는 세로 정렬에는 &quot;template3&quot;을 사용합니다. 스크립트는 이 `div.Permissible` 값(template1, template2, template3)에 일치하는 템플릿을 삽입합니다. |
 
@@ -61,7 +61,7 @@ ht-degree: 4%
 `rtp('get', 'rcmd', 'richmedia');`
 
 | 매개변수 | 선택 사항/필수 | 유형 | 설명 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | &#39;get&#39; | 필수 | 문자열 | 메서드 작업. |
 | &#39;rcmd&#39; | 필수 | 문자열 | 메서드 이름입니다. |
 | &#39;richmedia&#39; | 필수 | 문자열 | 하위 메서드 이름. |
@@ -77,7 +77,7 @@ ht-degree: 4%
 `rtp('set', 'rcmd', 'richmedia', 'template_id', conf_obj);`
 
 | 매개변수 | 선택 사항/필수 | 유형 | 설명 |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | &#39;설정&#39; | 필수 | 문자열 | 메서드 작업. |
 | &#39;rcmd&#39; | 필수 | 문자열 | 메서드 이름입니다. |
 | &#39;richmedia&#39; | 필수 | 문자열 | 하위 메서드 이름. |
@@ -136,7 +136,7 @@ rtp("set", "rcmd", "richmedia",
 #### 구성 속성
 
 | 구성 | 예 | 설명 |
-|---|---|---|
+| --- | --- | --- |
 | rcmd.general.font.family | &quot;rcmd.general.font.family&quot; : &quot;arial&quot; | 템플릿의 모든 텍스트에 대한 글꼴 모음을 변경합니다. 이 속성은 브라우저 유형별로 모든 CSS 값을 지원합니다. 사용자 정의 글꼴 패밀리가 페이지에 있는 경우 이를 사용할 수 있습니다. |
 | rcmd.content.background.color | &quot;rcmd.content.background.color&quot; : &quot;black&quot; | 템플릿 내부 상자의 배경색을 변경합니다. 이 속성은 브라우저 유형별로 모든 CSS 값을 지원합니다. |
 | rcmd.title.text | &quot;rcmd.title.text&quot; : &quot;권장 컨텐츠&quot; | 템플릿 제목을 변경합니다. |
