@@ -3,9 +3,9 @@ title: 자산
 feature: REST API
 description: ID 또는 이름별로 쿼리, 페이징으로 검색 및 폴더, 이메일, 양식, 템플릿, 파일, 토큰 만들기 또는 업데이트를 위한 Marketo Asset REST API의 개요입니다.
 exl-id: 4273a5b1-1904-46e8-b583-fc6f46b388d2
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 31a503b3892ed41b3defe3f4956cb5ee0c3d4c3e
 workflow-type: tm+mt
-source-wordcount: '894'
+source-wordcount: '898'
 ht-degree: 2%
 
 ---
@@ -22,6 +22,7 @@ Marketo 자산은 다음과 같습니다.
 - 프로그램
 - 이메일
 - 이메일 템플릿
+- 조각
 - 랜딩 페이지
 - 랜딩 페이지 템플릿
 - 스니펫

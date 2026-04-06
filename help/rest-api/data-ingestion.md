@@ -3,9 +3,9 @@ title: 데이터 수집
 feature: REST API, Dynamic Content
 description: 개인, 사용자 지정 개체, 회사 및 프로그램 구성원의 대량, 짧은 지연 시간 수집을 위해 Marketo 데이터 수집 API를 사용하십시오.
 exl-id: 1d501916-53ac-42d8-a804-abb4ab01c7e8
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+source-git-commit: 6dc068f92d5b0c94035ca484fd1508dfe87bbd76
 workflow-type: tm+mt
-source-wordcount: '1786'
+source-wordcount: '1789'
 ht-degree: 13%
 
 ---
@@ -37,7 +37,7 @@ ht-degree: 13%
 | 엔드포인트 | 사용 권한 |
 | --- | --- |
 | 개인 | 리드 읽기-쓰기 |
-| 사용자 지정 개체 | 사용자 지정 개체 읽기-쓰기 |
+| 사용자 정의 오브젝트 | 사용자 지정 개체 읽기-쓰기 |
 | 회사 | 읽기-쓰기 회사 |
 | 프로그램 구성원 | 리드 읽기-쓰기 |
 
@@ -46,7 +46,7 @@ ht-degree: 13%
 | 오브젝트 유형 | 지원되는 작업 |
 | --- | --- |
 | 개인 | 업데이트(삽입 또는 업데이트) |
-| 사용자 지정 개체 | 업데이트(삽입 또는 업데이트) |
+| 사용자 정의 오브젝트 | 업데이트(삽입 또는 업데이트) |
 | 회사 | 동기화(`createOnly`, `updateOnly`, `createOrUpdate`) |
 | 프로그램 구성원 | 동기화(업데이트 상태), 삭제(프로그램에서 제거) |
 
@@ -116,7 +116,7 @@ Date: Wed, 18 Oct 2023 18:56:49 GMT
 
 ### 오류
 
-호출에서 오류가 발생하면 추가 오류 세부 정보가 있는 응답 본문과 함께 비202 상태가 반환됩니다.  응답 본문은 application/json이며 member error_code 및 message가 있는 단일 개체를 포함합니다.
+호출에서 오류가 발생하면 추가 오류 세부 정보가 있는 응답 본문과 함께 비202 상태가 반환됩니다. 응답 본문은 `application/json`이며 구성원 `error_code` 및 `message`이(가) 있는 단일 개체를 포함합니다.
 
 다음은 Adobe Developer Gateway에서 재사용되는 오류 코드입니다.
 
@@ -139,7 +139,16 @@ Date: Wed, 18 Oct 2023 18:56:49 GMT
 
 ## 재시도
 
-일시적인 오류가 감지되면 서비스는 작업을 세 번 다시 시도합니다.  첫 번째 재시도는 5분의 대기 시간 후 발생하며, 두 번째는 30분 후 발생하며, 마지막으로 세 번째는 30분 후 발생합니다.  재시도는 주로 종속 서비스가 시간 초과되거나 일시적으로 사용할 수 없을 때 다양한 이유로 발생합니다.
+일시적인 오류가 감지되면 서비스는 작업을 다시 시도합니다. 재시도는 주로 종속 서비스가 시간 초과되거나 일시적으로 사용할 수 없을 때 다양한 이유로 발생합니다.
+
+재시도 간격:
+
+* 초기 작업 및 첫 번째 재시도 : 5분
+* 1일과 2일 : 15분
+* 2일과 3일 : 20분
+* 3일과 4일 : 20분
+* 4일과 5일 : 2시간
+* 5번째 재시도 후 -> 3시간
 
 ## 엔드포인트
 
@@ -166,7 +175,7 @@ Date: Wed, 18 Oct 2023 18:56:49 GMT
 | --- | --- | --- | --- | --- |
 | `priority` | 문자열 | 아니요 | 요청의 우선 순위: 보통 또는 높음 | 표준 |
 | `partitionName` | 문자열 | 아니요 | 개인 파티션 이름 | 기본 |
-| `dedupeFields` | 오브젝트 | 아니요 | 중복을 제거할 속성입니다. 하나 또는 두 개의 속성 이름이 허용됩니다. <br/> AND 작업에는 두 가지 속성이 사용됩니다. 예를 들어 `email`과(와) `firstName`이(가) 모두 지정된 경우 AND 작업을 사용하여 사람을 찾는 데 모두 사용됩니다. <br/>지원되는 특성: `id`, `email`, `sfdcAccountId`, `sfdcContactId`, `sfdcLeadId` `sfdcLeadOwnerId`, 사용자 지정 특성(&quot;문자열&quot; 및 &quot;정수&quot; 유형만 해당), `email` |  |
+| `dedupeFields` | 오브젝트 | 아니요 | 중복을 제거할 속성입니다. 하나 또는 두 개의 속성 이름이 허용됩니다. <br/> AND 작업에는 두 가지 속성이 사용됩니다. 예를 들어 `email`과(와) `firstName`이(가) 모두 지정된 경우 AND 작업을 사용하여 사람을 찾는 데 모두 사용됩니다. <br/>지원되는 특성: `id`, `email`, `sfdcAccountId`, `sfdcContactId`, `sfdcLeadId` `sfdcLeadOwnerId`, 사용자 지정 특성(&quot;string&quot; 및 &quot;integer&quot; 형식만 해당), `email` |  |
 | `persons` | 개체 배열 | 예 | 개인용 속성 이름-값 쌍 목록 | - |
 
 필요한 권한은 `Read-Write Lead`입니다.
@@ -214,7 +223,7 @@ Date: Wed, 18 Oct 2023 18:56:49 GMT
 `HTTP/1.1 202`
 `X-Request-ID: WOUBf3fHJNU6sTmJqLL281lOmAEpMZFw`
 
-### 사용자 지정 개체
+### 사용자 정의 오브젝트
 
 사용자 지정 개체 레코드를 업데이트하는 데 사용되는 끝점입니다.
 
@@ -239,7 +248,7 @@ Date: Wed, 18 Oct 2023 18:56:49 GMT
 
 필요한 권한은 `Read-Write Custom Object`입니다.
 
-개인에 대한 링크 필드가 요청에 지정되어 있고 해당 개인이 존재하지 않는 경우 몇 번의 재시도가 발생합니다. 재시도 기간(65분) 동안 해당 개인이 추가되면 성공적으로 갱신됩니다. 예를 들어 링크 필드가 사용자에 대한 이메일이고 개인이 존재하지 않는 경우 재시도가 발생합니다.
+개인에 대한 링크 필드가 요청에 지정되어 있고 해당 개인이 존재하지 않는 경우 몇 번의 재시도가 발생합니다. 재시도 기간(65분) 동안 해당 개인이 추가되면 성공적으로 갱신됩니다. 예를 들어, 연결 필드가 사용자에 대해 `email`이고 Person이 없는 경우 다시 시도됩니다.
 
 ### 사용자 지정 개체 예
 
@@ -380,7 +389,7 @@ Date: Wed, 18 Oct 2023 18:56:49 GMT
 | --- | --- |
 | 액션 | `createOnly`, `updateOnly`, `createOrUpdate` 중 하나여야 합니다. 대/소문자를 구분합니다. |
 | 중복 제거 기준 | `dedupeFields` 또는 `idField`이어야 합니다(대/소문자 구분 안 함). 기본값은 `dedupeFields`입니다. |
-| dedupeBy + 작업 | `createOnly` 및 `createOrUpdate`은(는) `dedupeFields`만 허용합니다. `updateOnly` `dedupeFields`과(와) `idField`을(를) 모두 허용합니다. |
+| dedupeBy + 작업 | `createOnly` 및 `createOrUpdate`은(는) `dedupeFields`만 허용합니다. `updateOnly`은(는) `dedupeFields`과(와) `idField`을(를) 모두 허용합니다. |
 | `dedupeBy=dedupeFields`일 때 | 각 회사에 `externalCompanyId`이(가) 있어야 합니다. 필드 `id`이(가) 없어야 합니다. |
 | `dedupeBy=idField`일 때 | 각 회사에 `id`이(가) 있어야 합니다. 필드 `externalCompanyId`이(가) 없어야 합니다. |
 | `input` / `companies` | Null이거나 비워 둘 수 없습니다. |

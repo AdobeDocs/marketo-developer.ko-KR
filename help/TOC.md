@@ -5,10 +5,10 @@ breadcrumb-title: '[!DNL Marketo] 개발자 안내서'
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 73fa4c85ecabd4cfd24bc6591aad11dc4e75010a
+source-git-commit: 6dc068f92d5b0c94035ca484fd1508dfe87bbd76
 workflow-type: tm+mt
-source-wordcount: '277'
-ht-degree: 29%
+source-wordcount: '284'
+ht-degree: 30%
 
 ---
 
@@ -34,7 +34,7 @@ ht-degree: 29%
    - [트리거](javascript-api/triggers.md)
    - [웹 개인화](javascript-api/web-personalization.md)
 - 모바일 {#mobile}
-   - [&#x200B; [!DNL Adobe Launch] 확장 설치](mobile/adobe-launch-extension-installation.md)
+   - [ [!DNL Adobe Launch] 확장 설치](mobile/adobe-launch-extension-installation.md)
    - [[!DNL Adobe Launch] 확장](mobile/adobe-launch-extension.md)
    - [고급 보안 모드](mobile/advanced-security-access-mode.md)
    - [사용자 지정 작업](mobile/custom-actions.md)
@@ -54,10 +54,13 @@ ht-degree: 29%
       - [자산](rest-api/assets.md)
       - [동적 콘텐츠](rest-api/dynamic-content.md)
       - [이메일](rest-api/emails.md)
+      - [이메일(신규)](rest-api/emails-new.md)
       - [이메일 템플릿](rest-api/email-templates.md)
+      - [이메일 템플릿(신규)](rest-api/email-templates-new.md)
       - [파일](rest-api/files.md)
       - [폴더](rest-api/folders.md)
       - [양식](rest-api/forms.md)
+      - [조각(신규)](rest-api/fragments.md)
       - [랜딩 페이지](rest-api/landing-pages.md)
       - [랜딩 페이지 리디렉션 규칙](rest-api/landing-page-redirect-rules.md)
       - [랜딩 페이지 템플릿](rest-api/landing-page-templates.md)
@@ -91,7 +94,7 @@ ht-degree: 29%
    - 리드 데이터베이스 {#lead-database}
       - [활동](rest-api/activities.md)
       - [회사](rest-api/companies.md)
-      - [사용자 지정 개체](rest-api/custom-objects.md)
+      - [사용자 정의 오브젝트](rest-api/custom-objects.md)
       - [필드 목록](rest-api/fields.md)
       - [필드 유형](rest-api/field-types.md)
       - [리드 데이터베이스](rest-api/lead-database.md)
@@ -122,8 +125,8 @@ ht-degree: 29%
       - [[!DNL getCampaignsForSource]](soap-api/getcampaignsforsource.md)
       - [[!DNL requestCampaign]](soap-api/requestcampaign.md)
       - [[!DNL scheduleCampaign]](soap-api/schedulecampaign.md)
-   - 사용자 지정 개체 {#custom-objects}
-      - [사용자 지정 개체](soap-api/custom-objects.md)
+   - 사용자 정의 오브젝트 {#custom-objects}
+      - [사용자 정의 오브젝트](soap-api/custom-objects.md)
       - [[!DNL deleteCustomObjects]](soap-api/deletecustomobjects.md)
       - [[!DNL getCustomObjects]](soap-api/getcustomobjects.md)
       - [[!DNL syncCustomObjects]](soap-api/synccustomobjects.md)

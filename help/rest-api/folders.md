@@ -3,9 +3,9 @@ title: 폴더
 feature: REST API
 description: 만들기, 업데이트, 삭제, ID 및 이름별 쿼리, 루트, 작업 공간, maxDepth 및 페이지 매김을 사용하여 벌크 찾아보기 등에 대한 Marketo REST API 안내서.
 exl-id: 4b55c256-ef0a-42b4-9548-ff8a4106f064
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 31a503b3892ed41b3defe3f4956cb5ee0c3d4c3e
 workflow-type: tm+mt
-source-wordcount: '1025'
+source-wordcount: '1099'
 ht-degree: 1%
 
 ---
@@ -59,7 +59,7 @@ GET /rest/asset/v1/folder/{id}.json?type=Folder
 }
 ```
 
-형식 매개 변수는 필수이며 &quot;Folder&quot; 또는 &quot;Program&quot; 중 하나여야 합니다.  유형은 폴더 ID 또는 프로그램 ID에 대해 폴더 조회가 수행되는지 여부를 나타냅니다. 이 끝점의 경우 결과 배열에 단일 레코드만 반환됩니다. 응답에서 folderType 매개 변수를 확인합니다. 이는 여러 유형의 폴더를 나타낼 수 있습니다. Marketo 활동 폴더에는 다양한 유형의 에셋을 포함할 수 있는 마케팅 폴더 또는 프로그램 유형이 있지만 Design Studio 폴더에는 보유할 수 있는 에셋 유형에 해당하는 유형이 있습니다. 예를 들어 folderType이 &quot;Email&quot;인 폴더에는 Email 또는 folderType의 Email 또는 Email Template이 있을 수 있는 기타 하위 폴더만 포함될 수 있습니다. 유형은 다음과 같습니다.
+형식 매개 변수는 필수이며 &quot;Folder&quot; 또는 &quot;Program&quot; 중 하나여야 합니다.  유형은 폴더 ID 또는 프로그램 ID에 대해 폴더 조회가 수행되는지 여부를 나타냅니다. 이 끝점의 경우 결과 배열에 단일 레코드만 반환됩니다. 응답에서 `folderType` 매개 변수를 확인합니다. 이는 여러 유형의 폴더를 나타낼 수 있습니다. Marketo 활동 폴더에는 다양한 유형의 에셋을 포함할 수 있는 마케팅 폴더 또는 프로그램 유형이 있지만 Design Studio 폴더에는 보유할 수 있는 에셋 유형에 해당하는 유형이 있습니다. 예를 들어, `folderType`의 &quot;이메일&quot;이 있는 폴더에는 `folderType`의 이메일 또는 이메일 템플릿을 포함할 수 있는 이메일 또는 기타 하위 폴더만 포함될 수 있습니다. 유형은 다음과 같습니다.
 
 - 이메일
 - 이메일 템플릿

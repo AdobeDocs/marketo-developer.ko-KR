@@ -3,9 +3,9 @@ title: 푸시 알림
 feature: Mobile Marketing
 description: APNs 인증서 및 Xcode 설정에서 Marketo을 사용한 iOS 푸시 알림, Marketo SDK 통합, 토큰 등록 및 처리에 대한 안내서입니다.
 exl-id: 41d657d8-9eea-4314-ab24-fd4cb2be7f61
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 9002bcd494ba125fdc7d3ef5f02385465b6eb5a6
 workflow-type: tm+mt
-source-wordcount: '1344'
+source-wordcount: '1338'
 ht-degree: 0%
 
 ---
@@ -32,7 +32,7 @@ ht-degree: 0%
 1. 앱 빌드를 사용 중인 응용 프로그램 식별자를 선택합니다.![](assets/push-appid.png)
 1. 푸시 인증서를 생성하려면 CSR을 만들고 업로드하십시오. ![](assets/push-ssl.png)
 1. 로컬 컴퓨터에 인증서를 다운로드하고 두 번 클릭하여 설치합니다. ![](assets/certificate-download.png)
-1. &quot;키체인 액세스&quot;를 열고 인증서를 마우스 오른쪽 단추로 클릭한 다음 2개의 항목을 `.p12` 파일로 내보냅니다.![key_chain](assets/key-chain.png)
+1. &quot;키체인 액세스&quot;를 열고 인증서를 마우스 오른쪽 단추로 클릭한 다음 두 항목을 `.p12` 파일로 내보냅니다.![key_chain](assets/key-chain.png)
 1. Marketo Admin Console을 통해 이 파일을 업로드하여 알림을 구성합니다.
 1. 앱 프로비저닝 프로필을 업데이트합니다.
 
@@ -285,7 +285,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
    ```
 
-1. HTTPv1로 FCM 설정(Google은 2023년 6월 12일에 [더 이상 사용되지 않는 XMPP 프로토콜](https://firebase.google.com/docs/cloud-messaging/xmpp-server-ref)이 있으며 2024년 6월에 제거됩니다.)
+1. HTTPv1로 FCM 설정
 
 - Marketo 기능 관리자 ![](assets/feature-manager.png)에서 MME FCM HTTPv1 사용
    - MLM에서 앱에 대한 서비스 계정 Json 파일을 업로드합니다.
