@@ -14,7 +14,7 @@ ht-degree: 5%
 
 User Context JavaScript API는 사용자 및 방문자 수준 데이터를 여러 세션에 노출하여 기록 사용자 동작 및 데이터를 사용하는 고급 개인화 기능을 활성화합니다. API는 데이터 읽기를 넘어 고급 세분화 및 개인화 목적을 위해 의미 있는 데이터 및 이벤트를 RTP 백엔드에 푸시할 수 있는 사용자 지정 변수를 표시합니다. 추가 기능: [트리거](../javascript-api/triggers.md), [패턴 일치](../javascript-api/pattern-match.md).
 
-- User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
+- User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
 - 사용자 컨텍스트 API는 요청 시 Marketo 지원에서 활성화해야 하는 기능입니다. API가 활성화되면 RTP 전역 개체 아래의 userContext 개체가 표시됩니다.
 
 ## 사용자 컨텍스트 속성
