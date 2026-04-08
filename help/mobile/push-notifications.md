@@ -3,7 +3,7 @@ title: 푸시 알림
 feature: Mobile Marketing
 description: APNs 인증서 및 Xcode 설정에서 Marketo을 사용한 iOS 푸시 알림, Marketo SDK 통합, 토큰 등록 및 처리에 대한 안내서입니다.
 exl-id: 41d657d8-9eea-4314-ab24-fd4cb2be7f61
-source-git-commit: 9002bcd494ba125fdc7d3ef5f02385465b6eb5a6
+source-git-commit: 14ca3ca1f1aa07bb3e54802003190a4a2b4fbcb9
 workflow-type: tm+mt
 source-wordcount: '1338'
 ht-degree: 0%
@@ -24,7 +24,7 @@ ht-degree: 0%
 
 ### Apple 개발자 계정에서 푸시 알림 구성
 
-1. Apple 개발자 [구성원 센터](http://developer.apple.com/membercenter)에 로그인합니다.
+1. Apple 개발자 [구성원 센터](https://developer.apple.com/membercenter)에 로그인합니다.
 1. 인증서, 식별자 및 프로필 을 클릭합니다.
 1. &quot;iOS, tvOS, watchOS&quot; 아래의 &quot;Certificates->All&quot; 폴더를 클릭합니다.
 1. 인증서 ![](assets/certificates-plus.png) 옆의 왼쪽 상단 화면에서 &quot;+&quot;를 선택합니다.
