@@ -3,7 +3,7 @@ title: request캠페인
 feature: SOAP, Smart Campaigns
 description: 매개 변수 세트, 토큰 처리, 100개의 리드 제한, XML 요청 및 PHP Java 예제를 포함하여 SOAP requestCampaign을 통해 Marketo Smart Campaign에서 리드를 실행합니다.
 exl-id: b5367eb9-4f4c-4e1d-8b6d-36de8f134f0e
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 74964e90ddc68a611706afcad1f6016d05b060d6
 workflow-type: tm+mt
 source-wordcount: '298'
 ht-degree: 3%
@@ -29,7 +29,7 @@ ht-degree: 3%
 | campaignName | campaignId가 있는 경우 선택 사항입니다. `campaignName`, programName 및 programTokenList로 설정된 경우 선택 사항입니다. | 캠페인 이름 |
 | programName | campaignId가 있는 경우 선택 사항입니다. `campaignName`, programName 및 programTokenList로 설정된 경우 선택 사항입니다. | 프로그램 이름 |
 | 프로그램 토큰 목록 | campaignId가 있는 경우 선택 사항입니다. 그렇지 않으면 `campaignName`, `programName` 및 `programTokenList`(으)로 설정된 경우 필요합니다. | 캠페인에 사용할 토큰 배열입니다. 토큰을 지정할 때 programName 및 `campaignName`이(가) 필요합니다. |
-| programTokenList->attrib->name | 선택 사항입니다 | 값을 전달할 프로그램 토큰의 이름입니다. 예: {{my.message}} |
+| programTokenList->attrib->name | 선택 사항입니다 | 값을 전달할 프로그램 토큰의 이름입니다. 예: `{{my.message}}` |
 | programTokenList->attrib->value | 선택 사항입니다 | 지정된 토큰 이름의 값입니다. |
 
 ## 요청 XML
