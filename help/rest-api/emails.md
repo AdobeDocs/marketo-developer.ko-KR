@@ -14,13 +14,13 @@ ht-degree: 1%
 
 [전자 메일 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails) 전자 메일 자산을 조작하기 위해 전체 REST 끝점 집합이 제공됩니다.
 
-참고: [Marketo Predictive Content](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/predictive-content/working-with-predictive-content/understanding-predictive-content)을(를) 사용하는 경우 예측 콘텐츠가 포함된 이메일을 참조하는 경우 다음 끝점이 실패합니다. [이메일 콘텐츠 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailContentByIdUsingGET), [이메일 콘텐츠 업데이트 섹션](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateEmailComponentContentUsingPOST), [이메일 초안 승인](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/approveDraftUsingPOST). 호출은 709 오류 코드와 해당 오류 메시지를 반환합니다.
+참고: [Marketo Predictive Content](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/predictive-content/working-with-predictive-content/understanding-predictive-content)을(를) 사용하는 경우 예측 콘텐츠가 포함된 이메일을 참조하는 경우 다음 끝점이 실패합니다. [이메일 콘텐츠 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailContentByIdUsingGET), [이메일 콘텐츠 업데이트 섹션](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/updateEmailComponentContentUsingPOST), [이메일 초안 승인](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/approveDraftUsingPOST). 호출은 709 오류 코드와 해당 오류 메시지를 반환합니다.
 
 ## 쿼리
 
 전자 메일의 쿼리 패턴은 템플릿의 쿼리 패턴과 동일하여 [id](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByIdUsingGET), [이름](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByNameUsingGET) 및 [찾아보기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailUsingGET)와(과) 찾아보기 및 이름 API가 있는 폴더를 기준으로 필터링을 허용합니다.
 
-참고: 전자 메일이 [A/B 테스트](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/email-programs/email-program-actions/email-test-a-b-test/add-an-a-b-test)를 사용하는 전자 메일 프로그램의 일부인 경우 [Id로 전자 메일 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByIdUsingGET), [이름별로 전자 메일 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByNameUsingGET), [전자 메일 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailUsingGET) 끝점을 사용하여 해당 전자 메일을 쿼리할 수 없습니다. 호출은 성공을 나타내지만 다음 경고를 포함합니다. &quot;지정된 검색 기준에 대한 에셋을 찾을 수 없습니다.&quot;
+참고: 전자 메일이 [A/B 테스트](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/email-programs/email-program-actions/email-test-a-b-test/add-an-a-b-test)를 사용하는 전자 메일 프로그램의 일부인 경우 [Id로 전자 메일 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByIdUsingGET), [이름별로 전자 메일 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailByNameUsingGET), [전자 메일 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailUsingGET) 끝점을 사용하여 해당 전자 메일을 쿼리할 수 없습니다. 호출은 성공을 나타내지만 다음 경고를 포함합니다. &quot;지정된 검색 기준에 대한 에셋을 찾을 수 없습니다.&quot;
 
 ### ID별
 
@@ -484,7 +484,7 @@ type=Text&value=<h1>Hello World!</h1>&textValue=Hello World!
 
 ## 모듈
 
-이메일 편집기 1.0에서 모듈은 템플릿에 정의된 이메일의 섹션입니다. 모듈은 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Modules)에서 설명한 대로 요소, 변수 및 기타 HTML 컨텐츠의 조합을 포함할 수 있습니다. Marketo은 이메일 내의 모듈 관리를 위한 API 세트를 제공합니다. HTTP POST 메서드가 필요한 모듈 관련 끝점의 경우 본문의 형식은 &quot;application/x-www-form-urlencoded&quot;(JSON이 아님)로 지정됩니다.
+이메일 편집기 1.0에서 모듈은 템플릿에 정의된 이메일의 섹션입니다. 모듈은 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Modules)에서 설명한 대로 요소, 변수 및 기타 HTML 컨텐츠의 조합을 포함할 수 있습니다. Marketo은 이메일 내의 모듈 관리를 위한 API 세트를 제공합니다. HTTP POST 메서드가 필요한 모듈 관련 끝점의 경우 본문의 형식은 &quot;application/x-www-form-urlencoded&quot;(JSON이 아님)로 지정됩니다.
 
 대부분의 모듈 관련 끝점에는 경로 매개 변수로 &quot;moduleId&quot;가 필요합니다. 모듈을 설명하는 문자열입니다. moduleIds가 [전자 메일 콘텐츠 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails/operation/getEmailContentByIdUsingGET) 끝점에 의해 &quot;htmlId&quot; 특성으로 반환됩니다(아래 [쿼리](#modules_query) 섹션 참조).
 
@@ -856,7 +856,7 @@ name=MarketoVideo
 
 ## 변수
 
-이메일 편집기 1.0에서는 변수를 사용하여 이메일의 요소에 대한 값을 저장합니다. 각 변수는 [여기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Variables)에 설명된 대로 Marketo 관련 구문을 HTML에 추가하여 정의합니다. Marketo은 이메일 내에서 변수를 관리하기 위한 API 세트를 제공합니다.
+이메일 편집기 1.0에서는 변수를 사용하여 이메일의 요소에 대한 값을 저장합니다. 각 변수는 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Variables)에 설명된 대로 Marketo 관련 구문을 HTML에 추가하여 정의합니다. Marketo은 이메일 내에서 변수를 관리하기 위한 API 세트를 제공합니다.
 
 ### 쿼리
 
