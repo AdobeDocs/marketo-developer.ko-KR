@@ -3,9 +3,9 @@ title: 스니펫
 feature: REST API, Snippets
 description: 스니펫용 Marketo Asset REST API로, ID별 쿼리를 다루고 상태 찾아보기, 콘텐츠 가져오기, HTML, 텍스트 및 동적 콘텐츠 만들기 및 업데이트.
 exl-id: 87901c29-ee59-4224-848d-3bd6a6c52718
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '456'
+source-wordcount: '511'
 ht-degree: 1%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 1%
 
 ### ID별
 
-```
+```http
 GET /rest/asset/v1/snippet/{id}.json?status=approved
 ```
 
@@ -52,7 +52,7 @@ GET /rest/asset/v1/snippet/{id}.json?status=approved
 
 ### 찾아보기
 
-```
+```http
 GET /rest/asset/v1/snippets.json?maxReturn=3
 ```
 
@@ -116,7 +116,7 @@ GET /rest/asset/v1/snippets.json?maxReturn=3
 
 지정된 코드 조각의 콘텐츠는 코드 조각 ID를 기반으로 검색할 수 있습니다.
 
-```
+```http
 GET /rest/asset/v1/snippet/{id}/content.json
 ```
 
@@ -145,15 +145,15 @@ GET /rest/asset/v1/snippet/{id}/content.json
 
 코드 조각은 [코드 조각 만들기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/createSnippetUsingPOST)를 호출하는 복잡한 자산 만들기 패턴을 따르며 해당 내용은 별도로 만들어지므로 첫 번째 호출은 선택적 설명과 함께 만들기 끝점에 대한 것이어야 합니다.   데이터는 JSON이 아닌 x-www-form-urlencoded로 전달됩니다.
 
-```
+```http
 POST /rest/asset/v1/snippets.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 name=Test Snippet 09 - deverly&folder={"id":395,"type":"Folder"}&description=This is a test snippet
 ```
 
@@ -185,15 +185,15 @@ name=Test Snippet 09 - deverly&folder={"id":395,"type":"Folder"}&description=Thi
 
 코드 조각의 컨텐츠를 추가하거나 바꾸는 작업은 ID로 수행됩니다. 컨텐츠는 텍스트, HTML 또는 DynamicContent 유형일 수 있습니다. 유형이 텍스트이면 컨텐츠 매개 변수는 일반 텍스트 엔드포인트이며, HTML이면 원하는 마크업 텍스트입니다. 유형이 DynamicContent로 설정된 경우 콘텐츠 매개 변수는 코드 조각과 연결할 세그먼테이션의 ID로 설정해야 합니다.
 
-```
+```http
 POST /rest/asset/v1/snippet/{id}/content.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 type=HTML&content=draft testUpdateSnippetContent1 HTML Content
 ```
 
@@ -213,15 +213,15 @@ type=HTML&content=draft testUpdateSnippetContent1 HTML Content
 
 [메타데이터 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/updateSnippetUsingPOST)도 ID로 수행됩니다. 이름과 설명만 업데이트할 수 있습니다.
 
-```
+```http
 POST /rest/asset/v1/snippet/{id}.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 name=Test Snippet&description=New Description
 ```
 
@@ -255,7 +255,7 @@ name=Test Snippet&description=New Description
 
 스니펫은 다이내믹 컨텐츠에 대한 표준 패턴을 따르지만, 하나의 전체 컨텐츠 섹션만 나타내므로 각 스니펫은 하나의 동적 섹션만 포함할 수 있으며, 사용된 세그먼테이션의 각 세그먼트에 대해 선택적으로 내부 섹션 목록이 포함됩니다. 코드 조각에 동적 콘텐츠 섹션이 하나만 있을 수 있으므로 동적 콘텐츠는 코드 조각 ID만으로 쿼리할 수 있습니다.
 
-```
+```http
 GET /rest/asset/v1/snippet/{id}/dynamicContent.json
 ```
 
@@ -312,7 +312,7 @@ GET /rest/asset/v1/snippet/{id}/dynamicContent.json
 
 ### 승인
 
-```
+```http
 POST /rest/asset/v1/snippet/{id}/approveDraft.json
 ```
 
@@ -346,7 +346,7 @@ POST /rest/asset/v1/snippet/{id}/approveDraft.json
 
 `unapprove` 끝점은 승인된 스니펫에서만 사용할 수 있습니다.
 
-```
+```http
 POST /rest/asset/v1/snippet/{id}/unapprove.json
 ```
 
@@ -380,7 +380,7 @@ POST /rest/asset/v1/snippet/{id}/unapprove.json
 
 버리기 위해서는 코드 조각이 초안 상태여야 합니다.  승인된 스니펫은 삭제할 수 없습니다.
 
-```
+```http
 POST /rest/asset/v1/snippet/{id}/discardDraft.json
 ```
 
@@ -402,15 +402,15 @@ POST /rest/asset/v1/snippet/{id}/discardDraft.json
 
 API를 사용하여 [코드 조각을 복제하는](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/cloneSnippetUsingPOST)은(는) 간단하며 필수 이름, 원래 코드 조각 및 폴더의 ID와 선택적 설명을 사용하여 표준 패턴을 따릅니다.  승인된 버전이 없으면 초안 버전이 복제됩니다.
 
-```
+```http
 POST /rest/asset/v1/snippet/{id}/clone.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 name=Test Snippet Clone 3 - deverly&folder={"id":395,"type":"Folder"}&description=This is a test snippet
 ```
 

@@ -3,18 +3,18 @@ title: 영업 담당자
 feature: REST API
 description: externalSalesPersonId를 사용하여 리드에 연결하고 쿼리, 업데이트 및 삭제를 수행하는 SFDC 또는 Dynamics 동기화를 통해 영업 담당자 레코드에 대한 Marketo REST API 안내서입니다.
 exl-id: f8ed5aa5-63c1-4c5b-8683-bf47eed1ea18
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '322'
+source-wordcount: '396'
 ht-degree: 0%
 
 ---
 
 # 영업 담당자
 
-[영업 사용자 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Sales-Persons)
+[영업 직원 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Sales-Persons)
 
-영업 담당자 API는 [SFDC 동기화](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync)가 활성화된 구독에 대한 읽기 전용 액세스입니다. 영업 사원은 가망 고객 레코드의 영업 담당자인 개인 레코드의 유형입니다. 각 잠재 고객 레코드에서 externalSalesPersonId 필드를 통해 잠재 고객 레코드와 연결됩니다. 잠재 고객이 채워진 externalSalesPersonId 필드로 영업 사원과 연결된 경우 Marketo의 해당 잠재 고객 레코드에 대해 해당 잠재 고객 소유자 조회 필드가 채워져 해당 필터 및 토큰을 사용할 수 있습니다.
+영업 담당자 API는 [SFDC 동기화](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync)가 활성화된 구독에 대한 읽기 전용 액세스입니다. 영업 사원은 가망 고객 레코드의 영업 담당자인 개인 레코드의 유형입니다. 각 잠재 고객 레코드에서 externalSalesPersonId 필드를 통해 잠재 고객 레코드와 연결됩니다. 잠재 고객이 채워진 externalSalesPersonId 필드로 영업 사원과 연결된 경우 Marketo의 해당 잠재 고객 레코드에 대해 해당 잠재 고객 소유자 조회 필드가 채워져 해당 필터 및 토큰을 사용할 수 있습니다.
 
 영업 직원은 [잠재 고객 동기화](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST) 끝점을 사용하고 externalSalesPersonId 특성을 전달하여 잠재 고객 레코드와 관련되어 있습니다.
 
@@ -28,7 +28,7 @@ ht-degree: 0%
 
 영업 사원 레코드 설명은 리드 데이터베이스 객체에 대한 표준 패턴을 따릅니다.
 
-```
+```http
 GET /rest/v1/salespersons/describe.json
 ```
 
@@ -101,7 +101,7 @@ GET /rest/v1/salespersons/describe.json
 
 단순 키에 표준 쿼리 패턴을 사용하는 영업 사원. 이 예에서는 externalSalesPersonId로 사용되는 사용자 이메일을 보여 줍니다. 기본적으로 쿼리는 반환된 레코드에 대해 채워지는 모든 필드를 반환합니다.
 
-```
+```http
 GET /rest/v1/salespersons.json?filterType=dedupeFields&filterValues=david@test.com,sam@test.com
 ```
 
@@ -132,7 +132,7 @@ GET /rest/v1/salespersons.json?filterType=dedupeFields&filterValues=david@test.c
 
 업데이트에 대한 패턴은 표준입니다.
 
-```
+```http
 POST /rest/v1/salespersons.json
 ```
 
@@ -185,7 +185,7 @@ POST /rest/v1/salespersons.json
 - 영업 사원이 활성 가망 고객과 연관된 경우
 - 영업 사원이 삭제된 회사와 연결된 경우
 
-```
+```http
 POST /rest/v1/salespersons/delete.json
 ```
 

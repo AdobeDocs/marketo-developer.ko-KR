@@ -3,7 +3,7 @@ title: 명명된 계정 목록
 feature: REST API
 description: 쿼리, 만들기, 업데이트 및 삭제를 위한 권한, 필드, 필터링 및 엔드포인트를 포함하여 REST API를 사용하여 Marketo 명명된 계정 목록을 관리하는 방법을 알아봅니다.
 exl-id: 98f42780-8329-42fb-9cd8-58e5dbea3809
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '746'
 ht-degree: 2%
@@ -14,7 +14,7 @@ ht-degree: 2%
 
 [명명된 계정 목록 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Account-Lists)
 
-Marketo의 [명명된 계정 목록](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/target-account-management/target/account-lists)은(는) 명명된 계정의 컬렉션을 나타냅니다. 분류, 데이터 보강 및 스마트 캠페인 필터링을 포함하여 다양한 경우에 사용할 수 있습니다. 명명된 계정 목록 API를 사용하면 이러한 목록 에셋과 해당 멤버십을 원격으로 관리할 수 있습니다.
+Marketo의 [명명된 계정 목록](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/target-account-management/target/account-lists)은(는) 명명된 계정의 컬렉션을 나타냅니다. 분류, 데이터 보강 및 스마트 캠페인 필터링을 포함하여 다양한 경우에 사용할 수 있습니다. 명명된 계정 목록 API를 사용하면 이러한 목록 에셋과 해당 멤버십을 원격으로 관리할 수 있습니다.
 `Content`
 
 ## 권한
@@ -38,7 +38,7 @@ Marketo의 [명명된 계정 목록](https://experienceleague.adobe.com/ko/docs/
 
 계정 목록 쿼리는 간단하고 쉽습니다. 현재 명명된 계정 목록을 쿼리하기 위해 유효한 filterType은 &quot;dedupeFields&quot;와 &quot;idField&quot;뿐입니다. 필터링할 필드가 쿼리의 `filterType` 매개 변수에 설정되고 값은 `filterValues as`에 쉼표로 구분된 목록으로 설정됩니다. `nextPageToken` 및 `batchSize` 필터도 선택적 매개 변수입니다.
 
-```
+```http
 GET /rest/v1/namedAccountLists.json?filterType=idField&filterValues=dff23271-f996-47d7-984f-f2676861b5fb,dff23271-f996-47d7-984f-f2676861b5fc
 ```
 
@@ -77,7 +77,7 @@ GET /rest/v1/namedAccountLists.json?filterType=idField&filterValues=dff23271-f99
 
 작업이 `updateOnly`인 경우 선택적 `dedupeBy parameter`을(를) 지정할 수 있습니다.  허용되는 값은 &quot;dedupeFields&quot;(&quot;name&quot;에 해당함) 또는 &quot;idField&quot;(&quot;marketoGUID&quot;에 해당함)입니다.  `createOnly` 모드에서는 &quot;name&quot;만 `dedupeBy` 필드로 허용됩니다. 한 번에 최대 300개의 레코드를 제출할 수 있습니다.
 
-```
+```http
 POST /rest/v1/namedAccountLists.json
 ```
 
@@ -119,7 +119,7 @@ POST /rest/v1/namedAccountLists.json
 
 명명 계정 목록은 간단하게 삭제할 수 있으며, 목록의 `name` 또는 `marketoGUID`을(를) 기반으로 삭제할 수 있습니다. 사용할 키를 선택하려면 요청의 `deleteB` 멤버에서 이름에 &quot;dedupeFields&quot;를 전달하거나 marketoGUID에 &quot;idField&quot;를 전달합니다. 설정을 해제하면 dedupeFields가 기본값으로 설정됩니다. 한 번에 최대 300개의 레코드를 삭제할 수 있습니다.
 
-```
+```http
 POST /rest/v1/namedAccountLists/delete.json
 ```
 
@@ -183,7 +183,7 @@ POST /rest/v1/namedAccountLists/delete.json
 
 `field`이(가) 설정되지 않으면 `marketoGUI`,`nam`, `createdA` 및`updatedA`이(가) 반환됩니다. `batchSiz`의 최대 및 기본값은 300입니다.
 
-```
+```http
 GET /rest/v1/namedAccountList/{id}/namedAccounts.json
 ```
 
@@ -214,7 +214,7 @@ GET /rest/v1/namedAccountList/{id}/namedAccounts.json
 
 명명 계정은 명명 계정 목록에 쉽게 추가할 수 있습니다. 계정은 marketoGUID를 사용해야만 추가할 수 있습니다. 한 번에 최대 300개의 레코드를 추가할 수 있습니다.
 
-```
+```http
 POST /rest/v1/namedAccountList/{id}/namedAccounts.json
 ```
 
@@ -254,7 +254,7 @@ POST /rest/v1/namedAccountList/{id}/namedAccounts.json
 
 계정 목록에서 레코드를 제거하면 경로는 다르지만 동일한 인터페이스가 있으므로 삭제할 각 레코드에 대해 `marketoGUI`이(가) 필요합니다. 한 번에 최대 300개의 레코드를 제거할 수 있습니다.
 
-```
+```http
 POST /rest/v1/namedAccountList/{id}/namedAccounts/remove.json
 ```
 

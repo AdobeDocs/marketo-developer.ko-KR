@@ -3,7 +3,7 @@ title: 랜딩 페이지
 feature: REST API, Landing Pages
 description: Marketo REST API를 사용하여 안내식 및 자유 형식 유형을 비롯한 랜딩 페이지를 쿼리하고, 만들고, 업데이트하고, 승인하고, 삭제하고, 복제합니다.
 exl-id: 2f986fb0-0a6b-469f-b199-1c526cd5a882
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '1221'
 ht-degree: 1%
@@ -22,7 +22,7 @@ ht-degree: 1%
 
 랜딩 페이지의 콘텐츠를 쿼리하면 랜딩 페이지에서 사용할 수 있는 콘텐츠 섹션 목록이 반환됩니다. 콘텐츠를 업데이트하려면 페이지의 콘텐츠 목록에 섹션이 있어야 합니다.
 
-```
+```http
 GET /rest/asset/v1/landingPage/{id}/content.json
 ```
 
@@ -60,15 +60,15 @@ GET /rest/asset/v1/landingPage/{id}/content.json
 
 [랜딩 페이지 콘텐츠](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content) 끝점에 유효한 콘텐츠 형식은 richText, HTML, Form, Image, Rectangle, Snippet입니다.
 
-```
+```http
 POST rest/asset/v1/landingPages.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 name=createLandingPage&folder={"type": "Folder", "id": 11}&template=1&description=this is a test&workspace=default&title=test create&keywords=awesome&formPrefill=false
 ```
 
@@ -129,15 +129,15 @@ Marketo은 랜딩 페이지를 복제하는 간단한 방법을 제공합니다.
 
 선택적 `description` 매개 변수는 새 랜딩 페이지를 설명하는 데 사용됩니다.
 
-```
+```http
 POST /rest/asset/v1/landingPage/{id}/clone.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 name=MyNewLandingPage&folder={"type":"Program","id":1119}&template=57
 ```
 
@@ -195,7 +195,7 @@ name=MyNewLandingPage&folder={"type":"Program","id":1119}&template=57
 
 동적 콘텐츠 섹션을 만들려면 랜딩 페이지의 콘텐츠 목록에 동적 콘텐츠 섹션이 이미 있어야 합니다. [랜딩 페이지 콘텐츠 섹션 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/updateLandingPageContentUsingPOST) 끝점을 사용하여 형식을 &#39;DynamicContent&#39;로 설정해야 합니다. 섹션을 동적 컨텐츠로 설정하면 컨텐츠 섹션 내에 기본 동적 섹션이 만들어지고 이 섹션들은 모두 변환된 요소의 기본 유형을 상속합니다. 각 동적 섹션은 변환된 섹션의 컨텐츠도 상속합니다.
 
-```
+```http
 GET /rest/asset/v1/landingPage/{id}/dynamicContent/RVMtNDg=.json
 ```
 
@@ -231,15 +231,15 @@ GET /rest/asset/v1/landingPage/{id}/dynamicContent/RVMtNDg=.json
 
 각 개별 세그먼트에 대한 [콘텐츠 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/updateLandingPageDynamicContentUsingPOST)는 세그먼트 ID를 기반으로 수행됩니다.
 
-```
+```http
 POST /rest/asset/v1/landingPage/{id}/dynamicContent/{dynamicContentId}.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 segment=New Segment&value=New Content
 ```
 
@@ -274,13 +274,13 @@ segment=New Segment&value=New Content
 </head>
 ```
 
-자세한 내용은 [안내 랜딩 페이지 템플릿 만들기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template) 설명서의 &quot;편집 가능한 변수&quot; 섹션을 참조하십시오.
+자세한 내용은 [안내 랜딩 페이지 템플릿 만들기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template) 설명서의 &quot;편집 가능한 변수&quot; 섹션을 참조하십시오.
 
 ### 쿼리
 
 랜딩 페이지 ID를 전달하여 랜딩 페이지 변수 가져오기 엔드포인트에 대한 변수를 검색합니다.
 
-```
+```http
 GET /rest/asset/v1/landingPage/{id}/variables.json
 ```
 
@@ -316,7 +316,7 @@ GET /rest/asset/v1/landingPage/{id}/variables.json
 
 랜딩 페이지 ID, 변수 ID 및 변수 값을 랜딩 페이지 변수 업데이트 엔드포인트에 전달하여 안내식 랜딩 페이지에 대한 변수를 업데이트합니다.
 
-```
+```http
 POST /rest/asset/v1/landingPage/{id}/variable/{variableId}.json?value={newValue}
 ```
 
@@ -343,7 +343,7 @@ Marketo은 브라우저에 렌더링되는 대로 랜딩 페이지의 실시간 
 - 세그멘테이션: segmentationId 및 segmentId 특성이 포함된 JSON 개체 배열을 허용합니다. 설정되면, 에서는 해당 세그먼트와 일치하는 잠재 고객인 것처럼 랜딩 페이지를 미리 봅니다.
 - 리드 ID:  잠재 고객의 정수 ID를 허용합니다. 설정되면, 은 지정된 리드가 본 것처럼 랜딩 페이지를 미리 봅니다.
 
-```
+```http
 GET /rest/asset/v1/landingPage/{id}/fullContent.json?leadId=1001&segmentation=[{"segmentationId":1030,"segmentId":1103}]
 ```
 

@@ -3,16 +3,16 @@ title: 파일
 feature: REST API
 description: ID 또는 이름별로 Marketo REST API 파일 쿼리, 폴더 및 오프셋으로 검색, 다중 부분 업로드를 통해 만들기 또는 업데이트, insertOnly, MIME 유형, 스트리밍 없음 등에 대한 안내서입니다.
 exl-id: 17361cdc-2309-442c-803c-34ce187aee1a
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '289'
+source-wordcount: '347'
 ht-degree: 1%
 
 ---
 
 # 파일
 
-[파일 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files)
+[파일 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files)
 
 Marketo 구독을 통해 이미지, 스크립트, 문서 및 스타일 시트와 같은 임의의 파일을 저장할 수 있습니다. 이러한 모든 작업은 REST API를 통해 원격으로 작업할 수 있습니다. Marketo 구독에서 사용할 수 있는 스토리지는 대역폭 사용량이 많은 애플리케이션에 최적화되어 있지 않으므로 적절한 오디오 및 비디오 스트리밍 애플리케이션에 대체 요소를 사용해야 합니다.
 
@@ -22,7 +22,7 @@ Marketo 구독을 통해 이미지, 스크립트, 문서 및 스타일 시트와
 
 ### ID별
 
-```
+```http
 GET /rest/asset/v1/file/{id}.json
 ```
 
@@ -55,7 +55,7 @@ GET /rest/asset/v1/file/{id}.json
 
 필수 `name` 매개 변수를 사용하여 파일 이름을 지정하십시오.
 
-```
+```http
 GET /rest/asset/v1/file/byName.json?name=foo.png
 ```
 
@@ -93,7 +93,7 @@ GET /rest/asset/v1/file/byName.json?name=foo.png
 - offset - 항목 검색을 시작할 위치를 지정하는 정수(기본값은 0), maxReturn 매개 변수와 함께 사용할 수 있음
 - maxReturn - 반환할 최대 항목 수를 지정하는 정수(기본값은 20개, 최대값은 200개)
 
-```
+```http
 GET /rest/asset/v1/files.json?folder={"id":436, "type": "Folder"}&maxReturn=3
 ```
 
@@ -155,13 +155,13 @@ GET /rest/asset/v1/files.json?folder={"id":436, "type": "Folder"}&maxReturn=3
 
 ## 만들기 및 업데이트
 
-[다중 파트/양식 데이터 형식의 요청으로 &#x200B;](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files/operation/createFileUsingPOST)파일을 만듭니다. 최소한으로, 이름, 폴더 및 파일은 요청에 필요하며, 선택적 설명과 insertOnly 플래그는 만들기 호출이 같은 이름의 기존 파일을 업데이트하는 것을 방지합니다. file 매개 변수의 경우 name 매개 변수 외에 Content-Disposition 헤더에 &quot;filename&quot;이 필요합니다. 또한 파일에 대한 Content-Type 헤더를 전달해야 합니다. 이 헤더는 Marketo이 파일을 제공하는 데 사용할 MIME 유형입니다.
+[다중 파트/양식 데이터 형식의 요청으로 ](https://developer.adobe.com/marketo-apis/api/asset/#tag/Files/operation/createFileUsingPOST)파일을 만듭니다. 최소한으로, 이름, 폴더 및 파일은 요청에 필요하며, 선택적 설명과 insertOnly 플래그는 만들기 호출이 같은 이름의 기존 파일을 업데이트하는 것을 방지합니다. file 매개 변수의 경우 name 매개 변수 외에 Content-Disposition 헤더에 &quot;filename&quot;이 필요합니다. 또한 파일에 대한 Content-Type 헤더를 전달해야 합니다. 이 헤더는 Marketo이 파일을 제공하는 데 사용할 MIME 유형입니다.
 
-```
+```http
 POST /rest/asset/v1/files.json
 ```
 
-```
+```html
 ------WebKitFormBoundary2VyWOacQSupl4gUL
 Content-Disposition: form-data; name="file"; filename="marketo.html"
 Content-Type: text/html
@@ -210,11 +210,11 @@ This is a test file
 
 [파일 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/File-Contents/operation/updateContentUsingPOST)는 해당 ID를 기반으로 할 수 있습니다. 유일한 매개변수는 생성과 동일한 요구 사항이 있는 파일 매개변수입니다.
 
-```
+```http
 POST /rest/asset/v1/file/{id}/content.json
 ```
 
-```
+```html
 ------WebKitFormBoundary2VyWOacQSupl4gUL
 Content-Disposition: form-data; name="file"; filename="marketo.html"
 Content-Type: text/html

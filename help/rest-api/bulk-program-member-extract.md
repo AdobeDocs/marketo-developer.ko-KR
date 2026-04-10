@@ -3,9 +3,9 @@ title: 일괄 프로그램 멤버 추출
 feature: REST API
 description: Marketo 일괄 프로그램 멤버 추출 REST API를 사용하여 권한 및 필드 메타데이터와 함께 ETL, 데이터 웨어하우징 및 아카이브에 대한 대규모 멤버 레코드를 내보낼 수 있습니다.
 exl-id: 6e0a6bab-2807-429d-9c91-245076a34680
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '1284'
+source-wordcount: '1293'
 ht-degree: 2%
 
 ---
@@ -24,7 +24,7 @@ REST API의 벌크 프로그램 멤버 추출 세트는 Marketo에서 큰 프로
 
 [프로그램 구성원 설명](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Program-Members/operation/describeProgramMemberUsingGET2)은(는) 필드를 사용할 수 있는지 여부와 해당 필드에 대한 메타데이터의 기본 원본입니다. `name` 특성에 REST API 이름이 포함되어 있습니다.
 
-```
+```http
 GET /rest/v1/programs/members/describe.json
 ```
 
@@ -225,22 +225,22 @@ GET /rest/v1/programs/members/describe.json
     <tr>
       <td>programId</td>
       <td>정수</td>
-      <td>프로그램 ID를 허용합니다. 작업이 처리를 시작할 때 프로그램의 구성원인 액세스 가능한 모든 레코드를 반환합니다.<a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs">프로그램 가져오기</a> 끝점을 사용하여 프로그램 ID를 검색합니다. programIds 필터에는 사용할 수 없습니다.</td>
+      <td>프로그램 ID를 허용합니다. 작업은 작업 처리를 시작할 때 프로그램의 구성원인 액세스 가능한 모든 레코드를 반환합니다.<a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs">프로그램 가져오기</a> 끝점을 사용하여 프로그램 ID를 검색합니다.programIds 필터와 함께 사용할 수 없습니다.</td>
     </tr>
     <tr>
       <td>programIds</td>
       <td>배열[정수]</td>
-      <td>최대 10개의 프로그램 ID 배열을 허용합니다. 작업은 작업이 처리를 시작할 때 프로그램의 구성원인 액세스 가능한 모든 레코드를 반환합니다. 내보내기 파일에 첫 번째 필드로 "programId" 필드가 추가됩니다. 이 필드는 프로그램 멤버십 레코드가 추출된 프로그램을 식별합니다.<a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs">프로그램 가져오기</a> 끝점을 사용하여 프로그램 ID를 검색합니다. programId 필터에는 사용할 수 없습니다.</td>
+      <td>최대 10개의 프로그램 ID 배열을 허용합니다. 작업은 작업 처리를 시작할 때 프로그램의 구성원인 액세스 가능한 모든 레코드를 반환합니다.내보내기 파일에 첫 번째 필드로 추가 필드 "programId"가 추가됩니다. 이 필드는 프로그램 멤버십 레코드를 추출한 프로그램을 식별합니다.<a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs">프로그램 가져오기</a> 끝점을 사용하여 프로그램 ID를 검색합니다.programId 필터에는 사용할 수 없습니다.</td>
     </tr>
     <tr>
       <td>isExhausted</td>
       <td>부울</td>
-      <td><a href="https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/drip-nurturing/using-engagement-programs/people-who-have-exhausted-content">콘텐츠를 모두 사용한 사용자</a>의 프로그램 멤버십 레코드를 필터링하는 데 사용되는 부울을 허용합니다.</td>
+      <td><a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/drip-nurturing/using-engagement-programs/people-who-have-exhausted-content">콘텐츠를 모두 사용한 사용자</a>의 프로그램 멤버십 레코드를 필터링하는 데 사용되는 부울을 허용합니다.</td>
     </tr>
     <tr>
       <td>양육케이던스</td>
       <td>문자열</td>
-      <td>지정된 육성 케이던스에 대한 프로그램 멤버십 레코드를 필터링하는 데 사용되는 문자열을 허용합니다. 허용되는 값은 다음과 같습니다.
+      <td>지정된 육성 케이던스에 대한 프로그램 멤버십 레코드를 필터링하는 데 사용되는 문자열을 허용합니다.허용되는 값은 다음과 같습니다.
         <ul>
           <li>일시 중지 - 케이던스가 일시 중지됨</li>
           <li>표준 - 케이던스가 정상임</li>
@@ -249,7 +249,7 @@ GET /rest/v1/programs/members/describe.json
     <tr>
       <td>상태 이름</td>
       <td>Array[String]</td>
-      <td>프로그램 멤버 상태 이름의 배열을 허용합니다. 여러 상태 이름이 함께 OR됩니다.이 필터 유형의 작업은 프로그램 멤버 상태가 지정된 상태 이름과 일치하는 액세스 가능한 모든 레코드를 반환합니다. 기본 및 사용자 정의 상태 이름을 모두 사용할 수 있습니다. statusNames 필터를 'programIds' 필터와 함께 사용하면 각 프로그램에서 상태 이름과 일치하는 멤버십 레코드를 확인합니다. 프로그램에서 상태 이름을 찾을 수 없으면 "1003, Invalid Data" 오류가 반환됩니다.
+      <td>프로그램 멤버 상태 이름의 배열을 허용합니다. 여러 상태 이름이 함께 OR됩니다.이 필터 유형의 작업은 프로그램 멤버 상태가 지정된 상태 이름과 일치하는 액세스 가능한 모든 레코드를 반환합니다. 기본 및 사용자 정의 상태 이름을 모두 사용할 수 있습니다.statusNames 필터를 'programIds' 필터와 함께 사용하면 각 프로그램에서 상태가 상태 이름과 일치하는 멤버십 레코드를 확인합니다. 프로그램에서 상태 이름을 찾을 수 없으면 "1003, Invalid Data" 오류가 반환됩니다.
         <table>
           <tbody>
             <tr>
@@ -328,7 +328,7 @@ GET /rest/v1/programs/members/describe.json
 
 [내보내기 프로그램 구성원 작업 만들기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/createExportProgramMembersUsingPOST) 끝점을 사용하여 내보내기를 시작하기 전에 작업에 대한 매개 변수를 정의합니다. 프로그램 ID가 포함된 `filter`과(와) 내보내기에 필요한 `fields`을(를) 정의해야 합니다. 필요한 경우 파일의 `format` 및 `columnHeaderNames`을(를) 정의할 수 있습니다.
 
-```
+```http
 POST /bulk/v1/program/members/export/create.json
 ```
 
@@ -372,7 +372,7 @@ POST /bulk/v1/program/members/export/create.json
 
 작업이 생성되었음을 나타내는 상태 응답이 반환됩니다. 작업이 정의되고 생성되었지만 아직 시작되지 않았습니다. 이렇게 하려면 만들기 상태 응답의 `exportId`을(를) 사용하여 [Enqueue 내보내기 프로그램 구성원 작업](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/enqueueExportProgramMembersUsingPOST) 끝점을 호출해야 합니다.
 
-```
+```http
 POST /bulk/v1/program/members/export/{exportId}/enqueue.json
 ```
 
@@ -400,7 +400,7 @@ POST /bulk/v1/program/members/export/{exportId}/enqueue.json
 
 비동기 끝점이므로 작업을 만든 후 상태를 폴링하여 진행률을 확인해야 합니다. [내보내기 프로그램 구성원 작업 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/getExportLeadsStatusUsingGET) 끝점을 사용하여 폴링합니다. 상태는 60초마다 한 번만 업데이트되므로 이보다 낮은 폴링 빈도는 권장되지 않으며 거의 모든 경우에 여전히 과도합니다. 상태 필드는 생성됨, 대기 중, 처리 중, 취소됨, 완료됨, 실패 중 하나로 응답할 수 있습니다.
 
-```
+```http
 GET /bulk/v1/program/members/export/{exportId}/status.json
 ```
 
@@ -450,11 +450,11 @@ GET /bulk/v1/program/members/export/{exportId}/status.json
 
 응답에는 작업이 구성된 방식으로 포맷된 파일이 포함됩니다. 끝점이 파일의 내용에 응답합니다. 요청한 프로그램 구성원 필드가 비어 있으면(데이터 없음) `null`이(가) 내보내기 파일의 해당 필드에 배치됩니다.
 
-```
+```http
 GET /bulk/v1/program/members/export/{exportId}/file.json
 ```
 
-```
+```text
 firstName,lastName,email,Member Date,Program,Status,Lead Id,Success,leadCustomField01,leadCustomField02,pMCustomField01,pMCustomField02
 Meera,Reed,mree@housestark.com,2020-01-08T18:10:26Z,PMCF Program,On List,1789,false,Lead01_Value,Lead02_Value,PM01_Value,PM02_Value
 Jon,Umber,jumb@housestark.com,2020-01-08T18:10:26Z,PMCF Program,On List,1790,false,Lead01_Value,Lead02_Value,PM01_Value,PM02_Value
@@ -476,7 +476,7 @@ Septa,Mordane,smor@housestark.com,2020-01-08T18:10:26Z,PMCF Program,On List,1800
 
 작업이 잘못 구성되었거나 불필요하게 된 경우 [프로그램 구성원 작업 내보내기 취소](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/cancelExportProgramMembersUsingPOST) 끝점을 사용하여 작업을 쉽게 취소할 수 있습니다.
 
-```
+```http
 POST /bulk/v1/program/members/export/{exportId}/cancel.json
 ```
 

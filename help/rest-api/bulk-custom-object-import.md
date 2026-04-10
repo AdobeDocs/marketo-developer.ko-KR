@@ -3,9 +3,9 @@ title: 대량 사용자 지정 개체 가져오기
 feature: Custom Objects
 description: CSV, TSV 또는 SSV 파일을 사용하여 REST를 통해 Marketo 사용자 지정 개체를 대량 가져오는 방법에 대해 알아봅니다.
 exl-id: e795476c-14bc-4e8c-b611-1f0941a65825
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '866'
+source-wordcount: '952'
 ht-degree: 0%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 ## 사용자 지정 개체 예
 
-벌크 API를 사용하기 전에 먼저 Marketo 관리 UI를 사용하여 [사용자 지정 개체를 만들기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-objects/create-marketo-custom-objects)해야 합니다. 예를 들어 &quot;Color&quot;, &quot;Make&quot;, &quot;Model&quot; 및 &quot;VIN&quot; 필드가 있는 &quot;Car&quot; 사용자 지정 개체를 만들었다고 가정합니다. 다음은 사용자 지정 개체를 보여주는 관리자 UI 화면입니다. 중복 제거를 위해 VIN 필드를 사용했음을 알 수 있습니다. API 이름은 일괄 API 관련 끝점을 호출할 때 사용해야 하므로 강조 표시됩니다.
+벌크 API를 사용하기 전에 먼저 Marketo 관리 UI를 사용하여 [사용자 지정 개체를 만들기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-objects/create-marketo-custom-objects)해야 합니다. 예를 들어 &quot;Color&quot;, &quot;Make&quot;, &quot;Model&quot; 및 &quot;VIN&quot; 필드가 있는 &quot;Car&quot; 사용자 지정 개체를 만들었다고 가정합니다. 다음은 사용자 지정 개체를 보여주는 관리자 UI 화면입니다. 중복 제거를 위해 VIN 필드를 사용했음을 알 수 있습니다. API 이름은 일괄 API 관련 끝점을 호출할 때 사용해야 하므로 강조 표시됩니다.
 
 ![사용자 지정 개체 삽입](assets/bulk-insert-co-car-1.png)
 
@@ -34,7 +34,7 @@ ht-degree: 0%
 
 사용자 지정 개체 API 이름을 [사용자 지정 개체 설명](#describe) 끝점에 전달하여 프로그래밍 방식으로 API 이름을 검색할 수 있습니다.
 
-```
+```text
 /rest/v1/customobjects/{apiName}/describe.json
 ```
 
@@ -119,7 +119,7 @@ ht-degree: 0%
 
 이제 세 개의 &quot;Car&quot; 사용자 지정 개체 레코드를 가져오려고 한다고 가정합니다. 쉼표로 구분된 형식(CSV)을 사용하면 파일은 다음과 같이 표시될 수 있습니다.
 
-```
+```text
 color,make,model,vin
 red,bmw,2002,WBA4R7C55HK895912
 yellow,bmw,320i,WBA4R7C30HK896061
@@ -132,18 +132,18 @@ blue,bmw,325i,WBS3U9C52HP970604
 
 대량 가져오기 요청을 수행하려면 [사용자 지정 개체 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Identity/operation/identityUsingPOST) 끝점에 대한 경로에 사용자 지정 개체의 API 이름을 포함해야 합니다. 가져오기 파일의 이름을 참조하는 &quot;file&quot; 매개 변수와 가져오기 파일이 구분된 방법을 지정하는 &quot;format&quot; 매개 변수(&quot;csv&quot;, &quot;tsv&quot; 또는 &quot;ssv&quot;)도 포함해야 합니다.
 
-```
+```http
 POST /bulk/v1/customobjects/{apiName}/import.json?format=csv
 ```
 
-```
+```text
 Transfer-Encoding: chunked
 Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryXjWP6BP8Ciq6bPeo
 Content-Length: 290
 Host: <munchkinId>.mktorest.com
 ```
 
-```
+```text
 ------WebKitFormBoundaryXjWP6BP8Ciq6bPeo
 Content-Disposition: form-data; name="file"; filename="custom_object_import.csv"
 Content-Type: text/csv
@@ -175,13 +175,13 @@ blue,bmw,325i,WBS3U9C52HP970604
 
 대량 가져오기 요청을 복제하는 간단한 방법은 명령줄에서 curl을 사용하는 것입니다.
 
-```
+```bash
 curl -X POST -i -F format='csv' -F file='@custom_object_import.csv' -F access_token='<Access Token>' <REST API Endpoint URL>/bulk/v1/customobjects/car_c/import.json
 ```
 
 가져오기 파일 &quot;custom_object_import.csv&quot;에 다음이 포함되어 있는 경우:
 
-```
+```text
 color,make,model,vin
 red,bmw,2002,WBA4R7C55HK895912
 yellow,bmw,320i,WBA4R7C30HK896061
@@ -190,9 +190,9 @@ blue,bmw,325i,WBS3U9C52HP970604
 
 ## 폴링 작업 상태
 
-가져오기 작업이 생성되면 해당 상태를 쿼리해야 합니다. 가져오기 작업을 5-30초마다 폴링하는 것이 가장 좋습니다. 이렇게 하려면 `batchId`사용자 지정 개체 가져오기 상태 가져오기[&#x200B; 끝점에 대한 경로에 사용자 지정 개체의 API 이름과 &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectStatusUsingGET)을(를) 전달합니다.
+가져오기 작업이 생성되면 해당 상태를 쿼리해야 합니다. 가져오기 작업을 5-30초마다 폴링하는 것이 가장 좋습니다. 이렇게 하려면 [사용자 지정 개체 가져오기 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectStatusUsingGET) 끝점에 대한 경로에 사용자 지정 개체의 API 이름과 `batchId`을(를) 전달합니다.
 
-```
+```http
 GET /bulk/v1/customobjects/{apiName}/import/{batchId}/status.json
 ```
 
@@ -220,17 +220,17 @@ GET /bulk/v1/customobjects/{apiName}/import/{batchId}/status.json
 
 ## 실패
 
-`numOfRowsFailed`사용자 지정 개체 상태 가져오기[&#x200B; 응답에서 &#x200B;](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectStatusUsingGET) 특성으로 오류가 표시됩니다. numOfRowsFailed가 0보다 크면 해당 값은 발생한 실패 횟수를 나타냅니다. [사용자 지정 개체 가져오기 실패](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectFailuresUsingGET) 끝점을 호출하여 실패 세부 정보가 포함된 파일을 가져옵니다. 다시 경로에 사용자 지정 개체 API 이름과 `batchId`을(를) 전달해야 합니다. 오류 파일이 없으면 HTTP 404 상태 코드가 반환됩니다.
+[사용자 지정 개체 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectStatusUsingGET) 응답에서 `numOfRowsFailed` 특성으로 오류가 표시됩니다. numOfRowsFailed가 0보다 크면 해당 값은 발생한 실패 횟수를 나타냅니다. [사용자 지정 개체 가져오기 실패](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectFailuresUsingGET) 끝점을 호출하여 실패 세부 정보가 포함된 파일을 가져옵니다. 다시 경로에 사용자 지정 개체 API 이름과 `batchId`을(를) 전달해야 합니다. 오류 파일이 없으면 HTTP 404 상태 코드가 반환됩니다.
 
 예제를 계속 진행하여 헤더를 수정하고 &quot;vin&quot;을 &quot;vin&quot;으로 변경합니다(쉼표와 &quot;vin&quot; 사이에 공백을 추가).
 
-```
+```text
 color,make,model, vin
 ```
 
 다시 가져오고 상태를 확인하면 `numRowsFailed`: 3에 대한 이 응답이 표시됩니다. 이는 세 가지 실패를 나타냅니다.
 
-```
+```http
 GET /bulk/v1/customobjects/car_c/import/{batchId}/status.json
 ```
 
@@ -256,11 +256,11 @@ GET /bulk/v1/customobjects/car_c/import/{batchId}/status.json
 
 이제 Get Custom Object Failures 엔드포인트 호출을 수행하여 추가 실패 세부 정보를 가져옵니다.
 
-```
+```http
 GET /bulk/v1/customobjects/car_c/import/{batchId}/failures.json
 ```
 
-```
+```text
 color,make,model, vin,Import Failure Reason
 red,bmw,2002,WBA4R7C55HK895912,missing.dedupe.fields
 yellow,bmw,320i,WBA4R7C30HK896061,missing.dedupe.fields
@@ -273,6 +273,6 @@ blue,bmw,325i,WBS3U9C52HP970604,missing.dedupe.fields
 
 사용자 지정 개체 상태 가져오기 응답에서 `numOfRowsWithWarning` 특성에 경고가 표시됩니다. numOfRowsWithWarning이 0보다 크면 해당 값은 발생한 경고 수를 나타냅니다. [사용자 지정 개체 가져오기 경고](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectWarningsUsingGET) 끝점을 호출하여 경고 세부 정보가 있는 파일을 가져옵니다. 다시 경로에 사용자 지정 개체 API 이름과 `batchId`을(를) 전달해야 합니다. 경고 파일이 없으면 HTTP 404 상태 코드가 반환됩니다.
 
-```
+```http
 GET /bulk/v1/customobjects/car_c/import/{batchId}/warnings.json
 ```

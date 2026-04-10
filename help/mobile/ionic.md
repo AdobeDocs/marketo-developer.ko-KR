@@ -3,9 +3,9 @@ title: '[!DNL Ionic]'
 feature: Mobile Marketing
 description: Marketo Cordova 플러그인을 Ionic과 통합하고, 푸시 알림을 활성화하고, SDK을 초기화하고, 세션을 추적하고, 리드를 연결하는 단계별 안내서입니다.
 exl-id: 204e5fb4-c9d6-43a6-9d77-0b2a67ddbed3
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '620'
+source-wordcount: '663'
 ht-degree: 2%
 
 ---
@@ -16,8 +16,8 @@ ht-degree: 2%
 
 ## 사전 요구 사항
 
-1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin Id 얻기).
-1. 푸시 알림 설정([iOS](push-notifications.md) | [Android](push-notifications.md) ).
+1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin Id 얻기).
+1. 푸시 알림([iOS](push-notifications.md) | [Android](push-notifications.md) )을 설정합니다.
 1. [[!DNL Ionic]](https://ionicframework.com/getting-started/) 및 [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/)를 설치합니다.
 
 ## 설치 지침
@@ -54,7 +54,7 @@ ht-degree: 2%
 
 >[!TAB 목표 C]
 
-```
+```objectivec
 Marketo *sharedInstance = [Marketo sharedInstance];
 
 [sharedInstance trackPushNotification:launchOptions];
@@ -62,7 +62,7 @@ Marketo *sharedInstance = [Marketo sharedInstance];
 
 >[!TAB Swift]
 
-```
+```swift
 let sharedInstance: Marketo = Marketo.sharedInstance()
 
 sharedInstance.trackPushNotfication(launchOptions)
@@ -74,7 +74,7 @@ sharedInstance.trackPushNotfication(launchOptions)
 
 앱 시작 시 Marketo 프레임워크가 시작되도록 하려면 기본 JavaScript 파일의 `onDeviceReady` 함수 아래에 다음 코드를 추가하십시오.
 
-`ionicCordova` Cordova 앱에 대한 프레임워크 유형으로 [!DNL Ionic]을(를) 전달해야 합니다.
+[!DNL Ionic] Cordova 앱에 대한 프레임워크 유형으로 `ionicCordova`을(를) 전달해야 합니다.
 
 #### 구문
 

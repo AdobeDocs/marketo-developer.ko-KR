@@ -3,7 +3,7 @@ title: 조각
 feature: REST API
 description: Marketo Asset REST API를 사용하여 조각에 대한 종속성을 쿼리, 만들기, 업데이트, 복제, 삭제, 승인 및 검사합니다.
 exl-id: 9dd532d1-1dd7-4581-86dd-1943fab66cbb
-source-git-commit: 0e0a3e5a08e81f349044cbc327d1aba963ab30e4
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '272'
 ht-degree: 9%
@@ -36,7 +36,7 @@ x-app-type: <app-type>
 
 #### 요청
 
-```text
+```http
 GET /rest/asset/v2/fragment/{id}
 ```
 
@@ -68,7 +68,7 @@ todo: 표로 만들기
 
 #### 요청
 
-```text
+```http
 GET /rest/asset/v2/fragment/filter?workspaceId=1001&fragmentType=email&pageIndex=0&pageSize=20
 ```
 
@@ -98,7 +98,7 @@ JSON 페이로드를 전송하여 조각을 만듭니다. `name`, `appData` 및 
 
 ### 요청
 
-```text
+```http
 POST /rest/asset/v2/fragment
 Content-Type: application/json
 ```
@@ -155,7 +155,7 @@ Content-Type: application/json
 
 ### 요청
 
-```text
+```http
 POST /rest/asset/v2/fragment/{id}/update
 Content-Type: application/json
 ```
@@ -202,7 +202,7 @@ Content-Type: application/json
 
 ### 요청
 
-```text
+```http
 POST /rest/asset/v2/fragment/state/transition
 Content-Type: application/json
 ```
@@ -222,7 +222,7 @@ Content-Type: application/json
 
 ### 요청
 
-```text
+```http
 POST /rest/asset/v2/fragment/clone
 Content-Type: application/json
 ```
@@ -245,7 +245,7 @@ Content-Type: application/json
 
 ### 요청
 
-```text
+```http
 POST /rest/asset/v2/fragment/{id}/delete
 Content-Type: application/json
 ```
@@ -258,7 +258,7 @@ Content-Type: application/json
 
 ### 요청
 
-```text
+```http
 POST /rest/asset/v2/fragment/usedby
 Content-Type: application/json
 ```

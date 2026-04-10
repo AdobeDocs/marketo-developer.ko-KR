@@ -2,7 +2,8 @@
 title: 사용량
 feature: REST API
 description: 사용자당 카운트 및 오류 코드 합계를 포함하여 일별 및 마지막 7일 통계 엔드포인트로 Marketo REST API 사용 및 오류를 모니터링합니다.
-source-git-commit: 73fa4c85ecabd4cfd24bc6591aad11dc4e75010a
+exl-id: 935a00a4-1e1e-4b48-ae9c-72c5e578312a
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '393'
 ht-degree: 8%
@@ -32,7 +33,7 @@ ht-degree: 8%
 
 현재 날짜의 API 사용을 검색합니다.
 
-```
+```http
 GET /rest/v1/stats/usage.json
 ```
 
@@ -69,7 +70,7 @@ GET /rest/v1/stats/usage.json
 
 지난 7일 동안의 API 사용을 검색합니다. `result` 배열의 각 요소는 1일을 나타냅니다.
 
-```
+```http
 GET /rest/v1/stats/usage/last7days.json
 ```
 
@@ -77,7 +78,7 @@ GET /rest/v1/stats/usage/last7days.json
 
 현재 날짜의 API 오류를 검색합니다.
 
-```
+```http
 GET /rest/v1/stats/errors.json
 ```
 
@@ -114,7 +115,7 @@ GET /rest/v1/stats/errors.json
 
 지난 7일 동안의 API 오류를 검색합니다. `result` 배열의 각 요소는 1일을 나타냅니다.
 
-```
+```http
 GET /rest/v1/stats/errors/last7days.json
 ```
 

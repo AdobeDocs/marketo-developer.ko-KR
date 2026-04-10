@@ -3,7 +3,7 @@ title: 일괄 활동 추출
 feature: REST API
 description: Marketo 벌크 활동 REST API를 추출하여 31일 날짜 범위, 활동 및 ETL 및 CRM에 대한 기본 속성 필터를 사용하여 대용량 활동 데이터를 내보냅니다.
 exl-id: 6bdfa78e-bc5b-4eea-bcb0-e26e36cf6e19
-source-git-commit: b2b1027ccf8016c2e4c081753842a6febac832ec
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '1564'
 ht-degree: 3%
@@ -110,7 +110,7 @@ REST API의 벌크 활동 추출 세트는 Marketo에서 대량의 활동 데이
 
 레코드를 내보내려면 먼저 작업과 검색할 레코드 집합을 정의해야 합니다.  [내보내기 활동 만들기 작업](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/createExportActivitiesUsingPOST) 끝점을 사용하여 작업을 만듭니다.  활동을 내보낼 때 적용할 수 있는 기본 필터가 두 개 있습니다. 항상 필요한 `createdAt`과(와) 선택 사항인 `activityTypeIds`입니다.  `createdAt` 필터는 `startAt` 및 `endAt` 매개 변수(모두 datetime 필드)를 사용하여 활동이 만들어진 날짜 범위를 정의하는 데 사용됩니다. 이 매개 변수는 모두 가장 빠른 생성 날짜와 가장 최근 허용된 생성 날짜를 나타냅니다.  `activityTypeIds` 필터를 사용하여 특정 유형의 활동만 선택적으로 필터링할 수도 있습니다.  이 기능은 사용 사례와 관련이 없는 결과를 제거하는 데 유용합니다.
 
-```
+```http
 POST /bulk/v1/activities/export/create.json
 ```
 
@@ -149,7 +149,7 @@ POST /bulk/v1/activities/export/create.json
 
 이제 작업 상태가 &quot;생성됨&quot;이지만 아직 처리 큐에 있지 않습니다.  처리를 시작할 수 있도록 큐에 넣으려면 만들기 상태 응답에서 exportId를 사용하여 [큐 내보내기 활동 작업](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/enqueueExportActivitiesUsingPOST) 끝점을 호출합니다.
 
-```
+```http
 POST /bulk/v1/activities/export/{exportId}/enqueue.json
 ```
 
@@ -177,7 +177,7 @@ POST /bulk/v1/activities/export/{exportId}/enqueue.json
 
 Marketo의 벌크 활동 추출은 비동기 끝점이므로 작업 상태를 폴링하여 작업이 완료되는 시기를 확인해야 합니다.  다음과 같이 [내보내기 활동 작업 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/getExportActivitiesStatusUsingGET) 끝점을 사용하여 폴링합니다.
 
-```
+```http
 GET /bulk/v1/activities/export/{exportId}/status.json
 ```
 
@@ -215,7 +215,7 @@ GET /bulk/v1/activities/export/{exportId}/status.json
 
 작업이 완료되면 [내보내기 활동 파일 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/getExportActivitiesFileUsingGET) 끝점을 사용하여 데이터를 검색합니다.
 
-```
+```http
 GET /bulk/v1/activities/export/{exportId}/file.json
 ```
 
@@ -237,7 +237,7 @@ marketoGUID,leadId,activityDate,activityTypeId,campaignId,primaryAttributeValueI
 
 작업이 잘못 구성되었거나 필요하지 않은 경우 [내보내기 활동 작업 취소](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/cancelExportActivitiesUsingPOST) 끝점을 사용하여 작업을 쉽게 취소할 수 있습니다.
 
-```
+```http
 POST /bulk/v1/activities/export/{exportId}/cancel.json
 ```
 

@@ -3,9 +3,9 @@ title: 고급 보안 액세스 모드
 feature: Mobile Marketing
 description: HMAC 서명 생성, 서버 엔드포인트 설정, 장치 ID 사용 및 Marketo과 SDK의 예를 포함하는 iOS 모바일 Android용 고급 보안 액세스 모드에 대해 알아봅니다
 exl-id: bd4730ff-708b-465e-b494-485a4dbf67ff
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '321'
+source-wordcount: '322'
 ht-degree: 0%
 
 ---
@@ -65,7 +65,7 @@ Marketo SDK은 보안 서명을 설정하고 제거하는 새로운 메서드를
 
 ### iOS
 
-```
+```objectivec
 Marketo * sharedInstance =[Marketo sharedInstance];
 
 // set secure signature
@@ -80,7 +80,7 @@ MKTSecuritySignature *signature =
 [sharedInstance getDeviceId];
 ```
 
-```
+```swift
 let sharedInstance = Marketo.sharedInstance()
 
  // set secure signature
@@ -96,7 +96,7 @@ sharedInstance.getDeviceId()
 
 ### Android
 
-```
+```java
 Marketo sdk = Marketo.getInstance(getApplicationContext());
 
 // set signature

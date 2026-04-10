@@ -3,9 +3,9 @@ title: 스트림 위치
 feature: SOAP
 description: SOAP에서 시간 시퀀스 데이터의 페이지 매김을 위한 스트림 위치, 간단하고 복잡한 형식, getLeadChanges, getLeadActivity 등에서의 사용에 대해 설명합니다.
 exl-id: c3a3fc1e-086b-4822-b2c7-2a7959db557c
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '156'
+source-wordcount: '157'
 ht-degree: 0%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 0%
 
 ## 단순 스트림 위치
 
-```
+```xml
 <streamPosition>8UJZetaMb1V6uUZl+L7DcPP2jG+PMmtpF</streamPosition>
 ```
 

@@ -3,9 +3,9 @@ title: 기회
 feature: REST API
 description: SFDC 또는 Dynamics 동기화를 통해 기회, 중복 제거 및 검색 가능한 필드, 제한 사항, 읽기 전용 동작을 설명, 쿼리, 만들기 및 업데이트하는 Marketo REST API입니다.
 exl-id: 46451285-4125-4857-890a-575069a68288
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '803'
+source-wordcount: '879'
 ht-degree: 0%
 
 ---
@@ -16,13 +16,13 @@ ht-degree: 0%
 
 Marketo은 영업 기회 레코드를 읽고, 쓰고, 만들고, 업데이트하는 API를 표시합니다. Marketo에서 기회 레코드는 중간 Opportunity Role 객체를 통해 Lead 및 Contact Records에 연결되므로 Opportunity 는 많은 개별 Lead에 연결될 수 있습니다.  이러한 객체 유형은 모두 API를 통해 노출되며 대부분의 리드 데이터베이스 객체 유형과 마찬가지로 둘 다 해당 Describe 호출을 가지고 있습니다. 이 호출은 객체 유형에 대한 메타데이터를 반환합니다.
 
-영업 기회 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=ko) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=ko)가 활성화된 구독에 대한 읽기 전용 액세스입니다.
+영업 기회 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=en) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=en)가 활성화된 구독에 대한 읽기 전용 액세스입니다.
 
 ## 설명
 
 Opportunity 레코드를 설명하는 것은 리드 데이터베이스 객체에 대한 표준 패턴을 따릅니다.
 
-```
+```http
 GET /rest/v1/opportunities/describe.json
 ```
 
@@ -87,7 +87,7 @@ GET /rest/v1/opportunities/describe.json
 
 [기회 쿼리](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/getOpportunitiesUsingGET)에 대한 패턴은 `filterType` 매개 변수가 `searchableFields` 배열 또는 해당 설명 호출에 나열된 필드 또는 dedupeFields를 수락하는 추가 제한 사항을 가진 잠재 고객 API의 패턴을 거의 따릅니다.  사용자 정의 영업 기회 필드를 사용하는 경우 문자열 또는 정수 유형의 사용자 정의 영업 기회 필드만 searchableFields 배열에 나열됩니다.
 
-```
+```http
 GET /rest/v1/opportunities.json?filterType=marketoGUID&filterValues=dff23271-f996-47d7-984f-f2676861b5fa&dff23271-f996-47d7-984f-f2676861b5fc,dff23271-f996-47d7-984f-f2676861b5fb
 ```
 
@@ -118,7 +118,7 @@ GET /rest/v1/opportunities.json?filterType=marketoGUID&filterValues=dff23271-f99
 }
 ```
 
-또한 기본 및 최대 300인 배치 크기 `fields`보다 큰 집합을 통해 페이징하기 위한 추가 영업 기회 필드 반환용 선택적 쿼리 매개 변수 `nextPageToken`, `batchSize`을(를) 포함할 수 있습니다.  `fields` 목록을 요청할 때 특정 필드가 요청되었지만 반환되지 않은 경우 값이 null인 것으로 간주됩니다.
+또한 기본 및 최대 300인 배치 크기 `batchSize`보다 큰 집합을 통해 페이징하기 위한 추가 영업 기회 필드 반환용 선택적 쿼리 매개 변수 `fields`, `nextPageToken`을(를) 포함할 수 있습니다.  `fields` 목록을 요청할 때 특정 필드가 요청되었지만 반환되지 않은 경우 값이 null인 것으로 간주됩니다.
 
 ## 만들기 및 업데이트
 
@@ -128,7 +128,7 @@ GET /rest/v1/opportunities.json?filterType=marketoGUID&filterValues=dff23271-f99
 
 한 번에 최대 300개의 레코드를 제출할 수 있습니다.
 
-```
+```http
 POST /rest/v1/opportunities.json
 ```
 
@@ -190,7 +190,7 @@ API는 각 레코드에 대한 `marketoGUID`, 각 레코드의 개별 성공 또
 
 [이름별 영업 기회 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/getOpportunityFieldByNameUsingGET) 끝점은 회사 개체에서 단일 필드에 대한 메타데이터를 검색합니다.  필수 `fieldApiName` 경로 매개 변수는 필드의 API 이름을 지정합니다.  응답은 Describe Opportunity 끝점과 비슷하지만 필드가 사용자 지정 필드인지 여부를 나타내는 `isCustom` 특성과 같은 추가 메타데이터를 포함합니다.
 
-```
+```http
 GET /rest/v1/opportunities/schema/fields/externalOpportunityId.json
 ```
 
@@ -219,7 +219,7 @@ GET /rest/v1/opportunities/schema/fields/externalOpportunityId.json
 
 [영업 기회 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/getOpportunityFieldsUsingGET) 끝점은 회사 개체의 모든 필드에 대한 메타데이터를 검색합니다.  기본적으로 최대 300개의 레코드가 반환됩니다.  `batchSize` 쿼리 매개 변수를 사용하여 이 수를 줄일 수 있습니다.  `moreResult` 특성이 true이면 더 많은 결과를 사용할 수 있습니다.  moreResult 특성이 false를 반환할 때까지 이 끝점을 계속 호출합니다. 즉, 사용 가능한 결과가 없습니다.  이 API에서 반환된 `nextPageToken`은(는) 항상 이 호출의 다음 반복에 재사용해야 합니다.
 
-```
+```http
 GET /rest/v1/opportunities/schema/fields.json?batchSize=5
 ```
 
@@ -298,7 +298,7 @@ GET /rest/v1/opportunities/schema/fields.json?batchSize=5
 
 데이터 중복 제거 필드 또는 ID 필드를 통해 영업 기회를 삭제할 수 있습니다. dedupeFields 또는 idField 값이 있는 `deleteBy` 매개 변수를 사용하여 지정합니다. 지정하지 않으면 기본값은 dedupeFields입니다. 요청 본문에 삭제할 `input` 기회의 배열이 있습니다. 호출당 최대 300개의 기회가 허용됩니다.
 
-```
+```http
 POST /rest/v1/opportunities/delete.json
 ```
 

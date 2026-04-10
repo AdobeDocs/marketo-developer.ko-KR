@@ -3,7 +3,7 @@ title: 데이터 수집
 feature: REST API, Dynamic Content
 description: 개인, 사용자 지정 개체, 회사 및 프로그램 구성원의 대량, 짧은 지연 시간 수집을 위해 Marketo 데이터 수집 API를 사용하십시오.
 exl-id: 1d501916-53ac-42d8-a804-abb4ab01c7e8
-source-git-commit: 6dc068f92d5b0c94035ca484fd1508dfe87bbd76
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '1789'
 ht-degree: 13%
@@ -107,7 +107,7 @@ HTTP POST 메서드를 사용하여 데이터를 서버로 전송합니다.
 
 성공 응답의 예:
 
-```
+```http
 HTTP/1.1 202 Accepted
 X-Request-Id: e3d92152-0fb1-444a-8f8f-29d5a2338598
 Content-Length: 0

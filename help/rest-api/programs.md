@@ -3,16 +3,16 @@ title: 프로그램
 feature: REST API, Programs
 description: 유형, 채널, 태그, 멤버 상태 및 엔드포인트를 다루는 Asset REST API에 대한 Marketo 프로그램 안내서를 참조하여 id 또는 이름별로 가져오고, 찾아보고, 상태별로 필터링합니다.
 exl-id: 30700de2-8f4a-4580-92f2-7036905deb80
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '870'
+source-wordcount: '979'
 ht-degree: 1%
 
 ---
 
 # 프로그램
 
-[프로그램 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs)
+[프로그램 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs)
 
 프로그램은 Marketo 마케팅 활동의 핵심 조직 구성 요소입니다. 대부분의 에셋 유형의 부모가 될 수 있으며, 개별 마케팅 이니셔티브의 컨텍스트 내에서 멤버 자격 및 잠재 고객 성공 여부를 추적할 수 있습니다. 프로그램은 LP, 이메일 템플릿 및 파일을 제외한 모든 유형의 레코드에 대한 상위 프로그램일 수 있습니다.
 
@@ -40,7 +40,7 @@ Marketo에는 5가지 핵심 유형의 프로그램이 있습니다.
 
 프로그램 ID는 UI의 프로그램 URL에서 가져올 수 있습니다. 여기서 URL은 `https://app-\*\*\*.marketo.com/#PG1001A1`과(와) 비슷합니다. 이 URL에서 `id`은(는) 1001입니다. 항상 URL의 첫 번째 문자 세트와 두 번째 문자 세트 사이에 있습니다.
 
-```
+```http
 GET /rest/asset/v1/program/{id}.json
 ```
 
@@ -84,7 +84,7 @@ GET /rest/asset/v1/program/{id}.json
 
 [이름별 프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset/) 끝점에는 `name` 쿼리 매개 변수가 필요합니다. 선택적 부울 쿼리 매개 변수는 각각 프로그램 태그 및 프로그램 비용을 반환하는 데 사용되는 `includeTags` 및 `includeCosts`입니다.
 
-```
+```http
 GET /rest/asset/v1/program/byName.json?name=TestProgramName&includeTags=true
 ```
 
@@ -134,7 +134,7 @@ GET /rest/asset/v1/program/byName.json?name=TestProgramName&includeTags=true
 
 프로그램과 연결된 태그는 이 끝점에서 반환되지 않습니다. [Id로 프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getProgramByIdUsingGET) 또는 [이름별로 프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getProgramByNameUsingGET)를 사용하여 프로그램 태그를 검색할 수 있습니다.
 
-```
+```http
 GET /rest/asset/v1/programs.json
 ```
 
@@ -187,9 +187,9 @@ GET /rest/asset/v1/programs.json
 
 ### 날짜 범위별
 
-`earliestUpdatedAt`프로그램 가져오기`latestUpdatedAt` 끝점에 대한 [&#x200B; 및 &#x200B;](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) 매개 변수를 사용하면 지정된 범위 내에서 업데이트되었거나 처음 만들어진 프로그램을 반환하는 데 대해 낮거나 높은 날짜/시간 워터마크를 설정할 수 있습니다.
+[프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) 끝점에 대한 `earliestUpdatedAt` 및 `latestUpdatedAt` 매개 변수를 사용하면 지정된 범위 내에서 업데이트되었거나 처음 만들어진 프로그램을 반환하는 데 대해 낮거나 높은 날짜/시간 워터마크를 설정할 수 있습니다.
 
-```
+```http
 GET /rest/asset/v1/programs.json?earliestUpdatedAt=2017-01-01T00:00:00-05:00&latestUpdatedAt=2017-01-30T00:00:00-05:00
 ```
 
@@ -282,7 +282,7 @@ GET /rest/asset/v1/programs.json?earliestUpdatedAt=2017-01-01T00:00:00-05:00&lat
 
 필수 매개 변수에는 필터링할 태그의 종류인 `tagType`과(와) 필터링할 태그 값인 `tagValue`이(가) 있습니다.  반환할 프로그램 수를 제어하는 선택적 정수 `maxReturn` 매개 변수가 있으며(최대 200개, 기본값은 20개), 페이징 결과에 사용되는 선택적 정수 `offset` 매개 변수가 있습니다(기본값은 0임).  결과는 임의 순서로 반환됩니다.
 
-```
+```http
 GET /rest/asset/v1/program/byTag.json?tagType=Presenter&tagValue=Dennis
 ```
 
@@ -320,7 +320,7 @@ GET /rest/asset/v1/program/byTag.json?tagType=Presenter&tagValue=Dennis
 
 ## 만들기 및 업데이트
 
-[만들기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/createProgramUsingPOST) 및 [업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/updateProgramUsingPOST) 프로그램은 표준 자산 패턴을 따르며 필수 매개 변수로 `folder`, `name`, `type` 및 `channel`을(를) 포함합니다. `description`, `costs` 및 `tags`은(는) 선택 사항입니다. 채널 및 유형은 프로그램 생성 시에만 설정할 수 있습니다. 추가 `tags` 매개 변수가 허용되면 설명, 이름, `costs` 및 `costsDestructiveUpdate`만 업데이트할 수 있습니다. `costsDestructiveUpdate`을(를) true로 전달하면 기존 비용이 모두 지워지고 호출에 포함된 비용으로 대체됩니다. 일부 구독의 일부 프로그램 유형에는 태그가 필요할 수 있지만, 이는 구성에 따라 달라지며 먼저 태그 가져오기 를 사용하여 인스턴스별 요구 사항이 있는지 확인해야 합니다.
+[만들기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/createProgramUsingPOST) 및 [업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/updateProgramUsingPOST) 프로그램은 표준 자산 패턴을 따르며 필수 매개 변수로 `folder`, `name`, `type` 및 `channel`을(를) 포함합니다. `description`, `costs` 및 `tags`은(는) 선택 사항입니다. 채널 및 유형은 프로그램 생성 시에만 설정할 수 있습니다. 추가 `costsDestructiveUpdate` 매개 변수가 허용되면 설명, 이름, `tags` 및 `costs`만 업데이트할 수 있습니다. `costsDestructiveUpdate`을(를) true로 전달하면 기존 비용이 모두 지워지고 호출에 포함된 비용으로 대체됩니다. 일부 구독의 일부 프로그램 유형에는 태그가 필요할 수 있지만, 이는 구성에 따라 달라지며 먼저 태그 가져오기 를 사용하여 인스턴스별 요구 사항이 있는지 확인해야 합니다.
 
 전자 메일 프로그램을 만들거나 업데이트할 때 `startDate` 및 `endDate`도 UTC 날짜/시간으로 전달될 수 있습니다.
 
@@ -329,15 +329,15 @@ GET /rest/asset/v1/program/byTag.json?tagType=Presenter&tagValue=Dennis
 
 ### 만들기
 
-```
+```http
 POST /rest/asset/v1/programs.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 name=API Test Program&folder={"id":1035,"type":"Folder"}&description=Sample API Program&type=Default&channel=Email Blast&costs=[{"startDate":"2015-01-01","cost":2000}]
 ```
 
@@ -379,17 +379,17 @@ name=API Test Program&folder={"id":1035,"type":"Folder"}&description=Sample API 
 
 ### 업데이트
 
-프로그램 비용을 업데이트할 때 새 비용을 추가하려면 `costs` 배열에 추가하기만 하면 됩니다. 원본에 영향을 주는 업데이트를 수행하려면 `costsDestructiveUpdate`(으)로 설정된 `true` 매개 변수와 함께 새 비용을 전달하십시오. 프로그램에서 모든 비용을 지우려면 `costs` 매개 변수를 전달하지 말고 `costsDestructiveUpdate`(으)로 설정된 `true`만 전달하십시오.
+프로그램 비용을 업데이트할 때 새 비용을 추가하려면 `costs` 배열에 추가하기만 하면 됩니다. 원본에 영향을 주는 업데이트를 수행하려면 `true`(으)로 설정된 `costsDestructiveUpdate` 매개 변수와 함께 새 비용을 전달하십시오. 프로그램에서 모든 비용을 지우려면 `costs` 매개 변수를 전달하지 말고 `true`(으)로 설정된 `costsDestructiveUpdate`만 전달하십시오.
 
-```
+```http
 POST /rest/asset/v1/program/{id}.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 description=This is an updated description&name=Updated Program Name&costs=[{"startDate":"2016-01-01","cost":200,"note":"Google Adwords"}]
 ```
 
@@ -445,7 +445,7 @@ description=This is an updated description&name=Updated Program Name&costs=[{"st
 
 ### 승인
 
-```
+```http
 POST /rest/asset/v1/program/{id}/approve.json
 ```
 
@@ -465,7 +465,7 @@ POST /rest/asset/v1/program/{id}/approve.json
 
 ### 승인 취소
 
-```
+```http
 POST /rest/asset/v1/program/{id}/unapprove.json
 ```
 
@@ -489,15 +489,15 @@ POST /rest/asset/v1/program/{id}/unapprove.json
 
 푸시 알림, 인앱 메시지, 보고서 및 소셜 Assets을 포함하여 특정 유형의 자산이 포함된 프로그램은 이 API를 통해 복제되지 않을 수 있습니다. 인앱 프로그램은 이 API를 통해 복제되지 않을 수 있습니다.
 
-```
+```http
 POST /rest/asset/v1/program/{id}/clone.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 name=Cloned Program - PHP&folder={"id":5562,"type":"Folder"}&description=Description
 ```
 
@@ -536,7 +536,7 @@ name=Cloned Program - PHP&folder={"id":5562,"type":"Folder"}&description=Descrip
 
 프로그램 삭제는 표준 에셋 삭제 패턴을 따릅니다.
 
-```
+```http
 POST /rest/asset/v1/program/{id}/delete.json
 ```
 

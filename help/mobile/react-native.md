@@ -3,9 +3,9 @@ title: React Native
 feature: Mobile Marketing
 description: Android Gradle 및 iOS CocoaPods 단계, 기본 모듈 브리징, 푸시 및 리드 연결이 있는 React Native 앱에 Marketo SDK을 설치하고 설정합니다.
 exl-id: 462fd32e-91f1-4582-93f2-9efe4d4761ff
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '830'
+source-wordcount: '854'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 ## 사전 요구 사항
 
-[Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin Id 얻기).
+[Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin Id 얻기).
 
 ## SDK 통합
 
@@ -26,7 +26,7 @@ ht-degree: 1%
 
 최신 버전으로 Marketo SDK 종속성을 추가합니다. 응용 프로그램 수준 `build.gradle` 파일의 종속성 섹션 아래에서 (적절한 Marketo SDK 버전 포함)을 추가합니다.
 
-```
+```groovy
 implementation 'com.marketo:MarketoSDK:0.x.x'
 ```
 
@@ -34,7 +34,7 @@ implementation 'com.marketo:MarketoSDK:0.x.x'
 
 Marketo SDK은 [maven 중앙 저장소](https://mvnrepository.com/)에서 사용할 수 있습니다. 해당 파일을 동기화하려면 `mavencentral` 리포지토리를 `build.gradle` 루트에 추가하십시오.
 
-```
+```groovy
 build script {
   repositories {
     google()
@@ -91,7 +91,7 @@ React Native 브리지는 JSX와 기본 앱 레이어 간의 통신에 사용됩
 
 이 파일에는 사용자가 제공하는 매개 변수를 사용하여 내부적으로 Marketo SDK 메서드를 호출할 수 있는 래퍼 메서드가 포함되어 있습니다.
 
-```
+```java
 public class RNMarketoModule extends ReactContextBaseJavaModule {
 
    final Marketo marketoSdk;
@@ -179,7 +179,7 @@ public class RNMarketoModule extends ReactContextBaseJavaModule {
 
 React-native에 Marketo 패키지에 대해 알립니다.
 
-```
+```java
 public class MarketoPluginPackage implements ReactPackage {
 
    @NonNull
@@ -202,7 +202,7 @@ public class MarketoPluginPackage implements ReactPackage {
 
 패키지 등록을 완료하려면 MarketoPluginPackage를 응용 프로그램 클래스의 React 패키지 목록에 추가합니다.
 
-```
+```java
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
@@ -231,7 +231,7 @@ public class MainApplication extends Application implements ReactApplication {
 
 기본 사용자 지정 기본 모듈 헤더 및 구현 파일을 만듭니다. `MktoBridge.h`(이)라는 새 파일을 만들고 다음 파일을 추가합니다.
 
-```
+```objectivec
 //
 //  MktoBridge.h
 //
@@ -252,7 +252,7 @@ NS_ASSUME_NONNULL_END
 
 같은 폴더에 해당 구현 파일 `MktoBridge.m`을(를) 만들고 다음 내용을 포함하십시오.
 
-```
+```objectivec
 //
 //  MktoBridge.h
 //  Created by Marketo, An Adobe company.
@@ -364,7 +364,7 @@ RCT_EXPORT_METHOD(registerForRemoteNotifications) {
 
 응용 프로그램에서 네이티브 모듈의 createCalendarEvent() 메서드에 대한 호출을 추가할 위치를 찾습니다. 다음은 앱에 추가할 수 있는 구성 요소 NewModuleButton의 예입니다. NewModuleButton의 onPress() 함수 내에서 네이티브 모듈을 호출할 수 있습니다.
 
-```
+```javascript
 import React from 'react';
 import { NativeModules, Button } from 'react-native';
 
@@ -395,7 +395,7 @@ const { RNMarketoModule } = NativeModules;
 
 React 네이티브 앱에 대한 프레임워크 유형으로 &quot;reactNative&quot;를 전달해야 합니다.
 
-```
+```javascript
 // Initialize marketo SDK with Munchkin & Seretkey you have from step 1.
 RNMarketoModule.initializeSDK("MunchkinID","SecreteKEY","FrameworkType")
 
@@ -419,7 +419,7 @@ RNMarketoModule.uninitializeMarketoPush()
 
 프로젝트 ID 및 채널 이름으로 푸시 초기화
 
-```
+```javascript
 RNMarketoModule.initializeMarketoPush("ProjectId", "Channel_name")
 ```
 
@@ -467,7 +467,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 iOS 푸시 알림 설정,
 pushNotifications.tsx 파일을 만들고 다음을 추가합니다.
 
-```
+```javascript
 import { NativeModules } from 'react-native';
 const { RNMarketoModule } = NativeModules;
 
@@ -492,7 +492,7 @@ export { requestPermission, registerForRemoteNotifications };
 
 푸시 알림을 허용하도록 `App.tsx` 추가
 
-```
+```javascript
 import React, { useEffect } from 'react';
 
 useEffect(() => {
@@ -506,7 +506,7 @@ registerForRemoteNotifications();
 
 APNS 위임 메서드로 `AppDelegate.mm` 업데이트:
 
-```
+```objectivec
 #import "AppDelegate.h"
 #import "MktoBridge.h"
 #import <MarketoFramework/Marketo.h>
@@ -596,7 +596,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 **iOS - AppDelegate에서 사용자 지정 Url 형식/딥링크 처리**
 
-```
+```objectivec
 - (BOOL)application:(UIApplication *)app
             openURL:(NSURL *)url
             options:(NSDictionary *)options{
@@ -609,7 +609,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 이러한 상수는 Javascript에서 API를 호출할 때 사용됩니다. 상수 파일을 만들고 다음을 추가해야 합니다.
 
-```
+```objectivec
 // Lead attributes.
 static NSString *const KEY_FIRST_NAME = @"firstName";
 static NSString *const KEY_LAST_NAME = @"lastName";
@@ -641,7 +641,7 @@ static NSString *const KEY_TIMESTAMP = @"timeStamp";
 
 사용 예
 
-```
+```javascript
 //You can create a Marketo Lead by calling the associateLead function.
 RNMarketoModule.associateLead({ email: "", firstName: "", lastName:"", city:""})
 ```

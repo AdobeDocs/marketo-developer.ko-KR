@@ -3,9 +3,9 @@ title: 채널
 feature: REST API
 description: Asset REST API를 통해 Marketo 채널을 쿼리하고, 페이지 매김 또는 이름별로 가져오기로 탐색하고, 진행 상태를 보고, 프로그램 유형 규칙을 이해하는 방법에 대해 알아봅니다.
 exl-id: ec6c279f-a7b4-4a7c-b980-1a68045f37ce
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '144'
+source-wordcount: '151'
 ht-degree: 2%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 2%
 
 ### 찾아보기
 
-```
+```http
 GET /rest/asset/v1/channels.json?offset=10
 ```
 
@@ -120,7 +120,7 @@ GET /rest/asset/v1/channels.json?offset=10
 
 ### 이름별
 
-```
+```http
 GET /rest/asset/v1/channel/byName.json?name=Online Advertising
 ```
 

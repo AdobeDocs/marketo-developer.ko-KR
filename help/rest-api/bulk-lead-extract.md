@@ -3,7 +3,7 @@ title: 벌크 납 추출
 feature: REST API
 description: Marketo 대량 리드 추출 REST API를 사용하여 날짜, 목록 및 스마트 목록 필터, 사용자 정의 필드 및 CSV/TSV 형식으로 리드를 대량 내보내는 방법에 대해 알아봅니다.
 exl-id: 42796e89-5468-463e-9b67-cce7e798677b
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '1273'
 ht-degree: 2%
@@ -26,8 +26,8 @@ REST API의 벌크 리드 추출 세트는 Marketo에서 대규모 리드/개인
 
 | 필터 유형 | 데이터 유형 | 참고 |
 | --- | --- | --- |
-| createdAt | 날짜 범위 | `startAt` 및 `endAt` 멤버를 사용하여 JSON 개체를 허용합니다. `startAt` 에서는 로우 워터마크를 나타내는 날짜/시간을 수락하고 `endAt`에서는 하이 워터마크를 나타내는 날짜/시간을 수락합니다. 범위는 31일 이하여야 합니다. 날짜/시간은 밀리초 없이 ISO-8601 형식이어야 합니다. 이 필터 유형의 작업은 날짜 범위 내에서 만든 액세스 가능한 모든 레코드를 반환합니다. |
-| updatedAt* | 날짜 범위 | `startAt` 및 `endAt` 멤버를 사용하여 JSON 개체를 허용합니다. `startAt` 에서는 로우 워터마크를 나타내는 날짜/시간을 수락하고 `endAt`에서는 하이 워터마크를 나타내는 날짜/시간을 수락합니다. 범위는 31일 이하여야 합니다. 날짜/시간은 밀리초 없이 ISO-8601 형식이어야 합니다. 참고: 이 필터는 표준 필드에 대한 업데이트만 반영하는 표시되는 &quot;updatedAt&quot; 필드를 필터링하지 않습니다. 이 필터는 잠재 고객 레코드에 대한 가장 최근 필드 업데이트가 이루어진 시점을 기준으로 필터링합니다.이 필터 유형을 가진 작업은 날짜 범위 내에서 가장 최근 업데이트된 액세스 가능한 모든 레코드를 반환합니다. |
+| createdAt | 날짜 범위 | `startAt` 및 `endAt` 멤버를 사용하여 JSON 개체를 허용합니다. `startAt`은(는) 로우 워터마크를 나타내는 날짜/시간을 수락하고 `endAt`은(는) 하이 워터마크를 나타내는 날짜/시간을 수락합니다. 범위는 31일 이하여야 합니다. 날짜/시간은 밀리초 없이 ISO-8601 형식이어야 합니다. 이 필터 유형의 작업은 날짜 범위 내에서 만든 액세스 가능한 모든 레코드를 반환합니다. |
+| updatedAt* | 날짜 범위 | `startAt` 및 `endAt` 멤버를 사용하여 JSON 개체를 허용합니다. `startAt`은(는) 로우 워터마크를 나타내는 날짜/시간을 수락하고 `endAt`은(는) 하이 워터마크를 나타내는 날짜/시간을 수락합니다. 범위는 31일 이하여야 합니다. 날짜/시간은 밀리초 없이 ISO-8601 형식이어야 합니다. 참고: 이 필터는 표준 필드에 대한 업데이트만 반영하는 표시되는 &quot;updatedAt&quot; 필드를 필터링하지 않습니다. 이 필터는 잠재 고객 레코드에 대한 가장 최근 필드 업데이트가 이루어진 시점을 기준으로 필터링합니다.이 필터 유형을 가진 작업은 날짜 범위 내에서 가장 최근 업데이트된 액세스 가능한 모든 레코드를 반환합니다. |
 | staticListName | 문자열 | 정적 목록의 이름을 허용합니다. 이 필터 유형의 작업은 작업 처리를 시작할 때 정적 목록의 멤버인 액세스 가능한 모든 레코드를 반환합니다. 목록 가져오기 끝점을 사용하여 정적 목록 이름을 검색합니다. |
 | staticListId | 정수 | 정적 목록의 ID를 허용합니다. 이 필터 유형의 작업은 작업 처리를 시작할 때 정적 목록의 멤버인 액세스 가능한 모든 레코드를 반환합니다. 목록 가져오기 끝점을 사용하여 정적 목록 ID를 검색합니다. |
 | smartListName* | 문자열 | 스마트 목록의 이름을 허용합니다. 이 필터 유형의 작업은 작업 처리를 시작할 때 스마트 목록의 구성원인 액세스 가능한 모든 레코드를 반환합니다. 스마트 목록 가져오기 끝점을 사용하여 스마트 목록 이름을 검색합니다. |
@@ -49,7 +49,7 @@ REST API의 벌크 리드 추출 세트는 Marketo에서 대규모 리드/개인
 
 [내보내기 리드 작업 만들기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/createExportLeadsUsingPOST) 끝점을 사용하여 내보내기를 시작하기 전에 작업에 대한 매개 변수를 정의합니다. 내보내기에 필요한 `fields`, `filter`의 매개 변수 유형, 파일의 `format` 및 열 헤더 이름(있는 경우)을 정의해야 합니다.
 
-```
+```http
 POST /bulk/v1/leads/export/create.json
 ```
 
@@ -97,7 +97,7 @@ POST /bulk/v1/leads/export/create.json
 
 작업이 생성되었음을 나타내는 상태 응답이 반환됩니다. 작업이 정의되고 생성되었지만 아직 시작되지 않았습니다. 이렇게 하려면 만들기 상태 응답의 exportId를 사용하여 [큐 내보내기 리드 작업](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/enqueueExportLeadsUsingPOST) 끝점을 호출해야 합니다.
 
-```
+```http
 POST /bulk/v1/leads/export/{exportId}/enqueue.json
 ```
 
@@ -125,7 +125,7 @@ POST /bulk/v1/leads/export/{exportId}/enqueue.json
 
 비동기 끝점이므로 작업을 만든 후 상태를 폴링하여 진행률을 확인해야 합니다. [리드 내보내기 작업 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/getExportLeadsStatusUsingGET) 끝점을 사용하여 폴링합니다. 상태는 60초마다 한 번만 업데이트되므로 이보다 낮은 폴링 빈도는 권장되지 않으며 거의 모든 경우에 여전히 과도합니다. 투표를 간단히 살펴봅시다.
 
-```
+```http
 GET /bulk/v1/leads/export/{exportId}/status.json
 ```
 
@@ -160,7 +160,7 @@ GET /bulk/v1/leads/export/{exportId}/status.json
 
 완료된 잠재 고객 내보내기의 파일을 검색하려면 `exportId`을(를) 사용하여 [잠재 고객 파일 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/getExportLeadsFileUsingGET) 끝점을 호출하면 됩니다.
 
-```
+```http
 GET /bulk/v1/leads/export/{exportId}/file.json
 ```
 
@@ -179,7 +179,7 @@ Russell,Wilson,null,_mch-localhost-1536605780000-12105
 
 작업이 잘못 구성되었거나 불필요하게 된 경우 [리드 작업 내보내기 취소](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/cancelExportLeadsUsingPOST) 끝점을 사용하여 작업을 쉽게 취소할 수 있습니다.
 
-```
+```http
 POST /bulk/v1/leads/export/{exportId}/cancel.json
 ```
 

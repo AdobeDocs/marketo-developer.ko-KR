@@ -2,11 +2,11 @@
 title: 목록 멤버십(정적 목록)
 feature: REST API, Static Lists
 description: Marketo 리드 데이터베이스 REST API를 사용하여 정적 목록에 리드를 추가하고, 리드를 제거하고, 목록 구성원을 검색하고, 목록 구성원을 확인합니다.
-exl-id: 2a91b0f3-5ba1-4b0c-b5e7-a19ab9a7fdc3
-source-git-commit: 73fa4c85ecabd4cfd24bc6591aad11dc4e75010a
+exl-id: b8f74bcf-834a-44db-81fd-621048afeba4
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '482'
-ht-degree: 3%
+ht-degree: 4%
 
 ---
 
@@ -23,7 +23,7 @@ ht-degree: 3%
 | 목록에 추가 | POST | `/rest/v1/lists/{listId}/leads.json` |
 | 목록에서 제거 | DELETE | `/rest/v1/lists/{listId}/leads.json` |
 | 목록 ID로 리드 가져오기 | GET | `/rest/v1/lists/{listId}/leads.json` |
-| 목록 구성원 | GET | `/rest/v1/lists/{listId}/leads/ismember.json` |
+| 목록 멤버 | GET | `/rest/v1/lists/{listId}/leads/ismember.json` |
 
 ## 목록에 추가
 
@@ -31,7 +31,7 @@ ht-degree: 3%
 
 응답에는 요청에 지정된 각 잠재 고객 ID에 대한 상태와 함께 JSON 개체로 구성된 `result` 배열이 포함되어 있습니다.
 
-```
+```http
 POST /rest/v1/lists/{listId}/leads.json?id=318594&id=318595
 ```
 
@@ -64,7 +64,7 @@ POST /rest/v1/lists/{listId}/leads.json?id=318594&id=318595
 
 응답에는 요청에 지정된 각 잠재 고객 ID에 대한 상태와 함께 JSON 개체로 구성된 `result` 배열이 포함되어 있습니다.
 
-```
+```http
 DELETE /rest/v1/lists/{listId}/leads.json?id=318603&id=318595&id=999999
 ```
 
@@ -107,7 +107,7 @@ DELETE /rest/v1/lists/{listId}/leads.json?id=318603&id=318595&id=999999
 
 응답에는 요청에 지정된 리드 필드가 포함된 JSON 개체로 구성된 `result` 배열이 포함되어 있습니다.
 
-```
+```http
 GET /rest/v1/lists/{listId}/leads.json?batchSize=3
 ```
 
@@ -145,13 +145,13 @@ GET /rest/v1/lists/{listId}/leads.json?batchSize=3
 }
 ```
 
-## 목록 구성원
+## 목록 멤버
 
 [Member of List](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists/operation/areLeadsMemberOfListUsingGET) 끝점은 하나 이상의 리드가 목록의 구성원인지 확인하는 데 사용됩니다. 끝점은 필수 `listId` 경로 매개 변수와 리드 ID가 포함된 하나 이상의 `id` 쿼리 매개 변수를 사용합니다(최대 허용 수는 300임).
 
 응답에는 요청에 지정된 각 잠재 고객 ID에 대한 상태와 함께 JSON 개체로 구성된 `result` 배열이 포함되어 있습니다.
 
-```
+```http
 GET /rest/v1/lists/{listId}/leads/ismember.json?id=309901&id=318603&id=999999
 ```
 

@@ -3,7 +3,7 @@ title: 스마트 캠페인
 feature: REST API, Smart Campaigns
 description: ID 또는 이름별 쿼리, 필터 찾아보기, 복제 삭제 만들기, 일정 또는 요청 트리거 등 스마트 캠페인용 Marketo REST API를 사용하는 방법에 대해 알아봅니다
 exl-id: 540bdf59-b102-4081-a3d7-225494a19fdd
-source-git-commit: 74964e90ddc68a611706afcad1f6016d05b060d6
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '1196'
 ht-degree: 1%
@@ -26,7 +26,7 @@ Marketo은 스마트 캠페인에서 작업을 수행하기 위한 일련의 RES
 
 [ID별 Smart Campaign 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Campaigns/operation/getSmartCampaignByIdUsingGET) 끝점은 단일 Smart Campaign `id`을(를) 경로 매개 변수로 사용하고 단일 Smart Campaign 레코드를 반환합니다.
 
-```
+```http
 GET /rest/asset/v1/smartCampaign/{id}.json
 ```
 
@@ -68,7 +68,7 @@ GET /rest/asset/v1/smartCampaign/{id}.json
 
 [이름별 스마트 캠페인 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Campaigns/operation/getSmartCampaignByNameUsingGET) 끝점은 단일 스마트 캠페인 `name`을(를) 매개 변수로 사용하고 단일 스마트 캠페인 레코드를 반환합니다.
 
-```
+```http
 GET /rest/asset/v1/smartCampaign/byName.json?name=Test Trigger Campaign
 ```
 
@@ -124,7 +124,7 @@ GET /rest/asset/v1/smartCampaign/byName.json?name=Test Trigger Campaign
 
 `isActive` 매개 변수는 활성 트리거 캠페인만 반환하도록 지정하는 부울입니다.
 
-```
+```http
 GET /rest/asset/v1/smartCampaigns.json?earliestUpdatedAt=2016-09-10T23:15:00-00:00&latestUpdatedAt=2016-09-10T23:17:00-00:00
 ```
 
@@ -189,15 +189,15 @@ GET /rest/asset/v1/smartCampaigns.json?earliestUpdatedAt=2016-09-10T23:15:00-00:
 
 필요한 경우 `description` 매개 변수(최대 2,000자)를 사용하여 스마트 캠페인을 설명할 수 있습니다.
 
-```
+```http
 POST /rest/asset/v1/smartCampaigns.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 name=Smart Campaign 02&folder={"type": "folder","id": 640}&description=This is a smart campaign creation test.
 ```
 
@@ -241,15 +241,15 @@ name=Smart Campaign 02&folder={"type": "folder","id": 640}&description=This is a
 
 [스마트 캠페인 업데이트](https://developer.adobe.com/marketo-apis/api/asset/) 끝점은 application/x-www-form-urlencoded POST로 실행됩니다. 단일 스마트 캠페인 `id`을(를) 경로 매개 변수로 사용합니다. `name` 매개 변수를 사용하여 스마트 캠페인의 이름을 업데이트하거나 `description` 매개 변수를 사용하여 스마트 캠페인의 설명을 업데이트할 수 있습니다.
 
-```
+```http
 POST /rest/asset/v1/smartCampaign/{id}.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```sql
 name=Smart Campaign 02 Update&description=This is a smart campaign update test.
 ```
 
@@ -295,15 +295,15 @@ name=Smart Campaign 02 Update&description=This is a smart campaign update test.
 
 필요한 경우 `description` 매개 변수(최대 2,000자)를 사용하여 스마트 캠페인을 설명할 수 있습니다.
 
-```
+```http
 POST /rest/asset/v1/smartCampaign/{id}/clone.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 name=Test Trigger Campaign Clone&folder={"type": "folder","id": 640}&description=This is a smart campaign clone test.
 ```
 
@@ -347,7 +347,7 @@ name=Test Trigger Campaign Clone&folder={"type": "folder","id": 640}&description
 
 [스마트 캠페인 삭제](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Campaigns/operation/deleteSmartCampaignUsingPOST) 끝점은 단일 스마트 캠페인 `id`을(를) 경로 매개 변수로 사용합니다.
 
-```
+```http
 POST /rest/asset/v1/smartCampaign/{id}/delete.json
 ```
 
@@ -381,7 +381,7 @@ runAt datetime 매개 변수는 캠페인을 실행할 시기를 지정합니다
 
 `cloneToProgram` 문자열 매개 변수에 결과 프로그램의 이름이 포함되어 있습니다.  설정하면 캠페인, 상위 프로그램 및 모든 자산이 결과 새 이름으로 만들어집니다. 상위 프로그램이 복제되고 새로 생성된 캠페인이 예약됩니다. 결과 프로그램은 상위 아래에 만들어집니다. 코드 조각, 푸시 알림, 인앱 메시지, 정적 목록, 보고서 및 소셜 자산이 있는 프로그램은 이러한 방식으로 복제되지 않을 수 있습니다. 이 끝점을 사용하면 하루에 20회 호출로 제한됩니다. [복제 프로그램](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) 끝점이 권장되는 대안입니다.
 
-```
+```http
 POST /rest/v1/campaigns/{id}/schedule.json
 ```
 
@@ -426,11 +426,11 @@ POST /rest/v1/campaigns/{id}/schedule.json
 
 이 끝점에는 경로 매개 변수로 캠페인 `id`이(가) 필요하며 리드 ID가 포함된 정수 배열 매개 변수 `leads`이(가) 필요합니다. 호출당 최대 100개의 리드가 허용됩니다.
 
-선택적으로 `tokens` 배열 매개 변수를 사용하여 캠페인의 상위 프로그램에 로컬인 내 토큰을 재정의할 수 있습니다. `tokens`은(는) 최대 100개의 토큰을 허용합니다. 각 `tokens` 배열 항목에는 이름/값 쌍이 있습니다. 토큰 이름의 형식은 &quot;`{{my.name}}`&quot;이어야 합니다. [전자 메일에 시스템 토큰을 링크로 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/using-tokens/add-a-system-token-as-a-link-in-an-email) 접근 방식을 사용하여 &quot;viewAsWebpageLink&quot; 시스템 토큰을 추가하는 경우 `tokens`을(를) 사용하여 재정의할 수 없습니다. 대신 `tokens`을(를) 사용하여 &quot;viewAsWebPageLink&quot;를 재정의할 수 있는 [전자 메일에 웹 페이지로 보기 링크를 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-a-view-as-web-page-link-to-an-email) 방법을 사용하십시오.
+선택적으로 `tokens` 배열 매개 변수를 사용하여 캠페인의 상위 프로그램에 로컬인 내 토큰을 재정의할 수 있습니다. `tokens`은(는) 최대 100개의 토큰을 허용합니다. 각 `tokens` 배열 항목에는 이름/값 쌍이 있습니다. 토큰 이름의 형식은 &quot;`{{my.name}}`&quot;이어야 합니다. [전자 메일에 시스템 토큰을 링크로 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/using-tokens/add-a-system-token-as-a-link-in-an-email) 접근 방식을 사용하여 &quot;viewAsWebpageLink&quot; 시스템 토큰을 추가하는 경우 `tokens`을(를) 사용하여 재정의할 수 없습니다. 대신 `tokens`을(를) 사용하여 &quot;viewAsWebPageLink&quot;를 재정의할 수 있는 [전자 메일에 웹 페이지로 보기 링크를 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-a-view-as-web-page-link-to-an-email) 방법을 사용하십시오.
 
 `leads` 및 `tokens` 매개 변수가 요청 본문에 application/json으로 전달됩니다.
 
-```
+```http
 POST /rest/v1/campaigns/{id}/trigger.json
 ```
 
@@ -480,7 +480,7 @@ POST /rest/v1/campaigns/{id}/trigger.json
 - 하나 이상의 트리거와 흐름 단계가 있어야 합니다.
 - 오류를 사용하지 않는 트리거, 필터 및 흐름 단계가 있어야 합니다.
 
-```
+```http
 POST /rest/asset/v1/smartCampaign/{id}/activate.json
 ```
 
@@ -501,7 +501,7 @@ POST /rest/asset/v1/smartCampaign/{id}/activate.json
 
 [스마트 캠페인 비활성화](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Campaigns/operation/deactivateSmartCampaignUsingPOST)는 간단합니다. `id` 경로 매개 변수가 필요합니다. 비활성화가 성공하려면 캠페인이 활성화되어야 합니다.
 
-```
+```http
 POST /rest/asset/v1/smartCampaign/{id}/deactivate.json
 ```
 

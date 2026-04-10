@@ -3,7 +3,7 @@ title: 사용자 프로필
 feature: Mobile Marketing, Users and Roles
 description: Objective C Swift 및 Java, 표준 및 사용자 정의 필드, associateLead 를 사용하여 iOS 및 Android의 Marketo Mobile SDK에서 사용자 프로필을 만들고 업데이트하는 방법에 대해 알아봅니다
 exl-id: 1b2cfb7f-d678-4022-8cd9-a56004a1ac46
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '103'
 ht-degree: 1%
@@ -21,7 +21,7 @@ ht-degree: 1%
 
 아래와 같이 사용자 필드를 전송하여 리치 프로필을 만들 수 있습니다.
 
-```
+```objectivec
 MarketoLead *profile = [[MarketoLead alloc] init];
 
 // Get user profile from network and populate
@@ -43,7 +43,7 @@ MarketoLead *profile = [[MarketoLead alloc] init];
 [profile setTwitterId:@"twitterid"];
 ```
 
-```
+```swift
 let profile =  MarketoLead()
 
 // Get user profile from network and populate
@@ -71,7 +71,7 @@ profile.setTwitterId("twitterid")
 
 >[!TAB 목표 C]
 
-```
+```objectivec
 // Add other custom fields
 [profile setFieldName:@"mobilePhone"withValue:@"123.456.7890"];
 [profile setFieldName:@"numberOfEmployees"withValue:@"10"];
@@ -80,7 +80,7 @@ profile.setTwitterId("twitterid")
 
 >[!TAB Swift]
 
-```
+```swift
 // Add other custom fields
 profile.setFieldName("mobilePhone" , withValue :"123.456.7890");
 profile.setFieldName("numberOfEmployees", withValue: "10");
@@ -95,7 +95,7 @@ profile.setFieldName("phone", withValue:"123.456.7890");
 
 >[!TAB 목표 C]
 
-```
+```objectivec
 Marketo *sharedInstance = [Marketo sharedInstance];
 
 // This method will update user profile
@@ -104,7 +104,7 @@ Marketo *sharedInstance = [Marketo sharedInstance];
 
 >[!TAB Swift]
 
-```
+```swift
 let marketo = Marketo.sharedInstance()
 
 // This method will update user profile

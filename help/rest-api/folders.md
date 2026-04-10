@@ -3,7 +3,7 @@ title: 폴더
 feature: REST API
 description: 만들기, 업데이트, 삭제, ID 및 이름별 쿼리, 루트, 작업 공간, maxDepth 및 페이지 매김을 사용하여 벌크 찾아보기 등에 대한 Marketo REST API 안내서.
 exl-id: 4b55c256-ef0a-42b4-9548-ff8a4106f064
-source-git-commit: 31a503b3892ed41b3defe3f4956cb5ee0c3d4c3e
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '1099'
 ht-degree: 1%
@@ -22,7 +22,7 @@ ht-degree: 1%
 
 ### ID별
 
-```
+```http
 GET /rest/asset/v1/folder/{id}.json?type=Folder
 ```
 
@@ -72,7 +72,7 @@ GET /rest/asset/v1/folder/{id}.json?type=Folder
 
 [이름별 쿼리](https://developer.adobe.com/marketo-apis/api/asset/#tag/Folders/operation/getFolderByNameUsingGET)도 허용됩니다. 이름별 쿼리 끝점의 이름이 유일한 필수 매개 변수로 있습니다. Name은 인스턴스에 있는 폴더의 이름 필드에 대해 정확한 문자열 일치를 수행하고 해당 이름과 일치하는 각 폴더에 대한 결과를 반환합니다. 또한 폴더 또는 프로그램, 검색할 폴더의 ID &quot;루트&quot; 또는 검색할 작업 공간의 이름 &quot;작업 공간&quot;일 수 있는 &quot;유형&quot;의 선택적 쿼리 매개 변수가 있습니다. 루트 매개 변수가 설정되면 형식 매개 변수도 설정해야 합니다.
 
-```
+```http
 GET /rest/asset/v1/folder/byName.json?name=Test%2010%20-%20deverly
 ```
 
@@ -125,7 +125,7 @@ GET /rest/asset/v1/folder/byName.json?name=Test%2010%20-%20deverly
 - workSpace - 필터링할 작업 공간의 이름.
 - maxDepth - 폴더 계층에서 트래버스할 최대 레벨 수. 0으로 설정하면 root에 지정된 폴더만 반환됩니다. 지정하지 않으면 기본값은 2입니다.
 
-```
+```http
 GET /rest/asset/v1/folders.json?root={"id":14,"type":"Folder"}
 ```
 
@@ -213,15 +213,15 @@ GET /rest/asset/v1/folders.json?root={"id":14,"type":"Folder"}
 
 [폴더 만들기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Folders/operation/createFolderUsingPOST)는 단순하며 대상 폴더의 유형에 따라 두 개의 멤버, ID 및 유형이 폴더 또는 프로그램인 포함된 JSON 개체인 폴더를 만들 수 있는 두 개의 필수 매개 변수인 &quot;name&quot;, 문자열 및 &quot;parent&quot;가 있는 application/x-www-form-urlencoded POST로 실행됩니다. 원할 경우 문자열인 &quot;설명&quot;도 포함할 수 있으며 최대 2000자일 수 있습니다.
 
-```
+```http
 POST /rest/asset/v1/folders.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```text
 parent={"id":416,"type":"Folder"}&name=Test 10 - deverly&description=This is a test
 ```
 
@@ -260,15 +260,15 @@ parent={"id":416,"type":"Folder"}&name=Test 10 - deverly&description=This is a t
 
 폴더는 별도의 끝점을 통해 업데이트되며 설명, 이름 및 `isArchive`은(는) 업데이트할 선택적 매개 변수입니다. 업데이트로 인해 `isArchive`이(가) 변경되면 Marketo UI에서 폴더가 보관되거나, true로 변경되면 보관이 취소되거나, false로 변경되면 보관 해제됩니다. 이 API로 프로그램을 업데이트할 수 없습니다.
 
-```
+```http
 POST /rest/asset/v1/folder/{id}.json
 ```
 
-```
+```text
 Content-Type: application/x-www-form-urlencoded
 ```
 
-```
+```sql
 type=Folder&description=This is a test (update 01)
 ```
 
@@ -309,7 +309,7 @@ type=Folder&description=This is a test (update 01)
 
 비어 있는 경우 단일 폴더에 대해 삭제할 수 있습니다. 즉, 에셋 또는 하위 폴더가 없습니다. 폴더가 Program 유형이거나 isSystem 필드가 true로 설정된 경우 이 API를 사용하여 삭제할 수 없습니다.
 
-```
+```http
 POST /rest/asset/v1/folder/{id}/delete.json
 ```
 

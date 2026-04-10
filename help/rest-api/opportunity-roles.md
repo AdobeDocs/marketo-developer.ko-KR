@@ -3,16 +3,16 @@ title: 영업 기회 역할
 feature: REST API
 description: 설명, 복합 중복 제거 필드가 있는 쿼리, 업데이트 삭제 만들기, 시간 초과, CRM 동기화 안 함 등 REST API를 통해 Marketo 기회 역할을 관리합니다.
 exl-id: 2ba84f4d-82d0-4368-94e8-1fc6d17b69ed
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '270'
+source-wordcount: '279'
 ht-degree: 0%
 
 ---
 
 # 영업 기회 역할
 
-[영업 기회 역할 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/getOpportunityRolesUsingGET)
+[영업 기회 역할 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/getOpportunityRolesUsingGET)
 
 리드는 중간 `opportunityRole` 개체를 통해 기회에 연결됩니다.
 
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 기회와 마찬가지로 설명 호출 및 CRUD 작업은 기회 역할에 노출됩니다.
 
-```
+```http
 GET /rest/v1/opportunities/roles/describe.json
 ```
 
@@ -108,7 +108,7 @@ GET /rest/v1/opportunities/roles/describe.json
 
 `dedupeFields`과(와) `searchableFields`이(가) 모두 기회와 약간 다릅니다. `dedupeFields`은(는) 실제로 복합 키를 제공하므로 `externalOpportunityId`, `leadId` 및 `role`의 세 가지 키가 모두 필요합니다. 레코드 만들기에 성공하려면 ID 필드를 통한 영업 기회와 잠재 고객 링크가 모두 대상 인스턴스에 있어야 합니다. `searchableFields`의 경우 `marketoGUID`, `leadId` 및 `externalOpportunityId`은(는) 모두 자체 쿼리에 유효하며 Opportunity와 동일한 패턴을 사용하지만 쿼리에 복합 키를 사용하는 추가 옵션이 있습니다. 추가 쿼리 매개 변수 `_method=GET`을(를) 사용하여 POST를 통해 JSON 개체를 제출해야 합니다.
 
-```
+```http
 POST /rest/v1/opportunities/roles.json?_method=GET
 ```
 
@@ -147,7 +147,7 @@ POST /rest/v1/opportunities/roles.json?_method=GET
 
 Opportunity 역할에는 Opportunity 로 레코드를 만들고 업데이트하는 동일한 인터페이스가 있습니다.
 
-```
+```http
 POST /rest/v1/opportunities/roles.json
 ```
 
@@ -195,7 +195,7 @@ POST /rest/v1/opportunities/roles.json
 
 데이터 중복 제거 필드 또는 ID 필드를 통해 영업 기회 역할을 삭제할 수 있습니다. dedupeFields 또는 idField 값이 있는 deleteBy 매개 변수를 사용하여 지정합니다. 지정하지 않으면 기본값은 dedupeFields입니다. 요청 본문에는 삭제할 영업 기회 역할의 입력 배열이 포함되어 있습니다. 호출당 최대 300개의 영업 기회 역할이 허용됩니다.
 
-```
+```http
 POST /rest/v1/opportunities/roles/delete.json
 ```
 

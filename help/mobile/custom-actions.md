@@ -3,10 +3,10 @@ title: 사용자 지정 작업
 feature: Mobile Marketing
 description: iOS 및 Android용 Marketo Mobile SDK을 사용하여 사용자 지정 작업을 보내고, 보고하고, 오프라인으로 큐에 추가하고, 스마트 캠페인을 트리거하고, 20자를 충족하는 방법을 알아봅니다.
 exl-id: 8c2698ce-4e39-4b2b-9d36-0864c55be17a
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '313'
-ht-degree: 0%
+source-wordcount: '336'
+ht-degree: 1%
 
 ---
 
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 사용자 지정 작업을 전송하여 사용자 상호 작용을 추적할 수 있습니다. 모바일 앱이 Marketo SDK을 호출하여 사용자 지정 작업을 전송하면 사용자 지정 작업이 처음에 장치에 저장됩니다. 그런 다음 Marketo SDK은 사용자 지정 작업을 보내기 전에 적절한 인터넷 연결이 있는지 확인합니다. 따라서 사용자 지정 작업을 보낸 시간과 Marketo에서 받은 시간 사이에 지연이 있을 수 있습니다.
 
-사용자 지정 작업은 스마트 캠페인에서 트리거 및 필터로 사용할 수 있습니다. 자세한 내용은 [모바일 앱 활동](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/triggers-and-filters-for-mobile-smart-campaigns)을 참조하세요.
+사용자 지정 작업은 스마트 캠페인에서 트리거 및 필터로 사용할 수 있습니다. 자세한 내용은 [모바일 앱 활동](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/triggers-and-filters-for-mobile-smart-campaigns)을 참조하세요.
 
 ## iOS에서 사용자 지정 작업 보내기
 
@@ -24,14 +24,14 @@ ht-degree: 0%
 
 >[!TAB 목표 C]
 
-```
+```objectivec
 Marketo *sharedInstance = [Marketo sharedInstance];
 [sharedInstance reportAction:@"Login" withMetaData:nil];
 ```
 
 >[!TAB Swift]
 
-```
+```swift
 sharedInstance.reportAction("Login", withMetaData:nil);
 ```
 
@@ -43,7 +43,7 @@ sharedInstance.reportAction("Login", withMetaData:nil);
 
 >[!TAB 목표 C]
 
-```
+```objectivec
 MarketoActionMetaData *meta = [[MarketoActionMetaData alloc] init];
 [meta setType:@"Shopping"];
 [meta setDetails:@"RedShirt"];
@@ -55,7 +55,7 @@ MarketoActionMetaData *meta = [[MarketoActionMetaData alloc] init];
 
 >[!TAB Swift]
 
-```
+```swift
 let meta = MarketoActionMetaData()
 meta.setType("Shopping");
 meta.setDetails("RedShirt");
@@ -73,13 +73,13 @@ sharedInstance.reportAction("Bought Shirt", withMetaData:meta);
 
 >[!TAB 목표 C]
 
-```
+```objectivec
 [sharedInstance reportAll];
 ```
 
 >[!TAB Swift]
 
-```
+```swift
 sharedInstance.reportAll();
 ```
 
@@ -111,7 +111,7 @@ sharedInstance.reportAll();
    Marketo.reportAll();
    ```
 
-## 사용자 지정 작업 문제 해결
+## 사용자 정의 액션 문제 해결
 
 모바일 사용자 지정 작업을 설정하는 것은 간단하지만, 모바일 SDK에서 Marketo으로 보낼 수 있는 문자 수에 대한 제한 사항이 있습니다. 모바일 SDK을 통해 Marketo으로 다시 보고하는 모든 사용자 지정 작업의 길이가 20자 미만인지 확인하십시오.
 

@@ -3,9 +3,9 @@ title: 페이징 토큰
 feature: REST API
 description: Marketo REST API 페이징 토큰을 사용하여 날짜 기반 및 위치 기반 토큰, ISO 8601 sinceDatetime 및 414 오류를 포함하는 활동 및 리드를 검색합니다.
 exl-id: 63fbbf03-8daf-4add-85b0-a8546c825e5b
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
-source-wordcount: '370'
+source-wordcount: '424'
 ht-degree: 0%
 
 ---
@@ -29,7 +29,7 @@ Marketo에서 제공하는 서로 관련되지만 고유한 두 가지 유형의
 
 첫 번째는 날짜를 나타내는 페이징 토큰입니다. 페이징 토큰이 나타내는 일자 이후에 발생한 활동, 데이터 값 변경 및 삭제된 리드를 검색하는 데 사용됩니다. 이 유형의 페이징 토큰은 [페이징 토큰 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getActivitiesPagingTokenUsingGET) 끝점을 호출하고 날짜/시간을 포함하여 생성됩니다.
 
-```
+```http
 GET /rest/v1/activities/pagingtoken.json?sinceDatetime=2014-10-06T13:22:17-08:00
 ```
 
@@ -49,7 +49,7 @@ GET /rest/v1/activities/pagingtoken.json?sinceDatetime=2014-10-06T13:22:17-08:00
 
 `yyyy-mm-ddThh:mm:ssZ`
 
-예
+예시
 
 `2016-09-15T15:53:00+05:00`
 
@@ -59,7 +59,7 @@ GET /rest/v1/activities/pagingtoken.json?sinceDatetime=2014-10-06T13:22:17-08:00
 
 그런 다음 `nextPageToken` 문자열이 [잠재 고객 활동 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getLeadActivitiesUsingGET), [잠재 고객 변경 사항 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getLeadChangesUsingGET) 또는 [삭제된 잠재 고객 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getDeletedLeadsUsingGET) 호출에 제공되며, 활동은 페이징 토큰 가져오기 API에 제공된 날짜/시간 이후부터 검색됩니다.
 
-```
+```http
 GET /rest/v1/activities.json?nextPageToken=GIYDAOBNGEYS2MBWKQYDAORQGA5DAMBOGAYDAKZQGAYDALBQ&activityTypeIds=1&activityTypeIds=12
 ```
 

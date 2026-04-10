@@ -3,7 +3,7 @@ title: 푸시 알림
 feature: Mobile Marketing
 description: APNs 인증서 및 Xcode 설정에서 Marketo을 사용한 iOS 푸시 알림, Marketo SDK 통합, 토큰 등록 및 처리에 대한 안내서입니다.
 exl-id: 41d657d8-9eea-4314-ab24-fd4cb2be7f61
-source-git-commit: 14ca3ca1f1aa07bb3e54802003190a4a2b4fbcb9
+source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
 workflow-type: tm+mt
 source-wordcount: '1338'
 ht-degree: 0%
@@ -52,13 +52,13 @@ xCode 프로젝트에서 푸시 알림 기능을 사용하도록 설정합니다
 
 >[!TAB 목표 C]
 
-```
+```objectivec
 #import <UserNotifications/UserNotifications.h>
 ```
 
 >[!TAB Swift]
 
-```
+```swift
 import UserNotifications
 ```
 
@@ -70,13 +70,13 @@ import UserNotifications
 
 >[!TAB 목표 C]
 
-```
+```objectivec
 @interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate>
 ```
 
 >[!TAB Swift]
 
-```
+```swift
 class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenterDelegate
 ```
 
@@ -106,7 +106,7 @@ UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotification
 
 >[!TAB Swift]
 
-```
+```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound,    .badge]) { granted, error in
@@ -135,7 +135,7 @@ Marketo에 푸시 토큰 등록 Marketo에서 푸시 알림을 받으려면 Mark
 
 >[!TAB 목표 C]
 
-```
+```objectivec
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     // Register the push token with Marketo
     [[Marketo sharedInstance] registerPushDeviceToken:deviceToken];
@@ -144,7 +144,7 @@ Marketo에 푸시 토큰 등록 Marketo에서 푸시 알림을 받으려면 Mark
 
 >[!TAB Swift]
 
-```
+```swift
 func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     // Register the push token with Marketo
     Marketo.sharedInstance().registerPushDeviceToken(deviceToken)
@@ -159,13 +159,13 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 
 >[!TAB 목표 C]
 
-```
+```objectivec
 [[Marketo sharedInstance] unregisterPushDeviceToken];
 ```
 
 >[!TAB Swift]
 
-```
+```swift
 Marketo.sharedInstance().unregisterPushDeviceToken
 ```
 
@@ -179,7 +179,7 @@ Marketo.sharedInstance().unregisterPushDeviceToken
 
 >[!TAB 목표 C]
 
-```
+```objectivec
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     [[Marketo sharedInstance] handlePushNotification:userInfo];
@@ -188,7 +188,7 @@ Marketo.sharedInstance().unregisterPushDeviceToken
 
 >[!TAB Swift]
 
-```
+```swift
 func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
     Marketo.sharedInstance().handlePushNotification(userInfo)
 }
@@ -204,7 +204,7 @@ AppDelegate에 다음 메서드 추가
 
 >[!TAB 목표 C]
 
-```
+```objectivec
 -(void)userNotificationCenter:(UNUserNotificationCenter *)center
     willPresentNotification:(UNNotification *)notification
         withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
@@ -215,7 +215,7 @@ AppDelegate에 다음 메서드 추가
 
 >[!TAB Swift]
 
-```
+```swift
 func userNotificationCenter(_ center: UNUserNotificationCenter,
             willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (
     UNNotificationPresentationOptions) -> Void) {
@@ -233,7 +233,7 @@ AppDelegate에서 새로 받은 푸시 알림 처리
 
 >[!TAB 목표 C]
 
-```
+```objectivec
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center
 didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)(void))completionHandler {
     [[Marketo sharedInstance] userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
@@ -242,7 +242,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletion
 
 >[!TAB Swift]
 
-```
+```swift
 func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler
