@@ -66,7 +66,7 @@ repositories{
 1. Firebase 클라우드 메시징 지원
 
 1. Firebase 콘솔에서 Firebase 앱을 구성합니다.
-   1. [](https://console.firebase.google.com/)Firebase 콘솔에서 프로젝트를 만들거나 추가합니다.
+   1. [&#128279;](https://console.firebase.google.com/)Firebase 콘솔에서 프로젝트를 만들거나 추가합니다.
       1. [Firebase 콘솔](https://console.firebase.google.com/)에서 **[!UICONTROL Add Project]**&#x200B;을(를) 선택합니다.
       1. 기존 Google Cloud 프로젝트 목록에서 GCM 프로젝트를 선택하고 **[!UICONTROL Add Firebase]**&#x200B;을(를) 선택합니다.
       1. Firebase 시작 화면에서 &#39;Android 앱에 Firebase 추가&#39;를 선택합니다.
