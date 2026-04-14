@@ -100,7 +100,7 @@ Munchkin 쿠키는 각 두 번째 수준 도메인, 즉 `example.com`에 한정�
 
 ## Beta
 
-랜딩 페이지에 Munchkin 베타 채널을 옵트인하려면 [관리자 -> 보물 상자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features) 메뉴로 이동하여 &quot;랜딩 페이지에 Munchkin Beta&quot; 설정을 활성화하십시오. **[!UICONTROL Admin]** ->에 새 코드 조각을 제공합니다.  외부 사이트에서 Beta 버전을 사용할 수 있는 **[!UICONTROL Munchkin]** 메뉴.
+랜딩 페이지에 Munchkin 베타 채널을 옵트인하려면 [관리자 -> 보물 상자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features) 메뉴로 이동하여 &quot;랜딩 페이지에 Munchkin Beta&quot; 설정을 활성화하십시오. **[!UICONTROL Admin]** ->에 새 코드 조각을 제공합니다.  외부 사이트에서 Beta 버전을 사용할 수 있는 **[!UICONTROL Munchkin]** 메뉴.
 
 ## 옵트아웃
 
