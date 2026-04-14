@@ -3,7 +3,7 @@ title: 일괄 활동 추출
 feature: REST API
 description: Marketo 벌크 활동 REST API를 추출하여 31일 날짜 범위, 활동 및 ETL 및 CRM에 대한 기본 속성 필터를 사용하여 대용량 활동 데이터를 내보냅니다.
 exl-id: 6bdfa78e-bc5b-4eea-bcb0-e26e36cf6e19
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '1564'
 ht-degree: 3%
@@ -12,7 +12,7 @@ ht-degree: 3%
 
 # 일괄 활동 추출
 
-[일괄 활동 추출 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/)
+[일괄 활동 추출 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi)
 
 REST API의 벌크 활동 추출 세트는 Marketo에서 대량의 활동 데이터를 검색하기 위한 프로그래밍 방식 인터페이스를 제공합니다.  짧은 지연 시간이 필요하지 않고 CRM 통합, ETL, 데이터 웨어하우징 및 데이터 보관과 같은 많은 양의 작업 데이터를 Marketo 외부로 전송해야 하는 경우.
 
@@ -25,20 +25,20 @@ REST API의 벌크 활동 추출 세트는 Marketo에서 대량의 활동 데이
 | 필터 유형 | 데이터 유형 | 필수 | 참고 |
 | --- | --- | --- | --- |
 | `createdAt` | 날짜 범위 | 예 | `startAt` 및 `endAt` 멤버를 사용하여 JSON 개체를 허용합니다. `startAt`은(는) 로우 워터마크를 나타내는 날짜/시간을 수락하고 `endAt`은(는) 하이 워터마크를 나타내는 날짜/시간을 수락합니다. 범위는 31일 이하여야 합니다. 이 필터 유형의 작업은 날짜 범위 내에서 만든 액세스 가능한 모든 레코드를 반환합니다. 날짜/시간은 밀리초 없이 ISO-8601 형식이어야 합니다. |
-| `activityTypeIds` | Array\[Integer\] | 아니요 | 하나의 멤버 `activityTypeIds`이(가) 있는 JSON 개체를 허용합니다. 값은 원하는 활동 유형에 해당하는 정수 배열이어야 합니다. &quot;리드 삭제&quot; 활동은 지원되지 않습니다(대신 [삭제된 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getDeletedLeadsUsingGET) 엔드포인트를 사용). [활동 유형 가져오기 엔드포인트](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getAllActivityTypesUsingGET)를 사용하여 활동 유형 ID를 검색합니다. |
-| [`primaryAttributeValueIds`](#primaryattributevalueids-options) | Array\[Integer\] | 아니요 | 하나의 멤버 `primaryAttributeValueIds`이(가) 있는 JSON 개체를 허용합니다. 값은 필터링할 기본 속성을 지정하는 ID 배열입니다. 최대 50개의 ID를 지정할 수 있습니다. ID는 잠재 고객 필드 또는 에셋에 대한 고유 식별자이며 적절한 REST API 끝점을 호출하여 검색할 수 있습니다. 예를 들어 &quot;양식 채우기&quot; 활동에 대한 특정 양식을 필터링하려면 양식 이름을 [이름별 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByNameUsingGET) 엔드포인트에 전달하여 양식 ID를 검색합니다. 다음은 기본 속성 필터링이 지원되는 활동 유형 목록입니다. |
-| [`primaryAttributeValues`](#primaryattributevalues-options) | Array\[String\] | 아니요 | 하나의 멤버 `primaryAttributeValues`이(가) 있는 JSON 개체를 허용합니다. 값은 필터링할 기본 속성을 지정하는 이름 배열입니다. 최대 50개의 이름을 지정할 수 있습니다. 이름은 리드 필드 또는 에셋의 고유 식별자이며 적절한 REST API 끝점을 호출하여 검색할 수 있습니다. 예를 들어 &quot;양식 채우기&quot; 활동에 대한 특정 양식을 필터링하려면 양식 ID를 [ID별로 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) 엔드포인트에 전달하여 양식 이름을 검색합니다. 다음은 기본 속성 필터링이 지원되는 활동 유형 목록입니다. |
+| `activityTypeIds` | Array\[Integer\] | 아니요 | 하나의 멤버 `activityTypeIds`이(가) 있는 JSON 개체를 허용합니다. 값은 원하는 활동 유형에 해당하는 정수 배열이어야 합니다. &quot;리드 삭제&quot; 활동은 지원되지 않습니다(대신 [삭제된 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getDeletedLeadsUsingGET) 엔드포인트를 사용). [활동 유형 가져오기 엔드포인트](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getAllActivityTypesUsingGET)를 사용하여 활동 유형 ID를 검색합니다. |
+| [`primaryAttributeValueIds`](#primaryattributevalueids-options) | Array\[Integer\] | 아니요 | 하나의 멤버 `primaryAttributeValueIds`이(가) 있는 JSON 개체를 허용합니다. 값은 필터링할 기본 속성을 지정하는 ID 배열입니다. 최대 50개의 ID를 지정할 수 있습니다. ID는 잠재 고객 필드 또는 에셋에 대한 고유 식별자이며 적절한 REST API 끝점을 호출하여 검색할 수 있습니다. 예를 들어 &quot;양식 채우기&quot; 활동에 대한 특정 양식을 필터링하려면 양식 이름을 [이름별 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Forms/operation/getLpFormByNameUsingGET) 엔드포인트에 전달하여 양식 ID를 검색합니다. 다음은 기본 속성 필터링이 지원되는 활동 유형 목록입니다. |
+| [`primaryAttributeValues`](#primaryattributevalues-options) | Array\[String\] | 아니요 | 하나의 멤버 `primaryAttributeValues`이(가) 있는 JSON 개체를 허용합니다. 값은 필터링할 기본 속성을 지정하는 이름 배열입니다. 최대 50개의 이름을 지정할 수 있습니다. 이름은 리드 필드 또는 에셋의 고유 식별자이며 적절한 REST API 끝점을 호출하여 검색할 수 있습니다. 예를 들어 &quot;양식 채우기&quot; 활동에 대한 특정 양식을 필터링하려면 양식 ID를 [ID별로 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Sales-Persons/operation/describeUsingGET_5) 엔드포인트에 전달하여 양식 이름을 검색합니다. 다음은 기본 속성 필터링이 지원되는 활동 유형 목록입니다. |
 
 ### primaryAttributeValueIds 옵션 {#primaryattributevalueids-options}
 
 | 활동 유형 | 기본 속성 값 Id | 검색 끝점 | 자산 그룹 |
 | --- | --- | --- | --- |
-| 데이터 값 변경 | 리드 필드 ID | [리드 설명](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2) | 속성 이름 |
-| 점수 변경 | 리드 필드 ID | [리드 설명](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2) | 속성 이름 |
-| 진행 상태 변경 | 프로그램 ID | [이름별 프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getProgramByNameUsingGET) | 마케팅 프로그램 |
-| 목록에 추가 | 정적 목록 ID | [이름별 정적 목록 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByNameUsingGET) | 정적 목록 |
-| 목록에서 제거 | 정적 목록 ID | [이름별 정적 목록 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByNameUsingGET) | 정적 목록 |
-| 양식 작성 | 양식 ID | [이름별 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms/operation/getLpFormByNameUsingGET) | 웹 양식 |
+| 데이터 값 변경 | 리드 필드 ID | [리드 설명](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/describeUsingGET_2) | 속성 이름 |
+| 점수 변경 | 리드 필드 ID | [리드 설명](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/describeUsingGET_2) | 속성 이름 |
+| 진행 상태 변경 | 프로그램 ID | [이름별 프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/getProgramByNameUsingGET) | 마케팅 프로그램 |
+| 목록에 추가 | 정적 목록 ID | [이름별 정적 목록 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListByNameUsingGET) | 정적 목록 |
+| 목록에서 제거 | 정적 목록 ID | [이름별 정적 목록 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListByNameUsingGET) | 정적 목록 |
+| 양식 작성 | 양식 ID | [이름별 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Forms/operation/getLpFormByNameUsingGET) | 웹 양식 |
 
 `primaryAttributeValueIds`을(를) 사용하는 경우 `activityTypeIds` 필터가 있어야 하며 해당 자산 그룹과 일치하는 활동 ID만 포함해야 합니다. 예를 들어 웹 양식 자산을 필터링하는 경우 `activityTypeIds`에서 &quot;양식 작성&quot; 활동 유형 ID만 허용됩니다.
 
@@ -67,12 +67,12 @@ REST API의 벌크 활동 추출 세트는 Marketo에서 대량의 활동 데이
 
 | 활동 유형 | 기본 속성 값 | 검색 끝점 | 자산 그룹 |
 | --- | --- | --- | --- |
-| 데이터 값 변경 | 리드 필드 displayName | [리드 설명](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2) | 속성 이름 |
-| 점수 변경 | 리드 필드 displayName | [리드 설명](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2) | 속성 이름 |
-| 진행 상태 변경 | 프로그램 이름 | [Id로 프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs/operation/getProgramByIdUsingGET) | 마케팅 프로그램 |
-| 목록에 추가 | 정적 목록 이름 | [Id별 정적 목록 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByIdUsingGET) | 정적 목록 |
-| 목록에서 제거 | 정적 목록 이름 | [Id별 정적 목록 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Static-Lists/operation/getStaticListByIdUsingGET) | 정적 목록 |
-| 양식 작성 | 양식 이름 | [Id로 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Sales-Persons/operation/describeUsingGET_5) | 웹 양식 |
+| 데이터 값 변경 | 리드 필드 displayName | [리드 설명](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/describeUsingGET_2) | 속성 이름 |
+| 점수 변경 | 리드 필드 displayName | [리드 설명](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/describeUsingGET_2) | 속성 이름 |
+| 진행 상태 변경 | 프로그램 이름 | [Id로 프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/getProgramByIdUsingGET) | 마케팅 프로그램 |
+| 목록에 추가 | 정적 목록 이름 | [Id별 정적 목록 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListByIdUsingGET) | 정적 목록 |
+| 목록에서 제거 | 정적 목록 이름 | [Id별 정적 목록 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists/operation/getStaticListByIdUsingGET) | 정적 목록 |
+| 양식 작성 | 양식 이름 | [Id로 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Sales-Persons/operation/describeUsingGET_5) | 웹 양식 |
 
 마케팅 프로그램, 정적 목록, 웹 폼과 같은 자산 그룹의 이름을 지정하려면 `&lt;program&gt;.&lt;asset&gt;` 표기법을 사용해야 합니다. 예를 들어 이름이 &quot;GL_OP_ALL_2021&quot;인 프로그램 아래에 있는 이름이 &quot;MPS Outbound&quot;인 양식은 &quot;GL_OP_ALL_2021.MPS Outbound&quot;로 지정됩니다.
 
@@ -108,7 +108,7 @@ REST API의 벌크 활동 추출 세트는 Marketo에서 대량의 활동 데이
 
 ## 작업 생성
 
-레코드를 내보내려면 먼저 작업과 검색할 레코드 집합을 정의해야 합니다.  [내보내기 활동 만들기 작업](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/createExportActivitiesUsingPOST) 끝점을 사용하여 작업을 만듭니다.  활동을 내보낼 때 적용할 수 있는 기본 필터가 두 개 있습니다. 항상 필요한 `createdAt`과(와) 선택 사항인 `activityTypeIds`입니다.  `createdAt` 필터는 `startAt` 및 `endAt` 매개 변수(모두 datetime 필드)를 사용하여 활동이 만들어진 날짜 범위를 정의하는 데 사용됩니다. 이 매개 변수는 모두 가장 빠른 생성 날짜와 가장 최근 허용된 생성 날짜를 나타냅니다.  `activityTypeIds` 필터를 사용하여 특정 유형의 활동만 선택적으로 필터링할 수도 있습니다.  이 기능은 사용 사례와 관련이 없는 결과를 제거하는 데 유용합니다.
+레코드를 내보내려면 먼저 작업과 검색할 레코드 집합을 정의해야 합니다.  [내보내기 활동 만들기 작업](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Activities/operation/createExportActivitiesUsingPOST) 끝점을 사용하여 작업을 만듭니다.  활동을 내보낼 때 적용할 수 있는 기본 필터가 두 개 있습니다. 항상 필요한 `createdAt`과(와) 선택 사항인 `activityTypeIds`입니다.  `createdAt` 필터는 `startAt` 및 `endAt` 매개 변수(모두 datetime 필드)를 사용하여 활동이 만들어진 날짜 범위를 정의하는 데 사용됩니다. 이 매개 변수는 모두 가장 빠른 생성 날짜와 가장 최근 허용된 생성 날짜를 나타냅니다.  `activityTypeIds` 필터를 사용하여 특정 유형의 활동만 선택적으로 필터링할 수도 있습니다.  이 기능은 사용 사례와 관련이 없는 결과를 제거하는 데 유용합니다.
 
 ```http
 POST /bulk/v1/activities/export/create.json
@@ -147,7 +147,7 @@ POST /bulk/v1/activities/export/create.json
 }
 ```
 
-이제 작업 상태가 &quot;생성됨&quot;이지만 아직 처리 큐에 있지 않습니다.  처리를 시작할 수 있도록 큐에 넣으려면 만들기 상태 응답에서 exportId를 사용하여 [큐 내보내기 활동 작업](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/enqueueExportActivitiesUsingPOST) 끝점을 호출합니다.
+이제 작업 상태가 &quot;생성됨&quot;이지만 아직 처리 큐에 있지 않습니다.  처리를 시작할 수 있도록 큐에 넣으려면 만들기 상태 응답에서 exportId를 사용하여 [큐 내보내기 활동 작업](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Activities/operation/enqueueExportActivitiesUsingPOST) 끝점을 호출합니다.
 
 ```http
 POST /bulk/v1/activities/export/{exportId}/enqueue.json
@@ -175,7 +175,7 @@ POST /bulk/v1/activities/export/{exportId}/enqueue.json
 
 동일한 API 사용자가 만든 작업에 대해서만 작업 상태를 검색할 수 있습니다.
 
-Marketo의 벌크 활동 추출은 비동기 끝점이므로 작업 상태를 폴링하여 작업이 완료되는 시기를 확인해야 합니다.  다음과 같이 [내보내기 활동 작업 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/getExportActivitiesStatusUsingGET) 끝점을 사용하여 폴링합니다.
+Marketo의 벌크 활동 추출은 비동기 끝점이므로 작업 상태를 폴링하여 작업이 완료되는 시기를 확인해야 합니다.  다음과 같이 [내보내기 활동 작업 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Activities/operation/getExportActivitiesStatusUsingGET) 끝점을 사용하여 폴링합니다.
 
 ```http
 GET /bulk/v1/activities/export/{exportId}/status.json
@@ -213,7 +213,7 @@ GET /bulk/v1/activities/export/{exportId}/status.json
 
 ## 데이터 검색 중
 
-작업이 완료되면 [내보내기 활동 파일 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/getExportActivitiesFileUsingGET) 끝점을 사용하여 데이터를 검색합니다.
+작업이 완료되면 [내보내기 활동 파일 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Activities/operation/getExportActivitiesFileUsingGET) 끝점을 사용하여 데이터를 검색합니다.
 
 ```http
 GET /bulk/v1/activities/export/{exportId}/file.json
@@ -235,7 +235,7 @@ marketoGUID,leadId,activityDate,activityTypeId,campaignId,primaryAttributeValueI
 
 ## 작업 취소
 
-작업이 잘못 구성되었거나 필요하지 않은 경우 [내보내기 활동 작업 취소](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Activities/operation/cancelExportActivitiesUsingPOST) 끝점을 사용하여 작업을 쉽게 취소할 수 있습니다.
+작업이 잘못 구성되었거나 필요하지 않은 경우 [내보내기 활동 작업 취소](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Activities/operation/cancelExportActivitiesUsingPOST) 끝점을 사용하여 작업을 쉽게 취소할 수 있습니다.
 
 ```http
 POST /bulk/v1/activities/export/{exportId}/cancel.json

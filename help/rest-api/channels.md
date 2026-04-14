@@ -3,7 +3,7 @@ title: 채널
 feature: REST API
 description: Asset REST API를 통해 Marketo 채널을 쿼리하고, 페이지 매김 또는 이름별로 가져오기로 탐색하고, 진행 상태를 보고, 프로그램 유형 규칙을 이해하는 방법에 대해 알아봅니다.
 exl-id: ec6c279f-a7b4-4a7c-b980-1a68045f37ce
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '151'
 ht-degree: 2%
@@ -12,7 +12,7 @@ ht-degree: 2%
 
 # 채널
 
-[채널 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Channels)
+[채널 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Channels)
 
 채널은 모든 프로그램 유형에 대한 표준 및 필수 필드입니다. 각 채널 유형은 지정된 `applicableProgramType`에서만 사용할 수 있으며 각 프로그램의 프로그램 구성원에 대해 유효한 사용 가능한 프로그램 상태 목록을 제공합니다. 프로그램을 만든 후 채널의 프로그램 상태가 변경되면 리드를 변경할 수 있는 프로그램 상태 목록이 해당 시점에 채널이 제공한 목록과 일치하지만 기존 프로그램 멤버십 레코드에 대한 프로그램 상태는 소급하여 변경되지 않습니다.
 

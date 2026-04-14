@@ -3,7 +3,7 @@ title: 푸시 알림
 feature: Mobile Marketing
 description: APNs 인증서 및 Xcode 설정에서 Marketo을 사용한 iOS 푸시 알림, Marketo SDK 통합, 토큰 등록 및 처리에 대한 안내서입니다.
 exl-id: 41d657d8-9eea-4314-ab24-fd4cb2be7f61
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '1338'
 ht-degree: 0%
@@ -28,7 +28,7 @@ ht-degree: 0%
 1. 인증서, 식별자 및 프로필 을 클릭합니다.
 1. &quot;iOS, tvOS, watchOS&quot; 아래의 &quot;Certificates->All&quot; 폴더를 클릭합니다.
 1. 인증서 ![](assets/certificates-plus.png) 옆의 왼쪽 상단 화면에서 &quot;+&quot;를 선택합니다.
-1. &quot;Apple 푸시 알림 서비스 SSL(샌드박스 및 프로덕션)&quot; 확인란을 활성화하고 &quot;계속&quot;을 클릭합니다.
+1. &quot;Apple 푸시 알림 서비스 SSL(샌드박스 및 프로덕션)&quot; 확인란을 활성화하고 계속을 선택합니다.
 1. 앱 빌드를 사용 중인 응용 프로그램 식별자를 선택합니다.![](assets/push-appid.png)
 1. 푸시 인증서를 생성하려면 CSR을 만들고 업로드하십시오. ![](assets/push-ssl.png)
 1. 로컬 컴퓨터에 인증서를 다운로드하고 두 번 클릭하여 설치합니다. ![](assets/certificate-download.png)

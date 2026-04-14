@@ -3,22 +3,22 @@ title: 스니펫
 feature: REST API, Snippets
 description: 스니펫용 Marketo Asset REST API로, ID별 쿼리를 다루고 상태 찾아보기, 콘텐츠 가져오기, HTML, 텍스트 및 동적 콘텐츠 만들기 및 업데이트.
 exl-id: 87901c29-ee59-4224-848d-3bd6a6c52718
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
-source-wordcount: '511'
+source-wordcount: '512'
 ht-degree: 1%
 
 ---
 
 # 스니펫
 
-[코드 조각 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets)
+[코드 조각 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets)
 
-스니펫은 이메일 및 랜딩 페이지에 임베드할 수 있고, 동적 콘텐츠용으로 세그먼트화할 수 있는 재사용 가능한 HTML 구성 요소입니다. 스니펫에는 연결된 템플릿이 없으며 Marketo 내의 다른 에셋 내에서 만들고 배포할 수 있습니다.
+스니펫은 이메일 및 랜딩 페이지에 임베드할 수 있고, 동적 콘텐츠용으로 세그먼트화할 수 있는 재사용 가능한 HTML 구성 요소입니다. 스니펫에는 관련 템플릿이 없으며 Marketo 내의 다른 에셋 내에서 만들고 배포할 수 있습니다.
 
 ## 쿼리
 
-코드 조각 쿼리는 By Name 메서드가 없다는 점을 제외하면 자산의 표준 패턴을 따릅니다. [ID별](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/getSnippetByIdUsingGET) 및 [찾아보기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/getSnippetUsingGET) 메서드를 사용하면 상태 필드를 사용하여 코드 조각의 승인된 버전 또는 초안 버전을 검색할 수 있습니다.
+코드 조각 쿼리는 By Name 메서드가 없다는 점을 제외하면 자산의 표준 패턴을 따릅니다. [ID별](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/getSnippetByIdUsingGET) 및 [찾아보기](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/getSnippetUsingGET) 메서드를 사용하면 상태 필드를 사용하여 코드 조각의 승인된 버전 또는 초안 버전을 검색할 수 있습니다.
 
 ### ID별
 
@@ -143,7 +143,7 @@ GET /rest/asset/v1/snippet/{id}/content.json
 
 ## 만들기 및 업데이트
 
-코드 조각은 [코드 조각 만들기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/createSnippetUsingPOST)를 호출하는 복잡한 자산 만들기 패턴을 따르며 해당 내용은 별도로 만들어지므로 첫 번째 호출은 선택적 설명과 함께 만들기 끝점에 대한 것이어야 합니다.   데이터는 JSON이 아닌 x-www-form-urlencoded로 전달됩니다.
+코드 조각은 [코드 조각 만들기](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/createSnippetUsingPOST)를 호출하는 복잡한 자산 만들기 패턴을 따르며 해당 내용은 별도로 만들어지므로 첫 번째 호출은 선택적 설명과 함께 만들기 끝점에 대한 것이어야 합니다.   데이터는 JSON이 아닌 x-www-form-urlencoded로 전달됩니다.
 
 ```http
 POST /rest/asset/v1/snippets.json
@@ -211,7 +211,7 @@ type=HTML&content=draft testUpdateSnippetContent1 HTML Content
 }
 ```
 
-[메타데이터 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/updateSnippetUsingPOST)도 ID로 수행됩니다. 이름과 설명만 업데이트할 수 있습니다.
+[메타데이터 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/updateSnippetUsingPOST)도 ID로 수행됩니다. 이름과 설명만 업데이트할 수 있습니다.
 
 ```http
 POST /rest/asset/v1/snippet/{id}.json
@@ -400,7 +400,7 @@ POST /rest/asset/v1/snippet/{id}/discardDraft.json
 
 ## 복제
 
-API를 사용하여 [코드 조각을 복제하는](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets/operation/cloneSnippetUsingPOST)은(는) 간단하며 필수 이름, 원래 코드 조각 및 폴더의 ID와 선택적 설명을 사용하여 표준 패턴을 따릅니다.  승인된 버전이 없으면 초안 버전이 복제됩니다.
+API를 사용하여 [코드 조각을 복제하는](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/cloneSnippetUsingPOST)은(는) 간단하며 필수 이름, 원래 코드 조각 및 폴더의 ID와 선택적 설명을 사용하여 표준 패턴을 따릅니다.  승인된 버전이 없으면 초안 버전이 복제됩니다.
 
 ```http
 POST /rest/asset/v1/snippet/{id}/clone.json

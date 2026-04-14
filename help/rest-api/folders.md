@@ -3,7 +3,7 @@ title: 폴더
 feature: REST API
 description: 만들기, 업데이트, 삭제, ID 및 이름별 쿼리, 루트, 작업 공간, maxDepth 및 페이지 매김을 사용하여 벌크 찾아보기 등에 대한 Marketo REST API 안내서.
 exl-id: 4b55c256-ef0a-42b4-9548-ff8a4106f064
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '1099'
 ht-degree: 1%
@@ -12,13 +12,13 @@ ht-degree: 1%
 
 # 폴더
 
-[폴더 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Folders)
+[폴더 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders)
 
 폴더는 Marketo의 핵심 조직 에셋이며 다른 모든 에셋 유형에는 상위 폴더로 하나 이상의 폴더가 있습니다. 이 상위 폴더는 순전히 조직적인 폴더 또는 다른 자산 유형과 기능 관계를 맺고 다른 자산의 상위 폴더가 될 수 있는 프로그램일 수 있습니다. API를 통해 폴더를 만들고, 쿼리하고, 업데이트하고, 삭제할 수 있으며 컨텐츠 목록을 검색할 수도 있습니다. 폴더 API 쿼리를 통해 프로그램을 반환할 수 있지만 프로그램 API를 통해 프로그램을 만들고, 업데이트하고, 삭제해야 합니다.
 
 ## 쿼리
 
-폴더를 쿼리하면 [ID별](https://developer.adobe.com/marketo-apis/api/asset/#tag/Folders/operation/getFolderByIdUsingGET), [이름별](https://developer.adobe.com/marketo-apis/api/asset/#tag/Folders/operation/getFolderByNameUsingGET) 및 [검색](https://developer.adobe.com/marketo-apis/api/asset/#tag/Folders/operation/getFolderUsingGET)의 자산에 대한 표준 쿼리 형식을 따릅니다.
+폴더를 쿼리하면 [ID별](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderByIdUsingGET), [이름별](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderByNameUsingGET) 및 [검색](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderUsingGET)의 자산에 대한 표준 쿼리 형식을 따릅니다.
 
 ### ID별
 
@@ -70,7 +70,7 @@ GET /rest/asset/v1/folder/{id}.json?type=Folder
 
 ### 이름별
 
-[이름별 쿼리](https://developer.adobe.com/marketo-apis/api/asset/#tag/Folders/operation/getFolderByNameUsingGET)도 허용됩니다. 이름별 쿼리 끝점의 이름이 유일한 필수 매개 변수로 있습니다. Name은 인스턴스에 있는 폴더의 이름 필드에 대해 정확한 문자열 일치를 수행하고 해당 이름과 일치하는 각 폴더에 대한 결과를 반환합니다. 또한 폴더 또는 프로그램, 검색할 폴더의 ID &quot;루트&quot; 또는 검색할 작업 공간의 이름 &quot;작업 공간&quot;일 수 있는 &quot;유형&quot;의 선택적 쿼리 매개 변수가 있습니다. 루트 매개 변수가 설정되면 형식 매개 변수도 설정해야 합니다.
+[이름별 쿼리](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderByNameUsingGET)도 허용됩니다. 이름별 쿼리 끝점의 이름이 유일한 필수 매개 변수로 있습니다. Name은 인스턴스에 있는 폴더의 이름 필드에 대해 정확한 문자열 일치를 수행하고 해당 이름과 일치하는 각 폴더에 대한 결과를 반환합니다. 또한 폴더 또는 프로그램, 검색할 폴더의 ID &quot;루트&quot; 또는 검색할 작업 공간의 이름 &quot;작업 공간&quot;일 수 있는 &quot;유형&quot;의 선택적 쿼리 매개 변수가 있습니다. 루트 매개 변수가 설정되면 형식 매개 변수도 설정해야 합니다.
 
 ```http
 GET /rest/asset/v1/folder/byName.json?name=Test%2010%20-%20deverly
@@ -113,12 +113,12 @@ GET /rest/asset/v1/folder/byName.json?name=Test%2010%20-%20deverly
 
 ### 찾아보기
 
-폴더는 [일괄적으로 검색](https://developer.adobe.com/marketo-apis/api/asset/#tag/Folders/operation/getFolderUsingGET)할 수도 있습니다. &quot;root&quot; 매개 변수는 쿼리가 수행될 상위 폴더를 지정하는 데 사용할 수 있으며 쿼리 매개 변수의 값으로 포함된 JSON 개체로 서식이 지정됩니다. Root에는 두 개의 멤버가 있습니다.
+폴더는 [일괄적으로 검색](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderUsingGET)할 수도 있습니다. &quot;root&quot; 매개 변수는 쿼리가 수행될 상위 폴더를 지정하는 데 사용할 수 있으며 쿼리 매개 변수의 값으로 포함된 JSON 개체로 서식이 지정됩니다. Root에는 두 개의 멤버가 있습니다.
 
 1. id - 폴더 또는 프로그램의 ID입니다.
 1. 유형 - 브라우저에 대한 루트 폴더 유형에 따라 폴더 또는 프로그램 중 하나입니다.
 
-루트 폴더를 알 수 없거나 특정 영역의 모든 폴더를 검색하려는 경우 루트를 &quot;마케팅 활동&quot;, &quot;Design Studio&quot; 또는 &quot;리드 데이터베이스&quot; 영역으로 지정할 수 있습니다. [이름별 폴더 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Folders/operation/getFolderByNameUsingGET) API를 통해 원하는 영역의 이름을 지정하여 각 ID를 검색할 수 있습니다.
+루트 폴더를 알 수 없거나 특정 영역의 모든 폴더를 검색하려는 경우 루트를 &quot;마케팅 활동&quot;, &quot;Design Studio&quot; 또는 &quot;리드 데이터베이스&quot; 영역으로 지정할 수 있습니다. [이름별 폴더 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderByNameUsingGET) API를 통해 원하는 영역의 이름을 지정하여 각 ID를 검색할 수 있습니다.
 
 다른 대량 자산 검색 끝점과 마찬가지로 offset 및 maxReturn은 페이징을 위한 선택적 매개 변수입니다.   기타 선택적 매개 변수는 다음과 같습니다.
 
@@ -211,7 +211,7 @@ GET /rest/asset/v1/folders.json?root={"id":14,"type":"Folder"}
 
 ## 만들기 및 업데이트
 
-[폴더 만들기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Folders/operation/createFolderUsingPOST)는 단순하며 대상 폴더의 유형에 따라 두 개의 멤버, ID 및 유형이 폴더 또는 프로그램인 포함된 JSON 개체인 폴더를 만들 수 있는 두 개의 필수 매개 변수인 &quot;name&quot;, 문자열 및 &quot;parent&quot;가 있는 application/x-www-form-urlencoded POST로 실행됩니다. 원할 경우 문자열인 &quot;설명&quot;도 포함할 수 있으며 최대 2000자일 수 있습니다.
+[폴더 만들기](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/createFolderUsingPOST)는 단순하며 대상 폴더의 유형에 따라 두 개의 멤버, ID 및 유형이 폴더 또는 프로그램인 포함된 JSON 개체인 폴더를 만들 수 있는 두 개의 필수 매개 변수인 &quot;name&quot;, 문자열 및 &quot;parent&quot;가 있는 application/x-www-form-urlencoded POST로 실행됩니다. 원할 경우 문자열인 &quot;설명&quot;도 포함할 수 있으며 최대 2000자일 수 있습니다.
 
 ```http
 POST /rest/asset/v1/folders.json

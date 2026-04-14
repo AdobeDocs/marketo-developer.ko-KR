@@ -3,7 +3,7 @@ title: 일괄 프로그램 구성원 가져오기
 feature: REST API
 description: 10MB 이하의 CSV TSV 또는 SSV 파일을 사용하여 Marketo REST API를 통해 프로그램 구성원을 일괄로 가져오는 방법, 큐 제한, 필수 매개 변수 및 폴링 작업 상태에 대해 알아봅니다.
 exl-id: b0e1039a-fe9b-4fb7-9aa6-9980a06da673
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '962'
 ht-degree: 0%
@@ -12,9 +12,9 @@ ht-degree: 0%
 
 # 일괄 프로그램 구성원 가져오기
 
-[벌크 프로그램 멤버 가져오기 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members)
+[벌크 프로그램 멤버 가져오기 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members)
 
-대량의 프로그램 구성원 레코드의 경우 [일괄 API](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members)를 사용하여 프로그램 구성원을 비동기적으로 가져올 수 있습니다. 이렇게 하면 구분 기호(쉼표, 탭 또는 세미콜론)가 있는 플랫 파일을 사용하여 레코드 목록을 Marketo에 가져올 수 있습니다. 파일 합계가 10MB 미만인 한 파일에는 여러 개의 레코드가 포함될 수 있습니다. 레코드 작업은 &quot;삽입 또는 업데이트&quot;만 가능합니다.
+대량의 프로그램 구성원 레코드의 경우 [일괄 API](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members)를 사용하여 프로그램 구성원을 비동기적으로 가져올 수 있습니다. 이렇게 하면 구분 기호(쉼표, 탭 또는 세미콜론)가 있는 플랫 파일을 사용하여 레코드 목록을 Marketo에 가져올 수 있습니다. 파일 합계가 10MB 미만인 한 파일에는 여러 개의 레코드가 포함될 수 있습니다. 레코드 작업은 &quot;삽입 또는 업데이트&quot;만 가능합니다.
 
 ## 처리 제한
 
@@ -22,7 +22,7 @@ ht-degree: 0%
 
 ## 파일 가져오기
 
-파일의 첫 번째 행은 각 행의 값을 매핑할 필드로 해당 REST API 이름을 나열하는 헤더여야 합니다. REST API 이름은 [리드 설명](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeUsingGET_2) 및/또는 [프로그램 구성원 설명](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/describeProgramMemberUsingGET) 끝점을 사용하여 검색할 수 있습니다. 레코드에는 리드 필드, 사용자 정의 리드 필드 및 사용자 정의 프로그램 멤버 필드가 포함될 수 있습니다.
+파일의 첫 번째 행은 각 행의 값을 매핑할 필드로 해당 REST API 이름을 나열하는 헤더여야 합니다. REST API 이름은 [리드 설명](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/describeUsingGET_2) 및/또는 [프로그램 구성원 설명](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/describeProgramMemberUsingGET) 끝점을 사용하여 검색할 수 있습니다. 레코드에는 리드 필드, 사용자 정의 리드 필드 및 사용자 정의 프로그램 멤버 필드가 포함될 수 있습니다.
 
 일반적인 파일은 다음 기본 패턴을 따릅니다.
 
@@ -37,7 +37,7 @@ test@example.com,John,Doe
 
 ## 작업 생성
 
-[프로그램 구성원 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members/operation/importProgramMemberUsingPOST) 끝점이 프로그램 구성원 레코드가 포함된 파일을 읽고 지정된 상태의 프로그램에 추가합니다. 레코드에는 리드 필드와 프로그램 멤버 사용자 정의 필드가 모두 포함될 수 있습니다. 모든 레코드에는 중복 제거를 위해 사용되는 이메일 필드가 포함되어야 합니다.
+[프로그램 구성원 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/importProgramMemberUsingPOST) 끝점이 프로그램 구성원 레코드가 포함된 파일을 읽고 지정된 상태의 프로그램에 추가합니다. 레코드에는 리드 필드와 프로그램 멤버 사용자 정의 필드가 모두 포함될 수 있습니다. 모든 레코드에는 중복 제거를 위해 사용되는 이메일 필드가 포함되어야 합니다.
 
 `programId` 경로 매개 변수는 멤버가 추가되는 프로그램을 지정합니다.
 
@@ -109,7 +109,7 @@ Lancel,Lannister,Lancel@Lannister.com,Lannister,House Lannister,0
 
 ## 폴링 작업 상태
 
-가져오기 작업이 생성되면 해당 상태를 쿼리해야 합니다. 가져오기 작업을 5-30초마다 폴링하는 것이 가장 좋습니다. 이렇게 하려면 `batchId` 경로 매개 변수를 [가져오기 프로그램 구성원 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET) 끝점에 전달하십시오.
+가져오기 작업이 생성되면 해당 상태를 쿼리해야 합니다. 가져오기 작업을 5-30초마다 폴링하는 것이 가장 좋습니다. 이렇게 하려면 `batchId` 경로 매개 변수를 [가져오기 프로그램 구성원 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET) 끝점에 전달하십시오.
 
 ```http
 GET /bulk/v1/program/members/import/{batchId}/status.json
@@ -139,7 +139,7 @@ GET /bulk/v1/program/members/import/{batchId}/status.json
 
 ## 실패
 
-[가져오기 프로그램 구성원 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET) 응답에서 `numOfRowsFailed` 특성으로 오류가 표시됩니다. numOfRowsFailed가 0보다 크면 해당 값은 발생한 실패 횟수를 나타냅니다.
+[가져오기 프로그램 구성원 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET) 응답에서 `numOfRowsFailed` 특성으로 오류가 표시됩니다. numOfRowsFailed가 0보다 크면 해당 값은 발생한 실패 횟수를 나타냅니다.
 
 가져오기 프로그램 멤버 오류 가져오기 끝점을 사용하여 `batchId` 경로 매개 변수를 전달하여 실패한 행의 레코드와 원인을 검색합니다.
 
@@ -193,9 +193,9 @@ Aerys,Targaryen,Aerys@Targaryen.com,Targaryen,House Targaryen,TEXT_VALUE_IN_INTE
 
 ## 경고
 
-[가져오기 프로그램 구성원 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET) 응답에서 `numOfRowsWithWarning` 특성에 경고가 표시됩니다. `numOfRowsWithWarning`이(가) 0보다 큰 경우 해당 값은 발생한 경고 수를 나타냅니다.
+[가져오기 프로그램 구성원 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberStatusUsingGET) 응답에서 `numOfRowsWithWarning` 특성에 경고가 표시됩니다. `numOfRowsWithWarning`이(가) 0보다 큰 경우 해당 값은 발생한 경고 수를 나타냅니다.
 
-[가져오기 프로그램 구성원 경고 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberWarningsUsingGET) 끝점을 사용하여 `batchId` 경로 매개 변수를 전달하여 레코드 및 경고 행 원인을 검색합니다.
+[가져오기 프로그램 구성원 경고 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Program-Members/operation/getImportProgramMemberWarningsUsingGET) 끝점을 사용하여 `batchId` 경로 매개 변수를 전달하여 레코드 및 경고 행 원인을 검색합니다.
 
 ```http
 GET /bulk/v1/program/members/import/{batchId}/warnings.json

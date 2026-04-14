@@ -3,7 +3,7 @@ title: 랜딩 페이지
 feature: REST API, Landing Pages
 description: Marketo REST API를 사용하여 안내식 및 자유 형식 유형을 비롯한 랜딩 페이지를 쿼리하고, 만들고, 업데이트하고, 승인하고, 삭제하고, 복제합니다.
 exl-id: 2f986fb0-0a6b-469f-b199-1c526cd5a882
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '1221'
 ht-degree: 1%
@@ -12,13 +12,13 @@ ht-degree: 1%
 
 # 랜딩 페이지
 
-[랜딩 페이지 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Pages)
+[랜딩 페이지 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Pages)
 
 랜딩 페이지는 Marketo에서 호스팅하는 웹 페이지입니다.
 
 ## 쿼리
 
-다른 대부분의 자산과 마찬가지로 랜딩 페이지도 [이름](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Pages/operation/getLandingPageByNameUsingGET), [ID](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Pages/operation/getLandingPageByIdUsingGET) 및 [탐색](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Pages/operation/browseLandingPagesUsingGET)별로 쿼리할 수 있습니다. 이 쿼리는 메타데이터만 반환하며 랜딩 페이지의 콘텐츠 섹션 목록은 랜딩 페이지의 ID로 별도로 쿼리해야 합니다.
+다른 대부분의 자산과 마찬가지로 랜딩 페이지도 [이름](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Pages/operation/getLandingPageByNameUsingGET), [ID](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Pages/operation/getLandingPageByIdUsingGET) 및 [탐색](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Pages/operation/browseLandingPagesUsingGET)별로 쿼리할 수 있습니다. 이 쿼리는 메타데이터만 반환하며 랜딩 페이지의 콘텐츠 섹션 목록은 랜딩 페이지의 ID로 별도로 쿼리해야 합니다.
 
 랜딩 페이지의 콘텐츠를 쿼리하면 랜딩 페이지에서 사용할 수 있는 콘텐츠 섹션 목록이 반환됩니다. 콘텐츠를 업데이트하려면 페이지의 콘텐츠 목록에 섹션이 있어야 합니다.
 
@@ -56,9 +56,9 @@ GET /rest/asset/v1/landingPage/{id}/content.json
 
 ## 만들기 및 업데이트
 
-템플릿을 다시 참조하여 [랜딩 페이지가 만들어집니다](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Pages/operation/createLandingPageUsingPOST). 만들기 위해 필요한 필드는 이름, 템플릿(템플릿의 ID) 및 페이지를 배치할 폴더뿐입니다. 채울 수 있는 추가 메타데이터는 끝점 참조를 참조하십시오.
+템플릿을 다시 참조하여 [랜딩 페이지가 만들어집니다](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Pages/operation/createLandingPageUsingPOST). 만들기 위해 필요한 필드는 이름, 템플릿(템플릿의 ID) 및 페이지를 배치할 폴더뿐입니다. 채울 수 있는 추가 메타데이터는 끝점 참조를 참조하십시오.
 
-[랜딩 페이지 콘텐츠](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content) 끝점에 유효한 콘텐츠 형식은 richText, HTML, Form, Image, Rectangle, Snippet입니다.
+[랜딩 페이지 콘텐츠](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content) 끝점에 유효한 콘텐츠 형식은 richText, HTML, Form, Image, Rectangle, Snippet입니다.
 
 ```http
 POST rest/asset/v1/landingPages.json
@@ -105,7 +105,7 @@ name=createLandingPage&folder={"type": "Folder", "id": 11}&template=1&descriptio
 }
 ```
 
-랜딩 페이지 메타데이터는 [랜딩 페이지 메타데이터 끝점 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Pages/operation/updateLandingPageUsingPOST)로 업데이트할 수 있습니다.
+랜딩 페이지 메타데이터는 [랜딩 페이지 메타데이터 끝점 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Pages/operation/updateLandingPageUsingPOST)로 업데이트할 수 있습니다.
 
 ## 승인
 
@@ -113,7 +113,7 @@ name=createLandingPage&folder={"type": "Folder", "id": 11}&template=1&descriptio
 
 ## 삭제
 
-랜딩 페이지를 삭제하려면 먼저 사용 중이고 다른 Marketo 에셋에서 참조하지 않아야 하며 승인되지 않아야 합니다. 페이지는 [랜딩 페이지 삭제](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Pages/operation/deleteLandingPageByIdUsingPOST) 끝점을 사용하여 개별적으로 삭제됩니다. 이 API를 통해 포함된 소셜 단추가 있는 랜딩 페이지를 삭제할 수 없습니다.
+랜딩 페이지를 삭제하려면 먼저 사용 중이고 다른 Marketo 에셋에서 참조하지 않아야 하며 승인되지 않아야 합니다. 페이지는 [랜딩 페이지 삭제](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Pages/operation/deleteLandingPageByIdUsingPOST) 끝점을 사용하여 개별적으로 삭제됩니다. 이 API를 통해 포함된 소셜 단추가 있는 랜딩 페이지를 삭제할 수 없습니다.
 
 ## 복제
 
@@ -173,7 +173,7 @@ name=MyNewLandingPage&folder={"type":"Program","id":1119}&template=57
 
 ## 콘텐츠 관리 섹션
 
-콘텐츠 섹션은 색인 속성별로 정렬되며, 최종적으로 클라이언트가 표시할 때 적용되는 CSS 규칙에 따라 배열됩니다. 콘텐츠 섹션은 해당 [추가](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/addLandingPageContentUsingPOST), [업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/updateLandingPageContentUsingPOST) 및 [삭제](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/removeLandingPageContentUsingPOST) 랜딩 페이지 콘텐츠 섹션 끝점으로 포함 및 관리되며 [랜딩 페이지 콘텐츠 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/getLandingPageContentUsingGET)를 사용하여 쿼리할 수 있습니다. 각 섹션에는 유형 및 값 매개 변수가 있습니다. 유형은 값에 입력할 항목을 결정합니다.  이러한 엔드포인트의 경우 데이터는 JSON이 아닌 POST x-www-form-urlencoded로 전달됩니다.
+콘텐츠 섹션은 색인 속성별로 정렬되며, 최종적으로 클라이언트가 표시할 때 적용되는 CSS 규칙에 따라 배열됩니다. 콘텐츠 섹션은 해당 [추가](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/addLandingPageContentUsingPOST), [업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/updateLandingPageContentUsingPOST) 및 [삭제](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/removeLandingPageContentUsingPOST) 랜딩 페이지 콘텐츠 섹션 끝점으로 포함 및 관리되며 [랜딩 페이지 콘텐츠 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/getLandingPageContentUsingGET)를 사용하여 쿼리할 수 있습니다. 각 섹션에는 유형 및 값 매개 변수가 있습니다. 유형은 값에 입력할 항목을 결정합니다.  이러한 엔드포인트의 경우 데이터는 JSON이 아닌 POST x-www-form-urlencoded로 전달됩니다.
 
 **섹션 유형**
 
@@ -189,11 +189,11 @@ name=MyNewLandingPage&folder={"type":"Program","id":1119}&template=57
 | SocialButton | 의 ID  소셜 단추. |
 | 비디오 | 비디오의 ID입니다. |
 
-자유 형식 페이지의 경우 원하는 모든 콘텐츠 섹션을 추가해야 하며 ID가 `mktoContent`인 div 요소에 임베드됩니다. 안내 페이지의 경우 [랜딩 페이지 콘텐츠 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/getLandingPageContentUsingGET) 끝점의 목록에 사전 정의된 요소 목록이 있을 수 있습니다. 해당 끝점을 통해 더 많은 콘텐츠를 추가하거나 [콘텐츠를 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/updateLandingPageContentUsingPOST)할 수 있습니다.
+자유 형식 페이지의 경우 원하는 모든 콘텐츠 섹션을 추가해야 하며 ID가 `mktoContent`인 div 요소에 임베드됩니다. 안내 페이지의 경우 [랜딩 페이지 콘텐츠 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/getLandingPageContentUsingGET) 끝점의 목록에 사전 정의된 요소 목록이 있을 수 있습니다. 해당 끝점을 통해 더 많은 콘텐츠를 추가하거나 [콘텐츠를 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/updateLandingPageContentUsingPOST)할 수 있습니다.
 
 ### 동적 콘텐츠
 
-동적 콘텐츠 섹션을 만들려면 랜딩 페이지의 콘텐츠 목록에 동적 콘텐츠 섹션이 이미 있어야 합니다. [랜딩 페이지 콘텐츠 섹션 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/updateLandingPageContentUsingPOST) 끝점을 사용하여 형식을 &#39;DynamicContent&#39;로 설정해야 합니다. 섹션을 동적 컨텐츠로 설정하면 컨텐츠 섹션 내에 기본 동적 섹션이 만들어지고 이 섹션들은 모두 변환된 요소의 기본 유형을 상속합니다. 각 동적 섹션은 변환된 섹션의 컨텐츠도 상속합니다.
+동적 콘텐츠 섹션을 만들려면 랜딩 페이지의 콘텐츠 목록에 동적 콘텐츠 섹션이 이미 있어야 합니다. [랜딩 페이지 콘텐츠 섹션 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/updateLandingPageContentUsingPOST) 끝점을 사용하여 형식을 &#39;DynamicContent&#39;로 설정해야 합니다. 섹션을 동적 컨텐츠로 설정하면 컨텐츠 섹션 내에 기본 동적 섹션이 만들어지고 이 섹션들은 모두 변환된 요소의 기본 유형을 상속합니다. 각 동적 섹션은 변환된 섹션의 컨텐츠도 상속합니다.
 
 ```http
 GET /rest/asset/v1/landingPage/{id}/dynamicContent/RVMtNDg=.json
@@ -229,7 +229,7 @@ GET /rest/asset/v1/landingPage/{id}/dynamicContent/RVMtNDg=.json
 }
 ```
 
-각 개별 세그먼트에 대한 [콘텐츠 업데이트](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Page-Content/operation/updateLandingPageDynamicContentUsingPOST)는 세그먼트 ID를 기반으로 수행됩니다.
+각 개별 세그먼트에 대한 [콘텐츠 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/updateLandingPageDynamicContentUsingPOST)는 세그먼트 ID를 기반으로 수행됩니다.
 
 ```http
 POST /rest/asset/v1/landingPage/{id}/dynamicContent/{dynamicContentId}.json
@@ -274,7 +274,7 @@ segment=New Segment&value=New Content
 </head>
 ```
 
-자세한 내용은 [안내 랜딩 페이지 템플릿 만들기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template) 설명서의 &quot;편집 가능한 변수&quot; 섹션을 참조하십시오.
+자세한 내용은 [안내 랜딩 페이지 템플릿 만들기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template) 설명서의 &quot;편집 가능한 변수&quot; 섹션을 참조하십시오.
 
 ### 쿼리
 
@@ -338,7 +338,7 @@ POST /rest/asset/v1/landingPage/{id}/variable/{variableId}.json?value={newValue}
 
 ## 랜딩 페이지 미리 보기
 
-Marketo은 브라우저에 렌더링되는 대로 랜딩 페이지의 실시간 미리 보기를 검색할 수 있도록 [랜딩 페이지 전체 콘텐츠 가져오기](https://developer.adobe.com/marketo-apis/api/asset/#tag/Landing-Pages/operation/getLandingPageFullContentUsingGET) 끝점을 제공합니다. 필수 매개 변수인 `id` 경로 매개 변수가 있습니다. 이 매개 변수는 미리 보려는 랜딩 페이지의 ID입니다. 다음 두 가지 추가 선택적 쿼리 매개 변수가 있습니다.
+Marketo은 브라우저에 렌더링되는 대로 랜딩 페이지의 실시간 미리 보기를 검색할 수 있도록 [랜딩 페이지 전체 콘텐츠 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Pages/operation/getLandingPageFullContentUsingGET) 끝점을 제공합니다. 필수 매개 변수인 `id` 경로 매개 변수가 있습니다. 이 매개 변수는 미리 보려는 랜딩 페이지의 ID입니다. 다음 두 가지 추가 선택적 쿼리 매개 변수가 있습니다.
 
 - 세그멘테이션: segmentationId 및 segmentId 특성이 포함된 JSON 개체 배열을 허용합니다. 설정되면, 에서는 해당 세그먼트와 일치하는 잠재 고객인 것처럼 랜딩 페이지를 미리 봅니다.
 - 리드 ID:  잠재 고객의 정수 ID를 허용합니다. 설정되면, 은 지정된 리드가 본 것처럼 랜딩 페이지를 미리 봅니다.

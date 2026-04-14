@@ -3,7 +3,7 @@ title: 명명된 계정 목록
 feature: REST API
 description: 쿼리, 만들기, 업데이트 및 삭제를 위한 권한, 필드, 필터링 및 엔드포인트를 포함하여 REST API를 사용하여 Marketo 명명된 계정 목록을 관리하는 방법을 알아봅니다.
 exl-id: 98f42780-8329-42fb-9cd8-58e5dbea3809
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '746'
 ht-degree: 2%
@@ -12,9 +12,9 @@ ht-degree: 2%
 
 # 명명된 계정 목록
 
-[명명된 계정 목록 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Account-Lists)
+[명명된 계정 목록 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Named-Account-Lists)
 
-Marketo의 [명명된 계정 목록](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/target-account-management/target/account-lists)은(는) 명명된 계정의 컬렉션을 나타냅니다. 분류, 데이터 보강 및 스마트 캠페인 필터링을 포함하여 다양한 경우에 사용할 수 있습니다. 명명된 계정 목록 API를 사용하면 이러한 목록 에셋과 해당 멤버십을 원격으로 관리할 수 있습니다.
+Marketo의 [명명된 계정 목록](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/target-account-management/target/account-lists)은(는) 명명된 계정의 컬렉션을 나타냅니다. 분류, 데이터 보강 및 스마트 캠페인 필터링을 포함하여 다양한 경우에 사용할 수 있습니다. 명명된 계정 목록 API를 사용하면 이러한 목록 에셋과 해당 멤버십을 원격으로 관리할 수 있습니다.
 `Content`
 
 ## 권한

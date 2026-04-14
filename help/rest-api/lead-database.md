@@ -3,7 +3,7 @@ title: 리드 데이터베이스
 feature: REST API, Database
 description: 오브젝트, CRUD 및 설명 방법, 쿼리 패턴, 배치 제한 및 CRM 통합 제한을 다루는 Marketo 리드 데이터베이스 API에 대한 안내입니다.
 exl-id: e62e381f-916b-4d56-bc3d-0046219b68d3
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '1373'
 ht-degree: 1%
@@ -32,7 +32,7 @@ Marketo 리드 데이터베이스 API는 활동, 기회 및 회사와 같은 Mar
 
 ## API
 
-매개 변수 및 모델링 정보를 포함한 리드 데이터베이스 API 끝점의 전체 목록은 [리드 데이터베이스 API 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/)를 참조하십시오.
+매개 변수 및 모델링 정보를 포함한 리드 데이터베이스 API 끝점의 전체 목록은 [리드 데이터베이스 API 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi)를 참조하십시오.
 
 기본 CRM 통합이 활성화된 인스턴스(Microsoft Dynamics 또는 Salesforce.com)의 경우 회사, 영업 기회, 영업 기회 역할 및 영업 사원 API가 비활성화됩니다. 이 레코드는 활성화되면 CRM을 통해 관리되며 Marketo의 API를 통해 액세스하거나 업데이트할 수 없습니다.
 

@@ -3,7 +3,7 @@ title: 벌크 리드 가져오기
 feature: REST API
 description: CSV TSV 또는 SSV를 사용하여 Marketo에서 비동기 대량 리드 가져오기를 만들고 모니터링합니다.
 exl-id: 615f158b-35f9-425a-b568-0a7041262504
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '825'
 ht-degree: 0%
@@ -12,9 +12,9 @@ ht-degree: 0%
 
 # 벌크 리드 가져오기
 
-[대량 리드 가져오기 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads)
+[대량 리드 가져오기 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads)
 
-많은 양의 잠재 고객 레코드의 경우 [bulk API](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/importLeadUsingPOST)를 사용하여 비동기적으로 잠재 고객을 가져올 수 있습니다. 이렇게 하면 구분 기호(쉼표, 탭 또는 세미콜론)가 있는 플랫 파일을 사용하여 레코드 목록을 Marketo에 가져올 수 있습니다. 파일 합계가 10MB 미만인 한 파일에는 여러 개의 레코드가 포함될 수 있습니다. 레코드 작업은 &quot;삽입 또는 업데이트&quot;만 가능합니다.
+많은 양의 잠재 고객 레코드의 경우 [bulk API](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads/operation/importLeadUsingPOST)를 사용하여 비동기적으로 잠재 고객을 가져올 수 있습니다. 이렇게 하면 구분 기호(쉼표, 탭 또는 세미콜론)가 있는 플랫 파일을 사용하여 레코드 목록을 Marketo에 가져올 수 있습니다. 파일 합계가 10MB 미만인 한 파일에는 여러 개의 레코드가 포함될 수 있습니다. 레코드 작업은 &quot;삽입 또는 업데이트&quot;만 가능합니다.
 
 ## 처리 제한
 

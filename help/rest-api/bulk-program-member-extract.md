@@ -3,16 +3,16 @@ title: 일괄 프로그램 멤버 추출
 feature: REST API
 description: Marketo 일괄 프로그램 멤버 추출 REST API를 사용하여 권한 및 필드 메타데이터와 함께 ETL, 데이터 웨어하우징 및 아카이브에 대한 대규모 멤버 레코드를 내보낼 수 있습니다.
 exl-id: 6e0a6bab-2807-429d-9c91-245076a34680
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
-source-wordcount: '1293'
+source-wordcount: '1294'
 ht-degree: 2%
 
 ---
 
 # 일괄 프로그램 멤버 추출
 
-[벌크 프로그램 멤버 추출 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members)
+[벌크 프로그램 멤버 추출 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Program-Members)
 
 REST API의 벌크 프로그램 멤버 추출 세트는 Marketo에서 큰 프로그램 멤버 레코드 세트를 검색할 수 있는 프로그래밍 인터페이스를 제공합니다. ETL, 데이터 웨어하우징 및 보관 목적으로 Marketo과 하나 이상의 외부 시스템 간에 데이터를 지속적으로 교환해야 하는 사용 사례에 권장되는 인터페이스입니다.
 
@@ -22,7 +22,7 @@ REST API의 벌크 프로그램 멤버 추출 세트는 Marketo에서 큰 프로
 
 ## 설명
 
-[프로그램 구성원 설명](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Program-Members/operation/describeProgramMemberUsingGET2)은(는) 필드를 사용할 수 있는지 여부와 해당 필드에 대한 메타데이터의 기본 원본입니다. `name` 특성에 REST API 이름이 포함되어 있습니다.
+[프로그램 구성원 설명](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/describeProgramMemberUsingGET2)은(는) 필드를 사용할 수 있는지 여부와 해당 필드에 대한 메타데이터의 기본 원본입니다. `name` 특성에 REST API 이름이 포함되어 있습니다.
 
 ```http
 GET /rest/v1/programs/members/describe.json
@@ -225,17 +225,17 @@ GET /rest/v1/programs/members/describe.json
     <tr>
       <td>programId</td>
       <td>정수</td>
-      <td>프로그램 ID를 허용합니다. 작업은 작업 처리를 시작할 때 프로그램의 구성원인 액세스 가능한 모든 레코드를 반환합니다.<a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs">프로그램 가져오기</a> 끝점을 사용하여 프로그램 ID를 검색합니다.programIds 필터와 함께 사용할 수 없습니다.</td>
+      <td>프로그램 ID를 허용합니다. 작업은 작업 처리를 시작할 때 프로그램의 구성원인 액세스 가능한 모든 레코드를 반환합니다.<a href="https://developer.adobe.com/marketo-apis/api/asset#tag/Programs">프로그램 가져오기</a> 끝점을 사용하여 프로그램 ID를 검색합니다.programIds 필터와 함께 사용할 수 없습니다.</td>
     </tr>
     <tr>
       <td>programIds</td>
       <td>배열[정수]</td>
-      <td>최대 10개의 프로그램 ID 배열을 허용합니다. 작업은 작업 처리를 시작할 때 프로그램의 구성원인 액세스 가능한 모든 레코드를 반환합니다.내보내기 파일에 첫 번째 필드로 추가 필드 "programId"가 추가됩니다. 이 필드는 프로그램 멤버십 레코드를 추출한 프로그램을 식별합니다.<a href="https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs">프로그램 가져오기</a> 끝점을 사용하여 프로그램 ID를 검색합니다.programId 필터에는 사용할 수 없습니다.</td>
+      <td>최대 10개의 프로그램 ID 배열을 허용합니다. 작업은 작업 처리를 시작할 때 프로그램의 구성원인 액세스 가능한 모든 레코드를 반환합니다.내보내기 파일에 첫 번째 필드로 추가 필드 "programId"가 추가됩니다. 이 필드는 프로그램 멤버십 레코드를 추출한 프로그램을 식별합니다.<a href="https://developer.adobe.com/marketo-apis/api/asset#tag/Programs">프로그램 가져오기</a> 끝점을 사용하여 프로그램 ID를 검색합니다.programId 필터에는 사용할 수 없습니다.</td>
     </tr>
     <tr>
       <td>isExhausted</td>
       <td>부울</td>
-      <td><a href="https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/drip-nurturing/using-engagement-programs/people-who-have-exhausted-content">콘텐츠를 모두 사용한 사용자</a>의 프로그램 멤버십 레코드를 필터링하는 데 사용되는 부울을 허용합니다.</td>
+      <td><a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/drip-nurturing/using-engagement-programs/people-who-have-exhausted-content">콘텐츠를 모두 사용한 사용자</a>의 프로그램 멤버십 레코드를 필터링하는 데 사용되는 부울을 허용합니다.</td>
     </tr>
     <tr>
       <td>양육케이던스</td>
@@ -255,10 +255,10 @@ GET /rest/v1/programs/members/describe.json
             <tr>
               <td>출석함</td>
               <td>온디맨드 출석</td>
-              <td>반송됨</td>
+              <td>바운스됨</td>
             </tr>
             <tr>
-              <td>클릭됨</td>
+              <td>클릭함</td>
               <td>연락함</td>
               <td>전환됨</td>
             </tr>
@@ -320,13 +320,13 @@ GET /rest/v1/programs/members/describe.json
 
 | 매개변수 | 데이터 유형 | 필수 | 참고 |
 | --- | --- | --- | --- |
-| 필드 | 배열[문자열] | 예 | 필드 매개 변수는 JSON 문자열 배열을 수락합니다. 나열된 필드는 내보낸 파일에 포함됩니다. `LeadCustom` `LeadProgram` MemberCustom `ProgramMember` 필드 형식을 내보낼 수 있습니다. 리드2 설명 및/또는 프로그램 멤버 엔드포인트 설명을 사용하여 검색할 수 있는 REST API 이름을 사용하여 필드를 지정합니다. |
+| 필드 | 배열[문자열] | 예 | 필드 매개 변수는 JSON 문자열 배열을 수락합니다. 나열된 필드는 내보낸 파일에 포함됩니다. `LeadCustom` `LeadProgram` MemberCustom `ProgramMember` 필드 형식을 내보낼 수 있습니다. 리드2 설명 및/또는 프로그램 멤버 엔드포인트 설명을 사용하여 검색할 수 있는 REST API 이름으로 필드를 지정합니다. |
 | 열 머리글 이름 | 오브젝트 | 아니요 | 필드 및 열 헤더 이름의 키-값 쌍을 포함하는 JSON 개체입니다. 키는 내보내기 작업에 포함된 필드 이름이어야 합니다. 값은 해당 필드에 대해 내보낸 열 헤더의 이름입니다. |
 | 형식 | 문자열 | 아니요 | CSV, TSV, SSV 중 하나를 허용합니다. 내보낸 파일은 쉼표로 구분된 값, 탭으로 구분된 값 또는 공백으로 구분된 값 파일로 렌더링됩니다(설정된 경우). 설정하지 않으면 기본값이 CSV로 설정됩니다. |
 
 ## 작업 생성
 
-[내보내기 프로그램 구성원 작업 만들기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/createExportProgramMembersUsingPOST) 끝점을 사용하여 내보내기를 시작하기 전에 작업에 대한 매개 변수를 정의합니다. 프로그램 ID가 포함된 `filter`과(와) 내보내기에 필요한 `fields`을(를) 정의해야 합니다. 필요한 경우 파일의 `format` 및 `columnHeaderNames`을(를) 정의할 수 있습니다.
+[내보내기 프로그램 구성원 작업 만들기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Program-Members/operation/createExportProgramMembersUsingPOST) 끝점을 사용하여 내보내기를 시작하기 전에 작업에 대한 매개 변수를 정의합니다. 프로그램 ID가 포함된 `filter`과(와) 내보내기에 필요한 `fields`을(를) 정의해야 합니다. 필요한 경우 파일의 `format` 및 `columnHeaderNames`을(를) 정의할 수 있습니다.
 
 ```http
 POST /bulk/v1/program/members/export/create.json
@@ -370,7 +370,7 @@ POST /bulk/v1/program/members/export/create.json
 }
 ```
 
-작업이 생성되었음을 나타내는 상태 응답이 반환됩니다. 작업이 정의되고 생성되었지만 아직 시작되지 않았습니다. 이렇게 하려면 만들기 상태 응답의 `exportId`을(를) 사용하여 [Enqueue 내보내기 프로그램 구성원 작업](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/enqueueExportProgramMembersUsingPOST) 끝점을 호출해야 합니다.
+작업이 생성되었음을 나타내는 상태 응답이 반환됩니다. 작업이 정의되고 생성되었지만 아직 시작되지 않았습니다. 이렇게 하려면 만들기 상태 응답의 `exportId`을(를) 사용하여 [Enqueue 내보내기 프로그램 구성원 작업](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Program-Members/operation/enqueueExportProgramMembersUsingPOST) 끝점을 호출해야 합니다.
 
 ```http
 POST /bulk/v1/program/members/export/{exportId}/enqueue.json
@@ -398,7 +398,7 @@ POST /bulk/v1/program/members/export/{exportId}/enqueue.json
 
 참고: 동일한 API 사용자가 만든 작업에 대해서만 상태를 검색할 수 있습니다.
 
-비동기 끝점이므로 작업을 만든 후 상태를 폴링하여 진행률을 확인해야 합니다. [내보내기 프로그램 구성원 작업 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/getExportLeadsStatusUsingGET) 끝점을 사용하여 폴링합니다. 상태는 60초마다 한 번만 업데이트되므로 이보다 낮은 폴링 빈도는 권장되지 않으며 거의 모든 경우에 여전히 과도합니다. 상태 필드는 생성됨, 대기 중, 처리 중, 취소됨, 완료됨, 실패 중 하나로 응답할 수 있습니다.
+비동기 끝점이므로 작업을 만든 후 상태를 폴링하여 진행률을 확인해야 합니다. [내보내기 프로그램 구성원 작업 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/getExportLeadsStatusUsingGET) 끝점을 사용하여 폴링합니다. 상태는 60초마다 한 번만 업데이트되므로 이보다 낮은 폴링 빈도는 권장되지 않으며 거의 모든 경우에 여전히 과도합니다. 상태 필드는 생성됨, 대기 중, 처리 중, 취소됨, 완료됨, 실패 중 하나로 응답할 수 있습니다.
 
 ```http
 GET /bulk/v1/program/members/export/{exportId}/status.json
@@ -446,7 +446,7 @@ GET /bulk/v1/program/members/export/{exportId}/status.json
 
 ## 데이터 검색 중
 
-완료된 프로그램 구성원 내보내기의 파일을 검색하려면 `exportId`(으)로 [프로그램 구성원 파일 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/getExportProgramMembersFileUsingGET) 끝점을 호출하면 됩니다.
+완료된 프로그램 구성원 내보내기의 파일을 검색하려면 `exportId`(으)로 [프로그램 구성원 파일 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Program-Members/operation/getExportProgramMembersFileUsingGET) 끝점을 호출하면 됩니다.
 
 응답에는 작업이 구성된 방식으로 포맷된 파일이 포함됩니다. 끝점이 파일의 내용에 응답합니다. 요청한 프로그램 구성원 필드가 비어 있으면(데이터 없음) `null`이(가) 내보내기 파일의 해당 필드에 배치됩니다.
 
@@ -474,7 +474,7 @@ Septa,Mordane,smor@housestark.com,2020-01-08T18:10:26Z,PMCF Program,On List,1800
 
 ## 작업 취소
 
-작업이 잘못 구성되었거나 불필요하게 된 경우 [프로그램 구성원 작업 내보내기 취소](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Program-Members/operation/cancelExportProgramMembersUsingPOST) 끝점을 사용하여 작업을 쉽게 취소할 수 있습니다.
+작업이 잘못 구성되었거나 불필요하게 된 경우 [프로그램 구성원 작업 내보내기 취소](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Program-Members/operation/cancelExportProgramMembersUsingPOST) 끝점을 사용하여 작업을 쉽게 취소할 수 있습니다.
 
 ```http
 POST /bulk/v1/program/members/export/{exportId}/cancel.json

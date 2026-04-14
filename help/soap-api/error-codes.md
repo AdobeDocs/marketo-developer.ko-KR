@@ -3,9 +3,9 @@ title: 오류 코드
 feature: SOAP
 description: 메시지 및 메모가 포함된 Marketo SOAP API 오류 코드에 대한 참조 안내서로, 인증 실패, 환율 및 동시성 제한, 요청 문제를 다룹니다.
 exl-id: 71796520-7bd6-4a37-94e7-b073d17df06f
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+source-git-commit: ff0a95e838cecd1d8b1f90ca029a320043824242
 workflow-type: tm+mt
-source-wordcount: '408'
+source-wordcount: '409'
 ht-degree: 9%
 
 ---

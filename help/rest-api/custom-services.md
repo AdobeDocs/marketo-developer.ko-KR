@@ -3,9 +3,9 @@ title: 사용자 정의 서비스
 feature: REST API
 description: Marketo 사용자 지정 서비스를 만들고, API 전용 역할 및 권한을 설정하고, LaunchPoint에서 클라이언트 ID와 클라이언트 암호를 획득하고, 액세스 토큰을 받습니다.
 exl-id: 38b05c4c-4404-4c30-a7cb-d31b28a3a72e
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+source-git-commit: 1f01457919b9fe110b98603f5b8c0996ba8aee4b
 workflow-type: tm+mt
-source-wordcount: '985'
+source-wordcount: '1031'
 ht-degree: 0%
 
 ---
@@ -18,7 +18,7 @@ ht-degree: 0%
 
 사용자 지정 서비스를 만드는 첫 번째 단계는 관련 API 전용 사용자에게 적용할 수 있는 역할을 만드는 것입니다. 이 작업은 **[!UICONTROL Admin]** > **[!UICONTROL Users & Roles]** > **[!UICONTROL Roles]** 메뉴에서 수행됩니다.
 
-역할은 특정 기능에 대한 액세스를 허용하거나 제한하는 개별 권한을 위한 컨테이너입니다. 작업 공간 및 분할 영역이 활성화된 가입에서는 작업 공간별로 권한이 부여됩니다. 사용자가 한 작업 영역에서 권한을 가지고 있지만 다른 작업 영역에서는 권한을 가지고 있지 않은 경우 해당 작업 영역에서만 허가된 작업을 수행할 수 있습니다. 역할을 만들려면 새 역할 단추를 클릭합니다.
+역할은 특정 기능에 대한 액세스를 허용하거나 제한하는 개별 권한을 위한 컨테이너입니다. 작업 공간 및 분할 영역이 활성화된 가입에서는 작업 공간별로 권한이 부여됩니다. 사용자가 한 작업 영역에서 권한을 가지고 있지만 다른 작업 영역에서는 권한을 가지고 있지 않은 경우 해당 작업 영역에서만 허가된 작업을 수행할 수 있습니다. 역할을 만들려면 **[!UICONTROL New Role]**&#x200B;을(를) 선택하십시오.
 
 ![사용자 및 역할](assets/admin-users-and-roles-roles.png)
 
@@ -42,15 +42,15 @@ ht-degree: 0%
 
 >[!MORELIKETHIS]
 >
->API 전용 사용자를 만들려면 **[!UICONTROL Admin]** > **[!UICONTROL Users & Roles]** > **[!UICONTROL Users]** 메뉴로 이동한 다음 [!UICONTROL Invite New User]을(를) 클릭합니다.
+>API 전용 사용자를 만들려면 **[!UICONTROL Admin]** > **[!UICONTROL Users & Roles]** > **[!UICONTROL Users]** 메뉴로 이동하여 **[!UICONTROL Invite New User]**&#x200B;을(를) 선택하십시오.
 
 ![새 사용자 정보](assets/new-user-info.png)
 
-사용할 서비스 및 애플리케이션에 따라 사용자를 설명하는 이름과 이메일 주소(올바르지 않음)를 지정합니다. 대화 상자 메뉴에서 필수 필드를 입력하고 &quot;API만&quot; 확인란을 클릭한 다음 API 역할 중 하나를 사용자에게 부여합니다. 이렇게 하면 해당 역할의 권한 세트가 사용자에게 할당됩니다.
+사용할 서비스 및 애플리케이션에 따라 사용자를 설명하는 이름과 이메일 주소(올바르지 않음)를 지정합니다. 대화 상자 메뉴에서 필수 필드를 입력하고 **[!UICONTROL API Only]** 확인란을 선택한 다음 사용자에게 API 역할 중 하나를 부여합니다. 이렇게 하면 해당 역할의 권한 세트가 사용자에게 할당됩니다.
 
 ![새 사용자 권한](assets/new-user-permissions.png)
 
-마지막으로 &quot;전송&quot;을 클릭하여 API 전용 사용자를 만듭니다.
+마지막으로 **[!UICONTROL Send]**&#x200B;을(를) 선택하여 API 전용 사용자를 만듭니다.
 
 자격 증명을 사용하여 새 애플리케이션을 프로비저닝할 때 다른 기존 통합과 동일한 권한이 설정되어 있더라도 서비스에 대해 새 사용자를 만드는 것이 좋습니다. API 호출 사용량 통계 및 오류는 사용자별로 추적되므로, 각 애플리케이션에 대해 사용자를 프로비저닝하면 특정 애플리케이션에 대한 사용량 및 문제를 분리하는 데 도움이 됩니다. 일별 API 호출 제한에 도달하는 데 문제가 있거나 통합에서 API 호출로 인해 오류가 발생하는 경우 유용합니다.
 
@@ -58,7 +58,7 @@ ht-degree: 0%
 
 사용자 지정 서비스는 Marketo 인스턴스로 인증을 수행하는 데 필요한 실제 자격 증명, 클라이언트 ID 및 클라이언트 암호를 제공합니다. 프로비전하려면 **[!UICONTROL Admin]** > **[!UICONTROL Integrations]** > **[!UICONTROL LaunchPoint]** 메뉴로 이동한 다음 **[!UICONTROL New Service]**&#x200B;을(를) 선택합니다.
 
-서비스에 수사적 이름을 지정하고 &quot;서비스&quot; 목록에서 &quot;사용자 정의&quot;를 선택합니다. 서비스에 자세한 설명을 제공하고 API 전용 사용자 목록에서 적절한 사용자를 선택한 다음 [!UICONTROL Create]을(를) 클릭합니다.
+서비스에 수사적 이름을 지정하고 &quot;서비스&quot; 목록에서 &quot;사용자 정의&quot;를 선택합니다. 서비스에 자세한 설명을 제공하고 API 전용 사용자 목록에서 적절한 사용자를 선택한 다음 **[!UICONTROL Create]**&#x200B;을(를) 선택합니다.
 
 ![새 사용자 지정 서비스](assets/admin-launchpoint-new-service.png)
 

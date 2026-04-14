@@ -3,9 +3,9 @@ title: Marketo 통합 우수 사례
 feature: REST API
 description: 할당량, 비율 및 동시 사용 제한, 일괄 가져오기 및 내보내기, 캐싱 및 지연 계획에 대해 다루는 Marketo API 통합 모범 사례입니다.
 exl-id: 1e418008-a36b-4366-a044-dfa9fe4b5f82
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+source-git-commit: ff0a95e838cecd1d8b1f90ca029a320043824242
 workflow-type: tm+mt
-source-wordcount: '1012'
+source-wordcount: '1013'
 ht-degree: 0%
 
 ---
@@ -48,15 +48,15 @@ ht-degree: 0%
 
 Marketo의 각 API 지원 인스턴스에는 하루에 최소 10,000개의 REST API 호출이 할당되지만 일반적으로 50,000개 이상, 500MB 이상의 대량 추출 용량이 할당됩니다. Marketo 구독의 일부로 일일 추가 용량을 구매할 수 있지만, 애플리케이션 디자인은 Marketo 구독의 일반적인 제한을 고려해야 합니다.
 
-용량을 인스턴스의 모든 API 서비스와 사용자 간에 공유하므로 우수 사례는 중복 호출을 제거하고 레코드를 가능한 한 적은 호출로 일괄 처리하는 것입니다. 레코드를 가져오는 가장 효율적인 방법은 [잠재 고객/사용자](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Import-Leads/operation/importLeadUsingPOST) 및 [사용자 지정 개체](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Snippets/operation/createSnippetUsingPOST)에 사용할 수 있는 Marketo의 대량 가져오기 API를 사용하는 것입니다. Marketo은 [리드](bulk-lead-extract.md) 및 [활동](bulk-activity-extract.md)에 대한 대량 추출도 제공합니다.
+용량을 인스턴스의 모든 API 서비스와 사용자 간에 공유하므로 우수 사례는 중복 호출을 제거하고 레코드를 가능한 한 적은 호출로 일괄 처리하는 것입니다. 레코드를 가져오는 가장 효율적인 방법은 [잠재 고객/사용자](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads/operation/importLeadUsingPOST) 및 [사용자 지정 개체](https://developer.adobe.com/marketo-apis/api/mapi#tag/Snippets/operation/createSnippetUsingPOST)에 사용할 수 있는 Marketo의 대량 가져오기 API를 사용하는 것입니다. Marketo은 [리드](bulk-lead-extract.md) 및 [활동](bulk-activity-extract.md)에 대한 대량 추출도 제공합니다.
 
 ### 캐싱
 
 다음 작업의 결과는 일반적으로 드물게 변경되므로 하루 이상 클라이언트측에 캐시될 수 있습니다.
 
 - 설명 작업 결과
-- [활동 유형](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Activities/operation/getAllActivityTypesUsingGET)
-- [파티션](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/getLeadPartitionsUsingGET)
+- [활동 유형](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getAllActivityTypesUsingGET)
+- [파티션](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/getLeadPartitionsUsingGET)
 
 프로그램, 이메일 및 폴더와 같은 특정 에셋 유형을 캐시하는 것은 리드 또는 활동 레코드에 대한 데이터 보강과 같은 특정 사용 사례에도 적합합니다.
 

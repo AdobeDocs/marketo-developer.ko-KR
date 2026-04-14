@@ -3,7 +3,7 @@ title: 지정 계정
 feature: REST API
 description: 설명, 쿼리, 업데이트 예 만들기, 검색 가능한 필드, 중복 제거 규칙 및 리드 연결 없음을 포함하여 ABM의 명명된 계정에 대한 Marketo REST 안내서.
 exl-id: 2aa1d2a0-9e54-4a9a-abb1-0d0479ed3558
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '730'
 ht-degree: 1%
@@ -12,7 +12,7 @@ ht-degree: 1%
 
 # 지정 계정
 
-[명명된 계정 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Accounts)
+[명명된 계정 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Named-Accounts)
 
 Marketo은 Marketo ABM에서 사용하기 위해 명명된 계정에 대해 CRUD 작업을 수행하기 위한 API 세트를 제공합니다. 이러한 API는 리드 데이터베이스 API에 대한 표준 인터페이스 패턴을 따르며 설명, 만들기/업데이트, 삭제 및 쿼리 옵션을 제공합니다.
 
@@ -224,7 +224,7 @@ Content-Type: application/json
 
 #### 이름별
 
-[이름별 명명된 계정 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Accounts/operation/getNamedAccountFieldByNameUsingGET) 끝점은 명명된 계정 개체의 단일 필드에 대한 메타데이터를 검색합니다. 필수 fieldApiName 경로 매개 변수는 필드의 API 이름을 지정합니다. 응답은 Describe Named Account 끝점과 유사하지만 필드가 사용자 정의 필드인지 여부를 나타내는 isCustom 속성과 같은 추가 메타데이터를 포함합니다.
+[이름별 명명된 계정 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Named-Accounts/operation/getNamedAccountFieldByNameUsingGET) 끝점은 명명된 계정 개체의 단일 필드에 대한 메타데이터를 검색합니다. 필수 fieldApiName 경로 매개 변수는 필드의 API 이름을 지정합니다. 응답은 Describe Named Account 끝점과 유사하지만 필드가 사용자 정의 필드인지 여부를 나타내는 isCustom 속성과 같은 추가 메타데이터를 포함합니다.
 
 ```http
 GET /rest/v1/namedaccounts/schema/fields/annualRevenue.json
@@ -252,7 +252,7 @@ GET /rest/v1/namedaccounts/schema/fields/annualRevenue.json
 
 #### 찾아보기
 
-[명명된 계정 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Named-Accounts/operation/getNamedAccountFieldByNameUsingGET) 끝점은 명명된 계정 개체의 모든 필드에 대한 메타데이터를 검색합니다. 기본적으로 최대 300개의 레코드가 반환됩니다. batchSize 쿼리 매개 변수를 사용하여 이 숫자를 줄일 수 있습니다. moreResult 속성이 true이면 더 많은 결과를 사용할 수 있음을 의미합니다. moreResult 특성이 false를 반환할 때까지 이 끝점을 계속 호출합니다. 즉, 사용 가능한 결과가 없습니다. 이 API에서 반환된 nextPageToken은 항상 이 호출의 다음 반복에 재사용되어야 합니다.
+[명명된 계정 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Named-Accounts/operation/getNamedAccountFieldByNameUsingGET) 끝점은 명명된 계정 개체의 모든 필드에 대한 메타데이터를 검색합니다. 기본적으로 최대 300개의 레코드가 반환됩니다. batchSize 쿼리 매개 변수를 사용하여 이 숫자를 줄일 수 있습니다. moreResult 속성이 true이면 더 많은 결과를 사용할 수 있음을 의미합니다. moreResult 특성이 false를 반환할 때까지 이 끝점을 계속 호출합니다. 즉, 사용 가능한 결과가 없습니다. 이 API에서 반환된 nextPageToken은 항상 이 호출의 다음 반복에 재사용되어야 합니다.
 
 ```http
 GET /rest/v1/namedaccounts/schema/fields.json?batchSize=5

@@ -5,9 +5,9 @@ breadcrumb-title: '[!DNL Marketo] 개발자 안내서'
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 74964e90ddc68a611706afcad1f6016d05b060d6
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
-source-wordcount: '284'
+source-wordcount: '286'
 ht-degree: 30%
 
 ---
@@ -34,7 +34,7 @@ ht-degree: 30%
    - [트리거](javascript-api/triggers.md)
    - [웹 개인화](javascript-api/web-personalization.md)
 - 모바일 {#mobile}
-   - [&#x200B; [!DNL Adobe Launch] 확장 설치](mobile/adobe-launch-extension-installation.md)
+   - [ [!DNL Adobe Launch] 확장 설치](mobile/adobe-launch-extension-installation.md)
    - [[!DNL Adobe Launch] 확장](mobile/adobe-launch-extension.md)
    - [고급 보안 모드](mobile/advanced-security-access-mode.md)
    - [사용자 지정 작업](mobile/custom-actions.md)
@@ -165,6 +165,7 @@ ht-degree: 30%
 - [이메일 스크립팅](email-scripting.md)
 - [이메일 스크립팅 예](examples.md)
 - [Marketo 개체](marketo-objects.md)
+- [MCP 서버](mcp-server.md)
 - [라이선스](api-license.md)
 - [파트너 샌드박스](partner-sandbox.md)
 - [셀프서비스 플로우 단계](self-service-flow-steps.md)

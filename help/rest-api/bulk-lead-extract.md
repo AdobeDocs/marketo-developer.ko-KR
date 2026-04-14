@@ -3,7 +3,7 @@ title: 벌크 납 추출
 feature: REST API
 description: Marketo 대량 리드 추출 REST API를 사용하여 날짜, 목록 및 스마트 목록 필터, 사용자 정의 필드 및 CSV/TSV 형식으로 리드를 대량 내보내는 방법에 대해 알아봅니다.
 exl-id: 42796e89-5468-463e-9b67-cce7e798677b
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '1273'
 ht-degree: 2%
@@ -12,7 +12,7 @@ ht-degree: 2%
 
 # 벌크 납 추출
 
-[벌크 리드 추출 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads)
+[벌크 리드 추출 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads)
 
 REST API의 벌크 리드 추출 세트는 Marketo에서 대규모 리드/개인 레코드 세트를 검색하는 프로그래밍 방식 인터페이스를 제공합니다. 또한 레코드의 생성 날짜, 가장 최근 업데이트, 정적 목록 멤버십 또는 스마트 목록 멤버십에 따라 점진적으로 리드를 검색하는 데 사용할 수 있습니다. ETL, 데이터 웨어하우징 및 보관 목적으로 Marketo과 하나 이상의 외부 시스템 간에 데이터를 지속적으로 교환해야 하는 사용 사례에 권장되는 인터페이스입니다.
 
@@ -47,7 +47,7 @@ REST API의 벌크 리드 추출 세트는 Marketo에서 대규모 리드/개인
 
 ## 작업 생성
 
-[내보내기 리드 작업 만들기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/createExportLeadsUsingPOST) 끝점을 사용하여 내보내기를 시작하기 전에 작업에 대한 매개 변수를 정의합니다. 내보내기에 필요한 `fields`, `filter`의 매개 변수 유형, 파일의 `format` 및 열 헤더 이름(있는 경우)을 정의해야 합니다.
+[내보내기 리드 작업 만들기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/createExportLeadsUsingPOST) 끝점을 사용하여 내보내기를 시작하기 전에 작업에 대한 매개 변수를 정의합니다. 내보내기에 필요한 `fields`, `filter`의 매개 변수 유형, 파일의 `format` 및 열 헤더 이름(있는 경우)을 정의해야 합니다.
 
 ```http
 POST /bulk/v1/leads/export/create.json
@@ -95,7 +95,7 @@ POST /bulk/v1/leads/export/create.json
 }
 ```
 
-작업이 생성되었음을 나타내는 상태 응답이 반환됩니다. 작업이 정의되고 생성되었지만 아직 시작되지 않았습니다. 이렇게 하려면 만들기 상태 응답의 exportId를 사용하여 [큐 내보내기 리드 작업](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/enqueueExportLeadsUsingPOST) 끝점을 호출해야 합니다.
+작업이 생성되었음을 나타내는 상태 응답이 반환됩니다. 작업이 정의되고 생성되었지만 아직 시작되지 않았습니다. 이렇게 하려면 만들기 상태 응답의 exportId를 사용하여 [큐 내보내기 리드 작업](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/enqueueExportLeadsUsingPOST) 끝점을 호출해야 합니다.
 
 ```http
 POST /bulk/v1/leads/export/{exportId}/enqueue.json
@@ -123,7 +123,7 @@ POST /bulk/v1/leads/export/{exportId}/enqueue.json
 
 동일한 API 사용자가 만든 작업에 대해서만 `Note:` 상태를 검색할 수 있습니다.
 
-비동기 끝점이므로 작업을 만든 후 상태를 폴링하여 진행률을 확인해야 합니다. [리드 내보내기 작업 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/getExportLeadsStatusUsingGET) 끝점을 사용하여 폴링합니다. 상태는 60초마다 한 번만 업데이트되므로 이보다 낮은 폴링 빈도는 권장되지 않으며 거의 모든 경우에 여전히 과도합니다. 투표를 간단히 살펴봅시다.
+비동기 끝점이므로 작업을 만든 후 상태를 폴링하여 진행률을 확인해야 합니다. [리드 내보내기 작업 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/getExportLeadsStatusUsingGET) 끝점을 사용하여 폴링합니다. 상태는 60초마다 한 번만 업데이트되므로 이보다 낮은 폴링 빈도는 권장되지 않으며 거의 모든 경우에 여전히 과도합니다. 투표를 간단히 살펴봅시다.
 
 ```http
 GET /bulk/v1/leads/export/{exportId}/status.json
@@ -158,7 +158,7 @@ GET /bulk/v1/leads/export/{exportId}/status.json
 
 ## 데이터 검색 중
 
-완료된 잠재 고객 내보내기의 파일을 검색하려면 `exportId`을(를) 사용하여 [잠재 고객 파일 가져오기](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/getExportLeadsFileUsingGET) 끝점을 호출하면 됩니다.
+완료된 잠재 고객 내보내기의 파일을 검색하려면 `exportId`을(를) 사용하여 [잠재 고객 파일 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/getExportLeadsFileUsingGET) 끝점을 호출하면 됩니다.
 
 ```http
 GET /bulk/v1/leads/export/{exportId}/file.json
@@ -177,7 +177,7 @@ Russell,Wilson,null,_mch-localhost-1536605780000-12105
 
 ## 작업 취소
 
-작업이 잘못 구성되었거나 불필요하게 된 경우 [리드 작업 내보내기 취소](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export-Leads/operation/cancelExportLeadsUsingPOST) 끝점을 사용하여 작업을 쉽게 취소할 수 있습니다.
+작업이 잘못 구성되었거나 불필요하게 된 경우 [리드 작업 내보내기 취소](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/cancelExportLeadsUsingPOST) 끝점을 사용하여 작업을 쉽게 취소할 수 있습니다.
 
 ```http
 POST /bulk/v1/leads/export/{exportId}/cancel.json

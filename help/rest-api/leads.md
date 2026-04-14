@@ -3,16 +3,16 @@ title: 잠재 고객
 feature: REST API
 description: 설명, ID 또는 필터별 쿼리, 기본 필드, 제한 및 ECID 검색을 포함한 Marketo Leads REST API 기능을 살펴봅니다.
 exl-id: 0a2f7c38-02ae-4d97-acfe-9dd108a1f733
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
-source-wordcount: '3457'
+source-wordcount: '3460'
 ht-degree: 2%
 
 ---
 
 # 잠재 고객
 
-[리드 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads)
+[리드 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads)
 
 Marketo 잠재 고객의 API는 잠재 고객 레코드에 대한 간단한 CRUD 애플리케이션을 위한 대규모 기능 세트를 제공하며, 정적 목록 및 프로그램에서 잠재 고객의 멤버십을 수정하고 잠재 고객에 대한 스마트 캠페인 처리를 시작하는 기능을 제공합니다.
 
@@ -58,7 +58,7 @@ GET /rest/v1/leads/describe.json
 }
 ```
 
-일반적으로 응답에는 결과 배열에 훨씬 큰 필드 집합이 포함되지만 데모용으로 생략됩니다. 결과 배열의 각 항목은 리드 레코드에서 사용할 수 있는 필드에 해당하며 최소한 ID, displayName 및 데이터 형식을 갖게 됩니다. rest 및 soap 하위 개체는 주어진 필드에 대해 존재할 수 있거나 존재하지 않을 수 있으며, 해당 존재는 필드가 REST 또는 SOAP API에서 사용하기에 유효한지 여부를 나타냅니다. `readOnly` 속성은 해당 API(REST 또는 SOAP)를 통해 필드가 읽기 전용인지 여부를 나타냅니다. length 속성은 필드의 최대 길이(있는 경우)를 나타냅니다. dataType 속성은 필드의 데이터 형식을 나타냅니다.
+일반적으로 응답에는 결과 배열에 훨씬 큰 필드 집합이 포함되지만 데모용으로 생략되었습니다. 결과 배열의 각 항목은 리드 레코드에서 사용할 수 있는 필드에 해당하며 최소한 ID, displayName 및 데이터 형식을 갖게 됩니다. rest 및 soap 하위 개체는 주어진 필드에 대해 존재할 수 있거나 존재하지 않을 수 있으며, 해당 존재는 필드가 REST 또는 SOAP API에서 사용하기에 유효한지 여부를 나타냅니다. `readOnly` 속성은 해당 API(REST 또는 SOAP)를 통해 필드가 읽기 전용인지 여부를 나타냅니다. length 속성은 필드의 최대 길이(있는 경우)를 나타냅니다. dataType 속성은 필드의 데이터 형식을 나타냅니다.
 
 ## 쿼리
 
@@ -95,7 +95,7 @@ GET /rest/v1/lead/{id}.json
 
 필터 유형별 리드 가져오기는 동일한 유형의 레코드를 반환하지만, 페이지당 최대 300개를 반환할 수 있습니다. `filterType` 및 `filterValues` 쿼리 매개 변수가 필요합니다.
 
-`filterType`은(는) 모든 사용자 지정 필드 또는 일반적으로 사용되는 대부분의 필드를 허용합니다. `filterType`에서 사용할 수 있는 검색 가능한 필드의 포괄적인 목록을 가져오려면 `Describe2` 끝점을 호출하십시오. 사용자 지정 필드로 검색할 때 `string`, `email`, `integer` 데이터 형식만 지원됩니다. 필드 세부 사항(설명, 유형 등)을 가져올 수 있습니다. 위에서 설명한 방법을 사용합니다.
+`filterType`은(는) 모든 사용자 지정 필드 또는 일반적으로 사용되는 대부분의 필드를 허용합니다. `filterType`에서 사용할 수 있는 검색 가능한 필드의 포괄적인 목록을 가져오려면 `Describe2` 끝점을 호출하십시오. 사용자 지정 필드로 검색할 때 `string`, `email`, `integer` 데이터 형식만 지원됩니다. 위에서 설명한 Describe 방법을 사용하여 필드 세부 사항(설명, 유형 등)을 가져올 수 있습니다.
 
 `filterValues`은(는) 쉼표로 구분된 형식으로 최대 300개의 값을 허용합니다. 호출은 잠재 고객 필드가 포함된 `filterValues` 중 하나와 일치하는 레코드를 검색합니다. 리드 필터와 일치하는 리드 수가 1,000보다 크면 &quot;1003, 필터와 일치하는 결과가 너무 많습니다.&quot;라는 오류가 반환됩니다.
 
@@ -160,7 +160,7 @@ Adobe Experience Cloud 대상 공유 기능이 활성화되면 Adobe Experience 
 
 >[!NOTE]
 >
-> [동기화 리드](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads/operation/syncLeadUsingPOST) 끝점을 사용하여 회사 필드를 업데이트할 수 없습니다. 대신 [회사 동기화](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Companies/operation/syncCompaniesUsingPOST) 끝점을 사용하십시오.
+> [동기화 리드](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/syncLeadUsingPOST) 끝점을 사용하여 회사 필드를 업데이트할 수 없습니다. 대신 [회사 동기화](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/syncCompaniesUsingPOST) 끝점을 사용하십시오.
 
 >[!NOTE]
 >
@@ -767,6 +767,7 @@ Content-Type: application/json
 ## 병합
 
 >[!NOTE]
+>
 >2026년 3월 31일부터 병합 리드 API 호출의 `leadIds` 매개 변수에 25개가 넘는 ID를 포함하는 호출은 1080 오류 코드를 발생시키고 호출을 건너뜁니다. 25개 이상의 레코드를 하나로 병합해야 하는 작업은 이러한 호출이 성공할 수 있도록 여러 작업으로 분할해야 합니다.
 >
 
@@ -817,7 +818,7 @@ POST /rest/v1/leads/{id}/associate.json?cookie=id:287-GTJ-838%26token:_mch-marke
 잠재 고객 레코드는 정적 목록 또는 프로그램의 구성원을 기반으로 검색할 수도 있습니다. 또한 잠재 고객이 멤버인 모든 정적 목록, 프로그램 또는 스마트 캠페인을 검색할 수 있습니다.
 
 응답 구조 및 선택적 매개 변수는 필터 유형별 잠재 고객 가져오기 매개 변수와 동일하지만 이 API에는 `filterType` 및 `filterValues`을(를) 사용할 수 없습니다.
-Marketo UI를 통해 목록 ID에 액세스하려면 목록으로 이동합니다. `id` 목록은 정적 목록 `https://app-**&#x200B;**.marketo.com/#ST1001A1`의 URL에 있습니다. 이 예제에서 1001은 목록의 `id`입니다.
+Marketo UI를 통해 목록 ID에 액세스하려면 목록으로 이동합니다. `id` 목록은 정적 목록 `https://app-****.marketo.com/#ST1001A1`의 URL에 있습니다. 이 예제에서 1001은 목록의 `id`입니다.
 
 ## 리드 ID로 프로그램 가져오기
 

@@ -3,7 +3,7 @@ title: 이메일 템플릿
 feature: REST API
 description: Marketo Asset REST API를 사용하여 이메일 템플릿에 대한 종속성을 쿼리, 생성, 업데이트, 복제, 삭제, 승인 및 검사할 수 있습니다.
 exl-id: 50bb0047-d6ea-4c94-a900-18c37b17a147
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '292'
 ht-degree: 9%
@@ -12,7 +12,7 @@ ht-degree: 9%
 
 # 이메일 템플릿
 
-[이메일 템플릿 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Email-Templates)
+[이메일 템플릿 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates)
 
 이메일 템플릿은 이메일을 만들 때 사용되는 구조 및 재사용 가능한 레이아웃을 정의합니다.
 

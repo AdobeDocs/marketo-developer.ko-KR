@@ -3,7 +3,7 @@ title: 영업 기회 역할
 feature: REST API
 description: 설명, 복합 중복 제거 필드가 있는 쿼리, 업데이트 삭제 만들기, 시간 초과, CRM 동기화 안 함 등 REST API를 통해 Marketo 기회 역할을 관리합니다.
 exl-id: 2ba84f4d-82d0-4368-94e8-1fc6d17b69ed
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
 workflow-type: tm+mt
 source-wordcount: '279'
 ht-degree: 0%
@@ -12,7 +12,7 @@ ht-degree: 0%
 
 # 영업 기회 역할
 
-[영업 기회 역할 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Opportunities/operation/getOpportunityRolesUsingGET)
+[영업 기회 역할 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/getOpportunityRolesUsingGET)
 
 리드는 중간 `opportunityRole` 개체를 통해 기회에 연결됩니다.
 

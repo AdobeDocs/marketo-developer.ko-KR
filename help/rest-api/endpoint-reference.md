@@ -3,10 +3,10 @@ title: 끝점 참조
 feature: REST API
 description: 메서드, URI 및 활동, 벌크 내보내기, ID, 리드, 에셋, 사용자에 대한 필수 권한이 포함된 포괄적인 Marketo REST API 끝점 목록입니다.
 exl-id: 27d16b6f-865a-4e40-ab9c-cbabe2927472
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+source-git-commit: 9c10469ffa3b763552d176329a426ef51eebe0f1
 workflow-type: tm+mt
 source-wordcount: '4793'
-ht-degree: 7%
+ht-degree: 8%
 
 ---
 
@@ -14,9 +14,9 @@ ht-degree: 7%
 
 다음은 Marketo REST API 참조에 대한 링크입니다.
 
-- [자산](https://developer.adobe.com/marketo-apis/api/asset/)
+- [자산](https://developer.adobe.com/marketo-apis/api/asset)
 - [ID](https://developer.adobe.com/marketo-apis/api/identity/)
-- [리드 데이터베이스](https://developer.adobe.com/marketo-apis/api/mapi/)
+- [리드 데이터베이스](https://developer.adobe.com/marketo-apis/api/mapi)
 - [사용자 관리](https://developer.adobe.com/marketo-apis/api/user/)
 
 ## 엔드포인트 목록 {#endpoint_list}
@@ -90,23 +90,23 @@ ht-degree: 7%
 | 회사 동기화 | 회사 | POST | /rest/v1/companies.json | 읽기-쓰기 회사 |
 | 이름별 회사 필드 가져오기 | 회사 | GET | /rest/v1/company/schema/fields/{fieldApiName}.json | 읽기-쓰기 스키마 사용자 정의 필드 |
 | 회사 필드 가져오기 | 회사 | GET | /rest/v1/companies/schema/fields.json | 읽기-쓰기 스키마 사용자 정의 필드 |
-| 사용자 정의 객체 유형 필드 추가 | 사용자 지정 개체 | POST | /rest/v1/customobjects/schema/{apiName}/addField.json | 사용자 지정 개체 유형 읽기-쓰기 |
-| 사용자 지정 개체 유형 승인 | 사용자 지정 개체 | POST | /rest/v1/customobjects/schema/{apiName}/approve.json | 사용자 지정 개체 유형 읽기-쓰기 |
-| 사용자 지정 개체 삭제 | 사용자 지정 개체 | POST | /rest/v1/customobjects/{name}/delete.json | 사용자 지정 개체 읽기-쓰기 |
-| 사용자 지정 개체 유형 삭제 | 사용자 지정 개체 | POST | /rest/v1/customobjects/schema/{apiName}/delete.json | 사용자 지정 개체 유형 읽기-쓰기 |
-| 사용자 정의 객체 유형 필드 삭제 | 사용자 지정 개체 | POST | /rest/v1/customobjects/schema/{apiName}/deleteField.json | 사용자 지정 개체 유형 읽기-쓰기 |
-| 사용자 지정 개체 설명 | 사용자 지정 개체 | GET | /rest/v1/customobjects/{name}/describe.json | 읽기 전용 사용자 지정 개체 |
-| 사용자 지정 개체 유형 설명 | 사용자 지정 개체 | GET | /rest/v1/customobjects/schema/{apiName}/describe.json | 읽기 전용 사용자 지정 개체 유형 |
-| 사용자 정의 객체 유형 초안 삭제 | 사용자 지정 개체 | POST | /rest/v1/customobjects/schema/{apiName}/discardDraft.json | 사용자 지정 개체 유형 읽기-쓰기 |
-| 사용자 지정 개체 가져오기 | 사용자 지정 개체 | GET | /rest/v1/customobjects/{name}.json | 읽기 전용 사용자 지정 개체 |
-| 사용자 지정 개체 연결 가능 개체 가져오기 | 사용자 지정 개체 | GET | /rest/v1/customobjects/schema/linkableObjects.json | 읽기 전용 사용자 지정 개체 유형 |
-| 사용자 지정 개체 종속 Assets 가져오기 | 사용자 지정 개체 | GET | /rest/v1/customobjects/schema/{apiName}/dependentAssets.json | 읽기 전용 사용자 지정 개체 유형 |
-| 사용자 지정 개체 유형 필드 데이터 유형 가져오기 | 사용자 지정 개체 | GET | /rest/v1/customobjects/schema/fieldDataTypes.json | 읽기 전용 사용자 지정 개체 유형 |
-| 사용자 지정 개체 목록 | 사용자 지정 개체 | GET | /rest/v1/customobjects.json | 읽기 전용 사용자 지정 개체 |
-| 사용자 지정 개체 유형 목록 | 사용자 지정 개체 | GET | /rest/v1/customobjects/schema.json | 읽기 전용 사용자 지정 개체 유형 |
-| 사용자 지정 개체 동기화 | 사용자 지정 개체 | POST | /rest/v1/customobjects/{name}.json | 사용자 지정 개체 읽기-쓰기 |
-| 사용자 지정 개체 유형 동기화 | 사용자 지정 개체 | POST | /rest/v1/customobjects/schema.json | 사용자 지정 개체 유형 읽기-쓰기 |
-| 사용자 정의 객체 유형 필드 업데이트 | 사용자 지정 개체 | POST | /rest/v1/customobjects/schema/{apiName}/updateField.json | 사용자 지정 개체 유형 읽기-쓰기 |
+| 사용자 정의 객체 유형 필드 추가 | 사용자 정의 오브젝트 | POST | /rest/v1/customobjects/schema/{apiName}/addField.json | 사용자 지정 개체 유형 읽기-쓰기 |
+| 사용자 지정 개체 유형 승인 | 사용자 정의 오브젝트 | POST | /rest/v1/customobjects/schema/{apiName}/approve.json | 사용자 지정 개체 유형 읽기-쓰기 |
+| 사용자 지정 개체 삭제 | 사용자 정의 오브젝트 | POST | /rest/v1/customobjects/{name}/delete.json | 사용자 지정 개체 읽기-쓰기 |
+| 사용자 지정 개체 유형 삭제 | 사용자 정의 오브젝트 | POST | /rest/v1/customobjects/schema/{apiName}/delete.json | 사용자 지정 개체 유형 읽기-쓰기 |
+| 사용자 정의 객체 유형 필드 삭제 | 사용자 정의 오브젝트 | POST | /rest/v1/customobjects/schema/{apiName}/deleteField.json | 사용자 지정 개체 유형 읽기-쓰기 |
+| 사용자 지정 개체 설명 | 사용자 정의 오브젝트 | GET | /rest/v1/customobjects/{name}/describe.json | 읽기 전용 사용자 지정 개체 |
+| 사용자 지정 개체 유형 설명 | 사용자 정의 오브젝트 | GET | /rest/v1/customobjects/schema/{apiName}/describe.json | 읽기 전용 사용자 지정 개체 유형 |
+| 사용자 정의 객체 유형 초안 삭제 | 사용자 정의 오브젝트 | POST | /rest/v1/customobjects/schema/{apiName}/discardDraft.json | 사용자 지정 개체 유형 읽기-쓰기 |
+| 사용자 지정 개체 가져오기 | 사용자 정의 오브젝트 | GET | /rest/v1/customobjects/{name}.json | 읽기 전용 사용자 지정 개체 |
+| 사용자 지정 개체 연결 가능 개체 가져오기 | 사용자 정의 오브젝트 | GET | /rest/v1/customobjects/schema/linkableObjects.json | 읽기 전용 사용자 지정 개체 유형 |
+| 사용자 지정 개체 종속 Assets 가져오기 | 사용자 정의 오브젝트 | GET | /rest/v1/customobjects/schema/{apiName}/dependentAssets.json | 읽기 전용 사용자 지정 개체 유형 |
+| 사용자 지정 개체 유형 필드 데이터 유형 가져오기 | 사용자 정의 오브젝트 | GET | /rest/v1/customobjects/schema/fieldDataTypes.json | 읽기 전용 사용자 지정 개체 유형 |
+| 사용자 지정 개체 목록 | 사용자 정의 오브젝트 | GET | /rest/v1/customobjects.json | 읽기 전용 사용자 지정 개체 |
+| 사용자 지정 개체 유형 목록 | 사용자 정의 오브젝트 | GET | /rest/v1/customobjects/schema.json | 읽기 전용 사용자 지정 개체 유형 |
+| 사용자 지정 개체 동기화 | 사용자 정의 오브젝트 | POST | /rest/v1/customobjects/{name}.json | 사용자 지정 개체 읽기-쓰기 |
+| 사용자 지정 개체 유형 동기화 | 사용자 정의 오브젝트 | POST | /rest/v1/customobjects/schema.json | 사용자 지정 개체 유형 읽기-쓰기 |
+| 사용자 정의 객체 유형 필드 업데이트 | 사용자 정의 오브젝트 | POST | /rest/v1/customobjects/schema/{apiName}/updateField.json | 사용자 지정 개체 유형 읽기-쓰기 |
 | 이메일 템플릿 초안 승인 | 이메일 템플릿 | POST | /rest/asset/v1/emailTemplate/{id}/approveDraft.json | 자산 읽기-쓰기 |
 | 이메일 템플릿 복제 | 이메일 템플릿 | POST | /rest/asset/v1/emailTemplate/{id}/clone.json | 자산 읽기-쓰기 |
 | 이메일 템플릿 만들기 | 이메일 템플릿 | POST | /rest/asset/v1/emailTemplates.json | 자산 읽기-쓰기 |
@@ -328,7 +328,7 @@ ht-degree: 7%
 | ID별 정적 목록 가져오기 | 정적 목록 | GET | /asset/v1/staticList/{id}.json | 읽기 전용 자산 |
 | 이름별 정적 목록 가져오기 | 정적 목록 | GET | /asset/v1/staticList/byName.json | 읽기 전용 자산 |
 | 정적 목록 가져오기 | 정적 목록 | GET | /asset/v1/staticLists.json | 읽기 전용 자산 |
-| 목록 구성원 | 정적 목록 | GET | /rest/v1/lists/{listId}/leads/ismember.json | 읽기 전용 리드 |
+| 목록 멤버 | 정적 목록 | GET | /rest/v1/lists/{listId}/leads/ismember.json | 읽기 전용 리드 |
 | 목록에서 제거 | 정적 목록 | DELETE | /rest/v1/lists/{listId}/leads.json | 리드 읽기-쓰기 |
 | 정적 목록 메타데이터 업데이트 | 정적 목록 | POST | /asset/v1/staticList/{id}.json | 자산 읽기-쓰기 |
 | 이름별 태그 가져오기 | 태그 | GET | /rest/asset/v1/tagType/byName.json | 읽기 전용 자산 |
