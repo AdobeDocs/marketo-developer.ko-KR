@@ -3,9 +3,9 @@ title: MCP 서버
 description: MCP 서버를 사용하여 AI 도우미를 Marketo에 연결하는 방법에 대해 알아봅니다. Marketo 자격 증명으로 Cloud Desktop, Cursor, Cloud Code 또는 VS 코드를 구성합니다.
 hidefromtoc: true
 exl-id: ab446e56-6250-4af5-b03e-162991d09a5c
-source-git-commit: 3fe1c3e9fe572ef68d20ba10f93535aac9a98602
+source-git-commit: d659eb0f604a68d03d5b00c0109d59ff321415df
 workflow-type: tm+mt
-source-wordcount: '1278'
+source-wordcount: '1263'
 ht-degree: 1%
 
 ---
@@ -30,7 +30,6 @@ AI 도구가 MCP 서버를 호출하면 서버는 각 요청에서 제공한 자
 - **클라이언트 ID**
 - **클라이언트 암호**
 - **Munchkin 계정 ID**
-- **REST API 끝점**
 
 이미 있는 경우 [AI 도구 구성](#configure-your-ai-tool)으로 건너뜁니다.
 
@@ -44,11 +43,6 @@ AI 도구가 MCP 서버를 호출하면 서버는 각 요청에서 제공한 자
 
 1. **[!UICONTROL Admin]** > **[!UICONTROL Munchkin]**(으)로 이동합니다.
 1. **[!UICONTROL Munchkin Account ID]** 복사 형식은 `XXX-XXX-XXX`이며 인스턴스 URL의 접두사와 일치합니다.
-
-### REST API 끝점
-
-1. **[!UICONTROL Admin]** > **[!UICONTROL Web Services]**(으)로 이동합니다.
-1. **[!UICONTROL REST API]**&#x200B;에서 **[!UICONTROL Endpoint]** URL을 복사합니다. 형식은 `https://XXX-XXX-XXX.mktorest.com`입니다.
 
 ## AI 도구 구성
 
