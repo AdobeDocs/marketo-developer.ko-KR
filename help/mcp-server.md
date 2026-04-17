@@ -4,9 +4,9 @@ description: MCP 서버를 사용하여 AI 도우미를 Marketo에 연결하는 
 hidefromtoc: true
 badgeBeta: label="Beta" type="informative" tooltip="이 기능은 현재 초기 베타 릴리스에 있습니다"
 exl-id: ab446e56-6250-4af5-b03e-162991d09a5c
-source-git-commit: ad7c64f3e2cbc25db1c2ffe61e2d42b0acbbd573
+source-git-commit: b21ecb7a4dd2730807b0ad601b95fe387498f8f0
 workflow-type: tm+mt
-source-wordcount: '1272'
+source-wordcount: '1391'
 ht-degree: 1%
 
 ---
@@ -16,6 +16,12 @@ ht-degree: 1%
 모델 컨텍스트 프로토콜(MCP)은 AI 도구가 외부 서비스와 통신할 수 있도록 하는 개방형 표준이다. [!DNL Marketo] MCP 서버는 AI 길잡이와 [!DNL Marketo] 사이의 다리 역할을 합니다. 양식, 프로그램, 스마트 캠페인, 리드, 이메일, 코드 조각, 목록 및 폴더에 100개 이상의 작업을 노출합니다.
 
 AI 도구가 MCP 서버를 호출하면 서버는 각 요청에서 제공한 자격 증명을 사용하여 사용자를 대신하여 해당 REST API 호출을 실행합니다. 서버측 소프트웨어를 설치, 배포 또는 실행할 필요가 없습니다.
+
+>[!IMPORTANT]
+>
+>MCP(Model Context Protocol)는 새로운 오픈 소스 표준이며 보안 또는 신뢰성 위험을 제시할 수 있습니다. Adobe MCP 서버 통합 및 관련 설명서는 어떠한 종류의 보증도 없이 &quot;있는 그대로&quot; 제공됩니다.
+>MCP 클라이언트 또는 서버를 Adobe 제품에 연결하는 것은 고객이 선택한 구성이며 고객은 MCP 통합의 보안 및 적합성을 평가할 책임이 있습니다. Adobe은 잘못된 구성, MCP 오용, 서드파티 구현의 취약점 또는 MCP 지원 워크플로우를 통해 수행된 의도하지 않은 작업으로 인해 발생하는 문제에 대해 책임을 지지 않습니다.
+>위험을 줄이기 위해 Adobe에서는 생산적인 사용을 시작하기 전에 샌드박스 환경에서 통합을 테스트하고, 이를 확인하거나 의존하기 전에 모든 MCP에서 시작한 작업과 응답을 주의 깊게 검토하고 확인하는 것을 권장합니다.
 
 ## 사전 요구 사항
 
