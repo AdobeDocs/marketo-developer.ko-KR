@@ -2,16 +2,20 @@
 title: MCP 서버
 description: MCP 서버를 사용하여 AI 도우미를 Marketo에 연결하는 방법에 대해 알아봅니다. Marketo 자격 증명으로 Cloud Desktop, Cursor, Cloud Code 또는 VS 코드를 구성합니다.
 hidefromtoc: true
-badgeBeta: label="Beta" type="informative" tooltip="이 기능은 현재 초기 베타 릴리스에 있습니다"
+badgeBeta: label="Beta" type="informative" tooltip="이 기능은 현재 비공개 베타 릴리스에 있습니다"
 exl-id: ab446e56-6250-4af5-b03e-162991d09a5c
-source-git-commit: b21ecb7a4dd2730807b0ad601b95fe387498f8f0
+source-git-commit: c21ba0db3115c453f8ec35e18d4a8fd4c1ad8745
 workflow-type: tm+mt
-source-wordcount: '1391'
+source-wordcount: '1388'
 ht-degree: 1%
 
 ---
 
 # [!DNL Marketo] MCP 서버
+
+>[!NOTE]
+>
+>MCP 서버는 현재 비공개 베타 릴리스에 있습니다. 현재 모든 사용자가 사용할 수 있는 것은 아닙니다.
 
 모델 컨텍스트 프로토콜(MCP)은 AI 도구가 외부 서비스와 통신할 수 있도록 하는 개방형 표준이다. [!DNL Marketo] MCP 서버는 AI 길잡이와 [!DNL Marketo] 사이의 다리 역할을 합니다. 양식, 프로그램, 스마트 캠페인, 리드, 이메일, 코드 조각, 목록 및 폴더에 100개 이상의 작업을 노출합니다.
 
@@ -222,7 +226,6 @@ macOS에서 **[!UICONTROL Ctrl+Shift+P]** 또는 **[!UICONTROL Cmd+Shift+P]**&#x
 
 | 오류 | 원인 | 고정 |
 | ------- | ------- | ----- |
-| &quot;Marketo 엔드포인트가 제공되지 않음&quot; | 구성에 `X-Marketo-Endpoint` 헤더가 없습니다. | MCP 구성을 다시 확인하고 4개의 헤더가 모두 있는지 확인합니다. |
 | &quot;Marketo 자격 증명이 제공되지 않음&quot; | `X-Marketo-Client-Id`, `X-Marketo-Client-Secret` 또는 `X-Marketo-Munchkin-Id` 중 하나 이상이 없습니다. | 4개의 헤더가 모두 구성에 있는지 확인합니다. |
 | &quot;인증 오류&quot; | 자격 증명이 잘못되었거나 만료되었습니다. | **[!UICONTROL Admin]** > **[!UICONTROL LaunchPoint]**&#x200B;에서 클라이언트 ID와 클라이언트 암호를 다시 확인하십시오. |
 | &quot;403 금지됨&quot; | Munchkin ID가 서버에 없습니다. | [!DNL Marketo] MCP 관리자에게 문의하여 Munchkin ID를 추가하십시오. |
