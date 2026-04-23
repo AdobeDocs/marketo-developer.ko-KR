@@ -3,9 +3,9 @@ title: 활동
 feature: REST API
 description: Marketo Engage 활동 REST API를 사용하여 활동 유형을 나열하고, 페이징 토큰으로 리드 활동을 가져오고, 사용자 지정 및 데이터 값 변경을 처리합니다.
 exl-id: 1e69af23-2b0c-467a-897c-1dcf81343e73
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+source-git-commit: 5260338681c4ea670f6f1b1a1603e30f6acc0865
 workflow-type: tm+mt
-source-wordcount: '2139'
+source-wordcount: '2218'
 ht-degree: 0%
 
 ---
@@ -77,7 +77,11 @@ GET /rest/v1/activities/types.json
 
 Marketo에서 활동을 검색하려면 [리드 활동 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getLeadActivitiesUsingGET) 끝점을 호출하십시오. 먼저 활동 검색을 시작할 날짜/시간에 대한 페이징 토큰을 검색해야 합니다. 그런 다음 `nextPageToken` 쿼리 매개 변수에 페이징 토큰을 전달합니다. 또한 `activityTypeIds` 쿼리 매개 변수에 최대 10개의 활동 유형 ID를 쉼표로 구분된 목록으로 전달합니다.
 
-선택적으로 listId 쿼리 매개 변수를 포함하여 특정 정적 목록에 포함된 레코드로만 검색 범위를 좁히거나, leadIds 쿼리 매개 변수를 포함하여 지정된 리드 집합에서만 활동을 검색할 수 있습니다. 최대 30개의 leadId를 쉼표로 구분된 목록으로 전달할 수 있습니다.
+선택적으로 `listId` 쿼리 매개 변수를 포함하여 특정 정적 목록에 포함된 레코드만 검색하도록 좁히거나, `leadIds` 쿼리 매개 변수를 포함하여 지정된 리드 집합에서만 활동을 검색할 수 있습니다. 최대 30개의 `leadIds`을(를) 쉼표로 구분된 목록으로 전달할 수 있습니다.
+
+>[!CAUTION]
+>
+>2026-12-30부터 대상 목록에 10,000개 이상의 리드가 포함된 경우 `listId` 매개 변수를 포함하는 `Get Lead Activities` 및 `Get Lead Changes` 끝점에 대한 호출이 실패합니다(오류 코드 1003). 서비스 중단을 방지하려면 이 제한을 피하기 위해 호출 범위가 제대로 지정되었는지 확인하십시오.
 
 ```http
 GET /rest/v1/activities.json?activityTypeIds=1&nextPageToken=WQV2VQVPPCKHC6AQYVK7JDSA3I3LCWXH3Y6IIZ7YSGQLXHCPVE5Q====
@@ -139,6 +143,10 @@ GET /rest/v1/activities.json?activityTypeIds=1&nextPageToken=WQV2VQVPPCKHC6AQYVK
 
 * 끝점이 데이터 값 변경 및 새 잠재 고객 활동만 반환하므로 `activityTypeIds` 매개 변수가 없습니다.
 * `fields` 쿼리 매개 변수가 필요합니다. 여기서 쉼표로 구분된 필드 목록을 전달하여 변경 내용을 검색할 필드를 나타낼 수 있습니다.
+
+>[!CAUTION]
+>
+>2026-12-30부터 대상 목록에 10,000개 이상의 리드가 포함된 경우 `listId` 매개 변수를 포함하는 `Get Lead Activities` 및 `Get Lead Changes` 끝점에 대한 호출이 실패합니다(오류 코드 1003). 서비스 중단을 방지하려면 이 제한을 피하기 위해 호출 범위가 제대로 지정되었는지 확인하십시오.
 
 ```http
 GET /rest/v1/activities/leadchanges.json?nextPageToken=GIYDAOBNGEYS2MBWKQYDAORQGA5DAMBOGAYDAKZQGAYDALBQ&fields=firstName,lastName,department
