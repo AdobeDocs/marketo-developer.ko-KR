@@ -5,7 +5,7 @@ breadcrumb-title: '[!DNL Marketo] 개발자 안내서'
 role: Admin
 feature-set: "Marketo Engage"
 index: true
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+source-git-commit: 74f277aa200fa54bc386c067ec3302d144ec250a
 workflow-type: tm+mt
 source-wordcount: '286'
 ht-degree: 30%
@@ -165,8 +165,8 @@ ht-degree: 30%
 - [이메일 스크립팅](email-scripting.md)
 - [이메일 스크립팅 예](examples.md)
 - [Marketo 개체](marketo-objects.md)
-- [MCP 서버](mcp-server.md)
-- [라이선스](api-license.md)
+- {hide-from-toc}[MCP 서버](mcp-server.md)
+- {hide-from-toc}[라이선스](api-license.md)
 - [파트너 샌드박스](partner-sandbox.md)
 - [셀프서비스 플로우 단계](self-service-flow-steps.md)
 - [블로그 아카이브](blog.md)

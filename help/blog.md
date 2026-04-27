@@ -2,7 +2,7 @@
 title: 블로그 아카이브
 description: Marketo 개발자 블로그 아카이브 2014-2023 - Forms 2.0, Zapier, API 업데이트, SOAP 사용 중단 및 REST로의 마이그레이션 내역 게시물을 제공합니다.
 exl-id: d7ae88dd-9938-4957-9798-db43090dab4e
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+source-git-commit: 9c6aa420e451d529f3a1618fafe70b59392a4670
 workflow-type: tm+mt
 source-wordcount: '65019'
 ht-degree: 0%
@@ -1606,7 +1606,7 @@ _2014-10-08_&#x200B;에 _Josh_&#x200B;에 의해 게시됨
 
 ### 외부 페이지 미리 채우기
 
-Marketo forms는 Marketo 랜딩 페이지 외부에서 로드할 때 기본 미리 채우기 기능을 제공하지 않습니다. 그러나 [Marketo API](/help/rest-api/rest-api.md) 및 [Forms 2.0 JavaScript API](/help/javascript-api/forms-api-reference.md/)를 사용하여 이를 계속 구현할 수 있습니다. 첫 번째 단계는 서버의 REST 호출을 통해 Marketo에서 리드 데이터를 검색하는 것입니다. 잠재 고객 ID나 서버의 다른 고유 식별자를 상호 참조할 수 있는 즉각적인 방법이 없다고 가정할 경우 [필터 유형별 잠재 고객 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByFilterUsingGET)를 사용하여 Munchkin 쿠키 &#39;_mkto_trk&#39;를 사용하여 Marketo 서버에서 데이터를 검색해야 합니다.
+Marketo forms는 Marketo 랜딩 페이지 외부에서 로드할 때 기본 미리 채우기 기능을 제공하지 않습니다. 그러나 [Marketo API](/help/rest-api/rest-api.md) 및 [Forms 2.0 JavaScript API](/help/javascript-api/forms-api-reference.md)를 사용하여 이를 계속 구현할 수 있습니다. 첫 번째 단계는 서버의 REST 호출을 통해 Marketo에서 리드 데이터를 검색하는 것입니다. 잠재 고객 ID나 서버의 다른 고유 식별자를 상호 참조할 수 있는 즉각적인 방법이 없다고 가정할 경우 [필터 유형별 잠재 고객 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByFilterUsingGET)를 사용하여 Munchkin 쿠키 &#39;_mkto_trk&#39;를 사용하여 Marketo 서버에서 데이터를 검색해야 합니다.
 
 이 호출을 수행하려면 인스턴스의 인증 및 REST 끝점이 필요합니다. Marketo 인스턴스로 인증되면 `https://<host>/rest/v1/leads.json`에서 리드 API를 호출해야 합니다. 그런 다음 이 `?filterType=cookie&filterValues=`과(와) 같은 Marketo 쿠키를 필터링할 쿼리 문자열을 만들어야 합니다. 클라이언트가 서버에 보낸 &#39;_mkto_trk&#39; 키에서 특정 값을 검색해야 합니다. 참고: _mkto_trk 쿠키 값에는 앰퍼샌드가 포함되어 있으며 Marketo 끝점에서 올바르게 허용하려면 `%26`에 URL로 인코딩되어야 합니다. 기본적으로 리드 API는 `id`, `email`, `firstName` 및 `updatedAt`의 4개 필드를 반환합니다. 특정 필드 집합을 설정하려면 다음과 같이 필드 이름이 쉼표로 구분된 `fields` 쿼리 매개 변수를 포함해야 합니다. `&fields=email,firstName,lastName,company`. 궁극적으로 우리의 요구는 다음과 같이 보일 것입니다.
 
