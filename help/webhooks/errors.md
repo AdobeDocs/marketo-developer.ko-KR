@@ -3,9 +3,9 @@ title: 오류수
 feature: Webhooks
 description: Marketo Webhook 오류 코드, 리드 필드를 업데이트하는 데 2xx 응답이 필요한 이유, Webhook에서 오류를 포착하고 처리하는 방법이 호출되는지 알아봅니다.
 exl-id: adce40c3-87b1-4f31-8995-eb64e8a72b55
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+source-git-commit: d84b9d0f60734500f16bba237bdd95692d22abbb
 workflow-type: tm+mt
-source-wordcount: '254'
+source-wordcount: '252'
 ht-degree: 1%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 1%
 
 1000 및 1001은 Marketo에서 생성되며, 2xx ~ 5xx는 Marketo 웹후크에서 호출하는 시스템에서 반환된 오류입니다.
 
-Marketo이 값을 필드에 다시 매핑하려면 웹후크 응답 코드가 2xx 유형이어야 합니다. 웹후크의 목적이 응답을 통해 Marketo 리드 레코드의 값을 변경하는 것이라면, 호출되는 웹 서비스는 2xx를 반환해야 하며, 다른 모든 응답 코드는 리드 레코드 값을 업데이트하기 위해 웹후크를 무시하게 됩니다.
+Marketo이 값을 필드에 다시 매핑하려면 Webhook 응답 코드가 2xx 유형이어야 합니다. 웹후크의 목적이 응답을 통해 Marketo 리드 레코드의 값을 변경하는 것이라면, 호출되는 웹 서비스는 2xx를 반환해야 하며, 다른 모든 응답 코드는 리드 레코드 값을 업데이트하기 위해 웹후크를 무시하게 됩니다.
 
 | 응답 코드 | 설명 |
 | --- | --- |
@@ -25,11 +25,11 @@ Marketo이 값을 필드에 다시 매핑하려면 웹후크 응답 코드가 2x
 
 ## Webhook 오류 잡기
 
-[!UICONTROL Webhook is Called] 트리거에서 Webhooks의 오류를 catch 및 처리할 수 있습니다.
+**[!UICONTROL Webhook is Called]** 트리거에서 Webhooks의 오류를 catch 및 처리할 수 있습니다.
 
 ![Webhook이 호출되었습니다](assets/webhook-called.png)
 
-* Response - Response 는 요청에 의해 수신된 리터럴 응답 페이로드입니다.
-* 오류 유형 - HTTP 상태 메시지의 Reason-Phrase에 해당합니다.
+* **응답** - 응답은 요청에서 받은 문자 응답 페이로드입니다.
+* **오류 유형** - HTTP 상태 메시지의 Reason-Phrase에 해당합니다.
 
 이를 사용하여 예측 가능한 오류 및 예외를 처리하고 대응할 수 있습니다. 통합하는 서비스에 따라 특정 오류 클래스를 자동으로 복구하는 동시에 예기치 않은 오류를 사용자에게 알리는 경고를 만들 수 있습니다.
