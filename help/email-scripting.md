@@ -3,7 +3,7 @@ title: 이메일 스크립팅
 feature: Email Programs
 description: Apache Velocity 토큰, 변수, Velocity 도구를 사용하여 다이내믹 Marketo 이메일을 스크립팅하고 샘플 전송 및 이메일 미리 보기를 통해 테스트하는 방법을 알아봅니다.
 exl-id: ff396f8b-80c2-4c87-959e-fb8783c391bf
-source-git-commit: c21ba0db3115c453f8ec35e18d4a8fd4c1ad8745
+source-git-commit: 6b813020fec6727dc2fe3b4dfe1c98146447e704
 workflow-type: tm+mt
 source-wordcount: '1100'
 ht-degree: 0%
@@ -32,7 +32,9 @@ $variablename ##outputs '$variablename'
 ${variable}name ##outputs 'valuename'
 ```
 
-`$` 뒤에 포함된 `!`이(가) 있는 자동 참조 표기법도 있습니다. 일반적으로 속도가 정의되지 않은 참조를 발견하면 참조를 나타내는 문자열이 제자리에 남게 됩니다. 자동 참조 표기법을 사용할 때 정의되지 않은 참조가 발생하면 값이 전송되지 않습니다.
+
+
+`$` 뒤에 포함된 `!`이(가) 있는 자동 참조 표기법도 있습니다. 일반적으로 속도가 정의되지 않은 참조를 발견하면 참조를 나타내는 문자열이 제자리에 남게 됩니다. 자동 rkjeference 표기법을 사용할 때 정의되지 않은 참조가 발생하면 값이 전송되지 않습니다.
 
 ```velocity
 ##Defined Reference
