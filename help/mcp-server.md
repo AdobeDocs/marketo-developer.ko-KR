@@ -3,7 +3,7 @@ title: MCP 서버
 description: MCP 서버를 사용하여 AI 도우미를 Marketo에 연결하는 방법에 대해 알아봅니다. Marketo 자격 증명으로 Cloud Desktop, Cursor, Cloud Code 또는 VS 코드를 구성합니다.
 badgeBeta: label="Beta" type="informative" tooltip="이 기능은 현재 비공개 베타 릴리스에 있습니다"
 exl-id: ab446e56-6250-4af5-b03e-162991d09a5c
-source-git-commit: 1b33cacdd397b78292d8102b1222d0aa8c43c4b1
+source-git-commit: 738fabea9eefbc6aafee4ffa7972c9e3e2bd430c
 workflow-type: tm+mt
 source-wordcount: '1447'
 ht-degree: 0%
@@ -28,7 +28,7 @@ AI 도구가 MCP 서버를 호출하면 서버는 각 요청에서 제공한 자
 
 ## MCP 기본 사항
 
->&quot;MCP는 AI 애플리케이션용 USB-C 포트처럼 생각하십시오. USB-C가 장치를 다양한 주변 장치와 액세서리에 연결하는 표준화된 방법을 제공하는 것처럼 MCP는 AI 모델을 다양한 데이터 소스 및 도구에 연결하는 표준화된 방법을 제공합니다.&quot; — [모델 컨텍스트 프로토콜](https://modelcontextprotocol.io/docs/getting-started/intro){target="_blank"}
+>MCP를 AI 애플리케이션용 USB-C 포트와 같이 생각해 보십시오. USB-C가 장치를 다양한 주변 장치와 액세서리에 연결하는 표준화된 방법을 제공하는 것처럼 MCP는 AI 모델을 다양한 데이터 소스 및 도구에 연결하는 표준화된 방법을 제공합니다. — [모델 컨텍스트 프로토콜](https://modelcontextprotocol.io/docs/getting-started/intro){target="_blank"}
 
 MCP는 AI 도구가 여러 외부 서비스에 동시에 연결할 수 있도록 한다. 예를 들어 AI 비서는 다음을 수행할 수 있습니다.
 
