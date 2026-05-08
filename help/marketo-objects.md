@@ -3,7 +3,7 @@ title: Marketo 개체
 feature: Email Programs
 description: 리드, 기회 및 사용자 지정 개체와 함께 Marketo Velocity 사용, 필드 로드, 상위 10개 목록 액세스, SFDC 관계 및 $TriggerObject에 대해 안내합니다.
 exl-id: 88c63d72-7aa5-4550-9e1a-887a479872e1
-source-git-commit: ff0a95e838cecd1d8b1f90ca029a320043824242
+source-git-commit: a8bf6680a212dd665841896e4550a755dcdf745d
 workflow-type: tm+mt
 source-wordcount: '532'
 ht-degree: 0%
@@ -34,7 +34,7 @@ SFDC 사용자 지정 개체를 사용할 수 있으려면 Marketo 리드에 대
 
 ## 트리거 개체
 
-캠페인이 Added to Opportunity, Opportunity가 Updated 또는 Added to `<Custom Object Name>` 트리거를 통해 트리거되면 트리거 캠페인 컨텍스트 내에서 실행되는 스크립트 토큰에서 특수 변수를 사용할 수 있습니다. `$TriggerObject `(`<Custom Object Name>`에 대해 지원되지 않는 Updated 트리거가 업데이트됨).  `$TriggerObject` 참조를 사용하는 토큰을 일괄 캠페인에 사용하면 이 개체를 모든 종류의 일괄 캠페인에서 사용할 수 없으므로 전자 메일 전송이 실패합니다.  캠페인을 트리거한 개체에 대한 참조입니다. 개체에는 다른 변수 이름을 통해 액세스할 때 레코드에 있는 모든 데이터가 포함됩니다.
+캠페인이 Added to Opportunity, Opportunity가 Updated 또는 Added to `<Custom Object Name>` 트리거를 통해 트리거되면 트리거 캠페인 컨텍스트 내에서 실행되는 스크립트 토큰에서 특수 변수를 사용할 수 있습니다. `$TriggerObject`(`<Custom Object Name>`에 대해 지원되지 않는 Updated 트리거가 업데이트됨).  `$TriggerObject` 참조를 사용하는 토큰을 일괄 캠페인에 사용하면 이 개체를 모든 종류의 일괄 캠페인에서 사용할 수 없으므로 전자 메일 전송이 실패합니다.  캠페인을 트리거한 개체에 대한 참조입니다. 개체에는 다른 변수 이름을 통해 액세스할 때 레코드에 있는 모든 데이터가 포함됩니다.
 
 예를 들어 제품 주문에 대한 사용자 지정 개체를 통해 캠페인이 트리거된 경우 리드가 추가된 순서가 `$TriggerObject` 변수에 표시됩니다.
 
