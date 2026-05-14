@@ -3,9 +3,16 @@ title: 일괄 가져오기
 feature: REST API
 description: 다중 부분 업로드를 통해 리드, 사용자 지정 개체 및 프로그램 구성원을 로드하고 비동기 작업을 생성하며, 폴링 상태가 설정되고, 오류가 처리되는 Marketo 일괄 가져오기.
 exl-id: f7922fd2-8408-4d04-8955-0f8f58914d24
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+TQID: https://experienceleague.adobe.com/lr9dyX-fY-oJ2LM5P0zE1m24HtFYKQYYbxMkVe--PkE
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '661'
+source-wordcount: 661
 ht-degree: 2%
 
 ---

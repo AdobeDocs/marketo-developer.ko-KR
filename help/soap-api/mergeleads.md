@@ -3,9 +3,14 @@ title: mergeLead
 feature: SOAP
 description: mergeLeads를 Marketo SOAP과 함께 사용하여 우승 및 패배 리드 레코드를 병합합니다. 요청 필드, XML 요청 및 응답, PHP 및 Java 예제를 포함합니다.
 exl-id: a667cb76-525d-4583-b26a-1181d320a68c
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+TQID: https://experienceleague.adobe.com/--FRhhVbiS0KiMrUjakKgXXo79c2M1PQxUbo0YdGPzk
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '104'
+source-wordcount: 104
 ht-degree: 8%
 
 ---

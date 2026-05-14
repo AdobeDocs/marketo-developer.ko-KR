@@ -3,9 +3,19 @@ title: 구성
 description: JavaScript API를 사용하여 Marketo Munchkin을 구성합니다. altIds, anonymizeIP, asyncOnly, 쿠키 수명, domainLevel, 비콘 API와 같은 Munchkin.init 설정에 대해 알아봅니다.
 feature: Munchkin Tracking Code, Javascript
 exl-id: 4700ce7b-f624-4f27-871e-9a050f203973
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+TQID: https://experienceleague.adobe.com/ip2cCGgoa83v8m9GYLYXe132veYxS1C6UWX1iLB6X5Q
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+  - id: ea90ebee-5c84-42d9-8b21-006bdabc95a3
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '613'
+source-wordcount: 614
 ht-degree: 4%
 
 ---
@@ -36,7 +46,7 @@ Munchkin.init("AAA-BBB-CCC", {
 | cookieAnon | 부울 | false로 설정하면, 새로운 익명 리드의 추적 및 쿠키 생성이 금지됩니다. 잠재 고객은 쿠키를 가지며, Marketo 양식을 작성한 후 또는 Marketo 이메일에서 클릭스루하여 추적됩니다. 기본값은 true입니다. |
 | cookieLifeDays | 정수 | 새로 생성된 Munchkin 추적 쿠키의 만료 날짜를 미래의 이 요일로 설정합니다. 기본값은 730일(2년)입니다. |
 | customName | 문자열 | 사용자 지정 페이지 이름. 시스템 전용. |
-| <a name="domainlevel"></a>domainLevel | 정수 | 쿠키의 도메인 특성을 설정할 때 사용할 페이지의 도메인 부분 수를 설정합니다.예를 들어 현재 페이지 도메인이 &quot;www.example.com&quot;이라고 가정해 보겠습니다.domainLevel: 2는 쿠키 도메인 특성을 &quot;.example.com&quot;으로 설정합니다.domainLevel: 3은 쿠키 도메인 특성을 &quot;.www.example.com&quot;으로 설정합니다.:Munchkin은(는) 두 글자로 된 특정 최상위 수준 도메인을 자동으로 관리합니다. 최상위 도메인이 3자인 일반적인 경우 기본적으로 두 부분으로 설정됩니다. 예를 들어 &quot;www.example.com&quot;과 같이 가장 오른쪽에 있는 두 부분을 사용하여 쿠키 &quot;.example.com&quot;을 설정합니다. &quot;.jp&quot;, &quot;.us&quot;, &quot;.cn&quot; 및 &quot;.uk&quot;와 같은 두 문자 국가 코드의 경우 기본값은 세 부분으로 설정됩니다. 예를 들어 &quot;www.example.co.jp&quot;은 세 개의 가장 오른쪽 도메인 부분인 &quot;.example.co.jp&quot;을 사용합니다. 도메인 패턴에 다른 동작이 필요한 경우 `domainLevel` 매개 변수를 사용하여 지정해야 합니다. |
+| <a name="domainlevel"></a>domainLevel | 정수 | 쿠키의 도메인 속성을 설정할 때 사용할 페이지의 도메인 부분 수를 설정합니다.예를 들어 현재 페이지 도메인이 &quot;www.example.com&quot;이라고 가정합니다. domainLevel: 2는 쿠키 도메인 특성을 &quot;.example.com&quot;domainLevel: 3은 쿠키 도메인 특성을 &quot;.www.example.com&quot;로 설정합니다. Background:Munchkin은(는) 특정 두 글자 최상위 도메인을 자동으로 관리합니다. 최상위 도메인이 3자인 일반적인 경우 기본적으로 두 부분으로 설정됩니다. 예를 들어 &quot;www.example.com&quot;과 같이 가장 오른쪽에 있는 두 부분을 사용하여 쿠키 &quot;.example.com&quot;을 설정합니다. &quot;.jp&quot;, &quot;.us&quot;, &quot;.cn&quot; 및 &quot;.uk&quot;와 같은 두 문자 국가 코드의 경우 기본값은 세 부분으로 설정됩니다. 예를 들어 &quot;www.example.co.jp&quot;은 세 개의 가장 오른쪽 도메인 부분인 &quot;.example.co.jp&quot;을 사용합니다. 도메인 패턴에 다른 동작이 필요한 경우 `domainLevel` 매개 변수를 사용하여 지정해야 합니다. |
 | domainSelectorV2 | 부울 | true로 설정하면 는 향상된 방법을 사용하여 쿠키 도메인 속성을 설정하는 방법을 결정합니다. |
 | https만 | 부울 | 기본값은 false입니다. true로 설정되면 은 추적된 페이지가 https를 통해 제공되었을 때 보안 설정을 사용하도록 쿠키를 설정합니다. |
 | useBeaconAPI | 부울 | 기본값은 false입니다. true로 설정하면 [Beacon API](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API)를 사용하여 [XMLHttpRequest](https://developer.mozilla.org/ko_KR/docs/Web/API/XMLHttpRequest) 대신 비차단 요청을 보냅니다. 브라우저가 이 API를 지원하지 않는 경우 Munchkin은 XMLHttpRequest 사용으로 돌아갑니다. |

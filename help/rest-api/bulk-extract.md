@@ -3,9 +3,16 @@ title: 일괄 추출
 feature: REST API
 description: Marketo 벌크 추출 REST API를 사용하여 OAuth, 작업 큐 및 500MB 일일 제한으로 리드, 활동, 프로그램 멤버 및 사용자 지정 개체를 내보내는 방법에 대해 알아봅니다.
 exl-id: 6a15c8a9-fd85-4c7d-9f65-8b2e2cba22ff
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+TQID: https://experienceleague.adobe.com/ECSchsjqp8fyxXbUGl5DgXHUkXuN0sIUc3yJfVaIe1E
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: f71e690b-4480-4b67-9ef5-88f42f9cdfdb
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '1724'
+source-wordcount: 1724
 ht-degree: 0%
 
 ---
@@ -125,7 +132,7 @@ POST /bulk/v1/leads/export/create.json
 
 ## 작업 검색 중
 
-경우에 따라 최근 작업을 검색해야 할 수 있습니다. 해당 객체 유형에 대한 내보내기 작업 가져오기를 사용하여 쉽게 수행할 수 있습니다. 각 내보내기 작업 가져오기 끝점은 `status` 필터 필드인  반환된 작업 수를 제한하려면 `batchSize`을(를) 사용하고, 큰 결과 집합을 통해 페이징하려면 `nextPageToken`을(를) 사용합니다. 상태 필터는 내보내기 작업에 대해 생성됨, 큐에 있음, 처리, 취소됨, 완료됨 및 실패의 각 유효한 상태를 지원합니다. batchSize의 최대 및 기본값은 300입니다. 리드 내보내기 작업 목록을 가져오겠습니다.
+경우에 따라 최근 작업을 검색해야 할 수 있습니다. 해당 객체 유형에 대한 내보내기 작업 가져오기를 사용하여 쉽게 수행할 수 있습니다. 각 내보내기 작업 가져오기 끝점은 `status` 필터 필드, 반환된 작업 수를 제한하기 위한 `batchSize` 및 큰 결과 집합을 통해 페이징하기 위한 `nextPageToken`을(를) 지원합니다. 상태 필터는 내보내기 작업에 대해 생성됨, 큐에 있음, 처리, 취소됨, 완료됨 및 실패의 각 유효한 상태를 지원합니다. batchSize의 최대 및 기본값은 300입니다. 리드 내보내기 작업 목록을 가져오겠습니다.
 
 ```http
 GET /bulk/v1/leads/export.json?status=Completed,Failed

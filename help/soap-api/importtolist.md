@@ -3,9 +3,16 @@ title: 가져오기 대상 목록
 feature: SOAP
 description: Marketo SOAP에서 importToList를 사용하여 CSV 헤더, 토큰 재정의, XML 예제 및 상태 검사를 포함하는 정적 목록으로 리드를 가져오는 방법을 알아봅니다.
 exl-id: 7e4930a9-a78f-44a3-9e8c-eeca908080c8
-source-git-commit: 74964e90ddc68a611706afcad1f6016d05b060d6
+TQID: https://experienceleague.adobe.com/yOioersMnzB6rSHlLrHvGTG2HyLXvqF9y8yOLdN9anY
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: a7170d27-32ab-462b-a333-269abc654483
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '410'
+source-wordcount: 410
 ht-degree: 3%
 
 ---

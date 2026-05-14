@@ -3,9 +3,14 @@ title: Marketo 개체
 feature: SOAP
 description: 영업 기회, 프로그램 및 관련 레코드에 대한 유형, 속성, 외부 키 동작 및 지원되는 SOAP API를 포함한 Marketo MObject에 대한 개요입니다.
 exl-id: 99b9aed4-94e8-46e8-84d9-2cc5215b0c13
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+TQID: https://experienceleague.adobe.com/-G3BW9oFhPZL68yBUy-aNYycmgADhQCo8OclQAierrU
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '274'
+source-wordcount: 274
 ht-degree: 0%
 
 ---
@@ -31,7 +36,7 @@ MObject는 다음으로 구성됩니다.
 
 ### 외부 키
 
-외부 키는 Lead 또는 Opportunity 와 같이 Marketo 객체에 정의된 사용자 정의 필드입니다. 이름은 필드 이름이고 값은 외부 시스템에서 생성된 필드 값입니다. **Marketo에서는 이러한 값에 대해 고유 제약 조건을 적용하지 않습니다.** 값이 고유한지 확인하는 것은 API 사용자의 책임입니다. 중복이 발생하면 Marketo에서 가장 최근에 추가된 개체를 사용합니다. 이는 이메일 주소 표준 필드의 동작과 유사합니다.
+외부 키는 Lead 또는 Opportunity 와 같이 Marketo 객체에 정의된 사용자 정의 필드입니다. 이름은 필드 이름이고 값은 외부 시스템에서 생성된 필드 값입니다. **Marketo은 이러한 값에 대한 고유 제약 조건을 적용하지 않습니다.** 값이 고유한지 확인하는 것은 API 사용자의 책임입니다. 중복이 발생하면 Marketo에서 가장 최근에 추가된 개체를 사용합니다. 이는 이메일 주소 표준 필드의 동작과 유사합니다.
 
 ### 사용 가능한 API
 

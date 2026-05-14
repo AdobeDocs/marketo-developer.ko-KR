@@ -3,10 +3,15 @@ title: deleteCustomObjects
 feature: SOAP, Custom Objects
 description: Marketo SOAP API에서 deleteCustomObjects를 사용하여 DELETED, UNCHANGED, FAILED 상태와 XML, PHP, Java가 있는 주요 특성별로 사용자 지정 개체를 삭제하는 방법에 대해 알아봅니다.
 exl-id: 214b7cd1-dc4e-45dc-a29a-91518a275e61
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+TQID: https://experienceleague.adobe.com/5ARV5AGPgRnLX9X3ychjeoMmZpW0jZlnNuILwArhzJI
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '99'
-ht-degree: 6%
+source-wordcount: 99
+ht-degree: 8%
 
 ---
 

@@ -3,9 +3,19 @@ title: 이메일 템플릿
 feature: REST API
 description: HTML 요구 사항, ID 또는 이름별 쿼리 및 폴더 탐색을 포함하여 Marketo REST API 이메일 템플릿을 만들고 관리하는 방법을 알아봅니다
 exl-id: 0ecf4da6-eb7e-43c1-8d5c-0517c43b47c8
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+TQID: https://experienceleague.adobe.com/jKQpibaRP7nAyIsDdjMf8VkNPi5AMFbe7I4Iiy3MGc0
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+  - id: bce87dde-a4ab-44c9-8a18-ad66e4ddb377
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '725'
+source-wordcount: 725
 ht-degree: 1%
 
 ---
@@ -503,7 +513,7 @@ name=Sample Template 01 - deverly&folder={"id":12,"type":"Folder"}&description=T
 
 [Get Email Template Used By](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates/operation/getEmailTemplateUsedByUsingGET) 엔드포인트를 사용하여 지정된 전자 메일 템플릿에 종속된 전자 메일 목록을 검색합니다.  `id` 경로 매개 변수는 상위 전자 메일 템플릿을 지정합니다.
 
-2개의 선택적 매개 변수가 있습니다. `maxReturn`  는 결과 수를 제한하는 정수입니다(기본값은 20이고, 최대값은 200). `offset`은(는) `maxReturn`과(와) 함께 사용하여 큰 결과 집합을 읽을 수 있는 정수입니다(기본값은 0).
+2개의 선택적 매개 변수가 있습니다. `maxReturn`은(는) 결과 수를 제한하는 정수입니다(기본값은 20이고, 최대값은 200). `offset`은(는) 큰 결과 집합을 읽는 데 `maxReturn`과(와) 함께 사용할 수 있는 정수입니다(기본값은 0).
 
 ```http
 GET /rest/asset/v1/emailTemplates/{id}/usedBy.json

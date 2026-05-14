@@ -3,9 +3,16 @@ title: syncLead
 feature: SOAP
 description: Marketo SOAP syncLead 를 사용하여 요청 필드, XML 및 PHP 예제를 통해 단일 리드를 삽입하거나 업데이트하고, 식별자 및 작업 공간을 처리하는 방법을 알아봅니다.
 exl-id: e6cda794-a9d4-4153-a5f3-52e97a506807
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+TQID: https://experienceleague.adobe.com/SecUbvn0SKgWEGHMKbSNJqMvy1QoM3u-4tVchq-T3xQ
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: b0bb9048-d951-48d8-8232-45cf248a7e27
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '540'
+source-wordcount: 540
 ht-degree: 2%
 
 ---

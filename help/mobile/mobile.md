@@ -3,10 +3,18 @@ title: 모바일
 feature: Mobile Marketing
 description: Marketo Mobile Engagement에서 모바일 SDK 및 모바일 마케팅을 사용하여 푸시 및 인앱 메시지를 전송하고 대상을 타기팅하고 분석을 추적하는 방법에 대해 알아봅니다.
 exl-id: d5fa5640-01f5-49a1-944a-9f81a1f83617
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+TQID: https://experienceleague.adobe.com/nPkFdcBOP0mdzQ7nOT-bZZj83VQq-TGp1lkcAmWknU8
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: c13ff12d-60f1-49cd-833a-d43359628223
+  - id: c18d9e03-ac7d-4811-9c92-3e92ddc70ade
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '149'
-ht-degree: 4%
+source-wordcount: 165
+ht-degree: 3%
 
 ---
 

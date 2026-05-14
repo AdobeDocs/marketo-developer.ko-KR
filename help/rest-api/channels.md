@@ -3,9 +3,14 @@ title: 채널
 feature: REST API
 description: Asset REST API를 통해 Marketo 채널을 쿼리하고, 페이지 매김 또는 이름별로 가져오기로 탐색하고, 진행 상태를 보고, 프로그램 유형 규칙을 이해하는 방법에 대해 알아봅니다.
 exl-id: ec6c279f-a7b4-4a7c-b980-1a68045f37ce
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+TQID: https://experienceleague.adobe.com/e9TnbxgJCT5X2r5MjTdC49uVz4wvxDy2jhdQP5JOFTI
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '151'
+source-wordcount: 151
 ht-degree: 2%
 
 ---

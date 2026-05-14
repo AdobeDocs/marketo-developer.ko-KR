@@ -3,9 +3,22 @@ title: 필드 유형
 feature: REST API
 description: ISO 8601 날짜/시간, 텍스트 영역 제한, 통화 및 부울을 비롯한 정의, 예 및 형식이 포함된 Marketo 필드 유형의 포괄적인 목록입니다.
 exl-id: a0ba9e02-ed42-4be3-9cdd-a97fee9a726e
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+TQID: https://experienceleague.adobe.com/Q-L1NCCS1caYip-niSrBAkp6k37ErzmsLCFvn7fRJW0
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: a7170d27-32ab-462b-a333-269abc654483
+  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+  - id: d1d0a9cd-295d-4976-8c39-ddae266f240e
+subfeature_v2:
+  - id: ad89fb33-8541-4339-afe7-bb13d1633714
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '373'
+source-wordcount: 373
 ht-degree: 8%
 
 ---
@@ -24,7 +37,7 @@ ht-degree: 8%
 | 비율 | 정수로 표시되는 백분율 | 30 |
 | URL | URL의 프로토콜을 포함하여 URL로 입력을 제한하는 텍스트 필드입니다. | <http://example.com/> |
 | 전화 | 전화번호 | 111-111-1111 |
-| 텍스트 영역 | 긴 텍스트입니다. | 최대 30,000바이트를 지원합니다. 표준 ASCII 문자는 문자당 1바이트를 사용합니다(최대 30,000자까지 가능). 유니코드 문자는 문자당 최대 4바이트를 사용할 수 있습니다(문자  30,000자 미만이 허용되는 문자 수). |
+| 텍스트 영역 | 긴 텍스트입니다. | 최대 30,000바이트를 지원합니다. 표준 ASCII 문자는 문자당 1바이트를 사용합니다(최대 30,000자까지 가능). 유니코드 문자는 문자당 최대 4바이트를 사용할 수 있습니다(허용되는 문자 수를 30,000자 미만으로 줄임). |
 | 문자열 | 짧은 텍스트 | 최대 255자 텍스트 |
 | 점수 | 점수 변경 흐름 단계로 조작할 수 있는 정수 필드 | 10 |
 | 부울(이전 확인란) | 사용자가 True(선택됨) 또는 False(선택되지 않음) 값을 선택할 수 있습니다. | True |

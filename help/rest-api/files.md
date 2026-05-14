@@ -3,9 +3,16 @@ title: 파일
 feature: REST API
 description: ID 또는 이름별로 Marketo REST API 파일 쿼리, 폴더 및 오프셋으로 검색, 다중 부분 업로드를 통해 만들기 또는 업데이트, insertOnly, MIME 유형, 스트리밍 없음 등에 대한 안내서입니다.
 exl-id: 17361cdc-2309-442c-803c-34ce187aee1a
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+TQID: https://experienceleague.adobe.com/qH8zFwjJkTWHlCj1VHNiTiLK3mNOJFS83cnjEj2qjpA
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '347'
+source-wordcount: 347
 ht-degree: 1%
 
 ---

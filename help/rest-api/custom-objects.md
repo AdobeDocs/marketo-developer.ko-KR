@@ -3,9 +3,23 @@ title: 사용자 정의 오브젝트
 feature: REST API, Custom Objects
 description: 엔드포인트, 메타데이터, 관계, 필드 및 쿼리를 나열하고 설명하는 등 REST API를 통해 Marketo 사용자 지정 개체를 만들고 관리하는 방법에 대해 알아봅니다.
 exl-id: 88e8829b-f8f1-46d7-a753-5aa6e20e2c40
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+TQID: https://experienceleague.adobe.com/NWm9CjFVqQdVDJRrnE4nA299-Lg53-JR7xvY-82dUqY
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+  - id: d1d0a9cd-295d-4976-8c39-ddae266f240e
+subfeature_v2:
+  - id: ea4e3ff5-e7b9-4b4c-a5a0-dc27cc3f4275
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+  - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '3346'
+source-wordcount: 3346
 ht-degree: 0%
 
 ---
@@ -395,7 +409,7 @@ POST /rest/v1/customobjects/{apiName}/delete.json
 
 ### 쿼리 유형
 
-사용자 지정 개체 유형 메타데이터를 검색하는 방법에는 다음 두 가지가 있습니다. 사용자 지정 개체 유형을 설명하고 를 반환합니다.  단일 사용자 지정 개체 유형에 대한 레코드로, 승인 상태별로 필터링할 수 있고 구독의 모든 사용자 지정 개체 유형 목록을 반환하며 이름 및 승인 상태별로 필터링할 수 있는 목록 사용자 지정 개체 유형별로 필터링할 수 있습니다.
+사용자 지정 개체 유형 메타데이터를 검색하는 방법에는 단일 사용자 지정 개체 유형에 대한 레코드를 반환하고 승인 상태별로 필터링할 수 있는 사용자 지정 개체 유형 설명 과 구독의 모든 사용자 지정 개체 유형 목록을 반환하고 이름 및 승인 상태별로 필터링할 수 있는 사용자 지정 개체 유형 나열 이 있습니다.
 
 ### 설명 유형
 
@@ -514,7 +528,7 @@ GET /rest/v1/customobjects/schema/{apiName}/describe.json?state=approved
 
 * 메타데이터: state, displayName, description, apiName, idField, createdAt, updatedAt, dedupeFields, searchableFields, relationship
 * 표준 필드: marketoGUID, createdAt, updatedAt
-* 사용자 정의 필드 leadId, vin, make,  모델, 연도
+* 사용자 정의 필드 leadId, vin, make, model, year
 
 ### 목록 유형
 
@@ -701,7 +715,7 @@ GET /rest/v1/customobjects/schema.json?names=purchaseHistory
 
 사용자 지정 개체의 이름을 지정할 때 주의하십시오. 새 사용자 지정 개체를 만들 때 회사 이름(영숫자 또는 밑줄 허용)을 나타내는 문자열로 이름 앞에 를 붙이는 것이 좋습니다. 이렇게 하면 사용자 지정 오브젝트를 MLM UI에서 쉽게 검색할 수 있으며 이름이 고유한지 확인하는 데도 도움이 됩니다.
 
-다음은 API를 사용하여 새 사용자 지정 개체 유형을 만드는 예제입니다  이름 &quot;transaction&quot;.
+다음은 API 이름 &quot;transaction&quot;을 사용하여 새 사용자 지정 개체 유형을 만드는 예제입니다.
 
 ```http
 POST /rest/v1/customobjects/schema.json
@@ -883,7 +897,7 @@ POST /rest/v1/customobjects/schema/{apiName}/delete.json
 
 ### 필드 추가
 
-[사용자 지정 개체 유형 필드 추가](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/addCustomObjectTypeFieldsUsingPOST) 끝점을 사용하면 사용자 지정 개체에 하나 이상의 필드를 추가할 수 있습니다.  요청 본문에 하나 이상의 요소가 있는 `input` 배열이 있습니다.  각 요소는 필드를 설명하는 속성이 있는 JSON 개체입니다. 필수 `name` 특성은 필드의 API 이름이며 사용자 지정 개체에 고유해야 합니다.   이 규칙은 다른 텍스트 문자열을 구분하는 데 도움이 되도록 소문자 또는 카멜 대/소문자를 사용하는 것입니다. 필수 `displayName` 특성은 사람이 인식할 수 있는 필드의 이름이며 사용자 지정 개체에 고유해야 합니다. 필수 `dataType` 특성은 필드의 데이터 형식입니다.  A  허용되는 데이터 형식 목록은 [사용자 지정 개체 형식 필드 데이터 형식 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectTypeFieldDataTypesUsingGET) 끝점을 호출하여 가져올 수 있습니다.  사용자 지정 개체에는 데이터 형식이 &quot;link&quot;인 필드가 포함될 수 있습니다.  링크 필드는 사용자 정의 객체와 시스템의 다른 객체 유형(예: 리드, 회사) 간의 관계를 설정하는 데 사용됩니다.  링크 필드에 대한 자세한 내용은 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-fields)를 참조하십시오. 선택적 `description` 특성은 필드에 대한 설명입니다. 선택적 `isDedupeField` 부울 특성은 사용자 지정 개체 업데이트 작업 중에 필드가 중복 제거에 사용되는지 여부를 지정합니다.  기본 설정은 false입니다.  일대다 관계의 경우 중복 제거 필드가 필요합니다. 선택적 `relatedTo` 개체 특성은 링크 필드를 지정합니다.  일대다 관계의 경우 이 개체에는 연결할 &quot;링크 개체&quot; 또는 부모 개체인 `name` 특성과 &quot;링크 필드&quot;인 `field` 특성이 포함됩니다.  또는 키 속성으로 사용할 부모 개체 내의 필드입니다.  허용되는 링크 개체 목록을 검색하려면 [사용자 지정 개체 연결 가능 개체 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectTypeLinkableObjectsUsingGET) 끝점을 호출하십시오.  링크 필드에 대한 자세한 내용은 제품 설명서 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-fields)를 참조하세요. 사용자 지정 개체는 기존 링크 필드가 있는 다른 사용자 지정 개체에 연결할 수 없습니다.
+[사용자 지정 개체 유형 필드 추가](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/addCustomObjectTypeFieldsUsingPOST) 끝점을 사용하면 사용자 지정 개체에 하나 이상의 필드를 추가할 수 있습니다.  요청 본문에 하나 이상의 요소가 있는 `input` 배열이 있습니다.  각 요소는 필드를 설명하는 속성이 있는 JSON 개체입니다. 필수 `name` 특성은 필드의 API 이름이며 사용자 지정 개체에 고유해야 합니다.   이 규칙은 다른 텍스트 문자열을 구분하는 데 도움이 되도록 소문자 또는 카멜 대/소문자를 사용하는 것입니다. 필수 `displayName` 특성은 사람이 인식할 수 있는 필드의 이름이며 사용자 지정 개체에 고유해야 합니다. 필수 `dataType` 특성은 필드의 데이터 형식입니다.  [사용자 지정 개체 형식 필드 데이터 형식 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectTypeFieldDataTypesUsingGET) 끝점을 호출하여 허용되는 데이터 형식 목록을 가져올 수 있습니다.  사용자 지정 개체에는 데이터 형식이 &quot;link&quot;인 필드가 포함될 수 있습니다.  링크 필드는 사용자 정의 객체와 시스템의 다른 객체 유형(예: 리드, 회사) 간의 관계를 설정하는 데 사용됩니다.  링크 필드에 대한 자세한 내용은 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-fields)를 참조하십시오. 선택적 `description` 특성은 필드에 대한 설명입니다. 선택적 `isDedupeField` 부울 특성은 사용자 지정 개체 업데이트 작업 중에 필드가 중복 제거에 사용되는지 여부를 지정합니다.  기본 설정은 false입니다.  일대다 관계의 경우 중복 제거 필드가 필요합니다. 선택적 `relatedTo` 개체 특성은 링크 필드를 지정합니다.  일대다 관계의 경우 이 개체에는 연결할 &quot;link 개체&quot; 또는 부모 개체인 `name` 특성과 &quot;link 필드&quot; 또는 키 특성으로 사용할 부모 개체 내의 필드인 `field` 특성이 포함되어 있습니다.  허용되는 링크 개체 목록을 검색하려면 [사용자 지정 개체 연결 가능 개체 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectTypeLinkableObjectsUsingGET) 끝점을 호출하십시오.  링크 필드에 대한 자세한 내용은 제품 설명서 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-fields)를 참조하세요. 사용자 지정 개체는 기존 링크 필드가 있는 다른 사용자 지정 개체에 연결할 수 없습니다.
 
 ### 일대다 관계
 
@@ -988,7 +1002,7 @@ POST /rest/v1/customobjects/schema/course/approve.json
 
 ### 다대다 관계
 
-다대다 관계는 Lead 또는 Company와 같은 표준 사용자 지정 개체와 &quot;edge&quot; 사용자 지정 개체 사이에 있는 &quot;bridge&quot; 또는 intermediate 사용자 지정 개체를 사용하여 표시됩니다. Edge 객체는 설명 속성(필드)이 포함된 기본 엔티티입니다. 브리지 객체에는 2개의 링크 필드를 사용하여 객체 관계를 해결하는 데이터가 포함됩니다.  링크 필드 하나는 에서와 마찬가지로 상위 표준 개체를 다시 가리킵니다.  일대다 관계 구성.  다른 링크 필드는 링크가 없는 사용자 지정 객체인 Edge 객체를 가리킵니다.  브리지 객체에는 설명 속성(필드)도 포함될 수 있습니다. Marketo 제품 설명서 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-link-fields#AddMarketoCustomObjectLinkFields-CreateaLinkFieldforaOne-to-ManyStructure)의 대학 과정 등록 예제를 사용하여 과정 관련 정보를 포함하는 Edge 사용자 지정 개체와 과정을 리드와 연결하는 데 사용되는 등록 브리지 개체를 만듭니다. 다음은 단계입니다.
+다대다 관계는 Lead 또는 Company와 같은 표준 사용자 지정 개체와 &quot;edge&quot; 사용자 지정 개체 사이에 있는 &quot;bridge&quot; 또는 intermediate 사용자 지정 개체를 사용하여 표시됩니다. Edge 객체는 설명 속성(필드)이 포함된 기본 엔티티입니다. 브리지 객체에는 2개의 링크 필드를 사용하여 객체 관계를 해결하는 데이터가 포함됩니다.  링크 필드 하나는 일대다 관계 구성에서와 마찬가지로 상위 표준 개체를 다시 가리킵니다.  다른 링크 필드는 링크가 없는 사용자 지정 객체인 Edge 객체를 가리킵니다.  브리지 객체에는 설명 속성(필드)도 포함될 수 있습니다. Marketo 제품 설명서 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-link-fields#AddMarketoCustomObjectLinkFields-CreateaLinkFieldforaOne-to-ManyStructure)의 대학 과정 등록 예제를 사용하여 과정 관련 정보를 포함하는 Edge 사용자 지정 개체와 과정을 리드와 연결하는 데 사용되는 등록 브리지 개체를 만듭니다. 다음은 단계입니다.
 
 1. **Course** Edge 개체 만들기
 1. **과정 ID**&#x200B;에서 **과정:** 중복 제거에 필드 추가

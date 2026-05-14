@@ -3,9 +3,18 @@ title: '[!DNL Ionic]'
 feature: Mobile Marketing
 description: Marketo Cordova 플러그인을 Ionic과 통합하고, 푸시 알림을 활성화하고, SDK을 초기화하고, 세션을 추적하고, 리드를 연결하는 단계별 안내서입니다.
 exl-id: 204e5fb4-c9d6-43a6-9d77-0b2a67ddbed3
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+TQID: https://experienceleague.adobe.com/UTNWd69NliR896RcO-XM2GG35liuLeNNhTXo9GRtB4o
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: ea90ebee-5c84-42d9-8b21-006bdabc95a3
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '663'
+source-wordcount: 663
 ht-degree: 2%
 
 ---
@@ -17,7 +26,7 @@ ht-degree: 2%
 ## 사전 요구 사항
 
 1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)&#x200B;(응용 프로그램 비밀 키 및 Munchkin Id 얻기).
-1. 푸시 알림([iOS](push-notifications.md) | [Android](push-notifications.md) )을 설정합니다.
+1. 푸시 알림 설정([iOS](push-notifications.md) | [Android](push-notifications.md) ).
 1. [[!DNL Ionic]](https://ionicframework.com/getting-started/) 및 [Cordova CLI](https://cordova.apache.org/docs/en/latest/guide/cli/)를 설치합니다.
 
 ## 설치 지침

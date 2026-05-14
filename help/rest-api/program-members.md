@@ -3,9 +3,22 @@ title: 프로그램 구성원
 feature: REST API
 description: Marketo REST API를 사용하여 프로그램 구성원을 읽고, 만들고, 업데이트하고, 삭제하고, 표준 및 사용자 정의 필드를 관리하고, 검색 가능한 필드를 사용하여 쿼리합니다.
 exl-id: 22f29a42-2a30-4dce-a571-d7776374cf43
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+TQID: https://experienceleague.adobe.com/scEHyXYq9C7cCS1kIX810wG7ahT9fsa448NwIfBmzQM
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: b0bb9048-d951-48d8-8232-45cf248a7e27
+  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+  - id: d1d0a9cd-295d-4976-8c39-ddae266f240e
+  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+  - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '1924'
+source-wordcount: 1924
 ht-degree: 2%
 
 ---
@@ -684,7 +697,7 @@ POST /rest/v1/programs/members/schema/fields/pMCFCustomField03.json
 
 ## 삭제
 
-[프로그램 구성원 삭제](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/deleteProgramMemberUsingPOST) 끝점은 프로그램 구성원 레코드를 삭제하는 데 사용됩니다. 필수 `programId` 경로 매개 변수는 삭제할 멤버가 포함된 프로그램을 지정합니다. 요청 본문에 `input` 리드 ID 배열이 포함되어 있습니다. 최대 300개의 리드 ID  호출당 허용됩니다.
+[프로그램 구성원 삭제](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/deleteProgramMemberUsingPOST) 끝점은 프로그램 구성원 레코드를 삭제하는 데 사용됩니다. 필수 `programId` 경로 매개 변수는 삭제할 멤버가 포함된 프로그램을 지정합니다. 요청 본문에 `input` 리드 ID 배열이 포함되어 있습니다. 호출당 최대 300개의 리드 ID가 허용됩니다.
 
 끝점이 `status`/&quot;삭제됨&quot; 또는 &quot;건너뜀&quot;으로 응답합니다. 건너뛸 경우 `reasons` 배열도 포함됩니다. 끝점은 제출된 레코드를 응답 순서에 연결하는 데 사용할 수 있는 인덱스인 `seq` 필드에도 응답합니다.
 
