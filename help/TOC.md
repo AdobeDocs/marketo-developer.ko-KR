@@ -6,10 +6,10 @@ role: Admin
 feature-set: "Marketo Engage"
 index: true
 author: Donald
-source-git-commit: d70e61cab3a0e929a85b8ac57836438470988944
+source-git-commit: e71bcf289229867bc969345d79c8f014761aaaf9
 workflow-type: tm+mt
-source-wordcount: '286'
-ht-degree: 30%
+source-wordcount: '288'
+ht-degree: 29%
 
 ---
 
@@ -100,6 +100,7 @@ ht-degree: 30%
       - [필드 유형](rest-api/field-types.md)
       - [리드 데이터베이스](rest-api/lead-database.md)
       - [잠재 고객](rest-api/leads.md)
+      - [마이그레이션 안내서](rest-api/migration.md)
       - [지정 계정](rest-api/named-accounts.md)
       - [명명된 계정 목록](rest-api/named-account-lists.md)
       - [기회](rest-api/opportunities.md)
