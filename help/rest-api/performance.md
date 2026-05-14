@@ -4,8 +4,10 @@ feature: REST API
 description: HTTP 압축으로 Marketo REST API 성능을 향상시킵니다. gzip을 활성화하여 대역폭을 줄입니다. 벌크 API는 지원되지 않으며 1024바이트 미만이면 압축되지 않습니다.
 exl-id: 173a398a-9d36-4e8d-9dd3-7d0d375b085a
 TQID: https://experienceleague.adobe.com/foJCTd890HZtL-UzWx2cjRXwTxqgW56A79sB7FPEWis
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
 source-wordcount: 146

@@ -4,8 +4,10 @@ feature: SOAP
 description: Marketo 사용자 지정 오브젝트는 가져오기, 동기화, 삭제, 스마트 목록 및 이메일 사용에 대한 구조, 제한 및 SOAP API 호출을 사용하여 하나의 리드를 많은 레코드로 연결하는 방법을 알아봅니다.
 exl-id: 29d65841-4b44-4d94-b14e-c583d433d015
 TQID: https://experienceleague.adobe.com/Fy3h8qfKs8gizeakXkhoj5mJhib-QA2kYOu41YMIEZs
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
 source-wordcount: 286

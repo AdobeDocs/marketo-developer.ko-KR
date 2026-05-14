@@ -4,8 +4,10 @@ feature: SOAP
 description: Marketo SOAP getMultipleLeads를 사용하여 키, 정적 목록 또는 업데이트 날짜, 스트림 위치로 페이지를 매기고 필드를 필터링하여 최대 1000개의 리드를 가져오는 방법에 대해 알아봅니다.
 exl-id: db9aabec-8705-40c6-b264-740fdcef8a52
 TQID: https://experienceleague.adobe.com/JIeJVJjGzfbi4isERbo4AiwmDTxrB4JuJ7qttQg2u0Q
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
 source-wordcount: 409

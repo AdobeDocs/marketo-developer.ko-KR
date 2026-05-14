@@ -4,9 +4,12 @@ feature: Mobile Marketing
 description: iOS, Android 및 PhoneGap의 지침 및 모범 사례를 통해 사용자 지정 URI 체계를 사용하여 Marketo 푸시 메시지에 대한 앱의 딥링크를 활성화하는 방법에 대해 알아봅니다.
 exl-id: c3647416-d81d-4f15-b660-bcb3e54cb9bc
 TQID: https://experienceleague.adobe.com/UswOvHXGlfTrTUqr4Gsf3j2Z7Xpv2FF2luXeygT4qE0
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: f71e690b-4480-4b67-9ef5-88f42f9cdfdb
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: f71e690b-4480-4b67-9ef5-88f42f9cdfdb
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
 source-wordcount: 420

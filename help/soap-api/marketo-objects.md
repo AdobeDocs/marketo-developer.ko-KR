@@ -4,8 +4,10 @@ feature: SOAP
 description: 영업 기회, 프로그램 및 관련 레코드에 대한 유형, 속성, 외부 키 동작 및 지원되는 SOAP API를 포함한 Marketo MObject에 대한 개요입니다.
 exl-id: 99b9aed4-94e8-46e8-84d9-2cc5215b0c13
 TQID: https://experienceleague.adobe.com/-G3BW9oFhPZL68yBUy-aNYycmgADhQCo8OclQAierrU
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
 source-wordcount: 274

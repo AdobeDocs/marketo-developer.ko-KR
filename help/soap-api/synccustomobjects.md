@@ -4,8 +4,10 @@ feature: SOAP
 description: Marketo syncCustomObjects SOAP을 사용하여 레코드당 상태 결과와 XML 및 PHP 예제를 사용하여 호출당 최대 100개의 사용자 지정 개체를 삽입, 업데이트 또는 업데이트할 수 있습니다.
 exl-id: dbdd7ee6-f83f-4e20-b847-25a61f0f6046
 TQID: https://experienceleague.adobe.com/x-ijocpuVSFTNAQJY9zXVJMtVUZqI6YsjMPvKFNNA5g
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
 source-wordcount: 249

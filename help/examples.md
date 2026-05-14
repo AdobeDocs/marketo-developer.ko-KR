@@ -4,9 +4,12 @@ feature: Email Programs
 description: 사용자 지정 개체를 통한 반복, 날짜 구문 분석/형식 지정, HTML 이스케이프 및 URL ID를 포함하여 Velocity를 사용한 Marketo 이메일 스크립팅 예입니다.
 exl-id: 7c801f1c-0ab3-49f0-8577-0c4dccc80d0b
 TQID: https://experienceleague.adobe.com/QFC8YeZV3rAZtsE-KU8kFdpG7W0nocHscDSfuTkrLIY
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
 source-wordcount: 67
