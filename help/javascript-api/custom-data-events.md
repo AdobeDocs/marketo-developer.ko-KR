@@ -3,9 +3,14 @@ title: 사용자 지정 데이터 이벤트
 description: Web Personalization용 RTP JavaScript API로 사용자 지정 이벤트를 보내고 매개 변수, 최대 4개의 항목 및 클릭 기반 트리거를 포함한 문자열 또는 배열 데이터를 보냅니다.
 feature: Javascript
 exl-id: ef7cab9c-3bd0-450e-9247-9324b1e6f9ab
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+TQID: https://experienceleague.adobe.com/oWDmtMF94xG5HYXeTwkx5zF9PWo98bpwoVB6kAKLYDo
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: e2290edd-b061-4880-9d79-dee306cf5aa9id: ed6be6bb-75bb-4ea9-9a42-3bcaa65e1bcc
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: b5ce8718-c3af-4fdb-a1a9-fca32f83a87cid: e0eb8757-182f-49f3-94a4-1587d16f5094
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '263'
+source-wordcount: 263
 ht-degree: 3%
 
 ---
@@ -14,7 +19,7 @@ ht-degree: 3%
 
 이 메서드는 추적 및 실시간 개인화를 위한 사용자 지정 이벤트를 보냅니다. 타사 데이터를 보내거나 방문자 행동을 기반으로 사용자 지정 이벤트를 트리거하는 데 사용할 수 있습니다. 사용자 지정 데이터 이벤트는 방문자 세션에서 한 번 계산됩니다.
 
-User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
+User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
 
 | 매개변수 | 선택 사항/필수 | 유형 | 설명 |
 | --- | --- | --- | --- |

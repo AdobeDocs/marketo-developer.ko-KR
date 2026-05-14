@@ -3,9 +3,15 @@ title: 웹 개인화
 description: 페이지 보기 이벤트, 계정 설정, 보트 제외 및 코어 및 온디맨드 스크립트를 다루는 웹 Personalization JavaScript API 및 RTP 태그 안내입니다
 feature: Web Personalization, Javascript
 exl-id: b2c26b28-e9bf-4faf-8b6e-c102f41aeaa1
-source-git-commit: 6145067629ce78175af3b7464807a0fa100c7b57
+TQID: https://experienceleague.adobe.com/yplunKmgjOJ7gJTA2TDc9cfJXyXbrVWuM-NdVbDMN4A
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: e2290edd-b061-4880-9d79-dee306cf5aa9id: ed6be6bb-75bb-4ea9-9a42-3bcaa65e1bcc
+subfeature_v2: id: cdd4e0f6-e87e-453f-88ee-2ee54a7de272
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: b5ce8718-c3af-4fdb-a1a9-fca32f83a87cid: e0eb8757-182f-49f3-94a4-1587d16f5094
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '452'
+source-wordcount: 452
 ht-degree: 5%
 
 ---
@@ -14,7 +20,7 @@ ht-degree: 5%
 
 웹 Personalization JavaScript API는 플랫폼의 자동화된 개인화 기능을 확장합니다. 웹 페이지의 이벤트 추적 및 동적 사용자 지정을 허용합니다. 추가 기능: [사용자 지정 데이터 이벤트](custom-data-events.md), [동적 콘텐츠](web-personalization.md), [방문자 데이터 가져오기](get-visitor-data.md), [특정 봇에 대한 태그 제외](#exclude_tag_for_specific_bots).
 
-- User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
+- User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
 - RTP는 계정 기반 마케팅 명명된 계정 목록을 지원하지 않습니다. ABM 목록 및 코드는 RTP 내에서 관리되는 업로드된 계정 목록(CSV 파일)에만 해당됩니다.
 
 ## 태그 설정

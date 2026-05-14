@@ -3,9 +3,14 @@ title: 기회
 feature: REST API
 description: SFDC 또는 Dynamics 동기화를 통해 기회, 중복 제거 및 검색 가능한 필드, 제한 사항, 읽기 전용 동작을 설명, 쿼리, 만들기 및 업데이트하는 Marketo REST API입니다.
 exl-id: 46451285-4125-4857-890a-575069a68288
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+TQID: https://experienceleague.adobe.com/rBDJcXWQrN5qyKRWHyzVC-sc9BH2mQFLm7fKUk-NUn8
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '879'
+source-wordcount: 879
 ht-degree: 0%
 
 ---
@@ -16,7 +21,7 @@ ht-degree: 0%
 
 Marketo은 영업 기회 레코드를 읽고, 쓰고, 만들고, 업데이트하는 API를 표시합니다. Marketo에서 기회 레코드는 중간 Opportunity Role 객체를 통해 Lead 및 Contact Records에 연결되므로 Opportunity 는 많은 개별 Lead에 연결될 수 있습니다.  이러한 객체 유형은 모두 API를 통해 노출되며 대부분의 리드 데이터베이스 객체 유형과 마찬가지로 둘 다 해당 Describe 호출을 가지고 있습니다. 이 호출은 객체 유형에 대한 메타데이터를 반환합니다.
 
-영업 기회 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=ko) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=ko)가 활성화된 구독에 대한 읽기 전용 액세스입니다.
+영업 기회 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=en) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=en)가 활성화된 구독에 대한 읽기 전용 액세스입니다.
 
 ## 설명
 

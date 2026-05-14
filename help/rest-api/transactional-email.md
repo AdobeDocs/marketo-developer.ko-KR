@@ -3,9 +3,13 @@ title: 트랜잭션 이메일
 feature: REST API
 description: 설정 단계 및 Java 코드 예제를 사용하여 트랜잭션 이메일에 대해 Marketo을 구성하고 REST API 요청 캠페인을 통해 이를 트리거하는 방법에 대해 알아봅니다.
 exl-id: 057bc342-53f3-4624-a3c0-ae619e0c81a5
-source-git-commit: ff0a95e838cecd1d8b1f90ca029a320043824242
+TQID: https://experienceleague.adobe.com/eUw2THnwDdIuEO3MsuG4cSaoPnKVvdZ0ZTV-gxP-pJQ
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '1092'
+source-wordcount: 1092
 ht-degree: 1%
 
 ---
@@ -28,7 +32,7 @@ Marketo API의 일반적인 사용 사례는 [캠페인 요청](https://develope
 
 ![RequestCampaign-Apply-Draft](assets/request-campaign-approve-draft.png)
 
-캠페인을 처음 만드는 경우 [새 스마트 캠페인 만들기](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/create-a-new-smart-campaign.html?lang=ko) 문서를 확인하십시오. 캠페인을 만들었으면 다음 단계를 수행해야 합니다. Campaign이 요청됨 트리거를 사용하여 스마트 목록을 구성합니다.
+캠페인을 처음 만드는 경우 [새 스마트 캠페인 만들기](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/create-a-new-smart-campaign.html) 문서를 확인하십시오. 캠페인을 만들었으면 다음 단계를 수행해야 합니다. Campaign이 요청됨 트리거를 사용하여 스마트 목록을 구성합니다.
 
 ![Request-Campaign-Smart-List](assets/request-campaign-smart-list.png)
 
@@ -182,7 +186,7 @@ public class RequestCampaign {
 
 ### 이메일 작성
 
-콘텐츠를 사용자 지정하려면 먼저 Marketo에서 [프로그램](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/create-a-program.html?lang=ko) 및 [이메일](https://experienceleague.adobe.com/ko/docs/marketo/using/home)을 구성해야 합니다. 사용자 지정 콘텐츠를 생성하려면 프로그램 내에 토큰을 만든 다음 전송할 이메일에 배치해야 합니다. 간결성을 위해 이 예제에서는 하나의 토큰만 사용하고 있지만, 보낸 사람 이메일, 보낸 사람 이름, 회신 주소 또는 이메일의 모든 콘텐츠에서 토큰의 숫자를 바꿀 수 있습니다. 그러면 교체를 위해 하나의 리치 텍스트 토큰을 만들고 이를 &quot;bodyReplacement&quot;라고 하겠습니다. 리치 텍스트를 사용하면 토큰의 모든 컨텐츠를 입력하려는 임의의 HTML으로 바꿀 수 있습니다.
+콘텐츠를 사용자 지정하려면 먼저 Marketo에서 [프로그램](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/create-a-program.html) 및 [이메일](https://experienceleague.adobe.com/ko/docs/marketo/using/home)을 구성해야 합니다. 사용자 지정 콘텐츠를 생성하려면 프로그램 내에 토큰을 만든 다음 전송할 이메일에 배치해야 합니다. 간결성을 위해 이 예제에서는 하나의 토큰만 사용하고 있지만, 보낸 사람 이메일, 보낸 사람 이름, 회신 주소 또는 이메일의 모든 콘텐츠에서 토큰의 숫자를 바꿀 수 있습니다. 그러면 교체를 위해 하나의 리치 텍스트 토큰을 만들고 이를 &quot;bodyReplacement&quot;라고 하겠습니다. 리치 텍스트를 사용하면 토큰의 모든 컨텐츠를 입력하려는 임의의 HTML으로 바꿀 수 있습니다.
 
 ![새 토큰](assets/New-Token.png)
 

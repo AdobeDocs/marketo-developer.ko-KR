@@ -3,9 +3,14 @@ title: 활동
 feature: REST API
 description: Marketo Engage 활동 REST API를 사용하여 활동 유형을 나열하고, 페이징 토큰으로 리드 활동을 가져오고, 사용자 지정 및 데이터 값 변경을 처리합니다.
 exl-id: 1e69af23-2b0c-467a-897c-1dcf81343e73
-source-git-commit: 5260338681c4ea670f6f1b1a1603e30f6acc0865
+TQID: https://experienceleague.adobe.com/62keaj4uNoxIPCzr9AQzKrIsfuHBvC25knYisZRUvF4
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '2218'
+source-wordcount: 2218
 ht-degree: 0%
 
 ---
@@ -344,7 +349,7 @@ Marketo 규칙과 유형의 일관성을 보장하고 충돌을 방지하려면 
 
 **트리거 이름:** 각 활동 유형에는 사람이 읽을 수 있는 고유한 트리거 이름이 있어야 합니다. 트리거 이름은 &quot;이벤트 참석&quot;과 같이 3인칭 현재 시제로 해야 합니다. LaunchPoint 파트너는 &quot;웨비나 참석 - Acme Company&quot;와 같이 회사 이름을 활동에 포함해야 합니다.
 
-**필터 이름:**  각 활동 유형에는 사람이 읽을 수 있는 고유한 필터 이름이 있어야 합니다. 필터 이름은 &quot;이벤트에 참석함&quot;과 같이 세 번째 사람 과거형으로 표시되어야 합니다. LaunchPoint 파트너는 활동에 회사 이름, 즉 &quot;출석한 웨비나 - Acme Company&quot;를 포함해야 합니다.
+**필터 이름:** 각 활동 유형에는 사람이 읽을 수 있는 고유한 필터 이름이 있어야 합니다. 필터 이름은 &quot;이벤트에 참석함&quot;과 같이 세 번째 사람 과거형으로 표시되어야 합니다. LaunchPoint 파트너는 활동에 회사 이름, 즉 &quot;출석한 웨비나 - Acme Company&quot;를 포함해야 합니다.
 
 **기본 특성:** 사용자 지정 활동의 기본 특성은 활동 유형에 가장 중요한 필드여야 합니다. 예를 들어 &quot;출석한 이벤트&quot; 활동의 경우 이 이름은 이벤트의 이름이 됩니다. 기본 속성은 해당 활동 유형에 대한 트리거 또는 필터의 모든 인스턴스에 기본적으로 매개 변수로 포함되며, 이 값은 활동에 대한 드릴다운이 필요 없이 개인 레코드의 활동 로그에 표시됩니다.
 

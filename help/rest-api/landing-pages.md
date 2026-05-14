@@ -3,9 +3,14 @@ title: 랜딩 페이지
 feature: REST API, Landing Pages
 description: Marketo REST API를 사용하여 안내식 및 자유 형식 유형을 비롯한 랜딩 페이지를 쿼리하고, 만들고, 업데이트하고, 승인하고, 삭제하고, 복제합니다.
 exl-id: 2f986fb0-0a6b-469f-b199-1c526cd5a882
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+TQID: https://experienceleague.adobe.com/NssOtB6BEMGOQzzauLI7AszLpN3fVcEeJcr9VNTkpJE
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: b0bb9048-d951-48d8-8232-45cf248a7e27id: f82558ea-6af5-44eb-a424-5b3389abb0a3
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '1221'
+source-wordcount: 1221
 ht-degree: 1%
 
 ---
@@ -186,7 +191,7 @@ name=MyNewLandingPage&folder={"type":"Program","id":1119}&template=57
 | 사각형 | 비어 있음. |
 | 리치 텍스트 | 텍스트 HTML 컨텐츠.  리치 텍스트 요소만 포함할 수 있습니다. |
 | 스니펫 | 코드 조각 ID입니다. |
-| SocialButton | 의 ID  소셜 단추. |
+| SocialButton | 소셜 단추의 ID입니다. |
 | 비디오 | 비디오의 ID입니다. |
 
 자유 형식 페이지의 경우 원하는 모든 콘텐츠 섹션을 추가해야 하며 ID가 `mktoContent`인 div 요소에 임베드됩니다. 안내 페이지의 경우 [랜딩 페이지 콘텐츠 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/getLandingPageContentUsingGET) 끝점의 목록에 사전 정의된 요소 목록이 있을 수 있습니다. 해당 끝점을 통해 더 많은 콘텐츠를 추가하거나 [콘텐츠를 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Content/operation/updateLandingPageContentUsingPOST)할 수 있습니다.
@@ -274,7 +279,7 @@ segment=New Segment&value=New Content
 </head>
 ```
 
-자세한 내용은 [안내 랜딩 페이지 템플릿 만들기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template) 설명서의 &quot;편집 가능한 변수&quot; 섹션을 참조하십시오.
+자세한 내용은 [안내 랜딩 페이지 템플릿 만들기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template) 설명서의 &quot;편집 가능한 변수&quot; 섹션을 참조하십시오.
 
 ### 쿼리
 
@@ -310,7 +315,7 @@ GET /rest/asset/v1/landingPage/{id}/variables.json
 }
 ```
 
-위치  이 예에서는 안내 랜딩 페이지에 stringVar, colorVar, boolVar의 3개 변수가 포함되어 있습니다.
+이 예에서 안내 랜딩 페이지는 stringVar, colorVar, boolVar의 3개 변수를 포함합니다.
 
 ### 업데이트
 
@@ -341,7 +346,7 @@ POST /rest/asset/v1/landingPage/{id}/variable/{variableId}.json?value={newValue}
 Marketo은 브라우저에 렌더링되는 대로 랜딩 페이지의 실시간 미리 보기를 검색할 수 있도록 [랜딩 페이지 전체 콘텐츠 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Pages/operation/getLandingPageFullContentUsingGET) 끝점을 제공합니다. 필수 매개 변수인 `id` 경로 매개 변수가 있습니다. 이 매개 변수는 미리 보려는 랜딩 페이지의 ID입니다. 다음 두 가지 추가 선택적 쿼리 매개 변수가 있습니다.
 
 - 세그멘테이션: segmentationId 및 segmentId 특성이 포함된 JSON 개체 배열을 허용합니다. 설정되면, 에서는 해당 세그먼트와 일치하는 잠재 고객인 것처럼 랜딩 페이지를 미리 봅니다.
-- 리드 ID:  잠재 고객의 정수 ID를 허용합니다. 설정되면, 은 지정된 리드가 본 것처럼 랜딩 페이지를 미리 봅니다.
+- leadId: 리드의 정수 ID를 허용합니다. 설정되면, 은 지정된 리드가 본 것처럼 랜딩 페이지를 미리 봅니다.
 
 ```http
 GET /rest/asset/v1/landingPage/{id}/fullContent.json?leadId=1001&segmentation=[{"segmentationId":1030,"segmentId":1103}]

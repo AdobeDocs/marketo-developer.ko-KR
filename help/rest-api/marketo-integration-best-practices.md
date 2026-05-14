@@ -3,9 +3,14 @@ title: Marketo 통합 우수 사례
 feature: REST API
 description: 할당량, 비율 및 동시 사용 제한, 일괄 가져오기 및 내보내기, 캐싱 및 지연 계획에 대해 다루는 Marketo API 통합 모범 사례입니다.
 exl-id: 1e418008-a36b-4366-a044-dfa9fe4b5f82
-source-git-commit: ff0a95e838cecd1d8b1f90ca029a320043824242
+TQID: https://experienceleague.adobe.com/Ld-rmFCwKSx-0W2-ceYICu0FQHK8BKAC1QgqtiOWDn4
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: b13bd2ad-8e65-49e5-9691-2a0d31067b35id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45id: e64968b2-4ee5-47f9-8cae-0588f184b9ebid: f71e690b-4480-4b67-9ef5-88f42f9cdfdb
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: df401a2a-327d-468c-a5e4-b7b7ccd071a0
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '1013'
+source-wordcount: 1013
 ht-degree: 0%
 
 ---
@@ -16,7 +21,7 @@ ht-degree: 0%
 
 - **일일 할당량:** 대부분의 구독에는 하루에 50,000개의 API 호출이 할당됩니다(12:00AM CST에서 매일 재설정됨). 계정 관리자를 통해 일일 할당량을 늘릴 수 있습니다.
 - **속도 제한:** 인스턴스당 API 액세스가 20초당 100개의 호출로 제한되었습니다.
-- **동시 실행 제한:**  최대 10개의 동시 API 호출.
+- **동시 실행 제한:** 최대 10개의 동시 API 호출.
 - **일괄 처리 크기:** 리드 DB - 300개 레코드, 자산 쿼리 - 200개 레코드
 - **REST API 페이로드 크기:** 1MB
 - **일괄 가져오기 파일 크기:** 10MB

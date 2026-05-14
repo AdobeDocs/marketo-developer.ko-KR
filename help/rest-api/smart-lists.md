@@ -3,9 +3,14 @@ title: 스마트 목록
 feature: REST API
 description: Marketo REST API를 사용하여 ID, 이름, 캠페인 및 규칙이 있는 프로그램별 끝점을 포함하여 사용자가 만든 스마트 목록을 쿼리, 복제 및 삭제하는 방법에 대해 알아봅니다.
 exl-id: 4ba37e57-ee56-48c3-bb2b-b4ec8e907911
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+TQID: https://experienceleague.adobe.com/wQ2PQFabw8E5XYP4zJ2RMPcurRkoxA7UecpA-YuQuBc
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: a7170d27-32ab-462b-a333-269abc654483id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+subfeature_v2: id: d0251300-e25f-466f-9856-7e11ce8fa7aa
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '576'
+source-wordcount: 576
 ht-degree: 1%
 
 ---
@@ -16,7 +21,7 @@ ht-degree: 1%
 
 Marketo은 스마트 목록에서 작업을 수행하기 위한 일련의 REST API를 제공합니다. 이러한 API는 쿼리, 삭제 및 복제 옵션을 제공하는 에셋 API에 대한 표준 인터페이스 패턴을 따릅니다.
 
-참고: 이러한 API는 사용자가 만든 스마트 목록에서만 지원됩니다. [기본 제공/시스템 스마트 목록](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/using-smart-lists/use-built-in-system-smart-lists)에는 사용할 수 없습니다.
+참고: 이러한 API는 사용자가 만든 스마트 목록에서만 지원됩니다. [기본 제공/시스템 스마트 목록](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/using-smart-lists/use-built-in-system-smart-lists)에는 사용할 수 없습니다.
 
 ## 쿼리
 

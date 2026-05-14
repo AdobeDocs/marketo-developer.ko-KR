@@ -3,9 +3,13 @@ title: SOAP FAQ
 feature: SOAP
 description: Marketo SOAP API를 통해 getMObject를 사용하여 프로그램을 나열하고, getMultipleLeads를 최적화하고, 기회를 만들고, 개인화된 이메일을 보내거나 예약하는 방법을 알아봅니다.
 exl-id: a2d8f144-cd5f-41bc-8231-29c42af935b8
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+TQID: https://experienceleague.adobe.com/AWgJgPdDXmapXqvG-J93utvXGV8-zLnKO-DvWFzOYoI
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '353'
+source-wordcount: 360
 ht-degree: 0%
 
 ---
@@ -22,7 +26,7 @@ ht-degree: 0%
 
 **Q:** Salesforce 또는 Microsoft Dynamics과 같은 CRM과 통합되지 않은 경우 SOAP API를 통해 기회를 만들려면 어떻게 해야 합니까?
 
-**A:** OpportunityPersonRole 및 Opportunity [MObject](syncmobjects.md) 유형에 쓰는 [syncMObjects](marketo-objects.md) 호출을 사용하여 SOAP API를 사용하여 기회를 만들 수 있습니다.
+**A:** OpportunityPersonRole 및 Opportunity [MObject](marketo-objects.md) 유형에 쓰는 [syncMObjects](syncmobjects.md) 호출을 사용하여 SOAP API를 사용하여 기회를 만들 수 있습니다.
 
 **Q:** Marketo에서 이메일을 프로그래밍 방식으로 보낼 수 있습니까? 그렇다면 각 이메일 수신자에 대한 사용자 지정 콘텐츠를 보내려면 어떻게 해야 합니까?
 

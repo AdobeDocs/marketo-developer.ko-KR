@@ -3,10 +3,13 @@ title: getLead
 feature: SOAP
 description: Marketo SOAP getLead 를 사용하여 요청 및 응답 XML 과 PHP 샘플이 있는 IDNUM, 이메일, 쿠키 또는 SFDC ID 별로 단일 리드 및 모든 필드 값을 가져옵니다.
 exl-id: 1a3eab26-7994-455d-bc7a-80e43e6ef4a7
-source-git-commit: 7557b9957c87f63c2646be13842ea450035792be
+TQID: https://experienceleague.adobe.com/HJ28-Gr78FqFm2KuvDdoAclkHVBSV6GwDjnUwQcJqVw
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '152'
-ht-degree: 3%
+source-wordcount: 153
+ht-degree: 5%
 
 ---
 

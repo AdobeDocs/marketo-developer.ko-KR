@@ -3,9 +3,12 @@ title: 정적 목록
 feature: REST API, Static Lists
 description: Marketo REST API를 사용하여 ID, 이름 및 찾아보기, 폴더 범위, 페이징 및 날짜 필터에 대한 끝점이 있는 정적 목록을 쿼리, 만들기, 업데이트 및 삭제합니다.
 exl-id: 20679fd2-fae2-473e-84bc-cb4fdf2f5151
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+TQID: https://experienceleague.adobe.com/DSV9h6d4F3ZrIUT-VtqlmFAnpdxOuTf05ajCqiGegqk
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '496'
+source-wordcount: 496
 ht-degree: 1%
 
 ---

@@ -3,9 +3,12 @@ title: 데이터 수집
 feature: REST API, Dynamic Content
 description: 개인, 사용자 지정 개체, 회사 및 프로그램 구성원의 대량, 짧은 지연 시간 수집을 위해 Marketo 데이터 수집 API를 사용하십시오.
 exl-id: 1d501916-53ac-42d8-a804-abb4ab01c7e8
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+TQID: https://experienceleague.adobe.com/xby7hs-CSLrVzy-FXEBi1FeU1-ca7vI4kB85BYJ9snk
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '1789'
+source-wordcount: 1789
 ht-degree: 13%
 
 ---
@@ -176,7 +179,7 @@ Date: Wed, 18 Oct 2023 18:56:49 GMT
 | `priority` | 문자열 | 아니요 | 요청의 우선 순위: 보통 또는 높음 | 표준 |
 | `partitionName` | 문자열 | 아니요 | 개인 파티션 이름 | 기본 |
 | `dedupeFields` | 오브젝트 | 아니요 | 중복을 제거할 속성입니다. 하나 또는 두 개의 속성 이름이 허용됩니다. <br/> AND 작업에는 두 가지 속성이 사용됩니다. 예를 들어 `email`과(와) `firstName`이(가) 모두 지정된 경우 AND 작업을 사용하여 사람을 찾는 데 모두 사용됩니다. <br/>지원되는 특성: `id`, `email`, `sfdcAccountId`, `sfdcContactId`, `sfdcLeadId` `sfdcLeadOwnerId`, 사용자 지정 특성(&quot;string&quot; 및 &quot;integer&quot; 형식만 해당), `email` |  |
-| `persons` | 개체 배열 | 예 | 개인용 속성 이름-값 쌍 목록 | - |
+| `persons` | 개체 배열 | 예 | 개인용 속성 이름-값 쌍 목록 | – |
 
 필요한 권한은 `Read-Write Lead`입니다.
 
@@ -244,7 +247,7 @@ Date: Wed, 18 Oct 2023 18:56:49 GMT
 | --- | --- | --- | --- | --- |
 | `priority` | 문자열 | 아니요 | 요청의 우선 순위: 보통, 높음 | 표준 |
 | `dedupeBy` | 문자열 | 아니요 | 중복 제거할 속성: dedupeFields, marketoGUID | 데이터 중복 제거 필드 |
-| `customObjects` | 개체 배열 | 예 | 개체의 특성 이름-값 쌍 목록입니다. | - |
+| `customObjects` | 개체 배열 | 예 | 개체의 특성 이름-값 쌍 목록입니다. | – |
 
 필요한 권한은 `Read-Write Custom Object`입니다.
 
@@ -314,7 +317,7 @@ Date: Wed, 18 Oct 2023 18:56:49 GMT
 | --- | --- | --- | --- | --- |
 | `action` | 문자열 | 아니요 | 동기화 작업: `createOnly`, `updateOnly` 또는 `createOrUpdate` | `createOrUpdate` |
 | `dedupeBy` | 문자열 | 아니요 | 중복을 제거할 필드: `dedupeFields` 또는 `idField`(대/소문자 구분 안 함). `createOnly` 및 `createOrUpdate`의 경우 `dedupeFields`만 허용됩니다. `updateOnly`의 경우 둘 다 허용됩니다. | `dedupeFields` |
-| `input` | 개체 배열 | 예 | 회사 속성 이름-값 쌍 목록입니다. JSON 키 `input` 또는 `companies`을(를) 허용합니다. | - |
+| `input` | 개체 배열 | 예 | 회사 속성 이름-값 쌍 목록입니다. JSON 키 `input` 또는 `companies`을(를) 허용합니다. | – |
 
 `input` 배열의 각 회사 개체는 다음 필드를 지원합니다.
 
@@ -416,7 +419,7 @@ Date: Wed, 18 Oct 2023 18:56:49 GMT
 
 | 키 | 데이터 유형 | 필수 | 값 | 기본값 |
 | --- | --- | --- | --- | --- |
-| 프로그램 | 개체 배열 | 예 | 프로그램 작업 목록입니다. 각각은 프로그램, 대상 상태 및 동기화 잠재 고객을 지정합니다. | - |
+| 프로그램 | 개체 배열 | 예 | 프로그램 작업 목록입니다. 각각은 프로그램, 대상 상태 및 동기화 잠재 고객을 지정합니다. | – |
 
 `programs` 배열의 각 개체는 다음을 포함합니다.
 
@@ -517,7 +520,7 @@ Date: Wed, 18 Oct 2023 18:56:49 GMT
 
 | 키 | 데이터 유형 | 필수 | 값 | 기본값 |
 | --- | --- | --- | --- | --- |
-| 프로그램 | 개체 배열 | 예 | 프로그램 삭제 작업 목록입니다. 각각 프로그램과 제거할 리드를 지정합니다. | - |
+| 프로그램 | 개체 배열 | 예 | 프로그램 삭제 작업 목록입니다. 각각 프로그램과 제거할 리드를 지정합니다. | – |
 
 `programs` 배열의 각 개체는 다음을 포함합니다.
 

@@ -3,9 +3,13 @@ title: 표준 필드
 feature: REST API, Field Management
 description: REST 및 SOAP 이름, 레이블 및 설명이 포함된 Marketo 표준 리드 필드의 전체 목록과 Describe Lead API를 통해 검색하는 방법을 찾아봅니다.
 exl-id: 147dbdff-4bc9-4ab3-8918-c4de3e1aa97a
-source-git-commit: ff0a95e838cecd1d8b1f90ca029a320043824242
+TQID: https://experienceleague.adobe.com/vu2wGk36XJ243vwavhfLE7Vc9vMIJKGx6vmVqMRgEDA
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: e64968b2-4ee5-47f9-8cae-0588f184b9ebid: f82558ea-6af5-44eb-a424-5b3389abb0a3
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '742'
+source-wordcount: 742
 ht-degree: 16%
 
 ---

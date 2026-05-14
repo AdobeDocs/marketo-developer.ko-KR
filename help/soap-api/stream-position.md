@@ -3,9 +3,12 @@ title: 스트림 위치
 feature: SOAP
 description: SOAP에서 시간 시퀀스 데이터의 페이지 매김을 위한 스트림 위치, 간단하고 복잡한 형식, getLeadChanges, getLeadActivity 등에서의 사용에 대해 설명합니다.
 exl-id: c3a3fc1e-086b-4822-b2c7-2a7959db557c
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+TQID: https://experienceleague.adobe.com/Gn-BhpbF2inBlKcmfyq3rSwwYHmp8B-ODRREtRlzwx4
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
 workflow-type: tm+mt
-source-wordcount: '157'
+source-wordcount: 157
 ht-degree: 0%
 
 ---
