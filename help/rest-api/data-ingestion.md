@@ -1,17 +1,17 @@
 ---
 title: 데이터 수집
-feature: REST API, Dynamic Content
-description: 개인, 사용자 지정 개체, 회사 및 프로그램 구성원의 대량, 짧은 지연 시간 수집을 위해 Marketo 데이터 수집 API를 사용하십시오.
+feature: REST API, Dynamic Content, Static Lists
+description: 개인, 사용자 정의 오브젝트, 회사, 프로그램 멤버 및 목록에 대한 대량의 짧은 지연 시간 수집을 위해 Marketo 데이터 수집 API를 사용하십시오.
 exl-id: 1d501916-53ac-42d8-a804-abb4ab01c7e8
 TQID: https://experienceleague.adobe.com/xby7hs-CSLrVzy-FXEBi1FeU1-ca7vI4kB85BYJ9snk
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 4fbd04f9942f903ab8b44e9740a806b74a4ffaf4
 workflow-type: tm+mt
-source-wordcount: 1789
-ht-degree: 13%
+source-wordcount: 2178
+ht-degree: 14%
 
 ---
 
@@ -21,7 +21,7 @@ ht-degree: 13%
 
 비동기적으로 실행되는 요청을 제출하면 데이터가 수집됩니다. [Marketo Observability 데이터 스트림](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-observability-data-stream-setup)에서 이벤트를 구독하여 요청 상태를 검색할 수 있습니다.
 
-인터페이스는 개인, 사용자 정의 객체, 회사 및 프로그램 멤버의 네 가지 객체 유형에 대해 제공됩니다. 레코드 작업은 삭제를 지원하는 프로그램 멤버를 제외하고 &quot;삽입 또는 업데이트&quot;만 가능합니다.
+인터페이스는 사용자, 사용자 지정 개체, 회사, 프로그램 멤버 및 목록(정적 목록)의 5가지 개체 유형에 대해 제공됩니다. 또한 삭제를 지원하는 프로그램 멤버와 추가 및 제거 작업을 지원하는 목록을 제외하고 레코드 작업은 &quot;삽입 또는 업데이트&quot;만 가능합니다.
 
 >[!NOTE]
 >
@@ -45,6 +45,7 @@ ht-degree: 13%
 | 사용자 정의 오브젝트 | 사용자 지정 개체 읽기-쓰기 |
 | 회사 | 읽기-쓰기 회사 |
 | 프로그램 구성원 | 리드 읽기-쓰기 |
+| 목록 | 리드 읽기-쓰기 |
 
 ## 지원되는 오브젝트 유형
 
@@ -54,6 +55,7 @@ ht-degree: 13%
 | 사용자 정의 오브젝트 | 업데이트(삽입 또는 업데이트) |
 | 회사 | 동기화(`createOnly`, `updateOnly`, `createOrUpdate`) |
 | 프로그램 구성원 | 동기화(업데이트 상태), 삭제(프로그램에서 제거) |
+| 목록 | 목록에 추가, 목록에서 제거 |
 
 ## 헤더
 
@@ -97,6 +99,10 @@ HTTP POST 메서드를 사용하여 데이터를 서버로 전송합니다.
 프로그램 멤버의 URL 예:
 
 `https://mkto-ingestion-api.adobe.io/subscriptions/556-RJS-213/programmembers`
+
+예제 목록 URL:
+
+`https://mkto-ingestion-api.adobe.io/subscriptions/556-RJS-213/lists`
 
 ### 응답
 
@@ -157,7 +163,7 @@ Date: Wed, 18 Oct 2023 18:56:49 GMT
 
 ## 엔드포인트
 
-수집 엔드포인트는 사용자, 사용자 지정 개체, 회사 및 프로그램 멤버에 대해 사용할 수 있습니다.
+수집 끝점은 사용자, 사용자 지정 개체, 회사, 프로그램 멤버 및 목록에 사용할 수 있습니다.
 
 ### 개인
 
@@ -593,6 +599,159 @@ Date: Wed, 18 Oct 2023 18:56:49 GMT
 | leadId | 입력 배열의 각 멤버에 필요합니다. |
 | 요청당 최대 리드 수 | 모든 프로그램에서 총 1,000명의 멤버. |
 
+### 목록(목록에 추가)
+
+정적 목록으로 리드를 추가하는 데 사용되는 끝점입니다. 리드는 Marketo 리드 ID로 식별됩니다.
+
+| 메서드 | 경로 |
+| --- | --- |
+| POST | `/subscriptions/{munchkinId}/lists` |
+
+#### 헤더
+
+| 키 | 값 | 필수 |
+| --- | --- | --- |
+| `Content-Type` | application/json | 예 |
+| `X-Mkto-User-Token` | {accessToken} | 예 |
+| `X-Correlation-Id` | 임의 문자열(최대 길이 255자) | 아니요 |
+| `X-Request-Source` | 임의 문자열(최대 길이 50자) | 아니요 |
+
+#### 요청 본문
+
+| 키 | 데이터 유형 | 필수 | 값 | 기본값 |
+| --- | --- | --- | --- | --- |
+| `listId` | Long | 예 | Marketo 정적 목록 ID. 양의 정수여야 합니다. | – |
+| `leads` | 개체 배열 | 예 | 목록에 추가할 잠재 고객 참조 목록입니다. JSON 키 `input` 또는 `leads`을(를) 허용합니다. | – |
+
+입력 배열의 각 객체에는 다음이 포함됩니다.
+
+| 키 | 데이터 유형 | 필수 | 설명 |
+| --- | --- | --- | --- |
+| `leadId` | Long | 예 | Marketo 리드 ID. JSON 키 `leadId` 또는 `id`을(를) 허용합니다. |
+
+필요한 권한은 `Read-Write Lead`입니다.
+
+### 목록에 추가 목록 예
+
+#### 요청
+
+`POST /subscriptions/{munchkinId}/lists`
+
+#### 헤더
+
+`Content-Type: application/json`
+`X-Mkto-User-Token: {accessToken}`
+
+#### 본문
+
+```json
+{
+   "listId": 1001,
+   "leads": [
+      {
+         "leadId": 10001
+      },
+      {
+         "leadId": 10002
+      },
+      {
+         "leadId": 10003
+      }
+   ]
+}
+```
+
+#### 응답
+
+`HTTP/1.1 202`
+`X-Request-ID: WOUBf3fHJNU6sTmJqLL281lOmAEpMZFw`
+
+### 목록 유효성 검사 규칙에 추가 목록
+
+| 규칙 | 세부 정보 |
+| --- | --- |
+| listId | 필수 여부. 양의 정수(> 0)여야 합니다. |
+| 리드 | 필수 여부. Null이거나 비워 둘 수 없습니다. |
+| leadId | 입력 배열의 각 리드에 필요합니다. |
+| 요청당 최대 리드 수 | 입력 배열에서 총 1,000개의 리드. |
+
+### 목록(목록에서 제거)
+
+정적 목록에서 리드를 제거하는 데 사용되는 끝점입니다. 리드는 Marketo 리드 ID로 식별됩니다.
+
+>[!NOTE]
+>
+>요청에는 구조화된 데이터가 있는 JSON 본문이 필요하므로 이 종단점은 DELETE이 아닌 POST를 사용합니다.
+
+| 메서드 | 경로 |
+| --- | --- |
+| POST | `/subscriptions/{munchkinId}/lists/remove` |
+
+#### 헤더
+
+| 키 | 값 | 필수 |
+| --- | --- | --- |
+| `Content-Type` | application/json | 예 |
+| `X-Mkto-User-Token` | {accessToken} | 예 |
+| `X-Correlation-Id` | 임의 문자열(최대 길이 255자) | 아니요 |
+| `X-Request-Source` | 임의 문자열(최대 길이 50자) | 아니요 |
+
+#### 요청 본문
+
+| 키 | 데이터 유형 | 필수 | 값 | 기본값 |
+| --- | --- | --- | --- | --- |
+| `listId` | Long | 예 | Marketo 정적 목록 ID. 양의 정수여야 합니다. | – |
+| `leads` | 개체 배열 | 예 | 목록에서 제거할 잠재 고객 참조 목록입니다. JSON 키 `input` 또는 `leads`을(를) 허용합니다. | – |
+
+입력 배열의 각 객체에는 다음이 포함됩니다.
+
+| 키 | 데이터 유형 | 필수 | 설명 |
+| --- | --- | --- | --- |
+| `leadId` | Long | 예 | Marketo 리드 ID. JSON 키 `leadId` 또는 `id`을(를) 허용합니다. |
+
+필요한 권한은 `Read-Write Lead`입니다.
+
+### 목록 목록에서 제거 예
+
+#### 요청
+
+`POST /subscriptions/{munchkinId}/lists/remove`
+
+#### 헤더
+
+`Content-Type: application/json`
+`X-Mkto-User-Token: {accessToken}`
+
+#### 본문
+
+```json
+{
+   "listId": 1001,
+   "leads": [
+      {
+         "leadId": 10001
+      },
+      {
+         "leadId": 10002
+      }
+   ]
+}
+```
+
+#### 응답
+
+`HTTP/1.1 202`
+`X-Request-ID: e3d92152-0fb1-444a-8f8f-29d5a2338598`
+
+### 목록 유효성 검사 규칙에서 제거
+
+| 규칙 | 세부 정보 |
+| --- | --- |
+| listId | 필수 여부. 양의 정수(> 0)여야 합니다. |
+| 리드 | 필수 여부. Null이거나 비워 둘 수 없습니다. |
+| leadId | 입력 배열의 각 리드에 필요합니다. |
+| 요청당 최대 리드 수 | 입력 배열에서 총 1,000개의 리드. |
+
 ## 제한
 
 다음은 보호 기능의 업데이트된 목록입니다.
@@ -602,7 +761,7 @@ Date: Wed, 18 Oct 2023 18:56:49 GMT
 * 클라이언트 ID당 초당 최대 요청 수: 5,000
 * 일별 최대 개체 수: 10,000,000
 
-이러한 제한은 개인, 사용자 정의 객체, 회사 및 프로그램 멤버에 걸쳐 균일하게 적용됩니다. Program Members의 경우 &quot;요청 당 개체&quot;는 단일 요청의 모든 프로그램에 대한 총 잠재 고객 참조 수입니다.
+이러한 제한은 사용자, 사용자 지정 개체, 회사, 프로그램 멤버 및 목록에 걸쳐 균일하게 적용됩니다. Program Members의 경우 &quot;요청 당 개체&quot;는 단일 요청의 모든 프로그램에 대한 총 잠재 고객 참조 수입니다. Lists의 경우 &quot;requests per request&quot;는 입력 배열에 있는 리드 참조 수입니다.
 
 ## 데이터 수집 API와 REST API
 
