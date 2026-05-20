@@ -4,13 +4,11 @@ feature: REST API, Dynamic Content, Static Lists
 description: 개인, 사용자 정의 오브젝트, 회사, 프로그램 멤버 및 목록에 대한 대량의 짧은 지연 시간 수집을 위해 Marketo 데이터 수집 API를 사용하십시오.
 exl-id: 1d501916-53ac-42d8-a804-abb4ab01c7e8
 TQID: https://experienceleague.adobe.com/xby7hs-CSLrVzy-FXEBi1FeU1-ca7vI4kB85BYJ9snk
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 4fbd04f9942f903ab8b44e9740a806b74a4ffaf4
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 1a8345909b679b5651c94a68f8d29950ed47f6ed
 workflow-type: tm+mt
-source-wordcount: 2178
+source-wordcount: 2191
 ht-degree: 14%
 
 ---
@@ -22,6 +20,8 @@ ht-degree: 14%
 비동기적으로 실행되는 요청을 제출하면 데이터가 수집됩니다. [Marketo Observability 데이터 스트림](https://developer.adobe.com/events/docs/guides/using/marketo/marketo-observability-data-stream-setup)에서 이벤트를 구독하여 요청 상태를 검색할 수 있습니다.
 
 인터페이스는 사용자, 사용자 지정 개체, 회사, 프로그램 멤버 및 목록(정적 목록)의 5가지 개체 유형에 대해 제공됩니다. 또한 삭제를 지원하는 프로그램 멤버와 추가 및 제거 작업을 지원하는 목록을 제외하고 레코드 작업은 &quot;삽입 또는 업데이트&quot;만 가능합니다.
+
+[데이터 수집 API 설명서](https://developer.adobe.com/marketo-apis/api/data-ingestion)를 읽으십시오.
 
 >[!NOTE]
 >
