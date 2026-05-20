@@ -1,10 +1,10 @@
 ---
 title: EXL 미리보기 테스트
 description: 확장 미리 보기 테스트를 위한 Adobe EXL Markdown 구문의 예입니다.
-source-git-commit: 8f7ff2e1b6d0a4d8f63affb7bd1a2d0abbcc118c
+source-git-commit: 87d2584ed0ef2c1fa219f2a3ad120c91dc5491e0
 workflow-type: tm+mt
-source-wordcount: '334'
-ht-degree: 7%
+source-wordcount: '348'
+ht-degree: 11%
 
 ---
 
@@ -93,6 +93,14 @@ console.log(example);
 
 +++
 
+## 상황별 도움말
+
+상황별 도움말이 미리 보기에서 숨겨집니다. 봐!
+>[!CONTEXTUALHELP]
+>id="models_insights_undefinedchannels"
+>title="정의되지 않은 채널"
+>abstract="정의되지 않은 채널은 포함되지만 속성 전환은 없습니다."
+
 ## 포함된 비디오
 
 >[!VIDEO](https://video.tv.adobe.com/v/3427028/?quality=12&learn=on)
@@ -173,5 +181,6 @@ function greet(name) {
 
 | 열 1 | 열 2 | 열 3 |
 | --- | --- | --- |
-| 행 1, 셀 1 | 행 1, 셀 2 | 행 1, 셀 3 |
+| [!UICONTROL Row 1], 셀 1 | 행 1, 셀 2 | [!DNL Row 1, cell 3] |
 | 행 2, 셀 1 | 행 2, 셀 2 | 행 2, 셀 3 |
+
