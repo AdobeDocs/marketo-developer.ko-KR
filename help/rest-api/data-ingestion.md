@@ -4,8 +4,10 @@ feature: REST API, Dynamic Content, Static Lists
 description: 개인, 사용자 정의 오브젝트, 회사, 프로그램 멤버 및 목록에 대한 대량의 짧은 지연 시간 수집을 위해 Marketo 데이터 수집 API를 사용하십시오.
 exl-id: 1d501916-53ac-42d8-a804-abb4ab01c7e8
 TQID: https://experienceleague.adobe.com/xby7hs-CSLrVzy-FXEBi1FeU1-ca7vI4kB85BYJ9snk
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: 1a8345909b679b5651c94a68f8d29950ed47f6ed
 workflow-type: tm+mt
 source-wordcount: 2191
