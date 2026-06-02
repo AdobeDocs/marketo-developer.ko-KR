@@ -1,5 +1,5 @@
 ---
-title: 지원되는 MCP 작업
+title: Marketo Engage MCP 작업
 description: AI 도우미와 함께 사용할 수 있는 Marketo Engage MCP 작업을 알아봅니다.
 autotag-review: '2026-06-02T13:31:42.084Z'
 TQID: 'https://experienceleague.adobe.com/qvrWbHOCsCCHctduNDxMhkE8JAKxZk8FCYfKvzxfcYA'
@@ -12,21 +12,21 @@ feature_v2:
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: bef569a714bfb797bcf8bb82a406ca6df26facb0
+source-git-commit: 08abe412b9750585f0b75364f20488bea767dcc2
 workflow-type: tm+mt
-source-wordcount: 234
+source-wordcount: 231
 ht-degree: 4%
 
 ---
 
 
-# 지원되는 [!DNL Marketo Engage]개의 MCP 작업
+# [!DNL Marketo Engage] MCP 작업
 
 [!DNL Marketo Engage] MCP 서버를 통해 다음 작업을 사용할 수 있습니다. 일반적으로 읽기 전용 또는 비파괴인 끝점을 사용할 수 있습니다. AI 시스템에서 `Delete` 또는 다른 파괴적인 작업을 사용할 수 없습니다.
 
 >[!NOTE]
 >
->이 목록은 최종본이 아니며, 도구 추가 시 계속 늘어날 예정입니다.
+>이 목록은 도구를 추가하면 계속 증가합니다.
 
 ## 일괄 내보내기
 
