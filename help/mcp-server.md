@@ -21,9 +21,9 @@ role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: bef569a714bfb797bcf8bb82a406ca6df26facb0
+source-git-commit: 72329b0ee08402c02604d2b6868fdef88c532548
 workflow-type: tm+mt
-source-wordcount: 1402
+source-wordcount: 1409
 ht-degree: 1%
 
 ---
@@ -37,6 +37,7 @@ ht-degree: 1%
 모델 컨텍스트 프로토콜(MCP)은 AI 도구가 외부 서비스와 통신할 수 있도록 하는 개방형 표준이다. [!DNL Marketo] MCP 서버는 AI 길잡이와 [!DNL Marketo] 사이의 다리 역할을 합니다. 양식, 프로그램, 스마트 캠페인, 리드, 이메일, 코드 조각, 목록 및 폴더에 100개 이상의 작업을 노출합니다.
 
 AI 도구가 MCP 서버를 호출하면 서버는 각 요청에서 제공한 자격 증명을 사용하여 사용자를 대신하여 해당 REST API 호출을 실행합니다. 서버측 소프트웨어를 설치, 배포 또는 실행할 필요가 없습니다.
+
 
 >[!IMPORTANT]
 >
@@ -116,30 +117,37 @@ MCP는 API 사용에 따라 잠재적으로 민감한 필드를 포함한 데이
 
 ### 클라우드 데스크탑
 
-구성 파일이 `claude_desktop_config.json`입니다. 다음 위치 중 하나에서 엽니다.
+클라우드 데스크톱에 연결하려면 [marketo-mcp-bridge.zip](assets/marketo-mcp-bridge.zip)을 다운로드하고 압축을 풉니다. 다음 단계에서 참조할 수 있도록 알려진 위치에 `marketo-mcp-bridge.mjs`을(를) 넣습니다.
 
-* **macOS**: `~/Library/Application Support/Claude/claude_desktop_config.json`
-* **Windows**: `%APPDATA%\Claude\claude_desktop_config.json`
+또한 다음이 필요합니다.
 
-파일에 이미 다른 MCP 서버가 있는 경우 `mcpServers` 아래에 `marketo` 항목을 추가하십시오. 다음 예제에서는 전체 `mcpServers` 블록을 보여 줍니다.
+* Node.js v18+
+* npm
+
+1. 클라우드 데스크톱 열기
+1. **설정 > 개발자 > 구성 편집으로 이동**
+1. `claude_desktop_config.json`에 다음 추가:
 
 ```json
 {
+  "preferences": {
+    ...
+  },
   "mcpServers": {
-    "marketo": {
-      "type": "http",
-      "url": "https://marketo-mcp.adobe.io/mcp",
-      "headers": {
-        "X-Marketo-Client-Id": "YOUR-CLIENT-ID",
-        "X-Marketo-Client-Secret": "YOUR-CLIENT-SECRET",
-        "X-Marketo-Munchkin-Id": "YOUR-MUNCHKIN-ID"
+    "marketo-mcp": {
+      "command": "node",
+      "args": ["/path/to/marketo-bridge/bridge.mjs"],
+      "env": {
+        "MARKETO_MCP_PROD_CLIENT_ID": "<your-client-id>",
+        "MARKETO_MCP_PROD_CLIENT_SECRET": "<your-client-secret>",
+        "MARKETO_MCP_PROD_MUNCHKIN_ID": "<your-munchkin-id>"
       }
     }
   }
 }
 ```
 
-파일을 저장하고 클라우드 데스크톱을 종료한 다음 다시 엽니다.
+1. 클라우드 데스크톱 다시 시작
 
 ### 커서
 
