@@ -1,5 +1,5 @@
 ---
-title: Marketo Engage 서버
+title: Marketo Engage MCP 서버
 description: Marketo Engage MCP 서버를 사용하여 AI 도우미를 Marketo에 연결하는 방법에 대해 알아봅니다. Marketo 자격 증명으로 Cloud Desktop, Cursor, Cloud Code 또는 VS 코드를 구성합니다.
 badgeBeta: label="제한 공개" type="informative" tooltip="이 기능은 현재 제한된 베타 릴리스에 있습니다"
 exl-id: ab446e56-6250-4af5-b03e-162991d09a5c
@@ -21,9 +21,9 @@ role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: ccb8e413ee758584c082a272901d2e76b6b1d193
+source-git-commit: 6ec3c35ba988834f3a66b45acaa42af7a92cce20
 workflow-type: tm+mt
-source-wordcount: 1685
+source-wordcount: 1732
 ht-degree: 1%
 
 ---
@@ -116,6 +116,7 @@ MCP는 API 사용에 따라 잠재적으로 민감한 필드를 포함한 데이
 * [클라우드 코드 CLI](#claude-code)
 * [OpenAI 코드](#codex)
 * [GitHub Copilot이 포함된 VSCode](#vscode)
+* [군침](#glean)
 * [기타 도구](#other-tools)
 
 >[!TIP]
@@ -299,6 +300,16 @@ claude mcp add --transport http marketo \
 >[!NOTE]
 >
 >보안을 위해 자격 증명을 직접 붙여넣는 대신 구성 파일에 환경 변수 보간을 사용합니다. `${MARKETO_CLIENT_SECRET}`과(와) 같은 구문을 사용하여 변수를 참조하고 환경에서 설정할 수 있습니다. 이렇게 하면 버전 제어 파일의 일반 텍스트에 자격 증명이 저장되지 않습니다.
+
+### 군침 {#glean}
+
+Glean을 Marketo Engage MCP 서버에 연결하려면 [Glean 지원 팀](https://docs.glean.com/release-notes/releases/2026-04-22-april-release#admin-features)에서 다음 사용자 지정 헤더를 구성해야 합니다.
+
+| Header | 값 |
+| ------ | ----- |
+| `X-Marketo-Client-Id` | 클라이언트 ID |
+| `X-Marketo-Client-Secret` | 클라이언트 암호 |
+| `X-Marketo-Munchkin-Id` | Munchkin 계정 ID |
 
 ### 기타 도구 {#other-tools}
 
