@@ -21,9 +21,9 @@ role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: 6ec3c35ba988834f3a66b45acaa42af7a92cce20
+source-git-commit: 1a8728ec05e15bef1271274248ce9fc25b14c768
 workflow-type: tm+mt
-source-wordcount: 1732
+source-wordcount: 1923
 ht-degree: 1%
 
 ---
@@ -38,12 +38,11 @@ ht-degree: 1%
 
 AI 도구가 MCP 서버를 호출하면 서버는 각 요청에서 제공한 자격 증명을 사용하여 사용자를 대신하여 해당 REST API 호출을 실행합니다. 서버측 소프트웨어를 설치, 배포 또는 실행할 필요가 없습니다.
 
+Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 대한 자세한 내용은 [데이터 정보](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/marketo-ai/data-information) 페이지를 참조하십시오.
 
 >[!IMPORTANT]
 >
->MCP(Model Context Protocol)는 새로운 오픈 소스 표준이며 보안 또는 신뢰성 위험을 제시할 수 있습니다. Adobe MCP 서버 통합 및 관련 설명서는 어떠한 종류의 보증도 없이 &quot;있는 그대로&quot; 제공됩니다.
->MCP 클라이언트 또는 서버를 Adobe 제품에 연결하는 것은 고객이 선택한 구성이며 고객은 MCP 통합의 보안 및 적합성을 평가할 책임이 있습니다. Adobe은 잘못된 구성, MCP 오용, 서드파티 구현의 취약점 또는 MCP 지원 워크플로우를 통해 수행된 의도하지 않은 작업으로 인해 발생하는 문제에 대해 책임을 지지 않습니다.
->위험을 줄이기 위해 Adobe에서는 생산적인 사용을 시작하기 전에 샌드박스 환경에서 통합을 테스트하고, 확인하거나 의존하기 전에 모든 MCP에서 시작한 작업과 응답을 주의 깊게 검토하고 확인하는 것이 좋습니다.
+>MCP(Model Context Protocol)는 새로운 오픈 소스 표준이며 보안 또는 신뢰성 위험을 제시할 수 있습니다. Adobe MCP 서버 통합 및 관련 설명서는 어떠한 종류의 보증도 없이 &quot;있는 그대로&quot; 제공됩니다.MCP 클라이언트 또는 서버를 Adobe 제품에 연결하는 것은 고객이 선택한 구성이며 고객은 MCP 통합의 보안 및 적합성을 평가할 책임이 있습니다. Adobe은 잘못된 구성, MCP 오용, 서드파티 구현의 취약점 또는 MCP 지원 워크플로우를 통해 수행된 의도하지 않은 작업으로 인해 발생하는 문제에 대해 책임을 지지 않습니다.위험을 줄이기 위해 Adobe에서는 생산적인 사용을 시작하기 전에 샌드박스 환경에서 통합을 테스트하고, 이를 확인하거나 의존하기 전에 모든 MCP에서 시작한 작업과 응답을 주의 깊게 검토하고 확인하는 것을 권장합니다.
 
 ## MCP 기본 사항
 
@@ -159,8 +158,7 @@ MCP는 API 사용에 따라 잠재적으로 민감한 필드를 포함한 데이
 
 ### 커서 {#cursor}
 
-커서 MCP 구성에 이미 다른 서버가 있는 경우 `mcpServers` 아래에 `marketo` 항목을 추가하십시오.
-다음 예제에서는 프로젝트 디렉터리의 **[!UICONTROL Settings]** > **[!UICONTROL MCP]** 또는 `.cursor/mcp.json`에 있는 전체 `mcpServers` 블록을 보여줍니다.
+커서 MCP 구성에 이미 다른 서버가 있는 경우 `mcpServers` 아래에 `marketo` 항목을 추가하십시오.다음 예제에서는 프로젝트 디렉터리의 **[!UICONTROL Settings]** > **[!UICONTROL MCP]** 또는 `.cursor/mcp.json`에 있는 전체 `mcpServers` 블록을 보여 줍니다.
 
 >[!BEGINTABS]
 
@@ -313,8 +311,7 @@ Glean을 Marketo Engage MCP 서버에 연결하려면 [Glean 지원 팀](https:/
 
 ### 기타 도구 {#other-tools}
 
-[!DNL Marketo] MCP 서버는 Adobe에 의해 호스팅되며 공개 URL에 노출됩니다. 스트리밍 가능한 HTTP 전송을 통해 원격 서버를 지원하는 모든 MCP 클라이언트가 연결할 수 있습니다.
-도구별 브리지나 로컬에 설치된 소프트웨어는 필요하지 않습니다. 도구가 위에 나열되지 않으면 아래 연결 세부 정보를 사용하여 수동으로 구성하십시오.
+[!DNL Marketo] MCP 서버는 Adobe에 의해 호스팅되며 공개 URL에 노출됩니다. 스트리밍 가능한 HTTP 전송을 통해 원격 서버를 지원하는 모든 MCP 클라이언트가 연결할 수 있습니다.도구별 브리지나 로컬에 설치된 소프트웨어는 필요하지 않습니다. 도구가 위에 나열되지 않으면 아래 연결 세부 정보를 사용하여 수동으로 구성하십시오.
 
 **연결 세부 정보:**
 

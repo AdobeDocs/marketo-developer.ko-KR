@@ -12,10 +12,10 @@ feature_v2:
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: 08abe412b9750585f0b75364f20488bea767dcc2
+source-git-commit: 1a8728ec05e15bef1271274248ce9fc25b14c768
 workflow-type: tm+mt
-source-wordcount: 231
-ht-degree: 4%
+source-wordcount: 264
+ht-degree: 3%
 
 ---
 
@@ -27,6 +27,8 @@ ht-degree: 4%
 >[!NOTE]
 >
 >이 목록은 도구를 추가하면 계속 증가합니다.
+
+Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 대한 자세한 내용은 [데이터 정보](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/marketo-ai/data-information) 페이지를 참조하십시오.
 
 ## 일괄 내보내기
 
