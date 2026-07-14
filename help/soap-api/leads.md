@@ -3,12 +3,10 @@ title: 잠재 고객
 feature: SOAP
 description: getLead, getMultipleLeads, syncLead, syncMultipleLeads 및 mergeLeads를 비롯한 Leads에 대한 SOAP 작업 개요로 레코드를 검색, 동기화 및 병합할 수 있습니다.
 exl-id: 412fa16c-bd6e-4344-83ed-33dd5381fda4
-TQID: https://experienceleague.adobe.com/d4JGxzJiiG4Ogcy65JpU---UhcNZrAlkaED5mstY4QU
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+TQID: https://experienceleague.adobe.com/d4JGxzJiiG4Ogcy65JpU%2D%2D%2DUhcNZrAlkaED5mstY4QU
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 4d7272e852691d956925ff12924d27522e74d8a7
 workflow-type: tm+mt
 source-wordcount: 37
 ht-degree: 0%
