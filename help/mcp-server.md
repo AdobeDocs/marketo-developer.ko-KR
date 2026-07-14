@@ -21,9 +21,9 @@ role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: 1a8728ec05e15bef1271274248ce9fc25b14c768
+source-git-commit: b28708e92f44082eb247d9053d6ebf2306739b38
 workflow-type: tm+mt
-source-wordcount: 1923
+source-wordcount: 2166
 ht-degree: 1%
 
 ---
@@ -46,7 +46,7 @@ Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 
 
 ## MCP 기본 사항
 
->MCP를 AI 애플리케이션용 USB-C 포트와 같이 생각해 보십시오. USB-C가 장치를 다양한 주변 장치와 액세서리에 연결하는 표준화된 방법을 제공하는 것처럼 MCP는 AI 모델을 데이터 소스 및 도구에 연결하는 표준화된 방법을 제공합니다. — [모델 컨텍스트 프로토콜](https://modelcontextprotocol.io/docs/getting-started/intro){target="_blank"}
+>MCP를 AI 애플리케이션용 USB-C 포트와 같이 생각해 보십시오. USB-C는 장치를 다양한 주변 장치와 액세서리에 연결하는 표준화된 방법을 제공하며, MCP는 AI 모델을 데이터 소스 및 도구에 연결하는 표준화된 방법을 제공합니다. — [모델 컨텍스트 프로토콜](https://modelcontextprotocol.io/docs/getting-started/intro){target="_blank"}
 
 MCP는 AI 도구가 여러 외부 서비스에 동시에 연결할 수 있도록 한다. 예를 들어 AI 비서는 다음을 수행할 수 있습니다.
 
@@ -301,7 +301,7 @@ claude mcp add --transport http marketo \
 
 ### 군침 {#glean}
 
-Glean을 Marketo Engage MCP 서버에 연결하려면 [Glean 지원 팀](https://docs.glean.com/release-notes/releases/2026-04-22-april-release#admin-features)에서 다음 사용자 지정 헤더를 구성해야 합니다.
+Glean을 Marketo Engage MCP 서버에 연결하려면 [Glean 지원 팀](https://docs.glean.com/release-notes/releases/2026-04-22-april-release#admin-features)이 다음 사용자 지정 헤더를 구성해야 합니다.
 
 | Header | 값 |
 | ------ | ----- |
@@ -311,7 +311,7 @@ Glean을 Marketo Engage MCP 서버에 연결하려면 [Glean 지원 팀](https:/
 
 ### 기타 도구 {#other-tools}
 
-[!DNL Marketo] MCP 서버는 Adobe에 의해 호스팅되며 공개 URL에 노출됩니다. 스트리밍 가능한 HTTP 전송을 통해 원격 서버를 지원하는 모든 MCP 클라이언트가 연결할 수 있습니다.도구별 브리지나 로컬에 설치된 소프트웨어는 필요하지 않습니다. 도구가 위에 나열되지 않으면 아래 연결 세부 정보를 사용하여 수동으로 구성하십시오.
+Adobe은 [!DNL Marketo] MCP 서버를 호스팅하고 공개 URL에 노출합니다. 스트리밍 가능한 HTTP 전송을 통해 원격 서버를 지원하는 모든 MCP 클라이언트가 연결할 수 있습니다.도구별 브리지나 로컬에 설치된 소프트웨어는 필요하지 않습니다. 도구가 위에 나열되지 않으면 아래 연결 세부 정보를 사용하여 수동으로 구성하십시오.
 
 **연결 세부 정보:**
 
@@ -440,3 +440,28 @@ Glean을 Marketo Engage MCP 서버에 연결하려면 [Glean 지원 팀](https:/
 * **Munchkin ID 허용 목록** 서버는 승인된 [!DNL Marketo]개 인스턴스에 대한 요청만 허용합니다. 승인되지 않은 Munchkin ID를 사용하는 요청은 403 오류로 거부됩니다.
 * **API 속도 제한.** MCP 서버가 [!DNL Marketo] 인스턴스의 API 속도 제한을 상속합니다. 전용 API 사용자를 사용하여 할당량 소비를 추적하고 관리합니다.
 * **자격 증명을 버전 제어에서 벗어나게 합니다.** AI 도구에서 지원하는 경우 환경 변수 보간(`${MARKETO_CLIENT_SECRET}`)을 사용하므로 자격 증명이 저장소 파일의 일반 텍스트에 저장되지 않습니다.
+
+## 거버넌스 및 데이터 보존
+
+### 자격 증명 처리
+
+* 고객 자격 증명은 서버측에서 지속되지 않으며 요청에 따라 클라이언트가 제공하므로 서비스 내에서 자격 증명 노출을 제한하는 데 도움이 됩니다.
+
+### API 상호 작용 모델
+
+* 에이전트 사용: 에이전트는 MCP 서버를 사용하여 지원되는 Marketo API를 호출할 수 있습니다.
+* 인증 모델 정렬: 이 서비스는 Marketo API에 대해 문서화된 것과 동일한 외부 API 인증 모델을 사용합니다.
+
+### 인증 및 권한 부여
+
+* 최소 권한: 유효 권한은 고객의 LaunchPoint 서비스에 할당된 Marketo API 전용 사용자로부터 상속되어 고객의 Marketo 구성 내에서 최소 권한 관리를 가능하게 합니다.
+* 서버측 토큰 지속성 없음: 이 서비스는 고객 자격 증명 또는 토큰의 서버측 저장을 계속 방지합니다.  
+
+### 로깅 및 모니터링
+
+* 보안 로깅: 구조화된 JSON 로그는 Fluent Bit를 통해 Splunk로 라우팅되며, 민감한 데이터 마스킹과 추가적인 필터링을 통해 규정 준수 요구 사항을 지원합니다.
+* 감사 지원: 서비스 가용성, 보안 관련 이벤트 및 운영 품질에 대한 지속적인 모니터링을 지원합니다.
+* 서버측 암호 저장 없음: 고객 자격 증명은 MCP 배포에 의해 저장되지 않으며 요청에 따라 클라이언트가 제공해야 합니다.
+* 토큰 처리: 액세스 토큰은 수명이 짧고, 토큰 응답은 no-store로 표시되며, 토큰은 쿼리 문자열 전송이 아닌 표준 인증 메커니즘을 통해 수락됩니다.
+* 역할 기반 운영 액세스: 관리 배포 액세스는 Adobe 인프라 역할 및 그룹 기반 제어를 통해 제어되지만 데이터 평면 권한은 고객의 Marketo API 사용자 구성에서 상속됩니다.
+* 감사 및 가시성: 보안 로깅, 마스킹, 모니터링 및 경고 기능을 사용하여 조사, 서비스 상태 추적 및 운영 감독을 지원할 수 있습니다.
