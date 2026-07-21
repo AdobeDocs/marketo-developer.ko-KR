@@ -29,7 +29,7 @@ ht-degree: 6%
 
 관련 기능에는 [사용자 지정 데이터 이벤트](custom-data-events.md), [다이내믹 콘텐츠](web-personalization.md), [방문자 데이터 가져오기](get-visitor-data.md) 및 [특정 봇에 대한 태그 제외](#exclude_tag_for_specific_bots)가 있습니다.
 
-- User Context API를 사용하기 전에 웹 Personalization 고객이고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
+- User Context API를 사용하기 전에 웹 Personalization 고객이고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
 - RTP는 계정 기반 마케팅 명명된 계정 목록을 지원하지 않습니다. ABM 목록 및 코드는 RTP 내에서 관리되는 업로드된 계정 목록(CSV 파일)에만 해당됩니다.
 
 ## 태그 설정

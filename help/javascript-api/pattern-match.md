@@ -25,7 +25,7 @@ ht-degree: 4%
 
 RTP는 패턴이 문자열과 일치하는지 여부를 확인하는 유틸리티 함수를 제공합니다. 유틸리티는 일치 결과를 동기식으로 반환하며 비동기식으로 사용할 수 없습니다.
 
-User Context API를 사용하기 전에 웹 Personalization 고객이고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
+User Context API를 사용하기 전에 웹 Personalization 고객이고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
 
 ## 사용
 

@@ -21,7 +21,7 @@ ht-degree: 2%
 
 [명명된 계정 목록 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Named-Account-Lists)
 
-[명명된 계정 목록](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/target-account-management/target/account-lists)은(는) Marketo의 명명된 계정 컬렉션입니다. 분류, 데이터 보강 및 스마트 캠페인 필터링에 사용합니다.
+[명명된 계정 목록](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/target-account-management/target/account-lists)은(는) Marketo의 명명된 계정 컬렉션입니다. 분류, 데이터 보강 및 스마트 캠페인 필터링에 사용합니다.
 
 명명된 계정 목록 API를 사용하여 목록 에셋과 해당 멤버십을 원격으로 관리할 수 있습니다.
 `Content`

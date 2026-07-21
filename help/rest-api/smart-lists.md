@@ -26,7 +26,7 @@ ht-degree: 1%
 
 스마트 목록 REST API를 사용하여 스마트 목록을 쿼리, 복제 및 삭제합니다.
 
-이러한 API는 사용자가 만든 스마트 목록만 지원합니다. [기본 제공 또는 시스템 스마트 목록](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/using-smart-lists/use-built-in-system-smart-lists)을 지원하지 않습니다.
+이러한 API는 사용자가 만든 스마트 목록만 지원합니다. [기본 제공 또는 시스템 스마트 목록](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/smart-lists-and-static-lists/using-smart-lists/use-built-in-system-smart-lists)을 지원하지 않습니다.
 
 ## 쿼리
 

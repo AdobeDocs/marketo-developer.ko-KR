@@ -26,7 +26,7 @@ ht-degree: 1%
 
 Marketo의 모든 새 이메일은 처음에 이메일 템플릿을 기반으로 합니다. 나중에 HTML을 교체하여 템플릿에서 이메일의 연결을 해제할 수 있지만 이메일을 만들 때는 템플릿을 선택해야 합니다.
 
-템플릿은 이름 및 설명과 같은 메타데이터가 있는 HTML 문서입니다. 템플릿 HTML은 유효해야 하며 [편집 가능한 섹션 요구 사항](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-editable-sections-to-email-templates-v1-0)을 충족하는 편집 가능한 섹션을 하나 이상 포함해야 합니다.
+템플릿은 이름 및 설명과 같은 메타데이터가 있는 HTML 문서입니다. 템플릿 HTML은 유효해야 하며 [편집 가능한 섹션 요구 사항](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-editable-sections-to-email-templates-v1-0)을 충족하는 편집 가능한 섹션을 하나 이상 포함해야 합니다.
 
 ## 쿼리
 

@@ -27,7 +27,7 @@ ht-degree: 1%
 
 API는 리드에 직접 연결된 첫 번째 수준 Marketo 사용자 지정 개체 레코드를 내보냅니다. 사용자 지정 개체 이름 및 연결된 잠재 고객 목록을 지정합니다. 각 리드에 대해 API는 일치하는 연결된 사용자 지정 개체 레코드를 내보내기 파일의 행으로 기록합니다.
 
-Marketo UI의 잠재 고객 세부 정보 페이지에 있는 [사용자 지정 개체 탭](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects)에서 사용자 지정 개체 데이터를 볼 수 있습니다.
+Marketo UI의 잠재 고객 세부 정보 페이지에 있는 [사용자 지정 개체 탭](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects)에서 사용자 지정 개체 데이터를 볼 수 있습니다.
 
 ## 권한
 

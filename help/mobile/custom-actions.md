@@ -25,7 +25,7 @@ ht-degree: 2%
 
 사용자 지정 작업은 모바일 앱에서 사용자 상호 작용을 추적합니다. 앱이 Marketo SDK을 호출하여 사용자 지정 작업을 전송하면 SDK이 먼저 작업을 장치에 저장합니다. SDK에서 적절한 인터넷 연결을 감지하면 작업을 보내므로 Marketo에서 지연 후 작업을 받을 수 있습니다.
 
-사용자 지정 작업은 스마트 캠페인에서 트리거 및 필터로 사용할 수 있습니다. 자세한 내용은 [모바일 앱 활동](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/triggers-and-filters-for-mobile-smart-campaigns)을 참조하세요.
+사용자 지정 작업은 스마트 캠페인에서 트리거 및 필터로 사용할 수 있습니다. 자세한 내용은 [모바일 앱 활동](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/triggers-and-filters-for-mobile-smart-campaigns)을 참조하세요.
 
 ## iOS에서 사용자 지정 작업 보내기
 

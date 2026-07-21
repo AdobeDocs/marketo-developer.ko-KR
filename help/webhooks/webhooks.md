@@ -31,9 +31,9 @@ Marketo 웹후크는 타사 웹 서비스와 통신합니다. Webhook은 GET 또
 
 웹후크를 만들고 Smart Campaign에 추가하는 방법에 대한 지침은 다음을 참조하십시오.
 
-- [웹후크 만들기](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/additional-integrations/create-a-webhook)
-- [웹후크 호출](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/call-webhook)
-- [스마트 캠페인에서 웹후크 사용](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/use-a-webhook-in-a-smart-campaign)
+- [웹후크 만들기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/additional-integrations/create-a-webhook)
+- [웹후크 호출](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/call-webhook)
+- [스마트 캠페인에서 웹후크 사용](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/use-a-webhook-in-a-smart-campaign)
 
 다음 속성으로 각 Webhook를 구성합니다.
 
@@ -52,8 +52,8 @@ URL, 템플릿 및 사용자 지정 헤더를 포함한 모든 발신 웹후크 
 
 리드 및 시스템 토큰은 항상 사용할 수 있습니다. 트리거, 캠페인 및 프로그램 토큰은 해당 범위에서 사용할 수 있습니다. 자세한 내용은 다음 문서를 참조하십시오.
 
-- [토큰 개요](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/personalizing-landing-pages/tokens-overview)
-- [시스템 토큰 용어집](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/using-tokens/system-tokens-glossary)
+- [토큰 개요](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/personalizing-landing-pages/tokens-overview)
+- [시스템 토큰 용어집](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/using-tokens/system-tokens-glossary)
 - [즐거운 순간을 위한 토큰](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-sales-insight/msi-for-salesforce/features/tabs-in-the-msi-panel/interesting-moments/trigger-tokens-for-interesting-moments)
 
 예를 들어 프로그램이나 캠페인이 서드파티 리소스에 매핑되는 경우 프로그램 수준의 ID를 `My Token`(으)로 설정합니다. 그런 다음 ID를 웹후크 요청에 토큰으로 전달합니다.

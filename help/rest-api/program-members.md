@@ -29,7 +29,7 @@ ht-degree: 2%
 
 Marketo은 프로그램 멤버 레코드를 읽고, 만들고, 업데이트하고, 삭제하기 위한 API를 제공합니다. 잠재 고객 ID 필드는 프로그램 구성원 레코드와 잠재 고객 레코드와 관련시킵니다.
 
-각 레코드에는 표준 필드가 포함되어 있으며 최대 20개의 사용자 지정 필드를 포함할 수 있습니다. 이러한 필드에는 폼, 필터, 트리거 및 흐름 작업에서 사용할 프로그램별 멤버 데이터가 저장됩니다. Marketo Engage UI의 프로그램 [구성원 탭](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/manage-and-view-members)에서 이 데이터를 볼 수 있습니다.
+각 레코드에는 표준 필드가 포함되어 있으며 최대 20개의 사용자 지정 필드를 포함할 수 있습니다. 이러한 필드에는 폼, 필터, 트리거 및 흐름 작업에서 사용할 프로그램별 멤버 데이터가 저장됩니다. Marketo Engage UI의 프로그램 [구성원 탭](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/manage-and-view-members)에서 이 데이터를 볼 수 있습니다.
 
 ## 설명
 
@@ -635,9 +635,9 @@ GET /rest/v1/programs/members/schema/fields.json?batchSize=5
 
 ### 필드 만들기
 
-[프로그램 구성원 필드 만들기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/createProgramMemberFieldUsingPOST) 끝점은 프로그램 구성원 개체에 사용자 지정 필드를 만듭니다. [Marketo Engage UI](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/program-member-custom-fields)와 비슷한 기능을 제공합니다. 이 끝점으로 최대 20개의 사용자 지정 필드를 만들 수 있습니다.
+[프로그램 구성원 필드 만들기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/createProgramMemberFieldUsingPOST) 끝점은 프로그램 구성원 개체에 사용자 지정 필드를 만듭니다. [Marketo Engage UI](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/program-member-custom-fields)와 비슷한 기능을 제공합니다. 이 끝점으로 최대 20개의 사용자 지정 필드를 만들 수 있습니다.
 
-프로덕션 Marketo Engage 인스턴스에서 생성하기 전에 각 필드를 신중하게 고려합니다. 필드를 만든 후에는 삭제할 수 없습니다. [숨길 수만 있습니다](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/field-management/delete-a-custom-field-in-marketo). 사용하지 않는 필드는 인스턴스에 혼란을 추가합니다.
+프로덕션 Marketo Engage 인스턴스에서 생성하기 전에 각 필드를 신중하게 고려합니다. 필드를 만든 후에는 삭제할 수 없습니다. [숨길 수만 있습니다](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/field-management/delete-a-custom-field-in-marketo). 사용하지 않는 필드는 인스턴스에 혼란을 추가합니다.
 
 필수 `input` 매개 변수는 프로그램 멤버 필드 개체의 배열입니다. 각 객체에는 하나 이상의 속성이 포함됩니다.
 

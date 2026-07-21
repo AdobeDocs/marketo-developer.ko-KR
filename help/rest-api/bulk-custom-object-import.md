@@ -40,7 +40,7 @@ ht-degree: 0%
 
 ## 사용자 지정 개체 예
 
-벌크 API를 사용하기 전에 Marketo 관리 UI를 사용하여 [사용자 지정 개체를 만듭니다](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-objects/create-marketo-custom-objects).
+벌크 API를 사용하기 전에 Marketo 관리 UI를 사용하여 [사용자 지정 개체를 만듭니다](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-objects/create-marketo-custom-objects).
 
 이 예제에서는 `Color`, `Make`, `Model` 및 `VIN` 필드가 있는 `Car` 사용자 지정 개체를 사용합니다. 중복 제거에는 VIN 필드가 사용됩니다. 관리 UI 화면에서는 벌크 API 끝점에 필요한 API 이름을 강조 표시합니다.
 

@@ -50,7 +50,7 @@ Munchkin.init("AAA-BBB-CCC", {
 | domainSelectorV2 | 부울 | true로 설정하면 는 향상된 방법을 사용하여 쿠키 도메인 속성을 설정하는 방법을 결정합니다. |
 | https만 | 부울 | 기본값은 false입니다. true로 설정되면 은 추적된 페이지가 https를 통해 제공되었을 때 보안 설정을 사용하도록 쿠키를 설정합니다. |
 | useBeaconAPI | 부울 | 기본값은 false입니다. true로 설정하면 [Beacon API](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API)를 사용하여 [XMLHttpRequest](https://developer.mozilla.org/ko_KR/docs/Web/API/XMLHttpRequest) 대신 비차단 요청을 보냅니다. 브라우저가 Beacon API를 지원하지 않으면 Munchkin은 XMLHttpRequest를 사용합니다. |
-| wsInfo | 문자열 | 작업 영역을 타깃팅합니다. 관리 > 통합 > Munchkin 메뉴에서 작업 공간을 선택하여 작업 공간 ID를 얻습니다.<br><br>이 설정은 익명 잠재 고객 레코드를 처음 만들 때만 적용됩니다. 해당 잠재 고객 레코드에 대해 Munchkin 쿠키 값이 설정된 후에는 wsInfo 매개 변수가 해당 파티션을 변경할 수 없습니다.<br><br>이 설정은 익명 리드에만 영향을 주므로 파티션별 [웹 보고서의 익명 방문자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/reporting/basic-reporting/report-activity/display-people-or-anonymous-visitors-in-web-reports)에만 관련됩니다. |
+| wsInfo | 문자열 | 작업 영역을 타깃팅합니다. 관리 > 통합 > Munchkin 메뉴에서 작업 공간을 선택하여 작업 공간 ID를 얻습니다.<br><br>이 설정은 익명 잠재 고객 레코드를 처음 만들 때만 적용됩니다. 해당 잠재 고객 레코드에 대해 Munchkin 쿠키 값이 설정된 후에는 wsInfo 매개 변수가 해당 파티션을 변경할 수 없습니다.<br><br>이 설정은 익명 리드에만 영향을 주므로 파티션별 [웹 보고서의 익명 방문자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/reporting/basic-reporting/report-activity/display-people-or-anonymous-visitors-in-web-reports)에만 관련됩니다. |
 
 ## 예
 

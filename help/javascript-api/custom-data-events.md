@@ -27,7 +27,7 @@ ht-degree: 3%
 
 각 사용자 지정 데이터 이벤트는 방문자 세션 중에 한 번 계산됩니다.
 
-User Context API를 사용하기 전에 웹 Personalization 고객이고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
+User Context API를 사용하기 전에 웹 Personalization 고객이고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
 
 | 매개변수 | 선택 사항/필수 | 유형 | 설명 |
 | --- | --- | --- | --- |
