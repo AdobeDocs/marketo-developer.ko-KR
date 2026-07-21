@@ -4,15 +4,12 @@ feature: REST API
 description: 쿼리, 만들기, 업데이트 및 삭제를 위한 권한, 필드, 필터링 및 엔드포인트를 포함하여 REST API를 사용하여 Marketo 명명된 계정 목록을 관리하는 방법을 알아봅니다.
 exl-id: 98f42780-8329-42fb-9cd8-58e5dbea3809
 TQID: https://experienceleague.adobe.com/18lMhheW21Gz1-3TMHwleHhmLTOqJsZSQ5aqkbbchhM
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 746
+source-wordcount: 686
 ht-degree: 2%
 
 ---
@@ -21,16 +18,23 @@ ht-degree: 2%
 
 [명명된 계정 목록 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Named-Account-Lists)
 
-Marketo의 [명명된 계정 목록](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/target-account-management/target/account-lists)은(는) 명명된 계정의 컬렉션을 나타냅니다. 분류, 데이터 보강 및 스마트 캠페인 필터링을 포함하여 다양한 경우에 사용할 수 있습니다. 명명된 계정 목록 API를 사용하면 이러한 목록 에셋과 해당 멤버십을 원격으로 관리할 수 있습니다.
+[명명된 계정 목록](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/target-account-management/target/account-lists)은(는) Marketo의 명명된 계정 컬렉션입니다. 분류, 데이터 보강 및 스마트 캠페인 필터링에 사용합니다.
+
+명명된 계정 목록 API를 사용하여 목록 에셋과 해당 멤버십을 원격으로 관리할 수 있습니다.
 `Content`
 
 ## 권한
 
-명명된 계정 목록을 쿼리하려면 읽기 전용 명명된 계정 목록 또는 읽기-쓰기 명명된 계정 목록 권한이 필요합니다. 목록을 만들거나 업데이트하거나 삭제하려면 명명된 계정 목록 읽기-쓰기 권한이 필요합니다. 목록 구성원을 쿼리하려면 읽기 전용 이름 지정 계정 또는 읽기-쓰기 이름 지정 계정 권한이 필요하며 구성원 자격을 관리하려면 읽기-쓰기 이름 지정 계정 권한이 필요합니다.
+필요한 권한은 작업에 따라 다릅니다.
+
+- 명명된 계정 목록 쿼리: 읽기 전용 명명된 계정 목록 또는 명명된 계정 목록 읽기-쓰기.
+- 목록 만들기, 업데이트 또는 삭제: 명명된 계정 목록 읽기-쓰기.
+- 쿼리 목록 멤버십: 읽기 전용 명명된 계정 또는 읽기-쓰기 명명된 계정입니다.
+- 목록 멤버십 관리: 명명된 계정을 읽기-씁니다.
 
 ## 모델
 
-명명된 계정 목록에는 제한된 수의 표준 필드가 있으며 사용자 지정 필드로 확장할 수 없습니다.
+명명된 계정 목록에는 제한된 표준 필드 세트가 있으며 사용자 지정 필드를 지원하지 않습니다.
 `Named Account List Field`
 
 | 이름 | 데이터 유형 | 업데이트 가능 | 참고 |
@@ -43,7 +47,9 @@ Marketo의 [명명된 계정 목록](https://experienceleague.adobe.com/ko/docs/
 
 ## 쿼리
 
-계정 목록 쿼리는 간단하고 쉽습니다. 현재 명명된 계정 목록을 쿼리하기 위해 유효한 filterType은 &quot;dedupeFields&quot;와 &quot;idField&quot;뿐입니다. 필터링할 필드가 쿼리의 `filterType` 매개 변수에 설정되고 값은 `filterValues as`에 쉼표로 구분된 목록으로 설정됩니다. `nextPageToken` 및 `batchSize` 필터도 선택적 매개 변수입니다.
+명명된 계정 목록 쿼리는 &quot;dedupeFields&quot;와 &quot;idField&quot;라는 두 가지 filterType을 지원합니다. `filterType` 쿼리 매개 변수에서 필드를 설정하고 `filterValues as`의 값을 쉼표로 구분된 목록으로 제공하십시오.
+
+`nextPageToken` 및 `batchSize` 필터는 선택 사항입니다.
 
 ```http
 GET /rest/v1/namedAccountLists.json?filterType=idField&filterValues=dff23271-f996-47d7-984f-f2676861b5fb,dff23271-f996-47d7-984f-f2676861b5fc
@@ -78,11 +84,13 @@ GET /rest/v1/namedAccountLists.json?filterType=idField&filterValues=dff23271-f99
 
 ## 만들기 및 업데이트
 
-명명 계정 목록 레코드를 생성하고 갱신하면 다른 리드 데이터베이스 생성 및 갱신 작업에 대해 설정된 패턴을 따릅니다. 명명된 계정 목록에는 업데이트할 수 있는 필드 `name`이(가) 하나만 있습니다.
+표준 리드 데이터베이스 패턴을 사용하여 명명된 계정 목록 레코드를 만들고 업데이트합니다. 명명된 계정 목록에는 업데이트할 수 있는 필드가 하나만 있습니다. `name`.
 
-끝점은 &quot;createOnly&quot;와 &quot;updateOnly&quot;의 두 가지 표준 작업 유형을 허용합니다.  `action defaults`에서 &quot;createOnly&quot;로 변경되었습니다.
+끝점은 &quot;createOnly&quot;와 &quot;updateOnly&quot;의 두 가지 표준 작업 유형을 지원합니다. `action defaults`에서 &quot;createOnly&quot;로 변경되었습니다.
 
-작업이 `updateOnly`인 경우 선택적 `dedupeBy parameter`을(를) 지정할 수 있습니다.  허용되는 값은 &quot;dedupeFields&quot;(&quot;name&quot;에 해당함) 또는 &quot;idField&quot;(&quot;marketoGUID&quot;에 해당함)입니다.  `createOnly` 모드에서는 &quot;name&quot;만 `dedupeBy` 필드로 허용됩니다. 한 번에 최대 300개의 레코드를 제출할 수 있습니다.
+작업이 `updateOnly`인 경우 선택적 `dedupeBy parameter`을(를) 지정할 수 있습니다. 허용되는 값은 &quot;name&quot;에 해당하는 &quot;dedupeFields&quot;와 &quot;marketoGUID&quot;에 해당하는 &quot;idField&quot;입니다.
+
+`createOnly` 모드에서는 &quot;name&quot;만 `dedupeBy` 필드로 허용됩니다. 한 번에 최대 300개의 레코드를 제출할 수 있습니다.
 
 ```http
 POST /rest/v1/namedAccountLists.json
@@ -124,7 +132,9 @@ POST /rest/v1/namedAccountLists.json
 
 ## 삭제
 
-명명 계정 목록은 간단하게 삭제할 수 있으며, 목록의 `name` 또는 `marketoGUID`을(를) 기반으로 삭제할 수 있습니다. 사용할 키를 선택하려면 요청의 `deleteB` 멤버에서 이름에 &quot;dedupeFields&quot;를 전달하거나 marketoGUID에 &quot;idField&quot;를 전달합니다. 설정을 해제하면 dedupeFields가 기본값으로 설정됩니다. 한 번에 최대 300개의 레코드를 삭제할 수 있습니다.
+목록의 `name` 또는 `marketoGUID`을(를) 사용하여 명명된 계정 목록을 삭제합니다. 키를 선택하려면 요청의 `deleteB` 멤버에서 이름에 &quot;dedupeFields&quot; 또는 marketoGUID에 &quot;idField&quot;를 전달하십시오.
+
+설정하지 않으면 기본값은 dedupeFields로 설정됩니다. 한 번에 최대 300개의 레코드를 삭제할 수 있습니다.
 
 ```http
 POST /rest/v1/namedAccountLists/delete.json
@@ -176,13 +186,13 @@ POST /rest/v1/namedAccountLists/delete.json
 }
 ```
 
-특정 키에 대한 레코드를 찾을 수 없는 경우 해당 결과 항목의 `status`은(는) &quot;생략됨&quot;이며, 위의 예제와 같이 오류를 설명하는 코드와 메시지가 포함된 이유가 있습니다.
+키에 대한 레코드를 찾을 수 없는 경우 해당 결과 항목의 `status`은(는) &quot;건너뜀&quot;입니다. 또한 실패를 설명하는 코드와 메시지에 원인이 포함됩니다.
 
 ## 멤버십 관리
 
 ### 쿼리 멤버십
 
-명명된 계정 목록의 구성원 자격 쿼리는 간단하며 계정 목록의 `i`만 필요합니다. 선택적 매개 변수는 다음과 같습니다.
+계정 목록의 `i`을(를) 제공하여 이름이 지정된 계정 목록 구성원을 쿼리합니다. 선택적 매개 변수는 다음과 같습니다.
 
 -`field` - 응답 레코드에 포함할 쉼표로 구분된 필드 목록
 -`nextPageToke` - 결과 집합을 통해 페이징용
@@ -219,7 +229,7 @@ GET /rest/v1/namedAccountList/{id}/namedAccounts.json
 
 ### 구성원 추가
 
-명명 계정은 명명 계정 목록에 쉽게 추가할 수 있습니다. 계정은 marketoGUID를 사용해야만 추가할 수 있습니다. 한 번에 최대 300개의 레코드를 추가할 수 있습니다.
+marketoGUID를 사용하여 명명된 계정을 명명된 계정 목록에 추가합니다. 한 번에 최대 300개의 레코드를 추가할 수 있습니다.
 
 ```http
 POST /rest/v1/namedAccountList/{id}/namedAccounts.json
@@ -259,7 +269,7 @@ POST /rest/v1/namedAccountList/{id}/namedAccounts.json
 
 ### 멤버 제거
 
-계정 목록에서 레코드를 제거하면 경로는 다르지만 동일한 인터페이스가 있으므로 삭제할 각 레코드에 대해 `marketoGUI`이(가) 필요합니다. 한 번에 최대 300개의 레코드를 제거할 수 있습니다.
+계정 목록에서 레코드를 제거하면 다른 경로가 사용되지만 동일한 인터페이스가 사용됩니다. 제거할 각 레코드에 대해 `marketoGUI`을(를) 제공하십시오. 한 번에 최대 300개의 레코드를 제거할 수 있습니다.
 
 ```http
 POST /rest/v1/namedAccountList/{id}/namedAccounts/remove.json
@@ -299,10 +309,10 @@ POST /rest/v1/namedAccountList/{id}/namedAccounts/remove.json
 
 ## 시간 초과
 
-- 아래에 명시하지 않은 경우 명명된 계정 목록 엔드포인트의 시간 제한은 30초입니다.
-   - 명명된 계정 목록 동기화: 60s
-   - 명명 계정 목록 삭제: 60s
-   - 명명된 계정 목록 가져오기: 60s
-   - 명명된 계정 목록 구성원 추가: 60s
-   - 명명된 계정 목록 구성원 제거: 60s
-   - 명명된 계정 목록 구성원 가져오기: 60s
+- 명명된 계정 목록 엔드포인트의 시간 제한은 별도로 명시되지 않는 한 30초입니다.
+- 이름이 지정된 계정 목록 동기화에 60초의 시간 제한이 있습니다.
+- 명명된 계정 목록 삭제의 시간 제한은 60초입니다.
+- 명명된 계정 목록 가져오기의 시간 제한은 60초입니다.
+- 명명된 계정 목록 구성원 추가의 시간 제한은 60초입니다.
+- 명명된 계정 목록 구성원 제거의 시간 제한은 60초입니다.
+- 명명된 계정 목록 구성원 가져오기의 시간 제한은 60초입니다.

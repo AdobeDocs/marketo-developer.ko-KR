@@ -1,63 +1,60 @@
 ---
 title: 리치 미디어 권장 사항
-description: Marketo 예측 컨텐츠 RTP 태그, template1 template2 template3 div, 채울 GET, SET를 사용하여 리치 미디어 권장 사항을 설정하여 범주를 구성합니다.
+description: Marketo Predictive Content RTP 태그, template1 template2 template3 div, GET to populate, SET 을 사용하여 리치 미디어 권장 사항을 설정하여 범주를 구성합니다.
 feature: Javascript
 exl-id: ee92e46d-e529-40a2-a0d0-ee233916f004
 TQID: https://experienceleague.adobe.com/ygm5h1FJZZW4mC318-fRR3VAcO6j1sitcAeqIUjDTbI
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 854
-ht-degree: 3%
+source-wordcount: 814
+ht-degree: 4%
 
 ---
 
 # 리치 미디어 권장 사항
 
-리치 미디어 권장 사항 템플릿을 표시할 페이지에서 다음 태그 및 API 호출을 설정해야 합니다.
+리치 미디어 권장 사항 템플릿을 표시하려면 필요한 태그와 API 호출을 페이지에 추가합니다.
 
-1. 페이지 머리글에서
-   1. RTP 태그가 설치되어 있습니다.
-   1. GET 호출을 페이지에 추가하여 권장 사항을 채웁니다
-   1. SET 호출을 추가하여 템플릿 구성
-1. 페이지 본문에서
-   1. 템플릿을 표시할 위치에 템플릿 태그(div 클래스)를 배치합니다
+1. 페이지 머리글에서:
+   1. RTP 태그를 설치합니다.
+   1. 권장 사항을 채우는 GET 호출을 추가합니다.
+   1. 템플릿을 구성하는 SET 호출을 추가합니다.
+1. 페이지 본문에서:
+   1. 템플릿을 표시할 위치에 템플릿 태그(div 클래스)를 배치합니다.
 
-자세한 내용은 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media)를 참조하세요.
+자세한 내용은 [웹 리치 미디어에 대한 예측 콘텐츠 사용](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media)을 참조하세요.
 
 ## 템플릿 태그
 
 | 속성 | 선택 사항/필수 | 설명 |
 | --- | --- | --- |
-| 클래스 | 필수 | 이 div HTML 요소가 RTP 권장 div라고 지정합니다. |
-| data-rtp-template-id | 필수 | 템플릿 ID입니다. 이렇게 하면 권장 사항의 맞춤이 결정됩니다. 가로 정렬에는 &quot;template1&quot;, 세로 정렬에는 &quot;template2&quot; 또는 제목과 설명만 포함하는 세로 정렬에는 &quot;template3&quot;을 사용합니다. 스크립트는 이 `div.Permissible` 값(template1, template2, template3)에 일치하는 템플릿을 삽입합니다. |
+| 클래스 | 필수 | div HTML 요소를 RTP 권장 div로 식별합니다. |
+| data-rtp-template-id | 필수 | 추천 정렬을 결정합니다. 제목과 설명만 있는 수직 정렬에는 &quot;template1&quot;, 수직 정렬에는 &quot;template2&quot; 또는 수직 정렬에는 &quot;template3&quot;을 사용합니다. 스크립트는 이 `div`에 일치하는 템플릿을 삽입합니다. 허용되는 값: template1, template2, template3. |
 
 ### 예
 
-권장 사항을 수평 정렬로 표시하려면 &quot;template1&quot;을 사용합니다.
+권장 사항을 가로로 표시하려면 &quot;template1&quot;을 사용합니다.
 
 ```html
 <div class="RTP_RCMD2" data-rtp-template-id="template1"></div>
 ```
 
-권장 사항을 세로 정렬로 표시하려면 &quot;template2&quot;를 사용합니다.
+권장 사항을 세로로 표시하려면 &quot;template2&quot;를 사용하십시오.
 
 ```html
 <div class="RTP_RCMD2" data-rtp-template-id="template2"></div>
 ```
 
-권장 사항을 제목과 설명만 세로로 정렬하여 표시하려면 &quot;template3&quot;을 사용합니다.
+제목과 설명만 사용하여 권장 사항을 세로로 표시하려면 &quot;template3&quot;을 사용합니다.
 
 ```html
 <div class="RTP_RCMD2" data-rtp-template-id="template3"></div>
 ```
 
-템플릿 정렬의 스크린샷을 [여기](#example_of_rich_media_recommendation_template_1)에서 확인하세요.
+[템플릿 정렬 예제](#example_of_rich_media_recommendation_template_1)를 참조하십시오.
 
 ## 권장 사항 채우기
 
@@ -75,9 +72,9 @@ ht-degree: 3%
 
 ## 템플릿 구성 변경
 
-이 메서드는 템플릿에 대한 기본 구성을 변경합니다.
+이 메서드는 기본 템플릿 구성을 변경합니다.
 
-참고: 이 메서드를 사용할 때는 rtp(&#39;get&#39;,&#39;rcmd&#39;, &#39;richmedia&#39;)를 호출하기 전에 호출해야 합니다.
+rtp(&#39;get&#39;,&#39;rcmd&#39;, &#39;richmedia&#39;)를 호출하기 전에 이 메서드를 호출합니다.
 
 ### 사용
 
@@ -93,7 +90,7 @@ ht-degree: 3%
 
 ### 예
 
-이 코드 조각은 템플릿의 제목 텍스트를 변경합니다.
+이 예제에서는 템플릿의 제목 텍스트를 변경합니다.
 
 ```javascript
 rtp("set", "rcmd", "richmedia","template1",
@@ -103,7 +100,7 @@ rtp("set", "rcmd", "richmedia","template1",
 );
 ```
 
-이 코드 조각은 템플릿에 대한 여러 구성이 있는 범주 설정을 보여 줍니다.
+이 예제에서는 템플릿에 대한 범주 및 여러 구성 속성을 설정합니다.
 
 ```javascript
 rtp("set", "rcmd", "richmedia",
@@ -124,9 +121,11 @@ rtp("set", "rcmd", "richmedia",
 );
 ```
 
-참고: &quot;범주&quot;를 사용하여 예측 콘텐츠 권장 사항의 결과에 표시되는 콘텐츠를 필터링합니다. 활성화된 모든 콘텐츠 조각에 예측 콘텐츠를 적용하려면 &quot;범주&quot;를 비워 둡니다. 리치 미디어 템플릿의 출력에 대해 특정 콘텐츠만 추천하려면 콘텐츠 설정 페이지에서 콘텐츠에 대한 범주를 추가하고 권장 템플릿 코드 내에서 해당 범주를 연결합니다. 웹 사이트(제품 또는 솔루션)의 섹션에 따라 관련 컨텐츠를 분류합니다.
+&quot;카테고리&quot;를 사용하여 예측 콘텐츠 권장 사항에 표시되는 콘텐츠를 필터링합니다. 활성화된 모든 컨텐츠에 대해 예측 컨텐츠를 사용하려면 &quot;카테고리&quot;를 비워 둡니다.
 
-이 코드 조각은 템플릿에 대한 여러 템플릿 구성 설정을 보여 줍니다.
+리치 미디어 템플릿에서 특정 콘텐츠만 추천하려면 콘텐츠 설정 페이지에서 콘텐츠에 대한 범주를 추가합니다. 그런 다음 해당 범주를 권장 사항 템플릿 코드와 연결합니다. 예를 들어 웹 사이트의 제품 또는 솔루션 섹션별로 관련 콘텐츠를 분류합니다.
+
+이 예제에서는 템플릿에 대한 여러 구성 속성을 설정합니다.
 
 ```javascript
 rtp("set", "rcmd", "richmedia",
@@ -156,11 +155,11 @@ rtp("set", "rcmd", "richmedia",
 | rcmd.cta.text | &quot;rcmd.cta.text&quot; : &quot;푸시&quot; | 단추 텍스트를 변경합니다. 텍스트는 모든 단추에 대해 동일합니다. |
 | 범주 | &quot;category&quot; : [&quot;one category&quot;] | 이 템플릿이 지원하는 권장 사항 범주를 변경합니다. 템플릿에는 이 구성에 의해 설정된 카테고리 중 하나가 있는 권장 사항만 표시됩니다. |
 
-참고: 구성 지원은 템플릿별로 변경될 수 있습니다.
+구성 지원은 템플릿에 따라 달라질 수 있습니다.
 
 #### 기본 예
 
-이 예에는 세 개의 권장 사항이 있는 한 개의 템플릿이 있습니다. 이 예제를 HTML 페이지에 복사한 다음 RTP 태그를 태그로 바꿉니다.
+이 예는 하나의 템플릿에 세 개의 권장 사항을 표시합니다. 예를 HTML 페이지에 복사한 다음 RTP 태그를 태그로 바꿉니다.
 
 ```html
 <!DOCTYPE>
@@ -192,7 +191,7 @@ rtp('get','rcmd', 'richmedia');
 
 #### 고급 예
 
-이 예에는 세 개의 권장 사항이 있는 한 개의 템플릿이 있습니다. 템플릿 제목은 &quot;권장 콘텐츠&quot;이고 버튼 텍스트는 &quot;자세히 읽기&quot;입니다. 이 예제를 HTML 페이지에 복사한 다음 RTP 태그를 태그로 바꿉니다.
+이 예는 하나의 템플릿에 세 개의 권장 사항을 표시합니다. 템플릿 제목은 &quot;RECOMMENDED CONTENT&quot;이고 버튼 텍스트는 &quot;Read More&quot;입니다. 예를 HTML 페이지에 복사한 다음 RTP 태그를 태그로 바꿉니다.
 
 ```html
 <!DOCTYPE>
@@ -236,16 +235,24 @@ rtp('get','rcmd', 'richmedia');
 
 #### 리치 미디어 추천 템플릿 #1의 예
 
-**이름**: template1 **설명**: 이미지, 제목, 설명 및 call to action 단추가 포함된 가로 콘텐츠
+**이름**: template1
+
+**설명**: 이미지, 제목, 설명 및 call-to-action 단추가 포함된 가로 콘텐츠
 
 ![리치 미디어 템플릿](assets/rich-media-template1.png)
 
 #### 리치 미디어 추천 템플릿 #2의 예
 
-**이름**: template2 **설명**: 이미지, 제목, 설명 및 call to action 단추가 포함된 세로 콘텐츠입니다.
+**이름**: template2
+
+**설명**: 이미지, 제목, 설명 및 call-to-action 단추가 포함된 세로 컨텐츠입니다.
 
 ![리치 미디어 템플릿](assets/rich-media-template2.png)
 
 #### 리치 미디어 추천 템플릿 #3의 예
 
-**이름**: template3 **설명**: 제목과 설명만 포함하는 세로 콘텐츠 마우스를 가져가면 헤더가 색상을 변경하고 콘텐츠 URL에 하이퍼링크됩니다. 설명 또한 색상을 변경하지 않은 콘텐츠에 대한 링크입니다. ![리치 미디어 템플릿](assets/rich-media-template3.png)
+**이름**: template3
+
+**설명**: 제목과 설명만 포함하는 세로 컨텐츠입니다. 마우스를 가져가면 헤더가 색상 및 콘텐츠 URL에 대한 링크를 변경합니다. 또한 설명은 색상을 변경하지 않고 콘텐츠에 연결됩니다.
+
+![리치 미디어 템플릿](assets/rich-media-template3.png)

@@ -4,16 +4,13 @@ feature: REST API, Landing Pages
 description: Marketo Asset REST API를 사용하여 필터, 페이지 매김, 호스트 이름 옵션, Marketo 이외의 타겟으로 랜딩 페이지 리디렉션 규칙을 만들고, 쿼리하고, 업데이트하고, 삭제합니다.
 exl-id: f63aa5ef-5872-4401-be75-6fb9b2977734
 TQID: https://experienceleague.adobe.com/2gePbKA3xeoRdnL8mNnObN-GPTX00Ii4-zcM0lBjs-o
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: f82558ea-6af5-44eb-a424-5b3389abb0a3
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 776
-ht-degree: 2%
+source-wordcount: 626
+ht-degree: 3%
 
 ---
 
@@ -21,17 +18,17 @@ ht-degree: 2%
 
 [랜딩 페이지 리디렉션 규칙 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules)
 
-Marketo은 랜딩 페이지 리디렉션 URL에서 CRUD 작업을 수행하기 위한 REST API 세트를 제공합니다. 이러한 API는 쿼리, 만들기, 업데이트 및 삭제 옵션을 제공하는 에셋 API에 대한 표준 인터페이스 패턴을 따릅니다.
+랜딩 페이지 리디렉션 규칙 REST API를 사용하여 랜딩 페이지 리디렉션 URL을 쿼리, 만들기, 업데이트 및 삭제합니다.
 
-랜딩 페이지 리디렉션 규칙은 랜딩 페이지 URL을 다른 페이지 URL로 리디렉션하는 기능을 제공합니다. Marketo 랜딩 페이지, Marketo이 아닌 랜딩 페이지 또는 이들의 조합을 리디렉션할 수 있습니다. 리디렉션 랜딩 페이지 규칙에 대한 추가 정보는 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/home)에서 확인할 수 있습니다.
+리디렉션 규칙은 한 랜딩 페이지 URL을 다른 페이지 URL로 보냅니다. 소스 및 대상은 Marketo 또는 Marketo이 아닌 페이지일 수 있습니다. 관련 제품 설명서는 [Marketo Engage 설명서](https://experienceleague.adobe.com/ko/docs/marketo/using/home)를 참조하세요.
 
 ## 쿼리
 
-랜딩 페이지 리디렉션 규칙 쿼리는 [ID](#by_id) 및 [검색](#browse)의 자산에 대한 표준 쿼리 형식을 따릅니다.
+ID](#by_id) 또는 [검색](#browse)별 [랜딩 페이지 리디렉션 규칙을 쿼리합니다.
 
 ### ID별
 
-[ID별 랜딩 페이지 리디렉션 규칙 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/getLandingPageRedirectRuleByIdUsingGET) 끝점은 단일 랜딩 페이지 규칙 리디렉션 `id` 경로 매개 변수를 사용하고 단일 랜딩 페이지 리디렉션 규칙 레코드를 반환합니다.
+[ID별 랜딩 페이지 리디렉션 규칙 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/getLandingPageRedirectRuleByIdUsingGET) 끝점은 하나의 리디렉션 규칙 `id` 경로 매개 변수를 사용하고 일치하는 레코드를 반환합니다.
 
 ```http
 GET /rest/asset/v1/redirectRule/{id}.json
@@ -66,17 +63,17 @@ GET /rest/asset/v1/redirectRule/{id}.json
 
 ### 찾아보기
 
-[랜딩 페이지 리디렉션 규칙 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/getLandingPageRedirectRulesUsingGET) 끝점이 랜딩 페이지 리디렉션 규칙 레코드 목록을 반환합니다.
+[랜딩 페이지 리디렉션 규칙 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/getLandingPageRedirectRulesUsingGET) 끝점이 랜딩 페이지 리디렉션 규칙 레코드를 반환합니다.
 
-필터 결과로 전달할 수 있는 몇 가지 선택적 쿼리 매개 변수가 있습니다.
+선택적 쿼리 매개 변수를 사용하여 결과를 필터링합니다.
 
 `offset` 매개 변수는 반환할 최대 항목 수를 지정하는 정수입니다(기본값은 20). 최대값은 200입니다. `maxReturn` 매개 변수는 항목 검색을 시작할 위치를 지정하는 정수입니다. offset과 함께 사용할 수 있습니다(기본값은 0).
 
-`hostname` 매개 변수를 사용하여 랜딩 페이지의 호스트 이름을 필터링할 수 있습니다.
+`hostname` 매개 변수는 랜딩 페이지 호스트 이름별로 필터링합니다.
 
-`redirectToLandingPageId`은(는) 리디렉션하는 랜딩 페이지의 ID를 필터링하는 데 사용할 수 있는 정수입니다. `redirectToPath`을(를) 사용하여 리디렉션하는 랜딩 페이지의 경로를 필터링할 수 있습니다.
+`redirectToLandingPageId` 정수는 대상 랜딩 페이지 ID를 기준으로 필터링합니다. `redirectToPath` 매개 변수는 대상 랜딩 페이지 경로를 기준으로 필터링합니다.
 
-`earliestUpdatedAt` 및 `latestUpdatedAt` 매개 변수를 사용하면 지정된 범위 내에서 업데이트되었거나 처음에 만들어진 랜딩 페이지 리디렉션 규칙을 반환하기 위한 낮음 및 높은 날짜/시간 워터마크를 설정할 수 있습니다.
+`earliestUpdatedAt` 및 `latestUpdatedAt` 매개 변수는 낮음 및 높음 날짜-시간 경계를 설정합니다. 끝점은 범위 내에서 생성되거나 업데이트된 규칙을 반환합니다.
 
 ```http
 GET /rest/asset/v1/redirectRules.json&maxReturn=3
@@ -143,11 +140,11 @@ GET /rest/asset/v1/redirectRules.json&maxReturn=3
 
 ## 만들기
 
-[랜딩 페이지 리디렉션 규칙 만들기](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/createLandingPageRedirectRuleUsingPOST) 끝점은 다음 세 가지 필수 매개 변수가 있는 application/x-www-form-urlencoded POST로 실행됩니다.
+`application/x-www-form-urlencoded` POST 요청으로 [랜딩 페이지 리디렉션 규칙 만들기](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/createLandingPageRedirectRuleUsingPOST) 끝점을 호출합니다. 요청에는 세 개의 필수 매개 변수가 있습니다.
 
-`hostname` 매개 변수는 랜딩 페이지의 호스트 이름을 지정합니다. 브랜딩 도메인 또는 별칭에 속해야 합니다. 최대 길이는 255자입니다.
+`hostname` 매개 변수는 랜딩 페이지 호스트 이름을 지정합니다. 브랜딩 도메인 또는 별칭에 속해야 하며 255자를 초과할 수 없습니다.
 
-`redirectFrom` 매개 변수는 원본 랜딩 페이지를 지정합니다. 소스가 Marketo 랜딩 페이지인지 또는 Marketo이 아닌 랜딩 페이지인지를 결정하는 유형/값 쌍을 포함하는 JSON 개체입니다. `type` 특성은 &quot;landingPageId&quot; 또는 &quot;path&quot;일 수 있습니다.
+`redirectFrom` 매개 변수는 소스 랜딩 페이지를 유형/값 쌍을 가진 JSON 개체로 지정합니다. `type` 특성은 Marketo 랜딩 페이지의 경우 `landingPageId`일 수 있고, Marketo이 아닌 페이지의 경우 `path`일 수 있습니다.
 
 | 매개변수 | 선택 사항/필수 | 유형 | 설명 |
 | --- | --- | --- | --- |
@@ -155,14 +152,14 @@ GET /rest/asset/v1/redirectRules.json&maxReturn=3
 | &#39;visitor&#39; | 필수 | 문자열 | 메서드 이름입니다. |
 | callback | 필수 | 함수 | 반환된 각 캠페인에 대해 트리거될 콜백 함수입니다. |
 
-`redirectTo` 매개 변수는 대상 랜딩 페이지를 지정합니다. 소스가 Marketo 랜딩 페이지인지 또는 Marketo이 아닌 랜딩 페이지인지를 결정하는 유형/값 쌍을 포함하는 JSON 개체입니다. `type` 특성은 &quot;landingPageId&quot; 또는 &quot;url&quot;일 수 있습니다.
+`redirectTo` 매개 변수는 유형/값 쌍을 가진 JSON 개체로 대상을 지정합니다. `type` 특성은 Marketo 랜딩 페이지의 경우 `landingPageId`일 수 있고, Marketo이 아닌 페이지의 경우 `url`일 수 있습니다.
 
 | 랜딩 페이지 유형 | redirectTo 유형 | 예 |
 | --- | --- | --- |
 | Marketo | 랜딩 페이지 ID | {&quot;type&quot;:&quot;landingPageId&quot;,&quot;value&quot;:&quot;1774&quot;} |
 | 비 Marketo | url | {&quot;type&quot;:&quot;url&quot;,&quot;value&quot;:&quot;www.contactLogs.com&quot;} |
 
-랜딩 페이지 리디렉션 규칙을 만드는 방법에 대한 자세한 내용은 [여기](https://experienceleague.adobe.com/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-actions/redirect-a-marketo-landing-page-to-another-page.html?lang=ko)에서 확인할 수 있습니다.
+자세한 내용은 [다른 페이지로 Marketo 랜딩 페이지 리디렉션](https://experienceleague.adobe.com/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-actions/redirect-a-marketo-landing-page-to-another-page.html)을 참조하십시오.
 
 ```http
 POST /rest/asset/v1/redirectRules.json
@@ -205,11 +202,11 @@ hostname=calqeauto.com&redirectFrom={"type":"landingPageId", "value":"5483"}&red
 
 ## 업데이트
 
-[랜딩 페이지 리디렉션 규칙 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/updateLandingPageRedirectRuleUsingPOST) 끝점은 하나의 랜딩 페이지 리디렉션 규칙 `id` 경로 매개 변수를 사용합니다. 이 끝점은 application/x-www-form-urlencoded POST로 실행됩니다.
+[랜딩 페이지 리디렉션 규칙 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/updateLandingPageRedirectRuleUsingPOST) 끝점은 하나의 리디렉션 규칙 `id` 경로 매개 변수를 사용합니다. `application/x-www-form-urlencoded` POST 요청으로 업데이트를 보냅니다.
 
-위에서 설명한 만들기 호출과 마찬가지로, 업데이트할 규칙의 특성을 지정하기 위해 하나 이상의 쿼리 매개 변수가 전달됩니다. `hostname`, `redirectFrom`, `redirectTo`.
+다음 매개 변수 중 하나 이상을 전달하여 업데이트할 특성을 선택하십시오. `hostname`, `redirectFrom` 또는 `redirectTo`.
 
-업데이트된 랜딩 페이지 리디렉션 규칙 레코드가 응답에서 반환됩니다.
+응답은 업데이트된 리디렉션 규칙 레코드를 반환합니다.
 
 ```http
 POST /rest/asset/v1/redirectRule/{id}.json
@@ -252,7 +249,7 @@ redirectTo={"type":"landingPageId", "value":"5561"}
 
 ## 삭제
 
-[ID별 랜딩 페이지 리디렉션 규칙 삭제](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/deleteLandingPageRedirectRuleUsingPOST) 끝점은 하나의 랜딩 페이지 규칙 리디렉션 `id` 경로 매개 변수를 사용합니다.
+ID별 [랜딩 페이지 리디렉션 규칙 삭제](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/deleteLandingPageRedirectRuleUsingPOST) 끝점은 하나의 리디렉션 규칙 `id` 경로 매개 변수를 사용합니다.
 
 ```http
 POST /rest/asset/v1/redirectRule/{id}/delete.json
@@ -274,9 +271,9 @@ POST /rest/asset/v1/redirectRule/{id}/delete.json
 
 ## 랜딩 페이지 도메인 찾아보기
 
-[랜딩 페이지 도메인 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/getLandingPageDomainsUsingGET) 끝점이 랜딩 페이지 도메인 레코드 목록을 반환합니다.
+[랜딩 페이지 도메인 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/getLandingPageDomainsUsingGET) 끝점이 랜딩 페이지 도메인 레코드를 반환합니다.
 
-필터 결과에 전달할 수 있는 두 개의 선택적 쿼리 매개 변수가 있습니다.
+두 개의 선택적 쿼리 매개 변수를 사용하여 결과를 필터링합니다.
 
 `offset` 매개 변수는 반환할 최대 항목 수를 지정하는 정수입니다(기본값은 20이고, 최대값은 200임).
 

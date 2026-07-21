@@ -3,9 +3,9 @@ title: 조각
 feature: REST API
 description: Marketo Asset REST API를 사용하여 조각에 대한 종속성을 쿼리, 만들기, 업데이트, 복제, 삭제, 승인 및 검사합니다.
 exl-id: 9dd532d1-1dd7-4581-86dd-1943fab66cbb
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: '272'
+source-wordcount: '282'
 ht-degree: 9%
 
 ---
@@ -61,10 +61,18 @@ GET /rest/asset/v2/fragment/{id}
 
 ### 필터
 
-필터 끝점은 작업 영역 내에서 검색하고 추가 쿼리 매개 변수로 결과 범위를 좁힐 수 있습니다. `workspaceId`은(는) 필수입니다.
+필터 끝점은 작업 영역 내에서 검색합니다. `workspaceId` 매개 변수는 필수입니다.
 
-todo: 표로 만들기
-지원되는 필터에는 `folderId`, 반복된 `folderIds`, 반복된 `status`, `pageIndex`, `pageSize`, `createdBy`, `createdAtStart`, `createdAtEnd`, `modifiedBy`, `modifiedAtStart`, `modifiedAtEnd`, `name`, `fragmentType`, `sortKey`, `sortOrder`, `isCreatedByMe`, `isModifiedByMe`, `scriptEngine`, `isValueNonNullable` 및 `includeArchived`이(가) 포함됩니다.
+이러한 선택적 매개 변수를 사용하여 결과의 범위를 좁히거나 구성합니다.
+
+* 폴더: `folderId` 또는 `folderIds` 반복
+* 상태: `status` 반복
+* 페이지 매김: `pageIndex` 및 `pageSize`
+* 생성: `createdBy`, `createdAtStart`, `createdAtEnd` 및 `isCreatedByMe`
+* 수정: `modifiedBy`, `modifiedAtStart`, `modifiedAtEnd` 및 `isModifiedByMe`
+* 조각 속성: `name`, `fragmentType`, `scriptEngine` 및 `isValueNonNullable`
+* 정렬: `sortKey` 및 `sortOrder`
+* 보관된 콘텐츠: `includeArchived`
 
 #### 요청
 

@@ -4,57 +4,55 @@ feature: REST API
 description: 설정 단계 및 Java 코드 예제를 사용하여 트랜잭션 이메일에 대해 Marketo을 구성하고 REST API 요청 캠페인을 통해 이를 트리거하는 방법에 대해 알아봅니다.
 exl-id: 057bc342-53f3-4624-a3c0-ae619e0c81a5
 TQID: https://experienceleague.adobe.com/eUw2THnwDdIuEO3MsuG4cSaoPnKVvdZ0ZTV-gxP-pJQ
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
-  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 1092
+source-wordcount: 897
 ht-degree: 1%
 
 ---
 
 # 트랜잭션 이메일
 
-Marketo API의 일반적인 사용 사례는 [캠페인 요청](https://developer.adobe.com/marketo-apis/api/mapi#tag/Campaigns/operation/triggerCampaignUsingPOST) API 호출을 통해 트랜잭션 이메일을 특정 레코드로 보내는 것입니다. Marketo REST API를 사용하여 필요한 호출을 실행하기 위한 Marketo 내에는 몇 가지 구성 요구 사항이 있습니다.
+트랜잭션 전자 메일을 특정 Marketo 레코드로 보내려면 [캠페인 요청](https://developer.adobe.com/marketo-apis/api/mapi#tag/Campaigns/operation/triggerCampaignUsingPOST) API를 사용하십시오. 요청하기 전에 이메일을 구성하고 캠페인을 트리거합니다.
 
-- 수신자는 Marketo 내에 레코드가 있어야 합니다.
-- Marketo 인스턴스에 만들고 승인된 트랜잭션 이메일이 있어야 합니다.
-- &quot;캠페인이 요청됨, 1&quot;인 활성 트리거 캠페인이 있어야 합니다. Source: 이메일을 보내도록 설정된 웹 서비스 API&quot;
+- 수신자에게 Marketo 레코드가 있는지 확인합니다.
+- Marketo 인스턴스에서 트랜잭션 이메일을 만들고 승인합니다.
+- &quot;캠페인이 요청됨, 1&quot;을 사용하는 트리거 캠페인을 활성화합니다. Source: Web Service API&quot;로 이메일을 전송합니다.
 
-먼저 [전자 메일을 만들고 승인](https://experienceleague.adobe.com/ko/docs/marketo/using/home)하세요. 이메일이 실제로 트랜잭션된 경우, 이를 작동 상태로 설정해야 하지만, 이 경우 적법하게 작동 상태가 됩니다. 이는 이메일 작업 > 이메일 설정 아래의 편집 화면에서 구성됩니다.
+먼저 [전자 메일을 만들고 승인](https://experienceleague.adobe.com/ko/docs/marketo/using/home)합니다. 이메일이 적법하게 작동 가능한 경우 이메일 작업 > 이메일 설정에서 작동 가능한 것으로 구성합니다.
 
 ![Request-Campaign-Email-Settings](assets/request-campaign-email-settings.png)
 
 ![Request-Campaign-Operative](assets/request-campaign-operational.png)
 
-승인하면 캠페인을 만들 수 있습니다.
+캠페인을 만들기 전에 이메일을 승인하십시오.
 
 ![RequestCampaign-Apply-Draft](assets/request-campaign-approve-draft.png)
 
-캠페인을 처음 만드는 경우 [새 스마트 캠페인 만들기](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/create-a-new-smart-campaign.html?lang=ko) 문서를 확인하십시오. 캠페인을 만들었으면 다음 단계를 수행해야 합니다. Campaign이 요청됨 트리거를 사용하여 스마트 목록을 구성합니다.
+필요한 경우 [새 스마트 캠페인 만들기](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/create-a-new-smart-campaign.html)를 참조하세요. Campaign이 요청됨 트리거를 사용하여 캠페인의 스마트 목록을 구성합니다.
 
 ![Request-Campaign-Smart-List](assets/request-campaign-smart-list.png)
 
-이제 이메일을 보내기 단계를 이메일에 가리키도록 흐름을 구성해야 합니다.
+트랜잭션 이메일을 참조하는 이메일 전송 흐름 단계를 구성합니다.
 
 ![Request-Campaign-Flow](assets/request-campaign-flow.png)
 
-활성화하기 전에 예약 탭에서 일부 설정을 결정해야 합니다. 이 특정 이메일을 지정된 레코드로 한 번만 전송해야 하는 경우 자격 설정을 그대로 둡니다. 하지만 이메일을 여러 번 받아야 하는 경우 매번 또는 사용 가능한 케이던스 중 하나로 조정할 수 있습니다.
+활성화하기 전에 예약 탭에서 자격 설정을 구성합니다. 각 레코드가 이메일을 한 번만 받는 경우 기본 설정을 유지합니다. 그렇지 않으면 수신자가 항상 또는 가능한 케이던스로 자격을 부여할 수 있습니다.
 
-이제 활성화할 준비가 되었습니다.
+캠페인 활성화:
 
 ![Request-Campaign-Schedule](assets/request-campaign-schedule.png)
 
 ## API 호출 전송
 
-**참고:** 아래 Java 예제에서 [minimal-json 패키지](https://github.com/ralfstx/minimal-json)를 사용하여 코드에서 JSON 표현을 처리하고 있습니다.
+Java 예제에서는 [minimal-json 패키지](https://github.com/ralfstx/minimal-json)를 사용하여 JSON 표현을 처리합니다.
 
-API를 통해 트랜잭션 이메일을 보내는 첫 번째 부분은 해당 이메일 주소가 있는 레코드가 Marketo 인스턴스에 있는지, 리드 ID에 액세스할 수 있는지 확인하는 것입니다. 이 게시물의 목적상 이메일 주소가 이미 Marketo에 있으며 레코드의 ID만 검색해야 한다고 가정합니다. 이를 위해 [필터 유형별 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/getLeadsByFilterUsingGET) 호출을 사용합니다. 캠페인을 요청하기 위한 의 주요 방법을 살펴보겠습니다.
+이메일을 보내기 전에 이메일 주소에 대한 Marketo 레코드가 있는지 확인하고 리드 ID를 검색합니다. 이 예제에서는 이메일 주소가 이미 존재한다고 가정합니다.
+
+[필터 유형별 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/getLeadsByFilterUsingGET)를 사용하여 ID를 검색합니다. 그런 다음 다음 다음 기본 메서드가 캠페인을 요청합니다.
 
 ```java
 package dev.marketo.blog_request_campaign;
@@ -88,14 +86,14 @@ public class App
 }
 ```
 
-leadsRequest 의 JsonObject 응답에서 이러한 결과를 얻으려면 일부 코드 를 작성해야 합니다. Array에서 첫 번째 결과를 검색하려면 JsonObject에서 Array를 추출하고 0에서 개체 인덱싱을 가져와야 합니다.
+`JsonObject` 응답에서 결과 배열을 추출하고 인덱스 0에서 개체를 검색합니다.
 
 ```java
 JsonArray leadsResult = leadsRequest.getData().get("result").asArray();
 int leadId = leadsResult.get(0).asObject().get("id").asInt();
 ```
 
-이제부터 해야 하는 것은 요청 캠페인 호출입니다. 이를 위해 필수 매개 변수는 요청의 URL에 있는 ID와 하나의 멤버인 &quot;id&quot;가 포함된 JSON 개체의 배열입니다. 이에 대한 코드를 살펴보겠습니다.
+요청 URL에서 캠페인 ID를 사용하여 요청 캠페인을 호출합니다. 요청 본문에는 `id` 구성원이 포함된 JSON 개체 배열이 포함되어 있습니다.
 
 ```java
 package dev.marketo.blog_request_campaign;
@@ -190,7 +188,7 @@ public class RequestCampaign {
 
 ### 이메일 작성
 
-콘텐츠를 사용자 지정하려면 먼저 Marketo에서 [프로그램](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/create-a-program.html?lang=ko) 및 [이메일](https://experienceleague.adobe.com/ko/docs/marketo/using/home)을 구성해야 합니다. 사용자 지정 콘텐츠를 생성하려면 프로그램 내에 토큰을 만든 다음 전송할 이메일에 배치해야 합니다. 간결성을 위해 이 예제에서는 하나의 토큰만 사용하고 있지만, 보낸 사람 이메일, 보낸 사람 이름, 회신 주소 또는 이메일의 모든 콘텐츠에서 토큰의 숫자를 바꿀 수 있습니다. 그러면 교체를 위해 하나의 리치 텍스트 토큰을 만들고 이를 &quot;bodyReplacement&quot;라고 하겠습니다. 리치 텍스트를 사용하면 토큰의 모든 컨텐츠를 입력하려는 임의의 HTML으로 바꿀 수 있습니다.
+콘텐츠를 사용자 지정하려면 먼저 Marketo에서 [프로그램](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/create-a-program.html) 및 [이메일](https://experienceleague.adobe.com/ko/docs/marketo/using/home)을 구성해야 합니다. 사용자 지정 콘텐츠를 생성하려면 프로그램 내에 토큰을 만든 다음 전송할 이메일에 배치해야 합니다. 간결성을 위해 이 예제에서는 하나의 토큰만 사용하고 있지만, 보낸 사람 이메일, 보낸 사람 이름, 회신 주소 또는 이메일의 모든 콘텐츠에서 토큰의 숫자를 바꿀 수 있습니다. 그러면 교체를 위해 하나의 리치 텍스트 토큰을 만들고 이를 &quot;bodyReplacement&quot;라고 하겠습니다. 리치 텍스트를 사용하면 토큰의 모든 컨텐츠를 입력하려는 임의의 HTML으로 바꿀 수 있습니다.
 
 ![새 토큰](assets/New-Token.png)
 

@@ -4,19 +4,14 @@ feature: REST API, Snippets
 description: 스니펫용 Marketo Asset REST API로, ID별 쿼리를 다루고 상태 찾아보기, 콘텐츠 가져오기, HTML, 텍스트 및 동적 콘텐츠 만들기 및 업데이트.
 exl-id: 87901c29-ee59-4224-848d-3bd6a6c52718
 TQID: https://experienceleague.adobe.com/1UpwX-ZzXTzkTRheu8exBDIoIvAGgoZgpA851PuL8sI
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-  - id: bce87dde-a4ab-44c9-8a18-ad66e4ddb377
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: f82558ea-6af5-44eb-a424-5b3389abb0a3
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dcid: bce87dde-a4ab-44c9-8a18-ad66e4ddb377
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 512
-ht-degree: 1%
+source-wordcount: 386
+ht-degree: 2%
 
 ---
 
@@ -24,11 +19,11 @@ ht-degree: 1%
 
 [코드 조각 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets)
 
-스니펫은 이메일 및 랜딩 페이지에 임베드할 수 있고, 동적 콘텐츠용으로 세그먼트화할 수 있는 재사용 가능한 HTML 구성 요소입니다. 스니펫에는 관련 템플릿이 없으며 Marketo 내의 다른 에셋 내에서 만들고 배포할 수 있습니다.
+스니펫은 이메일 및 랜딩 페이지에 임베드할 수 있는 재사용 가능한 HTML 구성 요소입니다. 다이내믹 컨텐츠에 대한 스니펫을 세그먼트화할 수 있습니다. 스니펫은 템플릿을 사용하지 않으며, 다른 Marketo 에셋 내에서 만들고 배포할 수 있습니다.
 
 ## 쿼리
 
-코드 조각 쿼리는 By Name 메서드가 없다는 점을 제외하면 자산의 표준 패턴을 따릅니다. [ID별](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/getSnippetByIdUsingGET) 및 [찾아보기](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/getSnippetUsingGET) 메서드를 사용하면 상태 필드를 사용하여 코드 조각의 승인된 버전 또는 초안 버전을 검색할 수 있습니다.
+쿼리 코드 조각 [ID](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/getSnippetByIdUsingGET) 또는 [검색](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/getSnippetUsingGET)별. API는 이름별 쿼리 메서드를 제공하지 않습니다. 두 끝점 모두 `status` 필드를 수락하여 승인된 버전 또는 초안 버전을 검색합니다.
 
 ### ID별
 
@@ -124,7 +119,7 @@ GET /rest/asset/v1/snippets.json?maxReturn=3
 
 ## 쿼리 콘텐츠
 
-지정된 코드 조각의 콘텐츠는 코드 조각 ID를 기반으로 검색할 수 있습니다.
+코드 조각 ID로 코드 조각 콘텐츠를 검색합니다.
 
 ```http
 GET /rest/asset/v1/snippet/{id}/content.json
@@ -149,11 +144,11 @@ GET /rest/asset/v1/snippet/{id}/content.json
 }
 ```
 
-이 호출은 HTML 또는 DynamicContent 유형의 섹션과 선택적으로 Text 유형의 섹션으로 구성된 콘텐츠 섹션 목록을 반환합니다.
+응답에 `HTML` 또는 `DynamicContent` 형식의 섹션이 포함되어 있습니다. `Text` 형식의 섹션도 포함할 수 있습니다.
 
 ## 만들기 및 업데이트
 
-코드 조각은 [코드 조각 만들기](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/createSnippetUsingPOST)를 호출하는 복잡한 자산 만들기 패턴을 따르며 해당 내용은 별도로 만들어지므로 첫 번째 호출은 선택적 설명과 함께 만들기 끝점에 대한 것이어야 합니다.   데이터는 JSON이 아닌 x-www-form-urlencoded로 전달됩니다.
+코드 조각 에셋과 해당 콘텐츠를 별도로 만듭니다. 먼저 [코드 조각 만들기](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/createSnippetUsingPOST) 끝점을 호출합니다. 설명은 선택 사항입니다. 데이터를 JSON이 아닌 `x-www-form-urlencoded`(으)로 전달합니다.
 
 ```http
 POST /rest/asset/v1/snippets.json
@@ -193,7 +188,11 @@ name=Test Snippet 09 - deverly&folder={"id":395,"type":"Folder"}&description=Thi
 }
 ```
 
-코드 조각의 컨텐츠를 추가하거나 바꾸는 작업은 ID로 수행됩니다. 컨텐츠는 텍스트, HTML 또는 DynamicContent 유형일 수 있습니다. 유형이 텍스트이면 컨텐츠 매개 변수는 일반 텍스트 엔드포인트이며, HTML이면 원하는 마크업 텍스트입니다. 유형이 DynamicContent로 설정된 경우 콘텐츠 매개 변수는 코드 조각과 연결할 세그먼테이션의 ID로 설정해야 합니다.
+ID로 코드 조각 콘텐츠를 추가하거나 대체합니다. 콘텐츠 형식은 `Text`, `HTML` 또는 `DynamicContent`일 수 있습니다.
+
+- `Text`의 경우 `content` 매개 변수에 일반 텍스트를 전달합니다.
+- `HTML`의 경우 `content` 매개 변수에 태그를 전달합니다.
+- `DynamicContent`에 대해 `content`을(를) 코드 조각과 연결된 세분화 ID로 설정하십시오.
 
 ```http
 POST /rest/asset/v1/snippet/{id}/content.json
@@ -221,7 +220,7 @@ type=HTML&content=draft testUpdateSnippetContent1 HTML Content
 }
 ```
 
-[메타데이터 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/updateSnippetUsingPOST)도 ID로 수행됩니다. 이름과 설명만 업데이트할 수 있습니다.
+[메타데이터를 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/updateSnippetUsingPOST)하려면 코드 조각 ID를 지정하십시오. 이름과 설명만 업데이트할 수 있습니다.
 
 ```http
 POST /rest/asset/v1/snippet/{id}.json
@@ -263,7 +262,9 @@ name=Test Snippet&description=New Description
 
 ## 동적 콘텐츠
 
-스니펫은 다이내믹 컨텐츠에 대한 표준 패턴을 따르지만, 하나의 전체 컨텐츠 섹션만 나타내므로 각 스니펫은 하나의 동적 섹션만 포함할 수 있으며, 사용된 세그먼테이션의 각 세그먼트에 대해 선택적으로 내부 섹션 목록이 포함됩니다. 코드 조각에 동적 콘텐츠 섹션이 하나만 있을 수 있으므로 동적 콘텐츠는 코드 조각 ID만으로 쿼리할 수 있습니다.
+코드 조각은 하나의 전체 콘텐츠 섹션을 나타내며 하나의 동적 섹션만 포함할 수 있습니다. 해당 섹션에는 연결된 세그먼테이션의 각 세그먼트에 대한 내부 섹션이 포함될 수 있습니다.
+
+코드 조각에는 동적 섹션이 하나만 있을 수 있으므로 코드 조각 ID로 해당 동적 콘텐츠를 쿼리합니다.
 
 ```http
 GET /rest/asset/v1/snippet/{id}/dynamicContent.json
@@ -318,7 +319,7 @@ GET /rest/asset/v1/snippet/{id}/dynamicContent.json
 
 ## 승인
 
-코드 조각에는 표준 에셋 패턴을 따르는 초안을 승인, 승인 취소 및 삭제할 수 있는 엔드포인트가 있습니다. 승인하려면 코드 조각이 초안 상태여야 합니다.
+스니펫은 승인, 승인 제거 및 초안 폐기를 위한 종단점을 제공합니다. 승인 전에 코드 조각이 초안 상태여야 합니다.
 
 ### 승인
 
@@ -410,7 +411,7 @@ POST /rest/asset/v1/snippet/{id}/discardDraft.json
 
 ## 복제
 
-API를 사용하여 [코드 조각을 복제하는](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/cloneSnippetUsingPOST)은(는) 간단하며 필수 이름, 원래 코드 조각 및 폴더의 ID와 선택적 설명을 사용하여 표준 패턴을 따릅니다.  승인된 버전이 없으면 초안 버전이 복제됩니다.
+[코드 조각을 복제하려면](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/cloneSnippetUsingPOST) 이름, 소스 코드 조각 ID 및 폴더를 제공하십시오. 설명은 선택 사항입니다. 소스에 승인된 버전이 없으면 끝점이 해당 초안을 복제합니다.
 
 ```http
 POST /rest/asset/v1/snippet/{id}/clone.json

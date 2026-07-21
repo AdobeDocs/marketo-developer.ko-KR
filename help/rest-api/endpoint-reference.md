@@ -4,30 +4,21 @@ feature: REST API
 description: 메서드, URI 및 활동, 벌크 내보내기, ID, 리드, 에셋, 사용자에 대한 필수 권한이 포함된 포괄적인 Marketo REST API 끝점 목록입니다.
 exl-id: 27d16b6f-865a-4e40-ab9c-cbabe2927472
 TQID: https://experienceleague.adobe.com/6A-gCvxkWibX5fi3zZw-nbdVRtszX2qoJtDTBSdxFzQ
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: a7170d27-32ab-462b-a333-269abc654483
-  - id: b0bb9048-d951-48d8-8232-45cf248a7e27
-  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
-  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-  - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
-subfeature_v2:
-  - id: d0251300-e25f-466f-9856-7e11ce8fa7aa
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: a7170d27-32ab-462b-a333-269abc654483id: b0bb9048-d951-48d8-8232-45cf248a7e27id: c5f60233-d5ea-4453-a799-0ad258b4d399id: e64968b2-4ee5-47f9-8cae-0588f184b9ebid: f82558ea-6af5-44eb-a424-5b3389abb0a3
+subfeature_v2: id: d0251300-e25f-466f-9856-7e11ce8fa7aa
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 4793
+source-wordcount: 4807
 ht-degree: 8%
 
 ---
 
 # 끝점 참조
 
-다음은 Marketo REST API 참조에 대한 링크입니다.
+다음 참조를 사용하여 각 Marketo REST API 그룹에 대한 요청 매개 변수, 응답 스키마 및 예를 찾습니다.
 
 - [자산](https://developer.adobe.com/marketo-apis/api/asset)
 - [ID](https://developer.adobe.com/marketo-apis/api/identity/)
@@ -36,7 +27,7 @@ ht-degree: 8%
 
 ## 엔드포인트 목록 {#endpoint_list}
 
-다음은 REST API 엔드포인트의 포괄적인 목록입니다.
+다음 표에는 REST API 끝점, HTTP 메서드, URI 및 필수 권한이 나와 있습니다.
 
 | 이름 | 그룹 | 메서드 | URI | 필수 권한 |
 | --- | --- | --- | --- | --- |
@@ -56,7 +47,7 @@ ht-degree: 8%
 | 페이징 토큰 가져오기 | 활동 | GET | /rest/v1/activities/pagingtoken.json | 읽기 전용 활동 |
 | 사용자 지정 활동 유형 업데이트 | 활동 | POST | /rest/v1/activities/external/type/{apiName}.json | 읽기-쓰기 활동 메타데이터 |
 | 사용자 지정 활동 유형 속성 업데이트 | 활동 | POST | /rest/v1/activities/external/type/{apiName}/attributes/update.json | 읽기-쓰기 활동 메타데이터 |
-| ID | 인증 | GET 또는 게시물 | /identity/oauth/token | None |
+| ID | 인증 | GET 또는 POST | /identity/oauth/token | None |
 | 활동 내보내기 작업 취소 | 일괄 내보내기 활동 | POST | /bulk/v1/activities/export/{exportid}/cancel.json | 읽기 전용 활동 |
 | 내보내기 활동 작업 만들기 | 일괄 내보내기 활동 | POST | /bulk/v1/activities/export/create.json | 읽기 전용 활동 |
 | 활동 내보내기 작업 큐에 넣기 | 일괄 내보내기 활동 | POST | /bulk/v1/activities/export/{exportid}/enqueue.json | 읽기 전용 활동 |

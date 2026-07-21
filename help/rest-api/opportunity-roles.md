@@ -4,15 +4,12 @@ feature: REST API
 description: 설명, 복합 중복 제거 필드가 있는 쿼리, 업데이트 삭제 만들기, 시간 초과, CRM 동기화 안 함 등 REST API를 통해 Marketo 기회 역할을 관리합니다.
 exl-id: 2ba84f4d-82d0-4368-94e8-1fc6d17b69ed
 TQID: https://experienceleague.adobe.com/aE27mBhsrn-0SO41M-pV5NFjoMq--1Lp-L2TQGL7-8Y
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 279
+source-wordcount: 254
 ht-degree: 0%
 
 ---
@@ -21,13 +18,13 @@ ht-degree: 0%
 
 [영업 기회 역할 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/getOpportunityRolesUsingGET)
 
-리드는 중간 `opportunityRole` 개체를 통해 기회에 연결됩니다.
+중간 `opportunityRole` 개체 링크가 기회로 연결됩니다.
 
-영업 기회 역할 API는 기본 CRM 동기화가 활성화되지 않은 구독에만 노출됩니다.
+영업 기회 역할 API는 기본 CRM 동기화가 활성화되지 않은 구독에만 사용할 수 있습니다.
 
 ## 설명
 
-기회와 마찬가지로 설명 호출 및 CRUD 작업은 기회 역할에 노출됩니다.
+기회와 마찬가지로 API는 기회 역할에 대해 설명 호출 및 CRUD 작업을 제공합니다.
 
 ```http
 GET /rest/v1/opportunities/roles/describe.json
@@ -113,7 +110,9 @@ GET /rest/v1/opportunities/roles/describe.json
 
 ## 쿼리
 
-`dedupeFields`과(와) `searchableFields`이(가) 모두 기회와 약간 다릅니다. `dedupeFields`은(는) 실제로 복합 키를 제공하므로 `externalOpportunityId`, `leadId` 및 `role`의 세 가지 키가 모두 필요합니다. 레코드 만들기에 성공하려면 ID 필드를 통한 영업 기회와 잠재 고객 링크가 모두 대상 인스턴스에 있어야 합니다. `searchableFields`의 경우 `marketoGUID`, `leadId` 및 `externalOpportunityId`은(는) 모두 자체 쿼리에 유효하며 Opportunity와 동일한 패턴을 사용하지만 쿼리에 복합 키를 사용하는 추가 옵션이 있습니다. 추가 쿼리 매개 변수 `_method=GET`을(를) 사용하여 POST를 통해 JSON 개체를 제출해야 합니다.
+`dedupeFields` 및 `searchableFields` 값이 기회와 다릅니다. `dedupeFields`에서 `externalOpportunityId`, `leadId` 및 `role`이(가) 필요한 복합 키를 제공합니다. 레코드를 성공적으로 만들려면 ID 필드에서 참조한 영업 기회와 잠재 고객이 대상 인스턴스에 있어야 합니다.
+
+`searchableFields` 값 `marketoGUID`, `leadId` 및 `externalOpportunityId`은(는) Opportunities와 동일한 패턴을 사용하는 개별 쿼리에 유효합니다. 복합 키를 사용하여 쿼리할 수도 있습니다. 이 쿼리에는 `_method=GET` 쿼리 매개 변수와 함께 POST를 통해 제출된 JSON 개체가 필요합니다.
 
 ```http
 POST /rest/v1/opportunities/roles.json?_method=GET
@@ -148,11 +147,11 @@ POST /rest/v1/opportunities/roles.json?_method=GET
 }
 ```
 
-이렇게 하면 표준 GET 쿼리와 동일한 유형의 응답이 생성되며, 요청을 수행하기 위한 다른 인터페이스가 있을 뿐입니다.
+이 요청은 표준 GET 쿼리와 동일한 응답 유형을 생성하지만 다른 요청 인터페이스를 사용합니다.
 
 ## 만들기 및 업데이트
 
-Opportunity 역할에는 Opportunity 로 레코드를 만들고 업데이트하는 동일한 인터페이스가 있습니다.
+기회와 동일한 인터페이스를 사용하여 기회 역할을 만들고 업데이트합니다.
 
 ```http
 POST /rest/v1/opportunities/roles.json
@@ -200,7 +199,9 @@ POST /rest/v1/opportunities/roles.json
 
 ## 삭제
 
-데이터 중복 제거 필드 또는 ID 필드를 통해 영업 기회 역할을 삭제할 수 있습니다. dedupeFields 또는 idField 값이 있는 deleteBy 매개 변수를 사용하여 지정합니다. 지정하지 않으면 기본값은 dedupeFields입니다. 요청 본문에는 삭제할 영업 기회 역할의 입력 배열이 포함되어 있습니다. 호출당 최대 300개의 영업 기회 역할이 허용됩니다.
+데이터 중복 제거 필드 또는 ID 필드로 영업 기회 역할을 삭제합니다. deleteBy 매개 변수를 dedupeFields 또는 idField로 설정합니다. 기본값은 dedupeFields 입니다.
+
+요청 본문에는 삭제할 영업 기회 역할의 입력 배열이 포함되어 있습니다. 각 호출에는 최대 300개의 영업 기회 역할이 허용됩니다.
 
 ```http
 POST /rest/v1/opportunities/roles/delete.json
@@ -235,6 +236,6 @@ POST /rest/v1/opportunities/roles/delete.json
 
 ## 시간 초과
 
-- 아래에 명시되지 않은 경우 Opportunity Role Endpoints 의 시간 제한은 30초입니다.
-   - 동기화 영업 기회 역할: 60초
-   - 영업 기회 역할 삭제: 60초
+- Opportunity Role 엔드포인트는 별도로 명시하지 않는 한 30초의 시간 제한을 갖습니다.
+- 동기화 영업 기회 역할의 시간 제한은 60초입니다.
+- Delete Opportunity 역할의 시간 제한은 60초입니다.

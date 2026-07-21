@@ -4,26 +4,27 @@ description: init, createTrackingCookie 및 munchkinFunction 메서드를 사용
 feature: Munchkin Tracking Code, Javascript
 exl-id: e9727691-5501-4223-bc98-2b4bacc33513
 TQID: https://experienceleague.adobe.com/s97x6wVZijnnxZwS7HMIkQAKlxXkcfPXuSZG4KjXGoc
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 426
+source-wordcount: 414
 ht-degree: 7%
 
 ---
 
 # Munchkin API 참조
 
-Munchkin은 Javascript를 통해 수동으로 호출할 수 있는 여러 기능을 제공합니다. 이를 통해 비디오 재생 또는 링크가 아닌 클릭 수와 같은 브라우저 이벤트를 사용자 지정할 수 있습니다.
+Munchkin은 브라우저 이벤트의 사용자 지정 추적을 위한 JavaScript 기능을 제공합니다. 예를 들어 링크가 아닌 요소에 대한 비디오 재생 또는 클릭을 추적할 수 있습니다.
 
 ## 함수
 
-Munchkin API는 다음 함수로 구성됩니다. `init`, `createTrackingCookie`, `munchkinFunction`.
+Munchkin API에는 다음 함수가 포함되어 있습니다.
+
+- `init`
+- `createTrackingCookie`
+- `munchkinFunction`
 
 <a name="munchkin_init"></a>
 
@@ -42,7 +43,9 @@ Munchkin.init('299-BYM-827');
 
 ### Munchkin.createTrackingCookie()
 
-호출되면 브라우저에 `_mkto_trk` 쿠키가 있는지 확인하고 없는 경우 만듭니다. `cookieAnon`이(가) false로 설정된 경우 등록 또는 에셋 다운로드와 같은 특정 작업 동안 사용자를 추적하는 데 유용합니다.
+`Munchkin.createTrackingCookie()`이(가) 브라우저에 `_mkto_trk` 쿠키가 있는지 확인합니다. 쿠키가 존재하지 않으면 함수는 쿠키를 만듭니다.
+
+`cookieAnon`이(가) false로 설정된 경우 이 함수를 사용하여 에셋 등록 또는 다운로드와 같은 특정 작업 동안 사용자를 추적하십시오.
 
 | 매개 변수 이름 | 선택 사항/필수 | 유형 | 설명 |
 | --- | --- | --- | --- |
@@ -54,7 +57,7 @@ Munchkin.createTrackingCookie(true);
 
 ### Munchkin.munchkinFunction()
 
-비디오 플레이어 재생 및 일시 중단과 같은 사용자 지정 추적 비헤이비어 또는 해시 코드와 같은 비표준 탐색을 위한 페이지 방문 횟수를 생성하는 데 사용됩니다.
+`Munchkin.munchkinFunction()`을(를) 사용하여 사용자 지정 추적 동작을 만드십시오. 예를 들어 해시 변경 사항과 같은 비표준 탐색에서의 비디오 플레이어 활동 또는 페이지 방문 횟수를 추적합니다.
 
 | 매개 변수 이름 | 선택 사항/필수 | 유형 | 설명 |
 | --- | --- | --- | --- |
@@ -63,7 +66,7 @@ Munchkin.createTrackingCookie(true);
 
 #### visitWebpage
 
-`visitWebPage`(으)로 `munchkinFunction()`을(를) 호출하면 현재 사용자에 대한 &#39;방문&#39; 활동이 Marketo으로 전송됩니다. 두 번째 인수의 데이터 개체와 함께 전송되는 URL 및 `querystring`을(를) 사용자 지정할 수 있습니다.
+`visitWebPage`(으)로 `munchkinFunction()`을(를) 호출하면 현재 사용자에 대한 &#39;방문&#39; 활동이 Marketo으로 전송됩니다. 두 번째 인수의 데이터 개체를 사용하여 URL 및 `querystring`을(를) 사용자 지정합니다.
 
 | 데이터 속성 이름 | 선택 사항/필수 | 유형 | 설명 |
 | --- | --- | --- | --- |
@@ -82,7 +85,7 @@ Munchkin.munchkinFunction('visitWebPage', {
 
 #### clickLink
 
-`clickLink`(으)로 `munchkinFunction()`을(를) 호출하면 현재 사용자에 대한 클릭 활동이 Marketo으로 전송됩니다. 데이터 개체에서 `href` 속성을 사용하여 클릭 URL을 사용자 지정할 수 있습니다.
+`clickLink`(으)로 `munchkinFunction()`을(를) 호출하면 현재 사용자에 대한 클릭 활동이 Marketo으로 전송됩니다. 데이터 개체의 `href` 속성을 사용하여 클릭 URL을 사용자 지정합니다.
 
 | 데이터 속성 이름 | 선택 사항/필수 | 유형 | 설명 |
 | --- | --- | --- | --- |

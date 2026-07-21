@@ -4,24 +4,20 @@ feature: Mobile Marketing
 description: APNs 인증서 및 Xcode 설정에서 Marketo을 사용한 iOS 푸시 알림, Marketo SDK 통합, 토큰 등록 및 처리에 대한 안내서입니다.
 exl-id: 41d657d8-9eea-4314-ab24-fd4cb2be7f61
 TQID: https://experienceleague.adobe.com/ghits-m4w3oid3cZuRTz-foAar8OaqtiQqWu2yRKTwE
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: c1579802-ddd4-4214-8a91-97b2066abe11
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: c1579802-ddd4-4214-8a91-97b2066abe11
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 1338
-ht-degree: 0%
+source-wordcount: 1162
+ht-degree: 1%
 
 ---
 
 # 푸시 알림
 
-푸시 알림을 활성화하는 방법
+Marketo Mobile SDK을 사용하는 iOS 또는 Android 앱에 대한 푸시 알림을 활성화합니다.
 
 ## iOS에서 푸시 알림 설정
 
@@ -33,14 +29,14 @@ ht-degree: 0%
 
 ### Apple 개발자 계정에서 푸시 알림 구성
 
-1. Apple 개발자 [구성원 센터](https://developer.apple.com/membercenter)에 로그인합니다.
-1. 인증서, 식별자 및 프로필 을 클릭합니다.
-1. &quot;iOS, tvOS, watchOS&quot; 아래의 &quot;Certificates->All&quot; 폴더를 클릭합니다.
-1. 인증서 ![](assets/certificates-plus.png) 옆의 왼쪽 상단 화면에서 &quot;+&quot;를 선택합니다.
-1. &quot;Apple 푸시 알림 서비스 SSL(샌드박스 및 프로덕션)&quot; 확인란을 활성화하고 계속을 선택합니다.
-1. 앱 빌드를 사용 중인 응용 프로그램 식별자를 선택합니다.![](assets/push-appid.png)
+1. Apple 개발자 [회원 센터](https://developer.apple.com/membercenter)에 로그인합니다.
+1. &quot;인증서, 식별자 및 프로필&quot;을 선택합니다.
+1. &quot;iOS, tvOS, watchOS&quot; 아래의 &quot;Certificates->All&quot; 폴더를 선택합니다.
+1. 왼쪽 위 모서리에 있는 인증서 옆의 &quot;+&quot;를 선택합니다. ![](assets/certificates-plus.png)
+1. &quot;Apple 푸시 알림 서비스 SSL(샌드박스 및 프로덕션)&quot;을 선택한 다음 계속을 선택합니다.
+1. 앱을 빌드하는 데 사용되는 응용 프로그램 식별자를 선택합니다.![](assets/push-appid.png)
 1. 푸시 인증서를 생성하려면 CSR을 만들고 업로드하십시오. ![](assets/push-ssl.png)
-1. 로컬 컴퓨터에 인증서를 다운로드하고 두 번 클릭하여 설치합니다. ![](assets/certificate-download.png)
+1. 인증서를 다운로드하고 두 번 클릭하여 설치합니다. ![](assets/certificate-download.png)
 1. &quot;키체인 액세스&quot;를 열고 인증서를 마우스 오른쪽 단추로 클릭한 다음 두 항목을 `.p12` 파일로 내보냅니다.![key_chain](assets/key-chain.png)
 1. Marketo Admin Console을 통해 이 파일을 업로드하여 알림을 구성합니다.
 1. 앱 프로비저닝 프로필을 업데이트합니다.
@@ -51,11 +47,11 @@ xCode 프로젝트에서 푸시 알림 기능을 사용하도록 설정합니다
 
 ### Marketo SDK을 사용하여 앱에서 푸시 알림 활성화
 
-`AppDelegate.m` 파일에 다음 코드를 추가하여 고객의 장치에 푸시 알림을 전달합니다.
+`AppDelegate.m` 파일에 다음 코드를 추가하여 고객 장치에 푸시 알림을 전달합니다.
 
-**참고** - [!DNL Adobe Launch] 확장을 사용하는 경우 `ALMarketo`을(를) classname으로 사용
+**참고** - [!DNL Adobe Launch] 확장을 사용하는 경우 `ALMarketo`을(를) 클래스 이름으로 사용합니다.
 
-`AppDelegate.h`에서 다음을 가져옵니다.
+`AppDelegate.h`에 다음 가져오기를 추가하십시오.
 
 >[!BEGINTABS]
 
@@ -91,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate , UNUserNotificationCenter
 
 >[!ENDTABS]
 
-푸시 알림 서비스를 시작합니다. 푸시 알림을 활성화하려면 아래 코드를 추가하십시오.
+푸시 알림 서비스를 초기화하려면 다음 코드를 추가하십시오.
 
 >[!BEGINTABS]
 
@@ -134,11 +130,11 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 >[!ENDTABS]
 
-이 메서드를 호출하여 Apple Push Service로 등록 프로세스를 시작합니다. 등록이 성공하면 앱에서 앱 위임 개체의 `application:didRegisterForRemoteNotificationsWithDeviceToken:` 메서드를 호출하고 장치 토큰을 전달합니다.
+이 메서드를 호출하여 Apple 푸시 서비스에 등록을 시작합니다. 등록이 성공하면 앱에서 App 위임 개체의 `application:didRegisterForRemoteNotificationsWithDeviceToken:` 메서드를 호출하여 장치 토큰으로 전달합니다.
 
 등록이 실패하면 앱은 앱 위임자의 `application:didFailToRegisterForRemoteNotificationsWithError:` 메서드를 대신 호출합니다.
 
-Marketo에 푸시 토큰 등록 Marketo에서 푸시 알림을 받으려면 Marketo에 장치 토큰을 등록해야 합니다.
+Marketo에 푸시 토큰을 등록합니다. Marketo에서 푸시 알림을 받으려면 장치 토큰을 등록해야 합니다.
 
 >[!BEGINTABS]
 
@@ -180,9 +176,9 @@ Marketo.sharedInstance().unregisterPushDeviceToken
 
 >[!ENDTABS]
 
-푸시 토큰을 다시 등록하려면 3단계의 코드를 AppDelegate 메서드에 추출하고 ViewController 로그인 메서드에서 를 호출합니다.
+푸시 토큰을 다시 등록하려면 3단계의 코드를 AppDelegate 메서드에 추출합니다. ViewController 로그인 메서드에서 해당 메서드를 호출합니다.
 
-푸시 알림을 처리합니다. Marketo에서 푸시 알림을 받으려면 Marketo에 장치 토큰을 등록해야 합니다.
+Marketo에 장치 토큰을 등록한 후 푸시 알림을 처리합니다.
 
 >[!BEGINTABS]
 
@@ -205,9 +201,9 @@ func application(_ application: UIApplication, didReceiveRemoteNotification user
 
 >[!ENDTABS]
 
-AppDelegate에 다음 메서드 추가
+AppDelegate에 다음 메서드를 추가합니다.
 
-이 방법을 사용하면 앱이 포그라운드에 있는 동안 경고, 사운드를 제공하거나 배지를 늘릴 수 있습니다. 이 메서드에서 선택한 completionHandler를 호출해야 합니다.
+이 메서드를 사용하여 앱이 포그라운드에 있을 때 경고를 표시하거나, 사운드를 재생하거나, 배지를 늘립니다. 이 메서드에서 적절한 completionHandler를 호출합니다.
 
 >[!BEGINTABS]
 
@@ -234,9 +230,9 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 >[!ENDTABS]
 
-AppDelegate에서 새로 받은 푸시 알림 처리
+AppDelegate에서 새로 받은 푸시 알림을 처리합니다.
 
-사용자가 애플리케이션을 열거나 알림을 무시하거나 UNNotificationAction을 선택하여 알림에 응답하면 대리자에 대해 메서드가 호출됩니다. 응용 프로그램이 applicationDidFinishLaunch에서 반환되기 전에 대리자를 설정해야 합니다.
+사용자가 애플리케이션을 열거나, 알림을 무시하거나, UNNotificationAction을 선택하여 알림에 응답할 때 위임은 이 메서드를 호출합니다. 응용 프로그램이 applicationDidFinishLaunch에서 반환되기 전에 대리자를 설정하십시오.
 
 >[!BEGINTABS]
 
@@ -262,15 +258,15 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 >[!ENDTABS]
 
-푸시 알림 추적
+푸시 알림을 추적합니다.
 
-앱이 백그라운드에서 실행 중이거나 활성화되어 있지 않은 경우, 디바이스는 아래와 같이 푸시 알림을 수신합니다. Marketo은 사용자가 알림을 탭할 때를 추적합니다.
+앱이 백그라운드에 있거나 비활성 상태인 경우, 디바이스는 아래와 같이 푸시 알림을 수신합니다. Marketo은 사용자가 알림을 선택하면 추적합니다.
 
 ![mobile8](assets/mobile8.png)
 
-장치가 푸시 알림을 받으면 앱 대리자의 `application:didReceiveRemoteNotification:` 콜백으로 전달됩니다.
+장치가 푸시 알림을 받으면 알림을 앱 대리자의 `application:didReceiveRemoteNotification:` 콜백으로 전달합니다.
 
-다음은 앱 이벤트와 푸시 알림 이벤트를 보여 주는 Marketo의 Marketo 활동 로그입니다.
+다음 Marketo 활동 로그는 앱 이벤트 및 푸시 알림 이벤트를 보여 줍니다.
 
 ![mobile9](assets/mobile9.png)
 
@@ -278,7 +274,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 1. 애플리케이션 태그 내에 다음 권한을 추가합니다.
 
-   `AndroidManifest.xml`을(를) 열고 다음 권한을 추가합니다. 앱에서 &quot;인터넷&quot; 및 &quot;ACCESS_NETWORK_STATE&quot; 권한을 요청해야 합니다. 앱에서 이미 이러한 권한을 요청하는 경우 이 단계를 건너뜁니다.
+   `AndroidManifest.xml`을(를) 열고 다음 권한을 추가합니다. 앱에서 &quot;인터넷&quot; 및 &quot;ACCESS_NETWORK_STATE&quot; 권한을 요청해야 합니다. 앱에서 이미 요청한 경우 이 단계를 건너뜁니다.
 
    ```xml
    <uses‐permission android:name="android.permission.INTERNET"/>
@@ -294,16 +290,16 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
    ```
 
-1. HTTPv1로 FCM 설정
+1. HTTPv1을 사용하여 FCM을 설정합니다.
 
-- Marketo 기능 관리자 ![](assets/feature-manager.png)에서 MME FCM HTTPv1 사용
-   - MLM에서 앱에 대한 서비스 계정 Json 파일을 업로드합니다.
-   - Firebase 콘솔에서 서비스 계정 JSON 파일을 다운로드할 수 있습니다.   ![](assets/fcm-console.png)
-   - 푸시 알림을 전송하기 전에 Marketo에서 서비스 계정 JSON 파일을 업로드한 후 1시간 동안 기다립니다.  
+   - Marketo 기능 관리자에서 MME FCM HTTPv1을 활성화합니다. ![](assets/feature-manager.png)
+   - MLM에서 앱에 대한 서비스 계정 JSON 파일을 업로드합니다.
+   - Firebase 콘솔에서 서비스 계정 Json 파일을 다운로드합니다. ![](assets/fcm-console.png)
+   - 푸시 알림을 전송하기 전에 Marketo에서 서비스 계정 JSON 파일을 업로드한 후 1시간 동안 기다립니다.
 
 ## Android 테스트 장치
 
-매니페스트 파일의 Marketo 활동을 응용 프로그램 태그 내에 추가합니다.
+Marketo 활동을 응용 프로그램 태그 내의 매니페스트 파일에 추가합니다.
 
 ```xml
 <activity android:name="com.marketo.MarketoActivity"  android:configChanges="orientation|screenSize">
@@ -318,7 +314,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 ## Marketo 푸시 서비스 등록
 
-1. Marketo에서 푸시 알림을 받으려면 Firebase 메시징 서비스를 `AndroidManifest.xml`에 추가해야 합니다. 닫기 애플리케이션 태그 앞에 를 추가합니다.
+1. 응용 프로그램 태그를 닫기 전에 `AndroidManifest.xml`에 Firebase 메시징 서비스를 추가하십시오.
 
    ```xml
    <meta-data
@@ -332,7 +328,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    </service>
    ```
 
-1. 다음과 같이 `MyFirebaseMessagingService` 파일에 Marketo SDK 메서드를 추가합니다.
+1. 다음과 같이 Marketo SDK 메서드를 `MyFirebaseMessagingService`에 추가합니다.
 
    ```java
    import com.marketo.Marketo;
@@ -357,7 +353,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    }
    ```
 
-   **참고** - Adobe 확장을 사용하는 경우 아래와 같이 추가하십시오.
+   **참고** - Adobe 확장을 사용하는 경우 다음 코드를 추가합니다.
 
    ```java
    import com.marketo.Marketo;
@@ -380,7 +376,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    }
    ```
 
-**참고**: FCM SDK은 필요한 받는 사람 기능과 모든 필요한 권한을 자동으로 추가합니다. 이전 버전의 SDK을 사용한 경우 앱의 매니페스트에서 다음 사용되지 않는(또는 메시지 중복을 일으킬 수 있으므로 해로울 수 있는) 요소를 제거해야 합니다
+**참고**: FCM SDK은 필요한 권한 및 받는 사람 기능을 자동으로 추가합니다. 이전 SDK 버전을 사용한 경우 메시지가 중복될 수 있는 다음 오래된 요소를 제거합니다.
 
 ```xml
 <receiver android:name="com.marketo.MarketoBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
@@ -398,7 +394,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 <service android:name="com.marketo.MarketoIntentService"/>
 ```
 
-1. Marketo 푸시 초기화 위의 구성을 저장한 후 Marketo 푸시 알림을 초기화해야 합니다. Application 클래스를 만들거나 열고 아래 코드를 복사하거나 붙여 넣습니다. Firebase 콘솔에서 발신자 ID를 가져올 수 있습니다.
+1. Marketo 푸시를 초기화합니다. 구성을 저장한 후 Application 클래스를 만들거나 열고 다음 코드를 추가합니다. Firebase 콘솔에서 발신자 ID를 가져옵니다.
 
    ```java
    Marketo marketoSdk = Marketo.getInstance(getApplicationContext());
@@ -407,7 +403,7 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    marketoSdk.initializeMarketoPush(SENDER_ID,"ChannelName");
    ```
 
-   [!DNL Adobe Launch] 확장을 사용하는 경우 다음 지침을 사용하십시오
+   [!DNL Adobe Launch] 확장을 사용하는 경우 다음 코드를 사용하십시오.
 
    ```java
    // Enable push notification here. The push notification channel name can by any string
@@ -422,15 +418,15 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
    marketoSdk.uninitializeMarketoPush();
    ```
 
-   [!DNL Adobe Launch] 확장을 사용하는 경우 아래 지침을 사용하십시오.
+   [!DNL Adobe Launch] 확장을 사용하는 경우 다음 코드를 사용하십시오.
 
    ```java
    ALMarketo.uninitializeMarketoPush();
    ```
 
-   참고: 푸시 토큰을 다시 등록하려면 3단계의 코드를 AppDelegate 메서드에 추출하고 ViewController 로그인 메서드에서 를 호출합니다.
+   참고: 푸시 토큰을 다시 등록하려면 3단계의 코드를 AppDelegate 메서드에 추출합니다. ViewController 로그인 메서드에서 해당 메서드를 호출합니다.
 
-1. 알림 아이콘 설정(선택 사항) 사용자 지정 알림 아이콘을 구성하려면 다음 메서드를 호출해야 합니다.
+1. 선택 사항: 알림 아이콘을 설정합니다. 다음 메서드를 호출하여 사용자 지정 알림 아이콘을 구성합니다.
 
    ```java
    MarketoConfig.Notification config = new MarketoConfig.Notification();
@@ -450,37 +446,35 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 ## 문제 해결
 
-모바일 푸시 메시지를 설정하려면 여러 단계와 개발자와 마케터의 조정이 필요합니다. 어려움을 겪고 있다면 간단히 확인할 수 있는 사항이 몇 가지 있다.
-
-간단한 내용이 올바른지 확인한 후에는 프로그래밍 세부 사항을 자세히 살펴볼 수 있습니다.
+모바일 푸시 메시지가 예상대로 작동하지 않는 경우 구현 세부 사항을 조사하기 전에 일반적인 구성 문제를 확인하십시오.
 
 ### 푸시 메시지가 표시되지 않음
 
-먼저, 핸드셋에서 푸시 메시지가 비활성화되어 있는지 확인합니다. 모바일 사용자는 특정 앱에 대한 메시지를 수신하는지 여부를 제어할 수 있습니다. 종종 개발자(및 마케터)는 개발 중 특정 시점에 이러한 메시지를 비활성화합니다. 따라서 먼저 수신자가 앱에 대한 푸시 메시지를 비활성화했는지 여부를 확인합니다.
+푸시 메시지가 장치에서 비활성화되어 있는지 확인합니다. 모바일 사용자는 각 앱에 대한 메시지를 수신하는지 여부를 제어할 수 있으며, 개발자나 마케터는 개발 중에 메시지를 비활성화할 수 있습니다.
 
-두 번째, 앱이 이미 열려 있고 장치에서 활성화되어 있습니까? 앱이 장치에서 활성 앱인 경우 모바일 푸시 메시지가 화면에 표시되지 않습니다. 대신 앱의 &quot;로컬 알림&quot; 영역에 표시됩니다.
+앱이 열려 있고 활성화되어 있는지 확인합니다. 앱이 활성 상태일 때 모바일 푸시 메시지가 화면에 표시되지 않습니다. 대신 앱의 &quot;로컬 알림&quot; 영역에 표시됩니다.
 
 ### Marketo에서 활동 로그 보기
 
-오류를 추적할 때 가장 먼저 확인할 수 있는 위치는 Marketo 활동 로그입니다. 활동 로그를 사용하여 메시지가 전송되었는지 확인할 수 있습니다.
+Marketo 활동 로그를 사용하여 메시지가 전송되었는지 확인합니다.
 
-활동 로그에서 메시지를 수신하기로 한 사용자에 대한 활동 레코드를 확인합니다. 메시지를 보낸 경우 활동 로그에 레코드가 표시됩니다. 그렇지 않은 경우 Marketo 내의 iOS 인증서 또는 Android API 키 구성으로 인해 문제가 발생할 수 있습니다.
+메시지를 수신해야 하는 사용자에 대한 활동 레코드를 검토합니다. 메시지가 전송된 경우 활동 로그에 레코드가 포함됩니다. 레코드가 없으면 Marketo에서 iOS 인증서 또는 Android API 키 구성을 확인하십시오.
 
 ### 인증서 또는 키가 잘못됨
 
-구성을 다시 확인하여 샌드박스 또는 프로덕션에 대해 적절한 인증서가 로드되었는지 확인하십시오. 경우에 따라 개발자가 인증서(iOS) 또는 키(Android)를 다시 내보낸 다음 Marketo으로 다시 로드하여 올바른지 확인하는 것이 좋습니다.
+샌드박스 또는 프로덕션에 대해 올바른 인증서가 로드되었는지 확인합니다. 필요한 경우 iOS 인증서 또는 Android 키를 다시 내보내고 Marketo에 다시 로드합니다.
 
 ### .p12 파일에 인증서 또는 키가 없습니다(iOS).
 
-인증서를 내보낼 때 키 _및_&#x200B;을(를) 인증서로 내보내야 합니다.
+인증서를 내보낼 때 키와 인증서를 모두 내보냅니다.
 
 ### 프로비전 프로필이 오래됨(iOS)
 
-새 장치를 추가할 때마다 프로비저닝 프로필을 업데이트하고 새 인증서를 생성해야 합니다. 그런 다음 Xcode 프로젝트가 올바른 프로필과 인증서를 가리키는지 확인하고 해당 인증서를 Marketo으로 가져옵니다.
+장치를 추가한 후 프로비저닝 프로필을 업데이트하고 새 인증서를 생성합니다. Xcode 프로젝트를 올바른 프로필과 인증서로 가리킨 다음 인증서를 Marketo으로 가져옵니다.
 
 ### iOS 인증서(IOS)를 업로드할 수 없음
 
-인증서를 내보내는 동안 사용된 암호에 공백이 포함되어 있지 않은지 확인하십시오.  예를 들어, 다음 대신
+인증서를 내보내는 데 사용되는 암호에 공백이 없는지 확인하십시오. 예를 들어, 다음 대신
 
 `Hello World 123`
 
@@ -490,11 +484,11 @@ func userNotificationCenter(_ center: UNUserNotificationCenter,
 
 ### iOS 인증서 문제 해결
 
-샌드박스 애플리케이션의 경우 &quot;개발자&quot; 또는 &quot;범용&quot; 인증서를 사용할 수 있습니다. 그러나 프로덕션 애플리케이션의 경우 유효한 &quot;배포&quot; 또는 &quot;범용&quot; 인증서를 업로드해야 합니다.
+샌드박스 애플리케이션의 경우 &quot;개발자&quot; 또는 &quot;범용&quot; 인증서를 사용합니다. 프로덕션 애플리케이션의 경우 유효한 &quot;배포&quot; 또는 &quot;범용&quot; 인증서를 업로드하십시오.
 
 ### 푸시 바운스 / 잘못된 토큰
 
-기존 등록 토큰은 다음을 포함한 여러 시나리오에서 유효하지 않을 수 있습니다.
+등록 토큰은 다음 시나리오에서 유효하지 않을 수 있습니다.
 
 - 클라이언트 앱이 GCM 등록을 취소하는 경우.
 - 클라이언트 앱이 자동으로 등록 취소된 경우, 이는 사용자가 애플리케이션을 제거할 때 발생할 수 있습니다. 예를 들어 iOS에서 APNS 피드백 서비스가 APNS 토큰을 유효하지 않은 것으로 보고한 경우

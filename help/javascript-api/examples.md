@@ -4,26 +4,23 @@ description: 제출 시 숨기거나 리디렉션하고, 필드를 설정하고 
 feature: Javascript
 exl-id: dc5f0cc5-ff5a-48b0-be36-52c10e56f798
 TQID: https://experienceleague.adobe.com/dH1yaglpL3odGZfGk-JC8oGljBF2gDpdjdg1BPE6OcQ
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: b0bb9048-d951-48d8-8232-45cf248a7e27
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: b0bb9048-d951-48d8-8232-45cf248a7e27
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 228
+source-wordcount: 234
 ht-degree: 0%
 
 ---
 
 # 예
 
-아래에는 일련의 데모 가능한 Forms 2.0 웹 양식 예제가 있습니다.
+이러한 예제에서는 일반적인 Forms 2.0 웹 양식 워크플로우를 보여 줍니다.
 
 ## 제출 후 양식 숨기기
 
-이 예제에서는 방문자를 후속 페이지로 이동하거나 현재 페이지를 다시 로드하지 않습니다.
+이 예제는 성공적으로 제출한 후 방문자를 현재 페이지에 유지합니다. 후속 페이지를 열거나 현재 페이지를 다시 로드하지 않습니다.
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form) {
@@ -39,7 +36,7 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form
 
 ## 방문자를 사용자 정의 URL로 이동
 
-이 예에서는 방문자를 구성된 감사 페이지가 아닌 제출 후 JavaScript에서 결정한 URL로 안내합니다.
+이 예에서는 제출 후 방문자를 JavaScript에 정의된 URL로 보냅니다. JavaScript URL은 구성된 감사 페이지를 대체합니다.
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form) {
@@ -66,7 +63,7 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form
 
 ## 양식 제출에서 양식 필드 값 읽기
 
-이 예제는 양식 제출의 양식 필드를 읽습니다.
+이 예제에서는 양식을 제출할 때 양식 필드 값을 읽습니다.
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form) {
@@ -84,7 +81,7 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function(form
 
 ## 양식이 아닌 클릭 이벤트에서 양식 제출
 
-이 예제에서는 양식에 속하지 않은 다른 요소나 이벤트의 클릭 이벤트를 기반으로 양식을 제출합니다.
+이 예에서는 방문자가 양식 외부에 있는 요소를 선택할 때 양식을 제출합니다.
 
 ```javascript
 // Load the form normally
@@ -102,7 +99,7 @@ btn.onclick = function() {
 
 ## 사용자가 양식을 전송하지 못하도록 방지
 
-이 예제에서 양식에 대한 제출 단추가 작동하려면 클릭 카운터 단추를 세 번 이상 클릭해야 합니다.
+이 예제에서 방문자는 적어도 폼 제출 단추가 작동하기 전에 클릭 카운터 단추를 세 번 선택해야 합니다.
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function (form) {
@@ -156,7 +153,7 @@ MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function (for
 
 ## 사용자 지정 오류 메시지 표시
 
-이 예는 사용자 정의 비즈니스 논리를 기반으로 한 제출 시 사용자 정의 오류 메시지를 보여줍니다.
+이 예에서는 제출 시 사용자 정의 비즈니스 논리를 적용하고 값이 필수 조건을 충족하지 않을 때 사용자 정의 오류 메시지를 표시합니다.
 
 ```javascript
 MktoForms2.loadForm("//app-ab00.marketo.com", "785-UHP-775", 1057, function (form) {
