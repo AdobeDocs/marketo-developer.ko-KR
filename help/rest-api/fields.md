@@ -4,9 +4,13 @@ feature: REST API, Field Management
 description: REST 및 SOAP 리드 필드 이름 지정, REST를 통한 목록 필드 리드 설명, 기능 매핑, sfdcId가 null인 이유 및 sfdcLeadId 또는 sfdcContactId를 사용하는 방법을 알아봅니다.
 exl-id: 9033f32a-c7cb-4bbf-abcf-38ca4112139f
 TQID: https://experienceleague.adobe.com/H2Bvhy-67U8JJ1V3JwYJ0O0vj4i11fwUCyYQtjxm8u0
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: b0bb9048-d951-48d8-8232-45cf248a7e27id: c5f60233-d5ea-4453-a799-0ad258b4d399
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: b0bb9048-d951-48d8-8232-45cf248a7e27
+  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
 source-wordcount: 194

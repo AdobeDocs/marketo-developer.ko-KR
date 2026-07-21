@@ -4,9 +4,12 @@ feature: Mobile Marketing
 description: Mobile SDK으로 Marketo In-App 메시지 설정, 사용자 지정 이벤트 트리거 구성, 탭 활동 추적 및 첫 번째 앱 열기 초기화 문제 해결.
 exl-id: 73c9f862-d154-4b37-94ce-92311aa756e8
 TQID: https://experienceleague.adobe.com/RVkEUBaFb-PHd0gE9ngzYc5zOojINwSI7ic2TmcU7-8
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2: id: c1579802-ddd4-4214-8a91-97b2066abe11
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: c1579802-ddd4-4214-8a91-97b2066abe11
 source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
 source-wordcount: 321

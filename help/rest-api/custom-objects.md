@@ -4,11 +4,19 @@ feature: REST API, Custom Objects
 description: 엔드포인트, 메타데이터, 관계, 필드 및 쿼리를 나열하고 설명하는 등 REST API를 통해 Marketo 사용자 지정 개체를 만들고 관리하는 방법에 대해 알아봅니다.
 exl-id: 88e8829b-f8f1-46d7-a753-5aa6e20e2c40
 TQID: https://experienceleague.adobe.com/NWm9CjFVqQdVDJRrnE4nA299-Lg53-JR7xvY-82dUqY
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2: id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45id: c5f60233-d5ea-4453-a799-0ad258b4d399id: d1d0a9cd-295d-4976-8c39-ddae266f240e
-subfeature_v2: id: ea4e3ff5-e7b9-4b4c-a5a0-dc27cc3f4275
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dcid: eddd9b14-83bd-4ff4-9072-54a4a484abb7
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2:
+  - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+  - id: d1d0a9cd-295d-4976-8c39-ddae266f240e
+subfeature_v2:
+  - id: ea4e3ff5-e7b9-4b4c-a5a0-dc27cc3f4275
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+  - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
 source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
 source-wordcount: 2938
@@ -962,7 +970,7 @@ POST /rest/v1/customobjects/schema/{apiName}/delete.json
 일대다 사용자 지정 개체 구조의 경우 링크 필드를 사용하여 사용자 지정 개체를 표준 리드 또는 회사 개체에 연결합니다. 다음 워크플로에서는 [자동차 소유자 예제](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-link-fields#AddMarketoCustomObjectLinkFields-CreateaLinkFieldforaOne-to-ManyStructure)를 사용하여 자동차 정보를 저장하고 리드에 연결하는 사용자 지정 개체를 만듭니다.
 
 1. **Car** 개체를 만듭니다.
-1. **Car** 개체에 필드 추가: **VIN**&#x200B;에서 중복 제거하고 **잠재 고객****/잠재 고객 ID**에 연결합니다.
+1. **Car** 개체에 필드 추가: **VIN**&#x200B;에서 중복 제거하고 **잠재 고객**&#x200B;**/잠재 고객 ID**&#x200B;에 연결합니다.
 1. **Car** 개체를 승인합니다.
 
 먼저, 차량별 정보가 포함된 사용자 지정 개체 유형을 만듭니다.
@@ -1072,7 +1080,7 @@ POST /rest/v1/customobjects/schema/course/approve.json
 1. **과정 ID**&#x200B;에서 **과정:** 중복 제거에 필드를 추가합니다.
 1. **과정**&#x200B;을(를) 승인합니다.
 1. **등록** 브리지 개체를 만듭니다.
-1. **등록:** **등록 ID**&#x200B;에 대한 중복 제거, **과정****/과정 ID** 필드에 대한 링크 및 **잠재 고객****/잠재 고객 ID**에 대한 링크를 추가하십시오.
+1. **등록:** **등록 ID**&#x200B;에 대한 중복 제거, **과정**&#x200B;**/과정 ID** 필드에 대한 링크 및 **잠재 고객**&#x200B;**/잠재 고객 ID**&#x200B;에 대한 링크를 추가하십시오.
 1. **등록**&#x200B;을 승인합니다.
 
 먼저 과정별 정보가 포함된 Edge 객체 유형을 작성합니다.

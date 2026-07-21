@@ -4,8 +4,10 @@ feature: REST API
 description: Marketo REST API 요청을 빌드하고, 기본 URL 경로 리소스 및 매개 변수를 이해하고, 고유한 기본 URL을 찾는 방법에 대해 알아봅니다.
 exl-id: 6c3f122c-3ace-4ed3-bed0-a6b89cedc99a
 TQID: https://experienceleague.adobe.com/NZisV6V-FMPi0RHpdaFrc1kZc3nb15YomwRgohaQmEE
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
 source-wordcount: 142

@@ -4,9 +4,12 @@ feature: Mobile Marketing
 description: HMAC 서명 생성, 서버 엔드포인트 설정, 장치 ID 사용 및 Marketo과 SDK의 예를 포함하는 iOS 모바일 Android용 고급 보안 액세스 모드에 대해 알아봅니다
 exl-id: bd4730ff-708b-465e-b494-485a4dbf67ff
 TQID: https://experienceleague.adobe.com/F6lH1aGbCakK-E6IU4wLwYw58BG2-CRE-Ras2bMHeO8
-product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2: id: d095671a-1355-40aa-8b5f-06c33c68080b
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2:
+  - id: d095671a-1355-40aa-8b5f-06c33c68080b
 source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
 source-wordcount: 217
