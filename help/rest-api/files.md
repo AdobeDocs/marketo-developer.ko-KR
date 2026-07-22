@@ -10,9 +10,9 @@ feature_v2:
   - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 347
+source-wordcount: 274
 ht-degree: 1%
 
 ---
@@ -21,11 +21,13 @@ ht-degree: 1%
 
 [파일 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Files)
 
-Marketo 구독을 통해 이미지, 스크립트, 문서 및 스타일 시트와 같은 임의의 파일을 저장할 수 있습니다. 이러한 모든 작업은 REST API를 통해 원격으로 작업할 수 있습니다. Marketo 구독에서 사용할 수 있는 스토리지는 대역폭 사용량이 많은 애플리케이션에 최적화되어 있지 않으므로 적절한 오디오 및 비디오 스트리밍 애플리케이션에 대체 요소를 사용해야 합니다.
+파일 REST API를 사용하여 Marketo 구독에 저장된 이미지, 스크립트, 문서, 스타일 시트 및 기타 파일을 관리합니다.
+
+Marketo 파일 스토리지는 대역폭 사용량이 많은 애플리케이션에 최적화되어 있지 않습니다. 오디오 및 비디오에 전용 스트리밍 서비스를 사용합니다.
 
 ## 쿼리
 
-파일 쿼리는 간단하며 [ID](https://developer.adobe.com/marketo-apis/api/asset#tag/Files/operation/getFileByIdUsingGET), [이름](https://developer.adobe.com/marketo-apis/api/asset#tag/Files/operation/getFileByNameUsingGET) 및 [검색](https://developer.adobe.com/marketo-apis/api/asset#tag/Files/operation/getFilesUsingGET)의 자산에 대한 표준 쿼리 형식을 따릅니다.
+쿼리 파일 [ID별](https://developer.adobe.com/marketo-apis/api/asset#tag/Files/operation/getFileByIdUsingGET), [이름별](https://developer.adobe.com/marketo-apis/api/asset#tag/Files/operation/getFileByNameUsingGET) 또는 [검색](https://developer.adobe.com/marketo-apis/api/asset#tag/Files/operation/getFilesUsingGET)입니다.
 
 ### ID별
 
@@ -94,11 +96,11 @@ GET /rest/asset/v1/file/byName.json?name=foo.png
 
 ### 찾아보기
 
-세 가지 선택적 매개 변수가 있습니다.
+찾아보기 끝점은 세 개의 선택적 매개 변수를 허용합니다.
 
-- folder - &quot;id&quot; 및 &quot;type&quot; 속성을 포함하는 JSON 블록으로 지정된 상위 폴더
-- offset - 항목 검색을 시작할 위치를 지정하는 정수(기본값은 0), maxReturn 매개 변수와 함께 사용할 수 있음
-- maxReturn - 반환할 최대 항목 수를 지정하는 정수(기본값은 20개, 최대값은 200개)
+- `folder` - `id` 및 `type` 특성을 포함하는 JSON 개체로서의 상위 폴더입니다.
+- `offset` - 항목 검색을 시작할 위치입니다. 기본값은 0입니다. `maxReturn`에 사용합니다.
+- `maxReturn` - 반환할 최대 항목 수입니다. 기본값은 20이고 최대값은 200입니다.
 
 ```http
 GET /rest/asset/v1/files.json?folder={"id":436, "type": "Folder"}&maxReturn=3
@@ -162,7 +164,9 @@ GET /rest/asset/v1/files.json?folder={"id":436, "type": "Folder"}&maxReturn=3
 
 ## 만들기 및 업데이트
 
-[다중 파트/양식 데이터 형식의 요청으로 &#x200B;](https://developer.adobe.com/marketo-apis/api/asset#tag/Files/operation/createFileUsingPOST)파일을 만듭니다. 최소한으로, 이름, 폴더 및 파일은 요청에 필요하며, 선택적 설명과 insertOnly 플래그는 만들기 호출이 같은 이름의 기존 파일을 업데이트하는 것을 방지합니다. file 매개 변수의 경우 name 매개 변수 외에 Content-Disposition 헤더에 &quot;filename&quot;이 필요합니다. 또한 파일에 대한 Content-Type 헤더를 전달해야 합니다. 이 헤더는 Marketo이 파일을 제공하는 데 사용할 MIME 유형입니다.
+`multipart/form-data` 요청을 사용하여 [파일을 만듭니다](https://developer.adobe.com/marketo-apis/api/asset#tag/Files/operation/createFileUsingPOST). `name`, `folder` 및 `file` 매개 변수가 필요합니다. `description` 및 `insertOnly` 매개 변수는 선택 사항입니다. true인 경우 `insertOnly`은(는) 요청에서 같은 이름의 기존 파일을 업데이트하지 못하도록 합니다.
+
+`file` 매개 변수의 경우 `Content-Disposition` 헤더에 `filename`을(를) 포함하십시오. 또한 파일의 `Content-Type` 헤더도 포함합니다. Marketo은 파일을 제공할 때 이 MIME 유형을 사용합니다.
 
 ```http
 POST /rest/asset/v1/files.json
@@ -215,7 +219,7 @@ This is a test file
 }
 ```
 
-[파일 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/File-Contents/operation/updateContentUsingPOST)는 해당 ID를 기반으로 할 수 있습니다. 유일한 매개변수는 생성과 동일한 요구 사항이 있는 파일 매개변수입니다.
+[파일을 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/File-Contents/operation/updateContentUsingPOST)하려면 해당 ID를 지정하십시오. `file` 매개 변수의 요구 사항이 파일 생성과 동일합니다.
 
 ```http
 POST /rest/asset/v1/file/{id}/content.json

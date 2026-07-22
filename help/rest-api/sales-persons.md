@@ -10,9 +10,9 @@ feature_v2:
   - id: c5f60233-d5ea-4453-a799-0ad258b4d399
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 396
+source-wordcount: 369
 ht-degree: 0%
 
 ---
@@ -21,19 +21,21 @@ ht-degree: 0%
 
 [영업 직원 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Sales-Persons)
 
-영업 담당자 API는 [SFDC 동기화](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync)가 활성화된 구독에 대한 읽기 전용 액세스입니다. 영업 사원은 가망 고객 레코드의 영업 담당자인 개인 레코드의 유형입니다. 각 잠재 고객 레코드에서 externalSalesPersonId 필드를 통해 잠재 고객 레코드와 연결됩니다. 잠재 고객이 채워진 externalSalesPersonId 필드로 영업 사원과 연결된 경우 Marketo의 해당 잠재 고객 레코드에 대해 해당 잠재 고객 소유자 조회 필드가 채워져 해당 필터 및 토큰을 사용할 수 있습니다.
+영업 담당자 API는 [SFDC 동기화](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync)가 활성화된 구독에 대해 읽기 전용 액세스를 제공합니다.
 
-영업 직원은 [잠재 고객 동기화](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/syncLeadUsingPOST) 끝점을 사용하고 externalSalesPersonId 특성을 전달하여 잠재 고객 레코드와 관련되어 있습니다.
+영업 사원은 잠재 고객 레코드의 영업 사원을 나타내는 개인 레코드입니다. 각 잠재 고객 레코드의 externalSalesPersonId 필드는 영업 담당자와 관련이 있습니다. 이 필드가 채워지면 Marketo이 리드 레코드에서 해당 리드 소유자 조회 필드를 채웁니다. 그런 다음 관련 필터 및 토큰을 사용할 수 있습니다.
 
-영업 사원은 [영업 기회 동기화](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/syncOpportunitiesUsingPOST) 끝점을 사용하고 externalSalesPersonId 특성을 전달하여 영업 기회 레코드에 연결됩니다.
+externalSalesPersonId 속성을 해당 끝점에 전달하여 영업 담당자를 다른 레코드와 연결합니다.
 
-영업 직원은 [회사 동기화](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/syncCompaniesUsingPOST) 끝점을 사용하고 externalSalesPersonId 특성을 전달하여 회사 레코드와 관련되어 있습니다.
+- 리드 레코드: [리드 동기화](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/syncLeadUsingPOST).
+- 영업 기회 레코드: [기회 동기화](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/syncOpportunitiesUsingPOST).
+- 회사 레코드: [회사 동기화](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/syncCompaniesUsingPOST).
 
 영업 사원 레코드는 API를 통해서만 편집할 수 있습니다.
 
 ## 설명
 
-영업 사원 레코드 설명은 리드 데이터베이스 객체에 대한 표준 패턴을 따릅니다.
+가망 고객 데이터베이스 객체에 대한 표준 패턴을 사용하여 영업사원 레코드를 설명합니다.
 
 ```http
 GET /rest/v1/salespersons/describe.json
@@ -102,11 +104,13 @@ GET /rest/v1/salespersons/describe.json
 }
 ```
 
-기본적으로 영업 직원의 `idField`은(는) &quot;id&quot;이고 `dedupeFields`은(는) &quot;externalSalesPersonId&quot;입니다.
+기본적으로 영업 담당자 `idField`은(는) &quot;id&quot;이고 `dedupeFields`은(는) &quot;externalSalesPersonId&quot;입니다.
 
 ## 쿼리
 
-단순 키에 표준 쿼리 패턴을 사용하는 영업 사원. 이 예에서는 externalSalesPersonId로 사용되는 사용자 이메일을 보여 줍니다. 기본적으로 쿼리는 반환된 레코드에 대해 채워지는 모든 필드를 반환합니다.
+단순 키에 대한 표준 쿼리 패턴을 사용하여 영업 개인을 쿼리합니다. 다음 예제에서는 사용자의 이메일을 externalSalesPersonId로 사용합니다.
+
+기본적으로 이 쿼리는 일치하는 레코드에 대해 채워진 모든 필드를 반환합니다.
 
 ```http
 GET /rest/v1/salespersons.json?filterType=dedupeFields&filterValues=david@test.com,sam@test.com
@@ -137,7 +141,7 @@ GET /rest/v1/salespersons.json?filterType=dedupeFields&filterValues=david@test.c
 
 ## 만들기 및 업데이트
 
-업데이트에 대한 패턴은 표준입니다.
+표준 갱신 패턴을 사용하여 영업 개인을 생성 또는 갱신합니다.
 
 ```http
 POST /rest/v1/salespersons.json
@@ -185,12 +189,12 @@ POST /rest/v1/salespersons.json
 
 ## 삭제
 
-삭제 패턴은 표준입니다.
+표준 삭제 패턴을 사용하여 영업 사원을 삭제합니다.
 
-&quot;사용 중&quot;인 경우 영업 사원의 삭제가 허용되지 않습니다. 이 경우 영업 사원은 생략됩니다. 예:
+&quot;사용 중&quot;인 영업 사원은 삭제할 수 없습니다. 다음과 같은 경우 영업 담당자를 건너뜁니다.
 
-- 영업 사원이 활성 가망 고객과 연관된 경우
-- 영업 사원이 삭제된 회사와 연결된 경우
+- 영업 사원은 활성 잠재 고객과 연관됩니다.
+- 영업 담당자는 삭제된 회사와 연결되어 있습니다.
 
 ```http
 POST /rest/v1/salespersons/delete.json
@@ -244,6 +248,6 @@ POST /rest/v1/salespersons/delete.json
 
 ## 시간 초과
 
-- 아래에 명시되지 않는 한 영업 담당자 엔드포인트는 30초입니다
-   - 영업 담당자 동기화: 60대
-   - 영업 직원 삭제: 60대
+- Sales Person 엔드포인트에는 별다른 언급이 없는 한 시간 제한이 30초입니다.
+- 동기화 영업 직원의 시간 제한은 60초입니다.
+- Sales Persons 삭제 의 시간 제한은 60초입니다.

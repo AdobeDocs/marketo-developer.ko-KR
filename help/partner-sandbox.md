@@ -9,24 +9,26 @@ feature_v2:
   - id: c5f60233-d5ea-4453-a799-0ad258b4d399
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 206
+source-wordcount: 132
 ht-degree: 0%
 
 ---
 
 # 파트너 샌드박스
 
-파트너 샌드박스는 소프트웨어 개발 라이프사이클 동안 파트너가 사용하는 Marketo Engage 인스턴스입니다. 파트너는 샌드박스를 사용하여 Marketo Engage UI의 안팎을 학습하고 Marketo Engage API 서비스에 대한 액세스 권한을 얻습니다.
+파트너 샌드박스는 파트너가 소프트웨어 개발 라이프사이클 동안 사용하는 Marketo Engage 인스턴스입니다. 파트너는 샌드박스를 사용하여 Marketo Engage UI를 살펴보고 Marketo Engage API 서비스에 액세스할 수 있습니다.
 
-파트너가 [Adobe Exchange 파트너 프로그램, Digital Experience](https://partners.adobe.com/technologyprogram/experiencecloud.html)에 수락된 후 샌드박스가 프로비저닝됩니다. 대부분의 경우 파트너 샌드박스는 기능적으로 프로덕션 인스턴스와 동일합니다. 파트너 샌드박스에는 추가 기능 모듈이 설치되어 있지 않으며 고정 용량 제한이 적용됩니다. 다음은 FAQ 와 파트너 샌드박스 기능에 대한 요약입니다.
+Adobe은 파트너가 [Adobe Exchange 파트너 프로그램, 디지털 경험](https://partners.adobe.com/technologyprogram/experiencecloud.html)에 수락되면 샌드박스를 프로비저닝합니다.
+
+대부분의 경우 파트너 샌드박스는 기능적으로 프로덕션 인스턴스와 동일합니다. 그러나 파트너 샌드박스는 추가 기능 모듈을 포함하지 않으며 고정 용량 제한이 있습니다.
 
 ## 기능 요약
 
-- 파트너당 하나의 샌드박스로 제한됩니다.
-- API 호출 수는 하루에 최대 50,000개로 제한됩니다.
-- 리드 데이터베이스의 레코드 수는 최대 10,000개로 제한됩니다.
-- 이메일 전송 수는 캠페인 실행당 최대 30개로 제한됩니다.
-- 사용자 지정 개체의 수는 최대 2개로 제한됩니다.
-- 사용자 수는 최대 25명으로 제한됩니다.
+- 샌드박스: 파트너당 하나
+- API 호출: 하루에 50,000회
+- 잠재 고객 데이터베이스 레코드: 10,000
+- 이메일 전송: 캠페인 실행당 30개
+- 사용자 지정 개체: 2개
+- 사용자: 25

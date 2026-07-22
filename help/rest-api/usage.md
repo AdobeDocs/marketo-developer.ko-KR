@@ -3,9 +3,9 @@ title: 사용량
 feature: REST API
 description: 사용자당 카운트 및 오류 코드 합계를 포함하여 일별 및 마지막 7일 통계 엔드포인트로 Marketo REST API 사용 및 오류를 모니터링합니다.
 exl-id: 935a00a4-1e1e-4b48-ae9c-72c5e578312a
-source-git-commit: e2606d6cb12c572603ff069617de58417e43ca63
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: '393'
+source-wordcount: '382'
 ht-degree: 8%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 8%
 
 [사용 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Usage)
 
-사용 API는 구독에 대한 REST API 사용 및 오류 활동에 대한 요약을 제공합니다. 이러한 엔드포인트는 통합을 모니터링하고, 일별 호출 볼륨을 추적하고, 시간 경과에 따른 오류 트렌드를 식별하는 데 유용합니다.
+사용 API는 구독에 대한 REST API 사용량 및 오류 활동을 요약합니다. 이러한 엔드포인트를 사용하여 통합을 모니터링하고, 일일 호출 볼륨을 추적하고, 오류 트렌드를 식별합니다.
 
 사용 데이터에는 총 API 호출 수 및 사용자별 분류가 포함됩니다. 오류 데이터에는 오류의 총 횟수와 오류 코드별 분류가 포함됩니다.
 
@@ -153,4 +153,4 @@ GET /rest/v1/stats/errors/last7days.json
 
 ## 참고
 
-각 API 사용자는 사용 응답에서 개별적으로 보고됩니다. 개별 API 사용자 간에 통합을 분할하면 할당량을 소모하고 오류가 발생하는 서비스를 보다 쉽게 식별할 수 있습니다.
+사용 응답은 각 API 사용자를 개별적으로 보고합니다. 통합을 별도의 API 사용자에게 할당하면 할당량을 소모하고 오류를 생성하는 서비스를 보다 쉽게 식별할 수 있습니다.

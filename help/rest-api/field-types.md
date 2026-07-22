@@ -16,16 +16,16 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 373
+source-wordcount: 371
 ht-degree: 8%
 
 ---
 
 # 필드 유형
 
-다음은 Marketo의 필드 유형에 대한 설명입니다. 필드 형식에 대한 추가 정보는 [여기](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/field-management/custom-field-type-glossary)에서 찾을 수 있습니다. 필드 형식 제한에 대한 추가 정보는 [여기](https://nation.marketo.com/t5/knowledgebase/marketo-field-limits-by-field-type/ta-p/251613)에서 찾을 수 있습니다.
+다음 표에서는 Marketo에서 사용할 수 있는 필드 유형을 설명합니다. 자세한 내용은 [사용자 지정 필드 유형 용어집](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/field-management/custom-field-type-glossary) 및 [필드 유형별 Marketo 필드 제한](https://nation.marketo.com/t5/knowledgebase/marketo-field-limits-by-field-type/ta-p/251613)을 참조하세요.
 
 | 필드 유형 | 설명 | 예 |
 | --- | --- | --- |

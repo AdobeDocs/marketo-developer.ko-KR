@@ -21,9 +21,9 @@ role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: b28708e92f44082eb247d9053d6ebf2306739b38
+source-git-commit: af0a3c77654f74d7cb5d2077518d764468a53ae0
 workflow-type: tm+mt
-source-wordcount: 2166
+source-wordcount: 1985
 ht-degree: 1%
 
 ---
@@ -34,27 +34,29 @@ ht-degree: 1%
 >
 > 이 기능은 제한적으로 사용할 수 있습니다. 액세스를 요청하려면 [이 양식](https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4Y-uSf63sAxCmWyqMJg8eMFUMVZSVExSNDA3T0I4SEcwRDFSVTBGWU01Uy4u&origin=QRCode){target="_blank"}을(를) 입력하십시오. 구독의 Munchkin ID를 준비해야 합니다.
 
-모델 컨텍스트 프로토콜(MCP)은 AI 도구가 외부 서비스와 통신할 수 있도록 하는 개방형 표준이다. [!DNL Marketo] MCP 서버는 AI 길잡이와 [!DNL Marketo] 사이의 다리 역할을 합니다. 양식, 프로그램, 스마트 캠페인, 리드, 이메일, 코드 조각, 목록 및 폴더에 100개 이상의 작업을 노출합니다.
+모델 컨텍스트 프로토콜(MCP)은 AI 도구를 외부 서비스에 연결하는 개방형 표준이다. [!DNL Marketo] MCP 서버가 AI 도우미를 [!DNL Marketo]에 연결합니다. 양식, 프로그램, 스마트 캠페인, 리드, 이메일, 코드 조각, 목록 및 폴더에 대해 100개 이상의 작업을 제공합니다.
 
-AI 도구가 MCP 서버를 호출하면 서버는 각 요청에서 제공한 자격 증명을 사용하여 사용자를 대신하여 해당 REST API 호출을 실행합니다. 서버측 소프트웨어를 설치, 배포 또는 실행할 필요가 없습니다.
+AI 도구가 MCP 서버를 호출하면 서버는 해당 요청의 자격 증명을 사용하여 해당 REST API 호출을 실행합니다. 서버측 소프트웨어를 설치, 배포 또는 실행할 필요가 없습니다.
 
 Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 대한 자세한 내용은 [데이터 정보](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/marketo-ai/data-information) 페이지를 참조하십시오.
 
 >[!IMPORTANT]
 >
->MCP(Model Context Protocol)는 새로운 오픈 소스 표준이며 보안 또는 신뢰성 위험을 제시할 수 있습니다. Adobe MCP 서버 통합 및 관련 설명서는 어떠한 종류의 보증도 없이 &quot;있는 그대로&quot; 제공됩니다.MCP 클라이언트 또는 서버를 Adobe 제품에 연결하는 것은 고객이 선택한 구성이며 고객은 MCP 통합의 보안 및 적합성을 평가할 책임이 있습니다. Adobe은 잘못된 구성, MCP 오용, 서드파티 구현의 취약점 또는 MCP 지원 워크플로우를 통해 수행된 의도하지 않은 작업으로 인해 발생하는 문제에 대해 책임을 지지 않습니다.위험을 줄이기 위해 Adobe에서는 생산적인 사용을 시작하기 전에 샌드박스 환경에서 통합을 테스트하고, 이를 확인하거나 의존하기 전에 모든 MCP에서 시작한 작업과 응답을 주의 깊게 검토하고 확인하는 것을 권장합니다.
+>MCP(Model Context Protocol)는 새로운 오픈 소스 표준이며 보안 또는 신뢰성 위험을 제시할 수 있습니다. Adobe MCP 서버 통합 및 관련 설명서는 어떠한 종류의 보증도 없이 &quot;있는 그대로&quot; 제공됩니다.
+>MCP 클라이언트 또는 서버를 Adobe 제품에 연결하는 것은 고객이 선택한 구성이며 고객은 MCP 통합의 보안 및 적합성을 평가할 책임이 있습니다. Adobe은 잘못된 구성, MCP 오용, 서드파티 구현의 취약점 또는 MCP 지원 워크플로우를 통해 수행된 의도하지 않은 작업으로 인해 발생하는 문제에 대해 책임을 지지 않습니다.
+>위험을 줄이기 위해 Adobe에서는 생산적인 사용을 시작하기 전에 샌드박스 환경에서 통합을 테스트하고, 확인하거나 의존하기 전에 모든 MCP에서 시작한 작업과 응답을 주의 깊게 검토하고 확인하는 것이 좋습니다.
 
 ## MCP 기본 사항
 
 >MCP를 AI 애플리케이션용 USB-C 포트와 같이 생각해 보십시오. USB-C는 장치를 다양한 주변 장치와 액세서리에 연결하는 표준화된 방법을 제공하며, MCP는 AI 모델을 데이터 소스 및 도구에 연결하는 표준화된 방법을 제공합니다. — [모델 컨텍스트 프로토콜](https://modelcontextprotocol.io/docs/getting-started/intro){target="_blank"}
 
-MCP는 AI 도구가 여러 외부 서비스에 동시에 연결할 수 있도록 한다. 예를 들어 AI 비서는 다음을 수행할 수 있습니다.
+MCP는 AI 도구가 여러 외부 서비스에 동시에 연결되도록 한다. 예를 들어 AI 비서는 다음을 수행할 수 있습니다.
 
 * AI 지원 문서 생성을 위해 워드 프로세서에 연결
 * 빌드 시각화를 위해 Blender와 같은 애니메이션 도구에 연결합니다
 * 비디오 편집을 위해 Adobe After Effects에 연결
 
-MCP는 통신 프로토콜로, 모든 애플리케이션이 AI 도구에 데이터와 작업을 노출하기 위해 구현할 수 있는 개방형 표준입니다.
+모든 애플리케이션은 AI 도구에 데이터와 작업을 노출하기 위해 MCP를 구현할 수 있습니다.
 
 ## [!DNL Marketo Engage] MCP가 수행하는 작업과 수행하지 않는 작업
 
@@ -108,7 +110,7 @@ MCP는 API 사용에 따라 잠재적으로 민감한 필드를 포함한 데이
 
 ## AI 도구 구성
 
-각 AI 도구에는 약간 다른 설정이 있습니다. 연결 예는 일반적인 도구에 대해 제공됩니다.
+구성은 AI 도구에 따라 다릅니다. 다음 섹션에서는 일반적인 도구에 대한 연결 예를 제공합니다.
 
 * [클라우드 데스크탑](#claude-desktop)
 * [커서](#cursor)
@@ -131,8 +133,8 @@ MCP는 API 사용에 따라 잠재적으로 민감한 필드를 포함한 데이
 * Node.js v18+
 * npm
 
-1. 클라우드 데스크톱 열기
-1. **설정 > 개발자 > 구성 편집으로 이동**
+1. 클라우드 데스크탑을 엽니다.
+1. **설정 > 개발자 > 구성 편집**(으)로 이동합니다.
 1. `claude_desktop_config.json`에 다음 추가:
 
 ```json
@@ -154,11 +156,12 @@ MCP는 API 사용에 따라 잠재적으로 민감한 필드를 포함한 데이
 }
 ```
 
-1. 클라우드 데스크톱 다시 시작
+1. 클라우드 데스크탑을 다시 시작합니다.
 
 ### 커서 {#cursor}
 
-커서 MCP 구성에 이미 다른 서버가 있는 경우 `mcpServers` 아래에 `marketo` 항목을 추가하십시오.다음 예제에서는 프로젝트 디렉터리의 **[!UICONTROL Settings]** > **[!UICONTROL MCP]** 또는 `.cursor/mcp.json`에 있는 전체 `mcpServers` 블록을 보여 줍니다.
+커서 MCP 구성에 이미 다른 서버가 있는 경우 `mcpServers` 아래에 `marketo` 항목을 추가하십시오.
+다음 예제에서는 프로젝트 디렉터리의 **[!UICONTROL Settings]** > **[!UICONTROL MCP]** 또는 `.cursor/mcp.json`에 있는 전체 `mcpServers` 블록을 보여줍니다.
 
 >[!BEGINTABS]
 
@@ -231,7 +234,7 @@ claude mcp add --transport http marketo \
 ### OpenAI 코드 {#codex}
 
 1. 설정 > MCP 서버 > 서버 추가 로 이동합니다.
-1. 서버 URL 추가: `https://marketo-mcp.adobe.io/mcp`
+1. 서버 URL `https://marketo-mcp.adobe.io/mcp`을(를) 추가합니다.
 1. 인증 방법에 대한 헤더를 추가합니다.
 
 >[!BEGINTABS]
@@ -249,7 +252,7 @@ claude mcp add --transport http marketo \
 
 >[!ENDTABS]
 
-1. 저장 을 클릭하여 프로세스를 완료합니다.
+1. 저장 을 선택하여 프로세스를 완료합니다.
 
 
 ### GitHub Copilot이 포함된 VS 코드 {#vscode}
@@ -311,7 +314,8 @@ Glean을 Marketo Engage MCP 서버에 연결하려면 [Glean 지원 팀](https:/
 
 ### 기타 도구 {#other-tools}
 
-Adobe은 [!DNL Marketo] MCP 서버를 호스팅하고 공개 URL에 노출합니다. 스트리밍 가능한 HTTP 전송을 통해 원격 서버를 지원하는 모든 MCP 클라이언트가 연결할 수 있습니다.도구별 브리지나 로컬에 설치된 소프트웨어는 필요하지 않습니다. 도구가 위에 나열되지 않으면 아래 연결 세부 정보를 사용하여 수동으로 구성하십시오.
+Adobe은 [!DNL Marketo] MCP 서버를 호스팅하고 공개 URL에 노출합니다. 스트리밍 가능한 HTTP 전송을 통해 원격 서버를 지원하는 모든 MCP 클라이언트가 연결할 수 있습니다.
+도구별 브리지나 로컬에 설치된 소프트웨어는 필요하지 않습니다. 도구가 위에 나열되지 않으면 아래 연결 세부 정보를 사용하여 수동으로 구성하십시오.
 
 **연결 세부 정보:**
 

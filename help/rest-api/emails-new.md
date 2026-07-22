@@ -3,9 +3,9 @@ title: 이메일
 feature: REST API
 description: Marketo Asset REST API를 사용하여 이메일 에셋에 대한 종속성을 쿼리, 생성, 업데이트, 복제, 삭제, 승인 및 검사할 수 있습니다.
 exl-id: b41a3ae5-2b25-4103-84b4-320fc2c44bd6
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: '497'
+source-wordcount: '492'
 ht-degree: 5%
 
 ---
@@ -32,7 +32,7 @@ x-app-type: <app-type>
 
 ## 쿼리
 
-자산 `id` 또는 필터 끝점을 사용하여 전자 메일 메타데이터를 검색할 수 있습니다.
+자산 `id` 또는 필터 끝점을 사용하여 전자 메일 메타데이터를 검색합니다.
 
 ### ID별
 
@@ -63,7 +63,7 @@ GET /rest/asset/v2/email/{id}
 
 ### 필터
 
-필터 끝점은 작업 영역 내에서 검색하고 추가 쿼리 매개 변수로 결과 범위를 좁힐 수 있습니다.
+필터 끝점은 작업 공간 내에서 검색하고 추가 쿼리 매개 변수를 지원합니다.
 
 `workspaceId`은(는) 필수입니다.
 

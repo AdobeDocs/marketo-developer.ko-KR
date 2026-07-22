@@ -12,9 +12,9 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 1294
+source-wordcount: 1026
 ht-degree: 2%
 
 ---
@@ -23,15 +23,15 @@ ht-degree: 2%
 
 [벌크 프로그램 멤버 추출 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Program-Members)
 
-REST API의 벌크 프로그램 멤버 추출 세트는 Marketo에서 큰 프로그램 멤버 레코드 세트를 검색할 수 있는 프로그래밍 인터페이스를 제공합니다. ETL, 데이터 웨어하우징 및 보관 목적으로 Marketo과 하나 이상의 외부 시스템 간에 데이터를 지속적으로 교환해야 하는 사용 사례에 권장되는 인터페이스입니다.
+벌크 프로그램 멤버 추출 REST API는 Marketo에서 큰 프로그램 멤버 레코드 집합을 검색합니다. Marketo과 외부 시스템, ETL, 데이터 웨어하우징 및 아카이빙 간의 지속적인 데이터 교환을 위해 이러한 API를 사용합니다.
 
 ## 권한
 
-벌크 프로그램 멤버 추출 API를 사용하려면 소유 API 사용자에게 읽기 전용 리드 또는 읽기-쓰기 리드 권한 중 하나 또는 둘 다를 가진 역할이 있어야 합니다.
+API 사용자는 읽기 전용 리드 권한, 읽기-쓰기 리드 권한 또는 둘 다 있는 역할이 있어야 합니다.
 
 ## 설명
 
-[프로그램 구성원 설명](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/describeProgramMemberUsingGET2)은(는) 필드를 사용할 수 있는지 여부와 해당 필드에 대한 메타데이터의 기본 원본입니다. `name` 특성에 REST API 이름이 포함되어 있습니다.
+[프로그램 구성원 설명](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/describeProgramMemberUsingGET2)을(를) 사용하여 사용 가능한 필드를 확인하고 해당 메타데이터를 검색하십시오. `name` 특성에 REST API 필드 이름이 포함되어 있습니다.
 
 ```http
 GET /rest/v1/programs/members/describe.json
@@ -222,7 +222,9 @@ GET /rest/v1/programs/members/describe.json
 
 ## 필터
 
-프로그램 멤버는 다양한 필터 옵션을 지원합니다. 작업에 대해 여러 필터 유형을 지정할 수 있으며, 이 경우 필터 유형은 함께 AND됩니다. `programId` 또는 `programIds` 필터를 지정해야 합니다. 다른 모든 필터는 선택 사항입니다. `updatedAt` 필터에는 아직 모든 구독으로 롤아웃되지 않은 추가 인프라 구성 요소가 필요합니다.
+프로그램 멤버 내보내기는 여러 필터 옵션을 지원합니다. 작업에서 여러 필터 유형을 지정하는 경우 API는 이러한 유형을 AND 작업과 결합합니다.
+
+모든 작업은 `programId` 또는 `programIds`을(를) 지정해야 합니다. 다른 모든 필터는 선택 사항입니다. `updatedAt` 필터에 일부 구독에서는 사용할 수 없는 인프라가 필요합니다.
 
 <table>
   <tbody>
@@ -249,7 +251,7 @@ GET /rest/v1/programs/members/describe.json
     <tr>
       <td>양육케이던스</td>
       <td>문자열</td>
-      <td>지정된 육성 케이던스에 대한 프로그램 멤버십 레코드를 필터링하는 데 사용되는 문자열을 허용합니다.허용되는 값은 다음과 같습니다.
+      <td>지정된 육성 케이던스에 대한 프로그램 멤버십 레코드를 필터링하는 데 사용되는 문자열을 허용합니다. 허용되는 값은 다음과 같습니다.
         <ul>
           <li>일시 중지 - 케이던스가 일시 중지됨</li>
           <li>표준 - 케이던스가 정상임</li>
@@ -258,7 +260,7 @@ GET /rest/v1/programs/members/describe.json
     <tr>
       <td>상태 이름</td>
       <td>Array[String]</td>
-      <td>프로그램 멤버 상태 이름의 배열을 허용합니다. 여러 상태 이름이 함께 OR됩니다.이 필터 유형의 작업은 프로그램 멤버 상태가 지정된 상태 이름과 일치하는 액세스 가능한 모든 레코드를 반환합니다. 기본 및 사용자 정의 상태 이름을 모두 사용할 수 있습니다.statusNames 필터를 'programIds' 필터와 함께 사용하면 각 프로그램에서 상태가 상태 이름과 일치하는 멤버십 레코드를 확인합니다. 프로그램에서 상태 이름을 찾을 수 없으면 "1003, Invalid Data" 오류가 반환됩니다.
+      <td>프로그램 멤버 상태 이름의 배열을 허용합니다. 여러 상태 이름이 함께 OR됩니다.이 필터 유형의 작업은 프로그램 멤버 상태가 지정된 상태 이름과 일치하는 액세스 가능한 모든 레코드를 반환합니다. 기본 및 사용자 정의 상태 이름을 모두 사용할 수 있습니다. statusNames 필터를 'programIds' 필터와 함께 사용하면 각 프로그램에서 상태 이름과 일치하는 멤버십 레코드를 확인합니다. 프로그램에서 상태 이름을 찾을 수 없으면 "1003, Invalid Data" 오류가 반환됩니다.
         <table>
           <tbody>
             <tr>
@@ -317,15 +319,15 @@ GET /rest/v1/programs/members/describe.json
   </tbody>
 </table>
 
-일부 구독에서는 필터 유형을 사용할 수 없습니다. 구독에 사용할 수 없는 경우 내보내기 프로그램 구성원 작업 만들기 끝점을 호출할 때 오류가 발생합니다(&quot;1035, 대상 구독에 대해 지원되지 않는 필터 유형&quot;). 고객은 Marketo 지원 센터에 문의하여 구독에서 이 기능을 활성화할 수 있습니다.
+일부 구독은 이 필터 유형을 지원하지 않습니다. 사용할 수 없는 경우 내보내기 프로그램 구성원 작업 만들기 끝점이 `1035, Unsupported filter type for target subscription`을(를) 반환합니다. 구독에 대해 이 기능을 요청하려면 Marketo 지원 센터에 문의하십시오.
 
 ## 옵션
 
-내보내기 프로그램 구성원 작업 만들기 끝점은 몇 가지 서식 옵션을 제공합니다. 이러한 옵션을 통해 사용자는 다음과 같은 작업을 수행할 수 있습니다.
+내보내기 프로그램 멤버 작업 만들기 엔드포인트는 다음을 위한 옵션을 제공합니다.
 
-- 내보낸 파일에 포함할 필드 지정
-- 이 필드의 열 헤더 이름 바꾸기
-- 내보낸 파일의 형식 지정
+- 내보내기 파일에 포함할 필드를 지정합니다.
+- 내보낸 열 헤더의 이름을 변경합니다.
+- 내보내기 파일 형식을 지정합니다.
 
 | 매개변수 | 데이터 유형 | 필수 | 참고 |
 | --- | --- | --- | --- |
@@ -335,7 +337,7 @@ GET /rest/v1/programs/members/describe.json
 
 ## 작업 생성
 
-[내보내기 프로그램 구성원 작업 만들기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Program-Members/operation/createExportProgramMembersUsingPOST) 끝점을 사용하여 내보내기를 시작하기 전에 작업에 대한 매개 변수를 정의합니다. 프로그램 ID가 포함된 `filter`과(와) 내보내기에 필요한 `fields`을(를) 정의해야 합니다. 필요한 경우 파일의 `format` 및 `columnHeaderNames`을(를) 정의할 수 있습니다.
+[내보내기 프로그램 구성원 작업 만들기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Program-Members/operation/createExportProgramMembersUsingPOST) 끝점을 사용하여 내보내기 작업을 정의합니다. 내보낼 프로그램 ID와 `fields`이(가) 포함된 `filter`을(를) 지정하십시오. `format` 및 `columnHeaderNames`을(를) 지정할 수도 있습니다.
 
 ```http
 POST /bulk/v1/program/members/export/create.json
@@ -379,7 +381,7 @@ POST /bulk/v1/program/members/export/create.json
 }
 ```
 
-작업이 생성되었음을 나타내는 상태 응답이 반환됩니다. 작업이 정의되고 생성되었지만 아직 시작되지 않았습니다. 이렇게 하려면 만들기 상태 응답의 `exportId`을(를) 사용하여 [Enqueue 내보내기 프로그램 구성원 작업](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Program-Members/operation/enqueueExportProgramMembersUsingPOST) 끝점을 호출해야 합니다.
+응답은 작업이 생성되었음을 확인하지만 내보내기가 자동으로 시작되지 않습니다. 반환된 `exportId`을(를) [Enqueue 내보내기 프로그램 구성원 작업](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Program-Members/operation/enqueueExportProgramMembersUsingPOST) 끝점에 전달하여 작업을 시작합니다.
 
 ```http
 POST /bulk/v1/program/members/export/{exportId}/enqueue.json
@@ -401,13 +403,15 @@ POST /bulk/v1/program/members/export/{exportId}/enqueue.json
 }
 ```
 
-이 옵션은 &quot;큐에 있음&quot;의 초기 `status`(으)로 응답하며, 그 후에는 사용 가능한 내보내기 슬롯이 있는 경우 &quot;처리 중&quot;으로 설정됩니다.
+대기열에 넣기 응답이 처음에 `Queued` 상태를 반환합니다. 내보내기 슬롯을 사용할 수 있게 되면 상태가 `Processing`(으)로 변경됩니다.
 
 ## 폴링 작업 상태
 
-참고: 동일한 API 사용자가 만든 작업에 대해서만 상태를 검색할 수 있습니다.
+동일한 API 사용자가 만든 작업에 대해서만 상태를 검색할 수 있습니다.
 
-비동기 끝점이므로 작업을 만든 후 상태를 폴링하여 진행률을 확인해야 합니다. [내보내기 프로그램 구성원 작업 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/getExportLeadsStatusUsingGET) 끝점을 사용하여 폴링합니다. 상태는 60초마다 한 번만 업데이트되므로 이보다 낮은 폴링 빈도는 권장되지 않으며 거의 모든 경우에 여전히 과도합니다. 상태 필드는 생성됨, 대기 중, 처리 중, 취소됨, 완료됨, 실패 중 하나로 응답할 수 있습니다.
+내보내기가 비동기적으로 실행되므로 [내보내기 프로그램 구성원 작업 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/getExportLeadsStatusUsingGET) 끝점을 사용하여 진행 상황을 폴링하십시오. 상태는 60초마다 한 번만 업데이트되므로 더 자주 폴링하지 않습니다.
+
+상태는 `Created`, `Queued`, `Processing`, `Canceled`, `Completed` 또는 `Failed`일 수 있습니다.
 
 ```http
 GET /bulk/v1/program/members/export/{exportId}/status.json
@@ -430,7 +434,7 @@ GET /bulk/v1/program/members/export/{exportId}/status.json
 }
 ```
 
-상태 끝점은 작업이 아직 처리 중이므로 파일을 검색할 수 없다는 것을 나타냅니다. `status` 작업이 &quot;완료됨&quot;으로 변경되면 다운로드할 수 있습니다.
+이 응답은 작업이 아직 처리 중이므로 파일을 사용할 수 없음을 보여줍니다. 작업 상태가 `Completed`(으)로 변경되면 파일을 다운로드할 준비가 되었습니다.
 
 ```json
 {
@@ -455,9 +459,9 @@ GET /bulk/v1/program/members/export/{exportId}/status.json
 
 ## 데이터 검색 중
 
-완료된 프로그램 구성원 내보내기의 파일을 검색하려면 `exportId`(으)로 [프로그램 구성원 파일 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Program-Members/operation/getExportProgramMembersFileUsingGET) 끝점을 호출하면 됩니다.
+완료된 프로그램 구성원 내보내기를 검색하려면 `exportId`을(를) [내보내기 프로그램 구성원 파일 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Program-Members/operation/getExportProgramMembersFileUsingGET) 끝점에 전달하십시오.
 
-응답에는 작업이 구성된 방식으로 포맷된 파일이 포함됩니다. 끝점이 파일의 내용에 응답합니다. 요청한 프로그램 구성원 필드가 비어 있으면(데이터 없음) `null`이(가) 내보내기 파일의 해당 필드에 배치됩니다.
+끝점이 작업에 대해 구성된 형식으로 파일을 반환합니다. 요청한 프로그램 멤버 필드에 데이터가 없으면 해당 내보내기 필드에 `null`이(가) 포함됩니다.
 
 ```http
 GET /bulk/v1/program/members/export/{exportId}/file.json
@@ -479,11 +483,11 @@ Jory,Cassel,jcas@housestark.com,2020-01-08T18:10:26Z,PMCF Program,On List,1799,f
 Septa,Mordane,smor@housestark.com,2020-01-08T18:10:26Z,PMCF Program,On List,1800,false,Lead01_Value,Lead02_Value,PM01_Value,PM02_Value
 ```
 
-추출된 데이터의 부분 검색 및 재시작 친화성을 지원하기 위해 파일 엔드포인트는 선택적으로 바이트 유형의 HTTP 헤더 범위를 지원합니다. 헤더가 설정되지 않은 경우 전체 콘텐츠가 반환됩니다. Marketo [일괄 추출](bulk-extract.md)에서 범위 헤더 사용에 대한 자세한 내용을 읽을 수 있습니다.
+부분 검색 또는 다시 시작 가능한 검색의 경우 파일 끝점은 범위 유형이 `bytes`인 선택적 HTTP `Range` 헤더를 지원합니다. 헤더를 설정하지 않으면 끝점이 전체 파일을 반환합니다. 자세한 내용은 [일괄 추출](bulk-extract.md)을 참조하세요.
 
 ## 작업 취소
 
-작업이 잘못 구성되었거나 불필요하게 된 경우 [프로그램 구성원 작업 내보내기 취소](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Program-Members/operation/cancelExportProgramMembersUsingPOST) 끝점을 사용하여 작업을 쉽게 취소할 수 있습니다.
+잘못 구성되었거나 더 이상 필요하지 않은 작업을 취소하려면 [프로그램 구성원 내보내기 작업 취소](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Program-Members/operation/cancelExportProgramMembersUsingPOST) 끝점을 호출하십시오.
 
 ```http
 POST /bulk/v1/program/members/export/{exportId}/cancel.json
@@ -504,4 +508,4 @@ POST /bulk/v1/program/members/export/{exportId}/cancel.json
 }
 ```
 
-작업이 취소되었음을 나타내는 `status`에 응답합니다.
+응답 상태는 작업이 취소되었음을 나타냅니다.

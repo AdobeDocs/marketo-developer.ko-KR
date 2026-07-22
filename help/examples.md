@@ -10,20 +10,20 @@ feature_v2:
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 67
+source-wordcount: 69
 ht-degree: 7%
 
 ---
 
 # 예
 
-아래에서 데모용 이메일 스크립팅 예제를 확인할 수 있습니다.
+다음 예제에서는 일반적인 이메일 스크립팅 패턴을 보여 줍니다.
 
 ## 이벤트 목록
 
-이 예제에서는 가상의 이벤트 사용자 지정 개체를 사용합니다.
+이 예제에서는 가상의 Event 사용자 지정 개체를 사용하여 정렬과 필터링을 보여 줍니다.
 
 ```html
 ##declare an $EventsThisYear variable

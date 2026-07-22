@@ -14,16 +14,16 @@ topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
   - id: c1579802-ddd4-4214-8a91-97b2066abe11
   - id: d095671a-1355-40aa-8b5f-06c33c68080b
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 336
-ht-degree: 1%
+source-wordcount: 259
+ht-degree: 2%
 
 ---
 
 # 사용자 지정 작업
 
-사용자 지정 작업을 전송하여 사용자 상호 작용을 추적할 수 있습니다. 모바일 앱이 Marketo SDK을 호출하여 사용자 지정 작업을 전송하면 사용자 지정 작업이 처음에 장치에 저장됩니다. 그런 다음 Marketo SDK은 사용자 지정 작업을 보내기 전에 적절한 인터넷 연결이 있는지 확인합니다. 따라서 사용자 지정 작업을 보낸 시간과 Marketo에서 받은 시간 사이에 지연이 있을 수 있습니다.
+사용자 지정 작업은 모바일 앱에서 사용자 상호 작용을 추적합니다. 앱이 Marketo SDK을 호출하여 사용자 지정 작업을 전송하면 SDK이 먼저 작업을 장치에 저장합니다. SDK에서 적절한 인터넷 연결을 감지하면 작업을 보내므로 Marketo에서 지연 후 작업을 받을 수 있습니다.
 
 사용자 지정 작업은 스마트 캠페인에서 트리거 및 필터로 사용할 수 있습니다. 자세한 내용은 [모바일 앱 활동](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/flow-actions/triggers-and-filters-for-mobile-smart-campaigns)을 참조하세요.
 
@@ -78,7 +78,7 @@ sharedInstance.reportAction("Bought Shirt", withMetaData:meta);
 
 >[!ENDTABS]
 
-모든 작업을 즉시 보고합니다(저장된 모든 작업 보내기).
+저장된 모든 작업을 즉시 보고합니다.
 
 >[!BEGINTABS]
 
@@ -116,7 +116,7 @@ sharedInstance.reportAll();
    Marketo.reportAction("Bought Shirt", meta);
    ```
 
-1. 모든 사용자 지정 작업을 즉시 보고합니다(저장된 모든 작업 보내기).
+1. 저장된 모든 사용자 지정 작업을 즉시 보고합니다.
 
    ```
    Marketo.reportAll();
@@ -124,6 +124,8 @@ sharedInstance.reportAll();
 
 ## 사용자 정의 액션 문제 해결
 
-모바일 사용자 지정 작업을 설정하는 것은 간단하지만, 모바일 SDK에서 Marketo으로 보낼 수 있는 문자 수에 대한 제한 사항이 있습니다. 모바일 SDK을 통해 Marketo으로 다시 보고하는 모든 사용자 지정 작업의 길이가 20자 미만인지 확인하십시오.
+모바일 SDK에서 Marketo으로 전송되는 사용자 지정 작업 이름은 20자 미만이어야 합니다.
 
-**공유 장치의 다중 사용자 사용 사례에 대한 참고 사항:** 사용자가 Marketo SDK과 통합된 모바일 앱에 로그인할 때 리드를 앱 설치와 연결하기 위해 첫 번째 호출이 수행됩니다. 이 호출이 성공적으로 완료되면 잠재 고객의 활동 로그에서 앱의 추가 사용자 활동을 볼 수 있습니다. 참고: 이 호출은 비동기 호출이므로 로그인 후 즉시 기록된 사용자 지정 작업이 있으면 연결 호출이 성공할 때까지 이전에 로그인한 사용자와 연결될 수 있습니다.
+**공유 장치의 다중 사용자 사용 사례:** 사용자가 Marketo SDK을 사용하는 모바일 앱에 로그인하면 첫 번째 호출이 리드를 앱 설치와 연결합니다. 호출이 성공하면 후속 사용자 활동이 잠재 고객의 활동 로그에 표시됩니다.
+
+연결 호출은 비동기적입니다. 로그인 후 즉시 기록된 사용자 지정 작업은 호출이 성공할 때까지 이전에 로그인한 사용자와 연결될 수 있습니다.

@@ -8,7 +8,7 @@ product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
 source-wordcount: 44
 ht-degree: 9%
@@ -17,4 +17,4 @@ ht-degree: 9%
 
 # 예측 콘텐츠
 
-예측 콘텐츠 JavaScript API는 플랫폼의 예측 콘텐츠를 확장합니다. [리치 미디어 권장 사항](rich-media-recommendation.md)을 통해 웹 페이지를 동적으로 사용자 지정할 수 있습니다.
+Predictive Content JavaScript API는 [리치 미디어 권장 사항](rich-media-recommendation.md)을 통해 웹 페이지를 동적으로 사용자 지정합니다. API를 사용하여 플랫폼의 예측 콘텐츠 기능을 확장합니다.

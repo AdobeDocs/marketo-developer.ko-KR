@@ -8,23 +8,23 @@ product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 103
+source-wordcount: 116
 ht-degree: 1%
 
 ---
 
 # 사용자 프로필
 
-사용자 프로필을 만드는 방법
+iOS 또는 Android용 Marketo Mobile SDK을 사용하여 사용자 프로필을 만들거나 업데이트합니다.
 
 1. [iOS에서 사용자 프로필 만들기](#ios_user_profiles)
 1. [Android에서 사용자 프로필 만들기](#android_user_profiles)
 
 ## iOS에서 사용자 프로필 만들기 {#ios_user_profiles}
 
-아래와 같이 사용자 필드를 전송하여 리치 프로필을 만들 수 있습니다.
+프로필을 만들고 해당 사용자 필드를 채웁니다.
 
 ```objectivec
 MarketoLead *profile = [[MarketoLead alloc] init];
@@ -70,7 +70,7 @@ profile.setLinkedInId("linkedinid")
 profile.setTwitterId("twitterid")
 ```
 
-[표준 필드](../rest-api/list-of-standard-fields.md)를 더 추가합니다.
+다른 [표준 필드](../rest-api/list-of-standard-fields.md)을(를) 추가합니다.
 
 >[!BEGINTABS]
 
@@ -94,7 +94,7 @@ profile.setFieldName("phone", withValue:"123.456.7890");
 
 >[!ENDTABS]
 
-보고서 사용자 프로필.
+사용자 프로필을 보고하여 만들거나 업데이트합니다.
 
 >[!BEGINTABS]
 
@@ -122,7 +122,7 @@ marketo.associateLead(profile)
 
 1. 사용자 프로필을 만듭니다.
 
-   아래와 같이 사용자 필드를 전송하여 리치 프로필을 만들 수 있습니다.
+   프로필을 만들고 해당 사용자 필드를 채웁니다.
 
    ```java
    MarketoLead profile = new MarketoLead();
@@ -140,7 +140,7 @@ marketo.associateLead(profile)
    }
    ```
 
-1. [표준 필드](../rest-api/list-of-standard-fields.md)를 더 추가합니다.
+1. 다른 [표준 필드](../rest-api/list-of-standard-fields.md)을(를) 추가합니다.
 
    ```java
    // Add other custom fields
@@ -157,7 +157,7 @@ marketo.associateLead(profile)
    profile.setCustomField("linkedInDisplayName", "Android");
    ```
 
-1. 보고서 사용자 프로필.
+1. 사용자 프로필을 보고하여 만들거나 업데이트합니다.
 
    ```java
    MarketoLead profile = new MarketoLead();

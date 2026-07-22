@@ -15,21 +15,21 @@ role_v2:
 topic_v2:
   - id: b5ce8718-c3af-4fdb-a1a9-fca32f83a87c
   - id: e0eb8757-182f-49f3-94a4-1587d16f5094
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 223
+source-wordcount: 214
 ht-degree: 4%
 
 ---
 
 # 방문자 데이터 가져오기
 
-이 방법은 실시간 방문자 식별 데이터를 가져오는 데 사용됩니다.
+이 방법을 사용하여 방문자 식별 데이터를 실시간으로 가져옵니다.
 
-- User Context API를 사용하기 전에 웹 Personalization 고객이 되어 있고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
+- User Context API를 사용하기 전에 웹 Personalization 고객이고 사이트에 [RTP 태그가 배포](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/web-personalization/rtp-tag-implementation/deploy-the-rtp-javascript)되어 있어야 합니다.
 - RTP는 계정 기반 마케팅 명명된 계정 목록을 지원하지 않습니다. ABM 목록 및 코드는 RTP 내에서 관리되는 업로드된 계정 목록(CSV 파일)에만 해당됩니다.
 
-오류가 발생하면 응답 JSON의 일부로 오류 메시지가 표시됩니다. 500 코드가 반환되면 지원 센터에 문의 하여 요청을 접수합니다.
+오류가 발생하면 응답 JSON에 오류 메시지가 포함됩니다. API에서 500 코드를 반환하는 경우 지원팀에 문의하고 오류를 발생시킨 요청을 제공합니다.
 
 | 매개변수 | 선택 사항/필수 | 유형 | 설명 |
 | --- | --- | --- | --- |
@@ -39,7 +39,7 @@ ht-degree: 4%
 
 ## 예
 
-방문자 식별 데이터 가져오기:
+다음 예제에서는 방문자 식별 데이터를 가져옵니다.
 
 ```javascript
 function callbackFunction() {
@@ -50,7 +50,7 @@ rtp('get', 'visitor', callbackFunction);
 
 세그먼트 일치가 있는 응답:
 
-다음은 방문자가 방문자 데이터 가져오기 API 호출 전에 실시간 세그먼트와 일치하는 경우 반환되는 예제 응답입니다.
+방문자가 방문자 데이터 가져오기 API 호출 전에 실시간 세그먼트와 일치하므로 다음 응답에는 `matchedSegments`이(가) 포함됩니다.
 
 ```json
 {
@@ -88,7 +88,7 @@ rtp('get', 'visitor', callbackFunction);
 
 세그먼트 일치가 없는 응답:
 
-다음은 방문자가 방문자 데이터 가져오기 API 호출 전에 실시간 세그먼트와 일치하지 않는 경우 반환되는 예제 응답입니다.
+방문자가 방문자 데이터 가져오기 API 호출 전에 실시간 세그먼트와 일치하지 않으므로 다음 응답에는 `matchedSegments`이(가) 포함되지 않습니다.
 
 ```json
 {

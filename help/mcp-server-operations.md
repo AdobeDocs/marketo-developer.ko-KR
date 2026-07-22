@@ -12,9 +12,9 @@ feature_v2:
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: 1a8728ec05e15bef1271274248ce9fc25b14c768
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 264
+source-wordcount: 260
 ht-degree: 3%
 
 ---
@@ -22,7 +22,7 @@ ht-degree: 3%
 
 # [!DNL Marketo Engage] MCP 작업
 
-[!DNL Marketo Engage] MCP 서버를 통해 다음 작업을 사용할 수 있습니다. 일반적으로 읽기 전용 또는 비파괴인 끝점을 사용할 수 있습니다. AI 시스템에서 `Delete` 또는 다른 파괴적인 작업을 사용할 수 없습니다.
+[!DNL Marketo Engage] MCP 서버를 통해 다음 작업을 사용할 수 있습니다. 일반적으로 서버는 읽기 전용 또는 비파괴인 엔드포인트를 제공합니다. AI 시스템은 `Delete` 또는 다른 파괴적 작업을 사용할 수 없습니다.
 
 >[!NOTE]
 >

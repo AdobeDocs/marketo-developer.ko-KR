@@ -3,9 +3,9 @@ title: 이메일 템플릿
 feature: REST API
 description: Marketo Asset REST API를 사용하여 이메일 템플릿에 대한 종속성을 쿼리, 생성, 업데이트, 복제, 삭제, 승인 및 검사할 수 있습니다.
 exl-id: 50bb0047-d6ea-4c94-a900-18c37b17a147
-source-git-commit: 59684e1c5a8082ad12f1e4bfc854c0d2dde35d2a
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: '292'
+source-wordcount: '307'
 ht-degree: 9%
 
 ---
@@ -63,9 +63,18 @@ GET /rest/asset/v2/emailtemplate/{id}
 
 ### 필터
 
-필터 끝점은 작업 영역 내에서 검색하고 추가 쿼리 매개 변수로 결과 범위를 좁힐 수 있습니다. `workspaceId`은(는) 필수입니다.
+필터 끝점은 작업 영역 내에서 검색합니다. `workspaceId` 매개 변수는 필수입니다.
 
-지원되는 필터에는 `folderId`, 반복된 `folderIds`, 반복된 `status`, `pageIndex`, `pageSize`, `createdBy`, `createdAtStart`, `createdAtEnd`, `modifiedBy`, `modifiedAtStart`, `modifiedAtEnd`, `name`, `sortKey`, `sortOrder`, `isCreatedByMe`, `isModifiedByMe`, `scriptEngine`, `isValueNonNullable` 및 `includeArchived`이 포함됩니다.
+이러한 선택적 매개 변수를 사용하여 결과의 범위를 좁히거나 구성합니다.
+
+- 폴더: `folderId` 또는 `folderIds` 반복
+- 상태: `status` 반복
+- 페이지 매김: `pageIndex` 및 `pageSize`
+- 생성: `createdBy`, `createdAtStart`, `createdAtEnd` 및 `isCreatedByMe`
+- 수정: `modifiedBy`, `modifiedAtStart`, `modifiedAtEnd` 및 `isModifiedByMe`
+- 템플릿 속성: `name`, `scriptEngine` 및 `isValueNonNullable`
+- 정렬: `sortKey` 및 `sortOrder`
+- 보관된 콘텐츠: `includeArchived`
 
 #### 요청
 

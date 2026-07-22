@@ -10,16 +10,18 @@ feature_v2:
   - id: b0bb9048-d951-48d8-8232-45cf248a7e27
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 1352
+source-wordcount: 1337
 ht-degree: 1%
 
 ---
 
 # Forms API 참조
 
-Forms 2.0 API를 사용하여 상호 작용할 두 개의 기본 개체가 있습니다. `MktoForms2` 개체와 `Form` 개체. `MktoForms2` 개체는 Forms2 기능에 대해 공개적으로 표시되는 최상위 네임스페이스이며, Form 개체를 만들고, 로드하고, 가져오는 함수를 포함합니다.
+Forms 2.0 API는 두 개의 기본 개체(`MktoForms2` 및 `Form`)를 제공합니다.
+
+`MktoForms2`은(는) Forms2 기능을 위한 최상위 공용 네임스페이스입니다. 여기에는 `Form`개의 개체를 만들고, 로드하고, 검색하는 함수가 포함되어 있습니다.
 
 ## MktoForms2 메서드
 

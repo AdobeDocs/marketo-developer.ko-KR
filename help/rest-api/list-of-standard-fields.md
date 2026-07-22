@@ -11,18 +11,18 @@ feature_v2:
   - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 742
+source-wordcount: 745
 ht-degree: 16%
 
 ---
 
 # 표준 필드
 
-다음은 API를 통해 액세스할 수 있는 Marketo에서 사용할 수 있는 표준 필드 목록입니다.
+다음 표에는 API를 통해 사용할 수 있는 표준 Marketo 필드가 나와 있습니다. 여기에는 각 필드의 REST API 이름, SOAP API 이름, 레이블 및 설명이 포함됩니다.
 
-REST [리드 설명](https://developer.adobe.com/marketo-apis/api/mapi) 끝점을 사용하여 리드 레코드에서 사용할 수 있는 지원되는 모든 필드 이름 목록을 검색할 수 있습니다.
+REST [리드 설명](https://developer.adobe.com/marketo-apis/api/mapi) 끝점을 사용하여 리드 레코드에서 지원하는 모든 필드 이름을 검색합니다.
 
 | REST API 이름 | SOAP API 이름 | 알기 쉬운 레이블 | 설명 |
 | --- | --- | --- | --- |

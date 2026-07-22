@@ -8,10 +8,10 @@ product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 00118a89f25a23b931fac671130932bb0e0e4e4e
+source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: 151
-ht-degree: 2%
+source-wordcount: 117
+ht-degree: 3%
 
 ---
 
@@ -19,11 +19,13 @@ ht-degree: 2%
 
 [채널 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Channels)
 
-채널은 모든 프로그램 유형에 대한 표준 및 필수 필드입니다. 각 채널 유형은 지정된 `applicableProgramType`에서만 사용할 수 있으며 각 프로그램의 프로그램 구성원에 대해 유효한 사용 가능한 프로그램 상태 목록을 제공합니다. 프로그램을 만든 후 채널의 프로그램 상태가 변경되면 리드를 변경할 수 있는 프로그램 상태 목록이 해당 시점에 채널이 제공한 목록과 일치하지만 기존 프로그램 멤버십 레코드에 대한 프로그램 상태는 소급하여 변경되지 않습니다.
+채널은 모든 프로그램 유형에 필요한 필드입니다. 채널은 지정된 `applicableProgramType`(으)로만 사용할 수 있습니다. 또한 채널은 프로그램 구성원이 사용할 수 있는 프로그램 상태를 정의합니다.
+
+프로그램을 만든 후 채널의 상태를 변경하면 프로그램은 향후 상태 변경을 위해 업데이트된 목록을 사용합니다. 기존 프로그램 멤버십 레코드는 현재 상태를 유지합니다.
 
 ## 쿼리
 
-채널은 표준 자산으로 쿼리할 수 있지만 ID로 채널을 검색할 끝점은 없습니다.
+채널을 표준 자산으로 쿼리합니다. API는 ID로 채널을 검색하기 위한 끝점을 제공하지 않습니다.
 
 ### 찾아보기
 
