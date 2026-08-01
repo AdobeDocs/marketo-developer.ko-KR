@@ -32,4 +32,4 @@ Marketo Mobile Engagement에는 두 가지 구성 요소가 있습니다.
 
    Marketo을 사용하여 대상을 정의하고, 알림을 만들고, 타겟팅된 메시징 캠페인을 시작하고, 고객 분석을 볼 수 있습니다.
 
-Marketo SDK을 모바일 애플리케이션에 통합하면 Marketo에서 모바일 푸시 알림과 인앱 메시지를 전송할 수 있습니다. 모바일 메시지를 설정하고 배포하려면 제품 설명서에서 [모바일 마케팅](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)을 참조하세요.
+Marketo SDK을 모바일 애플리케이션에 통합하면 Marketo에서 모바일 푸시 알림과 인앱 메시지를 전송할 수 있습니다. 모바일 메시지를 설정하고 배포하려면 제품 설명서에서 [모바일 마케팅](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)을 참조하세요.

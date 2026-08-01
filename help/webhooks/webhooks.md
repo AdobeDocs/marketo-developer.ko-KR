@@ -54,7 +54,7 @@ URL, 템플릿 및 사용자 지정 헤더를 포함한 모든 발신 웹후크 
 
 - [토큰 개요](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/personalizing-landing-pages/tokens-overview)
 - [시스템 토큰 용어집](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/using-tokens/system-tokens-glossary)
-- [즐거운 순간을 위한 토큰](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-sales-insight/msi-for-salesforce/features/tabs-in-the-msi-panel/interesting-moments/trigger-tokens-for-interesting-moments)
+- [즐거운 순간을 위한 토큰](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/marketo-sales-insight/msi-for-salesforce/features/tabs-in-the-msi-panel/interesting-moments/trigger-tokens-for-interesting-moments)
 
 예를 들어 프로그램이나 캠페인이 서드파티 리소스에 매핑되는 경우 프로그램 수준의 ID를 `My Token`(으)로 설정합니다. 그런 다음 ID를 웹후크 요청에 토큰으로 전달합니다.
 

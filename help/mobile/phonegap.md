@@ -26,7 +26,7 @@ Marketo PhoneGap 플러그인을 Cordova 앱과 통합합니다.
 
 ## 필요 조건
 
-1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)하고 응용 프로그램 비밀 키 및 Munchkin ID를 가져옵니다.
+1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)하고 응용 프로그램 비밀 키 및 Munchkin ID를 가져옵니다.
 1. [iOS](push-notifications.md) 또는 [Android](push-notifications.md)에 대한 푸시 알림을 설정합니다.
 1. [PhoneGap/Cordova CLI를 설치합니다](https://cordova.apache.org/docs/en/latest/guide/cli/).
 

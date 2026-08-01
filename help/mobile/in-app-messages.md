@@ -22,7 +22,7 @@ ht-degree: 2%
 Marketo 인앱 메시지를 사용하려면 다음 단계를 완료하십시오.
 
 1. [모바일 설치](installation.md)에 설명된 대로 Marketo Mobile SDK을 설치합니다.
-1. [모바일 앱 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)에 설명된 대로 모바일 앱을 Marketo에 추가하십시오.
+1. [모바일 앱 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)에 설명된 대로 모바일 앱을 Marketo에 추가하십시오.
 1. 선택 사항: 모바일 앱에 코드를 추가하여 [사용자 지정 작업](custom-actions.md)을 캡처합니다.
 
 Marketo Mobile SDK을 설치하고 Marketo에 앱을 추가한 후 사용자가 앱을 열 때 표시되는 인앱 메시지를 보낼 수 있습니다.

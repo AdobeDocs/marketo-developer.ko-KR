@@ -26,7 +26,7 @@ ht-degree: 1%
 
 ## 필요 조건
 
-1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)하고 응용 프로그램 비밀 키 및 Munchkin ID를 가져옵니다.
+1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)하고 응용 프로그램 비밀 키 및 Munchkin ID를 가져옵니다.
 1. [&#x200B; [!DNL Adobe Launch] 포털](https://experience.adobe.com/#/@amc/data-collection/home)에서 속성을 구성하십시오.
 1. [!DNL Adobe Launch] 포털에서 속성에 대한 응용 프로그램 암호 키 및 Munchkin ID를 구성합니다.
 1. 선택 사항: [푸시 알림 설정](push-notifications.md).
