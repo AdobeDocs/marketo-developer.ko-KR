@@ -61,7 +61,7 @@ GET <Identity URL>/oauth/token?grant_type=client_credentials&client_id=<Client I
 
 >[!IMPORTANT]
 >
->`access_token` 쿼리 매개 변수를 사용한 인증 지원이 2026년 8월 31일에 제거됩니다. 프로젝트에서 쿼리 매개 변수를 사용하여 액세스 토큰을 전달하는 경우 가능한 한 빨리 [인증 헤더](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/authentication#using-an-access-token)를 사용하도록 업데이트해야 합니다. 새 개발에서는 `Authorization` 헤더만 사용해야 합니다.
+>`access_token` 쿼리 매개 변수를 사용한 인증 지원이 2026년 8월 31일에 제거됩니다. 프로젝트에서 쿼리 매개 변수를 사용하여 액세스 토큰을 전달하는 경우 가능한 한 빨리 [인증 헤더](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/authentication#using-an-access-token)를 사용하도록 업데이트해야 합니다. 새 개발에서는 `Authorization` 헤더만 사용해야 합니다.
 
 ### 인증 헤더로 전환
 
