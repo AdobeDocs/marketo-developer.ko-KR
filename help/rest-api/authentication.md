@@ -4,13 +4,11 @@ feature: REST API
 description: 2개의 legged OAuth 2.0으로 Marketo REST API를 인증하고, 액세스 토큰을 생성 및 사용하고, 인증 헤더로 전환하고, 만료를 관리하고, 601 및 602 오류를 처리합니다.
 exl-id: f89a8389-b50c-4e86-a9e4-6f6acfa98e7e
 TQID: https://experienceleague.adobe.com/cIeI0m61CyIWq4HEosZ-QAsxzZb0WcrQRpCud2qysfY
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 6d9408d07557d4b7426ad72d2a886220d622fb78
 workflow-type: tm+mt
-source-wordcount: 519
+source-wordcount: 517
 ht-degree: 0%
 
 ---
@@ -61,7 +59,7 @@ GET <Identity URL>/oauth/token?grant_type=client_credentials&client_id=<Client I
 
 >[!IMPORTANT]
 >
->`access_token` 쿼리 매개 변수를 사용한 인증 지원이 2026년 8월 31일에 제거됩니다. 프로젝트에서 쿼리 매개 변수를 사용하여 액세스 토큰을 전달하는 경우 가능한 한 빨리 [인증 헤더](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/authentication#using-an-access-token)를 사용하도록 업데이트해야 합니다. 새 개발에서는 `Authorization` 헤더만 사용해야 합니다.
+>`access_token` 쿼리 매개 변수를 사용한 인증 지원이 2026년 8월 31일에 제거됩니다. 프로젝트에서 쿼리 매개 변수를 사용하여 액세스 토큰을 전달하는 경우 가능한 한 빨리 [인증 헤더](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/authentication#using-an-access-token)를 사용하도록 업데이트해야 합니다. 새 개발에서는 `Authorization` 헤더만 사용해야 합니다.
 
 ### 인증 헤더로 전환
 
@@ -83,7 +81,7 @@ curl ... -H 'Authorization: Bearer <Access Token>' <REST API Endpoint Base URL>/
 
 ID 응답의 액세스 토큰 및 만료 기간을 저장합니다. 토큰 만료를 관리하면 일반 작업 중 예기치 않은 인증 오류를 방지할 수 있습니다.
 
-REST를 호출하기 전에 토큰의 남은 수명을 확인하십시오. 토큰이 만료되면 [Identity](https://developer.adobe.com/marketo-apis/api/identity/#tag/Identity/operation/identityUsingGET) 끝점을 호출하여 갱신합니다. 사전 예방적 갱신은 만료된 토큰으로 인한 실패를 방지하고 REST 호출 지연을 예측 가능하게 하므로 최종 사용자 대면 애플리케이션에 중요합니다.
+REST를 호출하기 전에 토큰의 남은 수명을 확인하십시오. 토큰이 만료되면 [Identity](https://developer.adobe.com/marketo-apis/api/identity#tag/Identity) 끝점을 호출하여 갱신합니다. 사전 예방적 갱신은 만료된 토큰으로 인한 실패를 방지하고 REST 호출 지연을 예측 가능하게 하므로 최종 사용자 대면 애플리케이션에 중요합니다.
 
 인증 오류는 다음 코드를 반환합니다.
 
