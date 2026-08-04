@@ -24,7 +24,7 @@ ht-degree: 1%
 
 푸시 알림, 인앱 메시지 또는 둘 다를 전송하려면 [!DNL Adobe Launch] Marketo 확장을 설치하십시오.
 
-## 필요 조건
+## 사전 요구 사항
 
 1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)하고 응용 프로그램 비밀 키 및 Munchkin ID를 가져옵니다.
 1. [&#x200B; [!DNL Adobe Launch] 포털](https://experience.adobe.com/#/@amc/data-collection/home)에서 속성을 구성하십시오.

@@ -4,7 +4,7 @@ description: Marketo 개발자 블로그 아카이브 2014-2023 - Forms 2.0, Zap
 exl-id: d7ae88dd-9938-4957-9798-db43090dab4e
 source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
 workflow-type: tm+mt
-source-wordcount: '59469'
+source-wordcount: '65291'
 ht-degree: 0%
 
 ---
@@ -14,7 +14,7 @@ ht-degree: 0%
 >[!INFO]
 >
 >Marketo 블로그의 보관 파일이며, 2014년부터 2023년까지 걸쳐 진행됩니다. 여기에서는 역사적 참조로만 제공됩니다.
->일부 정보가 최신 상태가 아닐 수 있습니다.  항상 최신 기능에 대한 최신 설명서를 확인하십시오.
+>일부 정보가 최신 정보가 아닐 수 있습니다.  항상 최신 기능에 대한 최신 설명서를 확인하십시오.
 >
 
 >[!IMPORTANT]
@@ -575,7 +575,7 @@ $(function(){
 이 문서에는 사용자 정의 통합을 구현하는 데 사용되는 코드가 포함되어 있습니다. 맞춤화된 특성으로 인해 Marketo 기술 지원 팀에서 사용자 정의 작업 문제를 해결할 수 없습니다. 적절한 기술 경험이나 숙련된 개발자 액세스 없이 다음 코드 샘플을 구현하지 마십시오.
 
 예를 들어 멀티미디어 컨텐츠가 있는 페이지의 경우 사용자 지정 추적을 수행할 수 있습니다. 한 가지 일반적인 예는 페이지에 Munchkin 추적 코드를 추가하고 Munchkin API를 사용하여 비디오 재생이나 오디오 클립 청취와 같은 활동을 위해 Marketo 인스턴스에서 이벤트를 생성하는 것입니다. 대부분의 웹 페이지 또는 모든 웹 페이지에 Munchkin 추적 코드를 적용하는 것이 좋습니다. Munchkin 추적 코드는 Marketo을 사용하여 만드는 랜딩 페이지에 자동으로 포함됩니다. 이 호출을 사용하여 사용자가 Ajax, Flash 또는 기타 RIA 환경의 페이지 방문과 같은 작업을 수행했음을 기록합니다. URL에는 &quot; 또는 도메인이 포함되어서는 안 되지만, 존재하지 않는 페이지를 가리키는 것은 아닙니다. URL 매개 변수를 추가하려면 params 인수를 사용합니다.
-이 이벤트는 호출 웹 페이지의 도메인 아래에 있는 사용자 활동 로그에 웹 페이지 방문 이벤트로 표시됩니다. 참고 `mktoMunchkin()`을(를) 처음 호출하면 항상 현재 페이지에 대한 [웹 페이지 방문] 이벤트가 만들어집니다. 추가 웹 페이지 방문을 추적하지 않으려면 `visitWebPage`을(를) 호출할 필요가 없습니다. `mktoMunchkinFunction('visitWebPage', { url: '/MyFlashMovie/Story1', params: 'x=y&2=3' });` 참고 숙련된 JavaScript 개발자에게 액세스할 수 있는지 확인하십시오. Marketo 기술 지원이 사용자 지정 JavaScript 문제 해결을 지원하도록 설정되지 않았습니다. Munchkin JavaScript API를 사용하면 서드파티 웹 시스템을 Marketo 계정과 통합할 수 있습니다. 일부 웹 개발을 사용하면 웹 사이트에서 새 리드를 캡처하거나 기존 애플리케이션으로 현재 리드를 업데이트할 수 있습니다. 새로운 고객 정보를 캡처하는 고객 등록용 웹 애플리케이션이 있다고 가정해 보겠습니다. 약간의 프로그래밍만으로도 Marketo에서 캡처한 해당 사용자에 대한 리드 정보와 향후 웹 추적을 위해 설정된 Marketo 쿠키를 보유할 수 있습니다.
+이 이벤트는 호출 웹 페이지의 도메인 아래에 있는 사용자 활동 로그에 웹 페이지 방문 이벤트로 표시됩니다. 참고 `mktoMunchkin()`을(를) 처음 호출하면 항상 현재 페이지에 대한 [웹 페이지 방문] 이벤트가 만들어집니다. 추가 웹 페이지 방문을 추적하지 않으려면 `visitWebPage`을(를) 호출할 필요가 없습니다. `mktoMunchkinFunction('visitWebPage', { url: '/MyFlashMovie/Story1', params: 'x=y&2=3' });`  참고 숙련된 JavaScript 개발자에게 액세스할 수 있는지 확인하십시오. Marketo 기술 지원이 사용자 지정 JavaScript 문제 해결을 지원하도록 설정되지 않았습니다. Munchkin JavaScript API를 사용하면 서드파티 웹 시스템을 Marketo 계정과 통합할 수 있습니다. 일부 웹 개발을 사용하면 웹 사이트에서 새 리드를 캡처하거나 기존 애플리케이션으로 현재 리드를 업데이트할 수 있습니다. 새로운 고객 정보를 캡처하는 고객 등록용 웹 애플리케이션이 있다고 가정해 보겠습니다. 약간의 프로그래밍만으로도 Marketo에서 캡처한 해당 사용자에 대한 리드 정보와 향후 웹 추적을 위해 설정된 Marketo 쿠키를 보유할 수 있습니다.
 
 또한 웹 개발자는 다른 기능을 사용하여 Flash 또는 Ajax와 같은 다양한 웹 환경에서 웹 활동 정보를 캡처하고 추적할 수 있습니다. 참고: 적절한 개발 리소스가 있는 경우 이 API 대신 통합을 위해 SOAP API를 사용하는 것이 좋습니다. SOAP API는 Munchkin API보다 더 강력하고 더 많은 기능을 제공합니다. Marketo SOAP API 요구 사항 이 작업을 수행하려면 웹 페이지에 Munchkin JavaScript 코드를 포함해야 합니다. Munchkin 자습서에서 필요한 스크립트 태그를 찾을 수 있습니다. 또한 자습서에 설명된 Munchkin API를 활성화합니다.
 Munchkin API 호출을 수행하면 쿠키가 없는 사용자에게 자동으로 쿠키가 쿠키됩니다. Marketo에서는 개인의 활동 로그에 이벤트(링크 클릭, 웹 페이지 방문 또는 새 잠재 고객)를 기록합니다. 클릭 링크를 사용하거나 웹 페이지 호출을 방문하는 경우 해당 잠재 고객의 활동 로그(알려진 항목 또는 익명의 항목)에 이벤트가 추가됩니다. 새 잠재 고객이고 연결된 잠재 고객 호출을 사용하는 경우 해당 잠재 고객이 알려진 잠재 고객이 되고 활동 내역이 보존됩니다. 기존 잠재 고객인 경우(이메일 주소 일치 기반) 변경 또는 새 값은 해당 잠재 고객의 레코드에서 업데이트됩니다.
@@ -1012,7 +1012,7 @@ response = client.call(:sync_lead, message: request)
 puts response
 ```
 
-**양식의 사용자 지정 필드를 통해** Marketo에서 &quot;새 전자 메일 주소&quot;에 대한 사용자 지정 필드를 만들 수 있습니다. 그런 다음 사용자에게 이 새 필드가 포함된 양식을 작성하도록 요청합니다. 그런 다음 새 사용자 지정 필드 &quot;새 전자 메일 주소&quot;가 변경되면 토큰 `{{lead.newEmailAddress}}`이(가) 있는 시스템 전자 메일 주소 필드의 데이터 값을 변경하는 프로그램을 Marketo에서 만듭니다. **Marketo UI를 통해** Marketo UI를 통해 잠재 고객의 전자 메일 주소를 수동으로 업데이트할 수 있습니다. 이 작업을 수행하는 방법을 설명하는 [도움말 문서](https://nation.marketo.com/)가 있습니다(문서를 보려면 Marketo 로그인이 필요). **목록 가져오기를 통해** [여기](https://nation.marketo.com/)에 설명된 Marketo에서 목록 가져오기 방법을 사용하여 잠재 고객의 전자 메일 주소를 업데이트할 수 있습니다(문서를 보려면 Marketo 로그인이 필요).  
+**양식의 사용자 지정 필드를 통해** Marketo에서 &quot;새 전자 메일 주소&quot;에 대한 사용자 지정 필드를 만들 수 있습니다. 그런 다음 사용자에게 이 새 필드가 포함된 양식을 작성하도록 요청합니다. 그런 다음 새 사용자 지정 필드 &quot;새 전자 메일 주소&quot;가 변경되면 토큰 `{{lead.newEmailAddress}}`을(를) 사용하여 시스템 전자 메일 주소 필드의 데이터 값을 변경하는 프로그램을 Marketo에서 만듭니다. **Marketo UI를 통해** Marketo UI를 통해 잠재 고객의 이메일 주소를 수동으로 업데이트할 수 있습니다. 이 작업을 수행하는 방법을 설명하는 [도움말 문서](https://nation.marketo.com/)가 있습니다(문서를 보려면 Marketo 로그인이 필요). **목록 가져오기를 통해** [여기](https://nation.marketo.com/)에 설명된 Marketo에서 목록 가져오기 메서드를 사용하여 잠재 고객의 전자 메일 주소를 업데이트할 수 있습니다(문서를 보려면 Marketo 로그인이 필요).  
 
 이 문서에는 사용자 정의 통합을 구현하는 데 사용되는 코드가 포함되어 있습니다. 맞춤화된 특성으로 인해 Marketo 기술 지원 팀에서 사용자 정의 작업 문제를 해결할 수 없습니다. 적절한 기술 경험이나 숙련된 개발자 액세스 없이 다음 코드 샘플을 구현하지 마십시오.
 
@@ -1090,11 +1090,11 @@ _2014-08-19_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
 **개요** 이 문서에서는 인기 있는 랜딩 페이지 도구인 Unbounce를 Marketo과 통합하는 방법을 보여 줍니다. 먼저 Marketo 추적을 언바운스에 삽입하는 방법을 보여 주고, 다음으로 언바운스 양식을 수정하여 데이터를 Marketo에 직접 삽입하는 방법을 보여 줍니다. Marketo과 Unbounce를 통합하기 위해서는 Unbounce에서 기본 필드의 이름을 바꿀 수 없다는 문제가 발생합니다(예: first_name을 FirstName으로 변경할 수 없음). 또한 필드 레이블이 필드 이름과 달라지는 것을 허용하지 않습니다. 이 통합에는 JavaScript이 포함되며, 기존 양식을 변경하여 Marketo과 호환되도록 합니다. 이 문서의 작업을 완료하려면 적어도 JavaScript의 초급 수준과 Marketo의 중간 수준 지식을 갖춘 것이 좋습니다.
 **1부: 언바운스에 Marketo 추적 코드 추가** 언바운스 페이지에 Marketo Munchkin 추적 스크립트를 추가하는 것은 analytics와 양식 통합이 모두 작동하기 위해 필요합니다. 다음 단계를 따르십시오. Marketo에서 Munchkin 코드를 복사합니다. 관리 -> Munchkin으로 이동하여 JavaScript의 &#39;단순&#39; 버전을 복사합니다. 언바운스 랜딩 페이지를 열고 JavaScript-> 새 JavaScript 추가 를 클릭합니다.  추가 를 클릭하고, 스크립트 &#39;Munchkin&#39;를 호출하고, &#39;본문 끝 태그 전&#39;을 선택한 다음 Munchkin 코드를 붙여넣습니다. 완료(Done) 단추를 누릅니다. 이후 언바운스 페이지의 경우 JavaScript으로 이동하여 만든 Munchkin 스크립트를 활성화합니다. 다시 만들 필요가 없습니다.
-**2부: 언바운스 양식을 Marketo 양식으로 변환** 이제 언바운스 랜딩 페이지에서 리드 정보를 Marketo에 직접 제출할 수 있도록 몇 가지 새로운 숨겨진 필드와 JavaScript을 추가하여 언바운스 양식을 수정해야 합니다. 먼저 Marketo 자리 표시자 양식을 만듭니다. Marketo에서 빈 양식을 만들고 승인합니다.
+**2부: 언바운스 양식을 Marketo 양식으로 변환** 이제 언바운스 랜딩 페이지에서 잠재 고객 정보를 Marketo에 직접 제출할 수 있도록 몇 가지 새로운 숨겨진 필드와 JavaScript을 추가하여 언바운스 양식을 수정해야 합니다. 먼저 Marketo 자리 표시자 양식을 만듭니다. Marketo에서 빈 양식을 만들고 승인합니다.
 
-언바운스 양식을 나타내는 Marketo의 프록시 양식입니다. 바운스 취소 양식에 숨겨진 필드를 추가합니다. Marketo에서는 이 양식 제출이 적용될 Marketo 인스턴스, 양식 및 사용자 세션을 결정하기 위해 이러한 숨김 필드가 필요합니다. 언바운스에서 두 번 클릭하여 양식을 엽니다. `_mkt_trk`(이)라는 숨겨진 필드를 추가합니다. `formid`이라는 두 번째 숨겨진 필드를 추가합니다. 233은 양식의 ID로 대체해야 합니다. 이 ID는 Marketo의 Marketo 양식 포함 코드에서 찾을 수 있습니다. Marketo에서 양식을 열고 양식 작업->포함 코드 를 선택합니다. `returnurl`(이)라는 숨겨진 필드를 추가합니다. `https://hooshmarketing.com.au/thank-you`은(는) 후속 URL로 대체해야 합니다. 이는 사용자가 양식을 제출한 후 리디렉션할 URL입니다. 예를 들어 감사 인사 페이지일 수 있습니다.
+언바운스 양식을 나타내는 Marketo의 프록시 양식입니다. 바운스 취소 양식에 숨겨진 필드를 추가합니다. Marketo에서는 이 양식 제출이 적용될 Marketo 인스턴스, 양식 및 사용자 세션을 결정하기 위해 이러한 숨김 필드가 필요합니다. 언바운스에서 두 번 클릭하여 양식을 엽니다. `_mkt_trk`(이)라는 숨겨진 필드를 추가합니다. `formid`이라는 두 번째 숨겨진 필드를 추가합니다. 233은 양식의 ID로 대체해야 합니다. 이 ID는 Marketo의 Marketo 양식 포함 코드에서 찾을 수 있습니다. Marketo에서 양식을 열고 양식 작업->포함 코드 를 선택합니다. `returnurl`(이)라는 숨겨진 필드를 추가합니다. `https://hooshmarketing.com.au/thank-you`은(는) 후속 URL로 대체해야 합니다. 양식을 제출한 후 사용자가 리디렉션될 URL입니다. 예를 들어 감사 인사 페이지일 수 있습니다.
 **3부: Marketo에 직접 바운스 취소 양식** 후속 URL은 리드가 Marketo에 제출된 후 리드가 리디렉션되는 페이지입니다. 언바운스에서 다음 단계를 따르십시오. 양식을 클릭합니다. 양식 확인 섹션을 수정합니다. 양식 데이터를 URL에 게시하는 확인을 변경합니다. URL을 원하는 후속 페이지로 설정합니다. `fpmarkets`은(는) Marketo 계정 문자열로 대체해야 합니다. 이 문자열은 관리자->랜딩 페이지 아래의 Marketo에 있습니다.
-**파트4: JavaScript을 바운스 해제 페이지에 추가** 이 JavaScript은 양식을 Marketo과 호환되도록 변환하고 Marketo에 제출합니다. 언바운스에서 다음 단계를 따르십시오. 언바운스 랜딩 페이지를 열고 JavaScript-> 새 JavaScript 추가를 클릭합니다. 추가를 클릭하고 &#39;Marketo 양식 변환&#39; 스크립트를 호출한 다음 &#39;본문 끝 태그 전&#39;을 선택합니다. 아래에 JavaScript 코드를 붙여넣습니다.
+**파트 4: JavaScript을 바운스 해제 페이지에 추가** 이 JavaScript은 양식을 Marketo과 호환되도록 변환하고 Marketo에 제출합니다. 언바운스에서 다음 단계를 따르십시오. 언바운스 랜딩 페이지를 열고 JavaScript-> 새 JavaScript 추가를 클릭합니다. 추가를 클릭하고 &#39;Marketo 양식 변환&#39; 스크립트를 호출한 다음 &#39;본문 끝 태그 전&#39;을 선택합니다. 아래에 JavaScript 코드를 붙여넣습니다.
 
 ```javascript
 var MARKETO_MUNCHKIN_ID='614-CGT-700';
@@ -1176,7 +1176,7 @@ UNBOUNCE_MARKETO_FIELD_MAP['first_name'] = 'FirstName';
 UNBOUNCE_MARKETO_FIELD_MAP['email'] = 'Email';
 ```
 
-_comments는 언바운스에 있는 필드의 이름입니다._Comments_c_은(는) Marketo의 필드 이름입니다. 나중에 언바운스 페이지의 경우 JavaScript으로 이동하여 만든 Munchkin 스크립트를 활성화하면 됩니다. 다시 만들 필요가 없습니다.
+_comments는 언바운스에 있는 필드의 이름입니다. _Comments_c_은(는) Marketo의 필드 이름입니다. 나중에 언바운스 페이지의 경우 JavaScript으로 이동하여 만든 Munchkin 스크립트를 활성화하면 됩니다. 다시 만들 필요가 없습니다.
 **파트5: 테스트** 마지막 단계는 이 양식 통합이 제대로 작동하는지 테스트하는 것입니다. Marketo 양식 채우기에서 활성화되고 리드가 Marketo에 올바르게 삽입되는지 확인하는 Marketo 트리거를 만듭니다. 양식 제출 후 페이지는 후속 URL로 리디렉션되어야 합니다.
 
 _2014-08-04_&#x200B;에 게시한 사람: _
@@ -1367,7 +1367,7 @@ _2014-09-18_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 ## Marketo REST API를 통해 전체 이름으로 검색
 
 **질문:** 잠재 고객의 전체 이름으로 Marketo API를 사용하여 잠재 고객을 쿼리할 수 있는 방법이 있습니까?
-**답변:** 직접 가능하지 않습니다. 그러나 아래에 설명된 해결 방법을 사용하면 이 작업을 수행할 수 있습니다.
+**답변:** 직접 사용할 수 없습니다. 그러나 아래에 설명된 해결 방법을 사용하면 이 작업을 수행할 수 있습니다.
 
 1. Marketo에서 &quot;Fullname&quot;이라는 사용자 지정 필드를 만듭니다.
 1. [getMultipleLeads](/help/soap-api/getmultipleleads.md) SOAP API 또는 [필터 유형별 여러 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadByIdUsingGET)를 사용하여 리드 데이터베이스를 쿼리합니다. REST 또는 SOAP API에 대한 요청에 이름과 성을 속성으로 포함하십시오.
@@ -1449,7 +1449,7 @@ _2014-09-16_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 ## RTP API의 위치 데이터를 Marketo 양식 채우기에 추가합니다.
 
 **이 블로그 게시물에 설명된 사용 사례를 구현하려면 활성 RTP 및 MLM 구독이 필요합니다.**
-[RTP JavaScript API](/help/javascript-api/web-personalization.md) 및 [Marketo Forms 2.0](/help/javascript-api/forms-api-reference.md)을 사용하면 RTP에서 유추된 위치 데이터를 가져와서 양식 채우기를 통해 Marketo에 푸시할 수 있습니다. 이를 통해 가장 최근의 양식 활동 중에 IP 주소를 기반으로 하여 유추한 사용자의 위치를 볼 수 있습니다. 시작하려면 Marketo에서 세 개의 사용자 지정 문자열 필드를 만들어야 합니다. Marketo과 기본 통합이 있는 경우 CRM을 통하거나 Marketo의 관리 섹션에 있는 필드 관리 메뉴에서 이 작업을 수행할 수 있습니다. 이러한 필드의 이름을 &#39;가장 최근 국가&#39;, &#39;가장 최근 주&#39; 및 &#39;가장 최근 도시&#39;로 지정하는 것이 좋습니다. 이 블로그는 명명 규칙을 사용하여 계속합니다. 이러한 필드의 API 이름은 &#39;mostRecentCountry&#39;, &#39;mostRecentState&#39; 및 &#39;mostRecentCity&#39;입니다. 위치 데이터를 검색하려면 [RTP 메서드를 사용하여 방문자의 위치 데이터를 가져온](/help/javascript-api/web-personalization.md)다음, Marketo Forms 2.0에서 [addHiddenFields 및 vals 메서드](/help/javascript-api/forms-api-reference.md)를 사용하여 해당 데이터를 양식으로 전달합니다. 페이지에서 RTP JS 태그와 Marketo 양식을 추가합니다. 그런 다음 아래 스크립트를 포함하십시오. 위에서 설명한 것과 다른 이름 지정 규칙을 사용하는 경우 예제 코드에서 대상 양식 필드의 이름을 변경해야 합니다.
+[RTP JavaScript API](/help/javascript-api/web-personalization.md) 및 [Marketo Forms 2.0](/help/javascript-api/forms-api-reference.md)을 사용하면 RTP에서 유추된 위치 데이터를 가져와서 양식 작성을 통해 Marketo에 푸시할 수 있습니다. 이를 통해 가장 최근의 양식 활동 중에 IP 주소를 기반으로 하여 유추한 사용자의 위치를 볼 수 있습니다. 시작하려면 Marketo에서 세 개의 사용자 지정 문자열 필드를 만들어야 합니다. Marketo과 기본 통합이 있는 경우 CRM을 통하거나 Marketo의 관리 섹션에 있는 필드 관리 메뉴에서 이 작업을 수행할 수 있습니다. 이러한 필드의 이름을 &#39;가장 최근 국가&#39;, &#39;가장 최근 주&#39; 및 &#39;가장 최근 도시&#39;로 지정하는 것이 좋습니다. 이 블로그는 명명 규칙을 사용하여 계속합니다. 이러한 필드의 API 이름은 &#39;mostRecentCountry&#39;, &#39;mostRecentState&#39; 및 &#39;mostRecentCity&#39;입니다. 위치 데이터를 검색하려면 [RTP 메서드를 사용하여 방문자의 위치 데이터를 가져온](/help/javascript-api/web-personalization.md)다음, Marketo Forms 2.0에서 [addHiddenFields 및 vals 메서드](/help/javascript-api/forms-api-reference.md)를 사용하여 해당 데이터를 양식으로 전달합니다. 페이지에서 RTP JS 태그와 Marketo 양식을 추가합니다. 그런 다음 아래 스크립트를 포함하십시오. 위에서 설명한 것과 다른 이름 지정 규칙을 사용하는 경우 예제 코드에서 대상 양식 필드의 이름을 변경해야 합니다.
 
 ```javascript
 <script>
@@ -2261,7 +2261,7 @@ _2014-12-03_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 이 게시물에서는 Marketo API에서 데이터를 요청할 때 성능을 개선하기 위한 전략에 대해 설명합니다. 그러나 Marketo API의 일일 제한 작업 제한과 비교하여 이러한 전략의 이점을 평가해야 합니다.
 **전략 1 - 각 API 호출에서 더 적은 데이터 요청** 일반적으로 API 호출에서 더 많은 데이터를 요청하면 Marketo 서버가 데이터베이스에서 데이터를 조회하는 데 걸리는 시간이 늘어납니다. [getMultipleLeads SOAP API](/help/soap-api/getmultipleleads.md)와 같은 날짜 범위로 API를 호출하는 경우 호출당 시간 범위를 줄이고 더 많은 호출을 보상하십시오. 예를 들어, 6월 1일부터 7월 1일까지의 데이터를 요청하는 대신, 6월 1일부터 2일까지의 한 번의 호출과 6월 2일부터 1일까지의 다른 호출과 같이 한 번에 하루씩 요청합니다. Marketo 리드 필드의 데이터를 반환하는 API 호출을 수행하는 경우 해당 필드만 필요합니다. 모든 추가 리드 필드는 API 호출에 걸리는 시간을 점진적으로 증가시킵니다. 또 다른 접근법은 배치 크기, 또는 호출당 요청되는 리드의 수를 감소시키는 것이다.
 **전략 2 - 동시 요청 만들기** 성능을 개선하고 한 번에 더 많은 데이터를 가져오려면 API에 대한 동시 요청을 수행할 수 있습니다. 이 접근 방식은 API 요청을 유선으로 연결하는 데 소요되는 시간을 줄여 집계합니다. 예를 들어 필터 유형별 다중 리드 가져오기에 대한 요청을 한다고 가정해 보겠습니다. 한 개의 요청 질의 리드 1 - 300 및 다른 요청 질의 리드 301 - 600에 대해 동시 요청을 수행할 수 있습니다.
-**전략 3 - 데이터 캐시** Marketo의 일부 데이터는 리드 활동 데이터와 같은 다른 데이터보다 리드 필드 목록과 같이 변경되는 빈도가 더 낮습니다. 덜 자주 업데이트되는 데이터를 캐시하는 경우 수행해야 하는 API 호출 수를 줄입니다. 또한 일반적으로 원격 웹 서비스에서 액세스하는 것보다 로컬에서 데이터를 조회하는 것이 더 빠르기 때문에 성능이 향상됩니다.
+**전략 3 - 데이터 캐시** Marketo의 일부 데이터는 리드 활동 데이터와 같은 다른 데이터보다 리드 필드 목록과 같이 변경되는 빈도가 더 적습니다. 덜 자주 업데이트되는 데이터를 캐시하는 경우 수행해야 하는 API 호출 수를 줄입니다. 또한 일반적으로 원격 웹 서비스에서 액세스하는 것보다 로컬에서 데이터를 조회하는 것이 더 빠르기 때문에 성능이 향상됩니다.
 
 _2014-12-05_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
@@ -2748,15 +2748,15 @@ _Yanir_&#x200B;이(가) _2015-01-22_&#x200B;에 게시
 * 폴더 - 발신: SFTP 서버의 발신 폴더에 대한 경로입니다. 이 예제에서는 &quot;/data/outgoing&quot;을 사용합니다. 이를 통해 SFTP 작업을 매개 변수화하여 제네릭으로 만들 수 있습니다.
 
 인증 토큰: 언급했듯이 &quot;데이터 없음&quot; 시작 셰이프로 프로세스를 만든 후 캔버스에 커넥터를 배치합니다(개인적인 선택일 뿐, 모든 커넥터가 영국 플러그처럼 보이는 것을 좋아합니다).
-커넥터는 다음과 같이 구성되어야 합니다. - 커넥터는 HTTP GET 클라이언트입니다. - 연결은 URL을 사용합니다. `https://123-ABC-456.mktorest.com`(끝에 /rest가 없으므로 REST 호출에 이 ID 액세스 토큰을 가져올 때 사용할 수 있습니다. 123-ABC-456을 Marketo 인스턴스에 대한 올바른 ID 액세스 토큰으로 변경합니다.) - 작업은 &quot;oAuth 토큰 가져오기&quot;(new!) - 요청 프로필 = 없음 - 응답 프로필 = JSON - &quot;인증 토큰 응답&quot;이라는 새 프로필 - 콘텐츠 유형: 일반 - HTTP 메서드: GET - 리소스 경로(따옴표 없이 4개 추가): &quot;identity/oAuth/token?grant_type=client_credentials&amp;client_id=&quot;; &quot;ClientID=&quot; ID(교체 변수)&quot;; &quot;&amp;client_secret=&quot;; &quot;ClientSecret(교체 변수)&quot; - 구성 —> 매개 변수 —>(+)에서 매개 변수 설정: ClientID = 프로세스 속성 클라이언트 ID를 설정합니다. ClientSecret = 프로세스 속성 클라이언트 암호를 설정합니다. 이 작업을 수행한 후 프로세스 속성 &quot;AccessToken&quot; 변수에 성공 토큰을 저장하고 jSON 응답에서 추출합니다.
+커넥터는 다음과 같이 구성해야 합니다. - 커넥터는 HTTP GET 클라이언트입니다. - 연결은 URL을 사용합니다. `https://123-ABC-456.mktorest.com`(끝에 /rest가 없음). 이를 REST 호출에 사용하고 ID 액세스 토큰을 가져오는 데 사용할 수 있습니다. 및 123-ABC-456을 Marketo 인스턴스의 올바른 토큰으로 변경) - 작업은 &quot;Get oAuth Token&quot;(새로운 기능!)입니다. - 요청 프로필 = 없음 - 응답 프로필 = JSON - 새 프로필 &quot;인증 토큰 응답&quot; - 콘텐츠 유형: 일반 - HTTP 메서드: GET - 리소스 경로(따옴표 없이 4개 추가): &quot;identity/oAuth/token?grant_type=client_credentials&amp;client_id=&quot;; &quot;ClientID(대체 변수)&quot;; &quot;&amp;client_secret=&quot;; &quot;ClientSecret(대체 변수)&quot; - 구성 —> 매개 변수 —>(+)에서 매개 변수 설정: ClientID = Process Property Client ID 설정; ClientSecret = Process Property Client Secret 설정 이 후 표시되는 대로 추출 프로세스 속성 &quot;AccessToken&quot; 변수에 성공 토큰을 저장합니다. jSON 응답.
 이 단계의 패턴은 다음 단계에 대해 반복되지만, 다른 jSON 반환 프로필과 함께 새 작업을 사용합니다. 사실, 많은 REST 호출은 사소한 변경 사항과 같은 방식으로 처리됩니다! 다음 분부에서는 이를 확장하고 REST를 사용하여 정적 목록에서 잠재 고객 목록을 가져옵니다! 지금은 프로세스를 실행하지만 &quot;속성 설정&quot; 뒤에 중지 모양을 놓은 다음 디버그에서 실행하여 Marketo에 표시되는 것과 동일한 토큰을 확인합니다. 그들은 완벽하게 일치해야 합니다!
 
 _John_&#x200B;이(가) _2015-01-26_&#x200B;에 게시함
 
 ## Google 글꼴 API를 사용하여 Marketo 랜딩 페이지에 사용자 지정 글꼴 추가
 
-**참고: [Murtza Manzur](https://www.linkedin.com/in/murtzam)의 블로그 게시물입니다. Murtza는 샌프란시스코 베이 지역에 기반을 둔 Marketo 개발자 전도사입니다.**
-Marketo에서 랜딩 페이지를 만들고 사용자 정의 글꼴을 사용한다고 가정해 보겠습니다. Google 글꼴 API를 사용하여 가능합니다. Google 글꼴을 참조하여 CSS 파일에 가져오기 메서드를 추가하십시오.
+**참고: [Murtza Manzur](https://www.linkedin.com/in/murtzam)의 블로그 게시물입니다. Murtza는 샌프란시스코 베이 지역에 본사를 둔 Marketo 개발자 전도사입니다.**
+Marketo에서 랜딩 페이지를 만들고 사용자 정의 글꼴을 사용한다고 가정해 보겠습니다. 이는 Google 글꼴 API를 사용하여 가능합니다.  Google 글꼴을 참조하여 CSS 파일에 가져오기 방법을 추가합니다.
 
 `@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600);`
 
@@ -6583,7 +6583,7 @@ _Travis Kaufman_&#x200B;이(가) _2014-03-24_&#x200B;에 게시함
 ## API를 사용하여 Marketo에서 트랜잭션 이메일 보내기
 
 Marketo UI를 사용하여 기존 스마트 캠페인을 만들어야 합니다. 또한 이메일 수신자가 Marketo에 있어야 합니다. 따라서 requestCampaign API를 호출하기 전에 [getLead API]&#x200B;(/help/soap-api/getlead.md)를 사용하여 이메일이 Marketo에 있는지 확인하십시오. requestCampaign API를 통해 호출한 후 스마트 캠페인이 Marketo에서 실행되었는지 확인하여 확인할 수 있습니다. 먼저 스마트 캠페인을 만드는 방법, 두 번째 API를 통해 캠페인을 전송하는 트리거를 설정하는 방법, 세 번째 흐름 작업의 일부로 이메일을 정의하는 방법 및 네 번째 이 캠페인을 실행하는 데 사용되는 코드 샘플을 보여 줍니다.
-**Marketo에서 새 스마트 캠페인을 만드는 방법** Marketo의 스마트 캠페인은 모든 마케팅 활동을 실행합니다. 일련의 자동화된 작업을 설정하여 스마트 연락처 목록에 추가할 수 있습니다. 트랜잭션 이메일을 보내는 경우 아래 표시된 것처럼 API를 사용하여 이메일을 보내도록 캠페인에 트리거를 설정합니다. 먼저 Smart Campaign을 설정하겠습니다. 1. 마케팅 활동에서 프로그램을 선택한 다음 새로 만들기 드롭다운 아래에서 새 로컬 에셋을 클릭합니다.
+**Marketo에서 새 스마트 캠페인을 만드는 방법** Marketo의 스마트 캠페인은 모든 마케팅 활동을 실행합니다. 일련의 자동화된 작업을 설정하여 스마트 연락처 목록에 추가할 수 있습니다. 트랜잭션 이메일을 보내는 경우 아래 표시된 것처럼 API를 사용하여 이메일을 보내도록 캠페인에 트리거를 설정합니다. 먼저 Smart Campaign을 설정하겠습니다. 1. 마케팅 활동에서 프로그램을 선택한 다음 새로 만들기 드롭다운 아래에서 새 로컬 자산을 클릭합니다.
 
 1. 스마트 캠페인 클릭
 1. 스마트 캠페인 이름을 입력하고 만들기 를 클릭합니다
@@ -6595,7 +6595,7 @@ Marketo UI를 사용하여 기존 스마트 캠페인을 만들어야 합니다.
 **Campaign에서 전자 메일 흐름 동작을 만드는 방법** 스마트 캠페인과 전자 메일을 연결하면 마케터는 전자 메일이 표시되는 방식을 관리하고 서드파티 응용 프로그램은 전자 메일을 받는 사람과 시기를 결정할 수 있습니다. 이메일을 새 로컬 자산으로 만든 후 캠페인에서 흐름 작업으로 설정할 수 있습니다.  보낼 이메일을 찾아 선택합니다.
 
 **requestCampaign API를 호출하는 코드 샘플** Marketo 인터페이스에서 캠페인 및 트리거를 설정한 후 API를 사용하여 전자 메일을 보내는 방법을 보여 줍니다. 첫 번째 샘플은 XML 요청이고, 두 번째 샘플은 XML 응답이며, 마지막 샘플은 XML 요청을 생성하는 데 사용할 수 있는 Java 코드 샘플입니다. `requestCampaign` API를 호출할 때 사용되는 캠페인 ID를 찾는 방법도 보여 줍니다.
-또한 API를 호출하려면 Marketo 캠페인의 ID를 미리 알고 있어야 합니다. 다음 방법 중 하나를 사용하여 캠페인 ID를 결정할 수 있습니다. 1. [getCampaignsForSource](/help/soap-api/getcampaignsforsource.md) API 1을 사용합니다. 브라우저에서 Marketo 캠페인을 열고 URL 주소 표시줄을 봅니다. 캠페인 ID(4자리 정수로 표시됨)는 &quot;SC&quot; 바로 다음에 찾을 수 있습니다. 예: `<https://app-stage.marketo.com/#SC**1025**A1>`. 굵게 표시된 부분은 캠페인 ID - &quot;1025&quot;입니다. `requestCampaign`에 대한 SOAP 요청
+또한 API를 호출하려면 Marketo 캠페인의 ID를 미리 알고 있어야 합니다. 다음 방법 중 하나를 사용하여 캠페인 ID를 결정할 수 있습니다. 1. [getCampaignsForSource](/help/soap-api/getcampaignsforsource.md) API 1을 사용합니다. 브라우저에서 Marketo 캠페인을 열고 URL 주소 표시줄을 봅니다. 캠페인 ID(4자리 정수로 표시됨)는 &quot;SC&quot; 바로 다음에 찾을 수 있습니다. 예, `<https://app-stage.marketo.com/#SC**1025**A1>`. 굵게 표시된 부분은 캠페인 ID - &quot;1025&quot;입니다. `requestCampaign`에 대한 SOAP 요청
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -6742,9 +6742,9 @@ _2014-03-27_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
 **API를 사용하여 다이내믹 콘텐츠를 전달하는 방법** Marketo에서 내 토큰은 프로그램에서 사용할 수 있는 변수입니다. 내 토큰을 사용하면 한 위치에 프로그램과 관련된 정보를 입력하고 해당 정보를 지정한 값으로 대체하며 이 정보를 전자 메일 템플릿과 같은 애플리케이션의 다른 부분에서 검색할 수 있습니다. requestCampaign SOAP API를 사용하여 기존 토큰을 재정의하는 프로그램 토큰 배열을 전달할 수 있습니다. 캠페인 실행 후 토큰이 삭제됩니다. Campaign 폴더 수준 또는 프로그램 수준에서 내 토큰을 만듭니다. Campaign 폴더 수준의 내 토큰은 Campaign 폴더에 포함된 모든 프로그램으로 상속됩니다. Campaign 폴더 수준에서 내 토큰을 만들면 프로그램 수준에서 상속된 값을 덮어쓸 수 있습니다. 예를 들어 캠페인 폴더 수준에서 프로그램 날짜 및 프로그램 설명에 대한 토큰을 정의하는 경우 개별 프로그램 수준에서 이러한 값을 덮어쓸 수 있습니다.
 
-방법은 다음과 같습니다. 1. 마케팅 활동 트리에서 토큰을 만들 Campaign 폴더 또는 프로그램을 선택합니다. 상단 메뉴 모음에서 내 토큰 을 선택합니다. 그러면 내 토큰 캔버스가 표시됩니다. 오른쪽 트리에서 토큰 유형을 캔버스로 드래그합니다(이 경우 &quot;텍스트&quot;). 토큰 이름 필드에서 내 토큰을 강조 표시하고 고유한 토큰 이름을 입력합니다. 이 경우 &quot;my.conversationtopic&quot;입니다. 값 필드에 토큰에 대한 관련 값을 입력합니다. 이 경우 &quot;오늘 전화해 주셔서 감사합니다.&quot;라고 표시됩니다. API를 사용하면 기본 내 토큰 값이 재정의됩니다. 사용자 지정 토큰을 저장하려면 &quot;저장&quot;을 클릭합니다.  1. 새로 만들기 를 클릭하여 새 이메일을 만듭니다. 그런 다음 새 로컬 Assets 를 클릭하고 이메일을 선택합니다. 그런 다음 관련 필드를 작성하여 이메일 이름을 지정하십시오. 이메일 초안을 작성할 때 토큰 아이콘을 클릭하여 이메일에 토큰을 포함합니다. 토큰을 사용하여 템플릿 이메일을 만들었으므로 이제 이메일을 후속 단계에서 Campaign에 대한 흐름 동작으로 추가합니다. 따라서 API를 통해 캠페인을 호출하면 이메일이 발송됩니다.
+방법은 다음과 같습니다. 1. 마케팅 활동 트리에서 토큰을 생성할 Campaign 폴더 또는 프로그램을 선택합니다. 상단 메뉴 모음에서 내 토큰 을 선택합니다. 그러면 내 토큰 캔버스가 표시됩니다. 오른쪽 트리에서 토큰 유형을 캔버스로 드래그합니다(이 경우 &quot;텍스트&quot;). 토큰 이름 필드에서 내 토큰을 강조 표시하고 고유한 토큰 이름을 입력합니다. 이 경우 &quot;my.conversationtopic&quot;입니다. 값 필드에 토큰에 대한 관련 값을 입력합니다. 이 경우 &quot;오늘 전화해 주셔서 감사합니다.&quot;라고 표시됩니다. API를 사용하면 기본 내 토큰 값이 재정의됩니다. 사용자 지정 토큰을 저장하려면 &quot;저장&quot;을 클릭합니다.  1. 새로 만들기 를 클릭하여 새 이메일을 만듭니다. 그런 다음 새 로컬 Assets 를 클릭하고 이메일을 선택합니다. 그런 다음 관련 필드를 작성하여 이메일 이름을 지정하십시오. 이메일 초안을 작성할 때 토큰 아이콘을 클릭하여 이메일에 토큰을 포함합니다. 토큰을 사용하여 템플릿 이메일을 만들었으므로 이제 이메일을 후속 단계에서 Campaign에 대한 흐름 동작으로 추가합니다. 따라서 API를 통해 캠페인을 호출하면 이메일이 발송됩니다.
 **Campaign에서 전자 메일 흐름 동작을 만드는 방법** 스마트 캠페인과 전자 메일을 연결하면 마케터는 전자 메일이 표시되는 방식을 관리하고 서드파티 응용 프로그램은 전자 메일을 받는 사람과 시기를 결정할 수 있습니다. 이메일을 새 로컬 자산으로 만든 후 캠페인에서 흐름 작업으로 설정할 수 있습니다. 보낼 이메일을 찾아 선택합니다.
-**requestCampaign API를 호출하는 코드 샘플** Marketo 인터페이스에서 캠페인 및 트리거를 설정한 후 API를 사용하여 전자 메일을 보내는 방법을 보여 줍니다. 첫 번째 샘플은 XML 요청이고, 두 번째 샘플은 XML 응답이며, 마지막 샘플은 XML 요청을 생성하는 데 사용할 수 있는 Java 코드 샘플입니다. requestCampaign API를 호출할 때 사용되는 캠페인 ID를 찾는 방법도 보여 줍니다. 또한 API를 호출하려면 Marketo 캠페인의 ID를 미리 알고 있어야 합니다. 다음 방법 중 하나를 사용하여 캠페인 ID를 결정할 수 있습니다. 1. [getCampaignsForSource](/help/soap-api/getcampaignsforsource.md) API 1을 사용합니다. 브라우저에서 Marketo 캠페인을 열고 URL 주소 표시줄을 봅니다. 캠페인 ID(4자리 정수로 표시됨)는 &quot;SC&quot; 바로 다음에 찾을 수 있습니다. 예: `<https://app-stage.marketo.com/#SC**1025**A1>`. 굵게 표시된 부분은 캠페인 ID - &quot;1025&quot;입니다. requestCampaign에 대한 SOAP 요청
+**requestCampaign API를 호출하는 코드 샘플** Marketo 인터페이스에서 캠페인 및 트리거를 설정한 후 API를 사용하여 전자 메일을 보내는 방법을 보여 줍니다. 첫 번째 샘플은 XML 요청이고, 두 번째 샘플은 XML 응답이며, 마지막 샘플은 XML 요청을 생성하는 데 사용할 수 있는 Java 코드 샘플입니다. requestCampaign API를 호출할 때 사용되는 캠페인 ID를 찾는 방법도 보여 줍니다. 또한 API를 호출하려면 Marketo 캠페인의 ID를 미리 알고 있어야 합니다. 다음 방법 중 하나를 사용하여 캠페인 ID를 결정할 수 있습니다. 1. [getCampaignsForSource](/help/soap-api/getcampaignsforsource.md) API 1을 사용합니다. 브라우저에서 Marketo 캠페인을 열고 URL 주소 표시줄을 봅니다. 캠페인 ID(4자리 정수로 표시됨)는 &quot;SC&quot; 바로 다음에 찾을 수 있습니다. 예, `<https://app-stage.marketo.com/#SC**1025**A1>`. 굵게 표시된 부분은 캠페인 ID - &quot;1025&quot;입니다. requestCampaign에 대한 SOAP 요청
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -6894,8 +6894,8 @@ _2014-04-03_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
 회사 블로그의 특정 게시물을 방문하는 사용자를 추적하려고 한다고 상상해 보십시오. 게시물을 방문하는 총 사용자 수 중에서 최소 5초를 소비하고 페이지를 아래로 스크롤하여 관심 신호를 보내는 사용자만 추적한다고 가정해 보겠습니다. 익명 사용자의 경우 이 이벤트를 사용하여 Marketo에서 새 잠재 고객을 만들고, 알려진 사용자의 경우 이 이벤트를 사용하여 잠재 고객 활동을 업데이트하려고 합니다. 웹 사이트에서 [Munchkin 추적 코드](/help/javascript-api/lead-tracking.md)를 사용하여 이를 수행할 수 있습니다. 쿠키가 아닌 사용자가 Munchkin 추적 코드가 있는 페이지로 이동하면 사용자의 브라우저에 새 쿠키가 생성되고 Marketo에 새 익명 잠재 고객이 생성됩니다. 사용자가 이미 쿠키를 했으며 사용자가 Marketo의 기존 잠재 고객인 경우, 페이지 방문은 Marketo의 사용자 활동 로그에 기록됩니다. 먼저 Marketo에서 Munchkin 추적 코드를 생성하는 방법, 두 번째 특정 조건이 충족되는 경우에만 트리거하도록 Munchkin 샘플 코드를 수정하는 방법 및 세 번째 익명 사용자의 페이지 방문이 Marketo에 기록되었는지 확인하는 방법을 보여 줍니다.
 
-**Munchkin 추적 코드를 생성하는 방법** Munchkin 추적 코드를 사용하면 웹 사이트 방문 횟수를 추적할 수 있습니다. 아래에 세 가지 유형의 Munchkin 코드가 설명되어 있지만 이 예제에서는 비동기 Munchkin 추적 코드를 사용합니다. A) 단순: 가장 적은 코드 줄이 있지만 웹 페이지 로드 시간에 최적화되지 않습니다. 이 코드는 웹 페이지가 로드될 때마다 jQuery 라이브러리를 로드합니다. B) 비동기: 웹 페이지 로드 시간을 줄입니다. 이 코드는 jQuery 라이브러리가 이미 있는지 확인하고 누락된 경우 로드한 다음 웹 페이지의 나머지 부분이 로드되면 추적 코드를 실행하는 데 사용합니다. C) 비동기 jQuery: 웹 페이지 로드 시간을 줄이고 시스템 성능도 향상시킵니다. 이 코드는 사용자가 이미 jQuery를 가지고 있다고 가정하고 로드를 선택하지 않습니다. 1. 앱 오른쪽 상단에 있는 관리자 를 클릭합니다.  1. 왼쪽의 트리에서 Munchkin 를 클릭합니다.  1. 추적 코드 유형에 대해 비동기 를 선택합니다. 1. 을(를) 클릭하고 JavaScript 추적 코드를 복사하여 웹 사이트에 넣습니다.
-**쿠키 사용자 및 추적 이벤트에 대한 코드 샘플** `</body>` 태그 바로 앞에 추적 코드를 웹 페이지에 배치합니다. Marketo에서 만든 랜딩 페이지에는 추적 코드가 자동으로 포함되어 있으므로 이 코드를 추가할 필요가 없습니다. 이 코드 샘플은 스크립트가 로드된 후 Munchkin API를 호출합니다.
+**Munchkin 추적 코드를 생성하는 방법** Munchkin 추적 코드를 사용하면 웹 사이트 방문 횟수를 추적할 수 있습니다. 아래에 세 가지 유형의 Munchkin 코드가 설명되어 있지만 이 예제에서는 비동기 Munchkin 추적 코드를 사용합니다. A) 단순: 가장 적은 코드 줄이 있지만 웹 페이지 로드 시간에 최적화되지 않습니다. 이 코드는 웹 페이지가 로드될 때마다 jQuery 라이브러리를 로드합니다. B) 비동기: 웹 페이지 로드 시간을 줄입니다. 이 코드는 jQuery 라이브러리가 이미 있는지 확인하고 누락된 경우 로드한 다음 웹 페이지의 나머지 부분이 로드되면 추적 코드를 실행하는 데 사용합니다. C) 비동기 jQuery: 웹 페이지 로드 시간을 줄이고 시스템 성능도 향상시킵니다. 이 코드는 사용자가 이미 jQuery를 가지고 있다고 가정하고 로드를 선택하지 않습니다. 1. 앱 오른쪽 상단에 있는 관리자 를 클릭합니다.  1. 왼쪽의 트리에서 Munchkin 를 클릭합니다.  1. 추적 코드 유형에 대해 비동기 를 선택합니다. 1. JavaScript 추적 코드를 클릭하여 웹 사이트에 게시합니다.
+**쿠키 사용자 및 추적 이벤트에 대한 코드 샘플** 추적 코드를 `</body>` 태그 바로 앞에 웹 페이지에 배치합니다. Marketo에서 만든 랜딩 페이지에는 추적 코드가 자동으로 포함되어 있으므로 이 코드를 추가할 필요가 없습니다. 이 코드 샘플은 스크립트가 로드된 후 Munchkin API를 호출합니다.
 
 ```javascript
 <script type="text/javascript">
@@ -7234,9 +7234,9 @@ Marketo의 Principal Solutions Consultant(수석 솔루션 컨설턴트) Philipp
 
 **관리자 자격으로 또는 제공된 API 사용자 계정으로 Marketo 인스턴스에 액세스** Zapier 커넥터는 Marketo REST API를 사용하여 리드 데이터를 Marketo에 푸시합니다. 이 API를 사용하려면 Marketo 인스턴스의 관리자인 경우 직접 만들 수 있는 API 사용자 및 사용자 지정 서비스가 필요합니다. 그렇지 않은 경우 관리자가 제공해야 합니다. 만들 웹후크도 있으며 Marketo 관리자만 액세스할 수 있습니다. Marketo API 사용자 및 사용자 정의 서비스를 만드는 방법에 대한 단계별 설명은 여기에서 확인할 수 있습니다. 완료되면 Marketo REST API를 호출하기 위한 클라이언트 ID, 클라이언트 암호, Munchkin 계정 ID, Munchkin 계정 ID 자격 증명이 있어야 합니다
 
-Munchkin 계정 ID는 Munchkin 또는 웹 서비스 관리 화면에서 가져올 수 있습니다. 패턴은 다음과 같습니다. `000-XXX-000`. 액세스 토큰은 한 시간 동안만 유효하므로 가져올 필요가 없습니다. 커넥터가 자동으로 토큰을 생성합니다.
-Google Docs, Sheets 및 Slides를 사용하여 무료 계정에 등록하면 다양한 종류의 온라인 문서를 만들고, 다른 사람들과 실시간으로 작업하고, 온라인으로 Google 드라이브에 저장할 수 있는 생산성 앱입니다. 사용 사례에는 Google 시트가 필요합니다. Google Docs의 다양한 기능과 Google을 사용하여 계정을 만드는 기능을 [여기](https://workspace.google.com/products/docs/)에서 찾을 수 있습니다.
-**FullContact를 사용하여 무료 계정에 등록** FullContact를 사용하면 모든 연락처를 가져와 소셜 프로필, 사진, 전자 메일 서명, 회사 정보 등의 변경 사항과 지속적으로 동기화하여 가장 중요한 사람들과 완벽하게 연결할 수 있습니다. Zapier를 포함한 250개 이상의 웹 앱으로 카드를 스캔할 수 있는 모바일 명함 판독기를 제공합니다. 여기서 무료 계정으로 가입하실 수 있습니다. 더 많은 기능과 용량을 제공하는 프리미엄 유료 계정을 구독할 수도 있습니다. 모바일 앱은 Apple AppStore 또는 Google Play에서 다운로드할 수 있습니다. FullContact Zaps는 [FullContact Zapier 통합](https://zapier.com/apps/contacts-plus/integrations)에 설명되어 있습니다.
+Munchkin 계정 ID는 Munchkin 또는 웹 서비스 관리 화면에서 가져올 수 있습니다. 패턴은 다음과 같습니다. `000-XXX-000`.  액세스 토큰은 한 시간 동안만 유효하므로 가져올 필요가 없습니다. 커넥터가 자동으로 토큰을 생성합니다.
+Google Docs, Sheets 및 Slides를 사용하여 무료 계정에 등록하면 다양한 종류의 온라인 문서를 만들고, 다른 사람들과 실시간으로 작업하고, 온라인으로 Google 드라이브에 저장할 수 있는 생산성 앱입니다. 사용 사례에는 Google 시트가 필요합니다. [여기](https://workspace.google.com/products/docs/)에서 Google Docs의 다양한 기능과 Google을 사용하여 계정을 만들 수 있습니다.
+**FullContact를 사용하여 무료 계정에 등록하세요** FullContact를 사용하면 모든 연락처를 가져와 소셜 프로필, 사진, 전자 메일 서명, 회사 정보 등의 변경 사항과 지속적으로 동기화하여 가장 중요한 사람들과 완전히 연결할 수 있습니다. Zapier를 포함한 250개 이상의 웹 앱으로 카드를 스캔할 수 있는 모바일 명함 판독기를 제공합니다. 여기서 무료 계정으로 가입하실 수 있습니다. 더 많은 기능과 용량을 제공하는 프리미엄 유료 계정을 구독할 수도 있습니다. 모바일 앱은 Apple AppStore 또는 Google Play에서 다운로드할 수 있습니다. FullContact Zaps는 [FullContact Zapier 통합](https://zapier.com/apps/contacts-plus/integrations)에 설명되어 있습니다.
 
 ### Zapier용 Marketo 커넥터 구현
 
@@ -7252,7 +7252,7 @@ Google Docs, Sheets 및 Slides를 사용하여 무료 계정에 등록하면 다
 * Access Token Placement&#x200B;**:**&#x200B;의 토큰
 
 Marketo 사용자 지정 서비스가 만들어지면 클라이언트 ID 및 클라이언트 암호를 사용할 수 있게 됩니다. 클라이언트 ID와 클라이언트 암호를 사용하여 REST API [인증](/help/rest-api/authentication.md) 끝점을 통해 액세스 토큰을 생성합니다. 그런 다음 이 액세스 토큰을 사용하여 REST API에 대한 후속 요청을 수행할 수 있습니다. 토큰은 1시간 후 만료되며 REST API 호출을 계속하려면 다시 생성해야 합니다. 세션 토큰이 만료될 때마다 사용자 지정 인증 스크립트를 실행할 수 있으므로 인증 유형 = &#39;세션 인증&#39;을 선택했습니다. &#39;스크립팅 API&#39; 섹션에서 이 유형의 인증으로만 작동할 수 있는 이 메커니즘을 구현하는 방법을 살펴보겠습니다.
-**트리거** Zapier 트리거를 통해 데이터를 Zapier로 가져올 수 있습니다. Marketo Webhook을 대신 활용하므로 사용 사례에 필요하지 않습니다. 그러나 Marketo 커넥터에 대한 필수 테스트로 더미 트리거 를 작성해야 합니다. Marketo REST API [일일 사용량 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getDailyUsageUsingGET) 끝점을 호출하는 테스트 트리거를 만듭니다. **새 트리거 추가**&#x200B;를 클릭하여 마법사를 시작하고 다음 필드를 채웁니다(언급하지 않은 필드는 비워 둘 수 있음). 이름 및 설명
+**트리거** Zapier 트리거를 사용하여 데이터를 Zapier로 가져올 수 있습니다. Marketo Webhook을 대신 활용하므로 사용 사례에 필요하지 않습니다. 그러나 Marketo 커넥터에 대한 필수 테스트로 더미 트리거 를 작성해야 합니다. Marketo REST API [일별 사용 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getDailyUsageUsingGET) 끝점을 호출하는 테스트 트리거를 만듭니다. **새 트리거 추가**&#x200B;를 클릭하여 마법사를 시작하고 다음 필드를 채웁니다(언급하지 않은 필드는 비워 둘 수 있음). 이름 및 설명
 
 * 이름: 테스트 트리거
 * 키: test_trigger
@@ -7706,9 +7706,9 @@ Marketo에는 API에 대한 일일 요청 제한이 있으며, 이 제한은 사
 
 새 Excel 통합 문서로 시작하겠습니다. 모든 Marketo REST API 설정을 선언하기 위한 특정 구성 워크시트를 만듭니다. 이 워크시트에서는 세 개의 테이블을 만듭니다.
 
-열: **URL**: Marketo REST API 끝점이 있는 테이블 &#39;**REST_API_Authentication**&#39;. **클라이언트 ID**: Marketo REST API OAuth2.0 자격 증명에서. **클라이언트 암호**: Marketo REST API OAuth2.0 자격 증명에서.
-다음 열이 있는 테이블 &#39;**Scoping**&#39;: **Paging Token SinceDatetime**: ISO 8601 표준 날짜 표기법 다음 날짜(예: &quot;2016-10-06T13:22:17-08:00&quot;, &quot;2016-10-06&quot;은 올바른 날짜/시간입니다). 지정된 기간 이후 Marketo 활동을 가져오는 데 사용되는 이 날짜는 초기 &#39;날짜 기반&#39; 페이징 토큰 덕분입니다. 이 날짜는 주로 통합 문서로 가져올 데이터의 양을 제한하는 데 사용됩니다. **목록 ID**: 처리 중인 모든 리드/연락처를 참조하는 Marketo 내 정적 목록의 ID입니다. 이 정적 목록은 Marketo에서 자유롭게 관리할 수 있습니다(예: 스마트 캠페인이 리드 및 연락처를 통해 정기적으로 또는 실시간으로 제공할 수 있음).
-정적 목록의 ID를 가져오려면 Marketo에서 열고 URL에서 해당 숫자 ID를 가져옵니다(예: `<https://myorg.marketo.com/#ST3517A1LA1>`, 목록 ID=3511. **최대 레코드 페이지**). 이는 페이지당 최대 레코드 수 300개인 &#39;위치 기반&#39; 페이징 토큰을 사용하여 Marketo 출력 데이터를 반복하는 의사 재귀 알고리즘에 사용됩니다. 한 페이지에 가능한 많은 레코드를 저장하는 것이 저희의 관심사이기 때문에 300개를 고수하겠습니다. 따라서 일반적으로 최대 레코드 페이지가 33.333으로 설정되면 최대 레코드 용량은 33.333 X 300 = 9999백만 레코드의 용량을 의미하지만 Marketo API 일일 요청 제한에서도 33.333K를 의미합니다. 쿼리의 모든 데이터가 획득되면 알고리즘은 중지됩니다. 따라서 이 매개 변수는 루프에 대한 안전 제한일 뿐입니다.
+열: **URL**: Marketo REST API 끝점이 있는 테이블 &#39;**REST_API_Authentication**&#39;. **클라이언트 ID**: Marketo REST API OAuth2.0 자격 증명에서 가져온 것입니다. **클라이언트 암호**: Marketo REST API OAuth2.0 자격 증명에서.
+다음 열이 있는 테이블 &#39;**Scoping**&#39;: **Paging Token SinceDatetime**: ISO 8601 표준 날짜 표기법 다음의 날짜(예: &quot;2016-10-06T13:22:17-08:00&quot;, &quot;2016-10-06&quot;은 올바른 날짜/시간)입니다. 이 날짜는 초기 &#39;날짜 기반&#39; 페이징 토큰 덕분에 지정된 기간 이후 Marketo 활동을 가져오는 데 사용됩니다. 이 날짜는 주로 통합 문서로 가져올 데이터의 양을 제한하는 데 사용됩니다. **목록 ID**: 처리 중인 모든 리드/연락처를 참조하는 Marketo 내 정적 목록의 ID입니다. 이 정적 목록은 Marketo에서 자유롭게 관리할 수 있습니다(예: 스마트 캠페인이 리드 및 연락처를 통해 정기적으로 또는 실시간으로 제공할 수 있음).
+정적 목록의 ID를 가져오려면 Marketo에서 열고 URL에서 해당 숫자 ID를 가져옵니다(예: `<https://myorg.marketo.com/#ST3517A1LA1>`, 목록 ID=3511). **최대 레코드 페이지**: 페이지당 최대 레코드 수가 300개인 &#39;위치 기반&#39; 페이징 토큰을 사용하여 Marketo 출력 데이터를 반복하는 의사 재귀 알고리즘에 사용됩니다. 한 페이지에 가능한 많은 레코드를 저장하는 것이 저희의 관심사이기 때문에 300개를 고수하겠습니다. 따라서 일반적으로 최대 레코드 페이지가 33.333으로 설정되면 최대 레코드 용량은 33.333 X 300 = 9999백만 레코드의 용량을 의미하지만 Marketo API 일일 요청 제한에서도 33.333K를 의미합니다. 쿼리의 모든 데이터가 획득되면 알고리즘은 중지됩니다. 따라서 이 매개 변수는 루프에 대한 안전 제한일 뿐입니다.
 
 `Leads` 테이블(열: **리드 필드**: 리드 및 연락처를 쿼리할 때 Marketo에서 수집할 쉼표로 구분된 리드 필드). Excel에서 표를 선언하는 것은 간단합니다. 스프레드시트에 열 이름과 값을 사용하여 두 행을 입력하고 표의 주변을 마우스로 강조 표시한 다음 &#39;삽입&#39; 메뉴에서 표 아이콘을 선택한 다음 이름을 지정합니다. 테이블과 해당 열에 지정된 이름은 스크립트에서 직접 호출되므로 중요합니다.
 
@@ -8393,7 +8393,7 @@ secret_key, IFTTT Maker 서비스의 비밀 키를 사용합니다.
 
 ### IFTTT 애플릿
 
-IFTTT 웹 포털의 메인 메뉴에서 &quot;내 애플릿&quot;을 선택합니다.  &quot;새 애플릿&quot; 단추를 클릭하고 섹션 **+this**&#x200B;을(를) 클릭합니다. Maker 서비스를 검색합니다.  Maker 서비스가 이벤트를 알리는 웹 요청을 받을 때마다 실행되는 트리거를 만듭니다. Marketo 웹후크의 URL에 지정된 것과 동일한 이벤트 이름(예: &quot;MarketoProgramSuccess&quot;)을 사용하고 &quot;Create trigger&quot; 단추를 클릭합니다.  이제 섹션 **+that**&#x200B;을(를) 클릭하여 Action Service를 지정할 차례입니다. IoT 디바이스인 알림 서비스에 투자하지 않고도 누구나 테스트할 수 있는 간단한 Action Service로 시작할 예정입니다. 알림 서비스를 검색하고 선택합니다.
+IFTTT 웹 포털의 메인 메뉴에서 &quot;내 애플릿&quot;을 선택합니다.  &quot;새 애플릿&quot; 단추를 클릭하고 **+this** 섹션을 클릭합니다.  Maker 서비스를 검색합니다.  Maker 서비스가 이벤트를 알리는 웹 요청을 받을 때마다 실행되는 트리거를 만듭니다. Marketo 웹후크의 URL에 지정된 것과 동일한 이벤트 이름(예: &quot;MarketoProgramSuccess&quot;)을 사용하고 &quot;Create trigger&quot; 단추를 클릭합니다.  이제 섹션 **+that**&#x200B;을(를) 클릭하여 작업 서비스를 지정할 차례입니다.  우리는 IoT 기기에 투자하지 않고도 누구나 테스트할 수 있는 간단한 액션 서비스인 알림 서비스를 시작할 것입니다. 알림 서비스를 검색하고 선택합니다.
 디바이스에 알림을 보내는 &quot;알림 보내기&quot; 작업을 선택합니다.  아래 예와 같이 Marketo에서 보낸 3개의 값을 구성 요소로 추가하여 사용자에게 의미 있는 알림을 전달한 다음 &quot;작업 만들기&quot; 버튼을 클릭할 수 있습니다. IFTTT 애플릿을 검토하고 완료합니다. 활성화되었는지 확인합니다.
 
 ### IFTTT 애플릿 테스트
@@ -9768,7 +9768,7 @@ _케니_&#x200B;이(가) _2021-10-04_&#x200B;에 게시함
 2021년 10월에는 기존 REST API를 개선하고 몇 가지 오류를 해결하고 있습니다. 아래의 전체 업데이트 목록을 참조하십시오.
 
 * 양식 제출의 일부로 프로그램 구성원 사용자 지정 필드를 지원하도록 [양식 제출](https://developer.adobe.com/marketo-apis/api/mapi#operation/SubmitFormUsingPOST) 끝점을 개선했습니다. 선택적으로 [여기](/help/rest-api/leads.md)에 설명된 대로 양식을 추가할 프로그램으로 프로그램을 지정하거나 프로그램 멤버 사용자 정의 필드를 추가할 프로그램으로 지정할 수 있습니다.
-updatedAt 특성을 기반으로 날짜 범위 기반 쿼리를 지원하도록 [프로그램 구성원 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getProgramMembersUsingGET) 끝점을 개선했습니다. 이 작업은 [여기](/help/rest-api/program-members.md)에 설명된 대로 시작 및 종료 날짜/시간 매개 변수를 전달하여 수행합니다.
+updatedAt 특성을 기반으로 날짜 범위 기반 쿼리를 지원하도록 [프로그램 구성원 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getProgramMembersUsingGET) 끝점을 개선했습니다. [여기](/help/rest-api/program-members.md)에 설명된 대로 시작 및 종료 날짜/시간 매개 변수를 전달하여 이 작업을 수행합니다.
 * [중요 필드](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/field-management/mark-a-field-as-sensitive)을(를) 지원하도록 [리드 필드](/help/rest-api/leads.md) API를 개선했습니다. [이름별 리드 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadFieldByNameUsingGET), [리드 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadFieldsUsingGET), [리드 필드 만들기](https://developer.adobe.com/marketo-apis/api/mapi#operation/createLeadFieldUsingPOST) 및 [리드 필드 업데이트](https://developer.adobe.com/marketo-apis/api/mapi#operation/updateLeadFieldUsingPOST) 엔드포인트는 이제 isSensitive 특성을 지원합니다.
 
 ### 결함 해결
