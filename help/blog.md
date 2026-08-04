@@ -1740,7 +1740,7 @@ _2014-10-30_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
 마케팅 자동화 플랫폼은 즉시 그리고 숙련된 운영자의 손에서 매우 강력합니다. 기본적으로 플랫폼은 확장 애플리케이션을 사용하여 시스템이 팀에 보다 놀라운 작업을 수행하도록 합니다. Marketo의 논리 엔진은 매우 많은 (그리고 그것은) 능력을 가지고 있다고 생각할 수 있지만 한계가 있습니다. Marketo이 모든 것을 여러분을 위해 할 수는 없으며, 그래서도 안 됩니다.
 
-Marketo이 빌드할 수 있는 것보다 더 나은 기능을 수행하는 다른 도구가 있습니다. Marketo의 플랫폼이 매우 열려 있으므로 [LaunchPoint 에코 시스템(응용 프로그램 ](https://exchange.adobe.com/apps/browse/ec?product=MRKTO))이 존재할 수 있습니다. 또한 이러한 개방성을 사용하여 비즈니스 요구 사항에 맞게 사이트와 Marketo의 기능을 확장할 수도 있습니다. Marketo과 같은 플랫폼의 가장 큰 장점은 일반적인 마케터가 완전한 프로그래머가 되지 않고도 페이지, 이메일 및 라우팅 논리를 작성할 수 있다는 것입니다.
+Marketo이 빌드할 수 있는 것보다 더 나은 기능을 수행하는 다른 도구가 있습니다. Marketo의 플랫폼이 매우 열려 있으므로 [LaunchPoint 에코 시스템(응용 프로그램 &#x200B;](https://exchange.adobe.com/apps/browse/ec?product=MRKTO))이 존재할 수 있습니다. 또한 이러한 개방성을 사용하여 비즈니스 요구 사항에 맞게 사이트와 Marketo의 기능을 확장할 수도 있습니다. Marketo과 같은 플랫폼의 가장 큰 장점은 일반적인 마케터가 완전한 프로그래머가 되지 않고도 페이지, 이메일 및 라우팅 논리를 작성할 수 있다는 것입니다.
 요즘 마케터는 논리를 이해해야 하지만 실제 프로그래밍은 전문가에게 맡기는 것이 가장 좋다. 개발자를 언제 호출해야 하는지 어떻게 알 수 있습니까? 프로그래머가 개입해야 하는 시기를 결정하는 몇 가지 기본 규칙 또는 휴리스틱이 있습니다. - Marketo에 필요성에 대한 명백한 필터, 트리거 또는 기능이 없는 경우 일부 JavaScript 또는 jQuery로 수행할 수 있습니다. - 이 작업이 Marketo에 비해 너무 복잡합니까? - Marketo이 이렇게 할 수 있습니까? - 이 웹 사이트 사용자 지정은 쉽게 지원되지 않습니까? - Marketo이 웹 사이트 또는 다른 데이터베이스와 이야기해야 합니까? &quot; 컴퓨터가 할 수 있는 것처럼 들리지만 Marketo에는 이에 대한 기능이 없습니까?&quot; Marketo은 기본 기능을 제공하지 않지만 많은 타사 통합 및 사용자 정의 연결에 연결합니다.
 
 [LaunchPoint 마켓플레이스](https://exchange.adobe.com/apps/browse/ec?product=MRKTO)에서 다음 범주 중 일부를 살펴보십시오. - [분석 도구](https://exchange.adobe.com/apps/browse/ec?product=MRKTO) - [데이터 추가](https://exchange.adobe.com/apps/browse/ec?product=MRKTO) - [콘텐츠 관리 시스템](https://exchange.adobe.com/apps/browse/ec?product=MRKTO) 일부 타사 애플리케이션은 플랫폼(GoToWebinar) 내에서 직관적인 컨트롤 패널 및 설정 도구를 제공합니다. 이러한 &quot;기본&quot; 통합은 로그인을 설정한 다음 Marketo에서 사용하면 가장 많은 작업을 수행해야 합니다. 그러나 다른 확장에서는 직접 프로그래밍해야 하는 보다 복잡한 API를 사용해야 합니다.
@@ -1795,7 +1795,7 @@ Facebook에서 Marketo 랜딩 페이지를 공유할 때 이미지가 자동으�
 1. 페이지 편집 Meta 태그를 클릭합니다.
 1. Facebook OG 태그 섹션에 오픈 그래프 메타 추가 . 그런 다음 [저장]을 클릭합니다. 형식은 다음과 같습니다. `<meta property="og:image" content="http://example.com/example.jpg"/>`
 
-자세한 내용은 Facebook의 개발자 설명서를 참조하십시오](https://developers.facebook.com/docs/sharing/best-practices) 오픈 그래프 메타 태그에 대한 정보.[
+자세한 내용은 Facebook의 개발자 설명서를 참조하십시오[&#128279;](https://developers.facebook.com/docs/sharing/best-practices) 오픈 그래프 메타 태그에 대한 정보.
 
 _2014-11-17_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
@@ -2783,7 +2783,7 @@ _2015-01-26_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 ## Marketo REST API에서 모든 리드 가져오기
 
 REST API를 통해 Marketo에서 모든 잠재 고객 목록을 가져오는 방법을 묻는 [질문이 StackOverflow에 있습니다](https://stackoverflow.com/questions/28184900/how-do-i-get-the-list-of-all-the-leads-in-marketo). 필터 유형 REST API 끝점별 [여러 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByFilterUsingGET)를 사용하여 이 데이터를 쿼리할 수 있습니다. Marketo의 잠재 고객에는 1부터 시작하여 순차적 순서로 잠재 고객 ID가 지정됩니다. [필터 유형별 여러 리드 가져오기 REST API 끝점](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByFilterUsingGET)을 사용하여 각 호출에서 리드 ID별로 300개의 리드를 쿼리할 수 있습니다. 이 끝점에 대한 각 호출에서 id를 filterType으로 지정하고 리드 id를 filterValues로 지정해야 합니다. 모든 리드를 가져오려면 한 번에 총 리드 수 300개를 반복합니다. Y
-Marketo UI를 통해 Marketo 인스턴스의 총 리드 수를 가져올 수 있습니다. Marketo UI에서 리드 데이터베이스 탭으로 이동하여 시스템 스마트 목록을 클릭하고 모든 리드 스마트 목록을 클릭한 다음 마지막으로 &quot;리드&quot; 탭을 클릭합니다. 그런 다음 ID 열을 클릭하고 내림차순으로 정렬합니다. 리드가 정렬되면 모든 리드를 쿼리할 때 첫 번째 리드의 ID가 리드 ID의 상한이 됩니다. 총 리드 수를 가져올 수 있는 Marketo UI에 대한 액세스 권한이 없는 경우 리드 활동 가져오기 REST API](https://stackoverflow.com/questions/28419967/get-all-leads-programmatically-in-marketo-v1)를 사용하여 이 값을 가져올 수 있는 [대체 방법이 있습니다.
+Marketo UI를 통해 Marketo 인스턴스의 총 리드 수를 가져올 수 있습니다. Marketo UI에서 리드 데이터베이스 탭으로 이동하여 시스템 스마트 목록을 클릭하고 모든 리드 스마트 목록을 클릭한 다음 마지막으로 &quot;리드&quot; 탭을 클릭합니다. 그런 다음 ID 열을 클릭하고 내림차순으로 정렬합니다. 리드가 정렬되면 모든 리드를 쿼리할 때 첫 번째 리드의 ID가 리드 ID의 상한이 됩니다. 총 리드 수를 가져올 수 있는 Marketo UI에 대한 액세스 권한이 없는 경우 리드 활동 가져오기 REST API[&#128279;](https://stackoverflow.com/questions/28419967/get-all-leads-programmatically-in-marketo-v1)를 사용하여 이 값을 가져올 수 있는 대체 방법이 있습니다.
 
 1. 첫 번째 API 호출: 바꾸기 ...를 다음 범위의 모든 값으로 바꿉니다.
 
@@ -4049,7 +4049,7 @@ public class Auth {
 }
 ```
 
-이 코드를 사용하면 [관리] -> [실행 지점](ID 및 암호) 및 [관리] -> [웹 서비스](호스트)에서 클라이언트 ID, 클라이언트 암호 및 호스트(marketoInstance로서)로 인증 인스턴스를 만들 수 있습니다. 현재 저장된 토큰이 null인지 또는 만료되었는지 테스트한 다음 기존 토큰을 반환하거나 새 인증 요청을 수행한 다음 JSON 응답의 &quot;access_token&quot; 멤버에서 새 토큰을 반환하는 getToken 메서드를 표시합니다. 이제 Marketo 인스턴스를 인증할 수 있으므로 다음 단계는 리드를 검색하는 것입니다. 이 클래스를 사용하고 있습니다.
+이 코드를 사용하면 [관리] -> [실행 지점] (ID 및 암호) 및 [관리] -> [웹 서비스] (호스트)에서 클라이언트 ID, 클라이언트 암호 및 호스트(marketoInstance로서)로 인증 인스턴스를 만들 수 있습니다. 현재 저장된 토큰이 null인지 또는 만료되었는지 테스트한 다음 기존 토큰을 반환하거나 새 인증 요청을 수행한 다음 JSON 응답의 &quot;access_token&quot; 멤버에서 새 토큰을 반환하는 getToken 메서드를 표시합니다. 이제 Marketo 인스턴스를 인증할 수 있으므로 다음 단계는 리드를 검색하는 것입니다. 이 클래스를 사용하고 있습니다.
 
 ```java
 package dev.marketo.blog_leads;
@@ -4176,7 +4176,7 @@ public class App
 토큰이 비어 있거나 만료되었습니다. 새 인증 시도 중
 다음으로 인증 시도 중 `https://299-BYM-827.mktorest.com/identity/oauth/token?grant_type=client_credentials&client_id=b417d98f-9289-47d1-a61f-db141bf0267f&client_secret=0DipOvz4h2wP1ANeVjlfwMvECJpo0ZYc`
 Got 인증 응답: {&quot;access_token&quot;:&quot;ec0f02c0-28ac-4d6c-b7d7-00e47ae85ff1:st&quot;,&quot;token_type&quot;:&quot;bearer&quot;,&quot;expires_in&quot;:538,&quot;scope&quot;:&quot;<apiuser@mktosupport.com>&quot;}
-{&quot;requestId&quot;:&quot;14fb6#14e6a7a9ad6&quot;,&quot;result&quot;:[{&quot;id&quot;:1026322,&quot;updatedAt&quot;:&quot;2015-07-07T21:43:25Z&quot;,&quot;lastName&quot;:&quot;Lead&quot;,&quot;email&quot;:&quot;<testlead@marketo.com>&quot;,&quot;createdAt&quot;:&quot;2015-07-07T21:43:25Z&quot;,&quot;firstName&quot;:&quot;Test&quot;},{&quot;id&quot;:1026323,&quot;updatedAt&quot;:&quot;2015-07-07T21{43 z&quot;,&quot;lastName&quot;:&quot;Lead2&quot;,&quot;email&quot;:&quot;<testlead@marketo.com>&quot;,&quot;createdAt&quot;:&quot;2015-07-07T21:43:43Z&quot;,&quot;firstName&quot;:&quot;Test&quot;}],&quot;success&quot;:true:43:
+&lbrace;&quot;requestId&quot;:&quot;14fb6#14e6a7a9ad6&quot;,&quot;result&quot;:[{&quot;id&quot;:1026322,&quot;updatedAt&quot;:&quot;2015-07-07T21:43:25Z&quot;,&quot;lastName&quot;:&quot;Lead&quot;,&quot;email&quot;:&quot;<testlead@marketo.com>&quot;,&quot;createdAt&quot;:&quot;2015-07-07T21:43:25Z&quot;,&quot;firstName&quot;:&quot;Test&quot;},&lbrace;&quot;id&quot;:1026323,&quot;updatedAt&quot;:&quot;2015-07-07T21{43 z&quot;,&quot;lastName&quot;:&quot;Lead2&quot;,&quot;email&quot;:&quot;<testlead@marketo.com>&quot;,&quot;createdAt&quot;:&quot;2015-07-07T21:43:43Z&quot;,&quot;firstName&quot;:&quot;Test&quot;}],&quot;success&quot;:true:43:
 
 이제 필요한 방식으로 처리할 수 있는 리드 데이터가 있습니다. 읽어주셔서 감사드리며, 의견을 남겨주시기 바랍니다.
 
@@ -7249,7 +7249,7 @@ Google Docs, Sheets 및 Slides를 사용하여 무료 계정에 등록하면 다
 
   `{"access_token":"{{access_token}}"}`
 
-* Access Token Placement**:**의 토큰
+* Access Token Placement&#x200B;**:**&#x200B;의 토큰
 
 Marketo 사용자 지정 서비스가 만들어지면 클라이언트 ID 및 클라이언트 암호를 사용할 수 있게 됩니다. 클라이언트 ID와 클라이언트 암호를 사용하여 REST API [인증](/help/rest-api/authentication.md) 끝점을 통해 액세스 토큰을 생성합니다. 그런 다음 이 액세스 토큰을 사용하여 REST API에 대한 후속 요청을 수행할 수 있습니다. 토큰은 1시간 후 만료되며 REST API 호출을 계속하려면 다시 생성해야 합니다. 세션 토큰이 만료될 때마다 사용자 지정 인증 스크립트를 실행할 수 있으므로 인증 유형 = &#39;세션 인증&#39;을 선택했습니다. &#39;스크립팅 API&#39; 섹션에서 이 유형의 인증으로만 작동할 수 있는 이 메커니즘을 구현하는 방법을 살펴보겠습니다.
 **트리거** Zapier 트리거를 사용하여 데이터를 Zapier로 가져올 수 있습니다. Marketo Webhook을 대신 활용하므로 사용 사례에 필요하지 않습니다. 그러나 Marketo 커넥터에 대한 필수 테스트로 더미 트리거 를 작성해야 합니다. Marketo REST API [일별 사용 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getDailyUsageUsingGET) 끝점을 호출하는 테스트 트리거를 만듭니다. **새 트리거 추가**&#x200B;를 클릭하여 마법사를 시작하고 다음 필드를 채웁니다(언급하지 않은 필드는 비워 둘 수 있음). 이름 및 설명
@@ -8136,7 +8136,7 @@ Marketo 구성 워크시트에서 필요한 모든 정보를 입력합니다.
 
 ### 데이터 분석 표현식(DAX)
 
-일부 보고서에 대한 데이터를 보강하거나 다시 포맷해야 합니다. Power Pivot 데이터 분석 표현식(DAX)을 사용하여 계산된 열 및 측정값(계산된 필드라고도 함)으로 일부 사용자 지정 계산을 정의해 보겠습니다. DAX에 대한 자세한 내용은 참조 섹션의 &#39;Power Pivot에서 DAX&#39; 링크를 참조하십시오. [계산 영역]이 [파워 피벗] 창에 표시되는지 확인합니다. 표시되지 않으면 [파워 피벗] 홈 메뉴에서 사용하도록 설정합니다.  **MktoLeads** 탭을 선택하고 **리드 수** 측정값을 리드 계산 영역 **리드 수:=****DISTINCTCOUNT****([id])**&#x200B;의 어디에나 추가하십시오. 이 측정은 ID를 기반으로 목록에서 사용할 수 있는 개별 리드를 카운트하는 것입니다. 또한 보고서 컨텍스트에서 적용된 최종 필터도 고려합니다. 보고서에서 리드 수를 합할 수 있으므로 이 조치는 실제로 필요하지 않지만 &#39;MktoLeads의 합계&#39;보다 더 나은 이름의 리드 수를 갖도록 했습니다. 또한 특정 유형의 데이터 입력(예: 50보다 높은 점수, 평균 점수 등을 가진 모든 잠재 고객)에 대해 평균, 최소, 최대값을 수행하는 보다 복잡한 측정을 쉽게 상상할 수 있는 간단한 예입니다.  이제 **MktoWebActivities** 탭을 선택하고 3개의 계산된 열을 만들겠습니다. 표의 맨 오른쪽 끝으로 스크롤하고 &#39;열 추가&#39; 열을 클릭하여 다음 계산된 열을 삽입합니다. **활동:** MktoActivityTypes 테이블에서 활동 ID를 조회하여 사용자에게 친숙한 활동 레이블을 얻습니다. **\=****LOOKUPVALUE****(MktoActivityTypes[name],MktoActivityTypes[id],[activityTypeId])** **Year-Month:** 일부 보고서에 더 적합한 &#39;YYYYmm&#39; 패턴으로 활동 날짜를 다시 포맷합니다. **\=****LEFT****([activityDate],4)&amp;****MID****([activityDate],6,2)** **날짜:** 활동 날짜는 원래 쿼리의 문자열이므로 적절한 날짜로 변환하십시오. **\=****DATE****(****LEFT****([activityDate],4),****MID****([activityDate],6,2),****MID****([activityDate],9,2))** 이제 **MktoEmailActivities** 탭에 대해 동일한 세 개의 측정값을 만들고 두 개의 추가 측정값을 추가해 보겠습니다. **캠페인:** MktoCampaigns 테이블에서 캠페인 ID를 조회하여 사용자에게 친숙한 캠페인 이름을 얻으십시오. **\=****LOOKUPVALUE****(MktoCampaigns[name],MktoCampaigns[id],[campaignId])** **프로그램:** MktoCampaigns 테이블에서 캠페인 ID를 조회하여 사용자에게 친숙한 프로그램 이름을 얻습니다. MktoPrograms 테이블은 폴더, 작업 영역 등과 같은 프로그램에 대한 자세한 정보를 제공할 수 있습니다. **\=****LOOKUPVALUE****(MktoCampaigns[programName],MktoCampaigns[id],[campaignId])**
+일부 보고서에 대한 데이터를 보강하거나 다시 포맷해야 합니다. Power Pivot 데이터 분석 표현식(DAX)을 사용하여 계산된 열 및 측정값(계산된 필드라고도 함)으로 일부 사용자 지정 계산을 정의해 보겠습니다. DAX에 대한 자세한 내용은 참조 섹션의 &#39;Power Pivot에서 DAX&#39; 링크를 참조하십시오. [계산 영역]이 [파워 피벗] 창에 표시되는지 확인합니다. 표시되지 않으면 [파워 피벗] 홈 메뉴에서 사용하도록 설정합니다.  **MktoLeads** 탭을 선택하고 **리드 수** 측정값을 리드 계산 영역 **리드 수:=**&#x200B;**DISTINCTCOUNT**&#x200B;**([id])**&#x200B;의 어디에나 추가하십시오. 이 측정은 ID를 기반으로 목록에서 사용할 수 있는 개별 리드를 카운트하는 것입니다. 또한 보고서 컨텍스트에서 적용된 최종 필터도 고려합니다. 보고서에서 리드 수를 합할 수 있으므로 이 조치는 실제로 필요하지 않지만 &#39;MktoLeads의 합계&#39;보다 더 나은 이름의 리드 수를 갖도록 했습니다. 또한 특정 유형의 데이터 입력(예: 50보다 높은 점수, 평균 점수 등을 가진 모든 잠재 고객)에 대해 평균, 최소, 최대값을 수행하는 보다 복잡한 측정을 쉽게 상상할 수 있는 간단한 예입니다.  이제 **MktoWebActivities** 탭을 선택하고 3개의 계산된 열을 만들겠습니다. 표의 맨 오른쪽 끝으로 스크롤하고 &#39;열 추가&#39; 열을 클릭하여 다음 계산된 열을 삽입합니다. **활동:** MktoActivityTypes 테이블에서 활동 ID를 조회하여 사용자에게 친숙한 활동 레이블을 얻습니다. **\=**&#x200B;**LOOKUPVALUE**&#x200B;**(MktoActivityTypes[name],MktoActivityTypes[id],[activityTypeId])** **Year-Month:** 일부 보고서에 더 적합한 &#39;YYYYmm&#39; 패턴으로 활동 날짜를 다시 포맷합니다. **\=**&#x200B;**LEFT**&#x200B;**([activityDate],4)&amp;**&#x200B;**MID**&#x200B;**([activityDate],6,2)** **날짜:** 활동 날짜는 원래 쿼리의 문자열이므로 적절한 날짜로 변환하십시오. **\=**&#x200B;**DATE**&#x200B;**(**&#x200B;**LEFT**&#x200B;**([activityDate],4),**&#x200B;**MID**&#x200B;**([activityDate],6,2),**&#x200B;**MID**&#x200B;**([activityDate],9,2))** 이제 **MktoEmailActivities** 탭에 대해 동일한 세 개의 측정값을 만들고 두 개의 추가 측정값을 추가해 보겠습니다. **캠페인:** MktoCampaigns 테이블에서 캠페인 ID를 조회하여 사용자에게 친숙한 캠페인 이름을 얻으십시오. **\=**&#x200B;**LOOKUPVALUE**&#x200B;**(MktoCampaigns[name],MktoCampaigns[id],[campaignId])** **프로그램:** MktoCampaigns 테이블에서 캠페인 ID를 조회하여 사용자에게 친숙한 프로그램 이름을 얻습니다. MktoPrograms 테이블은 폴더, 작업 영역 등과 같은 프로그램에 대한 자세한 정보를 제공할 수 있습니다. **\=**&#x200B;**LOOKUPVALUE**&#x200B;**(MktoCampaigns[programName],MktoCampaigns[id],[campaignId])**
 
 ### 엔티티 관계
 
@@ -8152,7 +8152,7 @@ Marketo 구성 워크시트에서 필요한 모든 정보를 입력합니다.
 
 ### 전자 메일 성능 피벗 차트
 
-이 첫 번째 보고서는 표준 Excel 피벗 차트를 기반으로 이메일 성과 KPI를 보여 줍니다. 이를 통해 업계 및/또는 캠페인별로 데이터를 필터링할 수 있습니다. [피벗 테이블] 선택기에서 [피벗 차트]를 선택하여 [파워 피벗] 메뉴에서 [피벗 차트]를 바로 만들 수 있습니다.  다른 방법은 Excel 스프레드시트에서 직접 피벗 차트를 만들어 &#39;이 통합 문서의 데이터 모델 사용&#39; 옵션을 표시하는 것입니다.  아래 그림과 같이 **MktoEmailActivities** 및 **MktoLeads** 테이블에서 필드를 끌어다 놓습니다. **MktoEmailActivities.Activity →** **Legend** (이 항목은 **MktoEmailActivities**&#x200B;에 구현한 DAX 계산 열을 사용) **MktoEmailActivities.Date →** **Axis** (이 항목은 **MktoEmailActivities**&#x200B;에 구현한 DAX 계산 열을 사용) **MktoEmailActivities.Id→7}**∑ 값&#x200B;**** MktoEmailActivities.Campaign →****&#x200B;필터&#x200B;**** MktoLeads.industry →****&#x200B;필터&#x200B;****
+이 첫 번째 보고서는 표준 Excel 피벗 차트를 기반으로 이메일 성과 KPI를 보여 줍니다. 이를 통해 업계 및/또는 캠페인별로 데이터를 필터링할 수 있습니다. [피벗 테이블] 선택기에서 [피벗 차트]를 선택하여 [파워 피벗] 메뉴에서 [피벗 차트]를 바로 만들 수 있습니다.  다른 방법은 Excel 스프레드시트에서 직접 피벗 차트를 만들어 &#39;이 통합 문서의 데이터 모델 사용&#39; 옵션을 표시하는 것입니다.  아래 그림과 같이 **MktoEmailActivities** 및 **MktoLeads** 테이블에서 필드를 끌어다 놓습니다. **MktoEmailActivities.Activity →** **Legend** (이 항목은 **MktoEmailActivities**&#x200B;에 구현한 DAX 계산 열을 사용) **MktoEmailActivities.Date →** **Axis** (이 항목은 **MktoEmailActivities**&#x200B;에 구현한 DAX 계산 열을 사용) **MktoEmailActivities.Id→7&rbrace;**∑ 값&#x200B;**&#x200B;** MktoEmailActivities.Campaign →**&#x200B;**&#x200B;필터&#x200B;**&#x200B;** MktoLeads.industry →**&#x200B;**&#x200B;필터&#x200B;**&#x200B;**
 
 드롭된 각 필드에서 &#39;값 필드 설정&#39;을 선택하여 사용자 지정 이름을 만들 수 있습니다. 이 경우 이메일 활동 id 필드를 &#39;∑ 값&#39; 섹션에 삭제하고 사용자 정의 이름을 &#39;활동 수&#39;로 편집했습니다. 이제 피벗 차트를 구성하겠습니다. 차트를 마우스 오른쪽 버튼으로 클릭하고 상황별 메뉴에서 &#39;차트 유형 변경&#39; 옵션을 선택합니다. 모든 데이터 시리즈에 대해 서로 다른 차트 유형을 선택한 방법은 다음과 같습니다.
 
@@ -8393,7 +8393,7 @@ secret_key, IFTTT Maker 서비스의 비밀 키를 사용합니다.
 
 ### IFTTT 애플릿
 
-IFTTT 웹 포털의 메인 메뉴에서 &quot;내 애플릿&quot;을 선택합니다.  &quot;새 애플릿&quot; 단추를 클릭하고 **+this** 섹션을 클릭합니다.  Maker 서비스를 검색합니다.  Maker 서비스가 이벤트를 알리는 웹 요청을 받을 때마다 실행되는 트리거를 만듭니다. Marketo 웹후크의 URL에 지정된 것과 동일한 이벤트 이름(예: &quot;MarketoProgramSuccess&quot;)을 사용하고 &quot;Create trigger&quot; 단추를 클릭합니다.  이제 섹션 **+that**을(를) 클릭하여 작업 서비스를 지정할 차례입니다.  우리는 IoT 기기에 투자하지 않고도 누구나 테스트할 수 있는 간단한 액션 서비스인 알림 서비스를 시작할 것입니다. 알림 서비스를 검색하고 선택합니다.
+IFTTT 웹 포털의 메인 메뉴에서 &quot;내 애플릿&quot;을 선택합니다.  &quot;새 애플릿&quot; 단추를 클릭하고 **+this** 섹션을 클릭합니다.  Maker 서비스를 검색합니다.  Maker 서비스가 이벤트를 알리는 웹 요청을 받을 때마다 실행되는 트리거를 만듭니다. Marketo 웹후크의 URL에 지정된 것과 동일한 이벤트 이름(예: &quot;MarketoProgramSuccess&quot;)을 사용하고 &quot;Create trigger&quot; 단추를 클릭합니다.  이제 섹션 **+that**&#x200B;을(를) 클릭하여 작업 서비스를 지정할 차례입니다.  우리는 IoT 기기에 투자하지 않고도 누구나 테스트할 수 있는 간단한 액션 서비스인 알림 서비스를 시작할 것입니다. 알림 서비스를 검색하고 선택합니다.
 디바이스에 알림을 보내는 &quot;알림 보내기&quot; 작업을 선택합니다.  아래 예와 같이 Marketo에서 보낸 3개의 값을 구성 요소로 추가하여 사용자에게 의미 있는 알림을 전달한 다음 &quot;작업 만들기&quot; 버튼을 클릭할 수 있습니다. IFTTT 애플릿을 검토하고 완료합니다. 활성화되었는지 확인합니다.
 
 ### IFTTT 애플릿 테스트
@@ -9091,7 +9091,7 @@ Smart List의 Persons를 사용하여 일대다(1:1) 또는 일대다(1:N)와 �
 
 `GET /rest/v1/customobjects/session_c.json?filterType=subscriptionID&filterValues=4ad59184-6bf1-4eeb-a583-d82aeee68210,e5e0aba4-f27f-494d-93ed-9cb580989bf3,e65007cd-86b1-4c17-8d55-057c96e1788a,39d956b2-85e2-4c24-94e7-e9fa5a09d3d0,bf14218c-ae6a-42b3-a14e-f7182903cbcd`
 
-_각주_ _1)**smartListName**및&#x200B;**smartListId**필터 형식을 일부 구독에서 사용할 수 없습니다. 구독에 사용할 수 없는 경우 잠재 고객 만들기 작업 끝점(**&quot;1035, 대상 구독에 대해 지원되지 않는 필터 유형&quot;**)을 호출할 때 오류가 표시됩니다. 고객은 Marketo 지원 팀에 문의하여 구독에서 이 기능을 활성화할 수 있습니다._
+_각주_ _1)**smartListName**&#x200B;및&#x200B;**smartListId**&#x200B;필터 형식을 일부 구독에서 사용할 수 없습니다. 구독에 사용할 수 없는 경우 잠재 고객 만들기 작업 끝점(**&quot;1035, 대상 구독에 대해 지원되지 않는 필터 유형&quot;**)을 호출할 때 오류가 표시됩니다. 고객은 Marketo 지원 팀에 문의하여 구독에서 이 기능을 활성화할 수 있습니다._
 
 _2020-01-14_&#x200B;에 _Tony_&#x200B;에 의해 게시됨
 
@@ -9649,7 +9649,7 @@ Marketo 랜딩 페이지에서 Munchkin Beta을 비활성화하려면 구독의 
 
 ### 외부 페이지에서 Munchkin Beta 비활성화
 
-Beta 버전의 Munchkin JavaScript을 외부 웹 페이지에 배포한 경우 일반적으로 사용할 수 있을 때까지 이 변경 사항을 취소하려면 Munchkin JS 코드 조각을 변경하여 **munchkin-beta.****js** 파일 대신 **munchkin.****js** 파일을 타겟팅해야 합니다. 아래 예에서는 11행에 있는 **s.src** 변수의 값입니다. 코드 조각이 예제와 유사하지 않거나, 태그 관리자가 외부 페이지에 배포할 수 있으며, IT 리소스 또는 Munchkin 추적이 활성화된 웹 사이트를 관리하는 사람에게 연락해야 할 수 있습니다.
+Beta 버전의 Munchkin JavaScript을 외부 웹 페이지에 배포한 경우 일반적으로 사용할 수 있을 때까지 이 변경 사항을 취소하려면 Munchkin JS 코드 조각을 변경하여 **munchkin-beta.**&#x200B;**js** 파일 대신 **munchkin.**&#x200B;**js** 파일을 타겟팅해야 합니다. 아래 예에서는 11행에 있는 **s.src** 변수의 값입니다. 코드 조각이 예제와 유사하지 않거나, 태그 관리자가 외부 페이지에 배포할 수 있으며, IT 리소스 또는 Munchkin 추적이 활성화된 웹 사이트를 관리하는 사람에게 연락해야 할 수 있습니다.
 
 ```javascript
 <script type="text/javascript">
