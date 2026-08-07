@@ -36,7 +36,7 @@ ht-degree: 1%
 
 ![RequestCampaign-Apply-Draft](assets/request-campaign-approve-draft.png)
 
-필요한 경우 [새 스마트 캠페인 만들기](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/create-a-new-smart-campaign.html)를 참조하세요. Campaign이 요청됨 트리거를 사용하여 캠페인의 스마트 목록을 구성합니다.
+필요한 경우 [새 스마트 캠페인 만들기](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/smart-campaigns/creating-a-smart-campaign/create-a-new-smart-campaign.html?lang=ko)를 참조하세요. Campaign이 요청됨 트리거를 사용하여 캠페인의 스마트 목록을 구성합니다.
 
 ![Request-Campaign-Smart-List](assets/request-campaign-smart-list.png)
 
@@ -192,7 +192,7 @@ public class RequestCampaign {
 
 ### 이메일 작성
 
-콘텐츠를 사용자 지정하려면 먼저 Marketo에서 [프로그램](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/create-a-program.html) 및 [이메일](https://experienceleague.adobe.com/ko/docs/marketo/using/home)을 구성해야 합니다. 사용자 지정 콘텐츠를 생성하려면 프로그램 내에 토큰을 만든 다음 전송할 이메일에 배치해야 합니다. 간결성을 위해 이 예제에서는 하나의 토큰만 사용하고 있지만, 보낸 사람 이메일, 보낸 사람 이름, 회신 주소 또는 이메일의 모든 콘텐츠에서 토큰의 숫자를 바꿀 수 있습니다. 그러면 교체를 위해 하나의 리치 텍스트 토큰을 만들고 이를 &quot;bodyReplacement&quot;라고 하겠습니다. 리치 텍스트를 사용하면 토큰의 모든 컨텐츠를 입력하려는 임의의 HTML으로 바꿀 수 있습니다.
+콘텐츠를 사용자 지정하려면 먼저 Marketo에서 [프로그램](https://experienceleague.adobe.com/docs/marketo/using/product-docs/core-marketo-concepts/programs/creating-programs/create-a-program.html?lang=ko) 및 [이메일](https://experienceleague.adobe.com/ko/docs/marketo/using/home)을 구성해야 합니다. 사용자 지정 콘텐츠를 생성하려면 프로그램 내에 토큰을 만든 다음 전송할 이메일에 배치해야 합니다. 간결성을 위해 이 예제에서는 하나의 토큰만 사용하고 있지만, 보낸 사람 이메일, 보낸 사람 이름, 회신 주소 또는 이메일의 모든 콘텐츠에서 토큰의 숫자를 바꿀 수 있습니다. 그러면 교체를 위해 하나의 리치 텍스트 토큰을 만들고 이를 &quot;bodyReplacement&quot;라고 하겠습니다. 리치 텍스트를 사용하면 토큰의 모든 컨텐츠를 입력하려는 임의의 HTML으로 바꿀 수 있습니다.
 
 ![새 토큰](assets/New-Token.png)
 

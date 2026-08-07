@@ -27,7 +27,7 @@ ht-degree: 1%
 
 리드를 다른 회사에 추가하지 않으면 회사에서 리드를 제거할 수 없습니다. 회사 레코드에 연결된 리드는 해당 레코드에서 값이 리드 레코드에 있는 것처럼 값을 상속합니다.
 
-회사 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=en) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=en)가 활성화된 구독에 대해 읽기 전용 액세스를 제공합니다.
+회사 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=ko) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=ko)가 활성화된 구독에 대해 읽기 전용 액세스를 제공합니다.
 
 ## 설명
 

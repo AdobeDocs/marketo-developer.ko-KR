@@ -21,7 +21,7 @@ ht-degree: 0%
 
 [영업 직원 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Sales-Persons)
 
-영업 담당자 API는 [SFDC 동기화](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync)가 활성화된 구독에 대해 읽기 전용 액세스를 제공합니다.
+영업 담당자 API는 [SFDC 동기화](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync)가 활성화된 구독에 대해 읽기 전용 액세스를 제공합니다.
 
 영업 사원은 잠재 고객 레코드의 영업 사원을 나타내는 개인 레코드입니다. 각 잠재 고객 레코드의 externalSalesPersonId 필드는 영업 담당자와 관련이 있습니다. 이 필드가 채워지면 Marketo이 리드 레코드에서 해당 리드 소유자 조회 필드를 채웁니다. 그런 다음 관련 필터 및 토큰을 사용할 수 있습니다.
 

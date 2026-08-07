@@ -27,7 +27,7 @@ Marketo은 영업 기회 레코드를 읽고, 쓰고, 만들고, 업데이트하
 
 API는 두 개체 유형을 노출합니다. 대부분의 리드 데이터베이스 객체 유형과 마찬가지로 각 유형에는 객체 메타데이터를 반환하는 해당 Describe 호출이 있습니다.
 
-영업 기회 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=en) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=en)가 활성화된 구독에 대해 읽기 전용 액세스를 제공합니다.
+영업 기회 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=ko) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=ko)가 활성화된 구독에 대해 읽기 전용 액세스를 제공합니다.
 
 ## 설명
 

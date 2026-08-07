@@ -29,7 +29,7 @@ ht-degree: 2%
 
 Marketo은 자유 형식의 안내 랜딩 페이지 템플릿을 제공합니다. 자유 형식 템플릿은 느슨한 구조의 편집 환경을 제공합니다. 안내식 템플릿은 템플릿 수준에서 요소 유형 및 위치를 제한할 수 있습니다.
 
-자세한 비교는 [자유 형식 페이지와 안내식 랜딩 페이지 비교](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages)를 참조하십시오.
+자세한 비교는 [자유 형식 페이지와 안내식 랜딩 페이지 비교](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages)를 참조하십시오.
 
 ## 쿼리
 
@@ -180,9 +180,9 @@ name=Standard Template Clone&folder={"type": "Folder", "id": 732}
 
 승인하기 전에 템플릿은 안내식 또는 자유 형식 유형에 대한 요구 사항을 충족해야 합니다. 다음 리소스를 참조하십시오.
 
-- [자유 양식 랜딩 페이지 템플릿](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-free-form-landing-page-template)
-- [가이드 랜딩 페이지 템플릿](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template)
-- [안내식 템플릿 예](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/guided-landing-page-template-list)
+- [자유 양식 랜딩 페이지 템플릿](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-free-form-landing-page-template)
+- [가이드 랜딩 페이지 템플릿](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template)
+- [안내식 템플릿 예](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/guided-landing-page-template-list)
 
 ## 삭제
 

@@ -28,7 +28,7 @@ ht-degree: 3%
 >
 >MCP 서버 팀은 스마트 목록 및 스마트 캠페인 에셋 API가 MCP 서버와 작동하도록 하기 위해 노력하고 있습니다. 허용 목록에 추가 항목을 포함한 이 작업은 2026년 3분기에 완료될 예정입니다.
 
-Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 대한 자세한 내용은 [데이터 정보](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-ai/data-information) 페이지를 참조하십시오.
+Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 대한 자세한 내용은 [데이터 정보](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/marketo-ai/data-information) 페이지를 참조하십시오.
 
 ## 일괄 내보내기
 

@@ -58,7 +58,7 @@ Marketo은 id 필드로 리드를 고유하게 식별합니다. 시스템 외부
 
 활동은 항상 leadId별로 리드와 관련되어 있습니다.
 
-사용자 지정 활동을 정의할 수도 있습니다. 사용자 지정 활동을 만들고 게시한 후 Marketo API를 통해 해당 활동의 인스턴스를 추가할 수 있습니다. 자세한 내용은 [사용자 지정 활동 이해](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-activities/understanding-custom-activities)를 참조하십시오.
+사용자 지정 활동을 정의할 수도 있습니다. 사용자 지정 활동을 만들고 게시한 후 Marketo API를 통해 해당 활동의 인스턴스를 추가할 수 있습니다. 자세한 내용은 [사용자 지정 활동 이해](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-activities/understanding-custom-activities)를 참조하십시오.
 
 관련 API: [REST](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities), [JavaScript](javascript-api/lead-tracking.md#munchkin-behavior)
 
@@ -78,7 +78,7 @@ Marketo은 id 필드로 리드를 고유하게 식별합니다. 시스템 외부
 
 Marketo 관리자는 사용자가 프로그램을 만들 때 선택하는 필수 및 선택적 태그 유형을 만들 수 있습니다. 회사의 보고 요구 사항에 따라 각 태그 유형에 가능한 값을 정의합니다.
 
-예를 들어 북동부 및 남동부와 같은 값으로 사용자 지정 &quot;지역&quot; 태그 유형을 만들어 가장 많은 리드를 생성하는 지역을 분석합니다. Maria, David 또는 John과 같은 프로그램 소유자가 리드 및 기회를 만드는 데 가장 큰 영향을 미치는 &quot;소유자&quot; 태그 유형을 만듭니다. 자세한 내용은 [태그 이해](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/understanding-tags)를 참조하십시오.
+예를 들어 북동부 및 남동부와 같은 값으로 사용자 지정 &quot;지역&quot; 태그 유형을 만들어 가장 많은 리드를 생성하는 지역을 분석합니다. Maria, David 또는 John과 같은 프로그램 소유자가 리드 및 기회를 만드는 데 가장 큰 영향을 미치는 &quot;소유자&quot; 태그 유형을 만듭니다. 자세한 내용은 [태그 이해](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/understanding-tags)를 참조하십시오.
 
 관련 API: [REST](https://developer.adobe.com/marketo-apis/api/asset)
 
@@ -127,7 +127,7 @@ Assets에는 프로그램에 사용되는 랜딩 페이지, 이메일, 양식 �
 - 상속됨: 캠페인 폴더 수준에서 만들어지며 해당 폴더의 모든 프로그램에서 사용할 수 있습니다.
 - 재정의됨: 프로그램 폴더 수준에서 상위 내 토큰 값을 변경하지 않고 프로그램 수준에서 사용자 지정 값으로 수정되었습니다.
 
-내 토큰은 토큰 이름의 시작 부분에 &quot;my&quot;라는 단어와 함께 이름 지정 규칙 `{{my.My Token}}`을(를) 사용합니다. 예를들어 EventDate라는 Date 형식의 My Token은 토큰 이름이 `{{my.EventDate}}`입니다. 자세한 내용은 [프로그램의 내 토큰 이해](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/tokens/understanding-my-tokens-in-a-program)를 참조하십시오.
+내 토큰은 토큰 이름의 시작 부분에 &quot;my&quot;라는 단어와 함께 이름 지정 규칙 `{{my.My Token}}`을(를) 사용합니다. 예를들어 EventDate라는 Date 형식의 My Token은 토큰 이름이 `{{my.EventDate}}`입니다. 자세한 내용은 [프로그램의 내 토큰 이해](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/programs/tokens/understanding-my-tokens-in-a-program)를 참조하십시오.
 
 관련 API: [REST](https://developer.adobe.com/marketo-apis/api/asset#tag/Tokens)
 
