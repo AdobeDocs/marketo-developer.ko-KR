@@ -4,19 +4,14 @@ feature: REST API
 description: HTML 요구 사항, ID 또는 이름별 쿼리 및 폴더 탐색을 포함하여 Marketo REST API 이메일 템플릿을 만들고 관리하는 방법을 알아봅니다
 exl-id: 0ecf4da6-eb7e-43c1-8d5c-0517c43b47c8
 TQID: https://experienceleague.adobe.com/jKQpibaRP7nAyIsDdjMf8VkNPi5AMFbe7I4Iiy3MGc0
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-  - id: bce87dde-a4ab-44c9-8a18-ad66e4ddb377
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: f82558ea-6af5-44eb-a424-5b3389abb0a3
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dcid: bce87dde-a4ab-44c9-8a18-ad66e4ddb377
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 570
-ht-degree: 1%
+source-wordcount: 543
+ht-degree: 2%
 
 ---
 
@@ -26,11 +21,11 @@ ht-degree: 1%
 
 Marketo의 모든 새 이메일은 처음에 이메일 템플릿을 기반으로 합니다. 나중에 HTML을 교체하여 템플릿에서 이메일의 연결을 해제할 수 있지만 이메일을 만들 때는 템플릿을 선택해야 합니다.
 
-템플릿은 이름 및 설명과 같은 메타데이터가 있는 HTML 문서입니다. 템플릿 HTML은 유효해야 하며 [편집 가능한 섹션 요구 사항](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-editable-sections-to-email-templates-v1-0)을 충족하는 편집 가능한 섹션을 하나 이상 포함해야 합니다.
+템플릿은 이름 및 설명과 같은 메타데이터가 있는 HTML 문서입니다. 템플릿 HTML은 유효해야 하며 [편집 가능한 섹션 요구 사항](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-editable-sections-to-email-templates-v1-0)을 충족하는 편집 가능한 섹션을 하나 이상 포함해야 합니다.
 
 ## 쿼리
 
-전자 메일 템플릿은 [ID별](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates/operation/getTemplateByIdUsingGET), [이름별](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates/operation/getTemplateByNameUsingGET) 및 [찾아보기](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates/operation/getEmailTemplatesUsingGET)와 같은 표준 자산 쿼리 패턴을 지원합니다.
+전자 메일 템플릿은 [ID별](https://developer.adobe.com/marketo-apis/api/asset#operation/getTemplateByIdUsingGET), [이름별](https://developer.adobe.com/marketo-apis/api/asset#operation/getTemplateByNameUsingGET) 및 [찾아보기](https://developer.adobe.com/marketo-apis/api/asset#operation/getEmailTemplatesUsingGET)와 같은 표준 자산 쿼리 패턴을 지원합니다.
 
 ### ID별
 
@@ -204,7 +199,7 @@ GET /rest/asset/v1/emailTemplates.json
 
 ## 만들기 및 업데이트
 
-템플릿을 [만들기](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates/operation/createEmailTemplateUsingPOST) 또는 [업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates/operation/updateEmailTemplateContentUsingPOST)하려면 `multipart/form-data` POST 요청으로 HTML 문서를 보내십시오. `Content-Type` 헤더에는 [multipart](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html) 및 [multipart/form-data](https://www.ietf.org/rfc/rfc2388.txt)에 대한 RFC에 설명된 대로 경계가 포함되어야 합니다.
+템플릿을 [만들기](https://developer.adobe.com/marketo-apis/api/asset#operation/createEmailTemplateUsingPOST) 또는 [업데이트](https://developer.adobe.com/marketo-apis/api/asset#operation/updateEmailTemplateContentUsingPOST)하려면 `multipart/form-data` POST 요청으로 HTML 문서를 보내십시오. `Content-Type` 헤더에는 [multipart](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html) 및 [multipart/form-data](https://www.ietf.org/rfc/rfc2388.txt)에 대한 RFC에 설명된 대로 경계가 포함되어야 합니다.
 
 템플릿을 만들려면 다음 매개 변수가 필요합니다.
 
@@ -275,7 +270,7 @@ Create email template using API
 }
 ```
 
-템플릿 콘텐츠를 업데이트하려면 전자 메일 템플릿 ID로 [콘텐츠 끝점](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates/operation/updateEmailTemplateContentUsingPOST)을 호출하십시오. 요청 본문은 `content` 매개 변수만 허용합니다.
+템플릿 콘텐츠를 업데이트하려면 전자 메일 템플릿 ID로 [콘텐츠 끝점](https://developer.adobe.com/marketo-apis/api/asset#operation/updateEmailTemplateContentUsingPOST)을 호출하십시오. 요청 본문은 `content` 매개 변수만 허용합니다.
 
 제출된 콘텐츠는 기존 템플릿 콘텐츠를 완전히 대체합니다. 승인된 버전을 업데이트하면 새 초안이 생성됩니다. 초안 전용 자산을 업데이트하면 현재 초안이 바뀝니다.
 
@@ -319,7 +314,7 @@ Content-Type: text/html
 
 ## 메타데이터 업데이트
 
-[템플릿의 메타데이터를 업데이트하려면](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates/operation/updateEmailTemplateUsingPOST) `name` 및 `description` 매개 변수를 사용하여 `application/x-www-form-urlencoded` POST 요청을 보냅니다.
+[템플릿의 메타데이터를 업데이트하려면](https://developer.adobe.com/marketo-apis/api/asset#operation/updateEmailTemplateUsingPOST) `name` 및 `description` 매개 변수를 사용하여 `application/x-www-form-urlencoded` POST 요청을 보냅니다.
 
 ```http
 POST /rest/asset/v1/emailTemplate/{id}.json
@@ -479,7 +474,7 @@ POST /rest/asset/v1/emailTemplate/{id}/delete.json
 
 ## 복제
 
-[전자 메일 템플릿을 복제](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates/operation/cloneTemplateUsingPOST)하려면 다음 매개 변수를 사용하여 `application/x-www-form-urlencoded` POST 요청을 전송하십시오.
+[전자 메일 템플릿을 복제](https://developer.adobe.com/marketo-apis/api/asset#operation/cloneTemplateUsingPOST)하려면 다음 매개 변수를 사용하여 `application/x-www-form-urlencoded` POST 요청을 전송하십시오.
 
 - `name`: 필수 항목입니다. 복제된 템플릿 이름.
 - `folder`: 필수 항목입니다. `id` 및 `type`이(가) 포함된 JSON 개체입니다.
@@ -525,7 +520,7 @@ name=Sample Template 01 - deverly&folder={"id":12,"type":"Folder"}&description=T
 
 ## 이메일 종속성 쿼리
 
-[Get Email Template Used By](https://developer.adobe.com/marketo-apis/api/asset#tag/Email-Templates/operation/getEmailTemplateUsedByUsingGET) 엔드포인트를 사용하여 템플릿에 종속된 이메일을 검색합니다. `id` 경로 매개 변수는 상위 전자 메일 템플릿을 식별합니다.
+[Get Email Template Used By](https://developer.adobe.com/marketo-apis/api/asset#operation/getEmailTemplateUsedByUsingGET) 엔드포인트를 사용하여 템플릿에 종속된 이메일을 검색합니다. `id` 경로 매개 변수는 상위 전자 메일 템플릿을 식별합니다.
 
 끝점은 두 개의 선택적 페이지 매김 매개 변수를 지원합니다.
 

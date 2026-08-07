@@ -4,15 +4,12 @@ feature: REST API
 description: 다중 부분 업로드를 통해 리드, 사용자 지정 개체 및 프로그램 구성원을 로드하고 비동기 작업을 생성하며, 폴링 상태가 설정되고, 오류가 처리되는 Marketo 일괄 가져오기.
 exl-id: f7922fd2-8408-4d04-8955-0f8f58914d24
 TQID: https://experienceleague.adobe.com/lr9dyX-fY-oJ2LM5P0zE1m24HtFYKQYYbxMkVe--PkE
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 538
+source-wordcount: 526
 ht-degree: 2%
 
 ---
@@ -57,7 +54,7 @@ RFC 2399에 따라 HTTP `multipart/form-data`을(를) 사용하여 파일을 업
 
 ## 작업 생성
 
-[리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads/operation/importLeadUsingPOST) 끝점을 호출하여 리드 가져오기 작업을 만듭니다. 이 끝점은 [multipart/form-data를 content-type](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html)&#x200B;(으)로 사용합니다.
+[리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/importLeadUsingPOST) 끝점을 호출하여 리드 가져오기 작업을 만듭니다. 이 끝점은 [multipart/form-data를 content-type](https://www.w3.org/Protocols/rfc1341/7_2_Multipart.html)&#x200B;(으)로 사용합니다.
 
 원하는 언어에 대해 HTTP 지원 라이브러리를 사용하여 다중 부분 요청을 구성합니다. [curl](https://curl.se/)을(를) 사용하여 시작할 수도 있습니다.
 
@@ -112,7 +109,7 @@ Easy,Fox,easyfox@marketo.com
 
 ## 폴링 작업 상태
 
-`batchId`을(를) [가져오기 리드 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads/operation/getImportLeadStatusUsingGET) 끝점에 전달하여 작업 상태를 검색합니다.
+`batchId`을(를) [가져오기 리드 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getImportLeadStatusUsingGET) 끝점에 전달하여 작업 상태를 검색합니다.
 
 ```http
 GET /bulk/v1/leads/batch/{batchId}.json
@@ -144,7 +141,7 @@ GET /bulk/v1/leads/batch/{batchId}.json
 
 가져오기 리드 상태 가져오기 응답의 `numOfRowsFailed` 특성은 실패한 행 수를 나타냅니다. 값이 0보다 크면 오류가 발생했음을 의미합니다.
 
-실패한 레코드와 그 원인을 검색하려면 [가져오기 리드 실패 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads/operation/getImportLeadFailuresUsingGET) 끝점을 사용하십시오.
+실패한 레코드와 그 원인을 검색하려면 [가져오기 리드 실패 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getImportLeadFailuresUsingGET) 끝점을 사용하십시오.
 
 ```http
 GET /bulk/v1/leads/batch/{batchId}/failures.json

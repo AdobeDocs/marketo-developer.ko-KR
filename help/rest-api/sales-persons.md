@@ -4,15 +4,12 @@ feature: REST API
 description: externalSalesPersonId를 사용하여 리드에 연결하고 쿼리, 업데이트 및 삭제를 수행하는 SFDC 또는 Dynamics 동기화를 통해 영업 담당자 레코드에 대한 Marketo REST API 안내서입니다.
 exl-id: f8ed5aa5-63c1-4c5b-8683-bf47eed1ea18
 TQID: https://experienceleague.adobe.com/JwLNgM0zgztyoYJotCiSdGxMixnzA0kvkFbvq8kEkzE
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 369
+source-wordcount: 363
 ht-degree: 0%
 
 ---
@@ -21,15 +18,15 @@ ht-degree: 0%
 
 [영업 직원 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Sales-Persons)
 
-영업 담당자 API는 [SFDC 동기화](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync)가 활성화된 구독에 대해 읽기 전용 액세스를 제공합니다.
+영업 담당자 API는 [SFDC 동기화](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync)가 활성화된 구독에 대해 읽기 전용 액세스를 제공합니다.
 
 영업 사원은 잠재 고객 레코드의 영업 사원을 나타내는 개인 레코드입니다. 각 잠재 고객 레코드의 externalSalesPersonId 필드는 영업 담당자와 관련이 있습니다. 이 필드가 채워지면 Marketo이 리드 레코드에서 해당 리드 소유자 조회 필드를 채웁니다. 그런 다음 관련 필터 및 토큰을 사용할 수 있습니다.
 
 externalSalesPersonId 속성을 해당 끝점에 전달하여 영업 담당자를 다른 레코드와 연결합니다.
 
-- 리드 레코드: [리드 동기화](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/syncLeadUsingPOST).
-- 영업 기회 레코드: [기회 동기화](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/syncOpportunitiesUsingPOST).
-- 회사 레코드: [회사 동기화](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/syncCompaniesUsingPOST).
+- 리드 레코드: [리드 동기화](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncLeadUsingPOST).
+- 영업 기회 레코드: [기회 동기화](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncOpportunitiesUsingPOST).
+- 회사 레코드: [회사 동기화](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncCompaniesUsingPOST).
 
 영업 사원 레코드는 API를 통해서만 편집할 수 있습니다.
 

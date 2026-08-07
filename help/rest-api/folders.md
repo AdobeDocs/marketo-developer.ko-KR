@@ -4,18 +4,12 @@ feature: REST API
 description: 만들기, 업데이트, 삭제, ID 및 이름별 쿼리, 루트, 작업 공간, maxDepth 및 페이지 매김을 사용하여 벌크 찾아보기 등에 대한 Marketo REST API 안내서.
 exl-id: 4b55c256-ef0a-42b4-9548-ff8a4106f064
 TQID: https://experienceleague.adobe.com/OxCNdy8qW6jwq8u57RF9mqVKPVvH99UmuiOBjFprHCM
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: b0bb9048-d951-48d8-8232-45cf248a7e27
-  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
-  - id: d65b4a73-87a3-4d56-b638-74e74d9939ce
-  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: b0bb9048-d951-48d8-8232-45cf248a7e27id: c5f60233-d5ea-4453-a799-0ad258b4d399id: d65b4a73-87a3-4d56-b638-74e74d9939ceid: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 806
+source-wordcount: 792
 ht-degree: 1%
 
 ---
@@ -30,7 +24,7 @@ ht-degree: 1%
 
 ## 쿼리
 
-폴더는 표준 에셋 쿼리 패턴을 지원합니다. [ID](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderByIdUsingGET), [이름](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderByNameUsingGET) 및 [검색](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderUsingGET)별.
+폴더는 표준 에셋 쿼리 패턴을 지원합니다. [ID](https://developer.adobe.com/marketo-apis/api/asset#operation/getFolderByIdUsingGET), [이름](https://developer.adobe.com/marketo-apis/api/asset#operation/getFolderByNameUsingGET) 및 [검색](https://developer.adobe.com/marketo-apis/api/asset#operation/getFolderUsingGET)별.
 
 ### ID별
 
@@ -86,7 +80,7 @@ GET /rest/asset/v1/folder/{id}.json?type=Folder
 
 ### 이름별
 
-[이름별 쿼리](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderByNameUsingGET) 끝점에는 폴더 이름과 정확히 일치하는 모든 폴더를 반환하는 `name`이(가) 필요합니다.
+[이름별 쿼리](https://developer.adobe.com/marketo-apis/api/asset#operation/getFolderByNameUsingGET) 끝점에는 폴더 이름과 정확히 일치하는 모든 폴더를 반환하는 `name`이(가) 필요합니다.
 
 끝점은 다음 선택적 매개 변수도 허용합니다.
 
@@ -135,12 +129,12 @@ GET /rest/asset/v1/folder/byName.json?name=Test%2010%20-%20deverly
 
 ### 찾아보기
 
-[폴더를 일괄적으로 검색](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderUsingGET)할 수도 있습니다. `root` 매개 변수를 사용하여 쿼리할 상위 폴더를 지정하십시오. 다음 두 멤버가 포함된 JSON 개체로 `root`을(를) 전달합니다.
+[폴더를 일괄적으로 검색](https://developer.adobe.com/marketo-apis/api/asset#operation/getFolderUsingGET)할 수도 있습니다. `root` 매개 변수를 사용하여 쿼리할 상위 폴더를 지정하십시오. 다음 두 멤버가 포함된 JSON 개체로 `root`을(를) 전달합니다.
 
 1. `id`: 폴더 또는 프로그램의 ID.
 1. `type`: 루트 폴더 유형에 따라 `Folder` 또는 `Program`입니다.
 
-루트 폴더를 모르거나 영역에 있는 모든 폴더를 검색하려면 마케팅 활동, Design Studio 또는 리드 데이터베이스 루트를 사용합니다. [이름별 폴더 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/getFolderByNameUsingGET) API에 영역 이름을 전달하여 루트 ID를 검색합니다.
+루트 폴더를 모르거나 영역에 있는 모든 폴더를 검색하려면 마케팅 활동, Design Studio 또는 리드 데이터베이스 루트를 사용합니다. [이름별 폴더 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/getFolderByNameUsingGET) API에 영역 이름을 전달하여 루트 ID를 검색합니다.
 
 다른 대량 자산 검색 끝점과 마찬가지로 페이지 매김에 선택적 `offset` 및 `maxReturn` 매개 변수를 사용합니다. 기타 선택적 매개 변수는 다음과 같습니다.
 
@@ -237,7 +231,7 @@ GET /rest/asset/v1/folders.json?root={"id":14,"type":"Folder"}
 
 ## 만들기 및 업데이트
 
-[폴더를 만들려면](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders/operation/createFolderUsingPOST) 다음 매개 변수를 사용하여 `application/x-www-form-urlencoded` POST 요청을 보냅니다.
+[폴더를 만들려면](https://developer.adobe.com/marketo-apis/api/asset#operation/createFolderUsingPOST) 다음 매개 변수를 사용하여 `application/x-www-form-urlencoded` POST 요청을 보냅니다.
 
 - `name`: 폴더 이름을 포함하는 필수 문자열입니다.
 - `parent`: `id` 및 `type`을(를) 포함하는 필수 포함된 JSON 개체입니다. 형식은 부모에 따라 `Folder` 또는 `Program`입니다.

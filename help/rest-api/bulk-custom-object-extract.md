@@ -4,18 +4,14 @@ feature: REST API, Custom Objects
 description: 업데이트된 At 및 목록 필터, 선택한 필드 등을 사용하여 리드 연결된 사용자 지정 개체를 내보내기 위한 Marketo 대량 사용자 지정 개체 추출 REST API에 대한 안내서입니다.
 exl-id: 86cf02b0-90a3-4ec6-8abd-b4423cdd94eb
 TQID: https://experienceleague.adobe.com/KAT-vab2uZq8FrRbZLy30PCJNfq01znDDuSSWuIu7WE
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: d1d0a9cd-295d-4976-8c39-ddae266f240e
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: d1d0a9cd-295d-4976-8c39-ddae266f240e
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 1231
-ht-degree: 1%
+source-wordcount: 1186
+ht-degree: 2%
 
 ---
 
@@ -27,7 +23,7 @@ ht-degree: 1%
 
 API는 리드에 직접 연결된 첫 번째 수준 Marketo 사용자 지정 개체 레코드를 내보냅니다. 사용자 지정 개체 이름 및 연결된 잠재 고객 목록을 지정합니다. 각 리드에 대해 API는 일치하는 연결된 사용자 지정 개체 레코드를 내보내기 파일의 행으로 기록합니다.
 
-Marketo UI의 잠재 고객 세부 정보 페이지에 있는 [사용자 지정 개체 탭](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects)에서 사용자 지정 개체 데이터를 볼 수 있습니다.
+Marketo UI의 잠재 고객 세부 정보 페이지에 있는 [사용자 지정 개체 탭](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-objects/understanding-marketo-custom-objects)에서 사용자 지정 개체 데이터를 볼 수 있습니다.
 
 ## 권한
 
@@ -41,7 +37,7 @@ API 사용자는 읽기 전용 사용자 지정 개체 권한, 읽기-쓰기 사
 
 | 필터 유형 | 데이터 유형 | 참고 |
 | --- | --- | --- |
-| `updatedAt` | 날짜 범위 | `startAt` 및 `endAt` &nbsp;`startAt` 멤버가 있는 JSON 개체를 수락합니다.에서는 로우 워터마크를 나타내는 날짜/시간을 수락하고 `endAt`에서는 하이 워터마크를 나타내는 날짜/시간을 수락합니다. 범위는 31일 이하여야 합니다. 이 필터 유형의 작업은 날짜 범위 내에서 업데이트된 액세스 가능한 모든 레코드를 반환합니다. 날짜/시간은 밀리초 없이 ISO-8601 형식이어야 합니다. |
+| `updatedAt` | 날짜 범위 | `startAt` 및 `endAt` &amp;nbsp;`startAt` 멤버가 있는 JSON 개체를 수락합니다.에서는 로우 워터마크를 나타내는 날짜/시간을 수락하고 `endAt`에서는 하이 워터마크를 나타내는 날짜/시간을 수락합니다. 범위는 31일 이하여야 합니다. 이 필터 유형의 작업은 날짜 범위 내에서 업데이트된 액세스 가능한 모든 레코드를 반환합니다. 날짜/시간은 밀리초 없이 ISO-8601 형식이어야 합니다. |
 | `staticListName` | 문자열 | 정적 목록의 이름을 허용합니다. 이 필터 유형의 작업은 작업 처리를 시작할 때 정적 목록의 멤버인 액세스 가능한 모든 레코드를 반환합니다. 목록 가져오기 끝점을 사용하여 정적 목록 이름을 검색합니다. |
 | `staticListId` | 정수 | 정적 목록의 ID를 허용합니다. 이 필터 유형의 작업은 작업 처리를 시작할 때 정적 목록의 멤버인 액세스 가능한 모든 레코드를 반환합니다. 목록 가져오기 끝점을 사용하여 정적 목록 ID를 검색합니다. |
 | `smartListName`* | 문자열 | 스마트 목록의 이름을 허용합니다. 이 필터 유형의 작업은 작업 처리를 시작할 때 스마트 목록의 구성원인 액세스 가능한 모든 레코드를 반환합니다. 스마트 목록 가져오기 끝점을 사용하여 스마트 목록 이름을 검색합니다. |
@@ -51,7 +47,7 @@ API 사용자는 읽기 전용 사용자 지정 개체 권한, 읽기-쓰기 사
 
 ## 옵션
 
-[사용자 지정 개체 내보내기 작업 만들기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Custom-Objects/operation/createExportCustomObjectsUsingPOST) 끝점은 다음에 대한 옵션을 제공합니다.
+[사용자 지정 개체 내보내기 작업 만들기](https://developer.adobe.com/marketo-apis/api/mapi#operation/createExportCustomObjectsUsingPOST) 끝점은 다음에 대한 옵션을 제공합니다.
 
 - 내보내기 파일에 포함할 필드를 지정합니다.
 - 내보낸 열 헤더의 이름을 변경합니다.
@@ -65,11 +61,11 @@ API 사용자는 읽기 전용 사용자 지정 개체 권한, 읽기-쓰기 사
 
 ## 작업 생성
 
-[사용자 지정 개체 내보내기 작업 만들기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Custom-Objects/operation/createExportCustomObjectsUsingPOST) 끝점을 사용하여 내보내기 작업을 정의합니다.
+[사용자 지정 개체 내보내기 작업 만들기](https://developer.adobe.com/marketo-apis/api/mapi#operation/createExportCustomObjectsUsingPOST) 끝점을 사용하여 내보내기 작업을 정의합니다.
 
 요청에서는 다음 매개 변수를 사용합니다.
 
-- `apiName`: 필수 경로 매개 변수입니다. [사용자 지정 개체 설명](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/describeUsingGET_1) 끝점에서 반환된 이름을 사용하여 내보낼 Marketo 사용자 지정 개체를 지정합니다. CRM 사용자 지정 개체는 허용되지 않습니다.
+- `apiName`: 필수 경로 매개 변수입니다. [사용자 지정 개체 설명](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeUsingGET_1) 끝점에서 반환된 이름을 사용하여 내보낼 Marketo 사용자 지정 개체를 지정합니다. CRM 사용자 지정 개체는 허용되지 않습니다.
 - `filter`: 필수 항목입니다. 정적 목록 또는 스마트 목록을 참조하여 연결된 리드를 지정합니다.
 - `fields`: 필수 항목입니다. 내보내기 파일에 포함할 사용자 지정 개체 특성의 API 이름을 지정합니다.
 - `format`: 선택 사항입니다. 내보내기 파일 형식을 지정합니다.
@@ -85,7 +81,7 @@ API 사용자는 읽기 전용 사용자 지정 개체 권한, 읽기-쓰기 사
 
 ![사용자 지정 개체 필드](assets/custom-object-car-fields.png)
 
-프로그래밍 방식으로 사용자 지정 개체 특성을 검사하려면 [사용자 지정 개체 설명](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/describeUsingGET_1)을 호출하십시오. 응답이 `fields`의 특성을 반환합니다.
+프로그래밍 방식으로 사용자 지정 개체 특성을 검사하려면 [사용자 지정 개체 설명](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeUsingGET_1)을 호출하십시오. 응답이 `fields`의 특성을 반환합니다.
 
 ```http
 GET /rest/v1/customobjects/car_c/describe.json
@@ -195,7 +191,7 @@ GET /rest/v1/customobjects/car_c/describe.json
 }
 ```
 
-[사용자 지정 개체 동기화](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/syncCustomObjectsUsingPOST) 끝점을 사용하여 사용자 지정 개체 레코드를 만들고 각 레코드를 리드에 연결합니다. 리드는 여러 사용자 지정 개체 레코드에 연결되어 일대다 관계를 만들 수 있습니다.
+[사용자 지정 개체 동기화](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncCustomObjectsUsingPOST) 끝점을 사용하여 사용자 지정 개체 레코드를 만들고 각 레코드를 리드에 연결합니다. 리드는 여러 사용자 지정 개체 레코드에 연결되어 일대다 관계를 만들 수 있습니다.
 
 ```http
 POST /rest/v1/customobjects/car_c.json
@@ -254,7 +250,7 @@ POST /rest/v1/customobjects/car_c.json
 }
 ```
 
-이 예제의 세 리드는 `Car Buyers` 정적 목록에 속하며, 이 목록에는 `id`이(가) 1081입니다. 목록 구성원을 검색하려면 [목록 ID로 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Static-Lists/operation/getLeadsByListIdUsingGET_1) 끝점을 호출하십시오.
+이 예제의 세 리드는 `Car Buyers` 정적 목록에 속하며, 이 목록에는 `id`이(가) 1081입니다. 목록 구성원을 검색하려면 [목록 ID로 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByListIdUsingGET_1) 끝점을 호출하십시오.
 
 ```http
 GET /rest/v1/lists/1081/leads.json
@@ -293,7 +289,7 @@ GET /rest/v1/lists/1081/leads.json
 }
 ```
 
-이러한 레코드를 검색하려면 [사용자 지정 개체 만들기 작업](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Custom-Objects/operation/createExportCustomObjectsUsingPOST) 끝점을 호출하십시오. `fields`에서 사용자 지정 개체 특성을 지정하고 `filter`에서 정적 목록 ID를 지정하십시오.
+이러한 레코드를 검색하려면 [사용자 지정 개체 만들기 작업](https://developer.adobe.com/marketo-apis/api/mapi#operation/createExportCustomObjectsUsingPOST) 끝점을 호출하십시오. `fields`에서 사용자 지정 개체 특성을 지정하고 `filter`에서 정적 목록 ID를 지정하십시오.
 
 ```http
 POST /bulk/v1/customobjects/car_c/export/create.json
@@ -329,7 +325,7 @@ POST /bulk/v1/customobjects/car_c/export/create.json
 }
 ```
 
-응답은 작업이 생성되었음을 확인하지만 내보내기가 자동으로 시작되지 않습니다. [Enqueue 사용자 지정 개체 내보내기 작업](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Custom-Objects/operation/enqueueExportCustomObjectsUsingPOST) 끝점에 `apiName` 및 반환된 `exportId`을(를) 전달하여 작업을 시작합니다.
+응답은 작업이 생성되었음을 확인하지만 내보내기가 자동으로 시작되지 않습니다. [Enqueue 사용자 지정 개체 내보내기 작업](https://developer.adobe.com/marketo-apis/api/mapi#operation/enqueueExportCustomObjectsUsingPOST) 끝점에 `apiName` 및 반환된 `exportId`을(를) 전달하여 작업을 시작합니다.
 
 ```http
 POST /bulk/v1/customobjects/car_c/export/f2c03f1d-226f-47c1-a557-357af8c2b32a/enqueue.json
@@ -357,7 +353,7 @@ POST /bulk/v1/customobjects/car_c/export/f2c03f1d-226f-47c1-a557-357af8c2b32a/en
 
 동일한 API 사용자가 만든 작업에 대해서만 상태를 검색할 수 있습니다.
 
-내보내기가 비동기적으로 실행되므로 [사용자 지정 개체 내보내기 작업 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Custom-Objects/operation/getExportCustomObjectsStatusUsingGET) 끝점을 사용하여 진행 상황을 폴링하십시오. 상태는 60초마다 한 번만 업데이트되므로 더 자주 폴링하지 않습니다.
+내보내기가 비동기적으로 실행되므로 [사용자 지정 개체 내보내기 작업 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getExportCustomObjectsStatusUsingGET) 끝점을 사용하여 진행 상황을 폴링하십시오. 상태는 60초마다 한 번만 업데이트되므로 더 자주 폴링하지 않습니다.
 
 상태는 `Created`, `Queued`, `Processing`, `Canceled`, `Completed` 또는 `Failed`일 수 있습니다.
 
@@ -407,7 +403,7 @@ GET /bulk/v1/customobjects/{apiName}/export/{exportId}/status.json
 
 ## 데이터 검색 중
 
-완료된 사용자 지정 개체 내보내기를 검색하려면 `apiName` 및 `exportId`을(를) [사용자 지정 개체 파일 내보내기 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Custom-Objects/operation/getExportCustomObjectsFileUsingGET) 끝점에 전달하십시오.
+완료된 사용자 지정 개체 내보내기를 검색하려면 `apiName` 및 `exportId`을(를) [사용자 지정 개체 파일 내보내기 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getExportCustomObjectsFileUsingGET) 끝점에 전달하십시오.
 
 끝점이 작업에 대해 구성된 형식으로 파일을 반환합니다. 요청한 사용자 지정 개체 특성에 데이터가 없으면 해당 내보내기 필드에 `null`이(가) 포함됩니다.
 
@@ -426,7 +422,7 @@ leadId,color,make,model,vIN
 
 ## 작업 취소
 
-잘못 구성되었거나 더 이상 필요하지 않은 작업을 취소하려면 [사용자 지정 개체 내보내기 작업 취소](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Custom-Objects/operation/getExportCustomObjectsFileUsingPOST) 끝점을 호출하십시오. 응답 상태는 작업이 취소되었음을 나타냅니다.
+잘못 구성되었거나 더 이상 필요하지 않은 작업을 취소하려면 [사용자 지정 개체 내보내기 작업 취소](https://developer.adobe.com/marketo-apis/api/mapi#operation/cancelExportCustomObjectsUsingPOST) 끝점을 호출하십시오. 응답 상태는 작업이 취소되었음을 나타냅니다.
 
 ```http
 POST /bulk/v1/customobjects/car_c/export/f2c03f1d-226f-47c1-a557-357af8c2b32a/cancel.json

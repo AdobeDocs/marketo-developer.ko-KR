@@ -3,22 +3,13 @@ title: 시작하기
 description: 리드, 활동, 프로그램, 태그, 목록, REST 지침 및 SOAP 사용 중단 알림을 포함한 Marketo Engage API 및 데이터 모델을 시작합니다.
 exl-id: 78c44c32-4e59-4d55-a45c-ef0d7dac814d
 TQID: https://experienceleague.adobe.com/0lfzor5EQJ0VqIh4fqlK29OiPmRCy6fnEtncJ38r-OM
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: b0bb9048-d951-48d8-8232-45cf248a7e27
-  - id: c954475c-8548-4e33-a0b8-6b550d956115
-  - id: d1d0a9cd-295d-4976-8c39-ddae266f240e
-  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-  - id: ea90ebee-5c84-42d9-8b21-006bdabc95a3
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
-  - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: b0bb9048-d951-48d8-8232-45cf248a7e27id: c954475c-8548-4e33-a0b8-6b550d956115id: d1d0a9cd-295d-4976-8c39-ddae266f240eid: e64968b2-4ee5-47f9-8cae-0588f184b9ebid: ea90ebee-5c84-42d9-8b21-006bdabc95a3
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: aa2f3246-cb95-4b30-8899-fdf7d73550ccid: eddd9b14-83bd-4ff4-9072-54a4a484abb7
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 1225
+source-wordcount: 1198
 ht-degree: 2%
 
 ---
@@ -31,8 +22,7 @@ Marketo Engage은 잠재 고객 및 고객을 위한 개인화된 멀티채널 �
 
 >[!NOTE]
 >
->SOAP API는 더 이상 사용되지 않으며 2026년 7월 31일 이후부터 더 이상 사용할 수 없습니다. 모든 새로운 개발에는 Marketo [REST API](./rest-api/rest-api.md)를 사용하십시오. 서비스 중단을 방지하려면 해당 날짜까지 기존 서비스를 마이그레이션하십시오. 서비스에서 SOAP API를 사용하는 경우 SOAP API [마이그레이션 안내서](./soap-api/migration.md)를 참조하십시오.
->
+>2026년 7월 31일부터 SOAP API는 더 이상 사용되지 않으며 더 이상 사용할 수 없습니다. 모든 새로운 개발에는 Marketo [REST API](./rest-api/rest-api.md)를 사용하십시오.
 
 Marketo Engage 인스턴스에서 기본 SFDC 또는 MS Dynamics CRM 연결을 활성화하면 다음 개체가 읽기 전용입니다.
 
@@ -59,7 +49,7 @@ Marketo은 id 필드로 리드를 고유하게 식별합니다. 시스템 외부
 
 활동은 항상 leadId별로 리드와 관련되어 있습니다.
 
-사용자 지정 활동을 정의할 수도 있습니다. 사용자 지정 활동을 만들고 게시한 후 Marketo API를 통해 해당 활동의 인스턴스를 추가할 수 있습니다. 자세한 내용은 [사용자 지정 활동 이해](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-activities/understanding-custom-activities)를 참조하십시오.
+사용자 지정 활동을 정의할 수도 있습니다. 사용자 지정 활동을 만들고 게시한 후 Marketo API를 통해 해당 활동의 인스턴스를 추가할 수 있습니다. 자세한 내용은 [사용자 지정 활동 이해](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/marketo-custom-activities/understanding-custom-activities)를 참조하십시오.
 
 관련 API: [REST](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities), [JavaScript](javascript-api/lead-tracking.md#munchkin-behavior)
 
@@ -79,7 +69,7 @@ Marketo은 id 필드로 리드를 고유하게 식별합니다. 시스템 외부
 
 Marketo 관리자는 사용자가 프로그램을 만들 때 선택하는 필수 및 선택적 태그 유형을 만들 수 있습니다. 회사의 보고 요구 사항에 따라 각 태그 유형에 가능한 값을 정의합니다.
 
-예를 들어 북동부 및 남동부와 같은 값으로 사용자 지정 &quot;지역&quot; 태그 유형을 만들어 가장 많은 리드를 생성하는 지역을 분석합니다. Maria, David 또는 John과 같은 프로그램 소유자가 리드 및 기회를 만드는 데 가장 큰 영향을 미치는 &quot;소유자&quot; 태그 유형을 만듭니다. 자세한 내용은 [태그 이해](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/understanding-tags)를 참조하십시오.
+예를 들어 북동부 및 남동부와 같은 값으로 사용자 지정 &quot;지역&quot; 태그 유형을 만들어 가장 많은 리드를 생성하는 지역을 분석합니다. Maria, David 또는 John과 같은 프로그램 소유자가 리드 및 기회를 만드는 데 가장 큰 영향을 미치는 &quot;소유자&quot; 태그 유형을 만듭니다. 자세한 내용은 [태그 이해](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/understanding-tags)를 참조하십시오.
 
 관련 API: [REST](https://developer.adobe.com/marketo-apis/api/asset)
 
@@ -128,7 +118,7 @@ Assets에는 프로그램에 사용되는 랜딩 페이지, 이메일, 양식 �
 - 상속됨: 캠페인 폴더 수준에서 만들어지며 해당 폴더의 모든 프로그램에서 사용할 수 있습니다.
 - 재정의됨: 프로그램 폴더 수준에서 상위 내 토큰 값을 변경하지 않고 프로그램 수준에서 사용자 지정 값으로 수정되었습니다.
 
-내 토큰은 토큰 이름의 시작 부분에 &quot;my&quot;라는 단어와 함께 이름 지정 규칙 `{{my.My Token}}`을(를) 사용합니다. 예를들어 EventDate라는 Date 형식의 My Token은 토큰 이름이 `{{my.EventDate}}`입니다. 자세한 내용은 [프로그램의 내 토큰 이해](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/programs/tokens/understanding-my-tokens-in-a-program)를 참조하십시오.
+내 토큰은 토큰 이름의 시작 부분에 &quot;my&quot;라는 단어와 함께 이름 지정 규칙 `{{my.My Token}}`을(를) 사용합니다. 예를들어 EventDate라는 Date 형식의 My Token은 토큰 이름이 `{{my.EventDate}}`입니다. 자세한 내용은 [프로그램의 내 토큰 이해](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/tokens/understanding-my-tokens-in-a-program)를 참조하십시오.
 
 관련 API: [REST](https://developer.adobe.com/marketo-apis/api/asset#tag/Tokens)
 
@@ -144,6 +134,6 @@ Marketo 사용자 지정 개체를 만들어 게시한 후 Marketo API를 통해
 
 기본 CRM 통합이 활성화되어 있지 않을 때 Marketo에서 영업 사원 레코드 및 해당 리드 관계를 관리할 수 있습니다. 이러한 레코드에는 이름, 이메일 및 직책 등의 정보가 포함되어 있습니다. 영업 담당자가 리드를 소유하는 경우 이 정보를 필터링 및 토큰에 사용할 수 있습니다.
 
-&quot;externalSalesPersonId&quot; 필드를 통해 잠재 고객 수준에서 영업 사원에 대한 관계를 관리합니다. [잠재 고객 동기화](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/syncLeadUsingPOST) API를 통해 이 필드를 업데이트하십시오.
+&quot;externalSalesPersonId&quot; 필드를 통해 잠재 고객 수준에서 영업 사원에 대한 관계를 관리합니다. [잠재 고객 동기화](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncLeadUsingPOST) API를 통해 이 필드를 업데이트하십시오.
 
 관련 API: [REST](https://developer.adobe.com/marketo-apis/api/mapi#tag/Sales-Persons)

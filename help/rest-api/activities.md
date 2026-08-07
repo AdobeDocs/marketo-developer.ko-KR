@@ -4,17 +4,13 @@ feature: REST API
 description: Marketo Engage 활동 REST API를 사용하여 활동 유형을 나열하고, 페이징 토큰으로 리드 활동을 가져오고, 사용자 지정 및 데이터 값 변경을 처리합니다.
 exl-id: 1e69af23-2b0c-467a-897c-1dcf81343e73
 TQID: https://experienceleague.adobe.com/62keaj4uNoxIPCzr9AQzKrIsfuHBvC25knYisZRUvF4
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 1758
+source-wordcount: 1740
 ht-degree: 0%
 
 ---
@@ -33,7 +29,7 @@ Marketo은 리드 레코드와 관련된 다양한 활동 유형을 지원합니
 
 ## 설명
 
-[활동 유형 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getAllActivityTypesUsingGET) 끝점을 사용하여 인스턴스에 대해 사용 가능한 활동 유형과 해당 정의를 검색합니다.
+[활동 유형 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getAllActivityTypesUsingGET) 끝점을 사용하여 인스턴스에 대해 사용 가능한 활동 유형과 해당 정의를 검색합니다.
 
 ```
 GET /rest/v1/activities/types.json
@@ -88,7 +84,7 @@ GET /rest/v1/activities/types.json
 
 ## 쿼리
 
-[리드 활동 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getLeadActivitiesUsingGET) 끝점을 사용하여 활동을 검색합니다. 먼저 활동 검색이 시작되는 날짜/시간에 대한 페이징 토큰을 검색합니다. `nextPageToken` 쿼리 매개 변수에 해당 토큰을 전달합니다.
+[리드 활동 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadActivitiesUsingGET) 끝점을 사용하여 활동을 검색합니다. 먼저 활동 검색이 시작되는 날짜/시간에 대한 페이징 토큰을 검색합니다. `nextPageToken` 쿼리 매개 변수에 해당 토큰을 전달합니다.
 
 `activityTypeIds` 쿼리 매개 변수에서 최대 10개의 활동 유형 ID를 쉼표로 구분된 목록으로 전달합니다.
 
@@ -157,7 +153,7 @@ API는 `moreResult`을(를) true로 설정하는 동안 300개 미만의 활동 
 
 ### 데이터 값 변경
 
-리드 필드의 데이터 값 변경 레코드를 검색하려면 [리드 변경 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getLeadChangesUsingGET) 끝점을 사용하십시오. 이 인터페이스의 인터페이스는 다음과 같은 두 가지 면에서 리드 활동 가져오기 API의 인터페이스와 다릅니다.
+리드 필드의 데이터 값 변경 레코드를 검색하려면 [리드 변경 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadChangesUsingGET) 끝점을 사용하십시오. 이 인터페이스의 인터페이스는 다음과 같은 두 가지 면에서 리드 활동 가져오기 API의 인터페이스와 다릅니다.
 
 - 데이터 값 변경 및 새 잠재 고객 활동만 반환하므로 끝점에 `activityTypeIds` 매개 변수가 없습니다.
 - 필수 `fields` 쿼리 매개 변수는 검색할 변경 내용을 쉼표로 구분한 필드 목록을 허용합니다.
@@ -216,7 +212,7 @@ GET /rest/v1/activities/leadchanges.json?nextPageToken=GIYDAOBNGEYS2MBWKQYDAORQG
 
 ### 삭제된 리드
 
-[삭제된 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getDeletedLeadsUsingGET) 끝점을 사용하여 Marketo에서 삭제된 리드 활동을 검색합니다.
+[삭제된 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getDeletedLeadsUsingGET) 끝점을 사용하여 Marketo에서 삭제된 리드 활동을 검색합니다.
 
 ```http
 GET /rest/v1/activities/deletedleads.json?nextPageToken=GIYDAOBNGEYS2MBWKQYDAORQGA5DAMBOGAYDAKZQGAYDALBQ
@@ -270,13 +266,13 @@ GET /rest/v1/activities/deletedleads.json?nextPageToken=GIYDAOBNGEYS2MBWKQYDAORQ
 - 최대 사용자 지정 활동: 10개
 - 사용자 지정 활동당 최대 속성: 20
 
-표준 활동을 검색하는 것과 같은 방식으로 [리드 활동 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getLeadActivitiesUsingGET) API를 통해 사용자 지정 활동 데이터를 검색합니다.
+표준 활동을 검색하는 것과 같은 방식으로 [리드 활동 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadActivitiesUsingGET) API를 통해 사용자 지정 활동 데이터를 검색합니다.
 
 ## 쿼리 유형
 
-[사용자 지정 활동 유형 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getCustomActivityTypeUsingGET)를 사용하여 Marketo 인스턴스에 제공된 유형에 대한 세부 정보를 검색합니다. [사용자 지정 활동 유형 설명](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/describeCustomActivityTypeUsingGET)을(를) 사용하여 특정 유형에 대한 특성 메타데이터를 검색합니다.
+[사용자 지정 활동 유형 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getCustomActivityTypeUsingGET)를 사용하여 Marketo 인스턴스에 제공된 유형에 대한 세부 정보를 검색합니다. [사용자 지정 활동 유형 설명](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeCustomActivityTypeUsingGET)을(를) 사용하여 특정 유형에 대한 특성 메타데이터를 검색합니다.
 
-표준 [활동 유형 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getAllActivityTypesUsingGET) 끝점도 사용자 지정 활동 메타데이터를 반환하지만, 유형이 사용자 지정인지 여부는 식별하지 않습니다.
+표준 [활동 유형 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getAllActivityTypesUsingGET) 끝점도 사용자 지정 활동 메타데이터를 반환하지만, 유형이 사용자 지정인지 여부는 식별하지 않습니다.
 
 ### 유형 가져오기
 
@@ -653,7 +649,7 @@ POST /rest/v1/activities/external/type/{apiName}/attributes/delete.json
 
 사용자 지정 활동은 개별 개인 레코드에 대한 이전 활동을 한 번 기록하는 기록입니다. Marketo 관리자는 Marketo에서 스키마를 관리하거나 API 통합으로 원격으로 관리할 수 있습니다.
 
-[사용자 지정 활동 추가](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/addCustomActivityUsingPOST) 끝점을 사용하여 리드 레코드에 사용자 지정 활동을 추가합니다. `leadId` 필드는 각 활동을 잠재 고객과 연결합니다. 잠재 고객의 활동 로그에서 사용자 정의 활동을 보거나 사용자 정의 활동 유형 ID를 지정하여 잠재 고객 활동 가져오기 를 통해 해당 활동을 검색합니다.
+[사용자 지정 활동 추가](https://developer.adobe.com/marketo-apis/api/mapi#operation/addCustomActivityUsingPOST) 끝점을 사용하여 리드 레코드에 사용자 지정 활동을 추가합니다. `leadId` 필드는 각 활동을 잠재 고객과 연결합니다. 잠재 고객의 활동 로그에서 사용자 정의 활동을 보거나 사용자 정의 활동 유형 ID를 지정하여 잠재 고객 활동 가져오기 를 통해 해당 활동을 검색합니다.
 
 업데이트하거나 덮어쓸 필요가 없는 한 사람과 관련된 데이터에 대해 사용자 지정 활동을 사용하십시오. 예를 들어 이벤트 출석을 &quot;출석한 이벤트&quot; 활동으로 기록합니다.
 

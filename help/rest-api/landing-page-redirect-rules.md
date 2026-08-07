@@ -4,15 +4,12 @@ feature: REST API, Landing Pages
 description: Marketo Asset REST API를 사용하여 필터, 페이지 매김, 호스트 이름 옵션, Marketo 이외의 타겟으로 랜딩 페이지 리디렉션 규칙을 만들고, 쿼리하고, 업데이트하고, 삭제합니다.
 exl-id: f63aa5ef-5872-4401-be75-6fb9b2977734
 TQID: https://experienceleague.adobe.com/2gePbKA3xeoRdnL8mNnObN-GPTX00Ii4-zcM0lBjs-o
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: f82558ea-6af5-44eb-a424-5b3389abb0a3
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 626
+source-wordcount: 596
 ht-degree: 3%
 
 ---
@@ -27,11 +24,11 @@ ht-degree: 3%
 
 ## 쿼리
 
-ID[&#128279;](#by_id) 또는 [검색](#browse)별 랜딩 페이지 리디렉션 규칙을 쿼리합니다.
+ID](#by_id) 또는 [검색](#browse)별 [랜딩 페이지 리디렉션 규칙을 쿼리합니다.
 
 ### ID별
 
-[ID별 랜딩 페이지 리디렉션 규칙 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/getLandingPageRedirectRuleByIdUsingGET) 끝점은 하나의 리디렉션 규칙 `id` 경로 매개 변수를 사용하고 일치하는 레코드를 반환합니다.
+[ID별 랜딩 페이지 리디렉션 규칙 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/getLandingPageRedirectRuleByIdUsingGET) 끝점은 하나의 리디렉션 규칙 `id` 경로 매개 변수를 사용하고 일치하는 레코드를 반환합니다.
 
 ```http
 GET /rest/asset/v1/redirectRule/{id}.json
@@ -66,7 +63,7 @@ GET /rest/asset/v1/redirectRule/{id}.json
 
 ### 찾아보기
 
-[랜딩 페이지 리디렉션 규칙 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/getLandingPageRedirectRulesUsingGET) 끝점이 랜딩 페이지 리디렉션 규칙 레코드를 반환합니다.
+[랜딩 페이지 리디렉션 규칙 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/getLandingPageRedirectRulesUsingGET) 끝점이 랜딩 페이지 리디렉션 규칙 레코드를 반환합니다.
 
 선택적 쿼리 매개 변수를 사용하여 결과를 필터링합니다.
 
@@ -143,7 +140,7 @@ GET /rest/asset/v1/redirectRules.json&maxReturn=3
 
 ## 만들기
 
-`application/x-www-form-urlencoded` POST 요청으로 [랜딩 페이지 리디렉션 규칙 만들기](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/createLandingPageRedirectRuleUsingPOST) 끝점을 호출합니다. 요청에는 세 개의 필수 매개 변수가 있습니다.
+`application/x-www-form-urlencoded` POST 요청으로 [랜딩 페이지 리디렉션 규칙 만들기](https://developer.adobe.com/marketo-apis/api/asset#operation/createLandingPageRedirectRuleUsingPOST) 끝점을 호출합니다. 요청에는 세 개의 필수 매개 변수가 있습니다.
 
 `hostname` 매개 변수는 랜딩 페이지 호스트 이름을 지정합니다. 브랜딩 도메인 또는 별칭에 속해야 하며 255자를 초과할 수 없습니다.
 
@@ -162,7 +159,7 @@ GET /rest/asset/v1/redirectRules.json&maxReturn=3
 | Marketo | 랜딩 페이지 ID | {&quot;type&quot;:&quot;landingPageId&quot;,&quot;value&quot;:&quot;1774&quot;} |
 | 비 Marketo | url | {&quot;type&quot;:&quot;url&quot;,&quot;value&quot;:&quot;www.contactLogs.com&quot;} |
 
-자세한 내용은 [다른 페이지로 Marketo 랜딩 페이지 리디렉션](https://experienceleague.adobe.com/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-actions/redirect-a-marketo-landing-page-to-another-page.html?lang=ko)을 참조하십시오.
+자세한 내용은 [다른 페이지로 Marketo 랜딩 페이지 리디렉션](https://experienceleague.adobe.com/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-actions/redirect-a-marketo-landing-page-to-another-page.html)을 참조하십시오.
 
 ```http
 POST /rest/asset/v1/redirectRules.json
@@ -205,7 +202,7 @@ hostname=calqeauto.com&redirectFrom={"type":"landingPageId", "value":"5483"}&red
 
 ## 업데이트
 
-[랜딩 페이지 리디렉션 규칙 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/updateLandingPageRedirectRuleUsingPOST) 끝점은 하나의 리디렉션 규칙 `id` 경로 매개 변수를 사용합니다. `application/x-www-form-urlencoded` POST 요청으로 업데이트를 보냅니다.
+[랜딩 페이지 리디렉션 규칙 업데이트](https://developer.adobe.com/marketo-apis/api/asset#operation/updateLandingPageRedirectRuleUsingPOST) 끝점은 하나의 리디렉션 규칙 `id` 경로 매개 변수를 사용합니다. `application/x-www-form-urlencoded` POST 요청으로 업데이트를 보냅니다.
 
 다음 매개 변수 중 하나 이상을 전달하여 업데이트할 특성을 선택하십시오. `hostname`, `redirectFrom` 또는 `redirectTo`.
 
@@ -252,7 +249,7 @@ redirectTo={"type":"landingPageId", "value":"5561"}
 
 ## 삭제
 
-ID별 [랜딩 페이지 리디렉션 규칙 삭제](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/deleteLandingPageRedirectRuleUsingPOST) 끝점은 하나의 리디렉션 규칙 `id` 경로 매개 변수를 사용합니다.
+ID별 [랜딩 페이지 리디렉션 규칙 삭제](https://developer.adobe.com/marketo-apis/api/asset#operation/deleteLandingPageRedirectRuleUsingPOST) 끝점은 하나의 리디렉션 규칙 `id` 경로 매개 변수를 사용합니다.
 
 ```http
 POST /rest/asset/v1/redirectRule/{id}/delete.json
@@ -274,7 +271,7 @@ POST /rest/asset/v1/redirectRule/{id}/delete.json
 
 ## 랜딩 페이지 도메인 찾아보기
 
-[랜딩 페이지 도메인 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Redirect-Rules/operation/getLandingPageDomainsUsingGET) 끝점이 랜딩 페이지 도메인 레코드를 반환합니다.
+[랜딩 페이지 도메인 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/getLandingPageDomainsUsingGET) 끝점이 랜딩 페이지 도메인 레코드를 반환합니다.
 
 두 개의 선택적 쿼리 매개 변수를 사용하여 결과를 필터링합니다.
 

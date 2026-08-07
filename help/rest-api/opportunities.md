@@ -4,17 +4,13 @@ feature: REST API
 description: SFDC 또는 Dynamics 동기화를 통해 기회, 중복 제거 및 검색 가능한 필드, 제한 사항, 읽기 전용 동작을 설명, 쿼리, 만들기 및 업데이트하는 Marketo REST API입니다.
 exl-id: 46451285-4125-4857-890a-575069a68288
 TQID: https://experienceleague.adobe.com/rBDJcXWQrN5qyKRWHyzVC-sc9BH2mQFLm7fKUk-NUn8
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: c5f60233-d5ea-4453-a799-0ad258b4d399
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 708
+source-wordcount: 702
 ht-degree: 0%
 
 ---
@@ -27,7 +23,7 @@ Marketo은 영업 기회 레코드를 읽고, 쓰고, 만들고, 업데이트하
 
 API는 두 개체 유형을 노출합니다. 대부분의 리드 데이터베이스 객체 유형과 마찬가지로 각 유형에는 객체 메타데이터를 반환하는 해당 Describe 호출이 있습니다.
 
-영업 기회 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=ko) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=ko)가 활성화된 구독에 대해 읽기 전용 액세스를 제공합니다.
+영업 기회 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=en) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=en)가 활성화된 구독에 대해 읽기 전용 액세스를 제공합니다.
 
 ## 설명
 
@@ -100,7 +96,7 @@ GET /rest/v1/opportunities/describe.json
 
 ## 쿼리
 
-[기회 쿼리](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/getOpportunitiesUsingGET)의 패턴은 리드 API를 거의 따릅니다. 그러나 `filterType` 매개 변수는 해당 Describe 응답 또는 dedupeFields의 `searchableFields` 배열에 나열된 필드만 허용합니다.
+[기회 쿼리](https://developer.adobe.com/marketo-apis/api/mapi#operation/getOpportunitiesUsingGET)의 패턴은 리드 API를 거의 따릅니다. 그러나 `filterType` 매개 변수는 해당 Describe 응답 또는 dedupeFields의 `searchableFields` 배열에 나열된 필드만 허용합니다.
 
 사용자 정의 영업 기회 필드의 경우 String 또는 Integer 유형의 필드만 searchableFields 배열에 나타납니다.
 
@@ -221,7 +217,7 @@ API 이름으로 한 회사 필드를 쿼리하거나 모든 회사 필드를 �
 
 #### 이름별
 
-[이름별 Get Opportunity 필드](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/getOpportunityFieldByNameUsingGET) 끝점은 회사 개체에서 한 필드에 대한 메타데이터를 검색합니다. 필수 `fieldApiName` 경로 매개 변수는 필드의 API 이름을 지정합니다.
+[이름별 Get Opportunity 필드](https://developer.adobe.com/marketo-apis/api/mapi#operation/getOpportunityFieldByNameUsingGET) 끝점은 회사 개체에서 한 필드에 대한 메타데이터를 검색합니다. 필수 `fieldApiName` 경로 매개 변수는 필드의 API 이름을 지정합니다.
 
 이 응답은 Describe Opportunity 응답과 유사하지만 추가 메타데이터를 포함합니다. 예를 들어 `isCustom` 특성은 필드가 사용자 지정인지 여부를 나타냅니다.
 
@@ -252,7 +248,7 @@ GET /rest/v1/opportunities/schema/fields/externalOpportunityId.json
 
 #### 찾아보기
 
-[영업 기회 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities/operation/getOpportunityFieldsUsingGET) 끝점은 회사 개체의 모든 필드에 대한 메타데이터를 검색합니다. 기본적으로 최대 300개의 레코드를 반환합니다. `batchSize` 쿼리 매개 변수를 사용하여 이 숫자를 줄이십시오.
+[영업 기회 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getOpportunityFieldsUsingGET) 끝점은 회사 개체의 모든 필드에 대한 메타데이터를 검색합니다. 기본적으로 최대 300개의 레코드를 반환합니다. `batchSize` 쿼리 매개 변수를 사용하여 이 숫자를 줄이십시오.
 
 `moreResult` 특성이 true이면 더 많은 결과를 사용할 수 있습니다. moreResult가 false가 될 때까지 반환된 `nextPageToken`을(를) 사용하여 끝점을 계속 호출합니다.
 

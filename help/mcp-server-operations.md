@@ -3,18 +3,12 @@ title: Marketo Engage MCP 작업
 description: AI 도우미와 함께 사용할 수 있는 Marketo Engage MCP 작업을 알아봅니다.
 autotag-review: '2026-06-02T13:31:42.084Z'
 TQID: 'https://experienceleague.adobe.com/qvrWbHOCsCCHctduNDxMhkE8JAKxZk8FCYfKvzxfcYA'
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: a7170d27-32ab-462b-a333-269abc654483
-  - id: b0bb9048-d951-48d8-8232-45cf248a7e27
-  - id: dca84292-69e9-4116-a575-667d31fa060d
-  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-topic_v2:
-  - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: a7170d27-32ab-462b-a333-269abc654483id: b0bb9048-d951-48d8-8232-45cf248a7e27id: dca84292-69e9-4116-a575-667d31fa060did: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+topic_v2: id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 260
+source-wordcount: 280
 ht-degree: 3%
 
 ---
@@ -22,17 +16,17 @@ ht-degree: 3%
 
 # [!DNL Marketo Engage] MCP 작업
 
-[!DNL Marketo Engage] MCP 서버를 통해 다음 작업을 사용할 수 있습니다. 일반적으로 서버는 읽기 전용 또는 비파괴인 엔드포인트를 제공합니다. AI 시스템은 `Delete` 또는 다른 파괴적 작업을 사용할 수 없습니다.
+[!DNL Marketo Engage] MCP 서버를 통해 다음 작업을 사용할 수 있습니다. 서버는 읽기 전용 또는 비파괴인 끝점을 제공합니다. AI 시스템은 `Delete` 또는 다른 파괴적 작업을 사용할 수 없습니다.
 
 >[!NOTE]
 >
->이 목록은 도구를 추가하면 계속 증가합니다.
+>MCP 서버 팀은 스마트 목록 및 스마트 캠페인 에셋 API가 MCP 서버와 작동하도록 하기 위해 노력하고 있습니다. 허용 목록에 추가 항목을 포함한 이 작업은 2026년 3분기에 완료될 예정입니다.
 
-Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 대한 자세한 내용은 [데이터 정보](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/marketo-ai/data-information) 페이지를 참조하십시오.
+Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 대한 자세한 내용은 [데이터 정보](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-ai/data-information) 페이지를 참조하십시오.
 
 ## 일괄 내보내기
 
-[대량 내보내기 API 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Bulk-Export){target="_blank"}
+[대량 내보내기 API 참조](https://developer.adobe.com/marketo-apis/api/mapi){target="_blank"}
 
 - `bulk_export_create`
 - `bulk_export_enqueue`
@@ -42,7 +36,7 @@ Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 
 
 ## 채널 및 태그
 
-[채널 API 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Channels){target="_blank"} | [태그 API 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tags){target="_blank"}
+[채널 API 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Channels){target="_blank"} | [태그 API 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Tags){target="_blank"}
 
 - `browse_channels`
 - `browse_tag_types`
@@ -51,7 +45,7 @@ Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 
 
 ## 이메일
 
-[이메일 API 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Emails){target="_blank"}
+[이메일 API 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Emails){target="_blank"}
 
 - `approve_email`
 - `browse_emails`
@@ -63,7 +57,7 @@ Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 
 
 ## 폴더
 
-[폴더 API 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Folders){target="_blank"}
+[폴더 API 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Folders){target="_blank"}
 
 - `browse_folders`
 - `create_folder`
@@ -75,7 +69,7 @@ Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 
 
 ## 양식
 
-[Forms API 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Forms){target="_blank"}
+[Forms API 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Forms){target="_blank"}
 
 - `add_field_set`
 - `add_field_to_form`
@@ -103,7 +97,7 @@ Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 
 
 ## 잠재 고객
 
-[잠재 고객 API 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Leads){target="_blank"}
+[잠재 고객 API 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads){target="_blank"}
 
 - `add_leads_to_list`
 - `describe_lead`
@@ -115,7 +109,7 @@ Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 
 
 ## 프로그램
 
-[프로그램 API 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Programs){target="_blank"}
+[프로그램 API 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs){target="_blank"}
 
 - `approve_program`
 - `browse_email_batch_programs`
@@ -138,7 +132,7 @@ Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 
 
 ## 스마트 캠페인
 
-[스마트 캠페인 API 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Campaigns){target="_blank"}
+[스마트 캠페인 API 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Smart-Campaigns){target="_blank"}
 
 - `activate_smart_campaign`
 - `add_flow_step`
@@ -164,7 +158,7 @@ Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 
 
 ## 스마트 목록
 
-[스마트 목록 API 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Smart-Lists){target="_blank"}
+[스마트 목록 API 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Smart-Lists){target="_blank"}
 
 - `add_smart_list_rule`
 - `browse_smart_lists`
@@ -184,7 +178,7 @@ Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 
 
 ## 스니펫
 
-[코드 조각 API 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Snippets){target="_blank"}
+[코드 조각 API 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets){target="_blank"}
 
 - `approve_snippet`
 - `browse_snippets`
@@ -203,7 +197,7 @@ Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 
 
 ## 정적 목록
 
-[정적 목록 API 참조](https://developer.adobe.com/marketo-apis/api/mapi/#tag/Static-Lists){target="_blank"}
+[정적 목록 API 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Static-Lists){target="_blank"}
 
 - `browse_lists`
 - `create_list`
@@ -215,7 +209,7 @@ Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 
 
 ## 토큰
 
-[토큰 API 참조](https://developer.adobe.com/marketo-apis/api/asset/#tag/Tokens){target="_blank"}
+[토큰 API 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Tokens){target="_blank"}
 
 - `create_calendar_token`
 - `create_token`

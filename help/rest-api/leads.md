@@ -4,20 +4,13 @@ feature: REST API
 description: 설명, ID 또는 필터별 쿼리, 기본 필드, 제한 및 ECID 검색을 포함한 Marketo Leads REST API 기능을 살펴봅니다.
 exl-id: 0a2f7c38-02ae-4d97-acfe-9dd108a1f733
 TQID: https://experienceleague.adobe.com/jZ-ecWTmHwq9gvp4fMaeuuGba6cgwYx0QCCyfkrEDHQ
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: a7170d27-32ab-462b-a333-269abc654483
-  - id: b0bb9048-d951-48d8-8232-45cf248a7e27
-  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
-  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: a7170d27-32ab-462b-a333-269abc654483id: b0bb9048-d951-48d8-8232-45cf248a7e27id: c5f60233-d5ea-4453-a799-0ad258b4d399id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 2728
+source-wordcount: 2733
 ht-degree: 3%
 
 ---
@@ -72,7 +65,7 @@ GET /rest/v1/leads/describe.json
 
 실제 응답에는 결과 배열에 더 많은 필드가 포함됩니다. 각 항목은 잠재 고객 레코드에서 사용할 수 있는 필드를 나타내며 적어도 ID, displayName 및 데이터 유형을 포함합니다.
 
-나머지 및 soap 하위 개체는 해당 API에 대해 필드가 유효한 경우에만 표시됩니다. `readOnly` 속성은 해당 API가 필드를 업데이트할 수 있는지 여부를 나타냅니다. length 속성이 있으면 필드의 최대 길이가 제공되고 dataType 속성은 필드의 데이터 형식이 제공됩니다.
+REST 하위 개체는 해당 API에 대해 필드가 유효한 경우에만 나타납니다. `readOnly` 속성은 해당 API가 필드를 업데이트할 수 있는지 여부를 나타냅니다. length 속성이 있으면 필드의 최대 길이가 제공되고 dataType 속성은 필드의 데이터 형식이 제공됩니다.
 
 ## 쿼리
 
@@ -177,7 +170,7 @@ Adobe Experience Cloud 대상 공유 가 활성화되면 쿠키 동기화는 Ado
 
 >[!NOTE]
 >
-> [동기화 리드](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/syncLeadUsingPOST) 끝점을 사용하여 회사 필드를 업데이트할 수 없습니다. 대신 [회사 동기화](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/syncCompaniesUsingPOST) 끝점을 사용하십시오.
+> [동기화 리드](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncLeadUsingPOST) 끝점을 사용하여 회사 필드를 업데이트할 수 없습니다. 대신 [회사 동기화](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncCompaniesUsingPOST) 끝점을 사용하십시오.
 
 >[!NOTE]
 >

@@ -4,21 +4,13 @@ feature: REST API
 description: Marketo REST API를 사용하여 프로그램 구성원을 읽고, 만들고, 업데이트하고, 삭제하고, 표준 및 사용자 정의 필드를 관리하고, 검색 가능한 필드를 사용하여 쿼리합니다.
 exl-id: 22f29a42-2a30-4dce-a571-d7776374cf43
 TQID: https://experienceleague.adobe.com/scEHyXYq9C7cCS1kIX810wG7ahT9fsa448NwIfBmzQM
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: b0bb9048-d951-48d8-8232-45cf248a7e27
-  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
-  - id: d1d0a9cd-295d-4976-8c39-ddae266f240e
-  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-topic_v2:
-  - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-  - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: b0bb9048-d951-48d8-8232-45cf248a7e27id: c5f60233-d5ea-4453-a799-0ad258b4d399id: d1d0a9cd-295d-4976-8c39-ddae266f240eid: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+topic_v2: id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dcid: eddd9b14-83bd-4ff4-9072-54a4a484abb7
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 1670
+source-wordcount: 1632
 ht-degree: 2%
 
 ---
@@ -29,11 +21,11 @@ ht-degree: 2%
 
 Marketo은 프로그램 멤버 레코드를 읽고, 만들고, 업데이트하고, 삭제하기 위한 API를 제공합니다. 잠재 고객 ID 필드는 프로그램 구성원 레코드와 잠재 고객 레코드와 관련시킵니다.
 
-각 레코드에는 표준 필드가 포함되어 있으며 최대 20개의 사용자 지정 필드를 포함할 수 있습니다. 이러한 필드에는 폼, 필터, 트리거 및 흐름 작업에서 사용할 프로그램별 멤버 데이터가 저장됩니다. Marketo Engage UI의 프로그램 [구성원 탭](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/manage-and-view-members)에서 이 데이터를 볼 수 있습니다.
+각 레코드에는 표준 필드가 포함되어 있으며 최대 20개의 사용자 지정 필드를 포함할 수 있습니다. 이러한 필드에는 폼, 필터, 트리거 및 흐름 작업에서 사용할 프로그램별 멤버 데이터가 저장됩니다. Marketo Engage UI의 프로그램 [구성원 탭](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/manage-and-view-members)에서 이 데이터를 볼 수 있습니다.
 
 ## 설명
 
-[프로그램 멤버 설명](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/describeProgramMemberUsingGET2) 끝점은 리드 데이터베이스 개체에 대한 표준 패턴을 따릅니다.
+[프로그램 멤버 설명](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeProgramMemberUsingGET2) 끝점은 리드 데이터베이스 개체에 대한 표준 패턴을 따릅니다.
 
 - `searchableFields` 배열은 쿼리에 유효한 필드를 식별합니다.
 - `fields` 배열에 REST API 이름, 표시 이름 및 필드를 업데이트할 수 있는지 여부와 같은 메타데이터가 포함되어 있습니다.
@@ -227,11 +219,11 @@ GET /rest/v1/programs/members/describe.json
 
 ## 쿼리
 
-[프로그램 구성원 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/getProgramMembersUsingGET) 끝점을 사용하여 프로그램 구성원을 검색합니다. 요청에는 `programId` 경로 매개 변수와 `filterType` 및 `filterValues` 쿼리 매개 변수가 필요합니다.
+[프로그램 구성원 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getProgramMembersUsingGET) 끝점을 사용하여 프로그램 구성원을 검색합니다. 요청에는 `programId` 경로 매개 변수와 `filterType` 및 `filterValues` 쿼리 매개 변수가 필요합니다.
 
 `programId`은(는) 검색할 프로그램을 지정합니다.
 
-`filterType`은(는) 검색 필터로 사용할 필드를 지정합니다. [프로그램 구성원 설명](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/describeProgramMemberUsingGET2) 끝점에서 반환된 &quot;searchableFields&quot; 목록의 모든 필드를 허용합니다. 사용자 지정 필드의 경우 dataType은 &quot;문자열&quot; 또는 &quot;정수&quot;여야 합니다.
+`filterType`은(는) 검색 필터로 사용할 필드를 지정합니다. [프로그램 구성원 설명](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeProgramMemberUsingGET2) 끝점에서 반환된 &quot;searchableFields&quot; 목록의 모든 필드를 허용합니다. 사용자 지정 필드의 경우 dataType은 &quot;문자열&quot; 또는 &quot;정수&quot;여야 합니다.
 
 filterType이 &quot;leadId&quot;가 아닌 경우 요청은 최대 100,000개의 프로그램 멤버 레코드를 처리할 수 있습니다. Marketo 인스턴스 구성에 따라 다음 오류 중 하나가 표시됩니다.
 
@@ -244,7 +236,7 @@ filterType이 &quot;leadId&quot;가 아닌 경우 요청은 최대 100,000개의
 
 또는 `updatedAt`을(를) filterType으로 지정하고 `startAt` 및 `endAt` datetime 매개 변수를 제공하여 날짜 범위별로 필터링합니다. 범위는 7일 이하여야 합니다. datetime 값에 밀리초 없이 ISO-8601 형식을 사용하십시오.
 
-선택적 `fields` 쿼리 매개 변수는 [Describe Program Member](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/describeProgramMemberUsingGET2) 끝점에서 반환된 필드 API 이름의 쉼표로 구분된 목록을 허용합니다. 포함되는 경우 각 응답 레코드에는 지정된 필드가 포함됩니다. 생략하면 기본적으로 응답은 `acquiredBy`, `leadId`, `membershipDate`, `programId` 및 `reachedSuccess`을(를) 반환합니다.
+선택적 `fields` 쿼리 매개 변수는 [Describe Program Member](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeProgramMemberUsingGET2) 끝점에서 반환된 필드 API 이름의 쉼표로 구분된 목록을 허용합니다. 포함되는 경우 각 응답 레코드에는 지정된 필드가 포함됩니다. 생략하면 기본적으로 응답은 `acquiredBy`, `leadId`, `membershipDate`, `programId` 및 `reachedSuccess`을(를) 반환합니다.
 
 기본적으로 끝점은 최대 300개의 레코드를 반환합니다. `batchSize` 쿼리 매개 변수를 사용하여 이 숫자를 줄이십시오.
 
@@ -373,12 +365,12 @@ GET /rest/v1/programs/{programId}/members.json?filterType=statusName&filterValue
 
 ### 프로그램 구성원 상태
 
-[동기화 프로그램 구성원 상태](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/syncProgramMemberStatusUsingPOST) 끝점을 사용하여 하나 이상의 구성원에 대한 프로그램 상태를 만들거나 업데이트합니다.
+[동기화 프로그램 구성원 상태](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncProgramMemberStatusUsingPOST) 끝점을 사용하여 하나 이상의 구성원에 대한 프로그램 상태를 만들거나 업데이트합니다.
 
 필수 매개 변수는 다음과 같습니다.
 
 - `programId`: 만들거나 업데이트할 멤버가 포함된 프로그램을 지정하는 경로 매개 변수입니다.
-- `statusName`: 잠재 고객 목록에 적용할 프로그램 상태를 지정합니다. statusName은(는) 프로그램 채널에 사용 가능한 상태와 일치해야 합니다. [채널 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Channels/operation/getAllChannelsUsingGET) 끝점으로 올바른 상태를 검색합니다. 잠재 고객의 상태가 지정된 statusName보다 큰 단계 값을 가지면 요청에서 해당 잠재 고객을 건너뜁니다.
+- `statusName`: 잠재 고객 목록에 적용할 프로그램 상태를 지정합니다. statusName은(는) 프로그램 채널에 사용 가능한 상태와 일치해야 합니다. [채널 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/getAllChannelsUsingGET) 끝점으로 올바른 상태를 검색합니다. 잠재 고객의 상태가 지정된 statusName보다 큰 단계 값을 가지면 요청에서 해당 잠재 고객을 건너뜁니다.
 - `input`: 프로그램 멤버에 해당하는 `leadId` 값의 배열입니다. 호출당 최대 300개의 leadId를 제출할 수 있습니다.
 
 끝점은 각 레코드에 대한 업데이트를 수행합니다. leadId가 프로그램 구성원과 연결된 경우 끝점이 멤버십 상태를 업데이트합니다. 그렇지 않으면 프로그램 멤버 레코드를 만들고 레코드를 leadId와 연결하며 멤버십 상태를 할당합니다.
@@ -443,7 +435,7 @@ Content-Type: application/json
 
 ### 프로그램 멤버 데이터
 
-[프로그램 구성원 데이터 동기화](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/syncProgramMemberDataUsingPOST) 끝점을 사용하여 하나 이상의 구성원에 대한 프로그램 구성원 필드 데이터를 업데이트합니다. [프로그램 구성원 설명](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/describeProgramMemberUsingGET2) 끝점에서 &quot;업데이트 가능&quot;으로 표시된 사용자 지정 필드 또는 표준 필드를 수정할 수 있습니다.
+[프로그램 구성원 데이터 동기화](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncProgramMemberDataUsingPOST) 끝점을 사용하여 하나 이상의 구성원에 대한 프로그램 구성원 필드 데이터를 업데이트합니다. [프로그램 구성원 설명](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeProgramMemberUsingGET2) 끝점에서 &quot;업데이트 가능&quot;으로 표시된 사용자 지정 필드 또는 표준 필드를 수정할 수 있습니다.
 
 필수 매개 변수는 다음과 같습니다.
 
@@ -526,7 +518,7 @@ API 이름으로 하나의 프로그램 멤버 필드를 쿼리하거나 모든 
 
 #### 이름별
 
-[이름별 프로그램 멤버 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/getProgramMemberFieldByNameUsingGET) 끝점은 프로그램 멤버 개체에서 한 필드의 메타데이터를 검색합니다. 필수 `fieldApiName` 경로 매개 변수는 필드의 API 이름을 지정합니다.
+[이름별 프로그램 멤버 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getProgramMemberFieldByNameUsingGET) 끝점은 프로그램 멤버 개체에서 한 필드의 메타데이터를 검색합니다. 필수 `fieldApiName` 경로 매개 변수는 필드의 API 이름을 지정합니다.
 
 응답은 Describe Program Member 응답과 유사하지만 추가 메타데이터를 포함합니다. 예를 들어 `isCustom` 특성은 필드가 사용자 지정인지 여부를 나타냅니다.
 
@@ -557,7 +549,7 @@ GET /rest/v1/programs/members/schema/fields/{fieldApiName}.json
 
 #### 찾아보기
 
-[프로그램 구성원 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/getProgramMemberFieldsUsingGET) 끝점은 프로그램 구성원 개체의 모든 필드에 대한 메타데이터를 검색합니다. 기본적으로 최대 300개의 레코드를 반환합니다. `batchSize` 쿼리 매개 변수를 사용하여 이 숫자를 줄이십시오.
+[프로그램 구성원 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getProgramMemberFieldsUsingGET) 끝점은 프로그램 구성원 개체의 모든 필드에 대한 메타데이터를 검색합니다. 기본적으로 최대 300개의 레코드를 반환합니다. `batchSize` 쿼리 매개 변수를 사용하여 이 숫자를 줄이십시오.
 
 `moreResult` 특성이 true이면 더 많은 결과를 사용할 수 있습니다. moreResult가 false가 될 때까지 반환된 `nextPageToken`을(를) 사용하여 끝점을 계속 호출합니다.
 
@@ -635,9 +627,9 @@ GET /rest/v1/programs/members/schema/fields.json?batchSize=5
 
 ### 필드 만들기
 
-[프로그램 구성원 필드 만들기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/createProgramMemberFieldUsingPOST) 끝점은 프로그램 구성원 개체에 사용자 지정 필드를 만듭니다. [Marketo Engage UI](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/program-member-custom-fields)와 비슷한 기능을 제공합니다. 이 끝점으로 최대 20개의 사용자 지정 필드를 만들 수 있습니다.
+[프로그램 구성원 필드 만들기](https://developer.adobe.com/marketo-apis/api/mapi#operation/createProgramMemberFieldUsingPOST) 끝점은 프로그램 구성원 개체에 사용자 지정 필드를 만듭니다. [Marketo Engage UI](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/program-member-custom-fields)와 비슷한 기능을 제공합니다. 이 끝점으로 최대 20개의 사용자 지정 필드를 만들 수 있습니다.
 
-프로덕션 Marketo Engage 인스턴스에서 생성하기 전에 각 필드를 신중하게 고려합니다. 필드를 만든 후에는 삭제할 수 없습니다. [숨길 수만 있습니다](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/field-management/delete-a-custom-field-in-marketo). 사용하지 않는 필드는 인스턴스에 혼란을 추가합니다.
+프로덕션 Marketo Engage 인스턴스에서 생성하기 전에 각 필드를 신중하게 고려합니다. 필드를 만든 후에는 삭제할 수 없습니다. [숨길 수만 있습니다](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/field-management/delete-a-custom-field-in-marketo). 사용하지 않는 필드는 인스턴스에 혼란을 추가합니다.
 
 필수 `input` 매개 변수는 프로그램 멤버 필드 개체의 배열입니다. 각 객체에는 하나 이상의 속성이 포함됩니다.
 
@@ -683,7 +675,7 @@ POST /rest/v1/programs/members/schema/fields.json
 
 ### 필드 업데이트
 
-[프로그램 구성원 필드 업데이트](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/updateProgramMemberFieldUsingPOST) 끝점은 프로그램 구성원 개체에서 하나의 사용자 지정 필드를 업데이트합니다. Marketo Engage UI에서 사용할 수 있는 대부분의 필드 업데이트는 API를 통해서도 사용할 수 있습니다. 다음 표에는 차이점이 요약되어 있습니다.
+[프로그램 구성원 필드 업데이트](https://developer.adobe.com/marketo-apis/api/mapi#operation/updateProgramMemberFieldUsingPOST) 끝점은 프로그램 구성원 개체에서 하나의 사용자 지정 필드를 업데이트합니다. Marketo Engage UI에서 사용할 수 있는 대부분의 필드 업데이트는 API를 통해서도 사용할 수 있습니다. 다음 표에는 차이점이 요약되어 있습니다.
 
 | 속성 | API로 업데이트할 수 있습니까? | UI로 업데이트할 수 있습니까? | API로 업데이트할 수 있습니까? | UI로 업데이트할 수 있습니까? |
 | --- | --- | --- | --- | --- |
@@ -733,7 +725,7 @@ POST /rest/v1/programs/members/schema/fields/pMCFCustomField03.json
 
 ## 삭제
 
-[프로그램 구성원 삭제](https://developer.adobe.com/marketo-apis/api/mapi#tag/Program-Members/operation/deleteProgramMemberUsingPOST) 끝점을 사용하여 프로그램 구성원 레코드를 삭제합니다. 필수 `programId` 경로 매개 변수는 삭제할 멤버가 포함된 프로그램을 지정합니다.
+[프로그램 구성원 삭제](https://developer.adobe.com/marketo-apis/api/mapi#operation/deleteProgramMemberUsingPOST) 끝점을 사용하여 프로그램 구성원 레코드를 삭제합니다. 필수 `programId` 경로 매개 변수는 삭제할 멤버가 포함된 프로그램을 지정합니다.
 
 요청 본문에 `input` 리드 ID 배열이 포함되어 있습니다. 각 호출에는 최대 300개의 리드 ID가 허용됩니다.
 

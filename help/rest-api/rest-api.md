@@ -4,17 +4,12 @@ feature: REST API
 description: Marketo REST API를 사용하고, API 사용자 및 LaunchPoint를 설정하고, 할당량 및 한도를 보고, 인증 헤더로 인증하고, 리드를 검색하는 방법에 대해 알아봅니다.
 exl-id: 4b9beaf0-fc04-41d7-b93a-a1ae3147ce67
 TQID: https://experienceleague.adobe.com/GqhWI816wWX-2zf89wWj-GXpg9i615HRFVl2ljdYVj0
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: b13bd2ad-8e65-49e5-9691-2a0d31067b35
-  - id: c5f60233-d5ea-4453-a799-0ad258b4d399
-  - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: b13bd2ad-8e65-49e5-9691-2a0d31067b35id: c5f60233-d5ea-4453-a799-0ad258b4d399id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 765
+source-wordcount: 726
 ht-degree: 2%
 
 ---
@@ -30,7 +25,7 @@ REST API는 다음 두 가지 광범위한 범주로 분류됩니다.
 
 >[!NOTE]
 >
->SOAP API는 더 이상 사용되지 않으며 2026년 7월 31일 이후부터 더 이상 사용할 수 없습니다. 모든 새 개발은 Marketo [REST API](./rest-api.md)를 사용하여 수행해야 하며, 서비스가 중단되지 않도록 기존 서비스를 해당 날짜까지 마이그레이션해야 합니다. SOAP API를 사용하는 서비스가 있는 경우 마이그레이션 방법에 대한 자세한 내용은 SOAP API [마이그레이션 안내서](../soap-api/migration.md)를 참조하십시오.
+>2026년 7월 31일부터 SOAP API는 더 이상 사용되지 않으며 더 이상 사용할 수 없습니다. 모든 새 개발은 Marketo [REST API](./rest-api.md)를 사용하여 수행해야 합니다.
 >
 
 >[!IMPORTANT]
@@ -100,7 +95,7 @@ Authorization: Bearer cdf01657-110d-4155-99a7-f986b2ff13a0:int
 >
 >**access_token** 쿼리 매개 변수를 사용하는 인증 지원이 2025년 6월 30일에 제거됩니다. 프로젝트에서 쿼리 매개 변수를 사용하여 액세스 토큰을 전달하는 경우 가능한 한 빨리 **인증** 헤더를 사용하도록 업데이트해야 합니다. 새 개발에서는 **Authorization** 헤더만 사용해야 합니다.
 
-새 브라우저 탭을 열고 다음 URL을 입력합니다. 자리 표시자를 [필터 유형별 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/getLeadsByFilterUsingGET)를 호출할 인스턴스의 끝점 및 전자 메일 주소로 바꿉니다.
+새 브라우저 탭을 열고 다음 URL을 입력합니다. 자리 표시자를 [필터 유형별 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByFilterUsingGET)를 호출할 인스턴스의 끝점 및 전자 메일 주소로 바꿉니다.
 
 ```text
 <Your Endpoint URL>/rest/v1/leads.json?&filterType=email&filterValues=<Your Email Address>
