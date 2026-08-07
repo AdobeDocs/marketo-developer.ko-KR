@@ -13,9 +13,9 @@ role_v2:
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
   - id: bce87dde-a4ab-44c9-8a18-ad66e4ddb377
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 386
+source-wordcount: 376
 ht-degree: 2%
 
 ---
@@ -28,7 +28,7 @@ ht-degree: 2%
 
 ## 쿼리
 
-쿼리 코드 조각 [ID](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/getSnippetByIdUsingGET) 또는 [검색](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/getSnippetUsingGET)별. API는 이름별 쿼리 메서드를 제공하지 않습니다. 두 끝점 모두 `status` 필드를 수락하여 승인된 버전 또는 초안 버전을 검색합니다.
+쿼리 코드 조각 [ID](https://developer.adobe.com/marketo-apis/api/asset#operation/getSnippetByIdUsingGET) 또는 [검색](https://developer.adobe.com/marketo-apis/api/asset#operation/getSnippetUsingGET)별. API는 이름별 쿼리 메서드를 제공하지 않습니다. 두 끝점 모두 `status` 필드를 수락하여 승인된 버전 또는 초안 버전을 검색합니다.
 
 ### ID별
 
@@ -153,7 +153,7 @@ GET /rest/asset/v1/snippet/{id}/content.json
 
 ## 만들기 및 업데이트
 
-코드 조각 에셋과 해당 콘텐츠를 별도로 만듭니다. 먼저 [코드 조각 만들기](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/createSnippetUsingPOST) 끝점을 호출합니다. 설명은 선택 사항입니다. 데이터를 JSON이 아닌 `x-www-form-urlencoded`(으)로 전달합니다.
+코드 조각 에셋과 해당 콘텐츠를 별도로 만듭니다. 먼저 [코드 조각 만들기](https://developer.adobe.com/marketo-apis/api/asset#operation/createSnippetUsingPOST) 끝점을 호출합니다. 설명은 선택 사항입니다. 데이터를 JSON이 아닌 `x-www-form-urlencoded`(으)로 전달합니다.
 
 ```http
 POST /rest/asset/v1/snippets.json
@@ -225,7 +225,7 @@ type=HTML&content=draft testUpdateSnippetContent1 HTML Content
 }
 ```
 
-[메타데이터를 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/updateSnippetUsingPOST)하려면 코드 조각 ID를 지정하십시오. 이름과 설명만 업데이트할 수 있습니다.
+[메타데이터를 업데이트](https://developer.adobe.com/marketo-apis/api/asset#operation/updateSnippetUsingPOST)하려면 코드 조각 ID를 지정하십시오. 이름과 설명만 업데이트할 수 있습니다.
 
 ```http
 POST /rest/asset/v1/snippet/{id}.json
@@ -416,7 +416,7 @@ POST /rest/asset/v1/snippet/{id}/discardDraft.json
 
 ## 복제
 
-[코드 조각을 복제하려면](https://developer.adobe.com/marketo-apis/api/asset#tag/Snippets/operation/cloneSnippetUsingPOST) 이름, 소스 코드 조각 ID 및 폴더를 제공하십시오. 설명은 선택 사항입니다. 소스에 승인된 버전이 없으면 끝점이 해당 초안을 복제합니다.
+[코드 조각을 복제하려면](https://developer.adobe.com/marketo-apis/api/asset#operation/cloneSnippetUsingPOST) 이름, 소스 코드 조각 ID 및 폴더를 제공하십시오. 설명은 선택 사항입니다. 소스에 승인된 버전이 없으면 끝점이 해당 초안을 복제합니다.
 
 ```http
 POST /rest/asset/v1/snippet/{id}/clone.json

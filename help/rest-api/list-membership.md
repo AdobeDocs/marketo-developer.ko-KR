@@ -3,9 +3,9 @@ title: 목록 멤버십(정적 목록)
 feature: REST API, Static Lists
 description: Marketo 리드 데이터베이스 REST API를 사용하여 정적 목록에 리드를 추가하고, 리드를 제거하고, 목록 구성원을 검색하고, 목록 구성원을 확인합니다.
 exl-id: b8f74bcf-834a-44db-81fd-621048afeba4
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: '427'
+source-wordcount: '415'
 ht-degree: 5%
 
 ---
@@ -32,7 +32,7 @@ ht-degree: 5%
 
 ## 목록에 추가
 
-[목록에 추가](https://developer.adobe.com/marketo-apis/api/mapi#tag/Static-Lists/operation/addLeadsToListUsingPOST) 끝점을 사용하여 하나 이상의 구성원을 목록에 추가하십시오. 필수 `listId` 경로 매개 변수와 리드 ID가 포함된 하나 이상의 `id` 쿼리 매개 변수를 전달합니다. 최대 리드 ID 수는 300개입니다.
+[목록에 추가](https://developer.adobe.com/marketo-apis/api/mapi#operation/addLeadsToListUsingPOST) 끝점을 사용하여 하나 이상의 구성원을 목록에 추가하십시오. 필수 `listId` 경로 매개 변수와 리드 ID가 포함된 하나 이상의 `id` 쿼리 매개 변수를 전달합니다. 최대 리드 ID 수는 300개입니다.
 
 응답에는 요청에 있는 각 잠재 고객 ID의 상태로 `result` 배열이 포함되어 있습니다.
 
@@ -65,7 +65,7 @@ POST /rest/v1/lists/{listId}/leads.json?id=318594&id=318595
 
 ## 목록에서 제거
 
-[목록에서 제거](https://developer.adobe.com/marketo-apis/api/mapi#tag/Static-Lists/operation/removeLeadsFromListUsingDELETE) 끝점을 사용하여 목록에서 하나 이상의 구성원을 제거합니다. 필수 `listId` 경로 매개 변수와 리드 ID가 포함된 하나 이상의 `id` 쿼리 매개 변수를 전달합니다. 최대 리드 ID 수는 300개입니다.
+[목록에서 제거](https://developer.adobe.com/marketo-apis/api/mapi#operation/removeLeadsFromListUsingDELETE) 끝점을 사용하여 목록에서 하나 이상의 구성원을 제거합니다. 필수 `listId` 경로 매개 변수와 리드 ID가 포함된 하나 이상의 `id` 쿼리 매개 변수를 전달합니다. 최대 리드 ID 수는 300개입니다.
 
 응답에는 요청에 있는 각 잠재 고객 ID의 상태로 `result` 배열이 포함되어 있습니다.
 
@@ -102,7 +102,7 @@ DELETE /rest/v1/lists/{listId}/leads.json?id=318603&id=318595&id=999999
 
 ## 목록 ID로 리드 가져오기
 
-[목록 ID로 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Static-Lists/operation/getLeadsByListIdUsingGET) 끝점을 사용하여 목록의 구성원을 검색합니다. 필요한 `listId` 경로 매개 변수를 전달합니다. 선택적 쿼리 매개 변수를 전달하여 필터링 기준을 지정할 수도 있습니다.
+[목록 ID로 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByListIdUsingGET) 끝점을 사용하여 목록의 구성원을 검색합니다. 필요한 `listId` 경로 매개 변수를 전달합니다. 선택적 쿼리 매개 변수를 전달하여 필터링 기준을 지정할 수도 있습니다.
 
 선택적 쿼리 매개 변수는 다음과 같습니다.
 
@@ -152,7 +152,7 @@ GET /rest/v1/lists/{listId}/leads.json?batchSize=3
 
 ## 목록 멤버
 
-[Member of List](https://developer.adobe.com/marketo-apis/api/mapi#tag/Static-Lists/operation/areLeadsMemberOfListUsingGET) 끝점을 사용하여 하나 이상의 리드가 목록의 구성원인지 여부를 확인합니다. 필수 `listId` 경로 매개 변수와 리드 ID가 포함된 하나 이상의 `id` 쿼리 매개 변수를 전달합니다. 최대 리드 ID 수는 300개입니다.
+[Member of List](https://developer.adobe.com/marketo-apis/api/mapi#operation/areLeadsMemberOfListUsingGET) 끝점을 사용하여 하나 이상의 리드가 목록의 구성원인지 여부를 확인합니다. 필수 `listId` 경로 매개 변수와 리드 ID가 포함된 하나 이상의 `id` 쿼리 매개 변수를 전달합니다. 최대 리드 ID 수는 300개입니다.
 
 응답에는 요청에 있는 각 잠재 고객 ID의 상태로 `result` 배열이 포함되어 있습니다.
 

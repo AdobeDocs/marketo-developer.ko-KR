@@ -11,16 +11,16 @@ feature_v2:
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 897
+source-wordcount: 891
 ht-degree: 1%
 
 ---
 
 # 트랜잭션 이메일
 
-트랜잭션 전자 메일을 특정 Marketo 레코드로 보내려면 [캠페인 요청](https://developer.adobe.com/marketo-apis/api/mapi#tag/Campaigns/operation/triggerCampaignUsingPOST) API를 사용하십시오. 요청하기 전에 이메일을 구성하고 캠페인을 트리거합니다.
+트랜잭션 전자 메일을 특정 Marketo 레코드로 보내려면 [캠페인 요청](https://developer.adobe.com/marketo-apis/api/mapi#operation/triggerCampaignUsingPOST) API를 사용하십시오. 요청하기 전에 이메일을 구성하고 캠페인을 트리거합니다.
 
 - 수신자에게 Marketo 레코드가 있는지 확인합니다.
 - Marketo 인스턴스에서 트랜잭션 이메일을 만들고 승인합니다.
@@ -56,7 +56,7 @@ Java 예제에서는 [minimal-json 패키지](https://github.com/ralfstx/minimal
 
 이메일을 보내기 전에 이메일 주소에 대한 Marketo 레코드가 있는지 확인하고 리드 ID를 검색합니다. 이 예제에서는 이메일 주소가 이미 존재한다고 가정합니다.
 
-[필터 유형별 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/getLeadsByFilterUsingGET)를 사용하여 ID를 검색합니다. 그런 다음 다음 다음 기본 메서드가 캠페인을 요청합니다.
+[필터 유형별 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByFilterUsingGET)를 사용하여 ID를 검색합니다. 그런 다음 다음 다음 기본 메서드가 캠페인을 요청합니다.
 
 ```java
 package dev.marketo.blog_request_campaign;
@@ -274,4 +274,4 @@ Result:
 
 ## 요약
 
-이 방법은 여러 가지 방법으로 확장할 수 있으며, 개별 레이아웃 섹션 내 이메일 또는 외부 이메일 내의 콘텐츠를 변경하여 사용자 지정 값을 작업 또는 관심 있는 순간에 전달할 수 있습니다. 프로그램 내에서 토큰을 사용할 수 있는 모든 위치에서 이 방법을 사용하여 사용자 지정할 수 있습니다. [캠페인 예약](https://developer.adobe.com/marketo-apis/api/mapi#tag/Campaigns/operation/scheduleCampaignUsingPOST) 호출에서도 유사한 기능을 사용할 수 있습니다. 이렇게 하면 전체 일괄 처리 캠페인에서 토큰을 처리할 수 있습니다. 이러한 매개 변수는 리드별로 사용자 지정할 수 없지만, 다양한 리드 세트에서 콘텐츠를 사용자 지정하는 데 유용합니다.
+이 방법은 여러 가지 방법으로 확장할 수 있으며, 개별 레이아웃 섹션 내 이메일 또는 외부 이메일 내의 콘텐츠를 변경하여 사용자 지정 값을 작업 또는 관심 있는 순간에 전달할 수 있습니다. 프로그램 내에서 토큰을 사용할 수 있는 모든 위치에서 이 방법을 사용하여 사용자 지정할 수 있습니다. [캠페인 예약](https://developer.adobe.com/marketo-apis/api/mapi#operation/scheduleCampaignUsingPOST) 호출에서도 유사한 기능을 사용할 수 있습니다. 이렇게 하면 전체 일괄 처리 캠페인에서 토큰을 처리할 수 있습니다. 이러한 매개 변수는 리드별로 사용자 지정할 수 없지만, 다양한 리드 세트에서 콘텐츠를 사용자 지정하는 데 유용합니다.

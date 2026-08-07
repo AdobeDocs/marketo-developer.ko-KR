@@ -12,9 +12,9 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 227
+source-wordcount: 221
 ht-degree: 2%
 
 ---
@@ -86,7 +86,7 @@ GET /rest/asset/v1/tagType/byName.json?name=AAA1 Required Tag Type
 
 ## 업데이트
 
-[프로그램 태그 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/updateProgramUsingPOST) 끝점을 사용하여 태그 유형에 대한 값을 업데이트하십시오. 모든 매개 변수가 필요합니다.
+[프로그램 태그 업데이트](https://developer.adobe.com/marketo-apis/api/asset#operation/updateProgramUsingPOST) 끝점을 사용하여 태그 유형에 대한 값을 업데이트하십시오. 모든 매개 변수가 필요합니다.
 
 - `id` 경로 매개 변수는 프로그램 ID를 지정합니다.
 - `tagType` 경로 매개 변수는 업데이트할 태그 형식을 지정합니다.
@@ -110,11 +110,11 @@ POST /rest/asset/v1/program/{id}/tag/{tagType}.json?tagValue=David
 }
 ```
 
-여러 태그를 업데이트하려면 [프로그램 메타데이터 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/updateProgramUsingPOST) 끝점을 사용하십시오. [프로그램 업데이트 섹션](programs.md#update)에서 예제를 참조하십시오.
+여러 태그를 업데이트하려면 [프로그램 메타데이터 업데이트](https://developer.adobe.com/marketo-apis/api/asset#operation/updateProgramUsingPOST) 끝점을 사용하십시오. [프로그램 업데이트 섹션](programs.md#update)에서 예제를 참조하십시오.
 
 ## 삭제
 
-[프로그램 태그 삭제](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/deleteProgramUsingPOST) 끝점을 사용하여 필요하지 않은 태그 형식을 삭제합니다. `id` 경로 매개 변수는 프로그램 ID를 지정하고 `tagType` 경로 매개 변수는 삭제할 태그 유형을 지정합니다.
+[프로그램 태그 삭제](https://developer.adobe.com/marketo-apis/api/asset#operation/deleteProgramUsingPOST) 끝점을 사용하여 필요하지 않은 태그 형식을 삭제합니다. `id` 경로 매개 변수는 프로그램 ID를 지정하고 `tagType` 경로 매개 변수는 삭제할 태그 유형을 지정합니다.
 
 ```http
 POST /rest/asset/v1/program/{id}/tag/{tagType}/delete.json

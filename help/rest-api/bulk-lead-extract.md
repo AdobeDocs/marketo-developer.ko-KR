@@ -8,9 +8,9 @@ product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 1037
+source-wordcount: 1017
 ht-degree: 2%
 
 ---
@@ -56,7 +56,7 @@ ETL, 데이터 웨어하우징 및 아카이빙 워크플로우를 포함한 외
 
 ## 작업 생성
 
-[리드 내보내기 작업 만들기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/createExportLeadsUsingPOST) 끝점을 사용하여 내보내기 작업을 정의합니다. 내보낼 `fields`, 하나의 `filter` 형식 및 해당 매개 변수, `format` 파일 및 사용자 지정 열 헤더 이름을 지정합니다.
+[리드 내보내기 작업 만들기](https://developer.adobe.com/marketo-apis/api/mapi#operation/createExportLeadsUsingPOST) 끝점을 사용하여 내보내기 작업을 정의합니다. 내보낼 `fields`, 하나의 `filter` 형식 및 해당 매개 변수, `format` 파일 및 사용자 지정 열 헤더 이름을 지정합니다.
 
 ```http
 POST /bulk/v1/leads/export/create.json
@@ -104,7 +104,7 @@ POST /bulk/v1/leads/export/create.json
 }
 ```
 
-응답에서 작업이 생성되었지만 시작되지 않았음을 확인합니다. 작업을 시작하려면 만들기 응답에서 `exportId`을(를) 사용하여 [큐 내보내기 리드 작업](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/enqueueExportLeadsUsingPOST) 끝점을 호출합니다.
+응답에서 작업이 생성되었지만 시작되지 않았음을 확인합니다. 작업을 시작하려면 만들기 응답에서 `exportId`을(를) 사용하여 [큐 내보내기 리드 작업](https://developer.adobe.com/marketo-apis/api/mapi#operation/enqueueExportLeadsUsingPOST) 끝점을 호출합니다.
 
 ```http
 POST /bulk/v1/leads/export/{exportId}/enqueue.json
@@ -132,7 +132,7 @@ POST /bulk/v1/leads/export/{exportId}/enqueue.json
 
 동일한 API 사용자가 만든 작업에 대해서만 상태를 검색할 수 있습니다.
 
-리드 내보내기 작업은 비동기적으로 실행됩니다. [리드 내보내기 작업 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/getExportLeadsStatusUsingGET) 끝점을 폴링하여 작업 진행 상황을 추적합니다.
+리드 내보내기 작업은 비동기적으로 실행됩니다. [리드 내보내기 작업 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getExportLeadsStatusUsingGET) 끝점을 폴링하여 작업 진행 상황을 추적합니다.
 
 상태는 60초마다 한 번만 업데이트됩니다. 더 자주 투표하지 마십시오. 거의 모든 경우에, 이 간격은 여전히 과도합니다.
 
@@ -169,7 +169,7 @@ GET /bulk/v1/leads/export/{exportId}/status.json
 
 ## 데이터 검색 중
 
-완료된 리드 내보내기를 검색하려면 `exportId`을(를) 사용하여 [리드 내보내기 파일 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/getExportLeadsFileUsingGET) 끝점을 호출하십시오.
+완료된 리드 내보내기를 검색하려면 `exportId`을(를) 사용하여 [리드 내보내기 파일 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getExportLeadsFileUsingGET) 끝점을 호출하십시오.
 
 ```http
 GET /bulk/v1/leads/export/{exportId}/file.json
@@ -188,7 +188,7 @@ Russell,Wilson,null,_mch-localhost-1536605780000-12105
 
 ## 작업 취소
 
-잘못 구성되었거나 불필요한 작업을 취소하려면 [리드 내보내기 작업 취소](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Leads/operation/cancelExportLeadsUsingPOST) 끝점을 호출하십시오.
+잘못 구성되었거나 불필요한 작업을 취소하려면 [리드 내보내기 작업 취소](https://developer.adobe.com/marketo-apis/api/mapi#operation/cancelExportLeadsUsingPOST) 끝점을 호출하십시오.
 
 ```http
 POST /bulk/v1/leads/export/{exportId}/cancel.json

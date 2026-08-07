@@ -18,9 +18,9 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: bcf56d2102f2f60eac5ad3318d348fd020391e6b
 workflow-type: tm+mt
-source-wordcount: 590
+source-wordcount: 589
 ht-degree: 3%
 
 ---
@@ -39,7 +39,7 @@ Marketo 웹후크는 타사 웹 서비스와 통신합니다. Webhook은 GET 또
 
 - **[!UICONTROL URL]** - 웹 서비스 요청을 제출하는 URL.
 - **[!UICONTROL Request Type]** - HTTP 메서드.
-- **[!UICONTROL Payload Template]** - POST 본문에 전송된 정보의 템플릿입니다. XML, JSON 또는 SOAP 등 HTTP POST를 지원하는 모든 데이터 형식을 사용합니다. 직렬화 형식은 문자열에서 큰따옴표를 허용해야 합니다. 토큰을 삽입하려면 **[!UICONTROL Insert Token]**&#x200B;을(를) 선택합니다. Marketo은 문자열 유형 토큰을 큰따옴표로 자동으로 묶습니다.
+- **[!UICONTROL Payload Template]** - POST 본문에 전송된 정보의 템플릿입니다. XML 및 JSON을 포함하여 HTTP POST를 지원하는 모든 데이터 형식을 사용합니다. 직렬화 형식은 문자열에서 큰따옴표를 허용해야 합니다. 토큰을 삽입하려면 **[!UICONTROL Insert Token]**&#x200B;을(를) 선택합니다. Marketo은 문자열 유형 토큰을 큰따옴표로 자동으로 묶습니다.
 - **[!UICONTROL Request Token Encoding]** - 앰퍼샌드, &#39;&amp;&#39;와 같은 특수 문자가 포함된 토큰 값을 인코딩하는 데 사용되는 JSON 또는 Form/Url 요청 형식입니다. Webhook이 웹 서비스와 올바르게 통신할 수 있도록 올바른 본문 인코딩을 선택합니다.
 - **[!UICONTROL Response Type]** - 응답 형식, JSON 또는 XML. 응답 속성을 Marketo의 리드 필드에 매핑하려면 올바른 유형을 선택합니다.
 - **[!UICONTROL Custom Headers]** - 키-값 쌍이 **[!UICONTROL Webhooks Actions]** > **[!UICONTROL Set Custom Header]**&#x200B;을(를) 통해 HTTP 헤더로 추가되었습니다. 사용자 지정 헤더를 원하는 수만큼 추가할 수 있습니다.

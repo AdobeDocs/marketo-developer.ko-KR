@@ -14,9 +14,9 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 1440
+source-wordcount: 1404
 ht-degree: 6%
 
 ---
@@ -43,7 +43,7 @@ Marketo 사용자 관리 엔드포인트는 사용자 레코드에 대한 CRUD �
 
 ### ID별 사용자
 
-[ID별 사용자 가져오기](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/getUserUsingGET) 끝점은 단일 `userid` 경로 매개 변수를 사용하고 초대를 수락한 사용자에 대해 단일 사용자 레코드를 반환합니다.
+[ID별 사용자 가져오기](https://developer.adobe.com/marketo-apis/api/user#operation/getUserUsingGET) 끝점은 단일 `userid` 경로 매개 변수를 사용하고 초대를 수락한 사용자에 대해 단일 사용자 레코드를 반환합니다.
 
 ```http
 GET /userservice/management/v1/users/{userid}/user.json
@@ -84,7 +84,7 @@ GET /userservice/management/v1/users/{userid}/user.json
 
 ### ID로 초대된 사용자
 
-[ID로 초대된 사용자 가져오기](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/getInvitedUserUsingGET) 끝점은 단일 `userid` 경로 매개 변수를 사용하고 &quot;보류 중인&quot; 사용자에 대해 단일 사용자 레코드를 반환합니다(초대를 아직 수락하지 않음).
+[ID로 초대된 사용자 가져오기](https://developer.adobe.com/marketo-apis/api/user#operation/getInvitedUserUsingGET) 끝점은 단일 `userid` 경로 매개 변수를 사용하고 &quot;보류 중인&quot; 사용자에 대해 단일 사용자 레코드를 반환합니다(초대를 아직 수락하지 않음).
 
 ```http
 GET /userservice/management/v1/users/{userid}/invite.json
@@ -107,7 +107,7 @@ GET /userservice/management/v1/users/{userid}/invite.json
 
 ### Id별 역할 및 작업 공간
 
-[ID별 역할 및 작업 공간 가져오기](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/getUserRolesAndWorkspacesUsingGET) 끝점은 하나의 `userid` 경로 매개 변수를 사용하고 사용자의 역할 및 작업 공간 레코드를 반환합니다. 응답 배열의 각 객체에는 역할 및 작업 공간 ID와 이름이 포함됩니다.
+[ID별 역할 및 작업 공간 가져오기](https://developer.adobe.com/marketo-apis/api/user#operation/getUserRolesAndWorkspacesUsingGET) 끝점은 하나의 `userid` 경로 매개 변수를 사용하고 사용자의 역할 및 작업 공간 레코드를 반환합니다. 응답 배열의 각 객체에는 역할 및 작업 공간 ID와 이름이 포함됩니다.
 
 ```http
 GET /userservice/management/v1/users/{userid}/roles.json
@@ -132,7 +132,7 @@ GET /userservice/management/v1/users/{userid}/roles.json
 
 ### 사용자 찾아보기
 
-[사용자 가져오기](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/getUsersUsingGET) 끝점이 모든 사용자 레코드를 반환합니다. 다음과 같은 선택적 정수 매개 변수를 지원합니다.
+[사용자 가져오기](https://developer.adobe.com/marketo-apis/api/user#operation/getUsersUsingGET) 끝점이 모든 사용자 레코드를 반환합니다. 다음과 같은 선택적 정수 매개 변수를 지원합니다.
 
 - `pageSize`은(는) 반환할 최대 항목 수를 지정합니다. 기본값은 20이고 최대값은 200입니다.
 - `pageOffset`은(는) 항목 검색을 시작할 위치를 지정합니다. 기본값은 0이며 `pageSize`과(와) 함께 사용할 수 있습니다.
@@ -176,7 +176,7 @@ GET /userservice/management/v1/users/allusers.json
 
 ### 역할 찾아보기
 
-[역할 가져오기](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/getRolesUsingGET) 끝점이 모든 역할 레코드 목록을 반환합니다.
+[역할 가져오기](https://developer.adobe.com/marketo-apis/api/user#operation/getRolesUsingGET) 끝점이 모든 역할 레코드 목록을 반환합니다.
 
 ```http
 GET /userservice/management/v1/users/roles.json
@@ -259,7 +259,7 @@ GET /userservice/management/v1/users/roles.json
 
 ### 작업 영역 찾아보기
 
-[작업 영역 가져오기](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/getWorkspacesUsingGET) 끝점이 모든 작업 영역 레코드 목록을 반환합니다.
+[작업 영역 가져오기](https://developer.adobe.com/marketo-apis/api/user#operation/getWorkspacesUsingGET) 끝점이 모든 작업 영역 레코드 목록을 반환합니다.
 
 ```http
 GET /userservice/management/v1/users/workspaces.json
@@ -314,7 +314,7 @@ GET /userservice/management/v1/users/workspaces.json
 
 [Adobe IMS 통합 구독](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-with-adobe-identity/adobe-identity-management-overview)에서 이 끝점은 [API 전용 사용자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/users-and-roles/create-an-api-only-user)의 초대를 지원합니다. [표준 사용자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users)를 초대하려면 대신 [Adobe 사용자 관리 API](https://developer.adobe.com/umapi/)를 사용하십시오.
 
-[사용자 초대](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/inviteUserUsingPOST) 끝점이 새 사용자에게 &quot;Marketo 시작&quot; 전자 메일 초대를 보냅니다. 이메일에는 &quot;Marketo에 로그인&quot; 링크가 포함되어 있습니다. 수신자는 링크를 선택하고 암호를 생성한 다음 Marketo에 액세스할 수 있습니다.
+[사용자 초대](https://developer.adobe.com/marketo-apis/api/user#operation/inviteUserUsingPOST) 끝점이 새 사용자에게 &quot;Marketo 시작&quot; 전자 메일 초대를 보냅니다. 이메일에는 &quot;Marketo에 로그인&quot; 링크가 포함되어 있습니다. 수신자는 링크를 선택하고 암호를 생성한 다음 Marketo에 액세스할 수 있습니다.
 
 수신자가 초대를 수락할 때까지 상태는 &quot;보류 중&quot;이며 사용자 레코드를 편집할 수 없습니다. 보류 중인 초대는 전송 후 7일 후에 만료됩니다. 자세한 내용은 [Marketo 사용자 관리 설명서](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users)를 참조하세요.
 
@@ -370,7 +370,7 @@ true
 
 [Adobe IMS 통합 구독](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-with-adobe-identity/adobe-identity-management-overview)에서 이 끝점은 [API 전용 사용자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/users-and-roles/create-an-api-only-user)의 특성 업데이트만 지원합니다. [표준 사용자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users)의 특성을 업데이트하려면 대신 [Adobe 사용자 관리 API](https://developer.adobe.com/umapi/)를 사용하십시오.
 
-[사용자 특성 업데이트](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/updateUserAttributeUsingPOST) 끝점은 단일 `userid` 경로 매개 변수를 사용하고 단일 사용자 레코드를 반환합니다. 요청 본문에 업데이트할 사용자 특성 `emailAddress`, `firstName`, `lastName`, `expiresAt`이(가) 하나 이상 있습니다.
+[사용자 특성 업데이트](https://developer.adobe.com/marketo-apis/api/user#operation/updateUserAttributeUsingPOST) 끝점은 단일 `userid` 경로 매개 변수를 사용하고 단일 사용자 레코드를 반환합니다. 요청 본문에 업데이트할 사용자 특성 `emailAddress`, `firstName`, `lastName`, `expiresAt`이(가) 하나 이상 있습니다.
 
 ```http
 POST /userservice/management/v1/users/{userid}/update.json
@@ -425,7 +425,7 @@ Content-Type: application/json
 
 [Adobe IMS 통합 구독](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-with-adobe-identity/adobe-identity-management-overview)에서 이 끝점은 [API 전용 사용자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/users-and-roles/create-an-api-only-user)의 삭제만 지원합니다. [표준 사용자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/users-and-roles/managing-marketo-users)를 삭제하려면 대신 [Adobe 사용자 관리 API](https://developer.adobe.com/umapi/)를 사용하십시오.
 
-[사용자 삭제](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/deleteUserUsingPOST) 끝점은 단일 `userid` 경로 매개 변수를 사용하고 해당 사용자를 인스턴스에서 삭제합니다. 이는 파괴적인 삭제이며 되돌릴 수 없습니다. 성공하면 200 상태 코드가 반환되고 그렇지 않으면 오류 메시지가 반환됩니다.
+[사용자 삭제](https://developer.adobe.com/marketo-apis/api/user#operation/deleteUserUsingPOST) 끝점은 단일 `userid` 경로 매개 변수를 사용하고 해당 사용자를 인스턴스에서 삭제합니다. 이는 파괴적인 삭제이며 되돌릴 수 없습니다. 성공하면 200 상태 코드가 반환되고 그렇지 않으면 오류 메시지가 반환됩니다.
 
 ```http
 POST /userservice/management/v1/users/{userid}/delete.json
@@ -433,7 +433,7 @@ POST /userservice/management/v1/users/{userid}/delete.json
 
 #### 초대된 사용자 삭제
 
-[초대된 사용자 삭제](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/deleteInvitedUserUsingPOST) 끝점은 단일 `userid` 경로 매개 변수를 사용하고 인스턴스에서 해당 &quot;보류 중인&quot; 사용자를 삭제합니다(사용자가 초대를 아직 수락하지 않음). 이는 파괴적인 삭제이며 되돌릴 수 없습니다. 성공하면 200 상태 코드가 반환되고 그렇지 않으면 오류 메시지가 반환됩니다.
+[초대된 사용자 삭제](https://developer.adobe.com/marketo-apis/api/user#operation/deleteInvitedUserUsingPOST) 끝점은 단일 `userid` 경로 매개 변수를 사용하고 인스턴스에서 해당 &quot;보류 중인&quot; 사용자를 삭제합니다(사용자가 초대를 아직 수락하지 않음). 이는 파괴적인 삭제이며 되돌릴 수 없습니다. 성공하면 200 상태 코드가 반환되고 그렇지 않으면 오류 메시지가 반환됩니다.
 
 ```http
 POST /userservice/management/v1/users/{userid}/invite/delete.json
@@ -445,7 +445,7 @@ POST /userservice/management/v1/users/{userid}/invite/delete.json
 
 ## 역할 추가
 
-[역할 추가](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/addRolesUsingPOST) 끝점은 단일 `userid` 경로 매개 변수를 사용하고 해당 사용자에 하나 이상의 사용자 역할을 추가합니다. 요청 본문에는 `accessRoleId` 및 `workspaceId` 특성을 각각 포함하는 하나 이상의 개체 목록이 포함되어 있습니다. 성공하면 지정된 사용자에 대한 `accessRoleId/workspaceId`쌍의 전체 목록이 반환됩니다.
+[역할 추가](https://developer.adobe.com/marketo-apis/api/user#operation/addRolesUsingPOST) 끝점은 단일 `userid` 경로 매개 변수를 사용하고 해당 사용자에 하나 이상의 사용자 역할을 추가합니다. 요청 본문에는 `accessRoleId` 및 `workspaceId` 특성을 각각 포함하는 하나 이상의 개체 목록이 포함되어 있습니다. 성공하면 지정된 사용자에 대한 `accessRoleId/workspaceId`쌍의 전체 목록이 반환됩니다.
 
 ```http
 POST /userservice/management/v1/users/{userid}/roles/create.json
@@ -483,7 +483,7 @@ Content-Type: application/json
 
 ## 역할 삭제
 
-[역할 삭제](https://developer.adobe.com/marketo-apis/api/user/#tag/User-Management/operation/deleteRolesUsingPOST) 끝점은 단일 `userid` 경로 매개 변수를 사용하고 해당 사용자에서 하나 이상의 사용자 역할을 삭제합니다. 요청 본문에는 `accessRoleId` 및 `workspaceId` 특성을 각각 포함하는 하나 이상의 개체 목록이 포함되어 있습니다. 성공하면 지정된 사용자의 나머지 accessRoleId/workspaceId 쌍 목록이 반환됩니다.
+[역할 삭제](https://developer.adobe.com/marketo-apis/api/user#operation/deleteRolesUsingPOST) 끝점은 단일 `userid` 경로 매개 변수를 사용하고 해당 사용자에서 하나 이상의 사용자 역할을 삭제합니다. 요청 본문에는 `accessRoleId` 및 `workspaceId` 특성을 각각 포함하는 하나 이상의 개체 목록이 포함되어 있습니다. 성공하면 지정된 사용자의 나머지 accessRoleId/workspaceId 쌍 목록이 반환됩니다.
 
 ```http
 POST /userservice/management/v1/users/{userid}/roles/delete.json

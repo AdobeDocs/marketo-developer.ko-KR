@@ -15,9 +15,9 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: ebde5b41-29c9-4f5e-9ef6-1197e85409e3
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 741
+source-wordcount: 718
 ht-degree: 1%
 
 ---
@@ -46,11 +46,11 @@ Marketo에는 5가지 핵심 유형의 프로그램이 있습니다.
 
 ## 쿼리
 
-ID, 이름, 검색 또는 태그 유형 및 값별로 프로그램을 쿼리합니다. 사용 가능한 태그 및 값을 검색하려면 [태그 유형 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Tags/operation/getTagTypesUsingGET)를 사용하십시오.
+ID, 이름, 검색 또는 태그 유형 및 값별로 프로그램을 쿼리합니다. 사용 가능한 태그 및 값을 검색하려면 [태그 유형 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/getTagTypesUsingGET)를 사용하십시오.
 
 ### ID별
 
-[ID별 프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Sales-Persons/operation/describeUsingGET_5) 끝점에는 `id` 경로 매개 변수가 필요합니다.
+[ID별 프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/getProgramByIdUsingGET) 끝점에는 `id` 경로 매개 변수가 필요합니다.
 
 해당 UI URL에서 프로그램 ID를 가져올 수 있습니다(예: `https://app-\*\*\*.marketo.com/#PG1001A1`). 이 예제에서 ID는 첫 번째 문자와 두 번째 문자 집합 사이의 `1001`입니다.
 
@@ -140,13 +140,13 @@ GET /rest/asset/v1/program/byName.json?name=TestProgramName&includeTags=true
 
 ### 찾아보기
 
-[프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Sales-Persons/operation/describeUsingGET_5) 끝점을 사용하여 프로그램을 찾아봅니다.
+[프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/browseProgramsUsingGET) 끝점을 사용하여 프로그램을 찾아봅니다.
 
 선택적 `status` 매개 변수는 상태별로 참여 및 전자 메일 프로그램을 필터링합니다. 유효한 값은 참여 프로그램의 경우 `on` 및 `off`이고 전자 메일 프로그램의 경우 `unlocked`입니다.
 
 선택적 `maxReturn` 매개 변수는 반환된 프로그램의 수를 제어합니다. 기본값은 20이고 최대값은 200입니다. 페이지 매김에 선택적 `offset` 매개 변수를 사용하십시오. 기본값은 0입니다.
 
-이 끝점은 프로그램 태그를 반환하지 않습니다. [ID별로 프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/getProgramByIdUsingGET) 또는 [이름별로 프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/getProgramByNameUsingGET)로 태그를 검색합니다.
+이 끝점은 프로그램 태그를 반환하지 않습니다. [ID별로 프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/getProgramByIdUsingGET) 또는 [이름별로 프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/getProgramByNameUsingGET)로 태그를 검색합니다.
 
 ```http
 GET /rest/asset/v1/programs.json
@@ -201,7 +201,7 @@ GET /rest/asset/v1/programs.json
 
 ### 날짜 범위별
 
-[프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Sales-Persons/operation/describeUsingGET_5)와 함께 `earliestUpdatedAt` 및 `latestUpdatedAt` 매개 변수를 사용하여 낮음 및 높은 날짜-시간 경계를 설정합니다. 끝점은 범위 내에서 만들어지거나 업데이트된 프로그램을 반환합니다.
+[프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/browseProgramsUsingGET)와 함께 `earliestUpdatedAt` 및 `latestUpdatedAt` 매개 변수를 사용하여 낮음 및 높은 날짜-시간 경계를 설정합니다. 끝점은 범위 내에서 만들어지거나 업데이트된 프로그램을 반환합니다.
 
 ```http
 GET /rest/asset/v1/programs.json?earliestUpdatedAt=2017-01-01T00:00:00-05:00&latestUpdatedAt=2017-01-30T00:00:00-05:00
@@ -292,7 +292,7 @@ GET /rest/asset/v1/programs.json?earliestUpdatedAt=2017-01-01T00:00:00-05:00&lat
 
 ### 태그 유형별
 
-[태그별 프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/getProgramListByTagUsingGET) 끝점은 지정된 태그 형식 및 값과 일치하는 프로그램을 반환합니다.
+[태그별 프로그램 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/getProgramListByTagUsingGET) 끝점은 지정된 태그 형식 및 값과 일치하는 프로그램을 반환합니다.
 
 `tagType` 및 `tagValue` 매개 변수가 필요합니다. 선택적 정수 `maxReturn`은(는) 반환되는 프로그램 수를 제어합니다. 기본값은 20이고, 최대값은 200입니다. 페이지 매김에 선택적 정수 `offset`을(를) 사용하십시오. 기본값은 0입니다. 결과는 임의 순서로 반환됩니다.
 
@@ -334,9 +334,9 @@ GET /rest/asset/v1/program/byTag.json?tagType=Presenter&tagValue=Dennis
 
 ## 만들기 및 업데이트
 
-[프로그램을 만드는 중](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/createProgramUsingPOST)에는 `folder`, `name`, `type` 및 `channel`이(가) 필요합니다. 선택적 매개 변수는 `description`, `costs` 및 `tags`입니다. 일부 구독에는 특정 프로그램 유형에 대한 태그가 필요합니다. 태그 가져오기 를 사용하여 인스턴스 요구 사항을 확인합니다.
+[프로그램을 만드는 중](https://developer.adobe.com/marketo-apis/api/asset#operation/createProgramUsingPOST)에는 `folder`, `name`, `type` 및 `channel`이(가) 필요합니다. 선택적 매개 변수는 `description`, `costs` 및 `tags`입니다. 일부 구독에는 특정 프로그램 유형에 대한 태그가 필요합니다. 태그 가져오기 를 사용하여 인스턴스 요구 사항을 확인합니다.
 
-[업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/updateProgramUsingPOST)할 때 설명, 이름, `tags` 및 `costs`만 변경할 수 있습니다. 생성하는 동안에만 채널과 유형을 설정할 수 있습니다. `costsDestructiveUpdate`을(를) `true`(으)로 설정하면 기존 비용이 모두 지워지고 요청에 포함된 비용으로 바뀝니다.
+[업데이트](https://developer.adobe.com/marketo-apis/api/asset#operation/updateProgramUsingPOST)할 때 설명, 이름, `tags` 및 `costs`만 변경할 수 있습니다. 생성하는 동안에만 채널과 유형을 설정할 수 있습니다. `costsDestructiveUpdate`을(를) `true`(으)로 설정하면 기존 비용이 모두 지워지고 요청에 포함된 비용으로 바뀝니다.
 
 전자 메일 프로그램을 만들거나 업데이트할 때 `startDate` 및 `endDate`도 UTC 날짜/시간으로 전달될 수 있습니다.
 
@@ -503,7 +503,7 @@ POST /rest/asset/v1/program/{id}/unapprove.json
 
 ## 복제
 
-[프로그램을 복제하려면](https://developer.adobe.com/marketo-apis/api/asset#tag/Programs/operation/cloneProgramUsingPOST)새 이름과 상위 폴더가 필요합니다. 설명은 선택 사항입니다. `name`은(는) 전체적으로 고유해야 하며 255자를 초과할 수 없습니다.
+[프로그램을 복제하려면](https://developer.adobe.com/marketo-apis/api/asset#operation/cloneProgramUsingPOST)새 이름과 상위 폴더가 필요합니다. 설명은 선택 사항입니다. `name`은(는) 전체적으로 고유해야 하며 255자를 초과할 수 없습니다.
 
 `folder` 매개 변수의 형식 특성을 `Folder`(으)로 설정합니다. 대상 폴더는 소스 프로그램과 동일한 작업 영역에 있어야 합니다.
 

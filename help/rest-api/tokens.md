@@ -8,9 +8,9 @@ product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 290
+source-wordcount: 284
 ht-degree: 3%
 
 ---
@@ -40,7 +40,7 @@ API는 토큰을 생성할 때 이러한 데이터 유형만 지원합니다.
 
 ## 쿼리
 
-[폴더 ID별 토큰 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Tokens/operation/getTokensByFolderIdUsingGET)는 프로그램 또는 폴더의 ID를 경로 매개 변수로 사용합니다. `folderType` 매개 변수를 사용하여 형식을 지정하십시오.
+[폴더 ID별 토큰 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/getTokensByFolderIdUsingGET)는 프로그램 또는 폴더의 ID를 경로 매개 변수로 사용합니다. `folderType` 매개 변수를 사용하여 형식을 지정하십시오.
 
 ```http
 GET /rest/asset/v1/folder/{id}/tokens.json?folderType=Folder
@@ -73,7 +73,7 @@ GET /rest/asset/v1/folder/{id}/tokens.json?folderType=Folder
 
 ## 만들기 및 업데이트
 
-[토큰 만들기](https://developer.adobe.com/marketo-apis/api/asset#tag/Tokens/operation/addTokenTOFolderUsingPOST) 끝점은 토큰을 만들거나 기존 토큰을 제출된 값으로 업데이트합니다. 토큰은 폴더 또는 프로그램에 속합니다.
+[토큰 만들기](https://developer.adobe.com/marketo-apis/api/asset#operation/addTokenTOFolderUsingPOST) 끝점은 토큰을 만들거나 기존 토큰을 제출된 값으로 업데이트합니다. 토큰은 폴더 또는 프로그램에 속합니다.
 
 `id` 경로 매개 변수는 상위 폴더를 식별합니다. `name`, `type`, `value` 및 `folderType` 매개 변수가 필요합니다. 데이터를 JSON이 아닌 POST `x-www-form-urlencoded`(으)로 전달합니다. 토큰 `name`은(는) 50자를 초과할 수 없습니다.
 
@@ -116,7 +116,7 @@ name=April Fools&type=date&value=2015-04-01&folderType=Folder
 
 ## 삭제
 
-[이름별 Delete 토큰](https://developer.adobe.com/marketo-apis/api/asset#tag/Tokens/operation/deleteTokenByNameUsingPOST)은(는) 프로그램 또는 폴더의 ID를 경로 매개 변수로 사용합니다. `folderType`을(를) 사용하여 형식을 지정하십시오.
+[이름별 Delete 토큰](https://developer.adobe.com/marketo-apis/api/asset#operation/deleteTokenByNameUsingPOST)은(는) 프로그램 또는 폴더의 ID를 경로 매개 변수로 사용합니다. `folderType`을(를) 사용하여 형식을 지정하십시오.
 
 상위 폴더, 토큰 `name` 및 토큰 `type`이(가) 필요합니다. 데이터를 JSON이 아닌 POST `x-www-form-urlencoded`(으)로 전달합니다.
 

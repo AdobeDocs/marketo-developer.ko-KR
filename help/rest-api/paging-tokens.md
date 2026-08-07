@@ -10,9 +10,9 @@ feature_v2:
   - id: c5f60233-d5ea-4453-a799-0ad258b4d399
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 387
+source-wordcount: 377
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ Marketo은 특정 날짜를 기준으로 업데이트된 결과 또는 검색 �
 
 일부 응답은 긴 페이징 토큰 문자열을 반환하며, 이로 인해 HTTP 414 오류가 발생할 수 있습니다. 이 [오류](error-codes.md) 처리에 대한 정보를 참조하세요.
 
-[페이징 토큰 API](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getActivitiesPagingTokenUsingGET) 설명서를 참조하십시오.
+[페이징 토큰 API](https://developer.adobe.com/marketo-apis/api/mapi#operation/getActivitiesPagingTokenUsingGET) 설명서를 참조하십시오.
 
 ## 토큰 유형
 
@@ -36,7 +36,7 @@ Marketo은 서로 관련성이 있지만 고유한 두 가지 유형의 페이�
 
 날짜 기반 페이징 토큰은 날짜/시간을 나타냅니다. 해당 날짜/시간 이후에 발생하는 활동, 데이터 값 변경 및 삭제된 잠재 고객을 검색하는 데 사용합니다.
 
-날짜/시간으로 [페이징 토큰 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getActivitiesPagingTokenUsingGET) 끝점을 호출하여 날짜 기반 토큰을 생성합니다.
+날짜/시간으로 [페이징 토큰 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getActivitiesPagingTokenUsingGET) 끝점을 호출하여 날짜 기반 토큰을 생성합니다.
 
 ```http
 GET /rest/v1/activities/pagingtoken.json?sinceDatetime=2014-10-06T13:22:17-08:00
@@ -68,7 +68,7 @@ GET /rest/v1/activities/pagingtoken.json?sinceDatetime=2014-10-06T13:22:17-08:00
 
 `sinceDateTime`은(는) 쿼리 매개 변수이므로 해당 값을 URL 인코딩하십시오.
 
-반환된 `nextPageToken` 문자열을 [리드 활동 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getLeadActivitiesUsingGET), [리드 변경 사항 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getLeadChangesUsingGET) 또는 [삭제된 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getDeletedLeadsUsingGET) 호출에 전달합니다. 이 호출은 페이징 토큰 가져오기 API에 제공된 날짜/시간 이후에 발생하는 레코드를 검색합니다.
+반환된 `nextPageToken` 문자열을 [리드 활동 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadActivitiesUsingGET), [리드 변경 사항 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadChangesUsingGET) 또는 [삭제된 리드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getDeletedLeadsUsingGET) 호출에 전달합니다. 이 호출은 페이징 토큰 가져오기 API에 제공된 날짜/시간 이후에 발생하는 레코드를 검색합니다.
 
 ```http
 GET /rest/v1/activities.json?nextPageToken=GIYDAOBNGEYS2MBWKQYDAORQGA5DAMBOGAYDAKZQGAYDALBQ&activityTypeIds=1&activityTypeIds=12

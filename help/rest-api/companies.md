@@ -12,9 +12,9 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 582
+source-wordcount: 572
 ht-degree: 1%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 1%
 
 [회사 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies)
 
-회사는 잠재 고객 레코드가 속한 조직을 나타냅니다. 회사에 리드를 추가하려면 [리드 동기화](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/syncLeadUsingPOST) 또는 [리드 일괄 가져오기](bulk-lead-import.md) 끝점을 사용하여 해당 `externalCompanyId` 필드를 채웁니다.
+회사는 잠재 고객 레코드가 속한 조직을 나타냅니다. 회사에 리드를 추가하려면 [리드 동기화](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncLeadUsingPOST) 또는 [리드 일괄 가져오기](bulk-lead-import.md) 끝점을 사용하여 해당 `externalCompanyId` 필드를 채웁니다.
 
 리드를 다른 회사에 추가하지 않으면 회사에서 리드를 제거할 수 없습니다. 회사 레코드에 연결된 리드는 해당 레코드에서 값이 리드 레코드에 있는 것처럼 값을 상속합니다.
 
@@ -109,7 +109,7 @@ GET /rest/v1/companies/describe.json
 
 ## 쿼리
 
-[회사에 쿼리](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/getCompaniesUsingGET)하는 패턴은 리드 API를 거의 따릅니다. 그러나 `filterType` 매개 변수는 회사 설명 응답 또는 dedupeFields의 searchableFields 배열에 나열된 필드만 허용합니다.
+[회사에 쿼리](https://developer.adobe.com/marketo-apis/api/mapi#operation/getCompaniesUsingGET)하는 패턴은 리드 API를 거의 따릅니다. 그러나 `filterType` 매개 변수는 회사 설명 응답 또는 dedupeFields의 searchableFields 배열에 나열된 필드만 허용합니다.
 
 쿼리 매개 변수는 다음과 같습니다.
 
@@ -152,7 +152,7 @@ GET /rest/v1/companies.json?filterType=id&filterValues=3433,5345
 
 ## 만들기 및 업데이트
 
-[회사 동기화](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/syncCompaniesUsingPOST) 끝점은 회사 개체 배열을 포함하는 필수 `input` 매개 변수를 허용합니다.
+[회사 동기화](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncCompaniesUsingPOST) 끝점은 회사 개체 배열을 포함하는 필수 `input` 매개 변수를 허용합니다.
 
 끝점은 기회와 마찬가지로 createOnly, updateOnly 및 createOrUpdate의 세 가지 만들기 및 업데이트 모드를 지원합니다. 요청의 `action` 매개 변수에 모드를 지정하십시오.
 
@@ -214,7 +214,7 @@ API 이름으로 한 회사 필드를 쿼리하거나 모든 회사 필드를 �
 
 #### 이름별
 
-[이름별 회사 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/getCompanyFieldByNameUsingGET) 끝점은 회사 개체에서 한 필드에 대한 메타데이터를 검색합니다. 필수 `fieldApiName` 경로 매개 변수는 필드의 API 이름을 지정합니다.
+[이름별 회사 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getCompanyFieldByNameUsingGET) 끝점은 회사 개체에서 한 필드에 대한 메타데이터를 검색합니다. 필수 `fieldApiName` 경로 매개 변수는 필드의 API 이름을 지정합니다.
 
 응답은 회사 설명 응답과 유사하지만 추가 메타데이터를 포함합니다. 예를 들어 `isCustom` 특성은 필드가 사용자 지정인지 여부를 나타냅니다.
 
@@ -245,7 +245,7 @@ GET /rest/v1/companies/schema/fields/industry.json
 
 #### 찾아보기
 
-[회사 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies/operation/getCompanyFieldsUsingGET) 끝점은 회사 개체의 모든 필드에 대한 메타데이터를 검색합니다. 기본적으로 최대 300개의 레코드를 반환합니다. `batchSize` 쿼리 매개 변수를 사용하여 이 숫자를 줄이십시오.
+[회사 필드 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getCompanyFieldsUsingGET) 끝점은 회사 개체의 모든 필드에 대한 메타데이터를 검색합니다. 기본적으로 최대 300개의 레코드를 반환합니다. `batchSize` 쿼리 매개 변수를 사용하여 이 숫자를 줄이십시오.
 
 `moreResult` 특성이 true이면 더 많은 결과를 사용할 수 있습니다. `moreResult`이(가) false가 될 때까지 반환된 `nextPageToken`을(를) 사용하여 끝점을 계속 호출합니다.
 

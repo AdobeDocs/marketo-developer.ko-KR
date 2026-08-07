@@ -15,9 +15,9 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: df401a2a-327d-468c-a5e4-b7b7ccd071a0
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 882
+source-wordcount: 866
 ht-degree: 0%
 
 ---
@@ -34,7 +34,6 @@ Marketo 인스턴스의 공유 API 제한에 대한 통합 디자인을 참조�
 - **일괄 처리 크기:** 리드 DB는 300개의 레코드를 지원하며 자산 쿼리는 200개의 레코드를 지원합니다.
 - **REST API 페이로드 크기:** 1MB.
 - **일괄 가져오기 파일 크기:** 10MB.
-- **SOAP 최대 일괄 처리 크기:**&#x200B;개의 레코드.
 - **일괄 추출 작업:** 실행 중인 두 작업 및 대기 중인 열 작업(포함).
 
 ## 빠른 팁
@@ -66,15 +65,15 @@ Marketo 인스턴스의 공유 API 제한에 대한 통합 디자인을 참조�
 
 용량은 인스턴스의 모든 API 서비스 및 사용자가 공유합니다. 중복 호출 및 배치 기록을 가능한 한 적은 수의 호출로 제거합니다.
 
-호출 효율이 가장 높은 가져오기 방법은 [잠재 고객/사용자](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads/operation/importLeadUsingPOST) 및 [사용자 지정 개체](https://developer.adobe.com/marketo-apis/api/mapi#tag/Snippets/operation/createSnippetUsingPOST)에 사용할 수 있는 Marketo 대량 가져오기 API입니다. Marketo은 [리드](bulk-lead-extract.md) 및 [활동](bulk-activity-extract.md)에 대한 대량 추출도 제공합니다.
+호출 효율이 가장 높은 가져오기 방법은 [잠재 고객/사용자](https://developer.adobe.com/marketo-apis/api/mapi#operation/importLeadUsingPOST) 및 [사용자 지정 개체](https://developer.adobe.com/marketo-apis/api/mapi#operation/importCustomObjectUsingPOST)에 사용할 수 있는 Marketo 대량 가져오기 API입니다. Marketo은 [리드](bulk-lead-extract.md) 및 [활동](bulk-activity-extract.md)에 대한 대량 추출도 제공합니다.
 
 ### 캐싱
 
 다음 작업의 결과는 일반적으로 드물게 변경되므로 하루 이상 클라이언트측에 캐시될 수 있습니다.
 
 - 설명 작업 결과
-- [활동 유형](https://developer.adobe.com/marketo-apis/api/mapi#tag/Activities/operation/getAllActivityTypesUsingGET)
-- [파티션](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/getLeadPartitionsUsingGET)
+- [활동 유형](https://developer.adobe.com/marketo-apis/api/mapi#operation/getAllActivityTypesUsingGET)
+- [파티션](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadPartitionsUsingGET)
 
 리드 또는 활동 데이터 보강과 같은 사용 사례의 경우 프로그램, 이메일 및 폴더와 같은 에셋 유형을 캐시할 수도 있습니다.
 

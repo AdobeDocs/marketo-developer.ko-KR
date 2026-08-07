@@ -12,16 +12,16 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 872
+source-wordcount: 868
 ht-degree: 0%
 
 ---
 
 # 사용자 정의 서비스
 
-사용자 지정 서비스는 Marketo을 인증하고 Marketo [ID 서비스](https://developer.adobe.com/marketo-apis/api/identity/#tag/Identity/operation/identityUsingGET)에서 액세스 토큰을 얻는 데 사용되는 자격 증명을 제공합니다. 각 사용자 정의 서비스는 하나의 API 전용 사용자로 범위가 지정되며 해당 사용자로부터 권한을 파생합니다.
+사용자 지정 서비스는 Marketo을 인증하고 Marketo [ID 서비스](https://developer.adobe.com/marketo-apis/api/identity#operation/identityUsingGET)에서 액세스 토큰을 얻는 데 사용되는 자격 증명을 제공합니다. 각 사용자 정의 서비스는 하나의 API 전용 사용자로 범위가 지정되며 해당 사용자로부터 권한을 파생합니다.
 
 ## 역할
 
@@ -79,7 +79,7 @@ API 전용 사용자를 만들려면 **[!UICONTROL Send]**&#x200B;을(를) 선�
 
 서비스가 &quot;세부 정보 보기&quot; 옵션이 있는 LaunchPoint 서비스 목록에 표시됩니다. &quot;세부 정보 보기&quot;를 선택하여 클라이언트 ID, 클라이언트 암호, 소유 사용자 및 토큰 가져오기 옵션에 액세스합니다.
 
-단기 테스트에 Get Token을 사용합니다. 토큰은 [ID 서비스](https://developer.adobe.com/marketo-apis/api/identity/#tag/Identity/operation/identityUsingGET)에서 얻은 토큰과 수명이 동일하며 생성 후 3,600초 동안 유효합니다.
+단기 테스트에 Get Token을 사용합니다. 토큰은 [ID 서비스](https://developer.adobe.com/marketo-apis/api/identity#operation/identityUsingGET)에서 얻은 토큰과 수명이 동일하며 생성 후 3,600초 동안 유효합니다.
 
 ![토큰 가져오기](assets/get-token.png)
 

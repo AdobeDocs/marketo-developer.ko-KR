@@ -3,16 +3,16 @@ title: 이메일
 feature: REST API
 description: Marketo Asset REST API를 사용하여 이메일 에셋에 대한 종속성을 쿼리, 생성, 업데이트, 복제, 삭제, 승인 및 검사할 수 있습니다.
 exl-id: b41a3ae5-2b25-4103-84b4-320fc2c44bd6
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: '492'
+source-wordcount: '490'
 ht-degree: 5%
 
 ---
 
 # 이메일
 
-[이메일 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Emails_New)
+[이메일 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/asset)
 
 이메일은 메시지 메타데이터, 콘텐츠 구성, 설정 및 승인 상태를 정의하는 에셋 레코드입니다.
 

@@ -12,9 +12,9 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 736
+source-wordcount: 714
 ht-degree: 0%
 
 ---
@@ -150,7 +150,7 @@ blue,bmw,325i,WBS3U9C52HP970604
 
 ## 작업 생성
 
-대량 가져오기 작업을 만들려면 [사용자 지정 개체 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Identity/operation/identityUsingPOST) 끝점의 경로에 사용자 지정 개체 API 이름을 포함하십시오. 다음 매개 변수를 포함합니다.
+대량 가져오기 작업을 만들려면 [사용자 지정 개체 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/importCustomObjectUsingPOST) 끝점의 경로에 사용자 지정 개체 API 이름을 포함하십시오. 다음 매개 변수를 포함합니다.
 
 - `file`: 가져오기 파일의 이름입니다.
 - `format`: 파일 구분 기호 형식(`csv`, `tsv` 또는 `ssv`)입니다.
@@ -215,7 +215,7 @@ blue,bmw,325i,WBS3U9C52HP970604
 
 ## 폴링 작업 상태
 
-가져오기 작업을 만든 후 5~30초마다 폴링합니다. [사용자 지정 개체 가져오기 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectStatusUsingGET) 끝점에 대한 경로에 사용자 지정 개체 API 이름과 `batchId`을(를) 전달합니다.
+가져오기 작업을 만든 후 5~30초마다 폴링합니다. [사용자 지정 개체 가져오기 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getImportCustomObjectStatusUsingGET) 끝점에 대한 경로에 사용자 지정 개체 API 이름과 `batchId`을(를) 전달합니다.
 
 ```http
 GET /bulk/v1/customobjects/{apiName}/import/{batchId}/status.json
@@ -247,9 +247,9 @@ GET /bulk/v1/customobjects/{apiName}/import/{batchId}/status.json
 
 ## 실패
 
-[사용자 지정 개체 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectStatusUsingGET) 응답의 `numOfRowsFailed` 특성은 실패한 행 수를 나타냅니다. 값이 0보다 크면 오류가 발생했음을 의미합니다.
+[사용자 지정 개체 상태 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getImportCustomObjectStatusUsingGET) 응답의 `numOfRowsFailed` 특성은 실패한 행 수를 나타냅니다. 값이 0보다 크면 오류가 발생했음을 의미합니다.
 
-[사용자 지정 개체 가져오기 실패](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectFailuresUsingGET) 끝점에 대한 경로에 사용자 지정 개체 API 이름과 `batchId`을(를) 전달합니다. 끝점이 실패 세부 정보가 포함된 파일을 반환합니다. 오류 파일이 없으면 HTTP 404 상태 코드를 반환합니다.
+[사용자 지정 개체 가져오기 실패](https://developer.adobe.com/marketo-apis/api/mapi#operation/getImportCustomObjectFailuresUsingGET) 끝점에 대한 경로에 사용자 지정 개체 API 이름과 `batchId`을(를) 전달합니다. 끝점이 실패 세부 정보가 포함된 파일을 반환합니다. 오류 파일이 없으면 HTTP 404 상태 코드를 반환합니다.
 
 오류를 확인하려면 `vin`을(를) ` vin`(으)로 변경하고 쉼표와 `vin` 사이에 공백을 추가하여 헤더를 수정하십시오.
 
@@ -302,7 +302,7 @@ blue,bmw,325i,WBS3U9C52HP970604,missing.dedupe.fields
 
 사용자 지정 개체 상태 가져오기 응답의 `numOfRowsWithWarning` 특성은 경고가 있는 행 수를 나타냅니다. 값이 0보다 크면 경고가 발생한 것입니다.
 
-[사용자 지정 개체 가져오기 경고](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Custom-Objects/operation/getImportCustomObjectWarningsUsingGET) 끝점에 대한 경로에 사용자 지정 개체 API 이름과 `batchId`을(를) 전달합니다. 끝점이 경고 세부 정보가 있는 파일을 반환합니다. 경고 파일이 없으면 HTTP 404 상태 코드를 반환합니다.
+[사용자 지정 개체 가져오기 경고](https://developer.adobe.com/marketo-apis/api/mapi#operation/getImportCustomObjectWarningsUsingGET) 끝점에 대한 경로에 사용자 지정 개체 API 이름과 `batchId`을(를) 전달합니다. 끝점이 경고 세부 정보가 있는 파일을 반환합니다. 경고 파일이 없으면 HTTP 404 상태 코드를 반환합니다.
 
 ```http
 GET /bulk/v1/customobjects/car_c/import/{batchId}/warnings.json

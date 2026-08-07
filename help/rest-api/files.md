@@ -10,9 +10,9 @@ feature_v2:
   - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 274
+source-wordcount: 263
 ht-degree: 1%
 
 ---
@@ -27,7 +27,7 @@ Marketo 파일 스토리지는 대역폭 사용량이 많은 애플리케이션�
 
 ## 쿼리
 
-쿼리 파일 [ID별](https://developer.adobe.com/marketo-apis/api/asset#tag/Files/operation/getFileByIdUsingGET), [이름별](https://developer.adobe.com/marketo-apis/api/asset#tag/Files/operation/getFileByNameUsingGET) 또는 [검색](https://developer.adobe.com/marketo-apis/api/asset#tag/Files/operation/getFilesUsingGET)입니다.
+쿼리 파일 [ID별](https://developer.adobe.com/marketo-apis/api/asset#operation/getFileByIdUsingGET), [이름별](https://developer.adobe.com/marketo-apis/api/asset#operation/getFileByNameUsingGET) 또는 [검색](https://developer.adobe.com/marketo-apis/api/asset#operation/getFilesUsingGET)입니다.
 
 ### ID별
 
@@ -164,7 +164,7 @@ GET /rest/asset/v1/files.json?folder={"id":436, "type": "Folder"}&maxReturn=3
 
 ## 만들기 및 업데이트
 
-`multipart/form-data` 요청을 사용하여 [파일을 만듭니다](https://developer.adobe.com/marketo-apis/api/asset#tag/Files/operation/createFileUsingPOST). `name`, `folder` 및 `file` 매개 변수가 필요합니다. `description` 및 `insertOnly` 매개 변수는 선택 사항입니다. true인 경우 `insertOnly`은(는) 요청에서 같은 이름의 기존 파일을 업데이트하지 못하도록 합니다.
+`multipart/form-data` 요청을 사용하여 [파일을 만듭니다](https://developer.adobe.com/marketo-apis/api/asset#operation/createFileUsingPOST). `name`, `folder` 및 `file` 매개 변수가 필요합니다. `description` 및 `insertOnly` 매개 변수는 선택 사항입니다. true인 경우 `insertOnly`은(는) 요청에서 같은 이름의 기존 파일을 업데이트하지 못하도록 합니다.
 
 `file` 매개 변수의 경우 `Content-Disposition` 헤더에 `filename`을(를) 포함하십시오. 또한 파일의 `Content-Type` 헤더도 포함합니다. Marketo은 파일을 제공할 때 이 MIME 유형을 사용합니다.
 
@@ -219,7 +219,7 @@ This is a test file
 }
 ```
 
-[파일을 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/File-Contents/operation/updateContentUsingPOST)하려면 해당 ID를 지정하십시오. `file` 매개 변수의 요구 사항이 파일 생성과 동일합니다.
+[파일을 업데이트](https://developer.adobe.com/marketo-apis/api/asset#operation/updateContentUsingPOST)하려면 해당 ID를 지정하십시오. `file` 매개 변수의 요구 사항이 파일 생성과 동일합니다.
 
 ```http
 POST /rest/asset/v1/file/{id}/content.json

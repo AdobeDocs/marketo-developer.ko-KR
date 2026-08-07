@@ -10,9 +10,9 @@ feature_v2:
   - id: c5f60233-d5ea-4453-a799-0ad258b4d399
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 329
+source-wordcount: 325
 ht-degree: 3%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 3%
 
 이 예에서는 지역(미국) 세분화를 사용하여 남서부 세그먼트의 리드에 대한 이벤트 판촉을 표시합니다. 해당 부문은 캘리포니아, 네바다, 유타, 콜로라도, 애리조나, 뉴멕시코에서 온 리드가 포함된다.
 
-[전자 메일 콘텐츠 섹션 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Emails/operation/updateEmailComponentContentUsingPOST) 끝점을 사용하여 ID가 `Q1-promotion-banner`인 편집 가능한 섹션을 `DynamicContent` 섹션으로 변경합니다. `value` 매개 변수는 세그먼테이션 ID를 지정합니다.
+[전자 메일 콘텐츠 섹션 업데이트](https://developer.adobe.com/marketo-apis/api/asset#operation/updateEmailComponentContentUsingPOST) 끝점을 사용하여 ID가 `Q1-promotion-banner`인 편집 가능한 섹션을 `DynamicContent` 섹션으로 변경합니다. `value` 매개 변수는 세그먼테이션 ID를 지정합니다.
 
 이메일 및 랜딩 페이지는 이 패턴을 따릅니다. 스니펫은 스니펫 API 설명서에 설명된 다양한 패턴을 사용합니다.
 
@@ -63,7 +63,7 @@ type=DynamicContent&value=1001
 }
 ```
 
-[전자 메일 동적 콘텐츠 업데이트 섹션](https://developer.adobe.com/marketo-apis/api/asset#tag/Emails/operation/updateEmailDynamicContentUsingPOST) 끝점을 호출하여 특정 섹션의 세그먼트에 대한 콘텐츠를 추가하십시오.
+[전자 메일 동적 콘텐츠 업데이트 섹션](https://developer.adobe.com/marketo-apis/api/asset#operation/updateEmailDynamicContentUsingPOST) 끝점을 호출하여 특정 섹션의 세그먼트에 대한 콘텐츠를 추가하십시오.
 
 다음 요청은 남서부 세그먼트의 잠재 고객에 대한 기본 콘텐츠 대신 특수 배너를 표시합니다. 변형을 더 만들려면 각 세그먼트 및 섹션에 대한 끝점을 호출합니다.
 

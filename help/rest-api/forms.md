@@ -17,9 +17,9 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 1494
+source-wordcount: 1447
 ht-degree: 2%
 
 ---
@@ -40,11 +40,11 @@ ht-degree: 2%
 
 ## 쿼리
 
-Forms은 표준 자산 검색 메서드를 지원합니다. [id별](https://developer.adobe.com/marketo-apis/api/asset#tag/Forms/operation/getLpFormByIdUsingGET), [이름별](https://developer.adobe.com/marketo-apis/api/asset#tag/Forms/operation/getLpFormByNameUsingGET) 및 [검색](https://developer.adobe.com/marketo-apis/api/asset#tag/Forms/operation/browseForms2UsingGET). 양식 응답에는 필드 목록을 제외한 모든 양식 속성이 포함됩니다.
+Forms은 표준 자산 검색 메서드를 지원합니다. [id별](https://developer.adobe.com/marketo-apis/api/asset#operation/getLpFormByIdUsingGET), [이름별](https://developer.adobe.com/marketo-apis/api/asset#operation/getLpFormByNameUsingGET) 및 [검색](https://developer.adobe.com/marketo-apis/api/asset#operation/browseForms2UsingGET). 양식 응답에는 필드 목록을 제외한 모든 양식 속성이 포함됩니다.
 
 ### ID별
 
-`id` 양식을 [Id로 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Forms/operation/getLpFormByIdUsingGET)에 경로 매개 변수로 전달합니다. 끝점은 일치하는 양식 레코드를 반환합니다.
+`id` 양식을 [Id로 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/getLpFormByIdUsingGET)에 경로 매개 변수로 전달합니다. 끝점은 일치하는 양식 레코드를 반환합니다.
 
 ```http
 GET /rest/asset/v1/form/{id}.json
@@ -98,7 +98,7 @@ GET /rest/asset/v1/form/{id}.json
 
 ### 이름별
 
-`name` 양식을 [이름별 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Forms/operation/getLpFormByNameUsingGET)에 전달합니다. 끝점은 일치하는 양식 레코드를 반환합니다.
+`name` 양식을 [이름별 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/getLpFormByNameUsingGET)에 전달합니다. 끝점은 일치하는 양식 레코드를 반환합니다.
 
 ```http
 GET /rest/asset/v1/form/byName.json?name=newForm
@@ -152,7 +152,7 @@ GET /rest/asset/v1/form/byName.json?name=newForm
 
 ### 찾아보기
 
-[Forms 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Forms/operation/browseForms2UsingGET)는 표준 에셋 API 찾아보기 패턴을 따릅니다. 다음과 같은 선택 필터를 지원합니다.
+[Forms 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/browseForms2UsingGET)는 표준 에셋 API 찾아보기 패턴을 따릅니다. 다음과 같은 선택 필터를 지원합니다.
 
 - `status`: `approved`, `approved with draft` 또는 `draft`별 필터
 - `maxReturn`: 반환된 레코드의 수를 제한합니다.
@@ -332,7 +332,7 @@ GET /rest/asset/v1/form/{id}/fields.json
 
 ### 종속성
 
-`id` 양식을 [사용한 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Forms/operation/getFormUsedByUsingGET)에 경로 매개 변수로 전달합니다. 끝점은 양식에 의존하는 자산을 반환합니다.
+`id` 양식을 [사용한 양식 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/getFormUsedByUsingGET)에 경로 매개 변수로 전달합니다. 끝점은 양식에 의존하는 자산을 반환합니다.
 
 다음 자산 유형에서 양식을 사용할 수 있습니다.
 
@@ -366,7 +366,7 @@ GET /rest/asset/v1/form/{id}/usedBy.json
 
 ## 만들기 및 업데이트
 
-[양식을 만들기](https://developer.adobe.com/marketo-apis/api/asset#tag/Forms/operation/createLpFormsUsingPOST)하려면 두 개의 필수 필드를 입력하십시오.
+[양식을 만들기](https://developer.adobe.com/marketo-apis/api/asset#operation/createLpFormsUsingPOST)하려면 두 개의 필수 필드를 입력하십시오.
 
 - 양식의 상위 폴더입니다.
 - 양식 이름.
@@ -431,7 +431,7 @@ name=newForm&description=test&folder={"type": "Folder","id": 293}&language=Frenc
 }
 ```
 
-[양식을 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Forms/operation/updateFormsUsingPOST)하려면 해당 ID를 전달하십시오. 만들거나 업데이트하는 동안 폼이 사용자에게 표시되는 방식을 제어하는 기본 스타일 매개 변수를 설정할 수 있습니다.
+[양식을 업데이트](https://developer.adobe.com/marketo-apis/api/asset#operation/updateFormsUsingPOST)하려면 해당 ID를 전달하십시오. 만들거나 업데이트하는 동안 폼이 사용자에게 표시되는 방식을 제어하는 기본 스타일 매개 변수를 설정할 수 있습니다.
 
 ```http
 POST /rest/asset/v1/form/736.json
@@ -496,7 +496,7 @@ name=updated name&description=This is a test for updateapi&language=English&prog
 
 양식 필드를 추가하거나 편집하기 전에 대상 인스턴스에 대한 유효한 필드를 검색합니다. 필드 작업에서는 각 필드에 대해 반환된 `id` 속성을 사용합니다.
 
-리드 필드의 경우 [사용 가능한 양식 필드 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Form-Fields/operation/getAllFieldsUsingGET) 끝점을 사용하십시오. 응답에는 각 필드의 데이터 형식과, 필드가 양식에 추가될 때 적용되는 기본 메타데이터가 포함됩니다.
+리드 필드의 경우 [사용 가능한 양식 필드 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/getAllFieldsUsingGET) 끝점을 사용하십시오. 응답에는 각 필드의 데이터 형식과, 필드가 양식에 추가될 때 적용되는 기본 메타데이터가 포함됩니다.
 
 ```http
 GET /rest/asset/v1/form/fields.json
@@ -628,7 +628,7 @@ GET /rest/asset/v1/form/fields.json
 }
 ```
 
-프로그램 구성원 사용자 지정 필드의 경우 [사용 가능한 양식 프로그램 구성원 필드 가져오기](https://developer.adobe.com/marketo-apis/api/asset#tag/Form-Fields/operation/getAllProgramMemberFieldsUsingGET) 끝점을 호출하십시오. 응답에는 프로그램 멤버 사용자 지정 필드 데이터 형식 및 기본 메타데이터가 포함됩니다.
+프로그램 구성원 사용자 지정 필드의 경우 [사용 가능한 양식 프로그램 구성원 필드 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/getAllProgramMemberFieldsUsingGET) 끝점을 호출하십시오. 응답에는 프로그램 멤버 사용자 지정 필드 데이터 형식 및 기본 메타데이터가 포함됩니다.
 
 이러한 필드를 사용하려면 양식이 Design Studio가 아닌 프로그램 아래에 있어야 합니다. 이러한 필드가 있는 양식이 포함된 랜딩 페이지는 프로그램 아래에 있어야 합니다. Design Studio에 있거나 복제할 수 없습니다.
 
@@ -669,7 +669,7 @@ GET /rest/asset/v1/form/programMemberFields.json
 
 각 양식에는 양식이 로드될 때 사용자에게 표시되는 편집 가능한 필드 목록이 있습니다. 해당 끝점을 사용하여 한 번에 하나의 필드를 추가, 업데이트 또는 삭제합니다.
 
-[필드를 추가](https://developer.adobe.com/marketo-apis/api/asset#tag/Form-Fields/operation/addFieldToAFormUsingPOST)하려면 부모 양식 ID와 필드 `fieldId`을(를) 제공하세요. 다른 모든 속성은 비어 있거나 필드의 데이터 형식 및 메타데이터를 기반으로 기본값을 사용합니다.
+[필드를 추가](https://developer.adobe.com/marketo-apis/api/asset#operation/addFieldToAFormUsingPOST)하려면 부모 양식 ID와 필드 `fieldId`을(를) 제공하세요. 다른 모든 속성은 비어 있거나 필드의 데이터 형식 및 메타데이터를 기반으로 기본값을 사용합니다.
 
 데이터를 JSON이 아닌 `application/x-www-form-urlencoded`이(가) 있는 게시물로 보냅니다.
 
@@ -835,7 +835,7 @@ values=[{"label":"Select...","value":"","isDefault":true,"selected":true}, {"lab
 
 ### 필드 재정렬
 
-[양식 필드 위치 변경](https://developer.adobe.com/marketo-apis/api/asset#tag/Form-Fields/operation/updateFieldPositionsUsingPOST) 끝점을 사용하여 모든 양식 필드를 단일 단위로 다시 정렬하십시오. 끝점에 `positions`이(가) 필요합니다. JSON 개체 배열에는 다음과 같은 3개의 멤버가 있습니다.
+[양식 필드 위치 변경](https://developer.adobe.com/marketo-apis/api/asset#operation/updateFieldPositionsUsingPOST) 끝점을 사용하여 모든 양식 필드를 단일 단위로 다시 정렬하십시오. 끝점에 `positions`이(가) 필요합니다. JSON 개체 배열에는 다음과 같은 3개의 멤버가 있습니다.
 
 - `columnNumber`
 - `rowNumber`
@@ -875,7 +875,7 @@ positions=[{"columnNumber":0,"rowNumber":0,"fieldName":"FirstName"},{"columnNumb
 
 ### 리치 텍스트
 
-[개별 끝점](https://developer.adobe.com/marketo-apis/api/asset#tag/Form-Fields/operation/addRichTextFieldUsingPOST)을 사용하여 서식 있는 텍스트 필드를 추가합니다. `multipart/form-data` 요청에서 콘텐츠를 HTML으로 전달합니다. HTML에는 스크립트, 메타 태그 또는 링크 태그가 없어야 합니다.
+[개별 끝점](https://developer.adobe.com/marketo-apis/api/asset#operation/addRichTextFieldUsingPOST)을 사용하여 서식 있는 텍스트 필드를 추가합니다. `multipart/form-data` 요청에서 콘텐츠를 HTML으로 전달합니다. HTML에는 스크립트, 메타 태그 또는 링크 태그가 없어야 합니다.
 
 ```http
 POST /rest/asset/v1/form/{id}/richText.json
@@ -918,7 +918,7 @@ Content-Type: text/html
 
 필드는 양식 내에서 고유해야 합니다. 동일한 필드가 양식의 상위 필드 목록과 하위 필드 세트 모두에 나타날 수 없습니다.
 
-[Form](https://developer.adobe.com/marketo-apis/api/asset#tag/Form-Fields/operation/addFieldSetUsingPOST) 끝점에 필드 집합 추가를 사용하여 필드 집합을 추가하십시오. 그러면 필드 집합이 [Get Fields for Form](https://developer.adobe.com/marketo-apis/api/asset#tag/Form-Fields/operation/getFormFieldByFormVidUsingGET) 응답에 나타납니다. 필드 집합에 필드를 추가하려면 [필드 위치 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Form-Fields/operation/updateFieldPositionsUsingPOST)를 사용하여 해당 필드를 `fieldList`(으)로 이동하세요.
+[Form](https://developer.adobe.com/marketo-apis/api/asset#operation/addFieldSetUsingPOST) 끝점에 필드 집합 추가를 사용하여 필드 집합을 추가하십시오. 그러면 필드 집합이 [Get Fields for Form](https://developer.adobe.com/marketo-apis/api/asset#operation/getFormFieldByFormVidUsingGET) 응답에 나타납니다. 필드 집합에 필드를 추가하려면 [필드 위치 업데이트](https://developer.adobe.com/marketo-apis/api/asset#operation/updateFieldPositionsUsingPOST)를 사용하여 해당 필드를 `fieldList`(으)로 이동하세요.
 
 이러한 끝점의 경우 데이터를 JSON이 아닌 `application/x-www-form-urlencoded`이(가) 있는 POST로 보냅니다.
 
@@ -965,7 +965,7 @@ visibilityRule={"ruleType":"show", "rules":[{"subjectField": "LastName", "operat
 }
 ```
 
-전체 연산자 목록은 [양식 필드 가시성 규칙 추가](https://developer.adobe.com/marketo-apis/api/asset#tag/Form-Fields/operation/addFormFieldVisibilityRuleUsingPOST)를 참조하십시오.
+전체 연산자 목록은 [양식 필드 가시성 규칙 추가](https://developer.adobe.com/marketo-apis/api/asset#operation/addFormFieldVisibilityRuleUsingPOST)를 참조하십시오.
 
 ## 후속 작업
 
@@ -977,7 +977,7 @@ visibilityRule={"ruleType":"show", "rules":[{"subjectField": "LastName", "operat
 
 ## 전송 단추
 
-[전송 단추 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Forms/operation/updateFormSubmitButtonUsingPOST) 끝점을 사용하여 전송 단추 스타일을 수정합니다. `buttonPosition`, `buttonStyle`, `label` 및 `waitingLabel`을(를) 업데이트할 수 있습니다. 제출이 보류 중인 동안 `waitingLabel`이(가) 나타납니다.
+[전송 단추 업데이트](https://developer.adobe.com/marketo-apis/api/asset#operation/updateFormSubmitButtonUsingPOST) 끝점을 사용하여 전송 단추 스타일을 수정합니다. `buttonPosition`, `buttonStyle`, `label` 및 `waitingLabel`을(를) 업데이트할 수 있습니다. 제출이 보류 중인 동안 `waitingLabel`이(가) 나타납니다.
 
 파괴적인 업데이트입니다.
 

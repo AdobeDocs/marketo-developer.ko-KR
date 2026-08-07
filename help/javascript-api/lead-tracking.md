@@ -16,9 +16,9 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 718
+source-wordcount: 716
 ht-degree: 0%
 
 ---
@@ -93,7 +93,7 @@ Marketo은 해당 브라우저의 후속 웹 활동을 익명 레코드에 기�
 
 - 잠재 고객은 추적된 Marketo 이메일 링크의 쿼리 문자열에 `mkt_tok` 매개 변수가 있는 Munchkin 추적 페이지를 방문해야 합니다.
 - 잠재 고객은 Marketo Form을 작성해야 합니다.
-- REST [리드 연결](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads/operation/associateLeadUsingPOST) 호출을 보내야 합니다.
+- REST [리드 연결](https://developer.adobe.com/marketo-apis/api/mapi#operation/associateLeadUsingPOST) 호출을 보내야 합니다.
 
 이러한 이벤트 중 하나가 발생하면 Marketo은 쿠키 및 모든 관련 웹 활동을 알려진 리드와 연결합니다.
 

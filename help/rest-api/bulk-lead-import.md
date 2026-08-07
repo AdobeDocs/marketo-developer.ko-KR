@@ -12,9 +12,9 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: b5ce8718-c3af-4fdb-a1a9-fca32f83a87c
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 623
+source-wordcount: 619
 ht-degree: 0%
 
 ---
@@ -23,7 +23,7 @@ ht-degree: 0%
 
 [대량 리드 가져오기 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads)
 
-[일괄 API](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Import-Leads/operation/importLeadUsingPOST)를 사용하여 많은 리드 레코드를 비동기적으로 가져옵니다. 쉼표, 탭 또는 세미콜론으로 구분된 10MB 미만의 플랫 파일로 레코드를 제공합니다.
+[일괄 API](https://developer.adobe.com/marketo-apis/api/mapi#operation/importLeadUsingPOST)를 사용하여 많은 리드 레코드를 비동기적으로 가져옵니다. 쉼표, 탭 또는 세미콜론으로 구분된 10MB 미만의 플랫 파일로 레코드를 제공합니다.
 
 대량 리드 가져오기는 &quot;삽입 또는 업데이트&quot; 레코드 작업만 지원합니다.
 

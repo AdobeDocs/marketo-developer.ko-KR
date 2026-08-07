@@ -17,9 +17,9 @@ role_v2:
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
   - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 2938
+source-wordcount: 2844
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ Marketo 사용자 지정 오브젝트는 리드 및 회사와 같은 Marketo Sta
 
 ## List
 
-리드 데이터베이스 개체에 대한 표준 설명, 쿼리, 업데이트 및 삭제 호출 외에도 사용자 지정 개체는 [목록 호출](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectsUsingGET)을 제공합니다. 끝점은 대상 인스턴스에서 사용할 수 있는 사용자 지정 개체와 각 개체에 대한 메타데이터를 반환합니다.
+리드 데이터베이스 개체에 대한 표준 설명, 쿼리, 업데이트 및 삭제 호출 외에도 사용자 지정 개체는 [목록 호출](https://developer.adobe.com/marketo-apis/api/mapi#operation/getCustomObjectsUsingGET)을 제공합니다. 끝점은 대상 인스턴스에서 사용할 수 있는 사용자 지정 개체와 각 개체에 대한 메타데이터를 반환합니다.
 
 ```http
 GET /rest/v1/customobjects.json
@@ -81,7 +81,7 @@ GET /rest/v1/customobjects.json
 
 ## 설명
 
-사용자 지정 개체에 대한 [Describe 호출](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/describeUsingGET_1)은(는) 두 개의 추가 기능이 있는 Opportunities 및 Companies와 동일한 패턴을 따릅니다.
+사용자 지정 개체에 대한 [Describe 호출](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeUsingGET_1)은(는) 두 개의 추가 기능이 있는 Opportunities 및 Companies와 동일한 패턴을 따릅니다.
 
 - `apiName` 경로 매개 변수는 설명할 사용자 지정 개체 형식의 API 이름을 지정합니다.
 - 응답에는 사용자 지정 개체 형식에 사용할 수 있는 관계를 나열하는 `relationships` 배열이 포함되어 있습니다.
@@ -191,7 +191,7 @@ GET /rest/v1/customobjects/{apiName}/describe.json
 
 ## 쿼리
 
-[사용자 지정 개체 쿼리](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectsUsingGET)는 다른 리드 데이터베이스 개체 쿼리와 약간 다릅니다. Describe와 마찬가지로 요청도 `apiName` 경로 매개 변수를 사용합니다.
+[사용자 지정 개체 쿼리](https://developer.adobe.com/marketo-apis/api/mapi#operation/getCustomObjectsUsingGET)는 다른 리드 데이터베이스 개체 쿼리와 약간 다릅니다. Describe와 마찬가지로 요청도 `apiName` 경로 매개 변수를 사용합니다.
 
 일반 filterType의 경우 필수 `filterType` 및 `filterValues` 매개 변수와 함께 GET 요청을 보냅니다. 선택적 `**fields**`, `batchSize` 및 `nextPageToken` 매개 변수도 포함할 수 있습니다.
 
@@ -292,9 +292,9 @@ POST /rest/v1/customobjects/{apiName}.json?_method=GET
 
 ## 만들기 및 업데이트
 
-[사용자 지정 개체 동기화](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/syncCustomObjectsUsingPOST) 끝점을 사용하여 사용자 지정 개체를 만들거나 업데이트합니다. `action` 매개 변수로 작업을 지정하십시오. 각 호출은 최대 300개의 레코드를 만들거나 업데이트할 수 있습니다.
+[사용자 지정 개체 동기화](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncCustomObjectsUsingPOST) 끝점을 사용하여 사용자 지정 개체를 만들거나 업데이트합니다. `action` 매개 변수로 작업을 지정하십시오. 각 호출은 최대 300개의 레코드를 만들거나 업데이트할 수 있습니다.
 
-[사용자 지정 개체 설명](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/endpoint-reference#!/Custom_Objects/describeUsingGET_1) 끝점에서 반환된 정보를 기반으로 `input` 배열의 값을 사용합니다. 예제 car 개체에서 중복 제거 필드는 `vin`뿐입니다. dedupeFields 모드를 사용하여 레코드를 만들거나 업데이트하는 경우 입력 배열의 각 개체에 `vin` 이상의 필드를 포함하십시오.
+[사용자 지정 개체 설명](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeUsingGET_1) 끝점에서 반환된 정보를 기반으로 `input` 배열의 값을 사용합니다. 예제 car 개체에서 중복 제거 필드는 `vin`뿐입니다. dedupeFields 모드를 사용하여 레코드를 만들거나 업데이트하는 경우 입력 배열의 각 개체에 `vin` 이상의 필드를 포함하십시오.
 
 ```http
 POST /rest/v1/customobjects/{apiName}.json
@@ -365,7 +365,7 @@ POST /rest/v1/customobjects/{apiName}.json
 
 ## 삭제
 
-[레코드를 삭제](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/deleteCustomObjectsUsingPOST)하려면 `idField` 또는 `dedupeFields`의 `deleteBy` 모드를 선택하십시오. `input` 배열의 각 레코드에 해당 필드를 포함하십시오. 각 호출에는 최대 300개의 기록이 허용됩니다.
+[레코드를 삭제](https://developer.adobe.com/marketo-apis/api/mapi#operation/deleteCustomObjectsUsingPOST)하려면 `idField` 또는 `dedupeFields`의 `deleteBy` 모드를 선택하십시오. `input` 배열의 각 레코드에 해당 필드를 포함하십시오. 각 호출에는 최대 300개의 기록이 허용됩니다.
 
 ```http
 POST /rest/v1/customobjects/{apiName}/delete.json
@@ -437,7 +437,7 @@ POST /rest/v1/customobjects/{apiName}/delete.json
 
 ### 설명 유형
 
-[사용자 지정 개체 유형 설명](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/describeUsingGET_1) 끝점이 하나의 사용자 지정 개체 유형에 대한 메타데이터를 반환합니다. 필수 `apiName` 경로 매개 변수는 설명할 유형의 API 이름을 지정합니다.
+[사용자 지정 개체 유형 설명](https://developer.adobe.com/marketo-apis/api/mapi#operation/describeUsingGET_1) 끝점이 하나의 사용자 지정 개체 유형에 대한 메타데이터를 반환합니다. 필수 `apiName` 경로 매개 변수는 설명할 유형의 API 이름을 지정합니다.
 
 승인된 버전이 있으면 끝점이 이를 반환합니다. 그렇지 않으면 초안 버전이 반환됩니다. 선택적 `state` 매개 변수를 사용하여 `draft`, `approved` 또는 `approvedWithDraft`을(를) 요청합니다.
 
@@ -558,7 +558,7 @@ GET /rest/v1/customobjects/schema/{apiName}/describe.json?state=approved
 
 ### 목록 유형
 
-[List Custom Object Types](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/listCustomObjectTypesUsingGET) 끝점이 대상 인스턴스에서 사용할 수 있는 모든 사용자 지정 개체 유형에 대한 메타데이터를 반환합니다. [사용자 지정 개체 나열](https://experienceleague.adobe.com/docs/marketo-developer/marketo/soap/custom-objects/custom-objects.html?lang=ko)과(와) 유사하지만 상태, 관계 및 필드와 같은 추가 메타데이터를 포함합니다.
+[List Custom Object Types](https://developer.adobe.com/marketo-apis/api/mapi#operation/listCustomObjectTypesUsingGET) 끝점이 대상 인스턴스에서 사용할 수 있는 모든 사용자 지정 개체 유형에 대한 메타데이터를 반환합니다.
 
 승인된 버전이 있으면 끝점이 이를 반환합니다. 그렇지 않으면 초안 버전이 반환됩니다.
 
@@ -744,7 +744,7 @@ GET /rest/v1/customobjects/schema.json?names=purchaseHistory
 
 #### 유형 만들기
 
-[사용자 지정 개체 유형 동기화](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/syncCustomObjectsUsingPOST) 끝점을 사용하여 사용자 지정 개체 유형을 만들거나 업데이트하십시오.
+[사용자 지정 개체 유형 동기화](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncCustomObjectsUsingPOST) 끝점을 사용하여 사용자 지정 개체 유형을 만들거나 업데이트하십시오.
 
 속성은 다음과 같습니다.
 
@@ -865,7 +865,7 @@ POST /rest/v1/customobjects/schema.json
 
 ## 유형 승인
 
-사용하기 전에 사용자 지정 개체 유형을 승인하십시오. [사용자 지정 개체 형식 동기화](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/syncCustomObjectTypeUsingPOST) 끝점으로 형식을 만들면 Marketo에서 초안 버전을 만듭니다. 사용자 정의 필드를 추가한 후 초안을 승인합니다. 승인이 승인된 버전을 만들고 초안을 삭제합니다.
+사용하기 전에 사용자 지정 개체 유형을 승인하십시오. [사용자 지정 개체 형식 동기화](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncCustomObjectTypeUsingPOST) 끝점으로 형식을 만들면 Marketo에서 초안 버전을 만듭니다. 사용자 정의 필드를 추가한 후 초안을 승인합니다. 승인이 승인된 버전을 만들고 초안을 삭제합니다.
 
 사용자 지정 개체 유형 동기화 또는 사용자 지정 개체 유형 필드 추가/업데이트/삭제로 기존 유형을 수정하면 Marketo에서 초안을 만듭니다. 유형 또는 해당 필드를 변경하면 초안 버전에만 영향을 줍니다. 변경 후 초안을 승인합니다. 승인은 승인된 버전을 초안으로 바꾸고 초안을 삭제합니다.
 
@@ -881,7 +881,7 @@ POST /rest/v1/customobjects/schema.json
 
 ### 승인 유형
 
-[사용자 지정 개체 유형 승인](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/approveCustomObjectTypeUsingPOST) 끝점을 사용하여 초안을 새 승인된 버전으로 게시하십시오. **apiName** 경로 매개 변수만 필요합니다.
+[사용자 지정 개체 유형 승인](https://developer.adobe.com/marketo-apis/api/mapi#operation/approveCustomObjectTypeUsingPOST) 끝점을 사용하여 초안을 새 승인된 버전으로 게시하십시오. **apiName** 경로 매개 변수만 필요합니다.
 
 형식이 초안 상태이고 문서화된 [유효성 검사 규칙](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-objects/approve-a-custom-object)을(를) 충족할 때만 형식을 승인할 수 있습니다.
 
@@ -899,7 +899,7 @@ POST /rest/v1/customobjects/schema/{apiName}/approve.json
 
 ### 버리기 유형
 
-[사용자 지정 개체 유형 무시](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/discardCustomObjectTypeUsingPOST) 끝점을 사용하여 초안 버전을 삭제합니다. `apiName` 경로 매개 변수만 필요합니다.
+[사용자 지정 개체 유형 무시](https://developer.adobe.com/marketo-apis/api/mapi#operation/discardCustomObjectTypeUsingPOST) 끝점을 사용하여 초안 버전을 삭제합니다. `apiName` 경로 매개 변수만 필요합니다.
 
 초안 상태의 유형만 삭제할 수 있습니다. 승인된 유형은 삭제할 수 없습니다.
 
@@ -917,7 +917,7 @@ POST /rest/v1/customobjects/schema/{apiName}/discardDraft.json
 
 ### 유형 삭제
 
-[사용자 지정 개체 유형 삭제](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/deleteCustomObjectsUsingPOST) 끝점을 사용하여 승인된 버전을 삭제합니다. `apiName` 경로 매개 변수만 필요합니다.
+[사용자 지정 개체 유형 삭제](https://developer.adobe.com/marketo-apis/api/mapi#operation/deleteCustomObjectsUsingPOST) 끝점을 사용하여 승인된 버전을 삭제합니다. `apiName` 경로 매개 변수만 필요합니다.
 
 이 작업은 파괴적이며 실행을 취소할 수 없습니다. 유형을 삭제하기 전에 트리거 및 필터와 같은 에셋에서 해당 사용을 제거하십시오. 사용자 지정 개체 종속 Assets 엔드포인트 가져오기 를 사용하여 유형에 대한 종속 에셋을 검색합니다.
 
@@ -950,18 +950,18 @@ POST /rest/v1/customobjects/schema/{apiName}/delete.json
 
 ### 필드 추가
 
-[사용자 지정 개체 유형 필드 추가](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/addCustomObjectTypeFieldsUsingPOST) 끝점을 사용하여 사용자 지정 개체에 하나 이상의 필드를 추가하십시오. 요청 본문에 하나 이상의 요소가 있는 `input` 배열이 있습니다. 각 요소는 필드를 설명하는 속성이 있는 JSON 개체입니다.
+[사용자 지정 개체 유형 필드 추가](https://developer.adobe.com/marketo-apis/api/mapi#operation/addCustomObjectTypeFieldsUsingPOST) 끝점을 사용하여 사용자 지정 개체에 하나 이상의 필드를 추가하십시오. 요청 본문에 하나 이상의 요소가 있는 `input` 배열이 있습니다. 각 요소는 필드를 설명하는 속성이 있는 JSON 개체입니다.
 
 필드 속성은 다음과 같습니다.
 
 - `name`: 필수 항목입니다. 사용자 지정 개체에 대해 고유해야 하는 필드의 API 이름입니다. 이름을 다른 텍스트 문자열과 구분하려면 소문자나 카멜 대소문자를 사용하십시오.
 - `displayName`: 필수 항목입니다. 사람이 읽을 수 있는 필드 이름으로, 사용자 지정 개체에 고유해야 합니다.
-- `dataType`: 필수 항목입니다. 필드의 데이터 형식입니다. [사용자 지정 개체 형식 필드 데이터 형식 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectTypeFieldDataTypesUsingGET) 끝점을 사용하여 허용된 데이터 형식을 검색합니다.
+- `dataType`: 필수 항목입니다. 필드의 데이터 형식입니다. [사용자 지정 개체 형식 필드 데이터 형식 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getCustomObjectTypeFieldDataTypesUsingGET) 끝점을 사용하여 허용된 데이터 형식을 검색합니다.
 - `description`: 선택 사항입니다. 필드 설명입니다.
 - `isDedupeField`: 사용자 지정 개체 업데이트 작업 중에 필드가 중복 제거에 사용되는지 여부를 지정하는 선택적 부울입니다. 기본값은 false입니다. 일대다 관계에 중복 제거 필드가 필요합니다.
 - `relatedTo`: 링크 필드를 지정하는 선택적 개체입니다. 일대다 관계의 경우 `name`은(는) &quot;링크 개체&quot; 또는 상위 개체를 식별하며, `field`은(는) 상위 개체의 &quot;링크 필드&quot; 또는 키 필드를 식별합니다.
 
-사용자 지정 개체에는 데이터 유형이 &quot;link&quot;인 필드가 포함될 수 있습니다. 링크 필드는 사용자 지정 오브젝트와 다른 오브젝트 유형(예: Lead 및 Company) 간의 관계를 설정합니다. 링크 필드에 대한 자세한 내용은 [사용자 지정 개체 필드 설명서](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-fields)를 참조하세요. [사용자 지정 개체 연결 가능한 개체 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectTypeLinkableObjectsUsingGET) 끝점을 사용하여 허용된 링크 개체를 검색합니다.
+사용자 지정 개체에는 데이터 유형이 &quot;link&quot;인 필드가 포함될 수 있습니다. 링크 필드는 사용자 지정 오브젝트와 다른 오브젝트 유형(예: Lead 및 Company) 간의 관계를 설정합니다. 링크 필드에 대한 자세한 내용은 [사용자 지정 개체 필드 설명서](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-fields)를 참조하세요. [사용자 지정 개체 연결 가능한 개체 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getCustomObjectTypeLinkableObjectsUsingGET) 끝점을 사용하여 허용된 링크 개체를 검색합니다.
 
 사용자 지정 개체는 기존 링크 필드가 있는 다른 사용자 지정 개체에 연결할 수 없습니다. 자세한 내용은 [링크 필드 설명서](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/marketo-custom-objects/add-marketo-custom-object-fields)를 참조하세요.
 
@@ -1263,7 +1263,7 @@ POST /rest/v1/customobjects/schema/enrollment/approve.json
 
 ## 필드 업데이트
 
-[사용자 지정 개체 유형 필드 업데이트](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/updateCustomObjectTypeFieldUsingPOST) 끝점을 사용하여 초안 사용자 지정 개체의 필드를 업데이트하십시오.
+[사용자 지정 개체 유형 필드 업데이트](https://developer.adobe.com/marketo-apis/api/mapi#operation/updateCustomObjectTypeFieldUsingPOST) 끝점을 사용하여 초안 사용자 지정 개체의 필드를 업데이트하십시오.
 
 필수 경로 매개 변수는 다음과 같습니다.
 
@@ -1293,7 +1293,7 @@ POST /rest/v1/customobjects/schema/{apiName}/{fieldApiName}/updateField.json
 
 ## 필드 삭제
 
-[사용자 지정 개체 유형 필드 삭제](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/deleteCustomObjectTypeFieldsUsingPOST) 끝점을 사용하여 사용자 지정 개체에서 하나 이상의 필드를 삭제합니다. 필수 `apiName` 경로 매개 변수는 사용자 지정 개체 형식의 API 이름을 지정합니다.
+[사용자 지정 개체 유형 필드 삭제](https://developer.adobe.com/marketo-apis/api/mapi#operation/deleteCustomObjectTypeFieldsUsingPOST) 끝점을 사용하여 사용자 지정 개체에서 하나 이상의 필드를 삭제합니다. 필수 `apiName` 경로 매개 변수는 사용자 지정 개체 형식의 API 이름을 지정합니다.
 
 요청 본문에 하나 이상의 요소 배열이 `input`인 JSON 개체가 있습니다. 각 요소는 `name` 특성이 삭제할 필드의 API 이름을 지정하는 JSON 개체입니다.
 
@@ -1325,7 +1325,7 @@ POST /rest/v1/customobjects/schema/{apiName}/deleteField.json
 
 ## 목록 필드 데이터 유형
 
-[사용자 지정 개체 형식 필드 데이터 형식 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectTypeFieldDataTypesUsingGET) 끝점은 허용된 모든 필드 데이터 형식을 반환합니다. 이 끝점을 사용하여 사용자 지정 개체 유형을 모델링할 때 사용할 수 있는 사용자 지정 필드 데이터 유형을 식별합니다.
+[사용자 지정 개체 형식 필드 데이터 형식 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getCustomObjectTypeFieldDataTypesUsingGET) 끝점은 허용된 모든 필드 데이터 형식을 반환합니다. 이 끝점을 사용하여 사용자 지정 개체 유형을 모델링할 때 사용할 수 있는 사용자 지정 필드 데이터 유형을 식별합니다.
 
 ```http
 GET /rest/v1/customobjects/schema/fieldDataTypes.json
@@ -1353,7 +1353,7 @@ GET /rest/v1/customobjects/schema/fieldDataTypes.json
 
 ## 연결 가능한 사용자 지정 개체 나열
 
-[사용자 지정 개체 연결 가능 개체 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectTypeLinkableObjectsUsingGET) 끝점은 허용된 모든 링크 개체와 해당 링크 필드를 반환합니다. 응답에는 Lead 및 Company 와 같은 표준 개체와 인스턴스에서 만든 모든 사용자 지정 개체가 포함됩니다.
+[사용자 지정 개체 연결 가능 개체 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getCustomObjectTypeLinkableObjectsUsingGET) 끝점은 허용된 모든 링크 개체와 해당 링크 필드를 반환합니다. 응답에는 Lead 및 Company 와 같은 표준 개체와 인스턴스에서 만든 모든 사용자 지정 개체가 포함됩니다.
 
 ```http
 GET /rest/v1/customobjects/schema/linkableObjects.json
@@ -1543,7 +1543,7 @@ GET /rest/v1/customobjects/schema/linkableObjects.json
 
 ## 사용자 지정 개체 종속 Assets 가져오기
 
-[사용자 지정 개체 종속 Assets 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#tag/Custom-Objects/operation/getCustomObjectTypeDependentAssetsUsingGET) 끝점은 사용자 지정 개체 형식의 종속 자산과 해당 인스턴스의 위치를 반환합니다. 통합을 제거할 때 사용자 지정 오브젝트 유형이 사용 중인 모든 곳에서 식별할 수 있도록 이 유형을 사용하십시오.
+[사용자 지정 개체 종속 Assets 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getCustomObjectTypeDependentAssetsUsingGET) 끝점은 사용자 지정 개체 형식의 종속 자산과 해당 인스턴스의 위치를 반환합니다. 통합을 제거할 때 사용자 지정 오브젝트 유형이 사용 중인 모든 곳에서 식별할 수 있도록 이 유형을 사용하십시오.
 
 ```http
 GET /rest/v1/customobjects/schema/{apiName}/dependentAssets.json

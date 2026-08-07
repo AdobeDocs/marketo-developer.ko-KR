@@ -12,9 +12,9 @@ role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
-source-wordcount: 519
+source-wordcount: 499
 ht-degree: 2%
 
 ---
@@ -33,7 +33,7 @@ Marketo은 자유 형식의 안내 랜딩 페이지 템플릿을 제공합니다
 
 ## 쿼리
 
-랜딩 페이지 템플릿 [ID별](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/getLandingPageTemplateByIdUsingGET), [이름별](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/getLandingPageTemplateByNameUsingGET) 또는 [검색](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/getLandingPageTemplatesUsingGET)을(를) 쿼리합니다. 이러한 끝점은 템플릿 메타데이터를 반환합니다. ID별로 각 템플릿에 대해 개별적으로 HTML 컨텐츠를 검색합니다.
+랜딩 페이지 템플릿 [ID별](https://developer.adobe.com/marketo-apis/api/asset#operation/getLandingPageTemplateByIdUsingGET), [이름별](https://developer.adobe.com/marketo-apis/api/asset#operation/getLandingPageTemplateByNameUsingGET) 또는 [검색](https://developer.adobe.com/marketo-apis/api/asset#operation/getLandingPageTemplatesUsingGET)을(를) 쿼리합니다. 이러한 끝점은 템플릿 메타데이터를 반환합니다. ID별로 각 템플릿에 대해 개별적으로 HTML 컨텐츠를 검색합니다.
 
 ## 만들기 및 업데이트
 
@@ -79,11 +79,11 @@ name=New LPT - PHP&folder={"id":12,"type":"Folder"}
 }
 ```
 
-[랜딩 페이지 템플릿 콘텐츠 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/updateLandingPageTemplateContentUsingPOST) 끝점을 사용하여 템플릿 콘텐츠를 별도로 추가하십시오.
+[랜딩 페이지 템플릿 콘텐츠 업데이트](https://developer.adobe.com/marketo-apis/api/asset#operation/updateLandingPageTemplateContentUsingPOST) 끝점을 사용하여 템플릿 콘텐츠를 별도로 추가하십시오.
 
 ### 메타데이터 업데이트
 
-[랜딩 페이지 템플릿 메타데이터 업데이트](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates/operation/updateLpTemplateUsingPOST) 끝점을 사용하여 이름, 설명 또는 `enableMunchkin` 설정을 변경합니다.
+[랜딩 페이지 템플릿 메타데이터 업데이트](https://developer.adobe.com/marketo-apis/api/asset#operation/updateLpTemplateUsingPOST) 끝점을 사용하여 이름, 설명 또는 `enableMunchkin` 설정을 변경합니다.
 
 ### 컨텐츠 업데이트
 
