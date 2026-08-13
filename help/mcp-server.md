@@ -21,9 +21,9 @@ role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: 2019d398e32790d76735ef672e9ca4b48b8dd2bb
+source-git-commit: 4d690179b0ff8da03b6eb7d11566f511d491f369
 workflow-type: tm+mt
-source-wordcount: 2183
+source-wordcount: 2181
 ht-degree: 1%
 
 ---
@@ -379,7 +379,7 @@ Adobe은 [!DNL Marketo] MCP 서버를 호스팅하고 공개 URL에 노출합니
 
 ### 리드 및 목록
 
-이메일 주소로 리드를 찾고, 리드 레코드를 만들거나 업데이트하고, 정적 목록 멤버십을 관리합니다.
+이메일 주소로 리드를 찾고, 리드 레코드를 만들고, 정적 목록 멤버십을 관리합니다.
 
 프롬프트 예:
 
