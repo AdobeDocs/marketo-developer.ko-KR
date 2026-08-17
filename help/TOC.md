@@ -6,9 +6,9 @@ role: Admin
 feature-set: "Marketo Engage"
 index: true
 author: Donald
-source-git-commit: 066dff918cae70ccf4284b626ccb44d47a31c386
+source-git-commit: ece6e257d28839582be659daf0b8ba1a6b6a5c3c
 workflow-type: tm+mt
-source-wordcount: '257'
+source-wordcount: '256'
 ht-degree: 29%
 
 ---
@@ -35,7 +35,7 @@ ht-degree: 29%
   - [트리거](javascript-api/triggers.md)
   - [웹 개인화](javascript-api/web-personalization.md)
 - 모바일 {#mobile}
-  - [&#x200B; [!DNL Adobe Launch] 확장 설치](mobile/adobe-launch-extension-installation.md)
+  - [ [!DNL Adobe Launch] 확장 설치](mobile/adobe-launch-extension-installation.md)
   - [[!DNL Adobe Launch] 확장](mobile/adobe-launch-extension.md)
   - [고급 보안 모드](mobile/advanced-security-access-mode.md)
   - [사용자 지정 작업](mobile/custom-actions.md)
@@ -125,8 +125,8 @@ ht-degree: 29%
 - [이메일 스크립팅](email-scripting.md)
 - [이메일 스크립팅 예](examples.md)
 - [Marketo 개체](marketo-objects.md)
+- [MCP 작업](mcp-server-operations.md)
 - [MCP 서버](mcp-server.md)
-- [지원되는 MCP 작업](mcp-server-operations.md)
 - {hide-from-toc}[라이선스](api-license.md)
 - [파트너 샌드박스](partner-sandbox.md)
 - [셀프서비스 플로우 단계](self-service-flow-steps.md)
