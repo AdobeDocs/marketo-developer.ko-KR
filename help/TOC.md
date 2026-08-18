@@ -6,9 +6,9 @@ role: Admin
 feature-set: "Marketo Engage"
 index: true
 author: Donald
-source-git-commit: bcf56d2102f2f60eac5ad3318d348fd020391e6b
+source-git-commit: ece6e257d28839582be659daf0b8ba1a6b6a5c3c
 workflow-type: tm+mt
-source-wordcount: '257'
+source-wordcount: '256'
 ht-degree: 29%
 
 ---
@@ -125,8 +125,8 @@ ht-degree: 29%
 - [이메일 스크립팅](email-scripting.md)
 - [이메일 스크립팅 예](examples.md)
 - [Marketo 개체](marketo-objects.md)
-- {hide-from-toc}[MCP 서버](mcp-server.md)
-- {hide-from-toc}[지원되는 MCP 작업](mcp-server-operations.md)
+- [MCP 작업](mcp-server-operations.md)
+- [MCP 서버](mcp-server.md)
 - {hide-from-toc}[라이선스](api-license.md)
 - [파트너 샌드박스](partner-sandbox.md)
 - [셀프서비스 플로우 단계](self-service-flow-steps.md)

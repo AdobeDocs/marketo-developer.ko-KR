@@ -1,7 +1,6 @@
 ---
 title: Marketo Engage MCP 서버
 description: Marketo Engage MCP 서버를 사용하여 AI 도우미를 Marketo에 연결하는 방법에 대해 알아봅니다. Marketo 자격 증명으로 Cloud Desktop, Cursor, Cloud Code 또는 VS 코드를 구성합니다.
-badgeBeta: label="제한 공개" type="informative" tooltip="이 기능은 현재 제한된 베타 릴리스에 있습니다"
 exl-id: ab446e56-6250-4af5-b03e-162991d09a5c
 autotag-review: '2026-06-02T13:31:15.329Z'
 TQID: 'https://experienceleague.adobe.com/PJJm7yv8HmbwMB2fsnfDCXs8zprDJK5Q5z2uiiCJRZI'
@@ -21,22 +20,19 @@ role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: 4d690179b0ff8da03b6eb7d11566f511d491f369
+source-git-commit: 8fc4e9a161decdc0b39a7e98bdb17de035538a6a
 workflow-type: tm+mt
-source-wordcount: 2181
-ht-degree: 1%
+source-wordcount: 2111
+ht-degree: 0%
 
 ---
 
-# [!DNL Marketo Engage] MCP 서버
 
->[!AVAILABILITY]
->
-> 이 기능은 제한적으로 사용할 수 있습니다. 액세스를 요청하려면 [이 양식](https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=Wht7-jR7h0OUrtLBeN7O4Y-uSf63sAxCmWyqMJg8eMFUMVZSVExSNDA3T0I4SEcwRDFSVTBGWU01Uy4u&origin=QRCode){target="_blank"}을(를) 입력하십시오. 구독의 Munchkin ID를 준비해야 합니다.
+# [!DNL Marketo Engage] MCP 서버
 
 >[!NOTE]
 >
->MCP 서버 팀은 스마트 목록 및 스마트 캠페인 에셋 API가 MCP 서버와 작동하도록 하기 위해 노력하고 있습니다. 허용 목록에 추가 활동, 작업 및 규칙을 포함한 이 작업의 대부분은 2026년 3분기에 완료될 예정입니다.
+>스마트 목록 및 스마트 캠페인 `create` 및 `update` 도구는 2026년 9월 릴리스가 타깃팅되었습니다.
 
 모델 컨텍스트 프로토콜(MCP)은 AI 도구를 외부 서비스에 연결하는 개방형 표준이다. [!DNL Marketo] MCP 서버가 AI 도우미를 [!DNL Marketo]에 연결합니다. 양식, 프로그램, 스마트 캠페인, 리드, 이메일, 코드 조각, 목록 및 폴더에 대해 100개 이상의 작업을 제공합니다.
 
