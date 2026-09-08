@@ -4,15 +4,12 @@ feature: REST API
 description: Marketo 벌크 추출 REST API를 사용하여 OAuth, 작업 큐 및 500MB 일일 제한으로 리드, 활동, 프로그램 멤버 및 사용자 지정 개체를 내보내는 방법에 대해 알아봅니다.
 exl-id: 6a15c8a9-fd85-4c7d-9f65-8b2e2cba22ff
 TQID: https://experienceleague.adobe.com/ECSchsjqp8fyxXbUGl5DgXHUkXuN0sIUc3yJfVaIe1E
-product_v2:
-  - id: b27e5950-9033-45ac-9f86-eb22e567f615
-feature_v2:
-  - id: f71e690b-4480-4b67-9ef5-88f42f9cdfdb
-role_v2:
-  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2: id: b27e5950-9033-45ac-9f86-eb22e567f615
+feature_v2: id: f71e690b-4480-4b67-9ef5-88f42f9cdfdb
+role_v2: id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+source-git-commit: 1a442b6008fbb8f05ad346f1b7185a5b2e22f0e4
 workflow-type: tm+mt
-source-wordcount: 1549
+source-wordcount: 1525
 ht-degree: 0%
 
 ---
@@ -43,14 +40,14 @@ Marketo Bulk Extract는 대규모 개인 및 개인 관련 데이터 세트를 �
 
 >[!IMPORTANT]
 >
->**access_token** 쿼리 매개 변수를 사용하는 인증 지원이 2026년 8월 31일에 제거됩니다. 프로젝트에서 쿼리 매개 변수를 사용하여 액세스 토큰을 전달하는 경우 가능한 한 빨리 **인증** 헤더를 사용하도록 업데이트해야 합니다. 새 개발에서는 **Authorization** 헤더만 사용해야 합니다.
+>**access_token** 쿼리 매개 변수를 사용하는 인증 지원이 2026년 8월 31일에 제거되었습니다. 새 개발에서는 **Authorization** 헤더만 사용해야 합니다.
 
 ## 제한
 
 - 최대 동시 내보내기 작업 수: 2
 - 현재 내보내기 중인 작업을 포함하여 큐에 있는 최대 내보내기 작업: 10
 - 파일 보존 기간: 7일
-- 기본 일별 내보내기 할당: 500MB. 할당은 매일 오전 12시(CST)에 재설정됩니다. 증액은 구매할 수 있습니다.
+- 할당은 일광 절약 시간에 따라 CST/CDT가 낮 12시로 매일 재설정됩니다. 증액은 구매할 수 있습니다.
 - 날짜 범위 필터(`createdAt` 또는 `updatedAt`)의 최대 시간 범위: 31일
 
 UpdatedAt 및 Smart List에 대한 대량 리드 추출 필터는 일부 구독 유형에서 사용할 수 없습니다. 이 필터를 사용할 수 없는 경우 리드 작업 내보내기 만들기 끝점이 &quot;1035, 대상 구독에 대해 지원되지 않는 필터 유형&quot; 오류를 반환합니다. 구독에 대해 이 기능을 활성화하려면 Marketo 지원 센터에 문의하십시오.
