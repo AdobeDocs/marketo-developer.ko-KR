@@ -8,9 +8,9 @@ product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 1a442b6008fbb8f05ad346f1b7185a5b2e22f0e4
+source-git-commit: eb4e99aff94f3106b96f999fc56a6db7c5598b1f
 workflow-type: tm+mt
-source-wordcount: 478
+source-wordcount: 554
 ht-degree: 0%
 
 ---
@@ -62,6 +62,8 @@ GET <Identity URL>/oauth/token?grant_type=client_credentials&client_id=<Client I
 >[!IMPORTANT]
 >
 >`access_token` 쿼리 매개 변수를 사용한 인증 지원이 2026년 8월 31일에 제거되었습니다. 새 개발에서는 `Authorization` 헤더만 사용해야 합니다.
+>이 변경 사항은 Industry 및 OAuth 2.0 보안 모범 사례를 준수하기 위한 보안 재설정이며, URL에서 액세스 토큰을 전송하지 않는 것이 좋습니다.  이 방법을 인증하는 기존 워크플로우에서 이미 603(액세스 거부) 오류가 발생할 수 있습니다.
+>2026년 9월 15일 이전에 헤더 기반 인증을 사용하도록 통합 업데이트에 우선 순위를 두십시오.  시간이 더 필요한 경우 Adobe 지원 센터에 문의하여 사용 가능한 옵션에 대해 논의하십시오
 
 ### 인증 헤더로 전환
 
