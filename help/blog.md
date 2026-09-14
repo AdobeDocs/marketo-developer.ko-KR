@@ -6,9 +6,7 @@ source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
 workflow-type: tm+mt
 source-wordcount: '65289'
 ht-degree: 0%
-
 ---
-
 # 블로그 아카이브
 
 >[!INFO]
@@ -18,7 +16,7 @@ ht-degree: 0%
 >
 
 >[!IMPORTANT]
->2026년 7월 31일부터 SOAP API는 더 이상 사용되지 않으며 더 이상 사용할 수 없습니다. 모든 새로운 개발은 Marketo REST API를 사용하여 수행해야 하며, 서비스가 중단되지 않도록 기존 서비스를 해당 날짜까지 마이그레이션해야 합니다. SOAP API를 사용하는 서비스가 있는 경우 마이그레이션 방법에 대한 자세한 내용은 [SOAP API 마이그레이션 안내서](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/soap/migration)를 참조하십시오.
+>2026년 7월 31일부터 SOAP API는 더 이상 사용되지 않으며 더 이상 사용할 수 없습니다. 모든 새로운 개발은 Marketo REST API를 사용하여 수행해야 하며, 서비스가 중단되지 않도록 기존 서비스를 해당 날짜까지 마이그레이션해야 합니다. SOAP API를 사용하는 서비스가 있는 경우 마이그레이션 방법에 대한 자세한 내용은 [SOAP API 마이그레이션 안내서](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/migration)를 참조하십시오.
 >
 
 >[!IMPORTANT]
@@ -326,7 +324,7 @@ _2014-04-22_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
 ### Marketo Forms 보안 업데이트
 
-단일 IP 주소에서 양식 게시물 제출 횟수와 빈도에 대한 제한을 도입했습니다. 이 제한은 이제 프로그램 양식 제출을 악의적으로 사용하지 않도록 고객을 보호하기 위해 분당 30회 게시물로 적용됩니다. [syncLead API](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/soap/leads/synclead)는 Marketo에서 새 연락처를 프로그래밍 방식으로 제출하기 위한 권장 통합 수단입니다.
+단일 IP 주소에서 양식 게시물 제출 횟수와 빈도에 대한 제한을 도입했습니다. 이 제한은 이제 프로그램 양식 제출을 악의적으로 사용하지 않도록 고객을 보호하기 위해 분당 30회 게시물로 적용됩니다. [syncLead API](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/leads/synclead)는 Marketo에서 새 연락처를 프로그래밍 방식으로 제출하기 위한 권장 통합 수단입니다.
 
 _Travis Kaufman_&#x200B;이(가) _2014-04-29_&#x200B;에 게시함
 
@@ -1048,7 +1046,7 @@ _2015-02-20_&#x200B;에 _Murta_&#x200B;에 의해 게시됨
 
 ## Marketo에서 사용자 정의 필드를 만들고 AP를 통해 이 필드 업데이트
 
-표준 Marketo 필드에 맞지 않는 잠재 고객에 대한 추가 데이터가 있다고 가정해 보겠습니다. 예를 들어 이 사용자 지정 필드는 서드파티 점수일 수 있습니다. Marketo에서 타사 점수에 대한 사용자 지정 필드를 만든 다음, Marketo [REST API](https://developer.adobe.com/marketo-apis/) 또는 [SOAP API](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/soap/activity-type-filters)를 통해 이 필드의 값을 업데이트할 수 있습니다. 먼저 Marketo에서 사용자 정의 필드를 만드는 방법을 보여 주고, 두 번째로 REST API를 사용하여 이 필드를 업데이트하는 방법을 보여 줍니다.
+표준 Marketo 필드에 맞지 않는 잠재 고객에 대한 추가 데이터가 있다고 가정해 보겠습니다. 예를 들어 이 사용자 지정 필드는 서드파티 점수일 수 있습니다. Marketo에서 타사 점수에 대한 사용자 지정 필드를 만든 다음, Marketo [REST API](https://developer.adobe.com/marketo-apis/) 또는 [SOAP API](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/activity-type-filters)를 통해 이 필드의 값을 업데이트할 수 있습니다. 먼저 Marketo에서 사용자 정의 필드를 만드는 방법을 보여 주고, 두 번째로 REST API를 사용하여 이 필드를 업데이트하는 방법을 보여 줍니다.
 
 ### Marketo에서 사용자 정의 필드를 만드는 방법
 
