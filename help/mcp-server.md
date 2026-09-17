@@ -6,27 +6,37 @@ autotag-review: '2026-06-02T13:31:15.329Z'
 TQID: 'https://experienceleague.adobe.com/PJJm7yv8HmbwMB2fsnfDCXs8zprDJK5Q5z2uiiCJRZI'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: a7170d27-32ab-462b-a333-269abc654483
+    internal-label: Smart Campaigns
   - id: b0bb9048-d951-48d8-8232-45cf248a7e27
+    internal-label: Forms
   - id: b13bd2ad-8e65-49e5-9691-2a0d31067b35
+    internal-label: Integrations
   - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+    internal-label: Configuration
   - id: c2dbad80-0f5c-4d96-a798-2a65f93b8721
+    internal-label: Assets
   - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
   - id: e2290edd-b061-4880-9d79-dee306cf5aa9
+    internal-label: Implementation
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+    internal-label: Programs
   - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
+    internal-label: Templates
 role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+    internal-label: Developer
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: 8fc4e9a161decdc0b39a7e98bdb17de035538a6a
+    internal-label: Artificial intelligence
+source-git-commit: b12faeb0cb1a3680f6e0e7a522c54931b3de2c5d
 workflow-type: tm+mt
-source-wordcount: 2111
+source-wordcount: '2066'
 ht-degree: 0%
-
 ---
-
 
 # [!DNL Marketo Engage] MCP 서버
 
@@ -163,27 +173,6 @@ MCP는 API 사용에 따라 잠재적으로 민감한 필드를 포함한 데이
 커서 MCP 구성에 이미 다른 서버가 있는 경우 `mcpServers` 아래에 `marketo` 항목을 추가하십시오.
 다음 예제에서는 프로젝트 디렉터리의 **[!UICONTROL Settings]** > **[!UICONTROL MCP]** 또는 `.cursor/mcp.json`에 있는 전체 `mcpServers` 블록을 보여 줍니다.
 
->[!BEGINTABS]
-
->[!TAB IMS 토큰]
-
-```json
-{
-  "mcpServers": {
-    "marketo": {
-      "type": "http",
-      "url": "https://marketo-mcp.adobe.io/mcp",
-      "headers": {
-        "Authorization": "Bearer YOUR-IMS-TOKEN",
-        "x-gw-ims-org-id": "YOUR-IMS-ORG-ID"
-      }
-    }
-  }
-}
-```
-
->[!TAB Marketo 클라이언트 자격 증명]
-
 ```json
 {
   "mcpServers": {
@@ -200,26 +189,11 @@ MCP는 API 사용에 따라 잠재적으로 민감한 필드를 포함한 데이
 }
 ```
 
->[!ENDTABS]
-
 커서를 재시작합니다.
 
 ### 클라우드 코드(CLI) {#claude-code}
 
 터미널에서 다음 명령을 실행하여 자격 증명을 대체하십시오.
-
->[!BEGINTABS]
-
->[!TAB IMS 토큰]
-
-```bash
-claude mcp add --transport http marketo \
-  https://marketo-mcp.adobe.io/mcp \
-  --header "Authorization: Bearer YOUR-IMS-TOKEN" \
-  --header "x-gw-ims-org-id: YOUR-IMS-ORG-ID"
-```
-
->[!TAB Marketo 클라이언트 자격 증명]
 
 ```bash
 claude mcp add --transport http marketo \
@@ -229,28 +203,15 @@ claude mcp add --transport http marketo \
   --header "X-Marketo-Munchkin-Id: YOUR-MUNCHKIN-ID"
 ```
 
->[!ENDTABS]
-
 ### OpenAI 코드 {#codex}
 
 1. 설정 > MCP 서버 > 서버 추가 로 이동합니다.
 1. 서버 URL `https://marketo-mcp.adobe.io/mcp`을(를) 추가합니다.
 1. 인증 방법에 대한 헤더를 추가합니다.
 
->[!BEGINTABS]
-
->[!TAB IMS 토큰]
-
-* 인증: &quot;Bearer YOUR-IMS-TOKEN&quot;
-* x-gw-ims-org-id: &quot;YOUR-IMS-ORG-ID&quot;
-
->[!TAB Marketo 클라이언트 자격 증명]
-
 * X-Marketo-Client-Id: &quot;YOUR-CLIENT-ID&quot;
 * X-Marketo-Client-Secret: &quot;YOUR-CLIENT-SECRET&quot;
 * X-Marketo-Munchkin-Id: &quot;YOUR-MUNCHKIN-ID&quot;
-
->[!ENDTABS]
 
 1. 저장 을 선택하여 프로세스를 완료합니다.
 
@@ -258,27 +219,6 @@ claude mcp add --transport http marketo \
 ### GitHub Copilot이 포함된 VS 코드 {#vscode}
 
 **[!UICONTROL Ctrl+Shift+P]**(또는 macOS의 **[!UICONTROL Cmd+Shift+P]**)을 누르고 **[!UICONTROL MCP: Open User Configuration]**&#x200B;을(를) 입력한 다음 Enter 키를 누릅니다. `mcp.json`을(를) 엽니다. `servers` 개체 내에 `marketo` 항목 추가:
-
->[!BEGINTABS]
-
->[!TAB IMS 토큰]
-
-```json
-{
-  "servers": {
-    "marketo": {
-      "type": "http",
-      "url": "https://marketo-mcp.adobe.io/mcp",
-      "headers": {
-        "Authorization": "Bearer YOUR-IMS-TOKEN",
-        "x-gw-ims-org-id": "YOUR-IMS-ORG-ID"
-      }
-    }
-  }
-}
-```
-
->[!TAB Marketo 클라이언트 자격 증명]
 
 ```json
 {
@@ -295,8 +235,6 @@ claude mcp add --transport http marketo \
   }
 }
 ```
-
->[!ENDTABS]
 
 >[!NOTE]
 >
@@ -328,24 +266,11 @@ Adobe은 [!DNL Marketo] MCP 서버를 호스팅하고 공개 URL에 노출합니
 
 각 요청에 대해 다음 인증 방법 중 하나에 대한 헤더를 보냅니다. 서버 URL 및 헤더를 입력하는 위치는 도구에 따라 다르므로 MCP 설명서를 참조하십시오.
 
->[!BEGINTABS]
-
->[!TAB IMS 토큰]
-
-| Header | 값 |
-| ------ | ----- |
-| `Authorization` | `Bearer YOUR-IMS-TOKEN` |
-| `x-gw-ims-org-id` | IMS 조직 ID |
-
->[!TAB Marketo 클라이언트 자격 증명]
-
 | Header | 값 |
 | ------ | ----- |
 | `X-Marketo-Client-Id` | 클라이언트 ID |
 | `X-Marketo-Client-Secret` | 클라이언트 암호 |
 | `X-Marketo-Munchkin-Id` | Munchkin 계정 ID |
-
->[!ENDTABS]
 
 도구가 JSON 구성을 허용하는 경우 [Cursor](#cursor) 또는 [VS 코드](#vscode) 예제로 시작하고 도구의 스키마와 일치하도록 키(`mcpServers`, `servers`)를 조정합니다.
 
