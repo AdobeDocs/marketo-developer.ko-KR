@@ -34,9 +34,9 @@ Marketo Engage SOAP API는 2026년 3월 31일 이후에 사용이 중단됩니�
 
 ## 마이그레이션
 
-SOAP API는 [REST AP](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/rest-api)I와 비교하여 제한된 범위의 사용 사례를 지원합니다. 사용 사례를 매핑할 끝점을 결정할 때는 [Marketo 통합 모범 사례](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/marketo-integration-best-practices)를 따라야 합니다
+SOAP API는 [REST AP](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/rest-api)I와 비교하여 제한된 범위의 사용 사례를 지원합니다. 사용 사례를 매핑할 끝점을 결정할 때는 [Marketo 통합 모범 사례](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/marketo-integration-best-practices)를 따라야 합니다
 
-[참조 아키텍처](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/reference-architectures)을(를) [CRM 동기화](https://experienceleague.adobe.com/docs/marketo-developer/assets/sync-architecture-whitepaper.pdf?lang=en) 및 [Data Warehouse 내보내기](https://experienceleague.adobe.com/docs/marketo-developer/assets/reference_architecture.pdf?lang=en) 사용 사례에 사용할 수 있습니다.
+[참조 아키텍처](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/reference-architectures)을(를) [CRM 동기화](https://experienceleague.adobe.com/docs/marketo-developer/assets/sync-architecture-whitepaper.pdf?lang=ko) 및 [Data Warehouse 내보내기](https://experienceleague.adobe.com/docs/marketo-developer/assets/reference_architecture.pdf?lang=ko) 사용 사례에 사용할 수 있습니다.
 
 ## 인증
 
@@ -46,14 +46,14 @@ Marketo REST API는 클라이언트 자격 증명 부여 유형의 OAuth 2.0 기
 
 ## 잠재 고객
 
-[리드 API 설명서](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/lead-database/leads)
+[리드 API 설명서](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/lead-database/leads)
 
 SOAP API는 리드 데이터 동기화, [Munchkin 쿠키 연결](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/javascriptapi/leadtracking/lead-tracking) 및 리드 병합을 지원합니다. 응용 프로그램에서 SOAP syncLead 메서드를 호출하고 `marketoCookie` 매개 변수를 설정하는 경우 다음 중 하나를 통해 마이그레이션할 수 있습니다.
 
 1. [리드 동기화](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncLeadUsingPOST) REST 메서드를 사용한 다음 [연결된 리드](https://developer.adobe.com/marketo-apis/api/mapi#operation/associateLeadUsingPOST)를 사용합니다.
-2. 일부 Marketing Assets의 구성과 [Forms API](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/assets/forms)와의 상호 작용이 필요하지만 [양식 제출](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/lead-database/leads)을 호출할 수 있습니다
+2. 일부 Marketing Assets의 구성과 [Forms API](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/assets/forms)와의 상호 작용이 필요하지만 [양식 제출](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/lead-database/leads)을 호출할 수 있습니다
 
-`foreignSysPersonId` 키 유형을 사용하는 응용 프로그램은 이 외부 식별자를 나타내기 위해 사용자 지정 잠재 고객 필드로 마이그레이션하고 [잠재 고객 동기화](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/lead-database/leads#create-and-update) 또는 [대량 잠재 고객 가져오기](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/bulk-import/bulk-lead-import) REST 메서드를 사용해야 합니다.
+`foreignSysPersonId` 키 유형을 사용하는 응용 프로그램은 이 외부 식별자를 나타내기 위해 사용자 지정 잠재 고객 필드로 마이그레이션하고 [잠재 고객 동기화](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/lead-database/leads#create-and-update) 또는 [대량 잠재 고객 가져오기](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/bulk-import/bulk-lead-import) REST 메서드를 사용해야 합니다.
 
 | SOAP 메서드 | REST 메서드 |
 | --- | --- |
@@ -69,9 +69,9 @@ M Objects는 외부 분석을 위해 Opportunity Attribution 데이터 내보내
 
 REST 설명서:
 
-- [기회](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/lead-database/opportunities)
-- [역할](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/lead-database/opportunity-roles)
-- [프로그램](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/assets/programs)
+- [기회](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/lead-database/opportunities)
+- [역할](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/lead-database/opportunity-roles)
+- [프로그램](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/assets/programs)
 
 | SOAP 메서드 | REST 메서드 |
 | --- | --- |
@@ -85,7 +85,7 @@ REST 설명서:
 
 ## 정적 목록
 
-SOAP API의 정적 목록 사용 사례는 [목록에 추가](https://developer.adobe.com/marketo-apis/api/mapi#operation/addLeadsToListUsingPOST), [리드 일괄 가져오기](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/bulk-import/bulk-lead-import) 또는 [목록에서 제거](https://developer.adobe.com/marketo-apis/api/mapi#operation/removeLeadsFromListUsingDELETE) REST 메서드를 사용하여 수행할 수 있는 멤버십 및 리드 데이터 수집 및 멤버십 제거로 제한됩니다.
+SOAP API의 정적 목록 사용 사례는 [목록에 추가](https://developer.adobe.com/marketo-apis/api/mapi#operation/addLeadsToListUsingPOST), [리드 일괄 가져오기](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/bulk-import/bulk-lead-import) 또는 [목록에서 제거](https://developer.adobe.com/marketo-apis/api/mapi#operation/removeLeadsFromListUsingDELETE) REST 메서드를 사용하여 수행할 수 있는 멤버십 및 리드 데이터 수집 및 멤버십 제거로 제한됩니다.
 
 | SOAP 메서드 | REST 메서드 |
 | --- | --- |
@@ -99,8 +99,8 @@ SOAP API는 활동 검색만 지원합니다.
 
 REST 설명서:
 
-- [동기 활동](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/lead-database/activities)
-- [일괄 활동 추출](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/bulk-extract/bulk-activity-extract)
+- [동기 활동](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/lead-database/activities)
+- [일괄 활동 추출](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/bulk-extract/bulk-activity-extract)
 
 | SOAP 메서드 | REST 메서드 |
 | --- | --- |
@@ -111,9 +111,9 @@ REST 설명서:
 
 REST 설명서:
 
-- [스마트 캠페인](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/assets/smart-campaigns)
+- [스마트 캠페인](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/assets/smart-campaigns)
 
-SOAP API는 스마트 캠페인에 대한 세 가지 사용 사례만 지원합니다. [요청 가능한 스마트 캠페인에 대한 잠재 고객 충족](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/assets/smart-campaigns#trigger), 해당 요청 가능한 캠페인 검색 및 [스마트 캠페인의 향후 실행 예약](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/assets/smart-campaigns#schedule).
+SOAP API는 스마트 캠페인에 대한 세 가지 사용 사례만 지원합니다. [요청 가능한 스마트 캠페인에 대한 잠재 고객 충족](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/assets/smart-campaigns#trigger), 해당 요청 가능한 캠페인 검색 및 [스마트 캠페인의 향후 실행 예약](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/assets/smart-campaigns#schedule).
 
 | SOAP 메서드 | REST 메서드 |
 | --- | --- |
@@ -125,7 +125,7 @@ SOAP API는 스마트 캠페인에 대한 세 가지 사용 사례만 지원합�
 
 REST 설명서:
 
-- [사용자 정의 오브젝트](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/lead-database/custom-objects)
+- [사용자 정의 오브젝트](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/lead-database/custom-objects)
 
 SOAP API는 사용자 지정 개체에 대한 CRUD 작업만 지원합니다.
 
@@ -133,4 +133,4 @@ SOAP API는 사용자 지정 개체에 대한 CRUD 작업만 지원합니다.
 | --- | --- |
 | [deleteCustomObjects](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/custom-objects/deletecustomobjects) | [사용자 지정 개체 삭제](https://developer.adobe.com/marketo-apis/api/mapi#operation/deleteCustomObjectsUsingPOST) |
 | [getCustomObjects](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/custom-objects/getcustomobjects) | [사용자 지정 개체 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getCustomObjectsUsingGET) |
-| [syncCustomObjects](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/custom-objects/synccustomobjects) | [사용자 지정 개체 동기화](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncCustomObjectsUsingPOST) [사용자 지정 개체 일괄 가져오기](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/bulk-import/bulk-custom-object-import) |
+| [syncCustomObjects](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/custom-objects/synccustomobjects) | [사용자 지정 개체 동기화](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncCustomObjectsUsingPOST) [사용자 지정 개체 일괄 가져오기](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/bulk-import/bulk-custom-object-import) |
