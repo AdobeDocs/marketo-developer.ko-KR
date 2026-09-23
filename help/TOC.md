@@ -1,18 +1,16 @@
 ---
 user-guide-title: '[!DNL Marketo] 개발자 안내서'
-user-guide-description: 이 안내서에서는  [!DNL Marketo] API 사용에 대한 지침을 제공합니다.
+user-guide-description: 이 안내서는 [!DNL Marketo] API 사용에 대한 지침을 제공합니다.
 breadcrumb-title: '[!DNL Marketo] 개발자 안내서'
 role: Admin
 feature-set: "Marketo Engage"
 index: true
 author: Donald
-source-git-commit: ece6e257d28839582be659daf0b8ba1a6b6a5c3c
+source-git-commit: 4dffbef0e0ea16393a9e30f5f8e1021331ca9a37
 workflow-type: tm+mt
-source-wordcount: '256'
-ht-degree: 29%
-
+source-wordcount: '262'
+ht-degree: 31%
 ---
-
 
 # [!DNL Marketo] 개발자 {#marketo}
 
@@ -115,6 +113,8 @@ ht-degree: 29%
   - [태그](rest-api/tags.md)
   - [사용자 컨텍스트](rest-api/user-context.md)
   - [사용자 관리](rest-api/user-management.md)
+- SOAP {#soap}
+  - [REST API로 마이그레이션](soap-api/migration.md)
 - [SOAP FAQ](soap-faq.md)
 - 웹훅 {#webhooks}
   - [오류수](webhooks/errors.md)

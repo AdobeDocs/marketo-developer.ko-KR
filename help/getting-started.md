@@ -5,24 +5,31 @@ exl-id: 78c44c32-4e59-4d55-a45c-ef0d7dac814d
 TQID: https://experienceleague.adobe.com/0lfzor5EQJ0VqIh4fqlK29OiPmRCy6fnEtncJ38r-OM
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: b0bb9048-d951-48d8-8232-45cf248a7e27
+    internal-label: Forms
   - id: c954475c-8548-4e33-a0b8-6b550d956115
+    internal-label: Marketing automation
   - id: d1d0a9cd-295d-4976-8c39-ddae266f240e
+    internal-label: Administration
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+    internal-label: Programs
   - id: ea90ebee-5c84-42d9-8b21-006bdabc95a3
+    internal-label: Reporting
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
+    internal-label: Reporting
   - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Administration
+source-git-commit: 8e1497d0d018bacb210b202d488e285a798e9dcf
 workflow-type: tm+mt
-source-wordcount: 1198
+source-wordcount: '1190'
 ht-degree: 2%
-
 ---
-
 # 시작하기
 
 Marketo Engage은 잠재 고객 및 고객을 위한 개인화된 멀티채널 프로그램 및 캠페인을 관리하기 위한 마케팅 자동화 플랫폼입니다. 통합 지점을 통해 플랫폼을 확장할 수 있습니다.
@@ -38,17 +45,17 @@ Marketo Engage 인스턴스에서 기본 SFDC 또는 MS Dynamics CRM 연결을 �
 - 회사
 - 기회
 - 영업 기회 역할
-- 영업사원
+- 영업 담당자
 
 ![데이터 모델](assets/data_model.png)
 
 ## 개인(잠재 고객)
 
-사람은 마케팅 자동화의 기반입니다. Marketo은 판매에서 가망 고객, 잠재 고객, 잠재 고객, 잠재 고객 또는 연락 고객을 고려하는지 여부에 관계없이 모든 비판매 개인 레코드를 가망 고객으로 참조합니다.
+사람은 마케팅 자동화의 기본입니다. Marketo은 영업에서 가망 고객, 잠재 고객, 잠재 고객, 잠재 고객 또는 연락 고객을 고려하는지 여부에 관계없이 모든 비영업 대표 레코드를 가망 고객으로 참조합니다.
 
-잠재 고객 객체에는 이메일, 이름 및 성과 같은 표준 필드가 포함됩니다. 필드를 추가하여 다른 정보를 저장할 수 있으며 표준 필드와 같은 방식으로 사용자 지정 특성을 읽고 쓸 수 있습니다. Marketo의 **[!UICONTROL Admin]** > **[!UICONTROL Field Management]**&#x200B;에서 전체 필드 목록을 찾으십시오.
+잠재 고객 객체에는 이메일, 이름 및 성과 같은 표준 필드가 포함됩니다. 다른 정보를 저장하기 위해 필드를 추가할 수 있으며 표준 필드와 같은 방식으로 사용자 지정 특성을 읽고 쓸 수 있습니다. Marketo의 **[!UICONTROL Admin]** > **[!UICONTROL Field Management]**&#x200B;에서 전체 필드 목록을 찾으십시오.
 
-Marketo은 id 필드로 리드를 고유하게 식별합니다. 시스템 외부에 다른 고유 키를 적용해야 합니다.
+Marketo은 id 필드로 리드를 고유하게 식별합니다. 시스템 외부에 다른 고유 키를 적용합니다.
 
 관련 API: [REST](https://developer.adobe.com/marketo-apis/api/mapi#tag/Leads), [JavaScript](javascript-api/lead-tracking.md#lead-tracking-api)
 
@@ -64,11 +71,11 @@ Marketo은 id 필드로 리드를 고유하게 식별합니다. 시스템 외부
 
 ## 프로그램 및 캠페인
 
-프로그램은 한 위치에서 마케터의 관련 마케팅 활동을 구성합니다. 예를 들어 이메일 폭발은 프로그램일 수 있습니다.
+프로그램은 한 위치에서 마케터의 관련 마케팅 활동을 구성합니다. 예를 들어 이메일 캠페인은 프로그램일 수 있습니다.
 
-리드는 프로그램과 관련된 여러 작업 또는 활동을 수행할 수 있습니다. 이 프로세스를 잠재 고객 진행이라고 합니다. 이메일 강타 프로그램의 경우, 진행률은 Marketo이 이메일을 전송하는 시점, 사용자가 이메일을 여는 시점 및 사용자가 링크를 클릭하는지 여부를 기록할 수 있습니다.
+리드는 프로그램과 관련된 여러 작업 또는 활동을 수행할 수 있습니다. 이 프로세스를 잠재 고객 진행이라고 합니다. 이메일 캠페인 프로그램의 경우, Marketo에서 이메일을 전송하는 시점, 사용자가 이메일을 여는 시점 및 사용자가 링크를 클릭하는지 여부를 기록할 수 있습니다.
 
-캠페인은 프로그램 내에서 특정 목적과 목표를 제공합니다. 예를 들어 Campaign은 리드 그룹을 선택하고 이메일 알림을 보낼 수 있습니다. 다른 Campaign은 잠재 고객이 이메일 폭발의 링크를 클릭할 때 영업 담당자에게 알릴 수 있습니다.
+캠페인은 프로그램 내에서 특정 목적과 목표를 제공합니다. 예를 들어 Campaign은 리드 그룹을 선택하고 이메일 알림을 보낼 수 있습니다. 다른 캠페인은 잠재 고객이 이메일 캠페인에서 링크를 클릭하면 영업 담당자에게 알릴 수 있습니다.
 
 관련 API: [REST](https://developer.adobe.com/marketo-apis/api/mapi#tag/Campaigns)
 
@@ -78,7 +85,7 @@ Marketo은 id 필드로 리드를 고유하게 식별합니다. 시스템 외부
 
 Marketo 관리자는 사용자가 프로그램을 만들 때 선택하는 필수 및 선택적 태그 유형을 만들 수 있습니다. 회사의 보고 요구 사항에 따라 각 태그 유형에 가능한 값을 정의합니다.
 
-예를 들어 북동부 및 남동부와 같은 값으로 사용자 지정 &quot;지역&quot; 태그 유형을 만들어 가장 많은 리드를 생성하는 지역을 분석합니다. Maria, David 또는 John과 같은 프로그램 소유자가 리드 및 기회를 만드는 데 가장 큰 영향을 미치는 &quot;소유자&quot; 태그 유형을 만듭니다. 자세한 내용은 [태그 이해](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/understanding-tags)를 참조하십시오.
+예를 들어 어떤 지역이 리드를 가장 많이 생성하는지 분석하려면 북동부 및 남동부와 같은 값으로 사용자 지정 &quot;지역&quot; 태그 유형을 만듭니다. &quot;소유자&quot; 태그 유형을 만들어 리드 및 기회를 만드는 데 가장 큰 영향을 미치는 프로그램 소유자를 비교합니다. 자세한 내용은 [태그 이해](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/core-marketo-concepts/programs/working-with-programs/understanding-tags)를 참조하십시오.
 
 관련 API: [REST](https://developer.adobe.com/marketo-apis/api/asset)
 
@@ -89,7 +96,7 @@ Marketo 관리자는 사용자가 프로그램을 만들 때 선택하는 필수
 - 정적 목록은 마케터가 리드를 추가하거나 제거할 수 있는 고정 컬렉션입니다.
 - 스마트 목록은 정의된 특성을 기반으로 하는 동적 컬렉션입니다.
 
-예를 들어 &quot;당사 웹 사이트의 가격 책정 페이지를 방문한 모든 잠재 고객&quot;이라는 스마트 목록은 더 많은 잠재 고객이 해당 페이지를 방문함에 따라 계속 증가하고 있습니다. 자세한 내용은 [Marketo Engage 설명서](https://experienceleague.adobe.com/ko/docs/marketo/using/home)를 참조하세요.
+예를 들어 &quot;웹 사이트의 가격 책정 페이지를 방문한 모든 잠재 고객&quot;이라는 스마트 목록은 더 많은 잠재 고객이 해당 페이지를 방문하면 계속 증가합니다. 자세한 내용은 [Marketo Engage 설명서](https://experienceleague.adobe.com/ko/docs/marketo/using/home)를 참조하세요.
 
 관련 API: [REST](https://developer.adobe.com/marketo-apis/api/asset#tag/Static-Lists)
 
@@ -141,8 +148,8 @@ Marketo 사용자 지정 개체를 만들어 게시한 후 Marketo API를 통해
 
 ## 영업 담당자
 
-기본 CRM 통합이 활성화되어 있지 않을 때 Marketo에서 영업 사원 레코드 및 해당 리드 관계를 관리할 수 있습니다. 이러한 레코드에는 이름, 이메일 및 직책 등의 정보가 포함되어 있습니다. 영업 담당자가 리드를 소유하는 경우 이 정보를 필터링 및 토큰에 사용할 수 있습니다.
+기본 CRM 통합을 사용하지 않는 경우 Marketo에서 영업 담당자 레코드와 해당 리드 관계를 관리할 수 있습니다. 이러한 레코드에는 이름, 이메일 및 직책 등의 정보가 포함되어 있습니다. 영업 담당자가 리드를 소유하는 경우 이 정보를 필터링 및 토큰에 사용할 수 있습니다.
 
-&quot;externalSalesPersonId&quot; 필드를 통해 잠재 고객 수준에서 영업 사원에 대한 관계를 관리합니다. [잠재 고객 동기화](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncLeadUsingPOST) API를 통해 이 필드를 업데이트하십시오.
+&quot;externalSalesPersonId&quot; 필드를 통해 잠재 고객 레벨에서 영업 사원에 대한 관계를 관리합니다. [잠재 고객 동기화](https://developer.adobe.com/marketo-apis/api/mapi#operation/syncLeadUsingPOST) API를 통해 이 필드를 업데이트하십시오.
 
 관련 API: [REST](https://developer.adobe.com/marketo-apis/api/mapi#tag/Sales-Persons)
