@@ -16,7 +16,7 @@ ht-degree: 0%
 >
 
 >[!IMPORTANT]
->2026년 7월 31일부터 SOAP API는 더 이상 사용되지 않으며 더 이상 사용할 수 없습니다. 모든 새로운 개발은 Marketo REST API를 사용하여 수행해야 하며, 서비스가 중단되지 않도록 기존 서비스를 해당 날짜까지 마이그레이션해야 합니다. SOAP API를 사용하는 서비스가 있는 경우 마이그레이션 방법에 대한 자세한 내용은 [SOAP API 마이그레이션 안내서](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/soap/migration)를 참조하십시오.
+>2026년 7월 31일부터 SOAP API는 더 이상 사용되지 않으며 더 이상 사용할 수 없습니다. 모든 새로운 개발은 Marketo REST API를 사용하여 수행해야 하며, 서비스가 중단되지 않도록 기존 서비스를 해당 날짜까지 마이그레이션해야 합니다. SOAP API를 사용하는 서비스가 있는 경우 마이그레이션 방법에 대한 자세한 내용은 [SOAP API 마이그레이션 안내서](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/soap/migration)를 참조하십시오.
 >
 
 >[!IMPORTANT]
