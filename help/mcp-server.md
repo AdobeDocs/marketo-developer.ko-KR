@@ -32,23 +32,19 @@ role_v2:
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
     internal-label: Artificial intelligence
-source-git-commit: b12faeb0cb1a3680f6e0e7a522c54931b3de2c5d
+source-git-commit: 56fb36ccfa88bb90244f7756b0fba6ac787bfbfe
 workflow-type: tm+mt
-source-wordcount: '2066'
+source-wordcount: '2052'
 ht-degree: 0%
 ---
 
 # [!DNL Marketo Engage] MCP 서버
 
->[!NOTE]
->
->스마트 목록 및 스마트 캠페인 `create` 및 `update` 도구는 2026년 9월 릴리스가 타깃팅되었습니다.
-
 모델 컨텍스트 프로토콜(MCP)은 AI 도구를 외부 서비스에 연결하는 개방형 표준이다. [!DNL Marketo] MCP 서버가 AI 도우미를 [!DNL Marketo]에 연결합니다. 양식, 프로그램, 스마트 캠페인, 리드, 이메일, 코드 조각, 목록 및 폴더에 대해 100개 이상의 작업을 제공합니다.
 
 AI 도구가 MCP 서버를 호출하면 서버는 해당 요청의 자격 증명을 사용하여 해당 REST API 호출을 실행합니다. 서버측 소프트웨어를 설치, 배포 또는 실행할 필요가 없습니다.
 
-Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 대한 자세한 내용은 [데이터 정보](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/marketo-ai/data-information) 페이지를 참조하십시오.
+Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 대한 자세한 내용은 [데이터 정보](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-ai/data-information) 페이지를 참조하십시오.
 
 >[!IMPORTANT]
 >

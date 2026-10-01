@@ -5,30 +5,30 @@ autotag-review: '2026-06-02T13:31:42.084Z'
 TQID: 'https://experienceleague.adobe.com/qvrWbHOCsCCHctduNDxMhkE8JAKxZk8FCYfKvzxfcYA'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: a7170d27-32ab-462b-a333-269abc654483
+    internal-label: Smart Campaigns
   - id: b0bb9048-d951-48d8-8232-45cf248a7e27
+    internal-label: Forms
   - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+    internal-label: Programs
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
-source-git-commit: c631b7c3d571f29083673f9b97d22230d109abfc
+    internal-label: Artificial intelligence
+source-git-commit: 56fb36ccfa88bb90244f7756b0fba6ac787bfbfe
 workflow-type: tm+mt
-source-wordcount: 1228
+source-wordcount: '1214'
 ht-degree: 25%
-
 ---
-
 
 # [!DNL Marketo Engage] MCP 작업
 
 [!DNL Marketo Engage] MCP 서버를 통해 다음 작업을 사용할 수 있습니다. 서버는 읽기 전용 또는 비파괴인 끝점을 제공합니다. AI 시스템은 `Delete` 또는 다른 파괴적 작업을 사용할 수 없습니다.
 
->[!NOTE]
->
->스마트 목록 및 스마트 캠페인 `create` 및 `update` 도구는 2026년 9월 릴리스가 타깃팅되었습니다.
-
-Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 대한 자세한 내용은 [데이터 정보](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/marketo-ai/data-information) 페이지를 참조하십시오.
+Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 대한 자세한 내용은 [데이터 정보](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-ai/data-information) 페이지를 참조하십시오.
 
 ## 일괄 내보내기
 
