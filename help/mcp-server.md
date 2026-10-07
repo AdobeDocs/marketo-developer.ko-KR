@@ -32,9 +32,9 @@ role_v2:
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
     internal-label: Artificial intelligence
-source-git-commit: 56fb36ccfa88bb90244f7756b0fba6ac787bfbfe
+source-git-commit: 6bbf9fa5b8192e02d7a465a652346545ae216450
 workflow-type: tm+mt
-source-wordcount: '2052'
+source-wordcount: '2176'
 ht-degree: 0%
 ---
 
@@ -90,7 +90,7 @@ MCP는 API 사용에 따라 잠재적으로 민감한 필드를 포함한 데이
 
 * REST API 액세스가 활성화된 [!DNL Marketo] 인스턴스
 * [!DNL Marketo] LaunchPoint에서 API 자격 증명을 만드는 관리자 액세스
-* Cloud Desktop, Cursor, Codex, Claude Code(CLI) 또는 GitHub Copilot을 사용한 VS Code AI 도구 중 하나
+* Cloud Desktop, Cursor, Codex, Claude Code(CLI), GitHub Copilot 포함 코드 또는 Gemini CLI와 같은 다른 호환 가능한 MCP 클라이언트 AI 도구 중 하나
 * MCP 서버 URL에 대한 네트워크 액세스: `https://marketo-mcp.adobe.io/mcp`
 
 ## Marketo 자격 증명 가져오기
@@ -122,6 +122,7 @@ MCP는 API 사용에 따라 잠재적으로 민감한 필드를 포함한 데이
 * [커서](#cursor)
 * [클라우드 코드 CLI](#claude-code)
 * [OpenAI 코드](#codex)
+* [Gemini CLI](#gemini-cli)
 * [GitHub Copilot이 포함된 VSCode](#vscode)
 * [군침](#glean)
 * [기타 도구](#other-tools)
@@ -211,6 +212,35 @@ claude mcp add --transport http marketo \
 
 1. 저장 을 선택하여 프로세스를 완료합니다.
 
+### Gemini CLI
+
+Marketo Engage MCP 서버를 Gemini CLI에 추가하려면 프로젝트 디렉터리의 `.gemini/mcp.json`에 다음 내용을 추가하십시오.
+
+```json
+{
+  "mcpServers": {
+    "marketo": {
+      "httpUrl": "https://marketo-mcp.adobe.io/mcp",
+      "headers": {
+        "X-Marketo-Client-Id": "$MARKETO_CLIENT_ID",
+        "X-Marketo-Client-Secret": "$MARKETO_CLIENT_SECRET",
+        "X-Marketo-Munchkin-Id": "$MARKETO_MUNCHKIN_ID"
+      }
+    }
+  }
+}
+```
+
+또는 명령줄에 의해:
+
+```bash
+gemini mcp add --transport http -s user marketo https://marketo-mcp.adobe.io/mcp \
+  -H "X-Marketo-Client-Id: $MARKETO_CLIENT_ID" \
+  -H "X-Marketo-Client-Secret: $MARKETO_CLIENT_SECRET" \
+  -H "X-Marketo-Munchkin-Id: $MARKETO_MUNCHKIN_ID"
+```
+
+세션을 다시 시작하여 새 MCP 서버 구성을 선택합니다.
 
 ### GitHub Copilot이 포함된 VS 코드 {#vscode}
 
@@ -269,6 +299,10 @@ Adobe은 [!DNL Marketo] MCP 서버를 호스팅하고 공개 URL에 노출합니
 | `X-Marketo-Munchkin-Id` | Munchkin 계정 ID |
 
 도구가 JSON 구성을 허용하는 경우 [Cursor](#cursor) 또는 [VS 코드](#vscode) 예제로 시작하고 도구의 스키마와 일치하도록 키(`mcpServers`, `servers`)를 조정합니다.
+
+>[!NOTE]
+>
+>Gemini CLI는 확장 가능한 HTTP 및 사용자 지정 인증 헤더를 통해 원격 MCP 서버를 지원합니다. [!DNL Marketo] MCP 서버에 연결하려면 위의 연결 세부 정보를 사용하고 [Gemini CLI MCP 구성 설명서](https://geminicli.com/docs/tools/mcp-server/){target="_blank"}를 따르십시오. `settings.json`의 `mcpServers` 아래에 서버 항목을 추가하고 `httpUrl`을(를) `https://marketo-mcp.adobe.io/mcp`(으)로 설정한 다음 `headers`에서 세 개의 Marketo 인증 헤더를 제공하십시오. Gemini CLI에서 SSE 전송에 사용하는 `url`이(가) 아닌 `httpUrl`을(를) 사용합니다. 이 지침은 Gemini 웹 또는 모바일 앱이 아닌 Gemini CLI에 적용됩니다.
 
 ## 사용 가능한 작업
 
