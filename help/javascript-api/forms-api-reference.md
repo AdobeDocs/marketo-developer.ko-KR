@@ -3,20 +3,23 @@ title: Forms API 참조
 description: MktoForms2 및 양식 메서드, 매개 변수, 콜백, 양식 로드 및 렌더링에 대한 반환 등을 자세히 설명하는 Marketo Forms 2.0 API에 대한 포괄적인 참조입니다.
 feature: Forms, Javascript
 exl-id: 0f8d242f-0b27-4087-b080-3d41ebaa25b3
-TQID: https://experienceleague.adobe.com/wLuN1H8tDFEihPqcAfoG-Y80d4Kw1BoSskVQu4Bgss0
+TQID: 'https://experienceleague.adobe.com/wLuN1H8tDFEihPqcAfoG-Y80d4Kw1BoSskVQu4Bgss0'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: b0bb9048-d951-48d8-8232-45cf248a7e27
+    internal-label: Forms
+  - id: dda1332a-c3e0-583f-9d9b-15f1934e0ad3
+    internal-label: Javascript
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 1337
+source-wordcount: '1337'
 ht-degree: 1%
-
 ---
-
 # Forms API 참조
 
 Forms 2.0 API는 두 개의 기본 개체(`MktoForms2` 및 `Form`)를 제공합니다.

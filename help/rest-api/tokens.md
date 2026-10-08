@@ -3,18 +3,26 @@ title: 토큰
 feature: REST API, Tokens
 description: Asset REST API를 사용하여 Marketo 내 토큰을 관리합니다. 지원되는 데이터 유형, 폴더 또는 프로그램별로 가져오기, 양식으로 인코딩된 POST를 통해 만들기 또는 업데이트 및 이름별 삭제 를 참조하십시오.
 exl-id: 4f8d87d7-ba2a-4c90-8b39-4d20679d404a
-TQID: https://experienceleague.adobe.com/uqOpu2vDuiQiZhILKuxZJQGadd0K14zwIaAdmNfK1-I
+TQID: 'https://experienceleague.adobe.com/uqOpu2vDuiQiZhILKuxZJQGadd0K14zwIaAdmNfK1-I'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
+feature_v2:
+  - id: a6d52c76-712f-5f64-a879-9c65c1499322
+    internal-label: Tokens
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 284
+source-wordcount: '284'
 ht-degree: 3%
-
 ---
-
 # 토큰
 
 [토큰 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Tokens)

@@ -3,20 +3,24 @@ title: 인앱 메시지
 feature: Mobile Marketing
 description: Mobile SDK으로 Marketo In-App 메시지 설정, 사용자 지정 이벤트 트리거 구성, 탭 활동 추적 및 첫 번째 앱 열기 초기화 문제 해결.
 exl-id: 73c9f862-d154-4b37-94ce-92311aa756e8
-TQID: https://experienceleague.adobe.com/RVkEUBaFb-PHd0gE9ngzYc5zOojINwSI7ic2TmcU7-8
+TQID: 'https://experienceleague.adobe.com/RVkEUBaFb-PHd0gE9ngzYc5zOojINwSI7ic2TmcU7-8'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
+feature_v2:
+  - id: 44b89f75-c1af-5353-8094-79b278102d46
+    internal-label: Mobile Marketing
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: c1579802-ddd4-4214-8a91-97b2066abe11
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Troubleshooting
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 321
+source-wordcount: '321'
 ht-degree: 2%
-
 ---
-
 # 인앱 메시지
 
 Marketo 인앱 메시지를 사용하려면 다음 단계를 완료하십시오.

@@ -3,22 +3,26 @@ title: '[!DNL Ionic]'
 feature: Mobile Marketing
 description: Marketo Cordova 플러그인을 Ionic과 통합하고, 푸시 알림을 활성화하고, SDK을 초기화하고, 세션을 추적하고, 리드를 연결하는 단계별 안내서입니다.
 exl-id: 204e5fb4-c9d6-43a6-9d77-0b2a67ddbed3
-TQID: https://experienceleague.adobe.com/UTNWd69NliR896RcO-XM2GG35liuLeNNhTXo9GRtB4o
+TQID: 'https://experienceleague.adobe.com/UTNWd69NliR896RcO-XM2GG35liuLeNNhTXo9GRtB4o'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: ea90ebee-5c84-42d9-8b21-006bdabc95a3
+    internal-label: Reporting
+  - id: 44b89f75-c1af-5353-8094-79b278102d46
+    internal-label: Mobile Marketing
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Reporting
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 581
+source-wordcount: '581'
 ht-degree: 2%
-
 ---
-
 # 이온-
 
 Marketo Cordova 플러그인을 [!DNL Ionic] 앱과 통합합니다. [!DNL Ionic] 커패시터는 현재 지원되지 않습니다.

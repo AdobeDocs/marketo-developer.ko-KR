@@ -3,7 +3,7 @@ title: REST API로 마이그레이션
 feature: SOAP
 description: 엔드포인트 매핑, OAuth, 리드 동기화 방법 및 참조 아키텍처를 포함하여 2026년 1월 31일까지 Marketo Engage을 SOAP에서 REST로 마이그레이션하는 단계별 지침입니다.
 exl-id: c2956db3-defe-4163-99f3-58654ce8ee2b
-TQID: https://experienceleague.adobe.com/pEtAxdR8gw0XQ9YFM8kEIxhQvK8LbHSFXBYPcXRGUjs
+TQID: 'https://experienceleague.adobe.com/pEtAxdR8gw0XQ9YFM8kEIxhQvK8LbHSFXBYPcXRGUjs'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
     internal-label: Marketo Engage
@@ -20,10 +20,15 @@ feature_v2:
     internal-label: Database
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
     internal-label: Programs
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: 567da6d8-7120-5e34-b91b-392b2d1402ff
+    internal-label: SOAP
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
     internal-label: Admin
-source-git-commit: 4dffbef0e0ea16393a9e30f5f8e1021331ca9a37
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
 source-wordcount: '1418'
 ht-degree: 4%
@@ -36,7 +41,7 @@ Marketo Engage SOAP API는 2026년 3월 31일 이후에 사용이 중단됩니�
 
 SOAP API는 [REST AP](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/rest-api)I와 비교하여 제한된 범위의 사용 사례를 지원합니다. 사용 사례를 매핑할 끝점을 결정할 때는 [Marketo 통합 모범 사례](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/marketo-integration-best-practices)를 따라야 합니다
 
-[참조 아키텍처](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/reference-architectures)을(를) [CRM 동기화](https://experienceleague.adobe.com/docs/marketo-developer/assets/sync-architecture-whitepaper.pdf?lang=ko) 및 [Data Warehouse 내보내기](https://experienceleague.adobe.com/docs/marketo-developer/assets/reference_architecture.pdf?lang=ko) 사용 사례에 사용할 수 있습니다.
+[참조 아키텍처](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/reference-architectures)을(를) [CRM 동기화](https://experienceleague.adobe.com/docs/marketo-developer/assets/sync-architecture-whitepaper.pdf?lang=en) 및 [Data Warehouse 내보내기](https://experienceleague.adobe.com/docs/marketo-developer/assets/reference_architecture.pdf?lang=en) 사용 사례에 사용할 수 있습니다.
 
 ## 인증
 

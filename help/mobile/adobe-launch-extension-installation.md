@@ -3,28 +3,33 @@ title: '[!DNL Adobe Launch] 확장 설치'
 feature: Mobile Marketing
 description: 모바일용 Adobe Launch Marketo 확장 설치 푸시 및 인앱에 대해 iOS 및 Android 설정, 테스트 장치, 권한 및 FCM 단계를 따릅니다.
 exl-id: d71b7cd7-309b-4882-9bba-7daaaa5ef32d
-TQID: https://experienceleague.adobe.com/UZRHaRBISIZsE6E25Ee7CnnYwyZwi6w2YgOQJ-JL00U
+TQID: 'https://experienceleague.adobe.com/UZRHaRBISIZsE6E25Ee7CnnYwyZwi6w2YgOQJ-JL00U'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+    internal-label: Configuration
   - id: ed6be6bb-75bb-4ea9-9a42-3bcaa65e1bcc
+    internal-label: Personalization
+  - id: 44b89f75-c1af-5353-8094-79b278102d46
+    internal-label: Mobile Marketing
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: e0eb8757-182f-49f3-94a4-1587d16f5094
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Personalization
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 696
+source-wordcount: '696'
 ht-degree: 1%
-
 ---
-
 # [!DNL Adobe Launch] 확장 설치
 
 푸시 알림, 인앱 메시지 또는 둘 다를 전송하려면 [!DNL Adobe Launch] Marketo 확장을 설치하십시오.
 
-## 사전 요구 사항
+## 필요 조건
 
 1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)하고 응용 프로그램 비밀 키 및 Munchkin ID를 가져옵니다.
 1. [&#x200B; [!DNL Adobe Launch] 포털](https://experience.adobe.com/#/@amc/data-collection/home)에서 속성을 구성하십시오.

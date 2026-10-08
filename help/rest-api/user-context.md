@@ -3,26 +3,35 @@ title: 사용자 컨텍스트
 feature: REST API
 description: Marketo RTP User Context API를 활성화하고 사용하여 사용자 지정 변수를 설정하고, 방문 간에 사용자 데이터를 읽고, 보고 클릭한 캠페인을 추적하는 방법에 대해 알아봅니다.
 exl-id: b8daace2-07a5-4621-aa3a-03fa9f66ea73
-TQID: https://experienceleague.adobe.com/Ph0Tw-C9jzWaR4bYyUIXyzzoa2yjHQk2gt6tNA8H2mA
+TQID: 'https://experienceleague.adobe.com/Ph0Tw-C9jzWaR4bYyUIXyzzoa2yjHQk2gt6tNA8H2mA'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: e2290edd-b061-4880-9d79-dee306cf5aa9
+    internal-label: Implementation
   - id: ed6be6bb-75bb-4ea9-9a42-3bcaa65e1bcc
+    internal-label: Personalization
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
 subfeature_v2:
   - id: a1d50dda-6d94-4e16-8c30-5eb7181c4650
+    internal-label: Segmentation
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: b5ce8718-c3af-4fdb-a1a9-fca32f83a87c
+    internal-label: Implementation
   - id: e0eb8757-182f-49f3-94a4-1587d16f5094
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Personalization
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 273
+source-wordcount: '273'
 ht-degree: 5%
-
 ---
-
 # 사용자 컨텍스트
 
 User Context JavaScript API는 사용자 수준 및 방문자 수준 데이터를 여러 세션에 노출합니다. 이전 비헤이비어 및 데이터를 사용하여 고급 개인화를 만듭니다.

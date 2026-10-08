@@ -2,13 +2,23 @@
 title: 리드 API 업데이트 가져오기
 feature: REST API
 description: 리드 가져오기 활동 및 리드 변경 사항 엔드포인트 제한에 대한 변경 사항을 알아봅니다.
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
+feature_v2:
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
 source-wordcount: '311'
 ht-degree: 0%
-
 ---
-
 # 리드 API 업데이트 가져오기
 
 2026년 9월 30일부터 대상 목록에 10,000개 이상의 잠재 고객이 포함된 경우 `listId` 매개 변수를 포함하는 [잠재 고객 활동 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadActivitiesUsingGET) 또는 [잠재 고객 변경 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadChangesUsingGET) 엔드포인트에 대한 호출이 실패합니다. 끝점은 대상 정적 목록에 레코드가 너무 많음을 나타내는 1003 오류 코드를 반환합니다.
