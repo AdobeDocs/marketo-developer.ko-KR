@@ -37,7 +37,7 @@ ht-degree: 3%
 
 ## 쿼리
 
-ID[&#128279;](#by_id) 또는 [검색](#browse)별 랜딩 페이지 리디렉션 규칙을 쿼리합니다.
+ID](#by_id) 또는 [검색](#browse)별 [랜딩 페이지 리디렉션 규칙을 쿼리합니다.
 
 ### ID별
 
@@ -172,7 +172,7 @@ GET /rest/asset/v1/redirectRules.json&maxReturn=3
 | Marketo | 랜딩 페이지 ID | {&quot;type&quot;:&quot;landingPageId&quot;,&quot;value&quot;:&quot;1774&quot;} |
 | 비 Marketo | url | {&quot;type&quot;:&quot;url&quot;,&quot;value&quot;:&quot;www.contactLogs.com&quot;} |
 
-자세한 내용은 [다른 페이지로 Marketo 랜딩 페이지 리디렉션](https://experienceleague.adobe.com/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-actions/redirect-a-marketo-landing-page-to-another-page.html?lang=ko)을 참조하십시오.
+자세한 내용은 [다른 페이지로 Marketo 랜딩 페이지 리디렉션](https://experienceleague.adobe.com/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-actions/redirect-a-marketo-landing-page-to-another-page.html)을 참조하십시오.
 
 ```http
 POST /rest/asset/v1/redirectRules.json
