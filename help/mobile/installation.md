@@ -35,7 +35,7 @@ Marketo Mobile SDK을 설치 및 초기화하여 푸시 알림, 인앱 메시지
 
 ### 필요 조건
 
-1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)하고 응용 프로그램 비밀 키 및 Munchkin ID를 가져옵니다.
+1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)하고 응용 프로그램 비밀 키 및 Munchkin ID를 가져옵니다.
 1. 선택 사항: [푸시 알림 설정](push-notifications.md).
 
 ### CocoaPod를 통해 프레임워크 설치
@@ -149,7 +149,7 @@ private func application(_ app: UIApplication, open url: URL, options: [UIApplic
 
 ### 필요 조건
 
-1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)하고 응용 프로그램 비밀 키 및 Munchkin ID를 가져옵니다.
+1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)하고 응용 프로그램 비밀 키 및 Munchkin ID를 가져옵니다.
 1. 선택 사항: [푸시 알림 설정](push-notifications.md#android_setup_push).
 1. [Android용 Marketo SDK 다운로드](https://codeload.github.com/Marketo/android-sdk/zip/refs/heads/master)
 

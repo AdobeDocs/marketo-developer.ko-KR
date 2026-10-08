@@ -31,7 +31,7 @@ ht-degree: 25%
 
 [!DNL Marketo Engage] MCP 서버를 통해 다음 작업을 사용할 수 있습니다. 서버는 읽기 전용 또는 비파괴인 끝점을 제공합니다. AI 시스템은 `Delete` 또는 다른 파괴적 작업을 사용할 수 없습니다.
 
-Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 대한 자세한 내용은 [데이터 정보](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-ai/data-information) 페이지를 참조하십시오.
+Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 대한 자세한 내용은 [데이터 정보](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/marketo-ai/data-information) 페이지를 참조하십시오.
 
 ## 일괄 내보내기
 

@@ -137,7 +137,7 @@ Marketo 이메일 디자이너에서 [!UICONTROL Send Sample Email] 동작을 �
 - 리드, 연락처 또는 계정에 연결된 사용자 지정 개체를 참조할 수 있지만 두 개 이하여야 합니다.
 - 사용자 지정 오브젝트는 단일 연결, 리드, 연락처 또는 계정을 통해서만 참조될 수 있습니다.
 - 스크립트 편집기에서 사용 중인 필드의 확인란을 선택합니다. 그렇지 않으면 처리되지 않습니다
-- 각 사용자 지정 개체에 대해 사용자/연락처당 가장 최근에 업데이트된 10개의 레코드를 런타임 시 사용할 수 있습니다. 가장 최근에 업데이트된 색인 0에서 가장 오래된 색인 9로 레코드가 정렬됩니다. [지침에 따라](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/email-setup/change-custom-object-retrieval-limits-in-velocity-scripting)사용 가능한 레코드 수를 늘릴 수 있습니다.
+- 각 사용자 지정 개체에 대해 사용자/연락처당 가장 최근에 업데이트된 10개의 레코드를 런타임 시 사용할 수 있습니다. 가장 최근에 업데이트된 색인 0에서 가장 오래된 색인 9로 레코드가 정렬됩니다. [지침에 따라](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/email-setup/change-custom-object-retrieval-limits-in-velocity-scripting)사용 가능한 레코드 수를 늘릴 수 있습니다.
 - 이메일 내에 이메일 스크립트를 두 개 이상 포함하는 경우 스크립트는 위쪽에서 아래쪽으로 실행됩니다. 실행할 첫 번째 스크립트에 정의된 변수의 범위는 후속 스크립트에서 사용할 수 있습니다.
 - 도구 참조: [https://velocity.apache.org/tools/2.0/index.html](https://velocity.apache.org/tools/2.0/index.html)
 - 줄바꿈 문자 &quot;\n&quot; 또는 &quot;\r\n&quot;을 포함하는 토큰에 대한 참고 사항입니다. 샘플 보내기 또는 배치 캠페인을 통해 이메일을 전송하면 토큰의 새 줄 문자가 공백으로 대체됩니다. 트리거 캠페인을 통해 이메일을 전송하면 줄바꿈 문자가 그대로 유지됩니다.
