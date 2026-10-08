@@ -3,25 +3,35 @@ title: Marketo 통합 우수 사례
 feature: REST API
 description: 할당량, 비율 및 동시 사용 제한, 일괄 가져오기 및 내보내기, 캐싱 및 지연 계획에 대해 다루는 Marketo API 통합 모범 사례입니다.
 exl-id: 1e418008-a36b-4366-a044-dfa9fe4b5f82
-TQID: https://experienceleague.adobe.com/Ld-rmFCwKSx-0W2-ceYICu0FQHK8BKAC1QgqtiOWDn4
+TQID: 'https://experienceleague.adobe.com/Ld-rmFCwKSx-0W2-ceYICu0FQHK8BKAC1QgqtiOWDn4'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: b13bd2ad-8e65-49e5-9691-2a0d31067b35
+    internal-label: Integrations
   - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+    internal-label: Configuration
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+    internal-label: Programs
   - id: f71e690b-4480-4b67-9ef5-88f42f9cdfdb
+    internal-label: Resources
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: df401a2a-327d-468c-a5e4-b7b7ccd071a0
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Data integration
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 866
+source-wordcount: '866'
 ht-degree: 0%
-
 ---
-
 # Marketo 통합 우수 사례
 
 Marketo 인스턴스의 공유 API 제한에 대한 통합 디자인을 참조하십시오. 일괄 처리, 캐싱 및 일관된 요청 속도를 사용하여 처리량과 안정성을 개선합니다.

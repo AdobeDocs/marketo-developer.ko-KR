@@ -3,20 +3,23 @@ title: 리치 미디어 권장 사항
 description: Marketo Predictive Content RTP 태그, template1 template2 template3 div, GET to populate, SET 을 사용하여 리치 미디어 권장 사항을 설정하여 범주를 구성합니다.
 feature: Javascript
 exl-id: ee92e46d-e529-40a2-a0d0-ee233916f004
-TQID: https://experienceleague.adobe.com/ygm5h1FJZZW4mC318-fRR3VAcO6j1sitcAeqIUjDTbI
+TQID: 'https://experienceleague.adobe.com/ygm5h1FJZZW4mC318-fRR3VAcO6j1sitcAeqIUjDTbI'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+    internal-label: Configuration
+  - id: dda1332a-c3e0-583f-9d9b-15f1934e0ad3
+    internal-label: Javascript
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 814
-ht-degree: 4%
-
+source-wordcount: '814'
+ht-degree: 3%
 ---
-
 # 리치 미디어 권장 사항
 
 리치 미디어 권장 사항 템플릿을 표시하려면 필요한 태그와 API 호출을 페이지에 추가합니다.
@@ -28,7 +31,7 @@ ht-degree: 4%
 1. 페이지 본문에서:
    1. 템플릿을 표시할 위치에 템플릿 태그(div 클래스)를 배치합니다.
 
-자세한 내용은 [웹 리치 미디어에 대한 예측 콘텐츠 사용](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media)을 참조하세요.
+자세한 내용은 [웹 리치 미디어에 대한 예측 콘텐츠 사용](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/predictive-content/enabling-predictive-content/enable-predictive-content-for-web-rich-media)을 참조하세요.
 
 ## 템플릿 태그
 

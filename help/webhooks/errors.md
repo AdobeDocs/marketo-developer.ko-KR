@@ -3,18 +3,24 @@ title: 오류수
 feature: Webhooks
 description: Marketo Webhook 오류 코드, 리드 필드를 업데이트하는 데 2xx 응답이 필요한 이유, Webhook에서 오류를 포착하고 처리하는 방법이 호출되는지 알아봅니다.
 exl-id: adce40c3-87b1-4f31-8995-eb64e8a72b55
-TQID: https://experienceleague.adobe.com/N2jNA4EUMMTUFL9uJHZhOor6Tlz4-EXWciwoXrPml48
+TQID: 'https://experienceleague.adobe.com/N2jNA4EUMMTUFL9uJHZhOor6Tlz4-EXWciwoXrPml48'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
+feature_v2:
+  - id: b13bd2ad-8e65-49e5-9691-2a0d31067b35
+    internal-label: Integrations
+subfeature_v2:
+  - id: fc9b09fe-b844-4544-887b-e420c3b82065
+    internal-label: Webhooks
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 210
+source-wordcount: '210'
 ht-degree: 2%
-
 ---
-
 # 오류수
 
 이 페이지에서는 Marketo 웹후크의 오류 응답 코드와 웹후크 오류 처리 방법에 대해 설명합니다.

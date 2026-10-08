@@ -3,20 +3,26 @@ title: 일괄 추출
 feature: REST API
 description: Marketo 벌크 추출 REST API를 사용하여 OAuth, 작업 큐 및 500MB 일일 제한으로 리드, 활동, 프로그램 멤버 및 사용자 지정 개체를 내보내는 방법에 대해 알아봅니다.
 exl-id: 6a15c8a9-fd85-4c7d-9f65-8b2e2cba22ff
-TQID: https://experienceleague.adobe.com/ECSchsjqp8fyxXbUGl5DgXHUkXuN0sIUc3yJfVaIe1E
+TQID: 'https://experienceleague.adobe.com/ECSchsjqp8fyxXbUGl5DgXHUkXuN0sIUc3yJfVaIe1E'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: f71e690b-4480-4b67-9ef5-88f42f9cdfdb
+    internal-label: Resources
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 1a442b6008fbb8f05ad346f1b7185a5b2e22f0e4
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 1525
+source-wordcount: '1525'
 ht-degree: 0%
-
 ---
-
 # 일괄 추출
 
 Marketo Bulk Extract는 대규모 개인 및 개인 관련 데이터 세트를 검색하는 인터페이스를 제공합니다. 인터페이스는 현재 다음 네 가지 객체 유형에 사용할 수 있습니다.

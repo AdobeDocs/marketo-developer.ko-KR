@@ -3,31 +3,40 @@ title: 이메일
 feature: REST API
 description: 예측 콘텐츠 및 A/B 테스트 제한에 대한 메모를 사용하여 Marketo Asset REST API를 사용하여 ID, 이름 또는 폴더 탐색별로 이메일 에셋을 쿼리하고 관리하는 방법에 대해 알아봅니다.
 exl-id: 6875730d-c74a-42cf-a3d2-dad7a3ac535d
-TQID: https://experienceleague.adobe.com/t2FyPbwS836MvOe5rL0rVS7ibtzzZMmXwmgHBDZEr8Q
+TQID: 'https://experienceleague.adobe.com/t2FyPbwS836MvOe5rL0rVS7ibtzzZMmXwmgHBDZEr8Q'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+    internal-label: Database
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+    internal-label: Programs
   - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
+    internal-label: Templates
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Metadata
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 1763
+source-wordcount: '1763'
 ht-degree: 1%
-
 ---
-
 # 이메일
 
 [이메일 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Emails)
 
 이메일 REST 엔드포인트를 사용하여 이메일 에셋을 쿼리하고 관리합니다.
 
-전자 메일에 [Marketo 예측 콘텐츠](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/predictive-content/working-with-predictive-content/understanding-predictive-content)가 포함된 경우 다음 끝점이 실패하고 오류 코드 709와 해당 오류 메시지가 표시됩니다.
+전자 메일에 [Marketo 예측 콘텐츠](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/predictive-content/working-with-predictive-content/understanding-predictive-content)가 포함된 경우 다음 끝점이 실패하고 오류 코드 709와 해당 오류 메시지가 표시됩니다.
 
 - [이메일 콘텐츠 가져오기](https://developer.adobe.com/marketo-apis/api/asset#operation/getEmailContentByIdUsingGET)
 - [이메일 콘텐츠 섹션 업데이트](https://developer.adobe.com/marketo-apis/api/asset#operation/updateEmailComponentContentUsingPOST)
@@ -37,7 +46,7 @@ ht-degree: 1%
 
 전자 메일은 템플릿과 동일한 쿼리 패턴을 지원합니다. [ID](https://developer.adobe.com/marketo-apis/api/asset#operation/getEmailByIdUsingGET), [이름](https://developer.adobe.com/marketo-apis/api/asset#operation/getEmailByNameUsingGET) 및 [검색](https://developer.adobe.com/marketo-apis/api/asset#operation/getEmailUsingGET). 이름 기준 및 검색 엔드포인트는 폴더 필터링도 지원합니다.
 
-전자 메일이 [A/B 테스트](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/email-programs/email-program-actions/email-test-a-b-test/add-an-a-b-test)를 사용하는 전자 메일 프로그램에 속하는 경우 다음 엔드포인트는 해당 전자 메일을 반환하지 않습니다.
+전자 메일이 [A/B 테스트](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/email-programs/email-program-actions/email-test-a-b-test/add-an-a-b-test)를 사용하는 전자 메일 프로그램에 속하는 경우 다음 엔드포인트는 해당 전자 메일을 반환하지 않습니다.
 
 - [ID로 이메일 받기](https://developer.adobe.com/marketo-apis/api/asset#operation/getEmailByIdUsingGET)
 - [이름으로 이메일 받기](https://developer.adobe.com/marketo-apis/api/asset#operation/getEmailByNameUsingGET)
@@ -535,7 +544,7 @@ type=Text&value=<h1>Hello World!</h1>&textValue=Hello World!
 
 ## 모듈
 
-이메일 편집기 1.0에서 모듈은 템플릿에 정의된 이메일 섹션입니다. 모듈은 [전자 메일 템플릿 구문](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Modules)에 설명된 대로 요소, 변수 및 기타 HTML 콘텐츠를 포함할 수 있습니다.
+이메일 편집기 1.0에서 모듈은 템플릿에 정의된 이메일 섹션입니다. 모듈은 [전자 메일 템플릿 구문](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Modules)에 설명된 대로 요소, 변수 및 기타 HTML 콘텐츠를 포함할 수 있습니다.
 
 모듈 API를 사용하여 이메일 내 모듈을 관리합니다. HTTP POST를 사용하는 모듈 끝점의 경우 요청 본문을 JSON이 아닌 `application/x-www-form-urlencoded`(으)로 형식을 지정합니다.
 
@@ -909,7 +918,7 @@ name=MarketoVideo
 
 ## 변수
 
-이메일 편집기 1.0에서 변수는 이메일 요소에 대한 값을 저장합니다. [이메일 템플릿 구문](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Variables)에 설명된 대로 Marketo 관련 구문을 HTML에 추가하여 각 변수를 정의합니다. 변수 API를 사용하여 이메일 내 변수를 관리합니다.
+이메일 편집기 1.0에서 변수는 이메일 요소에 대한 값을 저장합니다. [이메일 템플릿 구문](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/email-editor-2/email-template-syntax#EmailTemplateSyntax-Variables)에 설명된 대로 Marketo 관련 구문을 HTML에 추가하여 각 변수를 정의합니다. 변수 API를 사용하여 이메일 내 변수를 관리합니다.
 
 ### 쿼리
 

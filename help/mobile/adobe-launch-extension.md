@@ -1,31 +1,35 @@
 ---
-title: ' [!DNL Adobe Launch]용 Marketo Mobile 확장'
+title: '[!DNL Adobe Launch]용 Marketo Mobile 확장'
 feature: Mobile Marketing
 description: 푸시 알림 및 인앱 메시지 설정을 포함하여 iOS 및 Android용 Adobe Launch에 Marketo Mobile SDK 확장 기능을 설치 및 구성합니다.
 exl-id: 2f8691ff-0442-45a5-aeba-c91c3af5c711
-TQID: https://experienceleague.adobe.com/Bk5GTnQjm6NDosl5Iw6TS-NRjH8owNRUKoE0mZ-H3pY
+TQID: 'https://experienceleague.adobe.com/Bk5GTnQjm6NDosl5Iw6TS-NRjH8owNRUKoE0mZ-H3pY'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+    internal-label: Configuration
+  - id: 44b89f75-c1af-5353-8094-79b278102d46
+    internal-label: Mobile Marketing
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: d095671a-1355-40aa-8b5f-06c33c68080b
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Security
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 303
+source-wordcount: '303'
 ht-degree: 0%
-
 ---
-
 # [!DNL Adobe Launch]용 Marketo Mobile 확장
 
 푸시 알림, 인앱 메시지 또는 둘 다를 전송하려면 [!DNL Adobe Launch]에 Marketo Mobile SDK 확장을 설치하십시오.
 
 ## 필요 조건
 
-- [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)하고 응용 프로그램 비밀 키 및 Munchkin ID를 가져옵니다.
+- [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)하고 응용 프로그램 비밀 키 및 Munchkin ID를 가져옵니다.
 - [!DNL Adobe Launch] 포털의 설치 지침을 따르십시오.
 - 선택 사항: [푸시 알림 설정](push-notifications.md).
 

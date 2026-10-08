@@ -3,13 +3,25 @@ title: 목록 멤버십(정적 목록)
 feature: REST API, Static Lists
 description: Marketo 리드 데이터베이스 REST API를 사용하여 정적 목록에 리드를 추가하고, 리드를 제거하고, 목록 구성원을 검색하고, 목록 구성원을 확인합니다.
 exl-id: b8f74bcf-834a-44db-81fd-621048afeba4
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
+feature_v2:
+  - id: c56e5f8f-221f-55c2-8170-b1a9e10687cb
+    internal-label: Static Lists
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
 source-wordcount: '415'
 ht-degree: 5%
-
 ---
-
 # 목록 멤버십(정적 목록)
 
 [목록 멤버십 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Static-Lists)

@@ -3,26 +3,35 @@ title: 잠재 고객 추적
 description: Marketo Munchkin JavaScript을 포함하고, 방문 횟수 및 클릭 수를 추적하고, 알려진 리드와 익명 리드를 관리하고, 도메인 간 쿠키를 관리하고, 스마트 캠페인을 옵트아웃하는 방법에 대해 알아봅니다.
 feature: Munchkin Tracking Code, Javascript
 exl-id: 7ece5133-9d32-4be3-a940-4ac0310c4d8b
-TQID: https://experienceleague.adobe.com/nGUcLLgL9X7PBKf2E5IzppDj8e-SyEtxmkQaESd90mE
+TQID: 'https://experienceleague.adobe.com/nGUcLLgL9X7PBKf2E5IzppDj8e-SyEtxmkQaESd90mE'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: a7170d27-32ab-462b-a333-269abc654483
+    internal-label: Smart Campaigns
   - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+    internal-label: Configuration
   - id: d1d0a9cd-295d-4976-8c39-ddae266f240e
+    internal-label: Administration
+  - id: 1c1a93b2-f024-5627-9905-6faf6fcc22be
+    internal-label: Munchkin Tracking Code
+  - id: dda1332a-c3e0-583f-9d9b-15f1934e0ad3
+    internal-label: Javascript
 subfeature_v2:
   - id: d0251300-e25f-466f-9856-7e11ce8fa7aa
+    internal-label: Smart lists
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Administration
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 716
+source-wordcount: '716'
 ht-degree: 0%
-
 ---
-
 # 잠재 고객 추적 API
 
 Marketo의 Munchkin JavaScript은 Marketo 랜딩 페이지 및 외부 웹 페이지에서 페이지 방문 및 링크 클릭을 추적합니다. Marketo은 이러한 상호 작용을 &quot;웹 페이지 방문&quot; 및 &quot;웹 페이지에서 링크를 클릭함&quot; 활동으로 기록합니다.
@@ -123,7 +132,7 @@ Munchkin 쿠키는 `example.com`과(와) 같은 각 두 번째 수준 도메인�
 
 ## Beta
 
-랜딩 페이지에 Munchkin 베타 채널을 옵트인하려면 [관리자 -> 보물 상자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features)&#x200B;(으)로 이동하여 &quot;랜딩 페이지에 Munchkin Beta&quot; 설정을 활성화하십시오.
+랜딩 페이지에 Munchkin 베타 채널을 옵트인하려면 [관리자 -> 보물 상자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/settings/enable-or-disable-treasure-chest-features)&#x200B;(으)로 이동하여 &quot;랜딩 페이지에 Munchkin Beta&quot; 설정을 활성화하십시오.
 
 이 설정은 **[!UICONTROL Admin]** -> **[!UICONTROL Munchkin]** 메뉴에 코드 조각을 추가합니다. 이러한 코드 조각을 사용하여 외부 사이트에서 베타 버전을 실행할 수 있습니다.
 

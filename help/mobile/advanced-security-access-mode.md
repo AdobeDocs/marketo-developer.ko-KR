@@ -3,20 +3,24 @@ title: 고급 보안 액세스 모드
 feature: Mobile Marketing
 description: HMAC 서명 생성, 서버 엔드포인트 설정, 장치 ID 사용 및 Marketo과 SDK의 예를 포함하는 iOS 모바일 Android용 고급 보안 액세스 모드에 대해 알아봅니다
 exl-id: bd4730ff-708b-465e-b494-485a4dbf67ff
-TQID: https://experienceleague.adobe.com/F6lH1aGbCakK-E6IU4wLwYw58BG2-CRE-Ras2bMHeO8
+TQID: 'https://experienceleague.adobe.com/F6lH1aGbCakK-E6IU4wLwYw58BG2-CRE-Ras2bMHeO8'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
+feature_v2:
+  - id: 44b89f75-c1af-5353-8094-79b278102d46
+    internal-label: Mobile Marketing
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: d095671a-1355-40aa-8b5f-06c33c68080b
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Security
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 217
+source-wordcount: '217'
 ht-degree: 1%
-
 ---
-
 # 고급 보안 액세스 모드
 
 고급 보안 액세스 모드를 사용하려면 Marketo SDK에서 보안 서명을 검색하고 설정해야 합니다. SDK은 서명을 설정 및 제거하는 메서드와 장치 ID를 검색하는 유틸리티 메서드를 제공합니다.

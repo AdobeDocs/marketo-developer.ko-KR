@@ -3,33 +3,39 @@ title: 설치
 feature: Mobile Marketing
 description: 푸시 및 인앱 메시지를 활성화하면서 CocoaPods, Swift Package Manager 또는 Gradle을 사용하여 iOS 및 Android에서 Marketo Mobile SDK을 설치하고 초기화하는 방법에 대해 안내합니다.
 exl-id: e0b79d85-3509-46d2-a77d-cee211c5ec7f
-TQID: https://experienceleague.adobe.com/zYNoGPwJTQnqmP6CH0NDbmb-b8vAKRScMmms6vy0Sb4
+TQID: 'https://experienceleague.adobe.com/zYNoGPwJTQnqmP6CH0NDbmb-b8vAKRScMmms6vy0Sb4'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+    internal-label: Configuration
   - id: e2290edd-b061-4880-9d79-dee306cf5aa9
+    internal-label: Implementation
   - id: f71e690b-4480-4b67-9ef5-88f42f9cdfdb
+    internal-label: Resources
+  - id: 44b89f75-c1af-5353-8094-79b278102d46
+    internal-label: Mobile Marketing
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: b5ce8718-c3af-4fdb-a1a9-fca32f83a87c
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Implementation
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 765
+source-wordcount: '765'
 ht-degree: 0%
-
 ---
-
 # 설치
 
 Marketo Mobile SDK을 설치 및 초기화하여 푸시 알림, 인앱 메시지 또는 둘 다를 전송합니다.
 
 ## iOS에 Marketo SDK 설치
 
-### 사전 요구 사항
+### 필요 조건
 
-1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)하고 응용 프로그램 비밀 키 및 Munchkin ID를 가져옵니다.
+1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)하고 응용 프로그램 비밀 키 및 Munchkin ID를 가져옵니다.
 1. 선택 사항: [푸시 알림 설정](push-notifications.md).
 
 ### CocoaPod를 통해 프레임워크 설치
@@ -141,9 +147,9 @@ private func application(_ app: UIApplication, open url: URL, options: [UIApplic
 
 ## Android에 Marketo SDK을 설치하는 방법
 
-### 사전 요구 사항
+### 필요 조건
 
-1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)하고 응용 프로그램 비밀 키 및 Munchkin ID를 가져옵니다.
+1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)하고 응용 프로그램 비밀 키 및 Munchkin ID를 가져옵니다.
 1. 선택 사항: [푸시 알림 설정](push-notifications.md#android_setup_push).
 1. [Android용 Marketo SDK 다운로드](https://codeload.github.com/Marketo/android-sdk/zip/refs/heads/master)
 
@@ -217,7 +223,7 @@ Android용 MME SDK은 Google의 [Firebase Cloud Messaging](https://firebase.goog
 
 1. 최신 Marketo Android SDK을 Android 앱에 통합합니다. [GitHub](https://github.com/Marketo/android-sdk)의 단계를 참조하세요.
 1. Firebase 콘솔에서 Firebase 앱을 구성합니다.
-   1. [&#128279;](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)Firebase 콘솔에서 프로젝트를 만들거나 추가합니다.
+   1. [](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)Firebase 콘솔에서 프로젝트를 만들거나 추가합니다.
       1. [Firebase 콘솔](https://accounts.google.com/ServiceLogin?passive=1209600&osid=1&continue=https://console.firebase.google.com/&followup=https://console.firebase.google.com/)에서 `Add Project`을(를) 선택합니다.
       1. 기존 Google Cloud 프로젝트 목록에서 GCM 프로젝트를 선택하고 `Add Firebase`을(를) 선택합니다.
       1. Firebase 시작 화면에서 `Add Firebase to your Android App`을(를) 선택합니다.

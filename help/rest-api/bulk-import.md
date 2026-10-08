@@ -3,20 +3,26 @@ title: 일괄 가져오기
 feature: REST API
 description: 다중 부분 업로드를 통해 리드, 사용자 지정 개체 및 프로그램 구성원을 로드하고 비동기 작업을 생성하며, 폴링 상태가 설정되고, 오류가 처리되는 Marketo 일괄 가져오기.
 exl-id: f7922fd2-8408-4d04-8955-0f8f58914d24
-TQID: https://experienceleague.adobe.com/lr9dyX-fY-oJ2LM5P0zE1m24HtFYKQYYbxMkVe--PkE
+TQID: 'https://experienceleague.adobe.com/lr9dyX-fY-oJ2LM5P0zE1m24HtFYKQYYbxMkVe--PkE'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+    internal-label: Database
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 526
+source-wordcount: '526'
 ht-degree: 2%
-
 ---
-
 # 일괄 가져오기
 
 일괄 가져오기는 대규모 사용자 및 사용자 관련 데이터 세트를 삽입하기 위한 인터페이스를 제공합니다. 세 가지 객체 유형을 가져올 수 있습니다.

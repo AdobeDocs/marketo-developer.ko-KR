@@ -3,25 +3,31 @@ title: 영업 담당자
 feature: REST API
 description: externalSalesPersonId를 사용하여 리드에 연결하고 쿼리, 업데이트 및 삭제를 수행하는 SFDC 또는 Dynamics 동기화를 통해 영업 담당자 레코드에 대한 Marketo REST API 안내서입니다.
 exl-id: f8ed5aa5-63c1-4c5b-8683-bf47eed1ea18
-TQID: https://experienceleague.adobe.com/JwLNgM0zgztyoYJotCiSdGxMixnzA0kvkFbvq8kEkzE
+TQID: 'https://experienceleague.adobe.com/JwLNgM0zgztyoYJotCiSdGxMixnzA0kvkFbvq8kEkzE'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+    internal-label: Database
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 363
+source-wordcount: '363'
 ht-degree: 0%
-
 ---
-
 # 영업 담당자
 
 [영업 직원 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Sales-Persons)
 
-영업 담당자 API는 [SFDC 동기화](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync)가 활성화된 구독에 대해 읽기 전용 액세스를 제공합니다.
+영업 담당자 API는 [SFDC 동기화](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync)가 활성화된 구독에 대해 읽기 전용 액세스를 제공합니다.
 
 영업 사원은 잠재 고객 레코드의 영업 사원을 나타내는 개인 레코드입니다. 각 잠재 고객 레코드의 externalSalesPersonId 필드는 영업 담당자와 관련이 있습니다. 이 필드가 채워지면 Marketo이 리드 레코드에서 해당 리드 소유자 조회 필드를 채웁니다. 그런 다음 관련 필터 및 토큰을 사용할 수 있습니다.
 

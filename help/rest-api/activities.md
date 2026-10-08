@@ -3,22 +3,29 @@ title: 활동
 feature: REST API
 description: Marketo Engage 활동 REST API를 사용하여 활동 유형을 나열하고, 페이징 토큰으로 리드 활동을 가져오고, 사용자 지정 및 데이터 값 변경을 처리합니다.
 exl-id: 1e69af23-2b0c-467a-897c-1dcf81343e73
-TQID: https://experienceleague.adobe.com/62keaj4uNoxIPCzr9AQzKrIsfuHBvC25knYisZRUvF4
+TQID: 'https://experienceleague.adobe.com/62keaj4uNoxIPCzr9AQzKrIsfuHBvC25knYisZRUvF4'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+    internal-label: Database
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Metadata
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 1740
+source-wordcount: '1740'
 ht-degree: 0%
-
 ---
-
 # 활동
 
 Marketo은 리드 레코드와 관련된 다양한 활동 유형을 지원합니다. 거의 모든 변경, 작업 또는 흐름 단계가 리드의 활동 로그에 기록됩니다. API를 통해 이러한 활동을 검색하거나 스마트 목록 및 스마트 캠페인 필터 및 트리거에서 사용할 수 있습니다.

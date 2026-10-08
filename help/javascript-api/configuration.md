@@ -3,23 +3,30 @@ title: 구성
 description: JavaScript API를 사용하여 Marketo Munchkin을 구성합니다. altIds, anonymizeIP, asyncOnly, 쿠키 수명, domainLevel, 비콘 API와 같은 Munchkin.init 설정에 대해 알아봅니다.
 feature: Munchkin Tracking Code, Javascript
 exl-id: 4700ce7b-f624-4f27-871e-9a050f203973
-TQID: https://experienceleague.adobe.com/ip2cCGgoa83v8m9GYLYXe132veYxS1C6UWX1iLB6X5Q
+TQID: 'https://experienceleague.adobe.com/ip2cCGgoa83v8m9GYLYXe132veYxS1C6UWX1iLB6X5Q'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: b3b8a63f-51fc-40f6-a7d2-a31c5d49fb45
+    internal-label: Configuration
   - id: ea90ebee-5c84-42d9-8b21-006bdabc95a3
+    internal-label: Reporting
+  - id: 1c1a93b2-f024-5627-9905-6faf6fcc22be
+    internal-label: Munchkin Tracking Code
+  - id: dda1332a-c3e0-583f-9d9b-15f1934e0ad3
+    internal-label: Javascript
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Reporting
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 541
+source-wordcount: '541'
 ht-degree: 5%
-
 ---
-
 # 구성
 
 Munchkin은 동작을 사용자 지정하는 구성 설정을 허용합니다. [Munchkin.init()](api-reference.md#munchkin_init)의 두 번째 매개 변수에서 설정을 JavaScript 개체의 속성으로 전달합니다.
@@ -50,7 +57,7 @@ Munchkin.init("AAA-BBB-CCC", {
 | domainSelectorV2 | 부울 | true로 설정하면 는 향상된 방법을 사용하여 쿠키 도메인 속성을 설정하는 방법을 결정합니다. |
 | https만 | 부울 | 기본값은 false입니다. true로 설정되면 은 추적된 페이지가 https를 통해 제공되었을 때 보안 설정을 사용하도록 쿠키를 설정합니다. |
 | useBeaconAPI | 부울 | 기본값은 false입니다. true로 설정하면 [Beacon API](https://developer.mozilla.org/en-US/docs/Web/API/Beacon_API)를 사용하여 [XMLHttpRequest](https://developer.mozilla.org/ko_KR/docs/Web/API/XMLHttpRequest) 대신 비차단 요청을 보냅니다. 브라우저가 Beacon API를 지원하지 않으면 Munchkin은 XMLHttpRequest를 사용합니다. |
-| wsInfo | 문자열 | 작업 영역을 타깃팅합니다. 관리 > 통합 > Munchkin 메뉴에서 작업 공간을 선택하여 작업 공간 ID를 얻습니다.<br><br>이 설정은 익명 잠재 고객 레코드를 처음 만들 때만 적용됩니다. 해당 잠재 고객 레코드에 대해 Munchkin 쿠키 값이 설정된 후에는 wsInfo 매개 변수가 해당 파티션을 변경할 수 없습니다.<br><br>이 설정은 익명 리드에만 영향을 주므로 파티션별 [웹 보고서의 익명 방문자](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/reporting/basic-reporting/report-activity/display-people-or-anonymous-visitors-in-web-reports)에만 관련됩니다. |
+| wsInfo | 문자열 | 작업 영역을 타깃팅합니다. 관리 > 통합 > Munchkin 메뉴에서 작업 공간을 선택하여 작업 공간 ID를 얻습니다.<br><br>이 설정은 익명 잠재 고객 레코드를 처음 만들 때만 적용됩니다. 해당 잠재 고객 레코드에 대해 Munchkin 쿠키 값이 설정된 후에는 wsInfo 매개 변수가 해당 파티션을 변경할 수 없습니다.<br><br>이 설정은 익명 리드에만 영향을 주므로 파티션별 [웹 보고서의 익명 방문자](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/reporting/basic-reporting/report-activity/display-people-or-anonymous-visitors-in-web-reports)에만 관련됩니다. |
 
 ## 예
 

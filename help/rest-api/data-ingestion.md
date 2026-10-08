@@ -3,18 +3,30 @@ title: 데이터 수집
 feature: REST API, Dynamic Content, Static Lists
 description: 개인, 사용자 정의 오브젝트, 회사, 프로그램 멤버 및 목록에 대한 대량의 짧은 지연 시간 수집을 위해 Marketo 데이터 수집 API를 사용하십시오.
 exl-id: 1d501916-53ac-42d8-a804-abb4ab01c7e8
-TQID: https://experienceleague.adobe.com/xby7hs-CSLrVzy-FXEBi1FeU1-ca7vI4kB85BYJ9snk
+TQID: 'https://experienceleague.adobe.com/xby7hs-CSLrVzy-FXEBi1FeU1-ca7vI4kB85BYJ9snk'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
+feature_v2:
+  - id: c56e5f8f-221f-55c2-8170-b1a9e10687cb
+    internal-label: Static Lists
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+  - id: ed6be6bb-75bb-4ea9-9a42-3bcaa65e1bcc
+    internal-label: Personalization
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
+  - id: cdd4e0f6-e87e-453f-88ee-2ee54a7de272
+    internal-label: Dynamic content
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 2151
+source-wordcount: '2153'
 ht-degree: 14%
-
 ---
-
 # 데이터 수집 API
 
 데이터 수집 API는 대량의 짧은 대기 시간 및 고가용성 서비스입니다. 최소한의 지연으로 대량의 개인 및 개인 관련 데이터를 수집하는 데 사용합니다.

@@ -2,13 +2,23 @@
 title: 리드 API 업데이트 가져오기
 feature: REST API
 description: 리드 가져오기 활동 및 리드 변경 사항 엔드포인트 제한에 대한 변경 사항을 알아봅니다.
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+product_v2:
+  - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
+feature_v2:
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
 source-wordcount: '311'
 ht-degree: 0%
-
 ---
-
 # 리드 API 업데이트 가져오기
 
 2026년 9월 30일부터 대상 목록에 10,000개 이상의 잠재 고객이 포함된 경우 `listId` 매개 변수를 포함하는 [잠재 고객 활동 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadActivitiesUsingGET) 또는 [잠재 고객 변경 가져오기](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadChangesUsingGET) 엔드포인트에 대한 호출이 실패합니다. 끝점은 대상 정적 목록에 레코드가 너무 많음을 나타내는 1003 오류 코드를 반환합니다.
@@ -28,7 +38,7 @@ Marketo Engage 통합을 담당하는 사람 또는 팀과 이 문서를 공유�
 사용 사례에 따라 다음 마이그레이션 옵션 중 하나를 사용합니다.
 
 * 활동 추출에 사용되는 정적 목록을 10,000명의 멤버로 제한합니다. 기존 목록을 더 작은 목록으로 분할하여 동일한 대상을 활동에 대해 계속 폴링합니다.
-* 일괄 활동 추출 또는 데이터 스트림을 사용하여 활동 또는 데이터 값 변경 사항을 추출합니다. [getLeadByListId](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByListIdUsingGET_1) 또는 [잠재 고객 대량 추출](https://experienceleague.adobe.com/ko/docs/marketo-developer/marketo/rest/bulk-extract/bulk-lead-extract)을 사용하여 정적 목록 멤버십에 결과를 참여하십시오.
+* 일괄 활동 추출 또는 데이터 스트림을 사용하여 활동 또는 데이터 값 변경 사항을 추출합니다. [getLeadByListId](https://developer.adobe.com/marketo-apis/api/mapi#operation/getLeadsByListIdUsingGET_1) 또는 [잠재 고객 대량 추출](https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/rest/bulk-extract/bulk-lead-extract)을 사용하여 정적 목록 멤버십에 결과를 참여하십시오.
 
 ## 내가 아무것도 안 하면 어떻게 될까?
 

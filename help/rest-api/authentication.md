@@ -3,18 +3,24 @@ title: 인증
 feature: REST API
 description: 2개의 legged OAuth 2.0으로 Marketo REST API를 인증하고, 액세스 토큰을 생성 및 사용하고, 인증 헤더로 전환하고, 만료를 관리하고, 601 및 602 오류를 처리합니다.
 exl-id: f89a8389-b50c-4e86-a9e4-6f6acfa98e7e
-TQID: https://experienceleague.adobe.com/cIeI0m61CyIWq4HEosZ-QAsxzZb0WcrQRpCud2qysfY
+TQID: 'https://experienceleague.adobe.com/cIeI0m61CyIWq4HEosZ-QAsxzZb0WcrQRpCud2qysfY'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
+feature_v2:
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: eb4e99aff94f3106b96f999fc56a6db7c5598b1f
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 554
+source-wordcount: '554'
 ht-degree: 0%
-
 ---
-
 # 인증
 
 Marketo REST API는 인증을 위해 두 개의 OAuth 2.0을 사용합니다. 사용자 지정 서비스는 액세스 토큰을 얻는 데 사용되는 클라이언트 ID와 클라이언트 암호를 제공합니다.

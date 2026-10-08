@@ -3,30 +3,35 @@ title: PhoneGap
 feature: Mobile Marketing
 description: Cordova를 사용하여 Marketo PhoneGap 플러그인 설정, Firebase 클라우드 메시징 구성, iOS 및 Android 푸시 활성화, 알림 추적 및 SDK 초기화.
 exl-id: 99f14c76-9438-4942-9309-643bca434d07
-TQID: https://experienceleague.adobe.com/eFAwR7r5IE6vKigsEWrJdCmC3VrfB-nl0h8x7Vgt1VY
+TQID: 'https://experienceleague.adobe.com/eFAwR7r5IE6vKigsEWrJdCmC3VrfB-nl0h8x7Vgt1VY'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: b0bb9048-d951-48d8-8232-45cf248a7e27
+    internal-label: Forms
   - id: ea90ebee-5c84-42d9-8b21-006bdabc95a3
+    internal-label: Reporting
+  - id: 44b89f75-c1af-5353-8094-79b278102d46
+    internal-label: Mobile Marketing
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: aa2f3246-cb95-4b30-8899-fdf7d73550cc
-source-git-commit: 3e6d310c5aec1a3435424fb122b71d825db5af0e
+    internal-label: Reporting
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 758
+source-wordcount: '758'
 ht-degree: 2%
-
 ---
-
 # PhoneGap
 
 Marketo PhoneGap 플러그인을 Cordova 앱과 통합합니다.
 
 ## 필요 조건
 
-1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)하고 응용 프로그램 비밀 키 및 Munchkin ID를 가져옵니다.
+1. [Marketo 관리자에서 응용 프로그램을 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/mobile-marketing/admin/add-a-mobile-app)하고 응용 프로그램 비밀 키 및 Munchkin ID를 가져옵니다.
 1. [iOS](push-notifications.md) 또는 [Android](push-notifications.md)에 대한 푸시 알림을 설정합니다.
 1. [PhoneGap/Cordova CLI를 설치합니다](https://cordova.apache.org/docs/en/latest/guide/cli/).
 
@@ -76,7 +81,7 @@ repositories{
 1. Firebase 클라우드 메시징 지원
 
 1. Firebase 콘솔에서 Firebase 앱을 구성합니다.
-   1. [&#128279;](https://console.firebase.google.com/)Firebase 콘솔에서 프로젝트를 만들거나 추가합니다.
+   1. [](https://console.firebase.google.com/)Firebase 콘솔에서 프로젝트를 만들거나 추가합니다.
       1. [Firebase 콘솔](https://console.firebase.google.com/)에서 **[!UICONTROL Add Project]**&#x200B;을(를) 선택합니다.
       1. 기존 Google Cloud 프로젝트 목록에서 GCM 프로젝트를 선택하고 **[!UICONTROL Add Firebase]**&#x200B;을(를) 선택합니다.
       1. Firebase 시작 화면에서 &#39;Android 앱에 Firebase 추가&#39;를 선택합니다.

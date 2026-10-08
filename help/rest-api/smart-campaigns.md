@@ -3,24 +3,32 @@ title: 스마트 캠페인
 feature: REST API, Smart Campaigns
 description: ID 또는 이름별 쿼리, 필터 찾아보기, 복제 삭제 만들기, 일정 또는 요청 트리거 등 스마트 캠페인용 Marketo REST API를 사용하는 방법에 대해 알아봅니다
 exl-id: 540bdf59-b102-4081-a3d7-225494a19fdd
-TQID: https://experienceleague.adobe.com/iysRjtqd9plkreyIMuNjAF3YVFHtDUIrc-GInB4V8mg
+TQID: 'https://experienceleague.adobe.com/iysRjtqd9plkreyIMuNjAF3YVFHtDUIrc-GInB4V8mg'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: a7170d27-32ab-462b-a333-269abc654483
+    internal-label: Smart Campaigns
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+    internal-label: Programs
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
 subfeature_v2:
   - id: ad89fb33-8541-4339-afe7-bb13d1633714
+    internal-label: Flow Step
   - id: d0251300-e25f-466f-9856-7e11ce8fa7aa
+    internal-label: Smart lists
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 978
+source-wordcount: '978'
 ht-degree: 1%
-
 ---
-
 # 스마트 캠페인
 
 [스마트 캠페인 엔드포인트 참조(자산)](https://developer.adobe.com/marketo-apis/api/asset#tag/Smart-Campaigns)
@@ -437,7 +445,7 @@ POST /rest/v1/campaigns/{id}/schedule.json
 
 캠페인 `id` 경로 매개 변수 및 `leads` 정수 계열 리드 ID가 필요합니다. 각 호출에는 최대 100개의 리드가 허용됩니다.
 
-선택적으로 `tokens` 배열 매개 변수를 사용하여 캠페인의 상위 프로그램에 로컬인 내 토큰을 재정의할 수 있습니다. `tokens`은(는) 최대 100개의 토큰을 허용합니다. 각 `tokens` 배열 항목에는 이름/값 쌍이 있습니다. 토큰 이름의 형식은 &quot;`{{my.name}}`&quot;이어야 합니다. [전자 메일에 시스템 토큰을 링크로 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/using-tokens/add-a-system-token-as-a-link-in-an-email) 접근 방식을 사용하여 &quot;viewAsWebpageLink&quot; 시스템 토큰을 추가하는 경우 `tokens`을(를) 사용하여 재정의할 수 없습니다. 대신 `tokens`을(를) 사용하여 &quot;viewAsWebPageLink&quot;를 재정의할 수 있는 [전자 메일에 웹 페이지로 보기 링크를 추가](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-a-view-as-web-page-link-to-an-email) 방법을 사용하십시오.
+선택적으로 `tokens` 배열 매개 변수를 사용하여 캠페인의 상위 프로그램에 로컬인 내 토큰을 재정의할 수 있습니다. `tokens`은(는) 최대 100개의 토큰을 허용합니다. 각 `tokens` 배열 항목에는 이름/값 쌍이 있습니다. 토큰 이름의 형식은 &quot;`{{my.name}}`&quot;이어야 합니다. [전자 메일에 시스템 토큰을 링크로 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/using-tokens/add-a-system-token-as-a-link-in-an-email) 접근 방식을 사용하여 &quot;viewAsWebpageLink&quot; 시스템 토큰을 추가하는 경우 `tokens`을(를) 사용하여 재정의할 수 없습니다. 대신 `tokens`을(를) 사용하여 &quot;viewAsWebPageLink&quot;를 재정의할 수 있는 [전자 메일에 웹 페이지로 보기 링크를 추가](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/general/functions-in-the-editor/add-a-view-as-web-page-link-to-an-email) 방법을 사용하십시오.
 
 JSON 요청 본문에 `leads` 및 `tokens` 매개 변수를 전달합니다.
 

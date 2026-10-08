@@ -3,20 +3,26 @@ title: 응답 매핑
 feature: Webhooks
 description: JSON 및 XML에 대한 Marketo Webhooks 응답 매핑, 특성을 리드 필드 , 점 및 배열 표기법 및 유형 호환성에 매핑합니다.
 exl-id: 95c6e33e-487c-464b-b920-3c67e248d84e
-TQID: https://experienceleague.adobe.com/-OGDeKLPS1KmWGIKj6BGq5DGXoCSj5ip-dVr7-kKDro
+TQID: 'https://experienceleague.adobe.com/-OGDeKLPS1KmWGIKj6BGq5DGXoCSj5ip-dVr7-kKDro'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+    internal-label: Database
+  - id: b13bd2ad-8e65-49e5-9691-2a0d31067b35
+    internal-label: Integrations
+subfeature_v2:
+  - id: fc9b09fe-b844-4544-887b-e420c3b82065
+    internal-label: Webhooks
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: bcf56d2102f2f60eac5ad3318d348fd020391e6b
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 369
+source-wordcount: '369'
 ht-degree: 0%
-
 ---
-
 # 응답 매핑
 
 Marketo은 JSON 또는 XML의 웹후크 데이터를 번역하고 해당 값을 리드 필드에 쓸 수 있습니다. Marketo 필드 매개 변수는 항상 필드의 SOAP API 이름을 사용합니다.

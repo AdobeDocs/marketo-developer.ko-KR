@@ -3,22 +3,29 @@ title: 일괄 프로그램 멤버 추출
 feature: REST API
 description: Marketo 일괄 프로그램 멤버 추출 REST API를 사용하여 권한 및 필드 메타데이터와 함께 ETL, 데이터 웨어하우징 및 아카이브에 대한 대규모 멤버 레코드를 내보낼 수 있습니다.
 exl-id: 6e0a6bab-2807-429d-9c91-245076a34680
-TQID: https://experienceleague.adobe.com/w4qaVTKSe0EORaSiURB6WbJXi29JUdEgfkb2dnfuVFw
+TQID: 'https://experienceleague.adobe.com/w4qaVTKSe0EORaSiURB6WbJXi29JUdEgfkb2dnfuVFw'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+    internal-label: Programs
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Metadata
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 1081
+source-wordcount: '1081'
 ht-degree: 2%
-
 ---
-
 # 일괄 프로그램 멤버 추출
 
 [벌크 프로그램 멤버 추출 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Bulk-Export-Program-Members)
@@ -246,7 +253,7 @@ GET /rest/v1/programs/members/describe.json
     <tr>
       <td>isExhausted</td>
       <td>부울</td>
-      <td><a href="https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/email-marketing/drip-nurturing/using-engagement-programs/people-who-have-exhausted-content">콘텐츠를 모두 사용한 사용자</a>의 프로그램 멤버십 레코드를 필터링하는 데 사용되는 부울을 허용합니다.</td>
+      <td><a href="https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/email-marketing/drip-nurturing/using-engagement-programs/people-who-have-exhausted-content">콘텐츠를 모두 사용한 사용자</a>의 프로그램 멤버십 레코드를 필터링하는 데 사용되는 부울을 허용합니다.</td>
     </tr>
     <tr>
       <td>양육케이던스</td>

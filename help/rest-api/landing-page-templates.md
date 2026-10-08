@@ -3,22 +3,33 @@ title: 랜딩 페이지 템플릿
 feature: REST API, Landing Pages
 description: 자유 형식 및 안내 유형에 대한 REST API 엔드포인트를 통해 Marketo 랜딩 페이지 템플릿을 관리하고 ID 또는 이름별로 쿼리하며, HTML을 만들고, 업데이트하고, 복제하고, Munchkin합니다.
 exl-id: f9d1255e-ec13-4b75-96d5-b4cc9457a51b
-TQID: https://experienceleague.adobe.com/U9K1MG-q2gIgJMgfM3lt1S4olETt8ln9seOIKZUncBY
+TQID: 'https://experienceleague.adobe.com/U9K1MG-q2gIgJMgfM3lt1S4olETt8ln9seOIKZUncBY'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: f82558ea-6af5-44eb-a424-5b3389abb0a3
+    internal-label: Templates
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+  - id: c2dbad80-0f5c-4d96-a798-2a65f93b8721
+    internal-label: Assets
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
+  - id: edda586e-0147-48f2-b791-992622a00783
+    internal-label: Landing pages
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Metadata
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 499
+source-wordcount: '499'
 ht-degree: 2%
-
 ---
-
 # 랜딩 페이지 템플릿
 
 [랜딩 페이지 템플릿 끝점 참조](https://developer.adobe.com/marketo-apis/api/asset#tag/Landing-Page-Templates)
@@ -29,7 +40,7 @@ ht-degree: 2%
 
 Marketo은 자유 형식의 안내 랜딩 페이지 템플릿을 제공합니다. 자유 형식 템플릿은 느슨한 구조의 편집 환경을 제공합니다. 안내식 템플릿은 템플릿 수준에서 요소 유형 및 위치를 제한할 수 있습니다.
 
-자세한 비교는 [자유 형식 페이지와 안내식 랜딩 페이지 비교](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages)를 참조하십시오.
+자세한 비교는 [자유 형식 페이지와 안내식 랜딩 페이지 비교](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/understanding-landing-pages/understanding-free-form-vs-guided-landing-pages)를 참조하십시오.
 
 ## 쿼리
 
@@ -180,9 +191,9 @@ name=Standard Template Clone&folder={"type": "Folder", "id": 732}
 
 승인하기 전에 템플릿은 안내식 또는 자유 형식 유형에 대한 요구 사항을 충족해야 합니다. 다음 리소스를 참조하십시오.
 
-- [자유 양식 랜딩 페이지 템플릿](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-free-form-landing-page-template)
-- [가이드 랜딩 페이지 템플릿](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template)
-- [안내식 템플릿 예](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/guided-landing-page-template-list)
+- [자유 양식 랜딩 페이지 템플릿](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-free-form-landing-page-template)
+- [가이드 랜딩 페이지 템플릿](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/create-a-guided-landing-page-template)
+- [안내식 템플릿 예](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/demand-generation/landing-pages/landing-page-templates/guided-landing-page-template-list)
 
 ## 삭제
 

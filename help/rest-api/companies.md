@@ -3,22 +3,29 @@ title: 회사
 feature: REST API
 description: Marketo 회사 REST API를 사용하여 회사 레코드를 설명, 쿼리 및 동기화하고, externalCompanyId로 필드 및 중복 제거를 관리하고, 읽기 전용 CRM 동기화를 메모합니다.
 exl-id: 80e514a2-1c86-46a7-82bc-e4db702189b0
-TQID: https://experienceleague.adobe.com/LdJYN4lx9JfcE-02zTz8ktfYXm4EdPtxMYOx9gGR0sg
+TQID: 'https://experienceleague.adobe.com/LdJYN4lx9JfcE-02zTz8ktfYXm4EdPtxMYOx9gGR0sg'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+    internal-label: Database
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Metadata
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 572
+source-wordcount: '572'
 ht-degree: 1%
-
 ---
-
 # 회사
 
 [회사 엔드포인트 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Companies)
@@ -27,7 +34,7 @@ ht-degree: 1%
 
 리드를 다른 회사에 추가하지 않으면 회사에서 리드를 제거할 수 없습니다. 회사 레코드에 연결된 리드는 해당 레코드에서 값이 리드 레코드에 있는 것처럼 값을 상속합니다.
 
-회사 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=ko) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=ko)가 활성화된 구독에 대해 읽기 전용 액세스를 제공합니다.
+회사 API는 [SFDC 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/salesforce-sync/sfdc-sync-details/sfdc-sync-field-sync.html?lang=en) 또는 [Microsoft Dynamics 동기화](https://experienceleague.adobe.com/docs/marketo/using/product-docs/crm-sync/microsoft-dynamics/microsoft-dynamics-sync-details/microsoft-dynamics-sync-user-sync.html?lang=en)가 활성화된 구독에 대해 읽기 전용 액세스를 제공합니다.
 
 ## 설명
 

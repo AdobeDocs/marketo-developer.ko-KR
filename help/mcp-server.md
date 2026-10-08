@@ -29,10 +29,12 @@ feature_v2:
 role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
     internal-label: Developer
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
     internal-label: Artificial intelligence
-source-git-commit: 6bbf9fa5b8192e02d7a465a652346545ae216450
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
 source-wordcount: '2176'
 ht-degree: 0%
@@ -44,7 +46,7 @@ ht-degree: 0%
 
 AI 도구가 MCP 서버를 호출하면 서버는 해당 요청의 자격 증명을 사용하여 해당 REST API 호출을 실행합니다. 서버측 소프트웨어를 설치, 배포 또는 실행할 필요가 없습니다.
 
-Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 대한 자세한 내용은 [데이터 정보](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/marketo-ai/data-information) 페이지를 참조하십시오.
+Marketo AI 및 Marketo Engage MCP 서버로 데이터를 처리하는 방법에 대한 자세한 내용은 [데이터 정보](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-ai/data-information) 페이지를 참조하십시오.
 
 >[!IMPORTANT]
 >

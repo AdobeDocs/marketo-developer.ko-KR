@@ -3,22 +3,30 @@ title: REST API
 feature: REST API
 description: Marketo REST API를 사용하고, API 사용자 및 LaunchPoint를 설정하고, 할당량 및 한도를 보고, 인증 헤더로 인증하고, 리드를 검색하는 방법에 대해 알아봅니다.
 exl-id: 4b9beaf0-fc04-41d7-b93a-a1ae3147ce67
-TQID: https://experienceleague.adobe.com/GqhWI816wWX-2zf89wWj-GXpg9i615HRFVl2ljdYVj0
+TQID: 'https://experienceleague.adobe.com/GqhWI816wWX-2zf89wWj-GXpg9i615HRFVl2ljdYVj0'
 product_v2:
   - id: b27e5950-9033-45ac-9f86-eb22e567f615
+    internal-label: Marketo Engage
 feature_v2:
   - id: b13bd2ad-8e65-49e5-9691-2a0d31067b35
+    internal-label: Integrations
   - id: c5f60233-d5ea-4453-a799-0ad258b4d399
+    internal-label: Database
   - id: e64968b2-4ee5-47f9-8cae-0588f184b9eb
+    internal-label: Programs
+  - id: dca84292-69e9-4116-a575-667d31fa060d
+    internal-label: APIs
+subfeature_v2:
+  - id: cf1396d8-ab85-4e93-b35d-d9b573024abf
+    internal-label: REST APIs
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
-source-git-commit: aeb0d5a176ffdd0910ee533353593bba95f91d08
+    internal-label: Admin
+source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
 workflow-type: tm+mt
-source-wordcount: 726
+source-wordcount: '726'
 ht-degree: 2%
-
 ---
-
 # REST API
 
 Marketo REST API는 다양한 시스템 기능에 대한 원격 액세스를 제공합니다. 프로그램을 만들고, 리드를 일괄적으로 가져오고, 세부 수준에서 Marketo 인스턴스를 제어하는 데 사용할 수 있습니다.
