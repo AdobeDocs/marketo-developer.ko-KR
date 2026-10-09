@@ -246,7 +246,7 @@ gemini mcp add --transport http -s user marketo https://marketo-mcp.adobe.io/mcp
 
 세션을 다시 시작하여 새 MCP 서버 구성을 선택합니다.
 
->GitHub Copilot이 포함된 [!TAB VS 코드]
+>[!TAB GitHub Copilot이 포함된  VS 코드]
 
 ### GitHub Copilot이 포함된 VS 코드 {#vscode}
 
