@@ -34,9 +34,9 @@ role_v2:
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
     internal-label: Artificial intelligence
-source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
+source-git-commit: 5c356507ac2551edfbb1c60dba7b167d7ef0b4c0
 workflow-type: tm+mt
-source-wordcount: '2176'
+source-wordcount: '2104'
 ht-degree: 0%
 ---
 
@@ -92,7 +92,6 @@ MCP는 API 사용에 따라 잠재적으로 민감한 필드를 포함한 데이
 
 * REST API 액세스가 활성화된 [!DNL Marketo] 인스턴스
 * [!DNL Marketo] LaunchPoint에서 API 자격 증명을 만드는 관리자 액세스
-* Cloud Desktop, Cursor, Codex, Claude Code(CLI), GitHub Copilot 포함 코드 또는 Gemini CLI와 같은 다른 호환 가능한 MCP 클라이언트 AI 도구 중 하나
 * MCP 서버 URL에 대한 네트워크 액세스: `https://marketo-mcp.adobe.io/mcp`
 
 ## Marketo 자격 증명 가져오기
@@ -118,20 +117,15 @@ MCP는 API 사용에 따라 잠재적으로 민감한 필드를 포함한 데이
 
 ## AI 도구 구성
 
-구성은 AI 도구에 따라 다릅니다. 다음 섹션에서는 일반적인 도구에 대한 연결 예를 제공합니다.
-
-* [클라우드 데스크탑](#claude-desktop)
-* [커서](#cursor)
-* [클라우드 코드 CLI](#claude-code)
-* [OpenAI 코드](#codex)
-* [Gemini CLI](#gemini-cli)
-* [GitHub Copilot이 포함된 VSCode](#vscode)
-* [군침](#glean)
-* [기타 도구](#other-tools)
+도구에 따라 구성이 약간 다릅니다. 다음은 일반적인 도구에 대한 연결 예제를 제공합니다.
 
 >[!TIP]
 >
 >여러 [!DNL Marketo] 인스턴스에 연결하려면 MCP 구성에 고유한 이름을 가진 개별 항목 `marketo-prod` 및 `marketo-staging`을(를) 추가하십시오. 각 항목에는 해당 자격 증명이 있습니다.
+
+>[!BEGINTABS]
+
+>[!TAB 클라우드 데스크톱]
 
 ### 클라우드 데스크탑 {#claude-desktop}
 
@@ -167,6 +161,8 @@ MCP는 API 사용에 따라 잠재적으로 민감한 필드를 포함한 데이
 
 1. 클라우드 데스크탑을 다시 시작합니다.
 
+>[!TAB 커서]
+
 ### 커서 {#cursor}
 
 커서 MCP 구성에 이미 다른 서버가 있는 경우 `mcpServers` 아래에 `marketo` 항목을 추가하십시오.
@@ -190,6 +186,8 @@ MCP는 API 사용에 따라 잠재적으로 민감한 필드를 포함한 데이
 
 커서를 재시작합니다.
 
+>[!TAB 코드 CLI]
+
 ### 클라우드 코드(CLI) {#claude-code}
 
 터미널에서 다음 명령을 실행하여 자격 증명을 대체하십시오.
@@ -202,6 +200,8 @@ claude mcp add --transport http marketo \
   --header "X-Marketo-Munchkin-Id: YOUR-MUNCHKIN-ID"
 ```
 
+>[!TAB OpenAI 코드]
+
 ### OpenAI 코드 {#codex}
 
 1. 설정 > MCP 서버 > 서버 추가 로 이동합니다.
@@ -213,6 +213,8 @@ claude mcp add --transport http marketo \
 * X-Marketo-Munchkin-Id: &quot;YOUR-MUNCHKIN-ID&quot;
 
 1. 저장 을 선택하여 프로세스를 완료합니다.
+
+>[!TAB Gemini CLI]
 
 ### Gemini CLI
 
@@ -244,6 +246,8 @@ gemini mcp add --transport http -s user marketo https://marketo-mcp.adobe.io/mcp
 
 세션을 다시 시작하여 새 MCP 서버 구성을 선택합니다.
 
+>[!TAB GitHub Copilot이 포함된  VS 코드]
+
 ### GitHub Copilot이 포함된 VS 코드 {#vscode}
 
 **[!UICONTROL Ctrl+Shift+P]**(또는 macOS의 **[!UICONTROL Cmd+Shift+P]**)을 누르고 **[!UICONTROL MCP: Open User Configuration]**&#x200B;을(를) 입력한 다음 Enter 키를 누릅니다. `mcp.json`을(를) 엽니다. `servers` 개체 내에 `marketo` 항목 추가:
@@ -264,9 +268,58 @@ gemini mcp add --transport http -s user marketo https://marketo-mcp.adobe.io/mcp
 }
 ```
 
->[!NOTE]
->
->보안을 위해 자격 증명을 직접 붙여넣는 대신 구성 파일에 환경 변수 보간을 사용합니다. `${MARKETO_CLIENT_SECRET}`과(와) 같은 구문을 사용하여 변수를 참조하고 환경에서 설정할 수 있습니다. 이렇게 하면 버전 제어 파일의 일반 텍스트에 자격 증명이 저장되지 않습니다.
+>[!TAB Copilot Studio]
+
+### 코파일럿 스튜디오
+
+Copilot Studio는 약간 다르게 작동합니다. YAML 정의 파일을 작성한 다음 Copilot Studio에서 커넥터 UI를 작성합니다. 여기서 사용자 지정 헤더를 정의합니다.
+
+새 커넥터를 만들 때 &quot;Swagger 편집기&quot;를 열고 다음 코드에 붙여넣습니다.
+
+```yaml
+swagger: '2.0'
+info:
+  title: Marketo MCP Server
+  description: Connect to the Marketo MCP server.
+  version: 1.0.0
+host: marketo-mcp.adobe.io
+basePath: /
+schemes:
+  - https
+paths:
+  /mcp:
+    post:
+      summary: Marketo MCP Server
+      description: Invoke the Marketo MCP server.
+      operationId: InvokeServer
+      x-ms-agentic-protocol: mcp-streamable-1.0
+      parameters:
+        - name: MARKETO_MCP_PROD_CLIENT_ID
+          in: header
+          description: Client ID.
+          type: string
+          required: true
+        - name: MARKETO_MCP_PROD_CLIENT_SECRET
+          in: header
+          description: Client secret.
+          type: string
+          required: true
+        - name: MARKETO_MCP_PROD_MUNCHKIN_ID
+          in: header
+          description: Munchkin ID.
+          type: string
+          required: true
+      responses:
+        '200':
+          description: Immediate Response
+securityDefinitions: {}
+security: []
+```
+
+커넥터를 업데이트한 다음 닫았다가 다시 엽니다.
+이제 연결 흐름을 따라 헤더 값을 채울 수 있습니다.
+
+>[!TAB 청소]
 
 ### 군침 {#glean}
 
@@ -277,6 +330,8 @@ Glean을 Marketo Engage MCP 서버에 연결하려면 [Glean 지원 팀](https:/
 | `X-Marketo-Client-Id` | 클라이언트 ID |
 | `X-Marketo-Client-Secret` | 클라이언트 암호 |
 | `X-Marketo-Munchkin-Id` | Munchkin 계정 ID |
+
+>[!TAB 기타 도구]
 
 ### 기타 도구 {#other-tools}
 
@@ -302,9 +357,7 @@ Adobe은 [!DNL Marketo] MCP 서버를 호스팅하고 공개 URL에 노출합니
 
 도구가 JSON 구성을 허용하는 경우 [Cursor](#cursor) 또는 [VS 코드](#vscode) 예제로 시작하고 도구의 스키마와 일치하도록 키(`mcpServers`, `servers`)를 조정합니다.
 
->[!NOTE]
->
->Gemini CLI는 확장 가능한 HTTP 및 사용자 지정 인증 헤더를 통해 원격 MCP 서버를 지원합니다. [!DNL Marketo] MCP 서버에 연결하려면 위의 연결 세부 정보를 사용하고 [Gemini CLI MCP 구성 설명서](https://geminicli.com/docs/tools/mcp-server/){target="_blank"}를 따르십시오. `settings.json`의 `mcpServers` 아래에 서버 항목을 추가하고 `httpUrl`을(를) `https://marketo-mcp.adobe.io/mcp`(으)로 설정한 다음 `headers`에서 세 개의 Marketo 인증 헤더를 제공하십시오. Gemini CLI에서 SSE 전송에 사용하는 `url`이(가) 아닌 `httpUrl`을(를) 사용합니다. 이 지침은 Gemini 웹 또는 모바일 앱이 아닌 Gemini CLI에 적용됩니다.
+>[!ENDTABS]
 
 ## 사용 가능한 작업
 
