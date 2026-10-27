@@ -248,7 +248,7 @@ gemini mcp add --transport http -s user marketo https://marketo-mcp.adobe.io/mcp
 
 세션을 다시 시작하고 `/mcp`을(를) 실행하여 연결을 확인하십시오. 자세한 내용은 [Gemini CLI MCP 구성](https://geminicli.com/docs/tools/mcp-server/){target="_blank"}을 참조하십시오.
 
->GitHub Copilot이 포함된 [!TAB VS 코드]
+>[!TAB GitHub Copilot이 포함된  VS 코드]
 
 ### GitHub Copilot이 포함된 VS 코드 {#vscode}
 
