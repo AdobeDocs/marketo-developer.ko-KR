@@ -31,7 +31,7 @@ role_v2:
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
     internal-label: Metadata
-source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
+source-git-commit: 1cdb28422994b772a0fa430e213facaf26817952
 workflow-type: tm+mt
 source-wordcount: '4807'
 ht-degree: 8%
@@ -41,9 +41,9 @@ ht-degree: 8%
 다음 참조를 사용하여 각 Marketo REST API 그룹에 대한 요청 매개 변수, 응답 스키마 및 예를 찾습니다.
 
 - [자산](https://developer.adobe.com/marketo-apis/api/asset)
-- [ID](https://developer.adobe.com/marketo-apis/api/identity/)
+- [ID](https://developer.adobe.com/marketo-apis/api/identity)
 - [리드 데이터베이스](https://developer.adobe.com/marketo-apis/api/mapi)
-- [사용자 관리](https://developer.adobe.com/marketo-apis/api/user/)
+- [사용자 관리](https://developer.adobe.com/marketo-apis/api/user)
 
 ## 엔드포인트 목록 {#endpoint_list}
 
