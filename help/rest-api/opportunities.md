@@ -21,14 +21,14 @@ role_v2:
 topic_v2:
   - id: a004cc84-67b9-4a33-a3a7-8ec7273ef4dc
     internal-label: Metadata
-source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
+source-git-commit: 1cdb28422994b772a0fa430e213facaf26817952
 workflow-type: tm+mt
 source-wordcount: '702'
 ht-degree: 0%
 ---
 # 기회
 
-[영업 기회 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Opportunities)
+[영업 기회 끝점 참조](https://developer.adobe.com/marketo-apis/api/mapi#tag/Oppofrtunities)
 
 Marketo은 영업 기회 레코드를 읽고, 쓰고, 만들고, 업데이트하는 API를 제공합니다. Marketo에서 중간 영업 기회 역할 개체는 영업 기회 레코드를 리드 및 연락처 레코드에 연결합니다. 따라서 영업 기회는 많은 개별 리드에 연결될 수 있습니다.
 

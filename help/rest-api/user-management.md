@@ -25,14 +25,14 @@ role_v2:
 topic_v2:
   - id: eddd9b14-83bd-4ff4-9072-54a4a484abb7
     internal-label: Administration
-source-git-commit: 5620f050ba834be3f6648650b5cc7d781ea394bf
+source-git-commit: 1cdb28422994b772a0fa430e213facaf26817952
 workflow-type: tm+mt
 source-wordcount: '1404'
 ht-degree: 6%
 ---
 # 사용자 관리
 
-[사용자 관리 끝점 참조](https://developer.adobe.com/marketo-apis/api/user/)
+[사용자 관리 끝점 참조](https://developer.adobe.com/marketo-apis/api/user)
 
 Marketo 사용자 관리 엔드포인트는 사용자 레코드에 대한 CRUD 작업을 수행합니다. 사용자를 만들려면 초대를 보냅니다. 그런 다음 사용자는 암호를 설정하고 Marketo에 처음으로 액세스합니다.
 
