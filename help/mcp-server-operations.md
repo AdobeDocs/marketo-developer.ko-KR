@@ -58,4 +58,4 @@ ht-degree: 0%
 
 사용 가능한 작업은 API 사용자 권한, [!DNL Marketo] 인스턴스에 대해 설정된 기능 및 MCP 클라이언트의 제한 사항에 따라 다릅니다. 데이터를 변경하거나 삭제하는 일부 작업은 확인 및 추가 액세스가 필요합니다. 범주를 지원한다고 해서 모든 REST 끝점에 대한 액세스를 의미하지는 않습니다.
 
-연결 지침 및 예제 프롬프트는 [MCP 서버](mcp-server.md#available-operations) 페이지를 참조하십시오. [!DNL Marketo] AI 및 [!DNL Marketo Engage] MCP 서버로 데이터를 처리하는 방법에 대한 자세한 내용은 [데이터 정보](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/marketo-ai/data-information) 페이지를 참조하십시오.
+연결 지침 및 예제 프롬프트는 [MCP 서버](mcp-server.md#available-operations) 페이지를 참조하십시오. [!DNL Marketo] AI 및 [!DNL Marketo Engage] MCP 서버로 데이터를 처리하는 방법에 대한 자세한 내용은 [데이터 정보](https://experienceleague.adobe.com/ko/docs/marketo/using/product-docs/marketo-ai/data-information) 페이지를 참조하십시오.
