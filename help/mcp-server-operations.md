@@ -21,9 +21,9 @@ role_v2:
 topic_v2:
   - id: bbbea26f-9621-49eb-9ab8-e06fb3bbce8c
     internal-label: Artificial intelligence
-source-git-commit: 1cdb28422994b772a0fa430e213facaf26817952
+source-git-commit: 3e6e6ecbd10bb38c347bae82bc5acba7cda40f79
 workflow-type: tm+mt
-source-wordcount: '260'
+source-wordcount: '257'
 ht-degree: 0%
 ---
 
@@ -52,7 +52,7 @@ ht-degree: 0%
 * 푸시 알림 도구
 * 인앱 메시지 및 인앱 프로그램 도구
 * `schedule_smart_campaign`(으)로 스마트 캠페인 예약
-* 사용자 관리 및 벌크 서비스 도구
+* 사용자 관리 도구
 
 `schedule_campaign` 작업은 클라이언트 자격 증명 연결에 대해 지원됩니다.
 
